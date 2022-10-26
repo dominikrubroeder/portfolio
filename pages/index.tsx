@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Card from '../components/Card';
 
 export default function Home() {
   return (
@@ -9,7 +10,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="text-accent">Hello, world</h1>
+      <Card>
+        <h1 className="text-accent">Hello, world</h1>
+      </Card>
     </>
   );
 }

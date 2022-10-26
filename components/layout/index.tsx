@@ -8,11 +8,13 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <div className="grid min-h-screen grid-rows-[auto_1fr_auto]">
       <Header />
-      <main>{children}</main>
+      <main className="flex flex-col items-center justify-center">
+        {children}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
