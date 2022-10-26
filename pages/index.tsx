@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Card className="max-w-md">
+      <Card className="max-w-md animate-growAndShrink">
         <div className="grid gap-2">
           <span className="text-xs uppercase text-apple-gray-2">
             Come back later.
