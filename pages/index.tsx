@@ -5,10 +5,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Dominik Rubröder | Personal website | team frontend</title>
+        <title>
+          Dominik Rubröder | Personal website | team frontend | frontend
+          development | frontend design | happy coding
+        </title>
         <meta
           name="description"
-          content="Dominik Rubröder personal website | team frontend"
+          content="Dominik Rubröder personal website | team frontend | frontend development | frontend design | happy coding"
         />
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
