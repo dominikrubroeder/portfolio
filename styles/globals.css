@@ -99,4 +99,8 @@ a {
     -webkit-text-fill-color: transparent;
     @apply bg-clip-text;
   }
+
+  .interactive {
+    @apply scale-105 cursor-pointer transition duration-300;
+  }
 }
