@@ -12,7 +12,7 @@ const socialLinks = [
 const downloadLinks = [
   {
     title: 'CV',
-    href: 'https://github.com/dominikrubroeder',
+    href: '/',
   },
 ];
 
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                 <a
                   href={href}
                   className="interactive hover:text-black dark:hover:text-white"
-                  rel="noreferrer"
+                  download
                 >
                   <span className="flex items-start gap-1">
                     {title}
