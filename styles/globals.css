@@ -24,7 +24,7 @@
   --color-apple-gray-6: 242 242 247;
 }
 
-[theme="dark"] {
+[theme='dark'] {
   --color-apple-red: 255 69 58;
   --color-apple-orange: 255 159 10;
   --color-apple-yellow: 255 214 10;
@@ -92,4 +92,11 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@layer components {
+  .text-gradient {
+    -webkit-text-fill-color: transparent;
+    @apply bg-clip-text;
+  }
 }

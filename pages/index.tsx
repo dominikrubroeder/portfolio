@@ -10,8 +10,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Card>
-        <h1 className="text-accent">Hello, world</h1>
+      <Card className="max-w-md">
+        <div className="grid gap-2">
+          <span className="text-xs uppercase text-apple-gray-2">
+            Come back later.
+          </span>
+          <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-3xl font-bold">
+            This Website is currently in the making.
+          </h1>
+        </div>
       </Card>
     </>
   );
