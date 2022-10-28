@@ -1,17 +1,16 @@
 import Head from 'next/head';
-import Card from '../components/Card';
+import Card from '../components/ui/Card';
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>
-          Dominik Rubröder | Personal website | team frontend | frontend
-          development | frontend design | happy coding
+          Dominik Rubröder | Team frontend development and interface design
         </title>
         <meta
           name="description"
-          content="Dominik Rubröder personal website | team frontend | frontend development | frontend design | happy coding"
+          content="Dominik Rubröder | Team frontend development and interface design | Love for animations and transitions"
         />
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>

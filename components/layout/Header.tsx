@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationPlaceholder from '../ui/placeholders/NavigationPlaceholder';
+import NavigationPlaceholder from '../navigation/NavigationPlaceholder';
 
 const Header: React.FC = () => {
   return (
