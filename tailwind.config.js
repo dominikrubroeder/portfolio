@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
@@ -26,19 +26,19 @@ module.exports = {
           'gray-3': 'rgb(var(--color-apple-gray-3) / <alpha-value>)',
           'gray-4': 'rgb(var(--color-apple-gray-4) / <alpha-value>)',
           'gray-5': 'rgb(var(--color-apple-gray-5) / <alpha-value>)',
-          'gray-6': 'rgb(var(--color-apple-gray-6) / <alpha-value>)',
-        },
+          'gray-6': 'rgb(var(--color-apple-gray-6) / <alpha-value>)'
+        }
       },
       keyframes: {
         growAndShrink: {
           '0%, 100%': { transform: 'scale(0.95)' },
-          '70%': { transform: 'scale(1)' },
-        },
+          '70%': { transform: 'scale(1)' }
+        }
       },
       animation: {
-        growAndShrink: 'growAndShrink 6s infinite',
-      },
-    },
+        growAndShrink: 'growAndShrink 6s infinite'
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };

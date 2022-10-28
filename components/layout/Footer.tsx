@@ -5,15 +5,15 @@ const socialLinks = [
   {
     title: 'GitHub',
     href: 'https://github.com/dominikrubroeder',
-    isExternal: true,
-  },
+    isExternal: true
+  }
 ];
 
 const downloadLinks = [
   {
     title: 'CV',
-    href: '/',
-  },
+    href: '/'
+  }
 ];
 
 const Footer: React.FC = () => {
