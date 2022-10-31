@@ -5,7 +5,7 @@ import Switch from '../components/ui/Switch';
 import useIsOnScreen from '../hooks/useIsOnScreen';
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-import Card from '../components/ui/Card';
+import CurrentlyInTheMakingCard from '../components/CurrentInTheMakingCard';
 
 const pageData = [
   {
@@ -56,14 +56,14 @@ export default function Home() {
           id={0}
           setActiveSection={setActiveSection}
         >
-          <Card className="m-4 max-w-md animate-growAndShrink">
-            <div className="grid gap-2">
-              <span className="text-xs uppercase">Come back later.</span>
-              <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-3xl font-bold">
-                This Website is currently in the making.
-              </h1>
-            </div>
-          </Card>
+          <div className="text-center">
+            <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-9xl font-bold">
+              Team frontend.
+            </h1>
+
+            <p>Development and interface design</p>
+            <p>Love for animations and transitions</p>
+          </div>
         </TrackableSection>
       </section>
 
