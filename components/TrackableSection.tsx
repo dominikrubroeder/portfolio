@@ -15,10 +15,10 @@ const TrackableSection: React.FC<TrackableSectionProps> = ({
   setActiveSection
 }) => {
   const sectionRef = useRef<null | HTMLElement>(null);
-  const sectionIsOnScreen = useIsOnScreen(sectionRef);
+  const sectionIsOnScreen = useIsOnScreen(sectionRef, 0.25);
 
   useEffect(() => {
-    setActiveSection(id);
+    if (sectionIsOnScreen) setActiveSection(id);
   }, [sectionIsOnScreen]);
 
   return (

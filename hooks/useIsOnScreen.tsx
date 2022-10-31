@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-const useIsOnScreen = (ref: React.MutableRefObject<HTMLElement | null>) => {
+const useIsOnScreen = (
+  ref: React.MutableRefObject<HTMLElement | null>,
+  threshold = 1
+) => {
   const [isIntersecting, setIntersecting] = useState(false);
-  const thresholdValue = 0;
+  const thresholdValue = threshold;
 
   useEffect(() => {
     const observer = new IntersectionObserver(

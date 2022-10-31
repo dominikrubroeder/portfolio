@@ -6,9 +6,6 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    transitionDuration: {
-      DEFAULT: '300ms'
-    },
     extend: {
       colors: {
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
@@ -38,7 +35,8 @@ module.exports = {
         }
       },
       minHeight: {
-        'screen-head': 'calc(100vh - 4.5rem)'
+        'screen-head': 'calc(100vh - 4.5rem)',
+        'screen-head-navigation': 'calc(100vh - 10rem)'
       },
       keyframes: {
         growAndShrink: {

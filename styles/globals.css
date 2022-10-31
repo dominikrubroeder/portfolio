@@ -108,6 +108,6 @@ a {
   }
 
   .interactive {
-    @apply scale-105 cursor-pointer;
+    @apply cursor-pointer transition-all hover:scale-110;
   }
 }

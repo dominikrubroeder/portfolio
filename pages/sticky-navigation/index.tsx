@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TrackableSection from '../../components/TrackableSection';
 import Switch from '../../components/ui/Switch';
 import useIsOnScreen from '../../hooks/useIsOnScreen';
@@ -10,7 +10,7 @@ const pageData = [
     content: <p>Section 1</p>
   },
   {
-    content: <p>Section 1</p>
+    content: <p>Section 2</p>
   },
   {
     content: <p>Section 3</p>
@@ -19,7 +19,7 @@ const pageData = [
 
 export default function Home() {
   const heroSectionRef = useRef<null | HTMLElement>(null);
-  const heroSectionIsOnScreen = useIsOnScreen(heroSectionRef);
+  const heroSectionIsOnScreen = useIsOnScreen(heroSectionRef, 0.01);
   const [activeSection, setActiveSection] = useState(0);
 
   const activateSection = (index: number) => {
@@ -33,6 +33,8 @@ export default function Home() {
       inline: 'nearest'
     });
   };
+
+  useEffect(() => console.log(activeSection), [activeSection]);
 
   return (
     <>
@@ -49,7 +51,7 @@ export default function Home() {
 
       <section ref={heroSectionRef}>
         <TrackableSection
-          className="flex min-h-screen-head items-center justify-center"
+          className="flex min-h-screen-head-navigation items-center justify-center"
           id={0}
           setActiveSection={setActiveSection}
         >
@@ -57,26 +59,27 @@ export default function Home() {
         </TrackableSection>
       </section>
 
-      <div
-        className={`sticky top-4 flex gap-2 ${
-          heroSectionIsOnScreen ? '-mt-20' : 'mt-0'
-        }`}
-      >
+      <div className="sticky top-4 flex gap-2">
         <Switch
-          data={['Hero', 'Section 1', 'Section 2', 'Section 3']}
+          data={[
+            { option: 'Section 1', value: 'Section 1' },
+            { option: 'Section 2', value: 'Section 2' },
+            { option: 'Section 3', value: 'Section 3' }
+          ]}
           as="page-navigation"
-          activeSection={activeSection}
+          activeOption={activeSection}
           activateSection={activateSection}
+          className="z-50"
         />
 
-        {!heroSectionIsOnScreen && (
-          <button>
-            <ChevronDoubleUpIcon
-              className="h-4 w-4"
-              onClick={() => activateSection(0)}
-            />
-          </button>
-        )}
+        <button
+          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-5 duration-300 hover:duration-150 ${
+            heroSectionIsOnScreen ? 'right-0 scale-50' : '-right-16 scale-100'
+          }`}
+          onClick={() => activateSection(0)}
+        >
+          <ChevronDoubleUpIcon className="h-4 w-4" />
+        </button>
       </div>
 
       {pageData.map(({ content }, index) => (
@@ -85,7 +88,7 @@ export default function Home() {
           className={` flex min-h-screen items-center justify-center ${
             index === 0 ? 'mt-8' : ''
           }`}
-          id={index}
+          id={index + 1}
           setActiveSection={setActiveSection}
         >
           {content}

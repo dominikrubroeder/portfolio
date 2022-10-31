@@ -2,38 +2,41 @@ import React, { useContext, useState } from 'react';
 import UiContext from '../../context/UiContext';
 
 interface SwitchProps {
-  data: string[];
+  data: { option: string; value: string }[];
   onClick?: () => void;
   as: 'theme-switch' | 'page-navigation';
-  activeSection?: number;
+  activeOption?: number;
   activateSection: (index: number) => void;
   className?: string;
 }
 
 const Switch: React.FC<SwitchProps> = ({
-  data = ['Placeholder', 'Placeholder'],
+  data = [
+    { option: 'Placeholder', value: 'Placeholder' },
+    { option: 'Placeholder', value: 'Placeholder' }
+  ],
   onClick,
   as,
-  activeSection,
+  activeOption = 0,
   activateSection,
   className = ''
 }) => {
   const uiCtx = useContext(UiContext);
 
-  const [activeOption, setActiveOption] = useState({
-    option: 0,
+  const [active, setActive] = useState({
+    option: activeOption,
     value: 'Placeholder'
   });
 
   const onClickHandler = (index: number, value: string) => {
-    setActiveOption({ option: index, value: value });
+    setActive({ option: index, value: value });
 
     switch (as) {
       case 'theme-switch':
         uiCtx?.setTheme(value);
         break;
       case 'page-navigation':
-        activateSection(index);
+        activateSection(index + 1);
         break;
       default:
         break;
@@ -43,19 +46,19 @@ const Switch: React.FC<SwitchProps> = ({
   };
 
   return (
-    <div className={className ? className : ''}>
+    <div className={`${className ? className : ''}`}>
       <ul className="flex items-center rounded-full bg-apple-gray-6 p-2">
-        {data.map((switchOption, index) => (
+        {data.map(({ option, value }, index) => (
           <li
             key={index}
-            className={`flex cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-2 ${
-              index === activeOption.option || index === activeSection
+            className={`flex cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-2 transition active:scale-95 ${
+              index === activeOption - 1
                 ? 'bg-apple-gray-4 text-theme-contrary'
                 : 'bg-transparent'
             }`}
-            onClick={() => onClickHandler(index, switchOption)}
+            onClick={() => onClickHandler(index, value)}
           >
-            {switchOption}
+            {option}
           </li>
         ))}
       </ul>
