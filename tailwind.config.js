@@ -37,6 +37,9 @@ module.exports = {
           'gray-6': 'rgb(var(--color-apple-gray-6) / <alpha-value>)'
         }
       },
+      minHeight: {
+        'screen-head': 'calc(100vh - 4.5rem)'
+      },
       keyframes: {
         growAndShrink: {
           '0%, 100%': { transform: 'scale(0.95)' },
