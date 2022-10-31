@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Card from '../components/ui/Card';
-import Switch from '../components/ui/Switch';
 
 export default function Home() {
   return (
@@ -24,8 +23,6 @@ export default function Home() {
           </h1>
         </div>
       </Card>
-
-      <Switch data={['Dark', 'Light', 'Auto']} isThemeSwitch={true} />
     </>
   );
 }
