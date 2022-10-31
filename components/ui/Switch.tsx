@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import UiContext from '../../context/UiContext';
 
 interface SwitchProps {
   data: string[];
   onClick?: () => void;
+  isThemeSwitch?: boolean;
 }
 
 const Switch: React.FC<SwitchProps> = ({
   data = ['Placeholder', 'Placeholder'],
-  onClick
+  onClick,
+  isThemeSwitch = false
 }) => {
+  const uiCtx = useContext(UiContext);
+
   const [activeOption, setActiveOption] = useState({
     option: 0,
     value: 'Placeholder'
@@ -17,8 +22,9 @@ const Switch: React.FC<SwitchProps> = ({
   const onClickHandler = (index: number, value: string) => {
     setActiveOption({ option: index, value: value });
 
-    if (!onClick) return;
-    onClick();
+    if (isThemeSwitch) uiCtx?.setTheme(value);
+
+    if (onClick) onClick();
   };
 
   return (
@@ -27,9 +33,9 @@ const Switch: React.FC<SwitchProps> = ({
         {data.map((switchOption, index) => (
           <li
             key={index}
-            className={`flex cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-2 transition duration-300 ${
+            className={`flex cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-2 ${
               index === activeOption.option
-                ? 'bg-apple-gray-4 text-white'
+                ? 'bg-apple-gray-4 text-theme-contrary'
                 : 'bg-transparent'
             }`}
             onClick={() => onClickHandler(index, switchOption)}

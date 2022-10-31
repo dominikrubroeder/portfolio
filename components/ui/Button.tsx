@@ -16,7 +16,7 @@ const Button: FC<ButtonProps> = ({
   href,
   ...props
 }) => {
-  const classNames = `flex items-center justify-center gap-1 rounded-full border border-transparent px-4 py-3 transition duration-300 ${
+  const classNames = `flex items-center justify-center gap-1 rounded-full border border-transparent px-4 py-3 ${
     variant === 'contained'
       ? 'bg-accent/90 text-white hover:bg-accent'
       : variant === 'outlined'

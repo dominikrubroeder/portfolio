@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Card from '../components/ui/Card';
+import Switch from '../components/ui/Switch';
 
 export default function Home() {
   return (
@@ -17,14 +18,14 @@ export default function Home() {
 
       <Card className="m-4 max-w-md animate-growAndShrink">
         <div className="grid gap-2">
-          <span className="text-xs uppercase text-apple-gray-2">
-            Come back later.
-          </span>
+          <span className="text-xs uppercase">Come back later.</span>
           <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-3xl font-bold">
             This Website is currently in the making.
           </h1>
         </div>
       </Card>
+
+      <Switch data={['Dark', 'Light', 'Auto']} isThemeSwitch={true} />
     </>
   );
 }

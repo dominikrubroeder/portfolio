@@ -4,10 +4,18 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}'
   ],
+  darkMode: 'class',
   theme: {
+    transitionDuration: {
+      DEFAULT: '300ms'
+    },
     extend: {
       colors: {
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        theme: {
+          base: 'rgb(var(--color-theme-base) / <alpha-value>)',
+          contrary: 'rgb(var(--color-theme-contrary) / <alpha-value>)'
+        },
         apple: {
           red: 'rgb(var(--color-apple-red) / <alpha-value>)',
           orange: 'rgb(var(--color-apple-orange) / <alpha-value>)',
