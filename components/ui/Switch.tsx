@@ -8,7 +8,6 @@ interface SwitchProps {
   activeOption?: number;
   activateSection: (index: number) => void;
   className?: string;
-  cols?: number;
 }
 
 const Switch: React.FC<SwitchProps> = ({
@@ -20,12 +19,11 @@ const Switch: React.FC<SwitchProps> = ({
   as,
   activeOption = 0,
   activateSection,
-  className = '',
-  cols = 3
+  className = ''
 }) => {
   const uiCtx = useContext(UiContext);
 
-  const [active, setActive] = useState({
+  const [, setActive] = useState({
     option: activeOption,
     value: 'Placeholder'
   });

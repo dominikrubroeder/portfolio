@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import TrackableSection from '../../components/TrackableSection';
 import Switch from '../../components/ui/Switch';
 import useIsOnScreen from '../../hooks/useIsOnScreen';
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 
 const pageData = [
   {
@@ -28,14 +29,12 @@ export default function Home() {
 
     const element = document.getElementById(`section-${index}`);
 
-    element.scrollIntoView({
+    element?.scrollIntoView({
       behavior: 'smooth',
       block: 'end',
       inline: 'nearest'
     });
   };
-
-  useEffect(() => console.log(activeSection), [activeSection]);
 
   return (
     <>
@@ -52,7 +51,7 @@ export default function Home() {
 
       <section ref={heroSectionRef}>
         <TrackableSection
-          className="flex min-h-screen-head-navigation items-center justify-center"
+          className="flex min-h-screen-navigation items-center justify-center"
           id={0}
           setActiveSection={setActiveSection}
         >
@@ -60,7 +59,23 @@ export default function Home() {
         </TrackableSection>
       </section>
 
-      <div className="sticky top-4 flex gap-2">
+      <header className="sticky top-4 flex gap-2">
+        <button
+          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-2 duration-300 hover:duration-150 ${
+            heroSectionIsOnScreen ? 'left-0 scale-50' : '-left-20 scale-100'
+          }`}
+          onClick={() => activateSection(0)}
+        >
+          <Image
+            src="/images/avatar-square.jpg"
+            width={32}
+            height={32}
+            alt="Logo"
+            className="rounded-full"
+            priority
+          />
+        </button>
+
         <Switch
           data={[
             { option: 'Section 1', value: 'Section 1' },
@@ -75,14 +90,14 @@ export default function Home() {
         />
 
         <button
-          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-5 duration-300 hover:duration-150 ${
+          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-4 duration-300 hover:duration-150 ${
             heroSectionIsOnScreen ? 'right-0 scale-50' : '-right-20 scale-100'
           }`}
           onClick={() => activateSection(0)}
         >
           <ChevronDoubleUpIcon className="h-4 w-4" />
         </button>
-      </div>
+      </header>
 
       {pageData.map(({ content }, index) => (
         <TrackableSection
