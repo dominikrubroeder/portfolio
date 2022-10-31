@@ -9,11 +9,12 @@ const pageData = [
   {
     content: <p>Section 1</p>
   },
-  {
-    content: <p>Section 2</p>
-  },
+  { content: <p>Section 2</p> },
   {
     content: <p>Section 3</p>
+  },
+  {
+    content: <p>Section 4</p>
   }
 ];
 
@@ -64,7 +65,8 @@ export default function Home() {
           data={[
             { option: 'Section 1', value: 'Section 1' },
             { option: 'Section 2', value: 'Section 2' },
-            { option: 'Section 3', value: 'Section 3' }
+            { option: 'Section 3', value: 'Section 3' },
+            { option: 'Section 4', value: 'Section 4' }
           ]}
           as="page-navigation"
           activeOption={activeSection}
@@ -74,7 +76,7 @@ export default function Home() {
 
         <button
           className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-5 duration-300 hover:duration-150 ${
-            heroSectionIsOnScreen ? 'right-0 scale-50' : '-right-16 scale-100'
+            heroSectionIsOnScreen ? 'right-0 scale-50' : '-right-20 scale-100'
           }`}
           onClick={() => activateSection(0)}
         >
