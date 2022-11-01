@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { defaultPageSectionData } from '../data';
 
 interface PageNavigationProps {
   data?: (string | JSX.Element)[];
@@ -7,7 +8,7 @@ interface PageNavigationProps {
 }
 
 const PageNavigation: React.FC<PageNavigationProps> = ({
-  data = ['Section 1', 'Section 2', 'Section 3', 'Section 4'],
+  data = defaultPageSectionData,
   activeSection = 0,
   activateSection
 }) => {
@@ -87,7 +88,7 @@ interface SectionListProps {
 }
 
 const SectionList: React.FC<SectionListProps> = ({
-  data = ['Section 1', 'Section 2', 'Section 3', 'Section 4'],
+  data = defaultPageSectionData,
   activeSection,
   activateSection,
   setShowSectionList

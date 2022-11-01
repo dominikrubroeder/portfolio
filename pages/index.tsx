@@ -6,19 +6,7 @@ import useIsOnScreen from '../hooks/useIsOnScreen';
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import PageNavigation from '../components/PageNavigation';
-
-const pageData = [
-  {
-    content: <p>Section 1</p>
-  },
-  { content: <p>Section 2</p> },
-  {
-    content: <p>Section 3</p>
-  },
-  {
-    content: <p>Section 4</p>
-  }
-];
+import { defaultPageSectionData, themeSwitchData } from '../data';
 
 export default function Home() {
   const heroSectionRef = useRef<null | HTMLElement>(null);
@@ -51,11 +39,7 @@ export default function Home() {
       </Head>
 
       <Switch
-        data={[
-          { option: 'Dark', value: 'dark' },
-          { option: 'Light', value: 'light' },
-          { option: 'Auto', value: 'auto' }
-        ]}
+        data={themeSwitchData}
         as="theme-switch"
         className="mx-auto mt-4 w-min"
       />
@@ -122,7 +106,7 @@ export default function Home() {
         </button>
       </header>
 
-      {pageData.map(({ content }, index) => (
+      {defaultPageSectionData.map((section, index) => (
         <TrackableSection
           key={index}
           className={` flex min-h-screen items-center justify-center ${
@@ -131,7 +115,7 @@ export default function Home() {
           id={index + 1}
           setActiveSection={setActiveSection}
         >
-          {content}
+          {section}
         </TrackableSection>
       ))}
     </>
