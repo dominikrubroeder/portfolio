@@ -51,36 +51,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-theme-base: 0 0 0;
-    --color-theme-contrary: 255 255 255;
-    --color-apple-red: 255 69 58;
-    --color-apple-orange: 255 159 10;
-    --color-apple-yellow: 255 214 10;
-    --color-apple-green: 50 215 75;
-    --color-apple-mint: 102 212 207;
-    --color-apple-teal: 106 196 220;
-    --color-apple-cyan: 90 200 245;
-    --color-apple-blue: 10 132 255;
-    --color-apple-indigo: 94 92 230;
-    --color-apple-purple: 191 90 242;
-    --color-apple-pink: 255 55 95;
-    --color-apple-brown: 172 142 104;
-    --color-apple-gray: 152 152 157;
-    --color-apple-gray-2: 99 99 102;
-    --color-apple-gray-3: 72 72 74;
-    --color-apple-gray-4: 58 58 60;
-    --color-apple-gray-5: 44 44 46;
-    --color-apple-gray-6: 28 28 30;
-  }
-
   html {
     color-scheme: dark;
-  }
-
-  body {
-    color: white;
-    background: black;
   }
 }
 

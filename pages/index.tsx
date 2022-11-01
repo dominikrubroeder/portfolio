@@ -81,24 +81,24 @@ export default function Home() {
       </section>
 
       <header
-        className={`flex gap-2 ${
+        className={`mt-4 flex gap-2 lg:-mt-4 ${
           !heroSectionIsOnScreen
-            ? 'fixed bottom-4 lg:sticky lg:top-4'
+            ? 'fixed bottom-6 lg:sticky lg:top-4'
             : 'relative'
         } `}
       >
         <button
-          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-2 duration-300 hover:duration-150 ${
+          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 lg:p-2 ${
             heroSectionIsOnScreen
               ? 'left-0 scale-50'
-              : '-left-16 scale-100 lg:-left-20'
+              : '-left-[3.25rem] scale-100 lg:-left-20'
           }`}
           onClick={() => activateSection(0)}
         >
           <Image
             src="/images/avatar-square.jpg"
-            width={32}
-            height={32}
+            width={28}
+            height={28}
             alt="Logo"
             className="rounded-full"
             priority
@@ -111,10 +111,10 @@ export default function Home() {
         />
 
         <button
-          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-4 duration-300 hover:duration-150 ${
+          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-3 duration-300 hover:duration-150 lg:p-4 ${
             heroSectionIsOnScreen
               ? 'right-0 scale-50'
-              : '-right-16 scale-100 lg:-right-20'
+              : '-right-[3.25rem] scale-100 lg:-right-20'
           }`}
           onClick={() => activateSection(0)}
         >

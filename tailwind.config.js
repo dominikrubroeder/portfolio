@@ -57,7 +57,7 @@ module.exports = {
         }
       },
       animation: {
-        fadeUp: 'fadeUp .6s ease-out forwards',
+        fadeUp: 'fadeUp .3s ease-out forwards',
         growAndShrink: 'growAndShrink 6s infinite'
       }
     }
