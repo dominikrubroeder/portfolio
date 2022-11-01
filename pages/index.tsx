@@ -6,7 +6,7 @@ import useIsOnScreen from '../hooks/useIsOnScreen';
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import PageNavigation from '../components/PageNavigation';
-import { defaultPageSectionData, themeSwitchData } from '../data';
+import { homePageSectionData, themeSwitchData } from '../data';
 
 export default function Home() {
   const heroSectionRef = useRef<null | HTMLElement>(null);
@@ -20,7 +20,7 @@ export default function Home() {
 
     element?.scrollIntoView({
       behavior: 'smooth',
-      block: 'end',
+      block: 'start',
       inline: 'nearest'
     });
   };
@@ -90,6 +90,7 @@ export default function Home() {
         </button>
 
         <PageNavigation
+          data={homePageSectionData}
           activeSection={activeSection}
           activateSection={activateSection}
         />
@@ -106,7 +107,7 @@ export default function Home() {
         </button>
       </header>
 
-      {defaultPageSectionData.map((section, index) => (
+      {homePageSectionData.map(({ content }, index) => (
         <TrackableSection
           key={index}
           className={` flex min-h-screen items-center justify-center ${
@@ -115,7 +116,7 @@ export default function Home() {
           id={index + 1}
           setActiveSection={setActiveSection}
         >
-          {section}
+          {content}
         </TrackableSection>
       ))}
     </>

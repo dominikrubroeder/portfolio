@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { defaultPageSectionData } from '../data';
 
 interface PageNavigationProps {
-  data?: (string | JSX.Element)[];
+  data?: { title: string; content: JSX.Element }[];
   activeSection: number;
   activateSection: (index: number) => void;
 }
@@ -20,6 +20,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
 
       {showSectionList && (
         <SectionList
+          data={data}
           activeSection={activeSection}
           activateSection={activateSection}
           setShowSectionList={setShowSectionList}
@@ -30,7 +31,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
         className="relative grid cursor-pointer items-center overflow-hidden rounded-full bg-apple-gray-6 px-4 lg:p-0"
         style={{ gridTemplateColumns: `repeat(${data.length}, 1fr)` }}
       >
-        {data.map((item, index) => (
+        {data.map(({ title }, index) => (
           <li key={index}>
             <span
               className="flex items-center justify-center py-4 px-1 lg:hidden"
@@ -53,7 +54,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
               }`}
               onClick={() => activateSection(index + 1)}
             >
-              {item}
+              {title}
             </span>
           </li>
         ))}
@@ -81,7 +82,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
 export default PageNavigation;
 
 interface SectionListProps {
-  data?: (string | JSX.Element)[];
+  data?: { title: string; content: JSX.Element }[];
   activateSection: (index: number) => void;
   activeSection: number;
   setShowSectionList: React.Dispatch<React.SetStateAction<boolean>>;
@@ -101,7 +102,7 @@ const SectionList: React.FC<SectionListProps> = ({
   return (
     <div className="invisible absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-0 animate-fadeUp rounded-xl bg-apple-gray-6 opacity-0">
       <ul>
-        {data.map((sectionListItem, index) => (
+        {data.map(({ title }, index) => (
           <li
             key={index}
             className={`w-max cursor-pointer px-6 py-4 transition ${
@@ -109,7 +110,7 @@ const SectionList: React.FC<SectionListProps> = ({
             } ${index === activeSection - 1 ? 'text-theme-contrary' : ''}`}
             onClick={() => onClickHandler(index)}
           >
-            {sectionListItem}
+            {title}
           </li>
         ))}
       </ul>
