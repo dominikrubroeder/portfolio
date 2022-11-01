@@ -5,6 +5,7 @@ import Switch from '../components/ui/Switch';
 import useIsOnScreen from '../hooks/useIsOnScreen';
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
+import PageNavigation from '../components/PageNavigation';
 
 const pageData = [
   {
@@ -56,17 +57,17 @@ export default function Home() {
           { option: 'Auto', value: 'auto' }
         ]}
         as="theme-switch"
-        className="mx-auto mt-4 w-min text-xs"
+        className="mx-auto mt-4 w-min"
       />
 
       <section ref={heroSectionRef}>
         <TrackableSection
-          className="flex min-h-screen-navigation-theme-switch items-center justify-center"
+          className="flex min-h-screen-navigation-theme-switch items-center justify-center px-4"
           id={0}
           setActiveSection={setActiveSection}
         >
           <div className="text-center">
-            <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-9xl font-bold">
+            <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-7xl font-bold sm:text-9xl">
               Team frontend.
             </h1>
 
@@ -79,10 +80,18 @@ export default function Home() {
         </TrackableSection>
       </section>
 
-      <header className="sticky top-4 flex gap-2">
+      <header
+        className={`flex gap-2 ${
+          !heroSectionIsOnScreen
+            ? 'fixed bottom-4 lg:sticky lg:top-4'
+            : 'relative'
+        } `}
+      >
         <button
           className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-2 duration-300 hover:duration-150 ${
-            heroSectionIsOnScreen ? 'left-0 scale-50' : '-left-20 scale-100'
+            heroSectionIsOnScreen
+              ? 'left-0 scale-50'
+              : '-left-16 scale-100 lg:-left-20'
           }`}
           onClick={() => activateSection(0)}
         >
@@ -96,25 +105,16 @@ export default function Home() {
           />
         </button>
 
-        <Switch
-          data={[
-            {
-              option: 'Section 1',
-              value: 'Section 1'
-            },
-            { option: 'Section 2', value: 'Section 2' },
-            { option: 'Section 3', value: 'Section 3' },
-            { option: 'Section 4', value: 'Section 4' }
-          ]}
-          as="page-navigation"
-          activeOption={activeSection}
+        <PageNavigation
+          activeSection={activeSection}
           activateSection={activateSection}
-          className="z-50"
         />
 
         <button
           className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-4 duration-300 hover:duration-150 ${
-            heroSectionIsOnScreen ? 'right-0 scale-50' : '-right-20 scale-100'
+            heroSectionIsOnScreen
+              ? 'right-0 scale-50'
+              : '-right-16 scale-100 lg:-right-20'
           }`}
           onClick={() => activateSection(0)}
         >

@@ -108,6 +108,14 @@ a {
   }
 
   .interactive {
-    @apply cursor-pointer transition-all hover:scale-110;
+    @apply cursor-pointer transition-all hover:scale-110 active:scale-95;
+  }
+
+  .switch__option {
+    @apply z-20 flex cursor-pointer items-center justify-center gap-2 rounded-full bg-transparent py-3 px-4 transition active:scale-95 lg:py-4 lg:px-6;
+  }
+
+  .switch__indicator {
+    @apply absolute top-1/2 z-10 h-3/4 rounded-full bg-apple-gray-4 p-4 py-2 transition;
   }
 }

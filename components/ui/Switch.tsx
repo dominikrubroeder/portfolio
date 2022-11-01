@@ -3,10 +3,8 @@ import UiContext from '../../context/UiContext';
 
 interface SwitchProps {
   data: { option: string | JSX.Element; value: string }[];
-  onClick?: () => void;
-  as: 'default' | 'theme-switch' | 'page-navigation';
+  as: 'default' | 'theme-switch';
   activeOption?: number;
-  activateSection?: (index: number) => void;
   className?: string;
 }
 
@@ -15,15 +13,13 @@ const Switch: React.FC<SwitchProps> = ({
     { option: 'Placeholder', value: 'Placeholder' },
     { option: 'Placeholder', value: 'Placeholder' }
   ],
-  onClick,
-  as,
+  as = 'default',
   activeOption = 0,
-  activateSection,
   className = ''
 }) => {
   const uiCtx = useContext(UiContext);
 
-  const [, setActive] = useState({
+  const [active, setActive] = useState({
     option: activeOption,
     value: 'Placeholder'
   });
@@ -31,23 +27,16 @@ const Switch: React.FC<SwitchProps> = ({
   const onClickHandler = (index: number, value: string) => {
     setActive({ option: index, value: value });
 
-    switch (as) {
-      case 'theme-switch':
-        uiCtx?.setTheme(value);
-        break;
-      case 'page-navigation':
-        if (activateSection) activateSection(index + 1);
-        break;
-      default:
-        break;
-    }
-
-    if (onClick) onClick();
+    if (as === 'theme-switch') uiCtx?.setTheme(value);
   };
 
   return (
-    <div className={`relative ${className ? className : ''}`}>
-      <span className="absolute top-0 -left-3.5 h-full w-12 rounded-l-full bg-apple-gray-6"></span>
+    <div
+      className={`relative transition active:scale-95 ${
+        className ? className : ''
+      }`}
+    >
+      <span className="absolute top-0 -left-2.5 h-full w-12 rounded-l-full bg-apple-gray-6"></span>
 
       <ul
         className="relative grid items-center overflow-hidden rounded-full bg-apple-gray-6"
@@ -56,8 +45,8 @@ const Switch: React.FC<SwitchProps> = ({
         {data.map(({ option, value }, index) => (
           <li
             key={index}
-            className={`z-20 flex cursor-pointer items-center justify-center gap-2 rounded-full bg-transparent py-4 px-6 transition active:scale-95 ${
-              index === activeOption - 1 ? 'text-theme-contrary' : ''
+            className={`switch__option text-sm ${
+              index === active.option ? 'text-theme-contrary' : ''
             }`}
             onClick={() => onClickHandler(index, value)}
           >
@@ -66,21 +55,17 @@ const Switch: React.FC<SwitchProps> = ({
         ))}
 
         <span
-          className="absolute top-1/2 z-10 h-10 rounded-full bg-apple-gray-4 p-4 py-2 transition"
+          className="switch__indicator"
           style={{
             width: `${100 / data.length}%`,
             transform: `translate(${
-              activeOption === 0
-                ? '-100'
-                : activeOption === 1
-                ? '0'
-                : (activeOption - 1) * 100
+              active.option === 0 ? '0' : active.option * 100
             }%, -50%)`
           }}
         ></span>
       </ul>
 
-      <span className="absolute top-0 -right-3.5 h-full w-12 rounded-r-full bg-apple-gray-6"></span>
+      <span className="absolute top-0 -right-2.5 h-full w-12 rounded-r-full bg-apple-gray-6"></span>
     </div>
   );
 };

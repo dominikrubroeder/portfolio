@@ -39,12 +39,25 @@ module.exports = {
         'screen-navigation-theme-switch': 'calc(100vh - 8.5rem)'
       },
       keyframes: {
+        fadeUp: {
+          '0%': {
+            transform: 'translateY(50%) translateX(-50%) scale(0.2)',
+            opacity: '0',
+            visibility: 'hidden'
+          },
+          '100%': {
+            transform: 'translateY(-25%) translateX(-50%) scale(1)',
+            opacity: '1',
+            visibility: 'visible'
+          }
+        },
         growAndShrink: {
           '0%, 100%': { transform: 'scale(0.95)' },
           '70%': { transform: 'scale(1)' }
         }
       },
       animation: {
+        fadeUp: 'fadeUp .6s ease-out forwards',
         growAndShrink: 'growAndShrink 6s infinite'
       }
     }
