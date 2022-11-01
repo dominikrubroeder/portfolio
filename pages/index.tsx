@@ -5,7 +5,6 @@ import Switch from '../components/ui/Switch';
 import useIsOnScreen from '../hooks/useIsOnScreen';
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
-import CurrentlyInTheMakingCard from '../components/CurrentInTheMakingCard';
 
 const pageData = [
   {
@@ -50,9 +49,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
 
+      <Switch
+        data={[
+          { option: 'Dark', value: 'dark' },
+          { option: 'Light', value: 'light' },
+          { option: 'Auto', value: 'auto' }
+        ]}
+        as="theme-switch"
+        className="mx-auto mt-4 w-min text-xs"
+      />
+
       <section ref={heroSectionRef}>
         <TrackableSection
-          className="flex min-h-screen-navigation items-center justify-center"
+          className="flex min-h-screen-navigation-theme-switch items-center justify-center"
           id={0}
           setActiveSection={setActiveSection}
         >
@@ -62,7 +71,10 @@ export default function Home() {
             </h1>
 
             <p>Development and interface design</p>
-            <p>Love for animations and transitions</p>
+            <p>
+              Love for Animations and Transitions.
+              {/* <ReactTypingEffect text={['Animations.', 'Transitions.']} /> */}
+            </p>
           </div>
         </TrackableSection>
       </section>
@@ -86,7 +98,10 @@ export default function Home() {
 
         <Switch
           data={[
-            { option: 'Section 1', value: 'Section 1' },
+            {
+              option: 'Section 1',
+              value: 'Section 1'
+            },
             { option: 'Section 2', value: 'Section 2' },
             { option: 'Section 3', value: 'Section 3' },
             { option: 'Section 4', value: 'Section 4' }
@@ -98,12 +113,12 @@ export default function Home() {
         />
 
         <button
-          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-4 duration-300 hover:duration-150 ${
+          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-4 duration-300 hover:duration-150 ${
             heroSectionIsOnScreen ? 'right-0 scale-50' : '-right-20 scale-100'
           }`}
           onClick={() => activateSection(0)}
         >
-          <ChevronDoubleUpIcon className="h-4 w-4" />
+          <ChevronDoubleUpIcon className="h-4 w-4 group-hover:fill-theme-contrary" />
         </button>
       </header>
 

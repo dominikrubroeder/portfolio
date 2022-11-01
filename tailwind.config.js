@@ -35,7 +35,8 @@ module.exports = {
         }
       },
       minHeight: {
-        'screen-navigation': 'calc(100vh - 5rem)'
+        'screen-navigation-switch': 'calc(100vh - 5rem)',
+        'screen-navigation-theme-switch': 'calc(100vh - 8.5rem)'
       },
       keyframes: {
         growAndShrink: {
