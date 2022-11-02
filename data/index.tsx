@@ -19,7 +19,7 @@ import VercelLogo from '../components/svg/VercelLogo';
 import VercelLogoSymbol from '../components/svg/VercelLogoSymbol';
 import VisualStudioCodeLogo from '../components/svg/VisualStudioCodeLogo';
 import VueJsLogo from '../components/svg/VueJsLogo';
-import ToolsAndTechnologies from '../components/ToolsAndTechnologies';
+import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies/index';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'

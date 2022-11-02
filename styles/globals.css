@@ -73,6 +73,10 @@ a {
   box-sizing: border-box;
 }
 
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
 @layer components {
   hr {
     @apply border-apple-gray-6;

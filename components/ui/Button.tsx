@@ -9,6 +9,7 @@ interface ButtonProps {
   icon?: JSX.Element;
   iconPosition?: 'leading' | 'trailing';
   className?: string;
+  onClick: () => void;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -19,6 +20,7 @@ const Button: FC<ButtonProps> = ({
   type = 'button',
   href,
   className = '',
+  onClick,
   ...props
 }) => {
   const classNames = `flex items-center gap-1 rounded-full border border-transparent px-4 py-3 text-accent ${
@@ -31,6 +33,10 @@ const Button: FC<ButtonProps> = ({
       : ''
   }`;
 
+  const onClickHandler = () => {
+    if (onClick) onClick();
+  };
+
   if (href)
     return (
       <Link href={href} className={`${classNames} ${className}`} {...props}>
@@ -41,7 +47,12 @@ const Button: FC<ButtonProps> = ({
     );
 
   return (
-    <button type={type} className={`${classNames} ${className}`} {...props}>
+    <button
+      type={type}
+      className={`${classNames} ${className}`}
+      onClick={onClickHandler}
+      {...props}
+    >
       {icon && iconPosition === 'leading' ? icon : null}
       {text}
       {icon && iconPosition === 'trailing' ? icon : null}

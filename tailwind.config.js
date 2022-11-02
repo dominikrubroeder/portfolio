@@ -41,6 +41,22 @@ module.exports = {
       keyframes: {
         fadeUp: {
           '0%': {
+            transform: 'translateY(4%)',
+            opacity: '0',
+            visibility: 'hidden'
+          },
+          '100%': {
+            transform: 'translateY(0%)',
+            opacity: '1',
+            visibility: 'visible'
+          }
+        },
+        growAndShrink: {
+          '0%, 100%': { transform: 'scale(0.95)' },
+          '70%': { transform: 'scale(1)' }
+        },
+        navigationControl: {
+          '0%': {
             transform: 'translateY(50%) translateX(-50%) scale(0.2)',
             opacity: '0',
             visibility: 'hidden'
@@ -50,15 +66,12 @@ module.exports = {
             opacity: '1',
             visibility: 'visible'
           }
-        },
-        growAndShrink: {
-          '0%, 100%': { transform: 'scale(0.95)' },
-          '70%': { transform: 'scale(1)' }
         }
       },
       animation: {
-        fadeUp: 'fadeUp .3s ease-out forwards',
-        growAndShrink: 'growAndShrink 6s infinite'
+        fadeUp: 'fadeUp .6s ease-out forwards',
+        growAndShrink: 'growAndShrink 6s infinite',
+        navigationControl: 'navigationControl .3s ease-out forwards'
       },
       gridTemplateColumns: {
         'reponsive-min-4rem': 'repeat(auto-fit, minmax(min(4rem, 100%), 1fr))'

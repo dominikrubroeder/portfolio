@@ -3,7 +3,7 @@ import React from 'react';
 const HeroiconLogoSymbol: React.FC = () => {
   return (
     <svg viewBox="0 0 23 24" className="h-5 w-auto">
-      <g clip-path="url(#clip0_316_54)">
+      <g clipPath="url(#clip0_316_54)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"

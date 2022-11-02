@@ -3,7 +3,7 @@ import React from 'react';
 const TypeScriptLogo: React.FC = () => {
   return (
     <svg viewBox="0 0 32 32" className="h-5 w-auto">
-      <g clip-path="url(#clip0_315_36)">
+      <g clipPath="url(#clip0_315_36)">
         <path
           d="M28.875 0H3.125C1.39911 0 0 1.39911 0 3.125V28.875C0 30.6009 1.39911 32 3.125 32H28.875C30.6009 32 32 30.6009 32 28.875V3.125C32 1.39911 30.6009 0 28.875 0Z"
           fill="#3178C6"

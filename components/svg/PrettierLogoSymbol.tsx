@@ -3,7 +3,7 @@ import React from 'react';
 const PrettierLogoSymbol: React.FC = () => {
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-auto">
-      <g clip-path="url(#clip0_318_149)">
+      <g clipPath="url(#clip0_318_149)">
         <path
           d="M17.7143 4.57153H18.8571C19.1771 4.57153 19.4285 4.82296 19.4285 5.14296C19.4285 5.46296 19.1771 5.71439 18.8571 5.71439H17.7143C17.3943 5.71439 17.1428 5.46296 17.1428 5.14296C17.1428 4.82296 17.3943 4.57153 17.7143 4.57153Z"
           fill="#56B3B4"

@@ -100,7 +100,7 @@ const SectionList: React.FC<SectionListProps> = ({
   };
 
   return (
-    <div className="invisible absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-0 animate-fadeUp rounded-xl bg-apple-gray-6 opacity-0">
+    <div className="invisible absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-0 animate-navigationControl rounded-xl bg-apple-gray-6 opacity-0">
       <ul>
         {data.map(({ title }, index) => (
           <li
