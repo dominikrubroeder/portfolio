@@ -22,7 +22,8 @@ const ToolsAndTechnologies: React.FC = () => {
           <div className="max-w-lg">
             <h2 className="text-3xl font-bold text-theme-contrary">Editor</h2>
             <p>
-              I am using <span className="text-theme-contrary">VS Code</span>
+              I am using <span className="text-theme-contrary">VS Code </span>
+              for <span className="text-theme-contrary">Mac </span>
               for all code editing on the web.
             </p>
           </div>
@@ -59,6 +60,7 @@ const ToolsAndTechnologies: React.FC = () => {
               <div>Prettier</div>
               <div>GitHub</div>
               <div>GitLab</div>
+              <div>Vercel</div>
             </div>
           </Card>
         </section>
