@@ -67,7 +67,7 @@ export default function Home() {
       </section>
 
       <header
-        className={`mt-4 flex gap-2 lg:-mt-4 ${
+        className={`z-50 mt-4 flex gap-2 lg:-mt-4 ${
           !heroSectionIsOnScreen
             ? 'fixed bottom-6 lg:sticky lg:top-4'
             : 'relative'
@@ -112,7 +112,7 @@ export default function Home() {
       {homePageSectionData.map(({ content }, index) => (
         <TrackableSection
           key={index}
-          className={` flex min-h-screen items-center justify-center ${
+          className={`flex min-h-screen items-center justify-center ${
             index === 0 ? 'mt-8' : ''
           }`}
           id={index + 1}

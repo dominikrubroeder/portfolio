@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeroiconLogoSymbol: React.FC = () => {
+const HeroiconsLogoSymbol: React.FC = () => {
   return (
     <svg viewBox="0 0 23 24" className="h-5 w-auto">
       <g clipPath="url(#clip0_316_54)">
@@ -20,4 +20,4 @@ const HeroiconLogoSymbol: React.FC = () => {
   );
 };
 
-export default HeroiconLogoSymbol;
+export default HeroiconsLogoSymbol;

@@ -5,7 +5,7 @@ import GitHubLogo from '../components/svg/GitHubLogo';
 import GitLabLogo from '../components/svg/GitLabLogo';
 import HeadlessUiLogo from '../components/svg/HeadlessUiLogo';
 import HeadlessUiLogoSymbol from '../components/svg/HeadlessUiLogoSymbol';
-import HeroiconLogoSymbol from '../components/svg/HeroiconLogoSymbol';
+import HeroiconsLogoSymbol from '../components/svg/HeroiconsLogoSymbol';
 import HeroiconsLogo from '../components/svg/HeroiconsLogo';
 import NextJsLogoSymbol from '../components/svg/NextJsLogoSymbol';
 import PrettierLogoSymbol from '../components/svg/PrettierLogoSymbol';
@@ -20,6 +20,14 @@ import VercelLogoSymbol from '../components/svg/VercelLogoSymbol';
 import VisualStudioCodeLogo from '../components/svg/VisualStudioCodeLogo';
 import VueJsLogo from '../components/svg/VueJsLogo';
 import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies/index';
+import MuiLogoSymbol from '../components/svg/MuiLogoSymbol';
+import CssLogoSymbol from '../components/svg/CssLogoSymbol';
+import Image from 'next/image';
+import SvelteLogoSymbol from '../components/svg/SvelteLogoSymbol';
+import GatsbyLogo from '../components/svg/GatsbyLogo';
+import GatsbyLogoSymbol from '../components/svg/GatsbyLogoSymbol';
+import QwikLogo from '../components/svg/QwikLogoSymbol';
+import QwikLogoSymbol from '../components/svg/QwikLogoSymbol';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'
@@ -188,7 +196,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quoteDescription: 'quoteDescription',
     tags: ['tailwind', 'icon-library'],
     logo: <HeroiconsLogo />,
-    logoSymbol: <HeroiconLogoSymbol />,
+    logoSymbol: <HeroiconsLogoSymbol />,
     category: ['development', 'design'],
     personalNote: 'Heroicons personalNote'
   },
@@ -273,5 +281,107 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     logoSymbol: <FigLogoSymbol />,
     category: ['development'],
     personalNote: 'Jest personalNote'
+  },
+  {
+    title: 'Material UI',
+    href: 'https://mui.com/',
+    quote: 'Move faster with intuitive React UI tools.',
+    quoteDescription:
+      'MUI offers a comprehensive suite of UI tools to help you ship new features faster. Start with Material UI, our fully-loaded component library, or bring your own design system to our production-ready components.',
+    tags: ['mui', 'ui-library', 'react'],
+    logo: <MuiLogoSymbol />,
+    logoSymbol: <MuiLogoSymbol />,
+    category: ['development'],
+    personalNote: 'Material UI personalNote'
+  },
+  {
+    title: 'CSS 3',
+    href: 'https://www.w3schools.com/css/',
+    quote:
+      'CSS (Cascading Style Sheets) is a web language for applying layout structures and styles to HTML elements.',
+    quoteDescription: 'CSS quote description',
+    tags: ['css'],
+    logo: <CssLogoSymbol />,
+    logoSymbol: <CssLogoSymbol />,
+    category: ['development'],
+    personalNote: 'CSS personalNote'
+  },
+  {
+    title: 'Swift UI',
+    href: 'https://developer.apple.com/xcode/swiftui/',
+    quote:
+      'Swift UI – declarative syntax for building native applications on all Apple platforms.',
+    quoteDescription:
+      'SwiftUI helps you build great-looking apps across all Apple platforms with the power of Swift — and surprisingly little code. You can bring even better experiences to everyone, on any Apple device, using just one set of tools and APIs.',
+    tags: ['swift-ui'],
+    logo: (
+      <Image
+        width={96}
+        height={96}
+        src="/images/swiftui-logo.png"
+        className="h-5 w-auto"
+        alt="SwiftUI logo"
+        priority
+      />
+    ),
+    logoSymbol: (
+      <Image
+        width={96}
+        height={96}
+        src="/images/swiftui-logo.png"
+        className="h-5 w-auto"
+        alt="SwiftUI logo"
+        priority
+      />
+    ),
+    category: ['development'],
+    personalNote: 'SwiftUI personalNote'
+  },
+  {
+    title: 'Svelte',
+    href: 'https://svelte.dev/',
+    quote: 'Cybernetically enhanced web apps',
+    quoteDescription: 'Svelte quoteDescription',
+    tags: ['svelte'],
+    logo: <SvelteLogoSymbol />,
+    logoSymbol: <SvelteLogoSymbol />,
+    category: ['development'],
+    personalNote: 'Svelte personalNote'
+  },
+  {
+    title: 'Gatsby',
+    href: 'https://www.gatsbyjs.com/',
+    quote: 'The future of web development is here.',
+    quoteDescription:
+      'There’s a reason why the world’s top-performing website teams use Gatsby. Whether your site has 100 pages or 100,000 pages—we’re obsessed with delivering dynamic web experiences with performance and security that scales.',
+    tags: ['gatbsy'],
+    logo: <GatsbyLogo />,
+    logoSymbol: <GatsbyLogoSymbol />,
+    category: ['development'],
+    personalNote: 'Gatsby personalNote'
+  },
+  {
+    title: 'Astro',
+    href: 'https://astro.build/',
+    quote: 'Build faster websites.',
+    quoteDescription:
+      'Pull content from anywhere and serve it fast with Astros next-gen island architecture.',
+    tags: ['astro'],
+    logo: <QwikLogo />,
+    logoSymbol: <QwikLogoSymbol />,
+    category: ['development'],
+    personalNote: 'Astro personalNote'
+  },
+  {
+    title: 'qwik',
+    href: 'https://qwik.builder.io/',
+    quote: 'Framework reimagined for the edge.',
+    quoteDescription:
+      'No hydration, auto lazy-loading, edge-optimized, and fun.',
+    tags: ['qwik'],
+    logo: <QwikLogo />,
+    logoSymbol: <QwikLogoSymbol />,
+    category: ['development'],
+    personalNote: 'qwik personalNote'
   }
 ];

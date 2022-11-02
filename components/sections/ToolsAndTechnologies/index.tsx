@@ -22,7 +22,7 @@ const ToolsAndTechnologies: React.FC = () => {
         style={{ scaleY }}
       />
 
-      <div className="mt-64 grid gap-32">
+      <div className="mx-auto mt-64 grid w-full max-w-3xl gap-32">
         <section className="flex flex-wrap items-center justify-between gap-4">
           <div className="max-w-lg">
             <h2 className="text-3xl font-bold text-theme-contrary">

@@ -1,5 +1,4 @@
 import React from 'react';
-import AppleLogo from './svg/AppleLogo';
 
 interface InlineBrandProps {
   logo?: JSX.Element;
@@ -7,11 +6,7 @@ interface InlineBrandProps {
   href?: string;
 }
 
-const InlineBrand: React.FC<InlineBrandProps> = ({
-  logo = <AppleLogo />,
-  title = 'Apple',
-  href = ''
-}) => {
+const InlineBrand: React.FC<InlineBrandProps> = ({ logo, title, href }) => {
   const outerClassName = 'inline-flex items-center gap-1 px-1 align-bottom';
   const innerClassName = 'w-max text-theme-contrary';
 
