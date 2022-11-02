@@ -4,12 +4,18 @@ import FramerMotionLogo from '../components/svg/FramerMotionLogo';
 import GitHubLogo from '../components/svg/GitHubLogo';
 import GitLabLogo from '../components/svg/GitLabLogo';
 import HeadlessUiLogo from '../components/svg/HeadlessUiLogo';
+import HeadlessUiLogoSymbol from '../components/svg/HeadlessUiLogoSymbol';
+import HeroiconLogoSymbol from '../components/svg/HeroiconLogoSymbol';
 import HeroiconsLogo from '../components/svg/HeroiconsLogo';
-import NextJsLogo from '../components/svg/NextJsLogo';
+import NextJsLogoSymbol from '../components/svg/NextJsLogoSymbol';
+import PrettierLogoSymbol from '../components/svg/PrettierLogoSymbol';
+import ReactLogoSymbol from '../components/svg/ReactLogoSymbol';
 import StorybookLogo from '../components/svg/StorybookLogo';
-import TailwindCssLogoSymbol from '../components/svg/TailwindCssLogoSymbol';
-import TailwindUiLogo from '../components/svg/TailwindUiLogo';
+import StorybookLogoSymbol from '../components/svg/StorybookLogoSymbol';
+import TailwindLogoSymbol from '../components/svg/TailwindLogoSymbol';
+import TailwindCssLogoSymbol from '../components/svg/TailwindLogoSymbol';
 import TypeScriptLogo from '../components/svg/TypeScriptLogo';
+import VercelLogo from '../components/svg/VercelLogo';
 import VercelLogoSymbol from '../components/svg/VercelLogoSymbol';
 import VisualStudioCodeLogo from '../components/svg/VisualStudioCodeLogo';
 import VueJsLogo from '../components/svg/VueJsLogo';
@@ -91,8 +97,8 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote: 'The react production ready librarby.',
     quoteDescription: 'quoteDescription',
     tags: ['nextjs'],
-    logo: <NextJsLogo />,
-    logoSymbol: <NextJsLogo />,
+    logo: <NextJsLogoSymbol />,
+    logoSymbol: <NextJsLogoSymbol />,
     category: ['development'],
     personalNote: 'Next.js personalNote'
   },
@@ -135,8 +141,8 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote: 'Build your next idea even faster.',
     quoteDescription: 'quoteDescription',
     tags: ['tailwind', 'tailwind-ui'],
-    logo: <TailwindUiLogo />,
-    logoSymbol: <TailwindUiLogo />,
+    logo: <TailwindLogoSymbol />,
+    logoSymbol: <TailwindLogoSymbol />,
     category: ['development'],
     personalNote:
       'Beautifully designed, expertly crafted components and templates, built by the makers of Tailwind CSS. The perfect starting point for your next project.'
@@ -149,7 +155,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quoteDescription: 'quoteDescription',
     tags: ['tailwind', 'headless-ui', 'react', 'vue'],
     logo: <HeadlessUiLogo />,
-    logoSymbol: <HeadlessUiLogo />,
+    logoSymbol: <HeadlessUiLogoSymbol />,
     category: ['development'],
     personalNote: 'Headless UI personalNote'
   },
@@ -159,8 +165,8 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote: 'A JavaScript library for building user interfaces.',
     quoteDescription: 'quoteDescription',
     tags: ['react.js'],
-    logo: <HeadlessUiLogo />,
-    logoSymbol: <HeadlessUiLogo />,
+    logo: <ReactLogoSymbol />,
+    logoSymbol: <ReactLogoSymbol />,
     category: ['development'],
     personalNote: 'React personalNote'
   },
@@ -182,7 +188,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quoteDescription: 'quoteDescription',
     tags: ['tailwind', 'icon-library'],
     logo: <HeroiconsLogo />,
-    logoSymbol: <HeroiconsLogo />,
+    logoSymbol: <HeroiconLogoSymbol />,
     category: ['development', 'design'],
     personalNote: 'Heroicons personalNote'
   },
@@ -193,7 +199,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quoteDescription: 'quoteDescription',
     tags: ['storybook'],
     logo: <StorybookLogo />,
-    logoSymbol: <StorybookLogo />,
+    logoSymbol: <StorybookLogoSymbol />,
     category: ['development'],
     personalNote:
       "Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation. It's open source and free."
@@ -204,8 +210,8 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote: 'A opinionated code formatter',
     quoteDescription: 'quoteDescription',
     tags: ['prettier'],
-    logo: <AppleLogo />,
-    logoSymbol: <AppleLogo />,
+    logo: <PrettierLogoSymbol />,
+    logoSymbol: <PrettierLogoSymbol />,
     category: ['development'],
     personalNote: 'Prettier personalNote'
   },
@@ -239,7 +245,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quoteDescription:
       'From planning to production, bring teams together in one application. Ship secure code more efficiently to deliver value faster.',
     tags: ['vercel'],
-    logo: <VercelLogoSymbol />,
+    logo: <VercelLogo />,
     logoSymbol: <VercelLogoSymbol />,
     category: ['development'],
     personalNote: 'Vercel personalNote'
@@ -254,5 +260,18 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     logoSymbol: <FigLogoSymbol />,
     category: ['development'],
     personalNote: 'Fig personalNote'
+  },
+  {
+    title: 'Jest',
+    href: 'https://jestjs.io/',
+    quote:
+      'Jest is a delightful JavaScript Testing Framework with a focus on simplicity.',
+    quoteDescription:
+      'It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!',
+    tags: ['jest', 'testing'],
+    logo: <FigLogoSymbol />,
+    logoSymbol: <FigLogoSymbol />,
+    category: ['development'],
+    personalNote: 'Jest personalNote'
   }
 ];

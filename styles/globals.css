@@ -74,6 +74,10 @@ a {
 }
 
 @layer components {
+  hr {
+    @apply border-apple-gray-6;
+  }
+
   .text-gradient {
     -webkit-text-fill-color: transparent;
     @apply bg-clip-text;

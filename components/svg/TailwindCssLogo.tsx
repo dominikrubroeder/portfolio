@@ -2,10 +2,7 @@ import React from 'react';
 
 const TailwindCssLogo: React.FC = () => {
   return (
-    <svg
-      viewBox="0 0 248 31"
-      className="h-5 w-auto text-slate-900 dark:text-white"
-    >
+    <svg viewBox="0 0 248 31" className="h-5 w-auto">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

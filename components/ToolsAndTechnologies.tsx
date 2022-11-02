@@ -4,12 +4,14 @@ import { toolsAndTechnologiesData } from '../data';
 import InlineBrand from './InlineBrand';
 import AppleLogo from './svg/AppleLogo';
 import FramerMotionLogo from './svg/FramerMotionLogo';
-import NextJsLogo from './svg/NextJsLogo';
-import TailwindCssLogoSymbol from './svg/TailwindCssLogoSymbol';
+import NextJsLogo from './svg/NextJsLogoSymbol';
+import ReactLogoSymbol from './svg/ReactLogoSymbol';
+import TailwindLogoSymbol from './svg/TailwindLogoSymbol';
 import TypeScriptLogo from './svg/TypeScriptLogo';
 import VisualStudioCodeLogo from './svg/VisualStudioCodeLogo';
 import Button from './ui/Button';
 import Card from './ui/Card';
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 const ToolsAndTechnologies: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -53,7 +55,7 @@ const ToolsAndTechnologies: React.FC = () => {
           </Card>
         </section>
 
-        <section className="flex items-center justify-between gap-4">
+        <section className="flex items-start justify-between gap-4">
           <div className="max-w-lg">
             <h2 className="text-3xl font-bold text-theme-contrary">
               Development
@@ -66,7 +68,7 @@ const ToolsAndTechnologies: React.FC = () => {
                 <InlineBrand title="Next.js" logo={<NextJsLogo />} />,
                 <InlineBrand
                   title="Tailwind CSS"
-                  logo={<TailwindCssLogoSymbol />}
+                  logo={<TailwindLogoSymbol />}
                 />
                 , and
                 <InlineBrand title="TypeScript" logo={<TypeScriptLogo />} />. I
@@ -74,34 +76,107 @@ const ToolsAndTechnologies: React.FC = () => {
                 technologies.
               </p>
 
-              <Button variant="blank" text="Show more to setup information" />
+              <Button
+                variant="text"
+                text="Show more to setup information"
+                icon={<ChevronDownIcon className="h-5 w-5" />}
+                className="justify-start"
+              />
 
-              <div className="grid gap-1">
+              <div className="grid gap-16">
+                <hr />
+
                 <p>
                   <span className="mb-1 block font-bold text-theme-contrary">
-                    Animations:
+                    UI libraries:
                   </span>
                   <InlineBrand
-                    title="Framer Motion"
-                    logo={<FramerMotionLogo />}
+                    title="Tailwind UI"
+                    logo={<TailwindLogoSymbol />}
                   />
                   makes adding animations and transitions to
-                  <InlineBrand title="React.js" /> applications easy and yet
-                  powerfull for complex animations and transitions.
+                  <InlineBrand title="React" logo={<ReactLogoSymbol />} />{' '}
+                  applications easy and yet powerfull for complex animations and
+                  transitions.
                 </p>
 
-                <p>
-                  For simple animations CSS animations can be used within any
-                  project without any other tooling required. Tailwind CSS also
-                  supports creating custom CSS animations in their
-                  tailwind.config.js file with the keyframes prop.
-                </p>
+                <hr />
+
+                <div className="grid gap-4">
+                  <p>
+                    <span className="mb-1 block font-bold text-theme-contrary">
+                      Animations:
+                    </span>
+                    <InlineBrand
+                      title="Framer Motion"
+                      logo={<FramerMotionLogo />}
+                    />
+                    makes adding animations and transitions to
+                    <InlineBrand title="React.js" /> applications easy and yet
+                    powerfull for complex animations and transitions.
+                  </p>
+
+                  <p>
+                    For simple animations CSS animations can be used within any
+                    project without any other tooling required. Tailwind CSS
+                    also supports creating custom CSS animations in their
+                    tailwind.config.js file with the keyframes prop.
+                  </p>
+                </div>
+
+                <hr />
+
+                <div className="grid gap-4">
+                  <p>
+                    <span className="mb-1 block font-bold text-theme-contrary">
+                      Version control:
+                    </span>
+                    <InlineBrand
+                      title="Framer Motion"
+                      logo={<FramerMotionLogo />}
+                    />
+                    makes adding animations and transitions to
+                    <InlineBrand title="React.js" /> applications easy and yet
+                    powerfull for complex animations and transitions.
+                  </p>
+
+                  <p>
+                    For simple animations CSS animations can be used within any
+                    project without any other tooling required. Tailwind CSS
+                    also supports creating custom CSS animations in their
+                    tailwind.config.js file with the keyframes prop.
+                  </p>
+                </div>
+
+                <hr />
+
+                <div className="grid gap-4">
+                  <p>
+                    <span className="mb-1 block font-bold text-theme-contrary">
+                      Frameworks:
+                    </span>
+                    <InlineBrand
+                      title="Framer Motion"
+                      logo={<FramerMotionLogo />}
+                    />
+                    makes adding animations and transitions to
+                    <InlineBrand title="React.js" /> applications easy and yet
+                    powerfull for complex animations and transitions.
+                  </p>
+
+                  <p>
+                    For simple animations CSS animations can be used within any
+                    project without any other tooling required. Tailwind CSS
+                    also supports creating custom CSS animations in their
+                    tailwind.config.js file with the keyframes prop.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           <Card>
-            <div className="grid gap-2">
+            <div className="grid grid-cols-4 gap-2">
               {toolsAndTechnologiesData.map((item) => {
                 if (item.category.includes('development')) {
                   return <div key={item.title}>{item.logoSymbol}</div>;

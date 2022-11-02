@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TailwindCssLogoSymbol: React.FC = () => {
+const TailwindLogoSymbol: React.FC = () => {
   return (
     <svg viewBox="0 0 54 33" className="h-5 w-auto">
       <g clipPath="url(#prefix__clip0)">
@@ -20,4 +20,4 @@ const TailwindCssLogoSymbol: React.FC = () => {
   );
 };
 
-export default TailwindCssLogoSymbol;
+export default TailwindLogoSymbol;

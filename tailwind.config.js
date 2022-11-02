@@ -59,6 +59,9 @@ module.exports = {
       animation: {
         fadeUp: 'fadeUp .3s ease-out forwards',
         growAndShrink: 'growAndShrink 6s infinite'
+      },
+      gridTemplateColumns: {
+        'reponsive-min-4rem': 'repeat(auto-fit, minmax(min(4rem, 100%), 1fr))'
       }
     }
   },
