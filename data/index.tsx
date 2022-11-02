@@ -1,11 +1,14 @@
 import AppleLogo from '../components/svg/AppleLogo';
 import FramerMotionLogo from '../components/svg/FramerMotionLogo';
 import HeadlessUiLogo from '../components/svg/HeadlessUiLogo';
+import HeroiconsLogo from '../components/svg/HeroiconsLogo';
 import NextJsLogo from '../components/svg/NextJsLogo';
-import TailwindCssLogo from '../components/svg/TailwindCssLogo';
+import StorybookLogo from '../components/svg/StorybookLogo';
+import TailwindCssLogoSymbol from '../components/svg/TailwindCssLogoSymbol';
 import TailwindUiLogo from '../components/svg/TailwindUiLogo';
 import TypeScriptLogo from '../components/svg/TypeScriptLogo';
 import VisualStudioCodeLogo from '../components/svg/VisualStudioCodeLogo';
+import VueJsLogo from '../components/svg/VueJsLogo';
 import ToolsAndTechnologies from '../components/ToolsAndTechnologies';
 
 export enum LocalStorageKeys {
@@ -47,7 +50,7 @@ export type ToolAndTechnology = {
     | 'development'
     | 'design'
     | 'ecommerce'
-    | 'editor'
+    | 'environment'
     | 'animation'
   )[];
   description: string;
@@ -60,7 +63,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote: 'Apple quote.',
     tag: ['apple'],
     logo: <AppleLogo />,
-    category: ['platform'],
+    category: ['environment'],
     description: 'Apple description'
   },
   {
@@ -69,7 +72,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote: 'Code editing. Redefined.',
     tag: ['vs-code'],
     logo: <VisualStudioCodeLogo />,
-    category: ['editor'],
+    category: ['environment'],
     description: 'VS code description'
   },
   {
@@ -86,7 +89,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     href: 'https://tailwindcss.com/',
     quote: 'Rapidly build modern websites without ever leaving your HTML.',
     tag: ['tailwind', 'tailwind-css'],
-    logo: <TailwindCssLogo />,
+    logo: <TailwindCssLogoSymbol />,
     category: ['development'],
     description: 'Tailwind CSS description'
   },
@@ -132,9 +135,55 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     title: 'React',
     href: 'https://reactjs.org/',
     quote: 'A JavaScript library for building user interfaces.',
-    tag: ['react'],
+    tag: ['react.js'],
     logo: <HeadlessUiLogo />,
     category: ['development'],
     description: 'React description'
+  },
+  {
+    title: 'Vue.js',
+    href: 'https://vuejs.org/',
+    quote: 'The Progressive JavaScript Framework.',
+    tag: ['vue.js'],
+    logo: <VueJsLogo />,
+    category: ['development'],
+    description: 'Vue.js description'
+  },
+  {
+    title: 'Heroicons',
+    href: 'https://heroicons.com/',
+    quote: 'Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.',
+    tag: ['tailwind', 'icon-library'],
+    logo: <HeroiconsLogo />,
+    category: ['development', 'design'],
+    description: 'Heroicons description'
+  },
+  {
+    title: 'Storybook',
+    href: 'https://storybook.js.org/',
+    quote: 'Build UIs without the grunt work',
+    tag: ['storybook'],
+    logo: <StorybookLogo />,
+    category: ['development'],
+    description:
+      "Storybook is a frontend workshop for building UI components and pages in isolation. Thousands of teams use it for UI development, testing, and documentation. It's open source and free."
+  },
+  {
+    title: 'Prettier',
+    href: 'https://prettier.io/',
+    quote: 'A opinionated code formatter',
+    tag: ['prettier'],
+    logo: <AppleLogo />,
+    category: ['development'],
+    description: 'Prettier description'
+  },
+  {
+    title: 'GitHub',
+    href: 'https://github.com/',
+    quote: 'A opinionated code formatter',
+    tag: ['github'],
+    logo: <AppleLogo />,
+    category: ['development'],
+    description: 'Github description'
   }
 ];

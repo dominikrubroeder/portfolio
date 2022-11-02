@@ -1,5 +1,12 @@
 import { motion, useScroll, useSpring } from 'framer-motion';
 import React from 'react';
+import { toolsAndTechnologiesData } from '../data';
+import InlineBrand from './InlineBrand';
+import AppleLogo from './svg/AppleLogo';
+import NextJsLogo from './svg/NextJsLogo';
+import TailwindCssLogoSymbol from './svg/TailwindCssLogoSymbol';
+import TypeScriptLogo from './svg/TypeScriptLogo';
+import VisualStudioCodeLogo from './svg/VisualStudioCodeLogo';
 import Card from './ui/Card';
 
 const ToolsAndTechnologies: React.FC = () => {
@@ -18,17 +25,30 @@ const ToolsAndTechnologies: React.FC = () => {
       />
 
       <div className="mt-64 grid gap-64">
-        <section className="flex items-center justify-between gap-4">
+        <section className="flex flex-wrap items-center justify-between gap-4">
           <div className="max-w-lg">
-            <h2 className="text-3xl font-bold text-theme-contrary">Editor</h2>
+            <h2 className="text-3xl font-bold text-theme-contrary">
+              Environment
+            </h2>
+
             <p>
-              I am using <span className="text-theme-contrary">VS Code </span>
-              for <span className="text-theme-contrary">Mac </span>
+              I am using
+              <InlineBrand title="VS Code" logo={<VisualStudioCodeLogo />} />
+              for
+              <InlineBrand title="Mac" logo={<AppleLogo />} />
               for all code editing on the web.
             </p>
           </div>
 
-          <Card>VS Code</Card>
+          <Card>
+            <div className="grid gap-2">
+              {toolsAndTechnologiesData.map((item) => {
+                if (item.category.includes('environment')) {
+                  return <div key={item.title}>{item.logo}</div>;
+                }
+              })}
+            </div>
+          </Card>
         </section>
 
         <section className="flex items-center justify-between gap-4">
@@ -37,11 +57,15 @@ const ToolsAndTechnologies: React.FC = () => {
               Development
             </h2>
             <p>
-              My go-to web project setup is very clear to me:
-              <span className="text-theme-contrary"> Next.js</span>,
-              <span className="text-theme-contrary"> Tailwind CSS</span>,
-              <span className="text-theme-contrary"> TypeScript</span>. I am
-              also familiar with those development tools and technologies.
+              My go-to tech stack and setup for web project is very clear to me:
+              <InlineBrand title="Next.js" logo={<NextJsLogo />} />,
+              <InlineBrand
+                title="Tailwind CSS"
+                logo={<TailwindCssLogoSymbol />}
+              />
+              , and
+              <InlineBrand title="TypeScript" logo={<TypeScriptLogo />} />. I am
+              also familiar with further development tools and technologies.
             </p>
           </div>
 

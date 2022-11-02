@@ -2,11 +2,8 @@ import React from 'react';
 
 const NextJsLogo: React.FC = () => {
   return (
-    <svg
-      viewBox="0 0 207 124"
-      className="h-5 w-auto text-slate-900 dark:text-white"
-    >
-      <g clip-path="url(#clip0_312_15)">
+    <svg viewBox="0 0 207 124" className="h-5 w-auto text-theme-contrary">
+      <g clipPath="url(#clip0_312_15)">
         <path
           d="M48.9422 32.632H87.9012V35.7136H52.5134V58.907H85.7909V61.9886H52.5134V87.4527H88.307V90.5343H48.9422V32.632ZM91.3912 32.632H95.5306L113.874 58.0961L132.623 32.632L158.124 0.286804L116.228 60.7722L137.817 90.5343H133.516L113.874 63.4484L94.1508 90.5343H89.9303L111.682 60.7722L91.3912 32.632ZM139.359 35.7136V32.632H183.756V35.7136H163.303V90.5343H159.732V35.7136H139.359Z"
           fill="currentColor"
@@ -22,7 +19,7 @@ const NextJsLogo: React.FC = () => {
       </g>
       <defs>
         <clipPath id="clip0_312_15">
-          <rect fill="currentColor" />
+          <rect width="207" height="124" fill="currentColor" />
         </clipPath>
       </defs>
     </svg>
