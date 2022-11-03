@@ -74,7 +74,7 @@ module.exports = {
         navigationControl: 'navigationControl .3s ease-out forwards'
       },
       gridTemplateColumns: {
-        'reponsive-min-4rem': 'repeat(auto-fit, minmax(min(4rem, 100%), 1fr))'
+        'reponsive-min-12': 'repeat(auto-fit, minmax(min(12rem, 100%), 1fr))'
       }
     }
   },

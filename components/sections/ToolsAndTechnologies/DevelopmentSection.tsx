@@ -17,11 +17,11 @@ import ReactLogoSymbol from '../../svg/ReactLogoSymbol';
 import HeroiconsLogo from '../../svg/HeroiconsLogo';
 import HeroiconsLogoSymbol from '../../svg/HeroiconsLogoSymbol';
 import VueJsLogo from '../../svg/VueJsLogo';
-import Image from 'next/image';
 import SvelteLogoSymbol from '../../svg/SvelteLogoSymbol';
 import GatsbyLogoSymbol from '../../svg/GatsbyLogoSymbol';
 import QwikLogoSymbol from '../../svg/QwikLogoSymbol';
 import AstroLogoSymbol from '../../svg/AstroLogoSymbol';
+import SwiftUILogoSymbol from '../../img/SwiftUILogoSymbol';
 
 const DevelopmentSection: React.FC = () => {
   const [showFullSection, setShowFullSection] = useState(false);
@@ -235,7 +235,7 @@ const DevelopmentSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex animate-fadeUp items-center justify-between gap-8">
+          <div className="grid animate-fadeUp gap-8">
             <div className="grid w-full max-w-lg gap-2">
               <p>
                 <span className="mb-1 block font-bold text-theme-contrary">
@@ -265,16 +265,7 @@ const DevelopmentSection: React.FC = () => {
                 and
                 <InlineBrand
                   title="SwiftUI"
-                  logo={
-                    <Image
-                      width={96}
-                      height={96}
-                      src="/images/swiftui-logo.png"
-                      className="h-5 w-auto"
-                      alt="SwiftUI logo"
-                      priority
-                    />
-                  }
+                  logo={<SwiftUILogoSymbol />}
                   href="https://developer.apple.com/xcode/swiftui/"
                 />
                 especially for mobile app development on Apple platforms.
@@ -302,7 +293,9 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">{toolsAndTechnologies.frameworks}</div>
+            <div className="grid grid-cols-reponsive-min-12 gap-4">
+              {toolsAndTechnologies.frameworks}
+            </div>
           </div>
 
           <div className="flex animate-fadeUp items-center justify-between gap-8">

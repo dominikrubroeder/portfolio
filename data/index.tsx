@@ -22,7 +22,6 @@ import VueJsLogo from '../components/svg/VueJsLogo';
 import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies/index';
 import MuiLogoSymbol from '../components/svg/MuiLogoSymbol';
 import CssLogoSymbol from '../components/svg/CssLogoSymbol';
-import Image from 'next/image';
 import SvelteLogoSymbol from '../components/svg/SvelteLogoSymbol';
 import GatsbyLogo from '../components/svg/GatsbyLogo';
 import GatsbyLogoSymbol from '../components/svg/GatsbyLogoSymbol';
@@ -31,6 +30,10 @@ import QwikLogoSymbol from '../components/svg/QwikLogoSymbol';
 import AstroLogo from '../components/svg/AstroLogo';
 import AstroLogoSymbol from '../components/svg/AstroLogoSymbol';
 import TailwindUiLogo from '../components/svg/TailwindUiLogo';
+import Socials from '../components/sections/Socials';
+import SwiftUILogoSymbol from '../components/img/SwiftUILogoSymbol';
+import LinkedInLogoSymbol from '../components/img/LinkedInLogoSymbol';
+import XingLogoSymbol from '../components/svg/XingLogoSymbol';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'
@@ -51,7 +54,7 @@ export const defaultPageSectionData = [
 export const homePageSectionData = [
   { title: 'Tools & Technologies', content: <ToolsAndTechnologies /> },
   { title: 'Projects', content: <p>Projects</p> },
-  { title: 'Socials', content: <p>Socials</p> }
+  { title: 'Socials', content: <Socials /> }
 ];
 
 export const themeSwitchData = [
@@ -77,6 +80,38 @@ export type ToolAndTechnology = {
     | 'animation'
   )[];
   personalNote: string;
+};
+
+export const toolsAndTechnologies: {
+  development: {
+    all: ToolAndTechnology[];
+    environment: ToolAndTechnology[];
+    uiLibraries: ToolAndTechnology[];
+    animationLibraries: ToolAndTechnology[];
+    versionControlTools: ToolAndTechnology[];
+    frameworks: ToolAndTechnology[];
+  };
+  design: {
+    all: ToolAndTechnology[];
+  };
+  ecommerce: {
+    all: ToolAndTechnology[];
+  };
+} = {
+  development: {
+    all: [],
+    environment: [],
+    uiLibraries: [],
+    animationLibraries: [],
+    versionControlTools: [],
+    frameworks: []
+  },
+  design: {
+    all: []
+  },
+  ecommerce: {
+    all: []
+  }
 };
 
 export const toolsAndTechnologiesData: ToolAndTechnology[] = [
@@ -223,26 +258,8 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quoteDescription:
       'SwiftUI helps you build great-looking apps across all Apple platforms with the power of Swift — and surprisingly little code. You can bring even better experiences to everyone, on any Apple device, using just one set of tools and APIs.',
     tags: ['swift-ui', 'development-framework', 'swift-framework'],
-    logo: (
-      <Image
-        width={96}
-        height={96}
-        src="/images/swiftui-logo.png"
-        className="h-5 w-auto"
-        alt="SwiftUI logo"
-        priority
-      />
-    ),
-    logoSymbol: (
-      <Image
-        width={96}
-        height={96}
-        src="/images/swiftui-logo.png"
-        className="h-5 w-auto"
-        alt="SwiftUI logo"
-        priority
-      />
-    ),
+    logo: <SwiftUILogoSymbol />,
+    logoSymbol: <SwiftUILogoSymbol />,
     category: ['development'],
     personalNote: 'SwiftUI personalNote'
   },
@@ -385,5 +402,29 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     logoSymbol: <CssLogoSymbol />,
     category: ['development'],
     personalNote: 'CSS personalNote'
+  }
+];
+
+type Social = {
+  title: string;
+  href: string;
+  logo: JSX.Element;
+};
+
+export const socialData: Social[] = [
+  {
+    title: 'GitHub',
+    href: 'https://www.github.com/dominikrubroeder/',
+    logo: <GitHubLogo />
+  },
+  {
+    title: 'LinkedIn',
+    href: 'https://de.linkedin.com/in/dominik-rubr%C3%B6der-49a63817b',
+    logo: <LinkedInLogoSymbol />
+  },
+  {
+    title: 'Xing',
+    href: 'https://www.xing.com/profile/Dominik_Rubroeder',
+    logo: <XingLogoSymbol />
   }
 ];
