@@ -3,14 +3,19 @@ import React from 'react';
 interface CardProps {
   children: React.ReactNode;
   className?: string;
+  alignment?: 'start' | 'center';
 }
 
-const Card: React.FC<CardProps> = ({ children, className }) => {
+const Card: React.FC<CardProps> = ({
+  children,
+  className,
+  alignment = 'center'
+}) => {
   return (
     <div
-      className={`rounded-2xl bg-apple-gray-6 p-8 ${
-        className ? className : ''
-      }`}
+      className={`${
+        alignment === 'center' ? 'flex items-center justify-center' : ''
+      } rounded-2xl bg-apple-gray-6 p-8  ${className ? className : ''}`}
     >
       {children}
     </div>

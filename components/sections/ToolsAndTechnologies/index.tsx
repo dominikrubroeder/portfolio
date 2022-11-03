@@ -16,13 +16,13 @@ const ToolsAndTechnologies: React.FC = () => {
   });
 
   return (
-    <div>
+    <>
       <motion.div
         className="w-4 rounded-xl bg-gradient-to-t from-apple-purple to-apple-pink"
         style={{ scaleY }}
       />
 
-      <div className="mx-auto mt-64 grid w-full max-w-3xl gap-32">
+      <div className="mx-auto mt-64 grid w-full max-w-5xl gap-32">
         <section className="flex flex-wrap items-center justify-between gap-4">
           <div className="max-w-lg">
             <h2 className="text-3xl font-bold text-theme-contrary">
@@ -115,7 +115,7 @@ const ToolsAndTechnologies: React.FC = () => {
           </Card>
         </section>
       </div>
-    </div>
+    </>
   );
 };
 

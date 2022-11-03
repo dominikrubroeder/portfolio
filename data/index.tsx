@@ -28,6 +28,9 @@ import GatsbyLogo from '../components/svg/GatsbyLogo';
 import GatsbyLogoSymbol from '../components/svg/GatsbyLogoSymbol';
 import QwikLogo from '../components/svg/QwikLogoSymbol';
 import QwikLogoSymbol from '../components/svg/QwikLogoSymbol';
+import AstroLogo from '../components/svg/AstroLogo';
+import AstroLogoSymbol from '../components/svg/AstroLogoSymbol';
+import TailwindUiLogo from '../components/svg/TailwindUiLogo';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'
@@ -116,7 +119,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote: 'Rapidly build modern websites without ever leaving your HTML.',
     quoteDescription: 'quoteDescription',
     tags: ['tailwind', 'tailwind-css'],
-    logo: <TailwindCssLogoSymbol />,
+    logo: <TailwindUiLogo />,
     logoSymbol: <TailwindCssLogoSymbol />,
     category: ['development'],
     personalNote: 'Tailwind CSS personalNote'
@@ -137,18 +140,118 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     href: 'https://www.framer.com/motion/',
     quote: 'A production-ready motion library for React.',
     quoteDescription: 'quoteDescription',
-    tags: ['framer-motion'],
+    tags: ['framer-motion', 'animation'],
     logo: <FramerMotionLogo />,
     logoSymbol: <FramerMotionLogo />,
     category: ['development', 'animation'],
     personalNote: 'Framer Motion personalNote'
   },
   {
+    title: 'React',
+    href: 'https://reactjs.org/',
+    quote: 'A JavaScript library for building user interfaces.',
+    quoteDescription: 'quoteDescription',
+    tags: ['react.js', 'development-framework', 'javascript-framework'],
+    logo: <ReactLogoSymbol />,
+    logoSymbol: <ReactLogoSymbol />,
+    category: ['development'],
+    personalNote: 'React personalNote'
+  },
+  {
+    title: 'Vue.js',
+    href: 'https://vuejs.org/',
+    quote: 'The Progressive JavaScript Framework.',
+    quoteDescription: 'quoteDescription',
+    tags: ['vue.js', 'development-framework', 'javascript-framework'],
+    logo: <VueJsLogo />,
+    logoSymbol: <VueJsLogo />,
+    category: ['development'],
+    personalNote: 'Vue.js personalNote'
+  },
+  {
+    title: 'Astro',
+    href: 'https://astro.build/',
+    quote: 'Build faster websites.',
+    quoteDescription:
+      'Pull content from anywhere and serve it fast with Astros next-gen island architecture.',
+    tags: ['astro', 'development-framework', 'javascript-framework'],
+    logo: <AstroLogo />,
+    logoSymbol: <AstroLogoSymbol />,
+    category: ['development'],
+    personalNote: 'Astro personalNote'
+  },
+  {
+    title: 'Gatsby',
+    href: 'https://www.gatsbyjs.com/',
+    quote: 'The future of web development is here.',
+    quoteDescription:
+      'There’s a reason why the world’s top-performing website teams use Gatsby. Whether your site has 100 pages or 100,000 pages—we’re obsessed with delivering dynamic web experiences with performance and security that scales.',
+    tags: ['gatbsy', 'development-framework', 'javascript-framework'],
+    logo: <GatsbyLogo />,
+    logoSymbol: <GatsbyLogoSymbol />,
+    category: ['development'],
+    personalNote: 'Gatsby personalNote'
+  },
+  {
+    title: 'Svelte',
+    href: 'https://svelte.dev/',
+    quote: 'Cybernetically enhanced web apps',
+    quoteDescription: 'Svelte quoteDescription',
+    tags: ['svelte', 'development-framework', 'javascript-framework'],
+    logo: <SvelteLogoSymbol />,
+    logoSymbol: <SvelteLogoSymbol />,
+    category: ['development'],
+    personalNote: 'Svelte personalNote'
+  },
+  {
+    title: 'qwik',
+    href: 'https://qwik.builder.io/',
+    quote: 'Framework reimagined for the edge.',
+    quoteDescription:
+      'No hydration, auto lazy-loading, edge-optimized, and fun.',
+    tags: ['qwik', 'development-framework', 'javascript-framework'],
+    logo: <QwikLogo />,
+    logoSymbol: <QwikLogoSymbol />,
+    category: ['development'],
+    personalNote: 'qwik personalNote'
+  },
+  {
+    title: 'Swift UI',
+    href: 'https://developer.apple.com/xcode/swiftui/',
+    quote:
+      'Swift UI – declarative syntax for building native applications on all Apple platforms.',
+    quoteDescription:
+      'SwiftUI helps you build great-looking apps across all Apple platforms with the power of Swift — and surprisingly little code. You can bring even better experiences to everyone, on any Apple device, using just one set of tools and APIs.',
+    tags: ['swift-ui', 'development-framework', 'swift-framework'],
+    logo: (
+      <Image
+        width={96}
+        height={96}
+        src="/images/swiftui-logo.png"
+        className="h-5 w-auto"
+        alt="SwiftUI logo"
+        priority
+      />
+    ),
+    logoSymbol: (
+      <Image
+        width={96}
+        height={96}
+        src="/images/swiftui-logo.png"
+        className="h-5 w-auto"
+        alt="SwiftUI logo"
+        priority
+      />
+    ),
+    category: ['development'],
+    personalNote: 'SwiftUI personalNote'
+  },
+  {
     title: 'Tailwind UI',
     href: 'https://tailwindui.com/',
     quote: 'Build your next idea even faster.',
     quoteDescription: 'quoteDescription',
-    tags: ['tailwind', 'tailwind-ui'],
+    tags: ['tailwind', 'tailwind-ui', 'ui-library'],
     logo: <TailwindLogoSymbol />,
     logoSymbol: <TailwindLogoSymbol />,
     category: ['development'],
@@ -161,33 +264,11 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote:
       'Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.',
     quoteDescription: 'quoteDescription',
-    tags: ['tailwind', 'headless-ui', 'react', 'vue'],
+    tags: ['tailwind', 'headless-ui', 'ui-library', 'react', 'vue'],
     logo: <HeadlessUiLogo />,
     logoSymbol: <HeadlessUiLogoSymbol />,
     category: ['development'],
     personalNote: 'Headless UI personalNote'
-  },
-  {
-    title: 'React',
-    href: 'https://reactjs.org/',
-    quote: 'A JavaScript library for building user interfaces.',
-    quoteDescription: 'quoteDescription',
-    tags: ['react.js'],
-    logo: <ReactLogoSymbol />,
-    logoSymbol: <ReactLogoSymbol />,
-    category: ['development'],
-    personalNote: 'React personalNote'
-  },
-  {
-    title: 'Vue.js',
-    href: 'https://vuejs.org/',
-    quote: 'The Progressive JavaScript Framework.',
-    quoteDescription: 'quoteDescription',
-    tags: ['vue.js'],
-    logo: <VueJsLogo />,
-    logoSymbol: <VueJsLogo />,
-    category: ['development'],
-    personalNote: 'Vue.js personalNote'
   },
   {
     title: 'Heroicons',
@@ -228,7 +309,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     href: 'https://github.com/',
     quote: 'A opinionated code formatter',
     quoteDescription: 'quoteDescription',
-    tags: ['github'],
+    tags: ['github', 'version-control'],
     logo: <GitHubLogo />,
     logoSymbol: <GitHubLogo />,
     category: ['development'],
@@ -240,7 +321,7 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote: 'The One DevOps Platform',
     quoteDescription:
       'From planning to production, bring teams together in one application. Ship secure code more efficiently to deliver value faster.',
-    tags: ['gitlab'],
+    tags: ['gitlab', 'version-control'],
     logo: <GitLabLogo />,
     logoSymbol: <GitLabLogo />,
     category: ['development'],
@@ -248,10 +329,9 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
   },
   {
     title: 'Vercel',
-    href: 'https://about.gitlab.com/',
-    quote: 'The One DevOps Platform',
-    quoteDescription:
-      'From planning to production, bring teams together in one application. Ship secure code more efficiently to deliver value faster.',
+    href: 'https://vercel.com/',
+    quote: 'Vercel quote',
+    quoteDescription: 'Vercel quoteDescription.',
     tags: ['vercel'],
     logo: <VercelLogo />,
     logoSymbol: <VercelLogoSymbol />,
@@ -300,88 +380,10 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     quote:
       'CSS (Cascading Style Sheets) is a web language for applying layout structures and styles to HTML elements.',
     quoteDescription: 'CSS quote description',
-    tags: ['css'],
+    tags: ['css', 'animation'],
     logo: <CssLogoSymbol />,
     logoSymbol: <CssLogoSymbol />,
     category: ['development'],
     personalNote: 'CSS personalNote'
-  },
-  {
-    title: 'Swift UI',
-    href: 'https://developer.apple.com/xcode/swiftui/',
-    quote:
-      'Swift UI – declarative syntax for building native applications on all Apple platforms.',
-    quoteDescription:
-      'SwiftUI helps you build great-looking apps across all Apple platforms with the power of Swift — and surprisingly little code. You can bring even better experiences to everyone, on any Apple device, using just one set of tools and APIs.',
-    tags: ['swift-ui'],
-    logo: (
-      <Image
-        width={96}
-        height={96}
-        src="/images/swiftui-logo.png"
-        className="h-5 w-auto"
-        alt="SwiftUI logo"
-        priority
-      />
-    ),
-    logoSymbol: (
-      <Image
-        width={96}
-        height={96}
-        src="/images/swiftui-logo.png"
-        className="h-5 w-auto"
-        alt="SwiftUI logo"
-        priority
-      />
-    ),
-    category: ['development'],
-    personalNote: 'SwiftUI personalNote'
-  },
-  {
-    title: 'Svelte',
-    href: 'https://svelte.dev/',
-    quote: 'Cybernetically enhanced web apps',
-    quoteDescription: 'Svelte quoteDescription',
-    tags: ['svelte'],
-    logo: <SvelteLogoSymbol />,
-    logoSymbol: <SvelteLogoSymbol />,
-    category: ['development'],
-    personalNote: 'Svelte personalNote'
-  },
-  {
-    title: 'Gatsby',
-    href: 'https://www.gatsbyjs.com/',
-    quote: 'The future of web development is here.',
-    quoteDescription:
-      'There’s a reason why the world’s top-performing website teams use Gatsby. Whether your site has 100 pages or 100,000 pages—we’re obsessed with delivering dynamic web experiences with performance and security that scales.',
-    tags: ['gatbsy'],
-    logo: <GatsbyLogo />,
-    logoSymbol: <GatsbyLogoSymbol />,
-    category: ['development'],
-    personalNote: 'Gatsby personalNote'
-  },
-  {
-    title: 'Astro',
-    href: 'https://astro.build/',
-    quote: 'Build faster websites.',
-    quoteDescription:
-      'Pull content from anywhere and serve it fast with Astros next-gen island architecture.',
-    tags: ['astro'],
-    logo: <QwikLogo />,
-    logoSymbol: <QwikLogoSymbol />,
-    category: ['development'],
-    personalNote: 'Astro personalNote'
-  },
-  {
-    title: 'qwik',
-    href: 'https://qwik.builder.io/',
-    quote: 'Framework reimagined for the edge.',
-    quoteDescription:
-      'No hydration, auto lazy-loading, edge-optimized, and fun.',
-    tags: ['qwik'],
-    logo: <QwikLogo />,
-    logoSymbol: <QwikLogoSymbol />,
-    category: ['development'],
-    personalNote: 'qwik personalNote'
   }
 ];

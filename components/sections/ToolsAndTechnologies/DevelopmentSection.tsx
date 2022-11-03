@@ -9,8 +9,6 @@ import TypeScriptLogo from '../../svg/TypeScriptLogo';
 import FramerMotionLogo from '../../svg/FramerMotionLogo';
 import { toolsAndTechnologiesData } from '../../../data';
 import HeadlessUiLogoSymbol from '../../svg/HeadlessUiLogoSymbol';
-import TailwindUiLogo from '../../svg/TailwindUiLogo';
-import HeadlessUiLogo from '../../svg/HeadlessUiLogo';
 import MuiLogoSymbol from '../../svg/MuiLogoSymbol';
 import CssLogoSymbol from '../../svg/CssLogoSymbol';
 import GitHubLogo from '../../svg/GitHubLogo';
@@ -23,11 +21,60 @@ import Image from 'next/image';
 import SvelteLogoSymbol from '../../svg/SvelteLogoSymbol';
 import GatsbyLogoSymbol from '../../svg/GatsbyLogoSymbol';
 import QwikLogoSymbol from '../../svg/QwikLogoSymbol';
-import QwikLogo from '../../svg/QwikLogo';
-import GatsbyLogo from '../../svg/GatsbyLogo';
+import AstroLogoSymbol from '../../svg/AstroLogoSymbol';
 
 const DevelopmentSection: React.FC = () => {
   const [showFullSection, setShowFullSection] = useState(false);
+
+  const toolsAndTechnologies: {
+    developmentTools: JSX.Element[];
+    uiLibraries: JSX.Element[];
+    animationLibraries: JSX.Element[];
+    versionControlTools: JSX.Element[];
+    frameworks: JSX.Element[];
+  } = {
+    developmentTools: [],
+    uiLibraries: [],
+    animationLibraries: [],
+    versionControlTools: [],
+    frameworks: []
+  };
+
+  toolsAndTechnologiesData.forEach((item) => {
+    if (item.category.includes('development')) {
+      toolsAndTechnologies.developmentTools.push(
+        <a
+          key={item.title}
+          className="interactive flex h-8 w-8 items-center justify-center rounded-lg bg-apple-gray-4 p-1"
+          href={item.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {item.logoSymbol}
+        </a>
+      );
+
+      const CardElement = (
+        <Card key={item.title}>
+          <InlineBrand
+            title={item.title}
+            logo={item.logoSymbol}
+            href={item.href}
+            interactive
+          />
+        </Card>
+      );
+
+      if (item.tags.includes('ui-library'))
+        toolsAndTechnologies.uiLibraries.push(CardElement);
+      if (item.tags.includes('animation'))
+        toolsAndTechnologies.animationLibraries.push(CardElement);
+      if (item.tags.includes('version-control'))
+        toolsAndTechnologies.versionControlTools.push(CardElement);
+      if (item.tags.includes('development-framework'))
+        toolsAndTechnologies.frameworks.push(CardElement);
+    }
+  });
 
   return (
     <section>
@@ -66,12 +113,8 @@ const DevelopmentSection: React.FC = () => {
         </div>
 
         <Card>
-          <div className="grid grid-cols-4 gap-2">
-            {toolsAndTechnologiesData.map((item) => {
-              if (item.category.includes('development')) {
-                return <div key={item.title}>{item.logoSymbol}</div>;
-              }
-            })}
+          <div className="grid grid-cols-4 gap-4">
+            {toolsAndTechnologies.developmentTools}
           </div>
         </Card>
       </div>
@@ -112,27 +155,11 @@ const DevelopmentSection: React.FC = () => {
                   logo={<MuiLogoSymbol />}
                   href="https://mui.com/"
                 />
-                or also known as MUI.
+                or also known as MUI in short.
               </p>
             </div>
 
-            <div className="grid gap-4">
-              <Card>
-                <TailwindUiLogo />
-              </Card>
-
-              <Card>
-                <HeadlessUiLogo />
-              </Card>
-
-              <Card>
-                <InlineBrand
-                  title="Material UI"
-                  logo={<MuiLogoSymbol />}
-                  href="https://mui.com/"
-                />
-              </Card>
-            </div>
+            <div className="grid gap-4">{toolsAndTechnologies.uiLibraries}</div>
           </div>
 
           <div className="flex animate-fadeUp items-center justify-between gap-8">
@@ -177,21 +204,7 @@ const DevelopmentSection: React.FC = () => {
             </div>
 
             <div className="grid gap-4">
-              <Card>
-                <InlineBrand
-                  title="Framer Motion"
-                  logo={<FramerMotionLogo />}
-                  href="https://www.framer.com/motion/"
-                />
-              </Card>
-
-              <Card>
-                <InlineBrand
-                  title="CSS 3"
-                  logo={<CssLogoSymbol />}
-                  href="https://www.w3schools.com/css/css3_animations.asp"
-                />
-              </Card>
+              {toolsAndTechnologies.animationLibraries}
             </div>
           </div>
 
@@ -218,21 +231,7 @@ const DevelopmentSection: React.FC = () => {
             </div>
 
             <div className="grid gap-4">
-              <Card>
-                <InlineBrand
-                  title="GitHub"
-                  logo={<GitHubLogo />}
-                  href="https://github.com/dominikrubroeder"
-                />
-              </Card>
-
-              <Card>
-                <InlineBrand
-                  title="GitLab"
-                  logo={<GitLabLogo />}
-                  href="https://about.gitlab.com/"
-                />
-              </Card>
+              {toolsAndTechnologies.versionControlTools}
             </div>
           </div>
 
@@ -291,7 +290,7 @@ const DevelopmentSection: React.FC = () => {
                 ,
                 <InlineBrand
                   title="Astro.js"
-                  logo={<SvelteLogoSymbol />}
+                  logo={<AstroLogoSymbol />}
                   href="https://astro.build/"
                 />
                 or
@@ -303,62 +302,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">
-              <Card>
-                <InlineBrand
-                  title="React.js"
-                  logo={<ReactLogoSymbol />}
-                  href="https://reactjs.org/"
-                />
-              </Card>
-
-              <Card>
-                <InlineBrand
-                  title="Vue.js"
-                  logo={<VueJsLogo />}
-                  href="https://vuejs.org/"
-                />
-              </Card>
-
-              <Card>
-                <InlineBrand
-                  logo={<GatsbyLogo />}
-                  href="https://www.gatsbyjs.com/"
-                />
-              </Card>
-
-              <Card>
-                <InlineBrand
-                  title="SwiftUI"
-                  logo={
-                    <Image
-                      width={96}
-                      height={96}
-                      src="/images/swiftui-logo.png"
-                      className="h-5 w-auto"
-                      alt="SwiftUI logo"
-                      priority
-                    />
-                  }
-                  href="https://developer.apple.com/xcode/swiftui/"
-                />
-              </Card>
-
-              <Card>
-                <InlineBrand
-                  title="Svelte.js"
-                  logo={<SvelteLogoSymbol />}
-                  href="https://svelte.dev/"
-                />
-              </Card>
-
-              <Card>
-                <InlineBrand
-                  logo={<QwikLogo />}
-                  href="https://qwik.builder.io/"
-                />
-              </Card>
-            </div>
+            <div className="grid gap-4">{toolsAndTechnologies.frameworks}</div>
           </div>
 
           <div className="flex animate-fadeUp items-center justify-between gap-8">
