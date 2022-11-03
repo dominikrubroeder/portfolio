@@ -2,16 +2,16 @@ import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { defaultPageSectionData } from '../data';
+import { defaultPageSectionData } from '../../data';
 
-interface PageNavigationProps {
+interface NavigationProps {
   data?: { title: string; content: JSX.Element }[];
   heroSectionIsOnScreen: boolean;
   activeSection: number;
   activateSection: (index: number) => void;
 }
 
-const PageNavigation: React.FC<PageNavigationProps> = ({
+const Navigation: React.FC<NavigationProps> = ({
   data = defaultPageSectionData,
   heroSectionIsOnScreen,
   activeSection = 0,
@@ -135,7 +135,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
   );
 };
 
-export default PageNavigation;
+export default Navigation;
 
 interface SectionListProps {
   data?: { title: string; content: JSX.Element }[];

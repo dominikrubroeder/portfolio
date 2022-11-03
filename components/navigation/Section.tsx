@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from 'react';
-import useIsOnScreen from '../hooks/useIsOnScreen';
+import useIsOnScreen from '../../hooks/useIsOnScreen';
 
-interface TrackableSectionProps {
+interface SectionProps {
   children: React.ReactNode;
   id: number;
   className?: string;
   setActiveSection: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const TrackableSection: React.FC<TrackableSectionProps> = ({
+const Section: React.FC<SectionProps> = ({
   children,
   id,
   className,
@@ -32,4 +32,4 @@ const TrackableSection: React.FC<TrackableSectionProps> = ({
   );
 };
 
-export default TrackableSection;
+export default Section;

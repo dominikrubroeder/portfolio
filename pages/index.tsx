@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { useRef, useState } from 'react';
-import TrackableSection from '../components/TrackableSection';
+import Section from '../components/navigation/Section';
 import useIsOnScreen from '../hooks/useIsOnScreen';
-import PageNavigation from '../components/PageNavigation';
+import Navigation from '../components/navigation/Navigation';
 import { homePageSectionData } from '../data';
 import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies';
 import Projects from '../components/sections/Projects';
@@ -44,7 +44,7 @@ export default function Home() {
       <ThemeSwitch />
 
       <section ref={heroSectionRef}>
-        <TrackableSection
+        <Section
           className="flex min-h-screen-navigation-theme-switch items-center justify-center px-4"
           id={0}
           setActiveSection={setActiveSection}
@@ -60,39 +60,39 @@ export default function Home() {
               {/* <ReactTypingEffect text={['Animations.', 'Transitions.']} /> */}
             </p>
           </div>
-        </TrackableSection>
+        </Section>
       </section>
 
-      <PageNavigation
+      <Navigation
         data={homePageSectionData}
         heroSectionIsOnScreen={heroSectionIsOnScreen}
         activeSection={activeSection}
         activateSection={activateSection}
       />
 
-      <TrackableSection
+      <Section
         className="mt-8 px-4 lg:px-0"
         id={1}
         setActiveSection={setActiveSection}
       >
         <ToolsAndTechnologies />
-      </TrackableSection>
+      </Section>
 
-      <TrackableSection
+      <Section
         className="mt-8 px-4 lg:px-0"
         id={2}
         setActiveSection={setActiveSection}
       >
         <Projects />
-      </TrackableSection>
+      </Section>
 
-      <TrackableSection
+      <Section
         className="flex min-h-screen items-center justify-center px-4 lg:px-0"
         id={3}
         setActiveSection={setActiveSection}
       >
         <Socials />
-      </TrackableSection>
+      </Section>
     </>
   );
 }
