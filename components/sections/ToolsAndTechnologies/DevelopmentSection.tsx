@@ -40,15 +40,16 @@ const DevelopmentSection: React.FC = () => {
     frameworks: []
   };
 
-  toolsAndTechnologiesData.forEach((item) => {
+  toolsAndTechnologiesData.forEach((item, index) => {
     if (item.category.includes('development')) {
       toolsAndTechnologies.developmentTools.push(
         <a
           key={item.title}
-          className="interactive flex h-8 w-8 items-center justify-center rounded-lg bg-apple-gray-4 p-1"
+          className="interactive invisible flex h-8 w-8 animate-fadeUp items-center justify-center rounded-lg bg-apple-gray-4 p-1 opacity-0"
           href={item.href}
           target="_blank"
           rel="noreferrer"
+          style={{ animationDelay: `${index * 40}ms` }}
         >
           {item.logoSymbol}
         </a>
@@ -78,8 +79,8 @@ const DevelopmentSection: React.FC = () => {
 
   return (
     <section>
-      <div className="flex w-full items-start justify-between gap-16">
-        <div className="max-w-lg">
+      <div className="grid gap-4 lg:flex lg:flex-wrap lg:items-center lg:justify-between">
+        <div className="md:max-w-lg">
           <h2 className="text-3xl font-bold text-theme-contrary">
             Development
           </h2>
@@ -112,17 +113,19 @@ const DevelopmentSection: React.FC = () => {
           </div>
         </div>
 
-        <Card>
-          <div className="grid grid-cols-4 gap-4">
-            {toolsAndTechnologies.developmentTools}
-          </div>
-        </Card>
+        {!showFullSection && (
+          <Card>
+            <div className="grid grid-cols-4 gap-4">
+              {toolsAndTechnologies.developmentTools}
+            </div>
+          </Card>
+        )}
       </div>
 
       {showFullSection && (
         <div className="my-16 grid gap-16">
-          <div className="flex animate-fadeUp items-center justify-between gap-8">
-            <div className="grid w-full max-w-lg gap-4">
+          <div className="grid animate-fadeUp gap-4 md:flex md:items-center md:justify-between md:gap-8">
+            <div className="grid w-full gap-4 md:md:max-w-lg">
               <p>
                 <span className="mb-1 block font-bold text-theme-contrary">
                   UI Libraries:
@@ -159,11 +162,13 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">{toolsAndTechnologies.uiLibraries}</div>
+            <div className="grid grid-cols-reponsive-min-12 gap-4">
+              {toolsAndTechnologies.uiLibraries}
+            </div>
           </div>
 
-          <div className="flex animate-fadeUp items-center justify-between gap-8">
-            <div className="grid w-full max-w-lg gap-4">
+          <div className="grid animate-fadeUp gap-4 md:flex md:items-center md:justify-between md:gap-8">
+            <div className="grid w-full gap-4 md:max-w-lg">
               <p>
                 <span className="mb-1 block font-bold text-theme-contrary">
                   Animations:
@@ -203,13 +208,13 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid grid-cols-reponsive-min-12 gap-4">
               {toolsAndTechnologies.animationLibraries}
             </div>
           </div>
 
-          <div className="flex animate-fadeUp items-center justify-between gap-8">
-            <div className="grid w-full max-w-lg gap-4">
+          <div className="grid animate-fadeUp gap-4 md:flex md:items-center md:justify-between md:gap-8">
+            <div className="grid w-full gap-4 md:max-w-lg">
               <p>
                 <span className="mb-1 block font-bold text-theme-contrary">
                   Version control:
@@ -230,13 +235,13 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid grid-cols-reponsive-min-12 gap-4">
               {toolsAndTechnologies.versionControlTools}
             </div>
           </div>
 
-          <div className="grid animate-fadeUp gap-8">
-            <div className="grid w-full max-w-lg gap-2">
+          <div className="grid animate-fadeUp gap-4 lg:gap-8">
+            <div className="grid w-full gap-2 md:max-w-lg">
               <p>
                 <span className="mb-1 block font-bold text-theme-contrary">
                   Frameworks:
@@ -298,8 +303,8 @@ const DevelopmentSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex animate-fadeUp items-center justify-between gap-8">
-            <div className="grid w-full max-w-lg gap-4">
+          <div className="grid animate-fadeUp gap-4 md:flex md:items-center md:justify-between md:gap-8">
+            <div className="grid w-full gap-4 md:max-w-lg">
               <p>
                 <span className="mb-1 block font-bold text-theme-contrary">
                   Icons:
@@ -315,7 +320,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid grid-cols-reponsive-min-12 gap-4">
               <Card>
                 <InlineBrand
                   logo={<HeroiconsLogo />}
@@ -325,8 +330,8 @@ const DevelopmentSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex animate-fadeUp items-center justify-between gap-8">
-            <div className="grid w-full max-w-lg gap-4">
+          <div className="grid animate-fadeUp gap-4 md:flex md:items-center md:justify-between md:gap-8">
+            <div className="grid w-full gap-4 md:max-w-lg">
               <p>
                 <span className="mb-1 block font-bold text-theme-contrary">
                   Other:
@@ -335,7 +340,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid grid-cols-reponsive-min-12 gap-4">
               <Card>
                 <InlineBrand
                   logo={<HeroiconsLogo />}

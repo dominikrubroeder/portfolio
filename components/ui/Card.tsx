@@ -15,7 +15,9 @@ const Card: React.FC<CardProps> = ({
     <div
       className={`${
         alignment === 'center' ? 'flex items-center justify-center' : ''
-      } rounded-2xl bg-apple-gray-6 p-8  ${className ? className : ''}`}
+      } animate-fadeUp rounded-2xl bg-apple-gray-6 p-8 ${
+        className ? className : ''
+      }`}
     >
       {children}
     </div>

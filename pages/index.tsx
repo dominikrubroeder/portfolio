@@ -112,7 +112,7 @@ export default function Home() {
       {homePageSectionData.map(({ content }, index) => (
         <TrackableSection
           key={index}
-          className={`flex min-h-screen items-center justify-center ${
+          className={`flex min-h-screen items-center justify-center px-4 lg:px-0 ${
             index === 0 ? 'mt-8' : ''
           }`}
           id={index + 1}

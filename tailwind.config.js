@@ -51,6 +51,18 @@ module.exports = {
             visibility: 'visible'
           }
         },
+        scaleUp: {
+          '0%': {
+            transform: 'scale(0.8)',
+            opacity: '0',
+            visibility: 'hidden'
+          },
+          '100%': {
+            transform: 'scale(1)',
+            opacity: '1',
+            visibility: 'visible'
+          }
+        },
         growAndShrink: {
           '0%, 100%': { transform: 'scale(0.95)' },
           '70%': { transform: 'scale(1)' }
@@ -70,6 +82,7 @@ module.exports = {
       },
       animation: {
         fadeUp: 'fadeUp .6s ease-out forwards',
+        scaleUp: 'scaleUp .6 ease-out forwards',
         growAndShrink: 'growAndShrink 6s infinite',
         navigationControl: 'navigationControl .3s ease-out forwards'
       },
