@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import { useRef, useState } from 'react';
 import TrackableSection from '../components/TrackableSection';
-import Switch from '../components/ui/Switch';
 import useIsOnScreen from '../hooks/useIsOnScreen';
-import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
-import Image from 'next/image';
 import PageNavigation from '../components/PageNavigation';
-import { homePageSectionData, themeSwitchData } from '../data';
+import { homePageSectionData } from '../data';
+import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies';
+import Projects from '../components/sections/Projects';
+import Socials from '../components/sections/Socials';
+import ThemeSwitch from '../components/ThemeSwitch';
 
 export default function Home() {
   const heroSectionRef = useRef<null | HTMLElement>(null);
@@ -40,11 +41,7 @@ export default function Home() {
 
       <div className="fixed left-0 bottom-0 right-0 block h-16 w-full bg-gradient-to-t from-theme-base to-transparent"></div>
 
-      <Switch
-        data={themeSwitchData}
-        as="theme-switch"
-        className="mx-auto mt-4 w-min"
-      />
+      <ThemeSwitch />
 
       <section ref={heroSectionRef}>
         <TrackableSection
@@ -66,61 +63,36 @@ export default function Home() {
         </TrackableSection>
       </section>
 
-      <header
-        className={`z-50 mt-4 flex gap-2 lg:-mt-4 ${
-          !heroSectionIsOnScreen
-            ? 'fixed bottom-6 lg:sticky lg:top-4'
-            : 'relative'
-        } `}
+      <PageNavigation
+        data={homePageSectionData}
+        heroSectionIsOnScreen={heroSectionIsOnScreen}
+        activeSection={activeSection}
+        activateSection={activateSection}
+      />
+
+      <TrackableSection
+        className="mt-8 px-4 lg:px-0"
+        id={1}
+        setActiveSection={setActiveSection}
       >
-        <button
-          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 lg:p-2 ${
-            heroSectionIsOnScreen
-              ? 'left-0 scale-50'
-              : '-left-[3.25rem] scale-100 lg:-left-20'
-          }`}
-          onClick={() => activateSection(0)}
-        >
-          <Image
-            src="/images/avatar-square.jpg"
-            width={28}
-            height={28}
-            alt="Logo"
-            className="rounded-full"
-            priority
-          />
-        </button>
+        <ToolsAndTechnologies />
+      </TrackableSection>
 
-        <PageNavigation
-          data={homePageSectionData}
-          activeSection={activeSection}
-          activateSection={activateSection}
-        />
+      <TrackableSection
+        className="mt-8 px-4 lg:px-0"
+        id={2}
+        setActiveSection={setActiveSection}
+      >
+        <Projects />
+      </TrackableSection>
 
-        <button
-          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-3 duration-300 hover:duration-150 lg:p-4 ${
-            heroSectionIsOnScreen
-              ? 'right-0 scale-50'
-              : '-right-[3.25rem] scale-100 lg:-right-20'
-          }`}
-          onClick={() => activateSection(0)}
-        >
-          <ChevronDoubleUpIcon className="h-4 w-4 group-hover:fill-theme-contrary" />
-        </button>
-      </header>
-
-      {homePageSectionData.map(({ content }, index) => (
-        <TrackableSection
-          key={index}
-          className={`flex min-h-screen items-center justify-center px-4 lg:px-0 ${
-            index === 0 ? 'mt-8' : ''
-          }`}
-          id={index + 1}
-          setActiveSection={setActiveSection}
-        >
-          {content}
-        </TrackableSection>
-      ))}
+      <TrackableSection
+        className="flex min-h-screen items-center justify-center px-4 lg:px-0"
+        id={3}
+        setActiveSection={setActiveSection}
+      >
+        <Socials />
+      </TrackableSection>
     </>
   );
 }

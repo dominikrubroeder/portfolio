@@ -1,83 +1,137 @@
+import { ChevronDoubleUpIcon } from '@heroicons/react/24/solid';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { defaultPageSectionData } from '../data';
 
 interface PageNavigationProps {
   data?: { title: string; content: JSX.Element }[];
+  heroSectionIsOnScreen: boolean;
   activeSection: number;
   activateSection: (index: number) => void;
 }
 
 const PageNavigation: React.FC<PageNavigationProps> = ({
   data = defaultPageSectionData,
+  heroSectionIsOnScreen,
   activeSection = 0,
   activateSection
 }) => {
   const [showSectionList, setShowSectionList] = useState(false);
 
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
-    <div className="relative z-50 transition active:scale-95">
-      <span className="absolute top-0 -left-2.5 hidden h-full w-12 rounded-l-full bg-apple-gray-6 lg:block"></span>
-
-      {showSectionList && (
-        <SectionList
-          data={data}
-          activeSection={activeSection}
-          activateSection={activateSection}
-          setShowSectionList={setShowSectionList}
-        />
-      )}
-
-      <ul
-        className="relative grid cursor-pointer items-center overflow-hidden rounded-full bg-apple-gray-6 px-4 lg:p-0"
-        style={{ gridTemplateColumns: `repeat(${data.length}, 1fr)` }}
-      >
-        {data.map(({ title }, index) => (
-          <li key={index}>
-            <span
-              className="flex items-center justify-center py-4 px-1 lg:hidden"
-              onClick={() =>
-                setShowSectionList((previousState) => !previousState)
-              }
-            >
-              <span
-                className={`flex h-2 w-2 rounded-full lg:hidden ${
-                  index === activeSection - 1
-                    ? 'bg-theme-contrary'
-                    : 'bg-apple-gray-4'
-                }`}
-              ></span>
-            </span>
-
-            <span
-              className={`switch__option relative hidden lg:flex ${
-                index === activeSection - 1 ? 'text-theme-contrary' : ''
-              }`}
-              onClick={() => activateSection(index + 1)}
-            >
-              {title}
-            </span>
-          </li>
-        ))}
-
-        <span
-          className="switch__indicator hidden overflow-hidden lg:flex"
-          style={{
-            width: `${100 / data.length}%`,
-            transform: `translate(${
-              activeSection === 0
-                ? '-100'
-                : activeSection === 1
-                ? '0'
-                : (activeSection - 1) * 100
-            }%, -50%)`
-          }}
+    <header
+      className={`z-50 mt-4 flex items-center justify-center gap-2 lg:-mt-4 ${
+        !heroSectionIsOnScreen
+          ? 'fixed bottom-6 lg:sticky lg:top-4'
+          : 'relative'
+      } `}
+    >
+      <div className="relative z-50 transition active:scale-95">
+        <button
+          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 lg:p-2 ${
+            heroSectionIsOnScreen
+              ? 'left-0 scale-50'
+              : '-left-[3.25rem] scale-100 lg:-left-20'
+          }`}
+          onClick={() => activateSection(0)}
         >
-          <span className="absolute left-0 top-0 h-full w-3/4 rounded-full bg-gradient-to-t from-apple-purple to-apple-pink transition"></span>
-        </span>
-      </ul>
+          <Image
+            src="/images/avatar-square.jpg"
+            width={28}
+            height={28}
+            alt="Logo"
+            className="rounded-full"
+            priority
+          />
+        </button>
 
-      <span className="absolute top-0 -right-2.5 hidden h-full w-12 rounded-r-full bg-apple-gray-6 lg:block"></span>
-    </div>
+        <div className="relative z-50">
+          <span className="absolute top-0 -left-2.5 hidden h-full w-12 rounded-l-full bg-apple-gray-6 lg:block"></span>
+
+          {showSectionList && (
+            <SectionList
+              data={data}
+              activeSection={activeSection}
+              activateSection={activateSection}
+              setShowSectionList={setShowSectionList}
+            />
+          )}
+
+          <ul
+            className="relative grid cursor-pointer items-center overflow-hidden rounded-full bg-apple-gray-6 px-4 lg:p-0"
+            style={{ gridTemplateColumns: `repeat(${data.length}, 1fr)` }}
+          >
+            {data.map(({ title }, index) => (
+              <li key={index}>
+                <span
+                  className="flex items-center justify-center py-4 px-1 lg:hidden"
+                  onClick={() =>
+                    setShowSectionList((previousState) => !previousState)
+                  }
+                >
+                  <span
+                    className={`flex h-2 w-2 rounded-full lg:hidden ${
+                      index === activeSection - 1
+                        ? 'bg-theme-contrary'
+                        : 'bg-apple-gray-4'
+                    }`}
+                  ></span>
+                </span>
+
+                <span
+                  className={`switch__option relative hidden lg:flex ${
+                    index === activeSection - 1 ? 'text-theme-contrary' : ''
+                  }`}
+                  onClick={() => activateSection(index + 1)}
+                >
+                  {title}
+                </span>
+              </li>
+            ))}
+
+            <span
+              className="switch__indicator hidden overflow-hidden lg:flex"
+              style={{
+                width: `${100 / data.length}%`,
+                transform: `translate(${
+                  activeSection === 0
+                    ? '-100'
+                    : activeSection === 1
+                    ? '0'
+                    : (activeSection - 1) * 100
+                }%, -50%)`
+              }}
+            >
+              <motion.span
+                className="absolute left-0 top-0 right-0 h-full origin-[0%] rounded-full bg-gradient-to-t from-apple-purple to-apple-pink transition"
+                style={{ scaleX }}
+              ></motion.span>
+            </span>
+          </ul>
+
+          <span className="absolute top-0 -right-2.5 hidden h-full w-12 rounded-r-full bg-apple-gray-6 lg:block"></span>
+        </div>
+
+        <button
+          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-3 duration-300 hover:duration-150 lg:p-4 ${
+            heroSectionIsOnScreen
+              ? 'right-0 scale-50'
+              : '-right-[3.25rem] scale-100 lg:-right-20'
+          }`}
+          onClick={() => activateSection(0)}
+        >
+          <ChevronDoubleUpIcon className="h-4 w-4 group-hover:fill-theme-contrary" />
+        </button>
+      </div>
+    </header>
   );
 };
 
