@@ -42,6 +42,7 @@ import AdobeInDesignLogoSymbol from '../components/svg/AdobeInDesignLogoSymbol';
 import AdobeXdLogo from '../components/svg/AdobeXdLogo';
 import AdobeXdLogoSymbol from '../components/svg/AdobeXdLogoSymbol';
 import AppleKeynoteLogoSymbol from '../components/img/AppleKeynoteLogoSymbol';
+import FontAwesomeLogoSymbol from '../components/svg/FontAwesomeLogoSymbol';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'
@@ -488,6 +489,18 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     tags: ['tailwind', 'icon-library'],
     logo: <HeroiconsLogo />,
     logoSymbol: <HeroiconsLogoSymbol />,
+    category: ['development', 'design'],
+    personalNote: 'Heroicons personalNote'
+  },
+  {
+    title: 'Font Awesome',
+    href: 'https://fontawesome.com/',
+    quote: 'Take the hassle out of icons in your website.',
+    quoteDescription:
+      'Font Awesome is the Internets icon library and toolkit, used by millions of designers, developers, and content creators.',
+    tags: ['icon-library'],
+    logo: <FontAwesomeLogoSymbol />,
+    logoSymbol: <FontAwesomeLogoSymbol />,
     category: ['development', 'design'],
     personalNote: 'Heroicons personalNote'
   }

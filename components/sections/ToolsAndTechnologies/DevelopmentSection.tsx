@@ -22,6 +22,7 @@ import GatsbyLogoSymbol from '../../svg/GatsbyLogoSymbol';
 import QwikLogoSymbol from '../../svg/QwikLogoSymbol';
 import AstroLogoSymbol from '../../svg/AstroLogoSymbol';
 import SwiftUILogoSymbol from '../../img/SwiftUILogoSymbol';
+import FontAwesomeLogoSymbol from '../../svg/FontAwesomeLogoSymbol';
 
 const DevelopmentSection: React.FC = () => {
   const [showFullSection, setShowFullSection] = useState(false);
@@ -177,7 +178,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid-cols-cardBrands grid gap-4">
+            <div className="grid grid-cols-cardBrands gap-4">
               {toolsAndTechnologies.uiLibraries}
             </div>
           </div>
@@ -223,7 +224,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid-cols-cardBrands grid gap-4">
+            <div className="grid grid-cols-cardBrands gap-4">
               {toolsAndTechnologies.animationLibraries}
             </div>
           </div>
@@ -250,7 +251,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid-cols-cardBrands grid gap-4">
+            <div className="grid grid-cols-cardBrands gap-4">
               {toolsAndTechnologies.versionControlTools}
             </div>
           </div>
@@ -288,7 +289,7 @@ const DevelopmentSection: React.FC = () => {
                   logo={<SwiftUILogoSymbol />}
                   href="https://developer.apple.com/xcode/swiftui/"
                 />
-                especially for mobile app development on Apple platforms.
+                for mobile app development on Apple platforms.
               </p>
 
               <p>
@@ -313,7 +314,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid-cols-cardBrands grid gap-4">
+            <div className="grid grid-cols-cardBrands gap-4">
               {toolsAndTechnologies.frameworks}
             </div>
           </div>
@@ -333,13 +334,44 @@ const DevelopmentSection: React.FC = () => {
                 seemlessly integrates within any project setup, especially when
                 using Tailwind CSS.
               </p>
+
+              <p>
+                <InlineBrand
+                  logo={<MuiLogoSymbol />}
+                  title="MUI Icons"
+                  href="https://mui.com/material-ui/material-icons/"
+                />
+                is another large icon libary for development and design tasks.
+                <InlineBrand
+                  logo={<FontAwesomeLogoSymbol />}
+                  title="Font Awesome"
+                  href="https://fontawesome.com/"
+                />
+                can also be considered to use.
+              </p>
             </div>
 
-            <div className="grid-cols-cardBrands grid gap-4">
+            <div className="grid grid-cols-cardBrands gap-4">
               <Card>
                 <InlineBrand
                   logo={<HeroiconsLogo />}
                   href="https://heroicons.com/"
+                />
+              </Card>
+
+              <Card>
+                <InlineBrand
+                  logo={<FontAwesomeLogoSymbol />}
+                  title="Font Awesome"
+                  href="https://fontawesome.com/"
+                />
+              </Card>
+
+              <Card>
+                <InlineBrand
+                  logo={<MuiLogoSymbol />}
+                  title="MUI Icons"
+                  href="https://mui.com/material-ui/material-icons/"
                 />
               </Card>
             </div>
@@ -355,7 +387,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid-cols-cardBrands grid gap-4">
+            <div className="grid grid-cols-cardBrands gap-4">
               <Card>
                 <InlineBrand
                   logo={<HeroiconsLogo />}

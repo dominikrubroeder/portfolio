@@ -9,11 +9,8 @@ const ToolsAndTechnologies: React.FC = () => {
   return (
     <Section title="Tools & Technologies.">
       <EnvironmentSection />
-      <hr />
       <DevelopmentSection />
-      <hr />
       <DesignSection />
-      <hr />
       <EcommerceSection />
     </Section>
   );

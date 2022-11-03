@@ -27,8 +27,8 @@ const DesignSection: React.FC = () => {
   });
 
   return (
-    <section className="flex items-center justify-between gap-4">
-      <div className="max-w-lg">
+    <section className="grid gap-4 md:flex md:flex-wrap md:items-center md:justify-between">
+      <div className="md:max-w-lg">
         <h3 className="text-3xl font-bold text-theme-contrary">Design</h3>
 
         <div className="grid gap-4">

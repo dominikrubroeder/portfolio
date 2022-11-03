@@ -22,9 +22,20 @@ const EnvironmentSection: React.FC = () => {
 
       <Card>
         <div className="grid gap-2">
-          {toolsAndTechnologiesData.map((item) => {
+          {toolsAndTechnologiesData.map((item, index) => {
             if (item.category.includes('environment')) {
-              return <div key={item.title}>{item.logoSymbol}</div>;
+              return (
+                <a
+                  key={item.title}
+                  className="interactive invisible flex h-12 w-12 animate-fadeUp items-center justify-center rounded-lg bg-apple-gray-4 p-1 opacity-0 md:h-8 md:w-8"
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ animationDelay: `${index * 40}ms` }}
+                >
+                  {item.logoSymbol}
+                </a>
+              );
             }
           })}
         </div>

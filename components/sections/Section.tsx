@@ -20,7 +20,7 @@ const Section: React.FC<SectionProps> = ({ title, children }) => {
       <Header title={title} scrollProgress={width} />
 
       <div
-        className="mx-auto mt-32 grid w-full max-w-3xl gap-32"
+        className="mx-auto grid w-full max-w-3xl gap-64 py-64"
         ref={sectionRef}
       >
         {children}
