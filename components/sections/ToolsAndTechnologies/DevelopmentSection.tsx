@@ -45,7 +45,7 @@ const DevelopmentSection: React.FC = () => {
       toolsAndTechnologies.developmentTools.push(
         <a
           key={item.title}
-          className="interactive invisible flex h-8 w-8 animate-fadeUp items-center justify-center rounded-lg bg-apple-gray-4 p-1 opacity-0"
+          className="interactive invisible flex h-12 w-12 animate-fadeUp items-center justify-center rounded-lg bg-apple-gray-4 p-1 opacity-0 md:h-8 md:w-8"
           href={item.href}
           target="_blank"
           rel="noreferrer"

@@ -4,15 +4,13 @@ import InlineBrand from '../../InlineBrand';
 import AppleLogo from '../../svg/AppleLogo';
 import VisualStudioCodeLogo from '../../svg/VisualStudioCodeLogo';
 import Card from '../../ui/Card';
-import DevelopmentSection from './DevelopmentSection';
+import DevelopmentSection from '../ToolsAndTechnologies/DevelopmentSection';
 
-const ToolsAndTechnologies: React.FC = () => {
+const Projects: React.FC = () => {
   return (
     <div className="mx-auto mt-64 grid w-full max-w-5xl gap-32">
       <header className="sticky top-0 z-50 flex w-full gap-16 bg-theme-base/30 py-4 backdrop-blur-sm lg:hidden">
-        <h2 className="text-3xl font-bold text-theme-contrary">
-          Tools & Technologies.
-        </h2>
+        <h2 className="text-3xl font-bold text-theme-contrary">Projects.</h2>
 
         <span className="relative top-0 -right-4 h-full w-full flex-1 rounded-full bg-gradient-to-t from-apple-purple to-apple-pink "></span>
       </header>
@@ -110,4 +108,4 @@ const ToolsAndTechnologies: React.FC = () => {
   );
 };
 
-export default ToolsAndTechnologies;
+export default Projects;

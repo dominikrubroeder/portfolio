@@ -60,7 +60,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
         ))}
 
         <span
-          className="switch__indicator hidden lg:flex"
+          className="switch__indicator hidden overflow-hidden lg:flex"
           style={{
             width: `${100 / data.length}%`,
             transform: `translate(${
@@ -71,7 +71,9 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
                 : (activeSection - 1) * 100
             }%, -50%)`
           }}
-        ></span>
+        >
+          <span className="absolute left-0 top-0 h-full w-3/4 rounded-full bg-gradient-to-t from-apple-purple to-apple-pink transition"></span>
+        </span>
       </ul>
 
       <span className="absolute top-0 -right-2.5 hidden h-full w-12 rounded-r-full bg-apple-gray-6 lg:block"></span>

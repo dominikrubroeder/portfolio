@@ -34,6 +34,7 @@ import Socials from '../components/sections/Socials';
 import SwiftUILogoSymbol from '../components/img/SwiftUILogoSymbol';
 import LinkedInLogoSymbol from '../components/img/LinkedInLogoSymbol';
 import XingLogoSymbol from '../components/svg/XingLogoSymbol';
+import Projects from '../components/sections/Projects';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'
@@ -53,7 +54,7 @@ export const defaultPageSectionData = [
 
 export const homePageSectionData = [
   { title: 'Tools & Technologies', content: <ToolsAndTechnologies /> },
-  { title: 'Projects', content: <p>Projects</p> },
+  { title: 'Projects', content: <Projects /> },
   { title: 'Socials', content: <Socials /> }
 ];
 
