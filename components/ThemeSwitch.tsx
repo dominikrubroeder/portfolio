@@ -3,13 +3,7 @@ import Switch from './ui/Switch';
 import { themeSwitchData } from '../data';
 
 const ThemeSwitch: React.FC = () => {
-  return (
-    <Switch
-      data={themeSwitchData}
-      as="theme-switch"
-      className="mx-auto mt-4 w-min"
-    />
-  );
+  return <Switch data={themeSwitchData} as="theme-switch" />;
 };
 
 export default ThemeSwitch;

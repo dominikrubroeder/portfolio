@@ -28,18 +28,18 @@ const Navigation: React.FC<NavigationProps> = ({
 
   return (
     <header
-      className={`z-50 mt-4 flex w-full items-center justify-center gap-2 lg:-mt-4 ${
+      className={`z-[100] mt-4 flex w-full items-center justify-center gap-2 md:-mt-4 ${
         !heroSectionIsOnScreen
-          ? 'fixed bottom-6 lg:sticky lg:top-4'
+          ? 'fixed bottom-6 md:sticky md:top-4'
           : 'relative'
       } `}
     >
       <div className="relative z-50 transition active:scale-95">
         <button
-          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 lg:p-2 ${
+          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 md:p-2 ${
             heroSectionIsOnScreen
               ? 'left-0 scale-50'
-              : '-left-[3.25rem] scale-100 lg:-left-20'
+              : '-left-[3.25rem] scale-100 md:-left-[4.25rem]'
           }`}
           onClick={() => activateSection(0)}
         >
@@ -54,7 +54,7 @@ const Navigation: React.FC<NavigationProps> = ({
         </button>
 
         <div className="relative z-50">
-          <span className="absolute top-0 -left-2.5 hidden h-full w-12 rounded-l-full bg-apple-gray-6 lg:block"></span>
+          <span className="absolute top-0 -left-2.5 hidden h-full w-12 rounded-l-full bg-apple-gray-6 md:block"></span>
 
           {showSectionList && (
             <SectionList
@@ -66,19 +66,19 @@ const Navigation: React.FC<NavigationProps> = ({
           )}
 
           <ul
-            className="relative grid cursor-pointer items-center overflow-hidden rounded-full bg-apple-gray-6 px-4 lg:p-0"
+            className="relative grid cursor-pointer items-center overflow-hidden rounded-full bg-apple-gray-6 px-4 md:p-0"
             style={{ gridTemplateColumns: `repeat(${data.length}, 1fr)` }}
           >
             {data.map(({ title }, index) => (
               <li key={index}>
                 <span
-                  className="flex items-center justify-center py-4 px-1 lg:hidden"
+                  className="flex items-center justify-center py-4 px-1 md:hidden"
                   onClick={() =>
                     setShowSectionList((previousState) => !previousState)
                   }
                 >
                   <span
-                    className={`flex h-2 w-2 rounded-full lg:hidden ${
+                    className={`flex h-2 w-2 rounded-full md:hidden ${
                       index === activeSection - 1
                         ? 'bg-theme-contrary'
                         : 'bg-apple-gray-4'
@@ -87,7 +87,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 </span>
 
                 <span
-                  className={`switch__option relative hidden lg:flex ${
+                  className={`switch__option relative hidden md:flex ${
                     index === activeSection - 1 ? 'text-theme-contrary' : ''
                   }`}
                   onClick={() => activateSection(index + 1)}
@@ -98,7 +98,7 @@ const Navigation: React.FC<NavigationProps> = ({
             ))}
 
             <span
-              className="switch__indicator hidden overflow-hidden lg:flex"
+              className="switch__indicator hidden overflow-hidden md:flex"
               style={{
                 width: `${100 / data.length}%`,
                 transform: `translate(${
@@ -117,14 +117,14 @@ const Navigation: React.FC<NavigationProps> = ({
             </span>
           </ul>
 
-          <span className="absolute top-0 -right-2.5 hidden h-full w-12 rounded-r-full bg-apple-gray-6 lg:block"></span>
+          <span className="absolute top-0 -right-2.5 hidden h-full w-12 rounded-r-full bg-apple-gray-6 md:block"></span>
         </div>
 
         <button
-          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-3 duration-300 hover:duration-150 lg:p-4 ${
+          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-3 duration-300 hover:duration-150 md:p-4 ${
             heroSectionIsOnScreen
               ? 'right-0 scale-50'
-              : '-right-[3.25rem] scale-100 lg:-right-20'
+              : '-right-[3.25rem] scale-100 md:-right-[4.25rem]'
           }`}
           onClick={() => activateSection(0)}
         >
@@ -161,7 +161,7 @@ const SectionList: React.FC<SectionListProps> = ({
         {data.map(({ title }, index) => (
           <li
             key={index}
-            className={`w-max cursor-pointer px-6 py-4 transition ${
+            className={`cursor-pointer whitespace-nowrap px-6 py-4 transition ${
               index !== data.length - 1 ? 'border-b border-apple-gray-5' : ''
             } ${index === activeSection - 1 ? 'text-theme-contrary' : ''}`}
             onClick={() => onClickHandler(index)}

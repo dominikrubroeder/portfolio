@@ -74,7 +74,7 @@ module.exports = {
             visibility: 'hidden'
           },
           '100%': {
-            transform: 'translateY(-25%) translateX(-50%) scale(1)',
+            transform: 'translateY(-30%) translateX(-50%) scale(1)',
             opacity: '1',
             visibility: 'visible'
           }
@@ -87,7 +87,7 @@ module.exports = {
         navigationControl: 'navigationControl .3s ease-out forwards'
       },
       gridTemplateColumns: {
-        'reponsive-min-12': 'repeat(auto-fit, minmax(min(12rem, 100%), 1fr))'
+        cardBrands: 'repeat(auto-fit, minmax(min(12rem, 16rem), 1fr))'
       }
     }
   },

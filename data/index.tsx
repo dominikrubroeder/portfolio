@@ -35,6 +35,13 @@ import SwiftUILogoSymbol from '../components/img/SwiftUILogoSymbol';
 import LinkedInLogoSymbol from '../components/img/LinkedInLogoSymbol';
 import XingLogoSymbol from '../components/svg/XingLogoSymbol';
 import Projects from '../components/sections/Projects';
+import FigmaLogoSymbol from '../components/svg/FigmaLogoSymbol';
+import AdobePhotoshopLogoSymbol from '../components/svg/AdobePhotoshopLogoSymbol';
+import AdobeIllustratorLogoSymbol from '../components/svg/AdobeIllustratorLogoSymbol';
+import AdobeInDesignLogoSymbol from '../components/svg/AdobeInDesignLogoSymbol';
+import AdobeXdLogo from '../components/svg/AdobeXdLogo';
+import AdobeXdLogoSymbol from '../components/svg/AdobeXdLogoSymbol';
+import AppleKeynoteLogoSymbol from '../components/img/AppleKeynoteLogoSymbol';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'
@@ -289,17 +296,6 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     personalNote: 'Headless UI personalNote'
   },
   {
-    title: 'Heroicons',
-    href: 'https://heroicons.com/',
-    quote: 'Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.',
-    quoteDescription: 'quoteDescription',
-    tags: ['tailwind', 'icon-library'],
-    logo: <HeroiconsLogo />,
-    logoSymbol: <HeroiconsLogoSymbol />,
-    category: ['development', 'design'],
-    personalNote: 'Heroicons personalNote'
-  },
-  {
     title: 'Storybook',
     href: 'https://storybook.js.org/',
     quote: 'Build UIs without the grunt work',
@@ -403,6 +399,97 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     logoSymbol: <CssLogoSymbol />,
     category: ['development'],
     personalNote: 'CSS personalNote'
+  },
+  {
+    title: 'Figma',
+    href: 'https://www.figma.com/',
+    quote: 'Nothing greate is made alone.',
+    quoteDescription:
+      'Figma connects everyone in the design process so teams can deliver better products, faster.',
+    tags: ['design', 'ui-design', 'ux-design', 'prototyping', 'wireframing'],
+    logo: <FigmaLogoSymbol />,
+    logoSymbol: <FigmaLogoSymbol />,
+    category: ['design'],
+    personalNote: 'Figma personalNote'
+  },
+  {
+    title: 'FigJam',
+    href: 'https://www.figma.com/figjam/',
+    quote: 'An online whiteboard for teams to ideate and brainstorm together.',
+    quoteDescription: 'FigJam quoteDescription.',
+    tags: ['design', 'whiteboard', 'brainstorm'],
+    logo: <FigmaLogoSymbol />,
+    logoSymbol: <FigmaLogoSymbol />,
+    category: ['design'],
+    personalNote: 'FigJam personalNote'
+  },
+  {
+    title: 'Keynote',
+    href: 'https://www.apple.com/keynote/',
+    quote: 'Presentations that stand out. Beautifully.',
+    quoteDescription: 'Keynote quoteDescription',
+    tags: ['presentation', 'presentation-design', 'animation'],
+    logo: <AppleKeynoteLogoSymbol />,
+    logoSymbol: <AppleKeynoteLogoSymbol />,
+    category: ['design'],
+    personalNote: 'Keynote personalNote'
+  },
+  {
+    title: 'Adobe Photoshop',
+    href: 'https://www.adobe.com/de/products/photoshop.html',
+    quote: 'Mit Photoshop Erstaunliches schaffen.',
+    quoteDescription: 'Adobe Photoshop quoteDescription.',
+    tags: ['design', 'graphic-design', 'photography'],
+    logo: <AdobePhotoshopLogoSymbol />,
+    logoSymbol: <AdobePhotoshopLogoSymbol />,
+    category: ['design'],
+    personalNote: 'Adobe Photoshop personalNote'
+  },
+  {
+    title: 'Adobe Illustrator',
+    href: 'https://www.adobe.com/de/products/illustrator.html',
+    quote: 'Grafiken mit Wow-Effekt. Einfach überall realisieren.',
+    quoteDescription: 'Adobe Illustrator quoteDescription.',
+    tags: ['design', 'graphic-design', 'photography'],
+    logo: <AdobeIllustratorLogoSymbol />,
+    logoSymbol: <AdobeIllustratorLogoSymbol />,
+    category: ['design'],
+    personalNote: 'Adobe Illustrator personalNote'
+  },
+  {
+    title: 'Adobe InDesign',
+    href: 'https://www.adobe.com/de/products/indesign.html',
+    quote: 'Für Designer und Layouter beginnt ein neues Kapitel.',
+    quoteDescription:
+      'Moderne Layouts für Print und digitale Medien – mit InDesign.',
+    tags: ['design', 'graphic-design'],
+    logo: <AdobeInDesignLogoSymbol />,
+    logoSymbol: <AdobeInDesignLogoSymbol />,
+    category: ['design'],
+    personalNote: 'Adobe InDesign personalNote'
+  },
+  {
+    title: 'Adobe XD',
+    href: 'https://www.adobe.com/de/products/xd.html',
+    quote: 'Entwirf das Unglaubliche.',
+    quoteDescription:
+      'Lebensecht in jeder Hinsicht. Erstelle atemberaubend realistische UI-/UX-Designs und hebe dich von anderen ab..',
+    tags: ['design', 'ui-design', 'ux-design', 'prototyping', 'wireframing'],
+    logo: <AdobeXdLogo />,
+    logoSymbol: <AdobeXdLogoSymbol />,
+    category: ['design'],
+    personalNote: 'Adobe XD personalNote'
+  },
+  {
+    title: 'Heroicons',
+    href: 'https://heroicons.com/',
+    quote: 'Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.',
+    quoteDescription: 'quoteDescription',
+    tags: ['tailwind', 'icon-library'],
+    logo: <HeroiconsLogo />,
+    logoSymbol: <HeroiconsLogoSymbol />,
+    category: ['development', 'design'],
+    personalNote: 'Heroicons personalNote'
   }
 ];
 

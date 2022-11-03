@@ -7,7 +7,7 @@ import { toolsAndTechnologiesData } from '../../../data';
 
 const EnvironmentSection: React.FC = () => {
   return (
-    <section className="grid gap-4 lg:flex lg:flex-wrap lg:items-center lg:justify-between">
+    <section className="grid gap-4 md:flex md:flex-wrap md:items-center md:justify-between">
       <div className="max-w-lg">
         <h3 className="text-3xl font-bold text-theme-contrary">Environment</h3>
 

@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, scrollProgress }) => {
   return (
-    <header className="sticky top-0 z-50 flex w-full items-center gap-4 border-b border-apple-gray-6 bg-theme-base/30 py-4 backdrop-blur-sm md:gap-4 lg:hidden">
+    <header className="sticky top-0 z-50 flex w-full items-center gap-4 border-b border-apple-gray-6 bg-theme-base/30 py-4 backdrop-blur-sm md:hidden md:gap-4">
       <h2 className="inline-block w-max text-xl font-bold text-theme-contrary md:text-3xl">
         {title}
       </h2>

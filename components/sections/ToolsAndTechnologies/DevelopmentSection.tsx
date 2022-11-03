@@ -79,7 +79,7 @@ const DevelopmentSection: React.FC = () => {
 
   return (
     <section>
-      <div className="grid gap-4 lg:flex lg:flex-wrap lg:items-center lg:justify-between">
+      <div className="grid gap-4 md:flex md:flex-wrap md:items-center md:justify-between">
         <div className="md:max-w-lg">
           <h2 className="text-3xl font-bold text-theme-contrary">
             Development
@@ -88,11 +88,25 @@ const DevelopmentSection: React.FC = () => {
           <div className="grid gap-4">
             <p>
               My go-to tech stack and setup for web project is very clear to me:
-              <InlineBrand title="Next.js" logo={<NextJsLogoSymbol />} />,
-              <InlineBrand title="Tailwind CSS" logo={<TailwindLogoSymbol />} />
+              <InlineBrand
+                title="Next.js"
+                logo={<NextJsLogoSymbol />}
+                href="https://nextjs.org/"
+              />
+              ,
+              <InlineBrand
+                title="Tailwind CSS"
+                logo={<TailwindLogoSymbol />}
+                href="https://tailwindcss.com/"
+              />
               , and
-              <InlineBrand title="TypeScript" logo={<TypeScriptLogo />} />. I am
-              also familiar with further development tools and technologies.
+              <InlineBrand
+                title="TypeScript"
+                logo={<TypeScriptLogo />}
+                href="https://www.typescriptlang.org/"
+              />
+              . I am also familiar with further development tools and
+              technologies.
             </p>
 
             <Button
@@ -146,6 +160,7 @@ const DevelopmentSection: React.FC = () => {
                 <InlineBrand
                   title="Headless UI"
                   logo={<HeadlessUiLogoSymbol />}
+                  href="https://headlessui.com/"
                 />
                 which focuses on mostly functionality only. It is &quot;more
                 barebone&quot; so to say.
@@ -162,7 +177,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-reponsive-min-12 gap-4">
+            <div className="grid-cols-cardBrands grid gap-4">
               {toolsAndTechnologies.uiLibraries}
             </div>
           </div>
@@ -208,7 +223,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-reponsive-min-12 gap-4">
+            <div className="grid-cols-cardBrands grid gap-4">
               {toolsAndTechnologies.animationLibraries}
             </div>
           </div>
@@ -235,12 +250,12 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-reponsive-min-12 gap-4">
+            <div className="grid-cols-cardBrands grid gap-4">
               {toolsAndTechnologies.versionControlTools}
             </div>
           </div>
 
-          <div className="grid animate-fadeUp gap-4 lg:gap-8">
+          <div className="grid animate-fadeUp gap-4 md:gap-8">
             <div className="grid w-full gap-2 md:max-w-lg">
               <p>
                 <span className="mb-1 block font-bold text-theme-contrary">
@@ -298,7 +313,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-reponsive-min-12 gap-4">
+            <div className="grid-cols-cardBrands grid gap-4">
               {toolsAndTechnologies.frameworks}
             </div>
           </div>
@@ -320,7 +335,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-reponsive-min-12 gap-4">
+            <div className="grid-cols-cardBrands grid gap-4">
               <Card>
                 <InlineBrand
                   logo={<HeroiconsLogo />}
@@ -340,7 +355,7 @@ const DevelopmentSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-reponsive-min-12 gap-4">
+            <div className="grid-cols-cardBrands grid gap-4">
               <Card>
                 <InlineBrand
                   logo={<HeroiconsLogo />}

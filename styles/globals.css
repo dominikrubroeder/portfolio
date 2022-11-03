@@ -5,7 +5,7 @@
 :root {
   --color-accent: var(--color-apple-blue);
   --color-theme-base: 255 255 255;
-  --color-theme-contrary: 0 0 0;
+  --color-theme-contrary: 29 29 31;
   --color-apple-red: 255 59 48;
   --color-apple-orange: 255 149 0;
   --color-apple-yellow: 255 204 0;
@@ -73,11 +73,11 @@ a {
   box-sizing: border-box;
 }
 
-.animation-delay-100 {
-  animation-delay: 100ms;
-}
-
 @layer components {
+  *::selection {
+    @apply text-apple-pink;
+  }
+
   hr {
     @apply border-apple-gray-6;
   }

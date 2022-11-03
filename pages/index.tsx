@@ -41,7 +41,9 @@ export default function Home() {
 
       <div className="fixed left-0 bottom-0 right-0 block h-16 w-full bg-gradient-to-t from-theme-base to-transparent"></div>
 
-      <ThemeSwitch />
+      <div className="mt-4 flex items-center justify-center gap-4">
+        <ThemeSwitch />
+      </div>
 
       <section ref={heroSectionRef}>
         <Section

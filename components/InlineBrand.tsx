@@ -13,7 +13,9 @@ const InlineBrand: React.FC<InlineBrandProps> = ({
   href,
   interactive = false
 }) => {
-  const outerClassName = 'inline-flex items-center gap-1 px-1 align-bottom';
+  const outerClassName = `inline-flex items-center gap-1 align-bottom ${
+    title ? 'px-1' : 'px-0.5'
+  }`;
   const innerClassName = 'w-max text-theme-contrary';
 
   if (href)
@@ -25,14 +27,14 @@ const InlineBrand: React.FC<InlineBrandProps> = ({
         rel="noreferrer"
       >
         {logo}
-        <span className={innerClassName}>{title}</span>
+        {title && <span className={innerClassName}>{title}</span>}
       </a>
     );
 
   return (
     <span className={outerClassName}>
       {logo}
-      <span className={innerClassName}>{title}</span>
+      {title && <span className={innerClassName}>{title}</span>}
     </span>
   );
 };
