@@ -79,7 +79,7 @@ export default function Home() {
       </Section>
 
       <Section
-        className="mt-8 px-4 lg:px-0"
+        className="min-h-screen px-4 lg:px-0"
         id={2}
         setActiveSection={setActiveSection}
       >
@@ -87,7 +87,7 @@ export default function Home() {
       </Section>
 
       <Section
-        className="flex min-h-screen items-center justify-center px-4 lg:px-0"
+        className="min-h-screen px-4 lg:px-0"
         id={3}
         setActiveSection={setActiveSection}
       >
