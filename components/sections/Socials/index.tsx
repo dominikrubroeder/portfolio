@@ -6,7 +6,7 @@ import Section from '../Section';
 
 const Socials: React.FC = () => {
   return (
-    <Section title="Socials.">
+    <Section title="Socials." alignment="center">
       <div className="grid gap-4 md:flex md:gap-4">
         {socialData.map((social) => (
           <Card key={social.title}>

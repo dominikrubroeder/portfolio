@@ -43,6 +43,9 @@ import AdobeXdLogo from '../components/svg/AdobeXdLogo';
 import AdobeXdLogoSymbol from '../components/svg/AdobeXdLogoSymbol';
 import AppleKeynoteLogoSymbol from '../components/img/AppleKeynoteLogoSymbol';
 import FontAwesomeLogoSymbol from '../components/svg/FontAwesomeLogoSymbol';
+import AdobeCreativeCloudLogoSymbol from '../components/svg/AdobeCreativeCloudLogoSymbol';
+import ShopwareLogo from '../components/svg/ShopwareLogo';
+import ShopwareLogoSymbol from '../components/svg/ShopwareLogoSymbol';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'
@@ -436,6 +439,18 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     personalNote: 'Keynote personalNote'
   },
   {
+    title: 'Adobe Creative Cloud',
+    href: 'https://www.adobe.com/de/creativecloud.html',
+    quote: 'Make. Create. Amazing.',
+    quoteDescription:
+      "Adobe Creative Cloud gives you the world's best creative apps and services so you can make anything you can imagine, wherever you're inspired.",
+    tags: ['design', 'graphic-design'],
+    logo: <AdobeCreativeCloudLogoSymbol />,
+    logoSymbol: <AdobeCreativeCloudLogoSymbol />,
+    category: ['design'],
+    personalNote: 'Adobe Creative Cloud personalNote'
+  },
+  {
     title: 'Adobe Photoshop',
     href: 'https://www.adobe.com/de/products/photoshop.html',
     quote: 'Mit Photoshop Erstaunliches schaffen.',
@@ -503,6 +518,18 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     logoSymbol: <FontAwesomeLogoSymbol />,
     category: ['development', 'design'],
     personalNote: 'Heroicons personalNote'
+  },
+  {
+    title: 'Shopware',
+    href: 'https://shopware.com/',
+    quote: 'Build the exceptional.',
+    quoteDescription:
+      'Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform. Elevate your business with maximum flexibility, full scalability, and expert support every step of the way. Ready to get started?.',
+    tags: ['shopware', 'shop-system', 'cms'],
+    logo: <ShopwareLogo />,
+    logoSymbol: <ShopwareLogoSymbol />,
+    category: ['development', 'ecommerce'],
+    personalNote: 'Shopware personalNote'
   }
 ];
 

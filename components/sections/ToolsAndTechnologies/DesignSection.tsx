@@ -7,6 +7,7 @@ import AppleKeynoteLogoSymbol from '../../img/AppleKeynoteLogoSymbol';
 import AdobePhotoshopLogoSymbol from '../../svg/AdobePhotoshopLogoSymbol';
 import AdobeIllustratorLogoSymbol from '../../svg/AdobeIllustratorLogoSymbol';
 import AdobeInDesignLogoSymbol from '../../svg/AdobeInDesignLogoSymbol';
+import AdobeCreativeCloudLogoSymbol from '../../svg/AdobeCreativeCloudLogoSymbol';
 
 const DesignSection: React.FC = () => {
   const designItems = toolsAndTechnologiesData.map((item, index) => {
@@ -41,7 +42,8 @@ const DesignSection: React.FC = () => {
             />
             is the best tool for me to create scalable user interfaces in a
             collaborative and reusable way. Also setting up Prototypes,
-            Wireframes or listing information architechtures with
+            Wireframes or listing information architechtures and brainstorming
+            with
             <InlineBrand
               title="FigJam"
               logo={<FigmaLogoSymbol />}
@@ -63,7 +65,7 @@ const DesignSection: React.FC = () => {
             I use other
             <InlineBrand
               title="Adobe Create Cloud"
-              logo={<AdobePhotoshopLogoSymbol />}
+              logo={<AdobeCreativeCloudLogoSymbol />}
               href="https://www.adobe.com/de/creativecloud.html"
             />
             applications like

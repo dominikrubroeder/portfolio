@@ -99,3 +99,9 @@ a {
     @apply absolute top-1/2 z-10 h-3/4 rounded-full bg-apple-gray-4 p-4 py-2 transition;
   }
 }
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}

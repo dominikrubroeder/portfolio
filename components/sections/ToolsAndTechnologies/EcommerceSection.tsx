@@ -1,4 +1,6 @@
 import React from 'react';
+import InlineBrand from '../../InlineBrand';
+import ShopwareLogoSymbol from '../../svg/ShopwareLogoSymbol';
 import Card from '../../ui/Card';
 
 const EcommerceSection: React.FC = () => {
@@ -7,15 +9,20 @@ const EcommerceSection: React.FC = () => {
       <div className="max-w-lg">
         <h3 className="text-3xl font-bold text-theme-contrary">Ecommerce</h3>
         <p>
-          <span className="text-theme-contrary">Shopware</span> is the best tool
-          for designers creating scalable user interfaces in a collaborative
-          way.
+          Working with shop systems like
+          <InlineBrand title="Shopware" logo={<ShopwareLogoSymbol />} />
+          is also part of my work experience. I worked with Shopware 5 and the
+          current Version 6.
         </p>
       </div>
 
       <Card>
         <div className="grid">
-          <div>Shopware</div>
+          <InlineBrand
+            title="Shopware"
+            logo={<ShopwareLogoSymbol />}
+            href="https://www.shopware.com/en/"
+          />
         </div>
       </Card>
     </section>

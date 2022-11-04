@@ -5,9 +5,10 @@ import Header from './Header';
 interface SectionProps {
   title: string;
   children: React.ReactNode;
+  alignment?: 'start' | 'center';
 }
 
-const Section: React.FC<SectionProps> = ({ title, children }) => {
+const Section: React.FC<SectionProps> = ({ title, children, alignment }) => {
   const sectionRef = useRef<null | HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -20,7 +21,11 @@ const Section: React.FC<SectionProps> = ({ title, children }) => {
       <Header title={title} scrollProgress={width} />
 
       <div
-        className="mx-auto grid w-full max-w-3xl gap-64 py-64"
+        className={`mx-auto grid w-full max-w-3xl gap-64 py-64 ${
+          alignment === 'center'
+            ? 'items-center justify-center'
+            : 'items-start justify-start'
+        }`}
         ref={sectionRef}
       >
         {children}
