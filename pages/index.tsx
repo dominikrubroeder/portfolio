@@ -39,13 +39,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
 
-      <div className="fixed left-0 bottom-0 right-0 block h-16 w-full bg-gradient-to-t from-theme-base to-transparent"></div>
-
-      <div className="mt-4 flex items-center justify-center gap-4">
-        <ThemeSwitch />
-      </div>
-
       <section ref={heroSectionRef}>
+        <div className="mt-4 flex items-center justify-center gap-4">
+          <ThemeSwitch />
+        </div>
+
         <Section
           className="flex min-h-screen-navigation-theme-switch items-center justify-center px-4"
           id={0}

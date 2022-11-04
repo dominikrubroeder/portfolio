@@ -4,6 +4,7 @@ import AppleLogo from '../../svg/AppleLogo';
 import VisualStudioCodeLogo from '../../svg/VisualStudioCodeLogo';
 import Card from '../../ui/Card';
 import { toolsAndTechnologiesData } from '../../../data';
+import BoxedLogo from '../BoxedLogo';
 
 const EnvironmentSection: React.FC = () => {
   return (
@@ -25,16 +26,12 @@ const EnvironmentSection: React.FC = () => {
           {toolsAndTechnologiesData.map((item, index) => {
             if (item.category.includes('environment')) {
               return (
-                <a
-                  key={item.title}
-                  className="interactive invisible flex h-12 w-12 animate-fadeUp items-center justify-center rounded-lg bg-apple-gray-4 p-1 opacity-0 md:h-8 md:w-8"
+                <BoxedLogo
+                  key={index}
+                  title={item.title}
+                  logoSymbol={item.logoSymbol}
                   href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ animationDelay: `${index * 40}ms` }}
-                >
-                  {item.logoSymbol}
-                </a>
+                />
               );
             }
           })}

@@ -23,6 +23,7 @@ import QwikLogoSymbol from '../../svg/QwikLogoSymbol';
 import AstroLogoSymbol from '../../svg/AstroLogoSymbol';
 import SwiftUILogoSymbol from '../../img/SwiftUILogoSymbol';
 import FontAwesomeLogoSymbol from '../../svg/FontAwesomeLogoSymbol';
+import BoxedLogo from '../BoxedLogo';
 
 const DevelopmentSection: React.FC = () => {
   const [showFullSection, setShowFullSection] = useState(false);
@@ -44,16 +45,12 @@ const DevelopmentSection: React.FC = () => {
   toolsAndTechnologiesData.forEach((item, index) => {
     if (item.category.includes('development')) {
       toolsAndTechnologies.developmentTools.push(
-        <a
-          key={item.title}
-          className="interactive invisible flex h-12 w-12 animate-fadeUp items-center justify-center rounded-lg bg-apple-gray-4 p-1 opacity-0 md:h-8 md:w-8"
+        <BoxedLogo
+          key={index}
+          title={item.title}
+          logoSymbol={item.logoSymbol}
           href={item.href}
-          target="_blank"
-          rel="noreferrer"
-          style={{ animationDelay: `${index * 40}ms` }}
-        >
-          {item.logoSymbol}
-        </a>
+        />
       );
 
       const CardElement = (
@@ -80,7 +77,7 @@ const DevelopmentSection: React.FC = () => {
 
   return (
     <section>
-      <div className="grid gap-4 md:flex md:flex-wrap md:items-center md:justify-between">
+      <div className="grid min-h-[24rem] gap-4 md:flex md:flex-wrap md:items-center md:justify-between">
         <div className="md:max-w-lg">
           <h2 className="text-3xl font-bold text-theme-contrary">
             Development

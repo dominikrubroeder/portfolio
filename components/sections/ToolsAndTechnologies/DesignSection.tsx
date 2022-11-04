@@ -8,21 +8,18 @@ import AdobePhotoshopLogoSymbol from '../../svg/AdobePhotoshopLogoSymbol';
 import AdobeIllustratorLogoSymbol from '../../svg/AdobeIllustratorLogoSymbol';
 import AdobeInDesignLogoSymbol from '../../svg/AdobeInDesignLogoSymbol';
 import AdobeCreativeCloudLogoSymbol from '../../svg/AdobeCreativeCloudLogoSymbol';
+import BoxedLogo from '../BoxedLogo';
 
 const DesignSection: React.FC = () => {
   const designItems = toolsAndTechnologiesData.map((item, index) => {
     if (item.category.includes('design')) {
       return (
-        <a
-          key={item.title}
-          className="interactive invisible flex h-12 w-12 animate-fadeUp items-center justify-center rounded-lg bg-apple-gray-4 p-1 opacity-0 md:h-8 md:w-8"
+        <BoxedLogo
+          key={index}
+          title={item.title}
+          logoSymbol={item.logoSymbol}
           href={item.href}
-          target="_blank"
-          rel="noreferrer"
-          style={{ animationDelay: `${index * 40}ms` }}
-        >
-          {item.logoSymbol}
-        </a>
+        />
       );
     }
   });
@@ -42,8 +39,8 @@ const DesignSection: React.FC = () => {
             />
             is the best tool for me to create scalable user interfaces in a
             collaborative and reusable way. Also setting up Prototypes,
-            Wireframes or listing information architechtures and brainstorming
-            with
+            Wireframes or listing information architechtures with brainstorming
+            sessions with
             <InlineBrand
               title="FigJam"
               logo={<FigmaLogoSymbol />}

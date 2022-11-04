@@ -98,7 +98,7 @@ const Navigation: React.FC<NavigationProps> = ({
             ))}
 
             <span
-              className="switch__indicator hidden overflow-hidden md:flex"
+              className="switch__indicator hidden overflow-hidden md:hidden dark:md:flex"
               style={{
                 width: `${100 / data.length}%`,
                 transform: `translate(${
