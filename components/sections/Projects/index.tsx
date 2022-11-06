@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
           title="IU universtiy"
           subline="Projects"
           variant="contained"
-          href="/projects/iu-universtiy/"
+          href="/projects/iu-university"
         >
           <p>Testing content</p>
         </Accordion>
