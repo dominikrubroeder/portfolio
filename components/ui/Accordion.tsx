@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 interface AccordionProps {
   title: string | JSX.Element;
   icon?: JSX.Element;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
   variant?: 'contained' | 'outlined';
@@ -83,27 +83,29 @@ const Accordion: React.FC<AccordionProps> = ({
         </div>
       </header>
 
-      <AnimatePresence>
-        {isExpanded && (
-          <motion.div
-            key="content"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{
-              opacity: 1,
-              height: 'auto'
-            }}
-            exit={{
-              opacity: 1
-            }}
-            transition={{
-              type: 'spring',
-              stiffness: 400
-            }}
-          >
-            <div>{children}</div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {children && (
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              key="content"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{
+                opacity: 1,
+                height: 'auto'
+              }}
+              exit={{
+                opacity: 1
+              }}
+              transition={{
+                type: 'spring',
+                stiffness: 400
+              }}
+            >
+              <div>{children}</div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 interface ButtonProps {
@@ -9,7 +9,7 @@ interface ButtonProps {
   icon?: JSX.Element;
   iconPosition?: 'leading' | 'trailing';
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -23,6 +23,7 @@ const Button: FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
+  const router = useRouter();
   const classNames = `flex items-center gap-1 rounded-full border border-transparent px-4 py-3 text-accent ${
     variant === 'contained'
       ? 'bg-accent/90 text-white hover:bg-accent'
@@ -35,16 +36,8 @@ const Button: FC<ButtonProps> = ({
 
   const onClickHandler = () => {
     if (onClick) onClick();
+    if (href) router.push(href);
   };
-
-  if (href)
-    return (
-      <Link href={href} className={`${classNames} ${className}`} {...props}>
-        {icon && iconPosition === 'leading' ? icon : null}
-        {text}
-        {icon && iconPosition === 'trailing' ? icon : null}
-      </Link>
-    );
 
   return (
     <button
