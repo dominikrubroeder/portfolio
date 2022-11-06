@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useRef, useState } from 'react';
 import Section from '../components/navigation/Section';
 import useIsOnScreen from '../hooks/useIsOnScreen';
@@ -8,6 +7,7 @@ import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies';
 import Projects from '../components/sections/Projects';
 import Socials from '../components/sections/Socials';
 import ThemeSwitch from '../components/ThemeSwitch';
+import Layout from '../components/layout';
 
 export default function Home() {
   const heroSectionRef = useRef<null | HTMLElement>(null);
@@ -27,18 +27,7 @@ export default function Home() {
   };
 
   return (
-    <>
-      <Head>
-        <title>
-          Dominik Rubröder | Team frontend development and interface design
-        </title>
-        <meta
-          name="description"
-          content="Dominik Rubröder | Team frontend development and interface design | Love for animations and transitions"
-        />
-        <link rel="icon" href="/favicon.png" type="image/png" />
-      </Head>
-
+    <Layout>
       <section ref={heroSectionRef}>
         <div className="mt-4 flex items-center justify-center gap-4">
           <ThemeSwitch />
@@ -93,6 +82,6 @@ export default function Home() {
       >
         <Socials />
       </Section>
-    </>
+    </Layout>
   );
 }

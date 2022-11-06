@@ -82,6 +82,7 @@ module.exports = {
       },
       animation: {
         fadeUp: 'fadeUp .6s ease-out forwards',
+        fadeUpDelayed: 'fadeUp .6s ease-out 1s forwards',
         scaleUp: 'scaleUp .6 ease-out forwards',
         growAndShrink: 'growAndShrink 6s infinite',
         navigationControl: 'navigationControl .3s ease-out forwards'

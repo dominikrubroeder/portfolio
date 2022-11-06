@@ -1,14 +1,18 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import Layout from '../components/layout';
 import { UiContextProvider } from '../context/UiContext';
+import { AnimatePresence } from 'framer-motion';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <UiContextProvider>
-      <Layout>
+      <AnimatePresence
+        mode="wait"
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
         <Component {...pageProps} />
-      </Layout>
+      </AnimatePresence>
     </UiContextProvider>
   );
 }
