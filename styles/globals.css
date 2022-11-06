@@ -5,7 +5,7 @@
 :root {
   --color-accent: var(--color-apple-blue);
   --color-theme-base: 255 255 255;
-  --color-theme-contrary: 0 0 0;
+  --color-theme-contrary: 29 29 31;
   --color-apple-red: 255 59 48;
   --color-apple-orange: 255 149 0;
   --color-apple-yellow: 255 204 0;
@@ -51,36 +51,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-theme-base: 0 0 0;
-    --color-theme-contrary: 255 255 255;
-    --color-apple-red: 255 69 58;
-    --color-apple-orange: 255 159 10;
-    --color-apple-yellow: 255 214 10;
-    --color-apple-green: 50 215 75;
-    --color-apple-mint: 102 212 207;
-    --color-apple-teal: 106 196 220;
-    --color-apple-cyan: 90 200 245;
-    --color-apple-blue: 10 132 255;
-    --color-apple-indigo: 94 92 230;
-    --color-apple-purple: 191 90 242;
-    --color-apple-pink: 255 55 95;
-    --color-apple-brown: 172 142 104;
-    --color-apple-gray: 152 152 157;
-    --color-apple-gray-2: 99 99 102;
-    --color-apple-gray-3: 72 72 74;
-    --color-apple-gray-4: 58 58 60;
-    --color-apple-gray-5: 44 44 46;
-    --color-apple-gray-6: 28 28 30;
-  }
-
   html {
     color-scheme: dark;
-  }
-
-  body {
-    color: white;
-    background: black;
   }
 }
 
@@ -102,12 +74,34 @@ a {
 }
 
 @layer components {
+  *::selection {
+    @apply text-apple-pink;
+  }
+
+  hr {
+    @apply border-apple-gray-6;
+  }
+
   .text-gradient {
     -webkit-text-fill-color: transparent;
     @apply bg-clip-text;
   }
 
   .interactive {
-    @apply scale-105 cursor-pointer;
+    @apply cursor-pointer transition-all hover:scale-110 active:scale-95;
+  }
+
+  .switch__option {
+    @apply z-20 flex cursor-pointer items-center justify-center gap-2 rounded-full bg-transparent py-3 px-4 transition active:scale-95 lg:py-4 lg:px-6;
+  }
+
+  .switch__indicator {
+    @apply absolute top-1/2 z-10 h-3/4 rounded-full bg-apple-gray-4 p-4 py-2 transition;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
   }
 }

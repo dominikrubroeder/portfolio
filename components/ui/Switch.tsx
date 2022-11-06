@@ -2,48 +2,70 @@ import React, { useContext, useState } from 'react';
 import UiContext from '../../context/UiContext';
 
 interface SwitchProps {
-  data: string[];
-  onClick?: () => void;
-  isThemeSwitch?: boolean;
+  data: { option: string | JSX.Element; value: string }[];
+  as: 'default' | 'theme-switch';
+  activeOption?: number;
+  className?: string;
 }
 
 const Switch: React.FC<SwitchProps> = ({
-  data = ['Placeholder', 'Placeholder'],
-  onClick,
-  isThemeSwitch = false
+  data = [
+    { option: 'Placeholder', value: 'Placeholder' },
+    { option: 'Placeholder', value: 'Placeholder' }
+  ],
+  as = 'default',
+  activeOption = 0,
+  className = ''
 }) => {
   const uiCtx = useContext(UiContext);
 
-  const [activeOption, setActiveOption] = useState({
-    option: 0,
+  const [active, setActive] = useState({
+    option: activeOption,
     value: 'Placeholder'
   });
 
   const onClickHandler = (index: number, value: string) => {
-    setActiveOption({ option: index, value: value });
+    setActive({ option: index, value: value });
 
-    if (isThemeSwitch) uiCtx?.setTheme(value);
-
-    if (onClick) onClick();
+    if (as === 'theme-switch') uiCtx?.setTheme(value);
   };
 
   return (
-    <div>
-      <ul className="flex items-center rounded-full bg-apple-gray-6 p-2">
-        {data.map((switchOption, index) => (
+    <div
+      className={`relative transition active:scale-95 ${
+        className ? className : ''
+      }`}
+    >
+      <span className="absolute top-0 -left-2.5 h-full w-12 rounded-l-full bg-apple-gray-6"></span>
+
+      <ul
+        className="relative grid items-center overflow-hidden rounded-full bg-apple-gray-6"
+        style={{ gridTemplateColumns: `repeat(${data.length}, 1fr)` }}
+      >
+        {data.map(({ option, value }, index) => (
           <li
             key={index}
-            className={`flex cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-2 ${
-              index === activeOption.option
-                ? 'bg-apple-gray-4 text-theme-contrary'
-                : 'bg-transparent'
+            className={`switch__option text-sm ${
+              index === active.option ? 'text-theme-contrary' : ''
             }`}
-            onClick={() => onClickHandler(index, switchOption)}
+            onClick={() => onClickHandler(index, value)}
           >
-            {switchOption}
+            {option}
           </li>
         ))}
+
+        <span
+          className="switch__indicator"
+          style={{
+            width: `${100 / data.length}%`,
+            transform: `translate(${
+              active.option === 0 ? '0' : active.option * 100
+            }%, -50%)`
+          }}
+        ></span>
       </ul>
+
+      <span className="absolute top-0 -right-2.5 h-full w-12 rounded-r-full bg-apple-gray-6"></span>
     </div>
   );
 };

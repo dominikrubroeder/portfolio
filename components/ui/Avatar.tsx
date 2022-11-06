@@ -3,21 +3,19 @@ import React from 'react';
 
 interface AvatarProps {
   url?: string;
-  width?: number;
-  height?: number;
+  size?: number;
 }
 
 const Avatar: React.FC<AvatarProps> = ({
   url = '/images/avatar-square.jpg',
-  width = 100,
-  height = 100
+  size = 100
 }) => {
   return (
     <Image
       src={url}
       alt="Personal profile image Dominik Rubröder"
-      width={width}
-      height={height}
+      width={size}
+      height={size}
       priority
       className="rounded-full"
     />

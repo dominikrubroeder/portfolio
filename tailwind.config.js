@@ -6,9 +6,6 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    transitionDuration: {
-      DEFAULT: '300ms'
-    },
     extend: {
       colors: {
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
@@ -37,14 +34,60 @@ module.exports = {
           'gray-6': 'rgb(var(--color-apple-gray-6) / <alpha-value>)'
         }
       },
+      minHeight: {
+        'screen-navigation-switch': 'calc(100vh - 5rem)',
+        'screen-navigation-theme-switch': 'calc(100vh - 8.5rem)'
+      },
       keyframes: {
+        fadeUp: {
+          '0%': {
+            transform: 'translateY(4%)',
+            opacity: '0',
+            visibility: 'hidden'
+          },
+          '100%': {
+            transform: 'translateY(0%)',
+            opacity: '1',
+            visibility: 'visible'
+          }
+        },
+        scaleUp: {
+          '0%': {
+            transform: 'scale(0.8)',
+            opacity: '0',
+            visibility: 'hidden'
+          },
+          '100%': {
+            transform: 'scale(1)',
+            opacity: '1',
+            visibility: 'visible'
+          }
+        },
         growAndShrink: {
           '0%, 100%': { transform: 'scale(0.95)' },
           '70%': { transform: 'scale(1)' }
+        },
+        navigationControl: {
+          '0%': {
+            transform: 'translateY(50%) translateX(-50%) scale(0.2)',
+            opacity: '0',
+            visibility: 'hidden'
+          },
+          '100%': {
+            transform: 'translateY(-30%) translateX(-50%) scale(1)',
+            opacity: '1',
+            visibility: 'visible'
+          }
         }
       },
       animation: {
-        growAndShrink: 'growAndShrink 6s infinite'
+        fadeUp: 'fadeUp .6s ease-out forwards',
+        scaleUp: 'scaleUp .6 ease-out forwards',
+        growAndShrink: 'growAndShrink 6s infinite',
+        navigationControl: 'navigationControl .3s ease-out forwards'
+      },
+      gridTemplateColumns: {
+        cardBrands: 'repeat(auto-fit, minmax(min(12rem, 16rem), 1fr))'
       }
     }
   },
