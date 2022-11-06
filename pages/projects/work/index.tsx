@@ -3,7 +3,7 @@ import Layout from '../../../components/layout';
 import Card from '../../../components/ui/Card';
 import Accordion from '../../../components/ui/Accordion';
 
-export default function IuUniversityProjectsPage() {
+export default function WorkProjectsPage() {
   return (
     <ProjectNavigationLayout>
       <Layout pageTitle="Work projects">

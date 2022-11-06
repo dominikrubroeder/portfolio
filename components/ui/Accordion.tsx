@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRightIcon } from '@heroicons/react/24/solid';
+import {
+  ArrowLongRightIcon,
+  ChevronRightIcon
+} from '@heroicons/react/24/solid';
 import { useRouter } from 'next/router';
 
 interface AccordionProps {
   title: string | JSX.Element;
-  icon?: JSX.Element;
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
@@ -14,11 +16,14 @@ interface AccordionProps {
   overline?: string | JSX.Element;
   iconText?: string | JSX.Element;
   href?: string;
+  expanded?: boolean;
+  action?: () => void;
+  actionLabel?: string;
+  isGroup?: boolean;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
   title,
-  icon,
   children,
   className,
   onClick,
@@ -26,10 +31,14 @@ const Accordion: React.FC<AccordionProps> = ({
   subline,
   overline,
   iconText,
-  href
+  href,
+  expanded = false,
+  action,
+  actionLabel,
+  isGroup = true
 }) => {
   const router = useRouter();
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(expanded);
 
   const onClickHandler = () => {
     if (!href) setIsExpanded((previousState) => !previousState);
@@ -39,14 +48,16 @@ const Accordion: React.FC<AccordionProps> = ({
 
   return (
     <div
-      className={`group grid min-w-[18.75rem] cursor-pointer gap-2 rounded-xl border border-transparent py-3 px-4 transition ${
+      className={`${
+        isGroup ? 'group' : ''
+      } grid min-w-[18.75rem] cursor-pointer gap-2 rounded-xl border border-transparent py-3 px-4 transition ${
         variant === 'contained' ? 'bg-apple-gray-6 hover:bg-apple-gray-5' : ''
       } ${variant === 'outlined' ? 'border-apple-gray-6 bg-transparent' : ''} ${
         className ? className : ''
-      }`}
+      } ${href ? 'hover:translate-x-2' : ''}`}
     >
       <header
-        className={`flex cursor-pointer justify-between ${
+        className={`flex cursor-pointer justify-between gap-4 ${
           subline ? 'items-start' : 'items-center'
         }`}
         onClick={onClickHandler}
@@ -67,11 +78,17 @@ const Accordion: React.FC<AccordionProps> = ({
         </div>
 
         <div className="flex items-center gap-2 text-xs">
+          {action && actionLabel && (
+            <span className="text-xs text-accent" onClick={() => action()}>
+              {actionLabel}
+            </span>
+          )}
+
           {iconText && <span>{iconText}</span>}
 
           <span>
-            {icon ? (
-              icon
+            {href ? (
+              <ArrowLongRightIcon className="h-5 w-5 text-accent" />
             ) : (
               <ChevronRightIcon
                 className={`h-5 w-5 text-accent transition ${
@@ -94,12 +111,10 @@ const Accordion: React.FC<AccordionProps> = ({
                 height: 'auto'
               }}
               exit={{
-                opacity: 1
+                opacity: 0,
+                height: 0
               }}
-              transition={{
-                type: 'spring',
-                stiffness: 400
-              }}
+              transition={{ ease: 'easeOut' }}
             >
               <div>{children}</div>
             </motion.div>
