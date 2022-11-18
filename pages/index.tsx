@@ -44,8 +44,9 @@ export default function Home() {
             </h1>
 
             <p>Development and interface design</p>
+            {/* Interface Developtment */}
             <p>
-              Love for Animations and Transitions.
+              Love for supportive Animations and Transitions.
               {/* <ReactTypingEffect text={['Animations.', 'Transitions.']} /> */}
             </p>
           </div>
