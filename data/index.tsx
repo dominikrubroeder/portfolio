@@ -530,6 +530,17 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     logoSymbol: <ShopwareLogoSymbol />,
     category: ['development', 'ecommerce'],
     personalNote: 'Shopware personalNote'
+  },
+  {
+      title: 'jitter',
+      href:'https://jitter.video/',
+      quote: 'Motion design made simple.',
+      quoteDescription: 'Animate your designs easily. Export your creations as videos or GIFs. All in your browser.',
+      tags: ['jitter', 'motion-design', 'prototyping'],
+      logo: <AppleLogo />,
+      logoSymbol: <AppleLogo />,
+      category: ['design'],
+      personalNote: 'jitter.video personal note'
   }
 ];
 

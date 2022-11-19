@@ -28,7 +28,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
   return (
     <header
-      className={`z-[100] mt-4 flex w-full items-center justify-center gap-2 md:-mt-4 ${
+      className={`z-[100] flex w-full items-center justify-center gap-2 ${
         !heroSectionIsOnScreen
           ? 'fixed bottom-6 md:sticky md:top-4'
           : 'relative'

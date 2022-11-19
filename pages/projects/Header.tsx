@@ -9,12 +9,19 @@ const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between border-b border-b-apple-gray-6 bg-theme-base/30 p-4 backdrop-blur-sm">
-      <Button
-        variant="text"
-        icon={<ArrowLeftIcon className="h-5 w-5 text-accent" />}
-        text="Back"
-        onClick={() => router.back()}
-      />
+      <div className="flex gap-2">
+        <Button
+          variant="text"
+          icon={<ArrowLeftIcon className="h-5 w-5 text-accent" />}
+          text="Back"
+          onClick={() => router.back()}
+        />
+
+        <span className="text-apple-gray-6">|</span>
+
+        <Button variant="text" text="Home" onClick={() => router.push('/')} />
+      </div>
+
       <div className="flex max-w-3xl flex-1 items-center justify-between">
         {router.pathname !== '/projects' ? (
           <Select

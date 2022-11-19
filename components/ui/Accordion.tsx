@@ -54,7 +54,7 @@ const Accordion: React.FC<AccordionProps> = ({
         variant === 'contained' ? 'bg-apple-gray-6 hover:bg-apple-gray-5' : ''
       } ${variant === 'outlined' ? 'border-apple-gray-6 bg-transparent' : ''} ${
         className ? className : ''
-      } ${href ? 'hover:translate-x-2' : ''}`}
+      } ${href ? 'hover:translate-x-2' : 'hover:-translate-y-1'}`}
     >
       <header
         className={`flex cursor-pointer justify-between gap-4 ${
