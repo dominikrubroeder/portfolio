@@ -46,6 +46,7 @@ import FontAwesomeLogoSymbol from '../components/svg/FontAwesomeLogoSymbol';
 import AdobeCreativeCloudLogoSymbol from '../components/svg/AdobeCreativeCloudLogoSymbol';
 import ShopwareLogo from '../components/svg/ShopwareLogo';
 import ShopwareLogoSymbol from '../components/svg/ShopwareLogoSymbol';
+import JitterVideoLogo from '../components/img/JittterVideoLogo';
 
 export enum LocalStorageKeys {
   Theme = 'DR_THEME'
@@ -532,15 +533,16 @@ export const toolsAndTechnologiesData: ToolAndTechnology[] = [
     personalNote: 'Shopware personalNote'
   },
   {
-      title: 'jitter',
-      href:'https://jitter.video/',
-      quote: 'Motion design made simple.',
-      quoteDescription: 'Animate your designs easily. Export your creations as videos or GIFs. All in your browser.',
-      tags: ['jitter', 'motion-design', 'prototyping'],
-      logo: <AppleLogo />,
-      logoSymbol: <AppleLogo />,
-      category: ['design'],
-      personalNote: 'jitter.video personal note'
+    title: 'jitter',
+    href: 'https://jitter.video/',
+    quote: 'Motion design made simple.',
+    quoteDescription:
+      'Animate your designs easily. Export your creations as videos or GIFs. All in your browser.',
+    tags: ['jitter', 'motion-design', 'prototyping'],
+    logo: <JitterVideoLogo />,
+    logoSymbol: <JitterVideoLogo />,
+    category: ['design'],
+    personalNote: 'jitter.video personal note'
   }
 ];
 

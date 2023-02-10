@@ -36,7 +36,7 @@ const Navigation: React.FC<NavigationProps> = ({
     >
       <div className="relative z-50 transition active:scale-95">
         <button
-          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 md:p-2 ${
+          className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full border border-apple-gray-5 bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 md:p-2 ${
             heroSectionIsOnScreen
               ? 'left-0 scale-50'
               : '-left-[3.25rem] scale-100 md:-left-[4.25rem]'
@@ -121,7 +121,7 @@ const Navigation: React.FC<NavigationProps> = ({
         </div>
 
         <button
-          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full bg-apple-gray-6 p-3 duration-300 hover:duration-150 md:p-4 ${
+          className={`interactive group absolute top-1/2 z-40 -translate-y-1/2 rounded-full border border-apple-gray-5 bg-apple-gray-6 p-3 duration-300 hover:duration-150 md:p-4 ${
             heroSectionIsOnScreen
               ? 'right-0 scale-50'
               : '-right-[3.25rem] scale-100 md:-right-[4.25rem]'
