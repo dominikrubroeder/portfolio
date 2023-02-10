@@ -16,7 +16,7 @@ const InlineBrand: React.FC<InlineBrandProps> = ({
   const outerClassName = `inline-flex items-center gap-1 align-bottom ${
     title ? 'px-1' : 'px-0.5'
   }`;
-  const innerClassName = 'w-max text-theme-contrary';
+  const innerClassName = 'text-theme-contrary w-full';
 
   if (href)
     return (

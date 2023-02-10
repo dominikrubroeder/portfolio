@@ -17,6 +17,12 @@ export default function IuUniversityProjectsPage() {
               <div className="grid max-w-sm gap-2">
                 <Accordion
                   variant="contained"
+                  title="Semester 7"
+                  href="/projects/iu-universtiy/semester-7"
+                />
+
+                <Accordion
+                  variant="contained"
                   title="Semester 6"
                   href="/projects/iu-universtiy/semester-6"
                 />

@@ -98,7 +98,7 @@ const Navigation: React.FC<NavigationProps> = ({
             ))}
 
             <span
-              className="switch__indicator hidden overflow-hidden md:hidden dark:md:flex"
+              className="switch__indicator hidden overflow-hidden rounded-full duration-500 md:hidden dark:md:flex"
               style={{
                 width: `${100 / data.length}%`,
                 transform: `translate(${
@@ -111,7 +111,7 @@ const Navigation: React.FC<NavigationProps> = ({
               }}
             >
               <motion.span
-                className="absolute left-0 top-0 right-0 h-full origin-[0%] rounded-full bg-gradient-to-t from-apple-purple to-apple-pink transition"
+                className="absolute left-0 top-0 right-0 h-full origin-[0%] rounded-full transition"
                 style={{ scaleX }}
               ></motion.span>
             </span>

@@ -38,17 +38,18 @@ export default function Home() {
           id={0}
           setActiveSection={setActiveSection}
         >
-          <div className="text-center">
+          <div className="grid gap-2 text-center">
             <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-7xl font-bold sm:text-9xl">
               Team frontend.
             </h1>
 
-            <p>Development and interface design</p>
-            {/* Interface Developtment */}
-            <p>
-              Love for supportive Animations and Transitions.
-              {/* <ReactTypingEffect text={['Animations.', 'Transitions.']} /> */}
-            </p>
+            <div>
+              <p>Development and interface design</p>
+              <p>
+                Love for supportive animations and transitions.
+                {/* <ReactTypingEffect text={['Animations.', 'Transitions.']} /> */}
+              </p>
+            </div>
           </div>
         </Section>
       </section>

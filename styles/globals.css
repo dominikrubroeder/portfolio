@@ -73,6 +73,12 @@ a {
   box-sizing: border-box;
 }
 
+@layer base {
+  svg {
+    @apply flex-shrink-0;
+  }
+}
+
 @layer components {
   *::selection {
     @apply text-apple-pink;

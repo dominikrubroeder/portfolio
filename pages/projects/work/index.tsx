@@ -12,14 +12,14 @@ export default function WorkProjectsPage() {
             <div className="grid max-w-sm gap-2">
               <Accordion
                 variant="contained"
-                title="Wegmann"
-                href="/projects/work/wegmann"
+                title="ALLES.AUTO"
+                href="/projects/work/alles-auto"
               />
 
               <Accordion
                 variant="contained"
-                title="ALLES.AUTO"
-                href="/projects/work/alles-auto"
+                title="Wegmann"
+                href="/projects/work/wegmann"
               />
             </div>
           </Card>

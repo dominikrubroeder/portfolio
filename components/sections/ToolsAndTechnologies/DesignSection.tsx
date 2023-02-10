@@ -40,7 +40,7 @@ const DesignSection: React.FC = () => {
             is the best tool for me to create scalable user interfaces in a
             collaborative and reusable way. Also setting up Prototypes,
             Wireframes or listing information architechtures with brainstorming
-            sessions with
+            sessions in
             <InlineBrand
               title="FigJam"
               logo={<FigmaLogoSymbol />}

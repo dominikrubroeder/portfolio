@@ -29,6 +29,12 @@ export default function ProjectsPage() {
                   <div className="grid max-w-sm gap-2">
                     <Accordion
                       variant="contained"
+                      title="Semester 7"
+                      href="/projects/iu-universtiy/semester-7"
+                    />
+
+                    <Accordion
+                      variant="contained"
                       title="Semester 6"
                       href="/projects/iu-universtiy/semester-6"
                     />
@@ -179,14 +185,14 @@ export default function ProjectsPage() {
                   <div className="grid max-w-sm gap-2">
                     <Accordion
                       variant="contained"
-                      title="Wegmann"
-                      href="/projects/work/wegmann"
+                      title="ALLES.AUTO"
+                      href="/projects/work/alles-auto"
                     />
 
                     <Accordion
                       variant="contained"
-                      title="ALLES.AUTO"
-                      href="/projects/work/alles-auto"
+                      title="Wegmann"
+                      href="/projects/work/wegmann"
                     />
                   </div>
                 </Card>
