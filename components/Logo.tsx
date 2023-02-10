@@ -5,7 +5,7 @@ import Avatar from './ui/Avatar';
 const Logo: React.FC = () => {
   return (
     <Link href="/">
-      <Avatar />
+      <Avatar size={32} />
     </Link>
   );
 };

@@ -2,10 +2,12 @@ import React from 'react';
 import Footer from './Footer';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import Header from './Header';
 
 interface LayoutProps {
   children: React.ReactNode;
   pageTitle?: string;
+  showHeader?: boolean;
 }
 
 const variants = {
@@ -14,7 +16,11 @@ const variants = {
   exit: { opacity: 0, x: 0, y: -100 }
 };
 
-const Layout: React.FC<LayoutProps> = ({ children, pageTitle }) => {
+const Layout: React.FC<LayoutProps> = ({
+  children,
+  pageTitle,
+  showHeader = false
+}) => {
   return (
     <>
       <Head>
@@ -31,6 +37,8 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle }) => {
         />
         <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
+
+      {showHeader && <Header />}
 
       <div className="grid min-h-screen grid-rows-[1fr_auto]">
         <motion.main
