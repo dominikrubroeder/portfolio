@@ -34,7 +34,7 @@ const Navigation: React.FC<NavigationProps> = ({
           : 'relative'
       } `}
     >
-      <div className="relative z-50 transition active:scale-95">
+      <div className="relative z-50">
         <button
           className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full border border-apple-gray-5 bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 md:p-2 ${
             heroSectionIsOnScreen

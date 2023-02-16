@@ -31,11 +31,7 @@ const Switch: React.FC<SwitchProps> = ({
   };
 
   return (
-    <div
-      className={`relative transition active:scale-95 ${
-        className ? className : ''
-      }`}
-    >
+    <div className={`relative ${className ? className : ''}`}>
       <span className="absolute top-0 -left-2.5 h-full w-12 rounded-l-full bg-apple-gray-6"></span>
 
       <ul
