@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import Section from '../components/navigation/Section';
-import useIsOnScreen from '../hooks/useIsOnScreen';
+import useIsInView from '../hooks/useIsInView';
 import Navigation from '../components/navigation/Navigation';
 import { homePageSectionData } from '../data';
 import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies';
@@ -11,7 +11,7 @@ import Layout from '../components/layout';
 
 export default function Home() {
   const heroSectionRef = useRef<null | HTMLElement>(null);
-  const heroSectionIsOnScreen = useIsOnScreen(heroSectionRef, 0.01);
+  const heroSectionIsInView = useIsInView(heroSectionRef, 0.01);
   const [activeSection, setActiveSection] = useState(0);
 
   const activateSection = (index: number) => {
@@ -28,35 +28,27 @@ export default function Home() {
 
   return (
     <Layout>
-      <section ref={heroSectionRef}>
+      <section className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-2">
+        <h2 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-7xl font-bold sm:text-9xl">
+          Team frontend.
+        </h2>
+
+        <div>
+          <h1>
+            Love for supportive animations and transitions | UX Engineering |
+            Frontend Development
+            {/* <ReactTypingEffect text={['Animations.', 'Transitions.']} /> */}
+          </h1>
+        </div>
+
         <div className="mt-4 flex items-center justify-center gap-4">
           <ThemeSwitch />
         </div>
-
-        <Section
-          className="flex min-h-screen-navigation-theme-switch items-center justify-center px-4"
-          id={0}
-          setActiveSection={setActiveSection}
-        >
-          <div className="grid gap-2 text-center">
-            <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-7xl font-bold sm:text-9xl">
-              Team frontend.
-            </h1>
-
-            <div>
-              <p>Development and interface design</p>
-              <p>
-                Love for supportive animations and transitions.
-                {/* <ReactTypingEffect text={['Animations.', 'Transitions.']} /> */}
-              </p>
-            </div>
-          </div>
-        </Section>
       </section>
 
       <Navigation
         data={homePageSectionData}
-        heroSectionIsOnScreen={heroSectionIsOnScreen}
+        heroSectionIsOnScreen={heroSectionIsInView}
         activeSection={activeSection}
         activateSection={activateSection}
       />

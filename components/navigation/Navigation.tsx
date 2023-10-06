@@ -27,13 +27,7 @@ const Navigation: React.FC<NavigationProps> = ({
   });
 
   return (
-    <header
-      className={`z-[100] flex w-full items-center justify-center gap-2 ${
-        !heroSectionIsOnScreen
-          ? 'fixed bottom-6 md:sticky md:top-4'
-          : 'relative'
-      } `}
-    >
+    <header className="sticky top-4 z-[100] flex w-full items-center justify-center gap-2 ">
       <div className="relative z-50">
         <button
           className={`interactive absolute top-1/2 z-40 -translate-y-1/2 rounded-full border border-apple-gray-5 bg-apple-gray-6 p-1.5 duration-300 hover:duration-150 md:p-2 ${
@@ -54,7 +48,7 @@ const Navigation: React.FC<NavigationProps> = ({
         </button>
 
         <div className="relative z-50">
-          <span className="absolute top-0 -left-2.5 hidden h-full w-12 rounded-l-full bg-apple-gray-6 md:block"></span>
+          <span className="absolute -left-2.5 top-0 hidden h-full w-12 rounded-l-full bg-apple-gray-6 md:block"></span>
 
           {showSectionList && (
             <SectionList
@@ -72,7 +66,7 @@ const Navigation: React.FC<NavigationProps> = ({
             {data.map(({ title }, index) => (
               <li key={index}>
                 <span
-                  className="flex items-center justify-center py-4 px-1 md:hidden"
+                  className="flex items-center justify-center px-1 py-4 md:hidden"
                   onClick={() =>
                     setShowSectionList((previousState) => !previousState)
                   }
@@ -111,13 +105,13 @@ const Navigation: React.FC<NavigationProps> = ({
               }}
             >
               <motion.span
-                className="absolute left-0 top-0 right-0 h-full origin-[0%] rounded-full transition"
+                className="absolute left-0 right-0 top-0 h-full origin-[0%] rounded-full transition"
                 style={{ scaleX }}
               ></motion.span>
             </span>
           </ul>
 
-          <span className="absolute top-0 -right-2.5 hidden h-full w-12 rounded-r-full bg-apple-gray-6 md:block"></span>
+          <span className="absolute -right-2.5 top-0 hidden h-full w-12 rounded-r-full bg-apple-gray-6 md:block"></span>
         </div>
 
         <button
