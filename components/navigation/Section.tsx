@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import useIsOnScreen from '../../hooks/useIsOnScreen';
+import useIsInView from '../../hooks/useIsInView';
 
 interface SectionProps {
   children: React.ReactNode;
@@ -15,7 +15,7 @@ const Section: React.FC<SectionProps> = ({
   setActiveSection
 }) => {
   const sectionRef = useRef<null | HTMLElement>(null);
-  const sectionIsOnScreen = useIsOnScreen(sectionRef, 0.25);
+  const sectionIsOnScreen = useIsInView(sectionRef, 0.25);
 
   useEffect(() => {
     if (sectionIsOnScreen) setActiveSection(id);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const useIsOnScreen = (
+const useIsInView = (
   ref: React.MutableRefObject<HTMLElement | null>,
   threshold = 1
 ) => {
@@ -29,4 +29,4 @@ const useIsOnScreen = (
 
   return isIntersecting;
 };
-export default useIsOnScreen;
+export default useIsInView;
