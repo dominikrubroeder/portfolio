@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
-import Button from '../../components/ui/Button';
+import Button from '../ui/Button';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import Logo from '../Logo';
 

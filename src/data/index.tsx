@@ -19,7 +19,7 @@ import VercelLogo from '../components/svg/VercelLogo';
 import VercelLogoSymbol from '../components/svg/VercelLogoSymbol';
 import VisualStudioCodeLogo from '../components/svg/VisualStudioCodeLogo';
 import VueJsLogo from '../components/svg/VueJsLogo';
-import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies/index';
+import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies';
 import MuiLogoSymbol from '../components/svg/MuiLogoSymbol';
 import CssLogoSymbol from '../components/svg/CssLogoSymbol';
 import SvelteLogoSymbol from '../components/svg/SvelteLogoSymbol';

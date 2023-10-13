@@ -216,7 +216,7 @@ const DevelopmentSection: React.FC = () => {
                 />
                 animations can be used within any project without any other
                 tooling required. Tailwind CSS also supports creating custom CSS
-                animations in their tailwind.config.js file with the keyframes
+                animations in their tailwind.config.ts file with the keyframes
                 prop.
               </p>
             </div>
