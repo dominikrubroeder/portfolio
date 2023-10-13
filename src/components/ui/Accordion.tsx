@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   ArrowLongRightIcon,
   ChevronRightIcon
@@ -50,7 +50,7 @@ const Accordion: React.FC<AccordionProps> = ({
     <div
       className={`${
         isGroup ? 'group' : ''
-      } grid min-w-[18.75rem] cursor-pointer gap-2 rounded-xl border border-transparent py-3 px-4 transition ${
+      } grid min-w-[18.75rem] cursor-pointer gap-2 rounded-xl border border-transparent px-4 py-3 transition ${
         variant === 'contained' ? 'bg-apple-gray-6 hover:bg-apple-gray-5' : ''
       } ${variant === 'outlined' ? 'border-apple-gray-6 bg-transparent' : ''} ${
         className ? className : ''

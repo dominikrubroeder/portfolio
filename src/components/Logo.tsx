@@ -1,13 +1,10 @@
 import Link from 'next/link';
-import React from 'react';
 import Avatar from './ui/Avatar';
 
-const Logo: React.FC = () => {
+export default function Logo() {
   return (
     <Link href="/">
       <Avatar size={32} />
     </Link>
   );
-};
-
-export default Logo;
+}

@@ -1,7 +1,6 @@
-import React from 'react';
 import Card from './ui/Card';
 
-const CurrentlyInTheMakingCard: React.FC = () => {
+export default function CurrentlyInTheMakingCard() {
   return (
     <Card className="m-4 max-w-md animate-growAndShrink">
       <div className="grid gap-2">
@@ -12,6 +11,4 @@ const CurrentlyInTheMakingCard: React.FC = () => {
       </div>
     </Card>
   );
-};
-
-export default CurrentlyInTheMakingCard;
+}

@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface InlineBrandProps {
   logo?: JSX.Element;
   title?: string;
@@ -7,12 +5,12 @@ interface InlineBrandProps {
   interactive?: boolean;
 }
 
-const InlineBrand: React.FC<InlineBrandProps> = ({
+export default function InlineBrand({
   logo,
   title,
   href,
   interactive = false
-}) => {
+}: InlineBrandProps) {
   const outerClassName = `inline-flex items-center gap-1 align-bottom ${
     title ? 'px-1' : 'px-0.5'
   }`;
@@ -37,6 +35,4 @@ const InlineBrand: React.FC<InlineBrandProps> = ({
       {title && <span className={innerClassName}>{title}</span>}
     </span>
   );
-};
-
-export default InlineBrand;
+}
