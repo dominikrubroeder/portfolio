@@ -27,47 +27,16 @@ export default function Page() {
             >
               <Card className="mx-auto">
                 <div className="grid max-w-sm gap-2">
-                  <Accordion
-                    variant="contained"
-                    title="Semester 7"
-                    href="/projects/iu-universtiy/semester-7"
-                  />
-
-                  <Accordion
-                    variant="contained"
-                    title="Semester 6"
-                    href="/projects/iu-universtiy/semester-6"
-                  />
-
-                  <Accordion
-                    variant="contained"
-                    title="Semester 5"
-                    href="/projects/iu-universtiy/semester-5"
-                  />
-
-                  <Accordion
-                    variant="contained"
-                    title="Semester 4"
-                    href="/projects/iu-universtiy/semester-4"
-                  />
-
-                  <Accordion
-                    variant="contained"
-                    title="Semester 3"
-                    href="/projects/iu-universtiy/semester-3"
-                  />
-
-                  <Accordion
-                    variant="contained"
-                    title="Semester 2"
-                    href="/projects/iu-universtiy/semester-2"
-                  />
-
-                  <Accordion
-                    variant="contained"
-                    title="Semester 1"
-                    href="/projects/iu-universtiy/semester-1"
-                  />
+                  {Array.from({ length: 7 }, (_, index) => index).map(
+                    (item, index) => (
+                      <Accordion
+                        key={index}
+                        variant="contained"
+                        title={`Semester ${index + 1}`}
+                        href={`/projects/iu-university/semester-${index + 1}`}
+                      />
+                    )
+                  )}
                 </div>
               </Card>
             </Accordion>
