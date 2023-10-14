@@ -1,10 +1,12 @@
-import ProjectNavigationLayout from './Layout';
-import Layout from '../../components/layout';
-import Card from '../../components/ui/Card';
-import Accordion from '../../components/ui/Accordion';
-import { useRouter } from 'next/router';
+'use client';
 
-export default function ProjectsPage() {
+import { useRouter } from 'next/navigation';
+import ProjectNavigationLayout from '../../components/projects/Layout';
+import Layout from '../../components/layout';
+import Accordion from '../../components/ui/Accordion';
+import Card from '../../components/ui/Card';
+
+export default function Page() {
   const router = useRouter();
 
   const seeAll = (id: string) => {

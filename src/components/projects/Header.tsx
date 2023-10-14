@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import React from 'react';
-import Button from '../../components/ui/Button';
+import { usePathname, useRouter } from 'next/navigation';
+import Button from '../ui/Button';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
-import Select from '../../components/ui/Select';
+import Select from '../ui/Select';
 
-const Header: React.FC = () => {
+export default function Header() {
   const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between border-b border-b-apple-gray-6 bg-theme-base/30 p-4 backdrop-blur-sm">
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
       </div>
 
       <div className="flex max-w-3xl flex-1 items-center justify-between">
-        {router.pathname !== '/projects' ? (
+        {pathname !== '/projects' ? (
           <Select
             options={[
               {
@@ -53,6 +53,4 @@ const Header: React.FC = () => {
       <div></div>
     </header>
   );
-};
-
-export default Header;
+}

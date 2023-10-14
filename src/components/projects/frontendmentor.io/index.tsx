@@ -1,7 +1,7 @@
 import ProjectNavigationLayout from '../Layout';
-import Layout from '../../../components/layout';
-import Card from '../../../components/ui/Card';
-import Accordion from '../../../components/ui/Accordion';
+import Layout from '../../layout';
+import Card from '../../ui/Card';
+import Accordion from '../../ui/Accordion';
 
 // sort
 // alhpabetically

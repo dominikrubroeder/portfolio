@@ -1,5 +1,4 @@
-import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface ButtonProps {
   text: string;
@@ -12,7 +11,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({
+export default function Button({
   text = 'Placeholder',
   variant = 'contained',
   icon,
@@ -22,7 +21,7 @@ const Button: FC<ButtonProps> = ({
   className = '',
   onClick,
   ...props
-}) => {
+}: ButtonProps) {
   const router = useRouter();
   const classNames = `flex items-center gap-1 rounded-full border border-transparent px-4 py-3 text-accent ${
     variant === 'contained'
@@ -51,6 +50,4 @@ const Button: FC<ButtonProps> = ({
       {icon && iconPosition === 'trailing' ? icon : null}
     </button>
   );
-};
-
-export default Button;
+}

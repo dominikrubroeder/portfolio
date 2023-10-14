@@ -1,4 +1,4 @@
-export default function AnimationPage() {
+export default function Animation() {
   return (
     <div className="flex h-screen items-center justify-center gap-4 overflow-hidden">
       <div className="h-8 w-2 animate-pulse bg-white duration-100"></div>

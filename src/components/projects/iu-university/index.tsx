@@ -1,6 +1,6 @@
-import Layout from '../../../components/layout';
-import Accordion from '../../../components/ui/Accordion';
-import Card from '../../../components/ui/Card';
+import Layout from '../../layout';
+import Accordion from '../../ui/Accordion';
+import Card from '../../ui/Card';
 import ProjectNavigationLayout from '../Layout';
 
 export default function IuUniversityProjectsPage() {

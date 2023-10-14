@@ -4,7 +4,7 @@ import {
   ArrowLongRightIcon,
   ChevronRightIcon
 } from '@heroicons/react/24/solid';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface AccordionProps {
   title: string | JSX.Element;
@@ -22,7 +22,7 @@ interface AccordionProps {
   isGroup?: boolean;
 }
 
-const Accordion: React.FC<AccordionProps> = ({
+export default function Accordion({
   title,
   children,
   className,
@@ -36,7 +36,7 @@ const Accordion: React.FC<AccordionProps> = ({
   action,
   actionLabel,
   isGroup = true
-}) => {
+}: AccordionProps) {
   const router = useRouter();
   const [isExpanded, setIsExpanded] = useState(expanded);
 
@@ -123,6 +123,4 @@ const Accordion: React.FC<AccordionProps> = ({
       )}
     </div>
   );
-};
-
-export default Accordion;
+}

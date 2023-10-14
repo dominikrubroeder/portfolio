@@ -1,13 +1,15 @@
+'use client';
+
 import { useRef, useState } from 'react';
-import Section from '../components/navigation/Section';
 import useIsInView from '../hooks/useIsInView';
+import Layout from '../components/layout';
+import ThemeSwitch from '../components/ThemeSwitch';
 import Navigation from '../components/navigation/Navigation';
 import { homePageSectionData } from '../data';
+import Section from '../components/navigation/Section';
 import ToolsAndTechnologies from '../components/sections/ToolsAndTechnologies';
 import Projects from '../components/sections/Projects';
 import Socials from '../components/sections/Socials';
-import ThemeSwitch from '../components/ThemeSwitch';
-import Layout from '../components/layout';
 
 export default function Home() {
   const heroSectionRef = useRef<null | HTMLElement>(null);

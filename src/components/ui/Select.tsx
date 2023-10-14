@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Card from './Card';
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface SelectProps {
   options: {
@@ -13,7 +13,7 @@ interface SelectProps {
   }[];
 }
 
-const Select: React.FC<SelectProps> = ({ options }) => {
+export default function Select({ options }: SelectProps) {
   const router = useRouter();
   const [selected, setSelected] = useState(options[0]);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -45,7 +45,7 @@ const Select: React.FC<SelectProps> = ({ options }) => {
 
       <AnimatePresence>
         {isExpanded && (
-          <Card className="absolute top-8 left-0 grid gap-4" animated={false}>
+          <Card className="absolute left-0 top-8 grid gap-4" animated={false}>
             {options.map((option, index) => (
               <div
                 key={option.value}
@@ -69,6 +69,4 @@ const Select: React.FC<SelectProps> = ({ options }) => {
       </AnimatePresence>
     </div>
   );
-};
-
-export default Select;
+}
