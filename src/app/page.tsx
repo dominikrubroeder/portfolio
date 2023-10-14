@@ -2,7 +2,6 @@
 
 import { useRef, useState } from 'react';
 import useIsInView from '../hooks/useIsInView';
-import Layout from '../components/layout';
 import ThemeSwitch from '../components/ThemeSwitch';
 import Navigation from '../components/navigation/Navigation';
 import { homePageSectionData } from '../data';
@@ -29,7 +28,7 @@ export default function Home() {
   };
 
   return (
-    <Layout>
+    <>
       <section className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center gap-2">
         <h2 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-7xl font-bold sm:text-9xl">
           Team frontend.
@@ -78,6 +77,6 @@ export default function Home() {
       >
         <Socials />
       </Section>
-    </Layout>
+    </>
   );
 }
