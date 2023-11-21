@@ -1,11 +1,12 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-interface CardProps {
-  children: React.ReactNode;
+export default function Card({
+  children,
+  className
+}: {
+  children: ReactNode;
   className?: string;
-}
-
-const Card: React.FC<CardProps> = ({ children, className }) => {
+}) {
   return (
     <div
       className={`rounded-2xl bg-apple-gray-6 p-8 ${
@@ -15,6 +16,4 @@ const Card: React.FC<CardProps> = ({ children, className }) => {
       {children}
     </div>
   );
-};
-
-export default Card;
+}
