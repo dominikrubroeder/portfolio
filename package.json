@@ -13,24 +13,22 @@
     "@heroicons/react": "^2.0.12",
     "framer-motion": "^10.16.5",
     "next": "^14.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
-    "@types/node": "18.11.6",
-    "@types/react": "18.0.23",
-    "@types/react-dom": "18.0.7",
-    "@typescript-eslint/eslint-plugin": "^5.41.0",
-    "@typescript-eslint/parser": "^5.41.0",
-    "autoprefixer": "^10.4.16",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
     "babel-loader": "^8.2.5",
-    "eslint": "8.26.0",
-    "eslint-config-next": "13.0.0",
-    "postcss": "^8.4.31",
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13",
-    "tailwindcss": "^3.3.5",
-    "typescript": "^5.2.2"
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "postcss": "^8",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
   }
 }
