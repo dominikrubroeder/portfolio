@@ -11,20 +11,18 @@ export default async function GitHub() {
   const gitHubUserArray = convertObjectToArray(gitHubUser);
 
   return (
-    <div className="grid gap-4">
-      <header className="flex gap-4">
-        <button>
-          <Image
-            src={gitHubUser.avatar_url}
-            alt={gitHubUser.name}
-            width={32}
-            height={32}
-            className="rounded-full"
-          />
-        </button>
+    <div className="grid gap-4 relative max-w-lg ml-auto">
+      <header className="flex gap-4 justify-end">
+        <Image
+          src={gitHubUser.avatar_url}
+          alt={gitHubUser.name}
+          width={32}
+          height={32}
+          className="rounded-full shrink-0"
+        />
       </header>
 
-      <div className="bg-gray-950 p-4">
+      <div className="bg-white/5 p-4 max-h-[50vh] overflow-hidden overflow-y-auto rounded absolute top-12 right-0 z-50">
         <code className="text-xs">
           <span>{`{`}</span>
           <ul className="grid gap-2">

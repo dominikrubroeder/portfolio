@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" data-theme="dark" className="dark">
       <body className="grid min-h-screen grid-rows-[auto_1fr_auto] bg-theme-base leading-[1.8] text-theme-contrary/40">
         <Header />
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
