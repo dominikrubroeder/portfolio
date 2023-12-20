@@ -45,7 +45,7 @@
     {
       "title": "React",
       "website": "https://react.dev/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/270px-React-icon.svg.png",
+      "logo": "https://dominikrubroeder.vercel.app/react.png",
       "description": "The library for web and native user interfaces",
       "keyword": "UI library",
       "projects": []
@@ -53,7 +53,7 @@
     {
       "title": "Next.js",
       "website": "https://nextjs.org/",
-      "logo": "",
+      "logo": "https://dominikrubroeder.vercel.app/nextjs.png",
       "description": "The React Framework for the Web",
       "keyword": "React-based fullstack web framework",
       "projects": []
@@ -61,7 +61,7 @@
     {
       "title": "TypeScript",
       "website": "https://www.typescriptlang.org",
-      "logo": "",
+      "logo": "https://dominikrubroeder.vercel.app/typescript.png",
       "description": "TypeScript is JavaScript with syntax for types.",
       "keyword": "JavaScript-based typed language",
       "projects": []
@@ -69,7 +69,7 @@
     {
       "title": "JavaScript",
       "website": "https://www.w3schools.com/js/",
-      "logo": "",
+      "logo": "https://dominikrubroeder.vercel.app/javascript.png",
       "description": "JavaScript is the programming language of the Web.",
       "keyword": "Programming Language",
       "projects": []
@@ -77,7 +77,7 @@
     {
       "title": "Markdown",
       "website": "https://markdown.de/",
-      "logo": "",
+      "logo": "https://dominikrubroeder.vercel.app/markdown.png",
       "description": "A simplified markup language",
       "keyword": "Markup language",
       "projects": []
@@ -85,7 +85,7 @@
     {
       "title": "HTML",
       "website": "https://www.w3schools.com/html/",
-      "logo": "",
+      "logo": "https://dominikrubroeder.vercel.app/html.png",
       "description": "The standard markup language for Web pages",
       "keyword": "Basic Markup language",
       "projects": []
@@ -93,7 +93,7 @@
     {
       "title": "CSS",
       "website": "https://www.w3schools.com/css/",
-      "logo": "",
+      "logo": "https://dominikrubroeder.vercel.app/css.png",
       "description": "The language we use to style an HTML document.",
       "keyword": "Cascading Style Sheet",
       "projects": []
@@ -101,7 +101,7 @@
     {
       "title": "Tailwind CSS",
       "website": "https://tailwindcss.com/",
-      "logo": "",
+      "logo": "https://dominikrubroeder.vercel.app/tailwind.png",
       "description": "Rapidly build modern websites without ever leaving your HTML.",
       "keyword": "CSS Framework",
       "projects": []
