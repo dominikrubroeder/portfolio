@@ -1,22 +1,23 @@
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
+import Link from 'next/link';
 
 export default function ControlBar() {
   return (
     <nav className="sticky flex items-center justify-center gap-3 top-4 text-center border-white/10 z-50 mx-auto">
       <ControlBarAction type="Avatar" />
-      <ul className="flex gap-4 rounded-full bg-white/10 p-4 px-6 items-center w-min">
+      <ul className="flex gap-4 rounded-full bg-white/10 p-4 px-6 items-center w-min z-50 relative">
         <li>
-          <a href="#projects">Projects</a>
+          <Link href="#projects">Projects</Link>
         </li>
         <li>
-          <a href="#tools">Tools</a>
+          <Link href="#tools">Tools</Link>
         </li>
         <li>
-          <a href="#tools">Technologies</a>
+          <Link href="#technologies">Technologies</Link>
         </li>
         <li>
-          <a href="#socials">Socials</a>
+          <Link href="#socials">Socials</Link>
         </li>
       </ul>
       <ControlBarAction type="Up" />
