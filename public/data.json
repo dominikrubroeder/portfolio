@@ -45,7 +45,7 @@
     {
       "title": "React",
       "website": "https://react.dev/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/270px-React-icon.svg.png",
+      "logo": "https://dominikrubroeder.vercel.app/react.png",
       "description": "The library for web and native user interfaces",
       "keyword": "UI library",
       "projects": []
