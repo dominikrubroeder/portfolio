@@ -4,9 +4,9 @@ import Link from 'next/link';
 
 export default function ControlBar() {
   return (
-    <nav className="sticky flex items-center justify-center gap-3 top-4 text-center border-white/10 z-50 mx-auto">
+    <nav className="sticky flex items-center justify-center gap-3 top-4 text-center z-50 mx-auto">
       <ControlBarAction type="Avatar" />
-      <ul className="flex gap-4 rounded-full bg-white/10 p-4 px-6 items-center w-min z-50 relative">
+      <ul className="flex gap-4 rounded-full bg-gray-5 p-4 px-6 items-center w-min z-50 relative">
         <li>
           <Link href="#projects">Projects</Link>
         </li>
@@ -28,14 +28,14 @@ export default function ControlBar() {
 function ControlBarAction({ type }: { type: 'Avatar' | 'Up' | 'Back' }) {
   if (type === 'Up')
     return (
-      <div className="flex items-center gap-4 justify-center bg-white/10 rounded-full w-14 h-14">
+      <div className="flex items-center gap-4 justify-center bg-gray-5 rounded-full w-14 h-14">
         <ArrowUpIcon className="h-4 w-4 text-white" />
       </div>
     );
 
   if (type === 'Back')
     return (
-      <div className="flex items-center gap-4 justify-center bg-white/10 rounded-full w-14 h-14">
+      <div className="flex items-center gap-4 justify-center bg-gray-5 rounded-full w-14 h-14">
         <ArrowLeftIcon className="h-4 w-4 text-white" />
       </div>
     );
