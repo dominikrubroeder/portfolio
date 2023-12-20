@@ -20,8 +20,11 @@ export default function HomePage() {
         <p>Projects will be added soon.</p>
       </section>
 
-      <section id="tools" className="min-h-dvh flex flex-col px-16 py-16 gap-8">
-        <header className="flex gap-1">
+      <section
+        id="tools"
+        className="min-h-dvh flex flex-col justify-center py-16 gap-8"
+      >
+        <header className="flex gap-1 px-16">
           <h2 className="text-white font-bold">Tools</h2>
           <span>I use</span>
         </header>
