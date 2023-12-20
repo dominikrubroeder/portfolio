@@ -114,5 +114,31 @@
       "keyword": "React-based motion library",
       "projects": []
     }
+  ],
+  "socials": [
+    {
+      "title": "GitHub",
+      "website": "https://github.com/dominikrubroeder",
+      "logo": "https://dominikrubroeder.vercel.app/github.png",
+      "badge": "Dominik Rubröder"
+    },
+    {
+      "title": "LinkedIn",
+      "website": "https://de.linkedin.com/in/dominik-rubr%C3%B6der-49a63817b",
+      "logo": "https://dominikrubroeder.vercel.app/linkedin.png",
+      "badge": "Dominik Rubröder"
+    },
+    {
+      "title": "Xing",
+      "website": "https://www.xing.com/profile/Dominik_Rubroeder",
+      "logo": "https://dominikrubroeder.vercel.app/xing.png",
+      "badge": "Dominik Rubröder"
+    },
+    {
+      "title": "Instagram",
+      "website": "https://instagram.com/domirubroeder",
+      "logo": "https://dominikrubroeder.vercel.app/instagram.png",
+      "badge": "Dominik Rubröder"
+    }
   ]
 }
