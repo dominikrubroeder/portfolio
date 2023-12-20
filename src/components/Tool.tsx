@@ -1,8 +1,5 @@
 import Image from 'next/image';
-import {
-  ArrowRightIcon,
-  ArrowTopRightOnSquareIcon
-} from '@heroicons/react/24/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import { Tool } from '@/interfaces';
 
@@ -36,12 +33,12 @@ export default function Tool({ tool }: { tool: Tool }) {
 
       <div className="opacity-0 invisible grid grid-cols-2 gap-4 translate-y-4 transition group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
         <button
-          title={`Go to projects with ${tool.title}`}
-          aria-label={`Go to projects with ${tool.title}`}
-          className="flex items-center justify-center h-16 rounded-2xl bg-gray-5"
+          title={`Projects with ${tool.title} are coming soon.`}
+          aria-label={`Projects with ${tool.title} are coming soon.`}
+          className="flex items-center justify-center h-16 rounded-2xl bg-gray-5 text-xs"
           disabled
         >
-          <ArrowRightIcon className="h-5 w-5" />
+          Projects coming soon
         </button>
         <Link
           href={tool.website}
