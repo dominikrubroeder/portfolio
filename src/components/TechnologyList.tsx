@@ -9,7 +9,7 @@ export default async function TechnologyList() {
     technologies === undefined ||
     technologies.length === 0
   )
-    return <div>No tools listed.</div>;
+    return <div>No technology listed.</div>;
 
   return (
     <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">

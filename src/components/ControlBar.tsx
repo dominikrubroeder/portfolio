@@ -1,13 +1,25 @@
+'use client';
+
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function ControlBar() {
+  const [state, setState] = useState<'collapsed' | 'expanded'>('collapsed');
   return (
-    <nav className="sticky flex items-center justify-center gap-3 top-4 text-center z-50 mx-auto">
-      <ControlBarAction type="Avatar" />
+    <nav className="sticky flex items-center justify-center gap-3 top-4 text-center z-50 mx-auto w-max">
+      <div
+        className={`absolute left-0 top-0 transition ${
+          state === 'collapsed'
+            ? 'translate-x-0 scale-95'
+            : '-translate-x-16 scale-100'
+        }`}
+      >
+        <ControlBarAction type="Avatar" />
+      </div>
       <ul className="flex gap-4 rounded-full bg-gray-5 p-4 px-6 items-center w-min z-50 relative">
-        <li>
+        <li onClick={() => setState('expanded')}>
           <Link href="#projects">Projects</Link>
         </li>
         <li>
@@ -20,7 +32,15 @@ export default function ControlBar() {
           <Link href="#socials">Socials</Link>
         </li>
       </ul>
-      <ControlBarAction type="Up" />
+      <div
+        className={`absolute right-0 top-0 transition ${
+          state === 'collapsed'
+            ? 'translate-x-0 scale-95'
+            : 'translate-x-16 scale-100'
+        }`}
+      >
+        <ControlBarAction type="Up" />
+      </div>
     </nav>
   );
 }

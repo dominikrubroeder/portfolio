@@ -2,6 +2,7 @@ import ControlBar from '@/components/ControlBar';
 import ToolList from '@/components/ToolList';
 import { Suspense } from 'react';
 import TechnologyList from '@/components/TechnologyList';
+import SocialList from '@/components/SocialList';
 
 export default function HomePage() {
   return (
@@ -49,11 +50,18 @@ export default function HomePage() {
         </Suspense>
       </section>
 
-      <section id="socials" className="min-h-dvh flex items-center px-16">
-        <header className="flex gap-1">
-          <h2 className="text-white font-bold">Socials Accounts</h2>
+      <section
+        id="socials"
+        className="min-h-dvh flex flex-col justify-center py-16 gap-8"
+      >
+        <header className="flex gap-1 px-16">
+          <h2 className="text-white font-bold">Social Accounts</h2>
           <span>I use</span>
         </header>
+
+        <Suspense fallback={'Loading...'}>
+          <SocialList />
+        </Suspense>
       </section>
     </>
   );

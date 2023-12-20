@@ -11,9 +11,9 @@ export interface Technology extends Tool {}
 
 export interface Social {
   title: string;
-  link: string;
+  website: string;
   logo: string;
-  username: string;
+  badge: string;
 }
 
 export interface Data {
