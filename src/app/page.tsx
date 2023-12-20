@@ -3,6 +3,7 @@ import ToolList from '@/components/ToolList';
 import { Suspense } from 'react';
 import TechnologyList from '@/components/TechnologyList';
 import SocialList from '@/components/SocialList';
+import LoadingList from '@/components/LoadingList';
 
 export default function HomePage() {
   return (
@@ -31,7 +32,7 @@ export default function HomePage() {
           <span>I use</span>
         </header>
 
-        <Suspense fallback={'Loading...'}>
+        <Suspense fallback={<LoadingList />}>
           <ToolList />
         </Suspense>
       </section>
@@ -45,7 +46,7 @@ export default function HomePage() {
           <span>I use</span>
         </header>
 
-        <Suspense fallback={'Loading...'}>
+        <Suspense fallback={<LoadingList />}>
           <TechnologyList />
         </Suspense>
       </section>
@@ -59,7 +60,7 @@ export default function HomePage() {
           <span>I use</span>
         </header>
 
-        <Suspense fallback={'Loading...'}>
+        <Suspense fallback={<LoadingList />}>
           <SocialList />
         </Suspense>
       </section>
