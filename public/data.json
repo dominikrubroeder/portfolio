@@ -109,7 +109,7 @@
     {
       "title": "Framer Motion",
       "website": "https://www.framer.com/motion/",
-      "logo": "",
+      "logo": "https://dominikrubroeder.vercel.app/framer.png",
       "description": "A declarative motion library for animating react UIs and apply motion to it",
       "keyword": "React-based motion library",
       "projects": []
