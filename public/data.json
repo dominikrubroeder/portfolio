@@ -40,5 +40,79 @@
       "keyword": "Version control",
       "projects": []
     }
+  ],
+  "technologies": [
+    {
+      "title": "React",
+      "website": "https://react.dev/",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/270px-React-icon.svg.png",
+      "description": "The library for web and native user interfaces",
+      "keyword": "UI library",
+      "projects": []
+    },
+    {
+      "title": "Next.js",
+      "website": "https://nextjs.org/",
+      "logo": "",
+      "description": "The React Framework for the Web",
+      "keyword": "React-based fullstack web framework",
+      "projects": []
+    },
+    {
+      "title": "TypeScript",
+      "website": "https://www.typescriptlang.org",
+      "logo": "",
+      "description": "TypeScript is JavaScript with syntax for types.",
+      "keyword": "JavaScript-based typed language",
+      "projects": []
+    },
+    {
+      "title": "JavaScript",
+      "website": "https://www.w3schools.com/js/",
+      "logo": "",
+      "description": "JavaScript is the programming language of the Web.",
+      "keyword": "Programming language",
+      "projects": []
+    },
+    {
+      "title": "Markdown",
+      "website": "https://markdown.de/",
+      "logo": "",
+      "description": "A simplified markup language",
+      "keyword": "Markup language",
+      "projects": []
+    },
+    {
+      "title": "HTML",
+      "website": "https://www.w3schools.com/html/",
+      "logo": "",
+      "description": "The standard markup language for Web pages",
+      "keyword": "Basic Markup language",
+      "projects": []
+    },
+    {
+      "title": "CSS",
+      "website": "https://www.w3schools.com/css/",
+      "logo": "",
+      "description": "The language we use to style an HTML document.",
+      "keyword": "Cascading Style Sheet",
+      "projects": []
+    },
+    {
+      "title": "Tailwind CSS",
+      "website": "https://tailwindcss.com/",
+      "logo": "",
+      "description": "Rapidly build modern websites without ever leaving your HTML.",
+      "keyword": "CSS Framework",
+      "projects": []
+    },
+    {
+      "title": "Framer Motion",
+      "website": "https://www.framer.com/motion/",
+      "logo": "",
+      "description": "A declarative motion library for animating react UIs and apply motion to it",
+      "keyword": "React-based motion library",
+      "projects": []
+    }
   ]
 }
