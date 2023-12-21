@@ -1,5 +1,5 @@
 import { getTechnologies } from '@/lib';
-import Technology from '@/components/Technology';
+import Technology from '@/components/technology/Technology';
 
 export default async function TechnologyList() {
   const technologies = await getTechnologies();
