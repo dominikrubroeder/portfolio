@@ -39,10 +39,10 @@ export default function Technology({ technology }: { technology: Technology }) {
         <button
           title={`Projects with ${technology.title} are coming soon.`}
           aria-label={`Projects with ${technology.title} are coming soon.`}
-          className="flex items-center justify-center h-16 rounded-2xl bg-gray-5 text-xs"
+          className="flex items-center justify-center h-16 rounded-2xl bg-gray-5 text-xs p-4"
           disabled
         >
-          Projects coming soon
+          Projects will be added soon
         </button>
         <Link
           href={technology.website}
