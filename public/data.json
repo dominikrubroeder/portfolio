@@ -6,6 +6,7 @@
       "logo": "https://dominikrubroeder.vercel.app/figma.png",
       "description": "How you design, align, and build  matters. Do it together with Figma",
       "keyword": "Interfacetool",
+      "priority": "high",
       "projects": []
     },
     {
@@ -14,6 +15,7 @@
       "logo": "https://dominikrubroeder.vercel.app/webstorm.png",
       "description": "The smartest JavaScript IDE",
       "keyword": "IDE",
+      "priority": "high",
       "projects": []
     },
     {
@@ -22,6 +24,7 @@
       "logo": "https://dominikrubroeder.vercel.app/inkdrop.png",
       "description": "Organizing your tech notes made simple",
       "keyword": "Note-taking",
+      "priority": "high",
       "projects": []
     },
     {
@@ -30,6 +33,7 @@
       "logo": "https://dominikrubroeder.vercel.app/github.png",
       "description": "The world’s leading AI-powered developer platform.",
       "keyword": "Version control",
+      "priority": "high",
       "projects": []
     },
     {
@@ -38,6 +42,25 @@
       "logo": "https://dominikrubroeder.vercel.app/gitlab.png",
       "description": "Software. Faster. GitLab is the most comprehensive AI-powered DevSecOps Platform.",
       "keyword": "Version control",
+      "priority": "high",
+      "projects": []
+    },
+    {
+      "title": "Showpare",
+      "website": "https://www.shopware.com/de/",
+      "logo": "https://dominikrubroeder.vercel.app/figma.png",
+      "description": "Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.",
+      "keyword": "Shop System",
+      "priority": "low",
+      "projects": []
+    },
+    {
+      "title": "Miro",
+      "website": "https://miro.com/de/",
+      "logo": "https://dominikrubroeder.vercel.app/figma.png",
+      "description": "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company.",
+      "keyword": "Collaborative Whiteboard",
+      "priority": "low",
       "projects": []
     }
   ],
@@ -48,6 +71,7 @@
       "logo": "https://dominikrubroeder.vercel.app/react.png",
       "description": "The library for web and native user interfaces",
       "keyword": "UI library",
+      "priority": "high",
       "projects": []
     },
     {
@@ -56,6 +80,7 @@
       "logo": "https://dominikrubroeder.vercel.app/nextjs.png",
       "description": "The React Framework for the Web",
       "keyword": "React-based fullstack web framework",
+      "priority": "high",
       "projects": []
     },
     {
@@ -64,6 +89,7 @@
       "logo": "https://dominikrubroeder.vercel.app/typescript.png",
       "description": "TypeScript is JavaScript with syntax for types.",
       "keyword": "JavaScript-based typed language",
+      "priority": "high",
       "projects": []
     },
     {
@@ -72,6 +98,7 @@
       "logo": "https://dominikrubroeder.vercel.app/javascript.png",
       "description": "JavaScript is the programming language of the Web.",
       "keyword": "Programming Language",
+      "priority": "high",
       "projects": []
     },
     {
@@ -80,6 +107,7 @@
       "logo": "https://dominikrubroeder.vercel.app/markdown.png",
       "description": "A simplified markup language",
       "keyword": "Markup language",
+      "priority": "high",
       "projects": []
     },
     {
@@ -88,6 +116,7 @@
       "logo": "https://dominikrubroeder.vercel.app/html.png",
       "description": "The standard markup language for Web pages",
       "keyword": "Basic Markup language",
+      "priority": "high",
       "projects": []
     },
     {
@@ -96,6 +125,7 @@
       "logo": "https://dominikrubroeder.vercel.app/css.png",
       "description": "The language we use to style an HTML document.",
       "keyword": "Cascading Style Sheet",
+      "priority": "high",
       "projects": []
     },
     {
@@ -104,6 +134,7 @@
       "logo": "https://dominikrubroeder.vercel.app/tailwind.png",
       "description": "Rapidly build modern websites without ever leaving your HTML.",
       "keyword": "CSS Framework",
+      "priority": "high",
       "projects": []
     },
     {
@@ -112,6 +143,7 @@
       "logo": "https://dominikrubroeder.vercel.app/framer.png",
       "description": "A declarative motion library for animating react UIs and apply motion to it",
       "keyword": "React-based motion library",
+      "priority": "high",
       "projects": []
     }
   ],

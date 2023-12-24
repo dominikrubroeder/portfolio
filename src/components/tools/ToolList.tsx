@@ -11,14 +11,17 @@ export default async function ToolList() {
   return (
     <>
       <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
-        {tools.map((tool) => (
-          <li
-            key={tool.title}
-            className="group inline-block mr-8 first-of-type:ml-16"
-          >
-            <Tool tool={tool} />
-          </li>
-        ))}
+        {tools.map((tool) => {
+          if (tool.priority === 'high')
+            return (
+              <li
+                key={tool.title}
+                className="group inline-block mr-8 first-of-type:ml-16"
+              >
+                <Tool tool={tool} />
+              </li>
+            );
+        })}
       </ul>
 
       <div className="ml-16">

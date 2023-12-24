@@ -4,6 +4,7 @@ export interface Tool {
   logo: string;
   description: string;
   keyword: string;
+  priority: 'low' | 'high';
   projects: string[];
 }
 

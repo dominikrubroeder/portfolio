@@ -10,6 +10,9 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
   const [state, setState] = useState<{ isVisible: boolean }>({
     isVisible: false
   });
+
+  if (!tools.some((tool) => tool.priority === 'low')) return null;
+
   return (
     <div>
       <div
@@ -37,42 +40,54 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
           state.isVisible ? 'translate-y-0 visible' : 'translate-y-6 invisible'
         }`}
       >
-        {tools.map((tool) => (
-          <li key={tool.title}>
-            <div className="group border-b py-4 border-gray-5 flex items-center justify-between gap-4 text-xs pr-4">
-              <div className="flex items-center gap-4">
-                <Link
-                  href={tool.website}
-                  target="_blank"
-                  className="flex items-center justify-center gap-4"
-                >
-                  <Image
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                    src={tool.logo}
-                    alt={tool.title}
-                  />
-                  <h3 className="text-white w-24 font-bold">{tool.title}</h3>
-                </Link>
+        {tools.map((tool) => {
+          if (tool.priority === 'low')
+            return (
+              <li key={tool.title}>
+                <div className="group border-b py-4 border-gray-5 flex items-center justify-between gap-4 text-xs pr-4">
+                  <div className="flex items-center gap-4">
+                    <Link
+                      href={tool.website}
+                      target="_blank"
+                      className="flex items-center justify-center gap-4"
+                    >
+                      <Image
+                        width={32}
+                        height={32}
+                        className="object-contain"
+                        src={tool.logo}
+                        alt={tool.title}
+                      />
 
-                <p>{tool.description}</p>
-              </div>
+                      <h3 className="text-white w-24 font-bold">
+                        {tool.title}
+                      </h3>
 
-              <div className="flex gap-4 transition">
-                <Link
-                  href={tool.website}
-                  target="_blank"
-                  title={`Go to external ${tool.title} project page`}
-                  aria-label={`Go to ${tool.title} project page`}
-                  className="flex items-center justify-center rounded-2xl p-4 transition bg-gray-5 group"
-                >
-                  <ArrowRightIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
-                </Link>
-              </div>
-            </div>
-          </li>
-        ))}
+                      <div className="w-48">
+                        <div className="rounded-3xl border w-max px-3 py-2 font-bold ml-auto">
+                          {tool.keyword}
+                        </div>
+                      </div>
+                    </Link>
+
+                    <p>{tool.description}</p>
+                  </div>
+
+                  <div className="flex gap-4 transition items-center">
+                    <Link
+                      href={tool.website}
+                      target="_blank"
+                      title={`Go to external ${tool.title} project page`}
+                      aria-label={`Go to ${tool.title} project page`}
+                      className="flex items-center justify-center rounded-2xl p-4 transition bg-gray-5 group"
+                    >
+                      <ArrowRightIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            );
+        })}
       </ul>
     </div>
   );
