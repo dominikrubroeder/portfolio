@@ -45,7 +45,7 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
             return (
               <li key={tool.title}>
                 <div className="group border-b py-4 border-gray-5 flex items-center justify-between gap-4 text-xs pr-4">
-                  <div className="flex items-center gap-4">
+                  <div className="flex gap-4 items-center">
                     <Link
                       href={tool.website}
                       target="_blank"
@@ -59,18 +59,14 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
                         alt={tool.title}
                       />
 
-                      <h3 className="text-white w-24 font-bold">
-                        {tool.title}
-                      </h3>
+                      <h3 className="text-white font-bold">{tool.title}</h3>
 
-                      <div className="w-48">
-                        <div className="rounded-3xl border w-max px-3 py-2 font-bold ml-auto">
-                          {tool.keyword}
-                        </div>
+                      <div className="rounded-3xl border w-max px-3 py-2 font-bold mr-auto whitespace-nowrap">
+                        {tool.keyword}
                       </div>
                     </Link>
 
-                    <p>{tool.description}</p>
+                    <p className="flex-1">{tool.description}</p>
                   </div>
 
                   <div className="flex gap-4 transition items-center">
