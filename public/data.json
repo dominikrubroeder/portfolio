@@ -29,7 +29,7 @@
     },
     {
       "title": "GitHub",
-      "website": "https://github.com/",
+      "website": "https://github.com/dominikrubroeder",
       "logo": "https://dominikrubroeder.vercel.app/github.png",
       "description": "The world’s leading AI-powered developer platform.",
       "keyword": "Version control",
@@ -38,7 +38,7 @@
     },
     {
       "title": "GitLab",
-      "website": "https://about.gitlab.com/",
+      "website": "https://about.gitlab.com",
       "logo": "https://dominikrubroeder.vercel.app/gitlab.png",
       "description": "Software. Faster. GitLab is the most comprehensive AI-powered DevSecOps Platform.",
       "keyword": "Version control",
@@ -46,20 +46,29 @@
       "projects": []
     },
     {
+      "title": "Miro",
+      "website": "https://miro.com",
+      "logo": "https://dominikrubroeder.vercel.app/miro.png",
+      "description": "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company. Don't Let Distances or Timezones Stop You from Building Beautiful Products for Your Users. Miro for UX & Design.",
+      "keyword": "Collaborative Whiteboard",
+      "priority": "low",
+      "projects": []
+    },
+    {
       "title": "Showpare",
-      "website": "https://www.shopware.com/de/",
-      "logo": "https://dominikrubroeder.vercel.app/figma.png",
+      "website": "https://www.shopware.com",
+      "logo": "https://dominikrubroeder.vercel.app/shopware.png",
       "description": "Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.",
       "keyword": "Shop System",
       "priority": "low",
       "projects": []
     },
     {
-      "title": "Miro",
-      "website": "https://miro.com/de/",
-      "logo": "https://dominikrubroeder.vercel.app/figma.png",
-      "description": "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company. Don't Let Distances or Timezones Stop You from Building Beautiful Products for Your Users. Miro for UX & Design.",
-      "keyword": "Collaborative Whiteboard",
+      "title": "Storyblok",
+      "website": "https://www.storyblok.com",
+      "logo": "https://dominikrubroeder.vercel.app/storyblok.png",
+      "description": "The Way to Modern Content",
+      "keyword": "Headless CMS",
       "priority": "low",
       "projects": []
     }
