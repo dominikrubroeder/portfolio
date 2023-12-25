@@ -5,6 +5,7 @@ export interface Tool {
   description: string;
   keyword: string;
   priority: 'low' | 'high';
+  experience: 'low' | 'moderate' | 'high' | 'daily';
   projects: string[];
 }
 
