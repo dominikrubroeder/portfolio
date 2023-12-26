@@ -5,12 +5,19 @@ import SocialSection from '@/components/social/SocialSection';
 import ProjectSection from '@/components/projects/ProjectSection';
 import HomeHeroSection from '@/components/hero/HomeHeroSection';
 
+const sections = [
+  { id: 'projects', label: 'Projects' },
+  { id: 'tools', label: 'Tools' },
+  { id: 'technologies', label: 'Technologies' },
+  { id: 'socials', label: 'Socials' }
+];
+
 export default function HomePage() {
   return (
     <>
       <HomeHeroSection />
 
-      <ControlBar />
+      <ControlBar sections={sections} />
 
       <ProjectSection />
 
