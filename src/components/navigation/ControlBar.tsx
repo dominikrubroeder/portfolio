@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -11,14 +11,34 @@ export default function ControlBar({
 }: {
   sections: { id: string; label: string }[];
 }) {
-  const [state, setState] = useState<'collapsed' | 'expanded'>('collapsed');
-  const [activeTab, setActiveTab] = useState<string | null>(null);
+  const [state, setState] = useState<{
+    controlBar: 'collapsed' | 'expanded';
+    activeTab: string | null;
+  }>({ controlBar: 'collapsed', activeTab: null });
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    targetId: string
+  ) => {
+    // first prevent the default behavior
+    e.preventDefault();
+
+    // get the element by id and use scrollIntoView
+    const element = document.getElementById(targetId);
+
+    element?.scrollIntoView({
+      behavior: 'smooth'
+    });
+
+    setState(() => {
+      return { controlBar: 'expanded', activeTab: targetId };
+    });
+  };
 
   return (
     <nav className="sticky flex items-center justify-center gap-3 top-4 text-center z-50 mx-auto w-max">
       <div
         className={`absolute left-0 top-0 transition ${
-          state === 'collapsed'
+          state.controlBar === 'collapsed'
             ? 'translate-x-0 scale-95'
             : '-translate-x-16 scale-100'
         }`}
@@ -30,15 +50,12 @@ export default function ControlBar({
           <Link
             key={section.id}
             href={`#${section.id}`}
-            onClick={() => {
-              setActiveTab(section.id);
-              setState('expanded');
-            }}
             className={`${
-              activeTab === section.id ? '' : 'hover:text-white/60'
+              state.activeTab === section.id ? '' : 'hover:text-white/60'
             } relative rounded-full px-3 py-1.5 select-none cursor-pointer outline-sky-400 transition focus-visible:outline-2`}
+            onClick={(e) => handleScroll(e, section.id)}
           >
-            {activeTab === section.id && (
+            {state.activeTab === section.id && (
               <motion.span
                 layoutId="bubble"
                 className="absolute inset-0 z-10 bg-gray-4"
@@ -48,7 +65,9 @@ export default function ControlBar({
             )}
             <div
               className={`relative z-20 ${
-                activeTab === section.id ? 'text-white' : 'hover:text-white'
+                state.activeTab === section.id
+                  ? 'text-white'
+                  : 'hover:text-white'
               }`}
             >
               {section.label}
@@ -58,7 +77,7 @@ export default function ControlBar({
       </div>
       <div
         className={`absolute right-0 top-0 transition ${
-          state === 'collapsed'
+          state.controlBar === 'collapsed'
             ? 'translate-x-0 scale-95'
             : 'translate-x-16 scale-100'
         }`}
@@ -71,15 +90,14 @@ export default function ControlBar({
 
 function ControlBarAction({ type }: { type: 'Avatar' | 'Up' | 'Back' }) {
   function scrollToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollIntoView({ behavior: 'smooth' });
   }
 
   if (type === 'Up')
     return (
       <div
         onClick={() => scrollToTop()}
-        className="flex items-center gap-4 justify-center bg-gray-5 rounded-full w-14 h-14"
+        className="flex items-center gap-4 justify-center bg-gray-5 rounded-full w-14 h-14 cursor-pointer"
       >
         <ArrowUpIcon className="h-4 w-4 text-white" />
       </div>
