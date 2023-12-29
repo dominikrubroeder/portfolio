@@ -1,9 +1,31 @@
-export default function Page() {
+import ControlBar from '@/components/navigation/ControlBar';
+import TechnologySection from '@/components/technology/TechnologySection';
+import ToolSection from '@/components/tools/ToolSection';
+import SocialSection from '@/components/social/SocialSection';
+import ProjectSection from '@/components/projects/ProjectSection';
+import HomeHeroSection from '@/components/hero/HomeHeroSection';
+
+const sections = [
+  { id: 'projects', label: 'Projects' },
+  { id: 'tools', label: 'Tools' },
+  { id: 'technologies', label: 'Technologies' },
+  { id: 'socials', label: 'Socials' }
+];
+
+export default function HomePage() {
   return (
-    <div className="flex h-full items-center justify-center">
-      <h1 className="text-gradient bg-gradient-to-t from-apple-purple to-apple-pink text-3xl font-bold">
-        Hello, world
-      </h1>
-    </div>
+    <>
+      <HomeHeroSection />
+
+      <ControlBar sections={sections} />
+
+      <ProjectSection />
+
+      <ToolSection />
+
+      <TechnologySection />
+
+      <SocialSection />
+    </>
   );
 }
