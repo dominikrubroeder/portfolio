@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import { Tool } from '@/interfaces';
+import { Tool } from '@/lib/interfaces';
 
 export default function Tool({ tool }: { tool: Tool }) {
   return (

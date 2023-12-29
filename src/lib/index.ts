@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs';
-import { Data, Social, Technology, Tool } from '@/interfaces';
+import { Data, Social, Technology, Tool } from '@/lib/interfaces';
 
 export async function getData(): Promise<Data> {
   if (process.env.NODE_ENV === 'development') {

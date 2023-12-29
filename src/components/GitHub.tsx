@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { convertObjectToArray } from '@/helpers';
+import { convertObjectToArray } from '@/lib/helpers';
 
 async function getGitHubUser(userName: string) {
   const res = await fetch(`https://api.github.com/users/${userName}`);

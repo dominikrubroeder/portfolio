@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -15,24 +15,25 @@ export default function ControlBar({
     controlBar: 'collapsed' | 'expanded';
     activeTab: string | null;
   }>({ controlBar: 'collapsed', activeTab: null });
-  const handleScroll = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    targetId: string
-  ) => {
-    // first prevent the default behavior
-    e.preventDefault();
 
-    // get the element by id and use scrollIntoView
-    const element = document.getElementById(targetId);
+  const handleScroll = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+      // first prevent the default behavior
+      e.preventDefault();
 
-    element?.scrollIntoView({
-      behavior: 'smooth'
-    });
+      // get the element by id and use scrollIntoView
+      const element = document.getElementById(targetId);
 
-    setState(() => {
-      return { controlBar: 'expanded', activeTab: targetId };
-    });
-  };
+      element?.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+      setState(() => {
+        return { controlBar: 'expanded', activeTab: targetId };
+      });
+    },
+    []
+  );
 
   return (
     <nav className="sticky flex items-center justify-center gap-3 top-4 text-center z-50 mx-auto w-max">
@@ -97,9 +98,9 @@ function ControlBarAction({ type }: { type: 'Avatar' | 'Up' | 'Back' }) {
     return (
       <div
         onClick={() => scrollToTop()}
-        className="flex items-center gap-4 justify-center bg-gray-5 rounded-full w-14 h-14 cursor-pointer"
+        className="group flex items-center gap-4 justify-center bg-gray-5 rounded-full w-14 h-14 cursor-pointer transition hover:bg-gray-4"
       >
-        <ArrowUpIcon className="h-4 w-4 text-white" />
+        <ArrowUpIcon className="h-4 w-4 transition group-hover:text-white" />
       </div>
     );
 
@@ -111,7 +112,7 @@ function ControlBarAction({ type }: { type: 'Avatar' | 'Up' | 'Back' }) {
     );
 
   return (
-    <div className="flex items-center gap-4">
+    <Link href="/" className="flex items-center gap-4">
       <Image
         src="/avatar.jpg"
         alt="Dominik Rubröder Avatar"
@@ -119,6 +120,6 @@ function ControlBarAction({ type }: { type: 'Avatar' | 'Up' | 'Back' }) {
         height="56"
         className="shrink-0 rounded-full border-2 border-gray-5"
       />
-    </div>
+    </Link>
   );
 }

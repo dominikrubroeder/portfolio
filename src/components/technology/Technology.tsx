@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import { Technology } from '@/interfaces';
+import { Technology } from '@/lib/interfaces';
 
 export default function Technology({ technology }: { technology: Technology }) {
   return (

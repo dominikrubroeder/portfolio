@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Technology } from '@/interfaces';
+import { Technology } from '@/lib/interfaces';
 import Image from 'next/image';
 import { ArrowRightIcon, PlusIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
