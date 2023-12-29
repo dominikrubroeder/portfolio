@@ -7,7 +7,10 @@ export default function Tool({ tool }: { tool: Tool }) {
   return (
     <div className="grid gap-6 w-80 whitespace-normal">
       <div className="relative border rounded-xl h-80 w-80">
-        <div className="absolute flex justify-center items-center inset-0 w-full h-full">
+        <Link
+          href={`/tool/${tool.title.toLowerCase().replaceAll(' ', '-')}`}
+          className="absolute flex justify-center items-center inset-0 w-full h-full"
+        >
           <Image
             src={
               tool.logo.length === 0
@@ -20,7 +23,7 @@ export default function Tool({ tool }: { tool: Tool }) {
             height="128"
             draggable={false}
           />
-        </div>
+        </Link>
       </div>
       <div className="rounded-3xl border w-max mx-auto px-3 py-2 font-bold text-theme-contrary">
         {tool.keyword}

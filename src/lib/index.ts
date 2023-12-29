@@ -18,6 +18,13 @@ export async function getTools(): Promise<Tool[]> {
   return tools;
 }
 
+export async function getTool(toolTitle: string) {
+  const { tools } = await getData();
+  return tools.find(
+    (tool) => tool.title.toLowerCase() === toolTitle.toLowerCase()
+  );
+}
+
 export async function getTechnologies(): Promise<Technology[]> {
   const { technologies } = await getData();
   return technologies;

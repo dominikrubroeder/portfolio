@@ -65,7 +65,7 @@ export default function ControlBar({
               />
             )}
             <div
-              className={`relative z-20 ${
+              className={`relative z-20 w-max ${
                 state.activeTab === section.id
                   ? 'text-white'
                   : 'hover:text-white'
