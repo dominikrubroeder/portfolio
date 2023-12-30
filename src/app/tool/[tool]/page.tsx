@@ -26,7 +26,7 @@ export default async function ToolPage({
         </div>
       </section>
 
-      <ControlBar sections={sections} />
+      <ControlBar sections={sections} collapse={false} />
     </>
   );
 }

@@ -9,7 +9,7 @@ export default function Tool({ tool }: { tool: Tool }) {
       <div className="relative border rounded-xl h-80 w-80">
         <Link
           href={`/tool/${tool.title.toLowerCase().replaceAll(' ', '-')}`}
-          className="absolute flex justify-center items-center inset-0 w-full h-full"
+          className="absolute flex justify-center items-center inset-0 w-full h-full cursor-pointer"
         >
           <Image
             src={
@@ -30,7 +30,13 @@ export default function Tool({ tool }: { tool: Tool }) {
       </div>
 
       <div className="grid content-start gap-2 h-20">
-        <h2 className="text-theme-contrary font-bold mx-auto">{tool.title}</h2>
+        <Link
+          href={tool.website}
+          className="text-theme-contrary font-bold mx-auto"
+          target="_blank"
+        >
+          <h2>{tool.title}</h2>
+        </Link>
         <p className="italic text-center line-clamp-2">{tool.description}</p>
       </div>
 
@@ -48,9 +54,9 @@ export default function Tool({ tool }: { tool: Tool }) {
           target="_blank"
           title={`Go to external ${tool.title} landingpage`}
           aria-label={`Go to external ${tool.title} landingpage`}
-          className="flex items-center justify-center h-16 rounded-2xl transition hover:bg-gray-5"
+          className="group flex items-center justify-center h-16 rounded-2xl transition hover:bg-gray-5"
         >
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 text-theme-contrary" />
+          <ArrowTopRightOnSquareIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
         </Link>
       </div>
     </div>
