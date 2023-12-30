@@ -33,13 +33,13 @@ module.exports = {
         }
       },
       keyframes: {
-        growAndShrink: {
-          '0%, 100%': { transform: 'scale(0.95)' },
-          '70%': { transform: 'scale(1)' }
+        scale: {
+          '0%': { transform: 'scale(0.82)' },
+          '100%': { transform: 'scale(1)' }
         }
       },
       animation: {
-        growAndShrink: 'growAndShrink 6s infinite'
+        scale: 'scale 0.16s ease-out forwards'
       }
     }
   },
