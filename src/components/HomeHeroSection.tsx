@@ -30,7 +30,7 @@ const skillBadges = [
   {
     id: 'prototyping',
     title: 'Prototyping',
-    position: 'bottom-[22rem] right-4 lg:bottom-16'
+    position: 'top-64 right-4 lg:top-auto lg:bottom-32 lg:bottom-16'
   },
   {
     id: 'microanimations',
@@ -40,12 +40,12 @@ const skillBadges = [
   {
     id: 'transitions',
     title: 'Transitions',
-    position: 'right-4 bottom-52 lg:right-auto lg:left-16 lg:bottom-24'
+    position: 'bottom-[15rem] right-4 lg:right-auto lg:left-16 lg:bottom-24'
   },
   {
     id: 'supportive-animations',
     title: 'Supportive Animations',
-    position: 'bottom-64 left-4 lg:left-32 lg:bottom-72'
+    position: 'bottom-80 left-4 lg:left-32 lg:bottom-72'
   }
 ];
 
@@ -53,8 +53,6 @@ export default function HomeHeroSection() {
   const ref = useRef(null);
   const isInView = useIsInView(ref);
   const [uxEffects, setUxEffects] = useState(false);
-
-  console.log(isInView);
 
   return (
     <>
