@@ -2,19 +2,32 @@
 
 import Image from 'next/image';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function ControlBar({
-  sections
+  sections,
+  collapse
 }: {
   sections: { id: string; label: string }[];
+  collapse: boolean;
 }) {
   const [state, setState] = useState<{
     controlBar: 'collapsed' | 'expanded';
     activeTab: string | null;
   }>({ controlBar: 'collapsed', activeTab: null });
+
+  useEffect(
+    () =>
+      setState((prevState) => {
+        return {
+          activeTab: collapse ? null : prevState.activeTab,
+          controlBar: collapse ? 'collapsed' : 'expanded'
+        };
+      }),
+    [collapse]
+  );
 
   const handleScroll = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
