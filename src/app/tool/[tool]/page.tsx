@@ -22,7 +22,9 @@ export default async function ToolPage({
     <>
       <section className="realtive flex h-[calc(100dvh-5rem)] items-center justify-center">
         <div className="max-w-max">
-          <h1 className="text-8xl font-bold text-white">{tool.title}</h1>
+          <h1 className="text-8xl font-bold text-theme-contrary">
+            {tool.title}
+          </h1>
         </div>
       </section>
 

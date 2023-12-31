@@ -16,7 +16,7 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
   return (
     <div>
       <div
-        className="flex items-center gap-4 cursor-pointer mb-4 select-none"
+        className="mb-4 flex cursor-pointer select-none items-center gap-4"
         onClick={() =>
           setState((prevState) => {
             return { isVisible: !prevState.isVisible };
@@ -24,33 +24,29 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
         }
       >
         <button
-          className="h-14 w-14 flex items-center justify-center rounded-full bg-gray-5 transition hover:text-white"
+          className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 hover:text-theme-contrary"
           aria-label="Show more tools"
         >
           {state.isVisible && <MinusIcon className="h-4 w-4" />}
           {!state.isVisible && <PlusIcon className="h-4 w-4" />}
         </button>
-        <div className="rounded-full bg-gray-5 p-4 px-6 transition hover:text-white">
+        <div className="rounded-full bg-gray-5 p-4 px-6 transition hover:text-theme-contrary">
           {state.isVisible ? 'Hide' : 'More on Tools'}
         </div>
       </div>
 
       <ul
         className={`transition ${
-          state.isVisible ? 'translate-y-0 visible' : 'translate-y-6 invisible'
+          state.isVisible ? 'visible translate-y-0' : 'invisible translate-y-6'
         }`}
       >
         {tools.map((tool) => {
           if (tool.priority === 'low')
             return (
               <li key={tool.title}>
-                <div className="group border-b py-4 border-gray-5 flex items-center justify-between gap-4 text-xs pr-4">
-                  <div className="flex gap-4 items-center">
-                    <Link
-                      href={tool.website}
-                      target="_blank"
-                      className="flex items-center justify-center gap-4"
-                    >
+                <div className="group flex items-center justify-between gap-4 border-b border-gray-5 py-4 pr-4 text-xs">
+                  <div className="grid gap-4 lg:flex lg:items-center">
+                    <div className="flex items-center justify-center gap-4">
                       <Image
                         width={32}
                         height={32}
@@ -59,23 +55,33 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
                         alt={tool.title}
                       />
 
-                      <h3 className="text-white font-bold">{tool.title}</h3>
+                      <h3 className="font-bold text-theme-contrary">
+                        <Link
+                          href={tool.website}
+                          title={`Go to ${tool.title} external website`}
+                          target="_blank"
+                        >
+                          {tool.title}
+                        </Link>
+                      </h3>
 
-                      <div className="rounded-3xl border w-max px-3 py-2 font-bold mr-auto whitespace-nowrap">
+                      <div className="mr-auto w-max whitespace-nowrap rounded-3xl border border-gray-4 px-3 py-2 font-bold text-theme-contrary">
                         {tool.keyword}
                       </div>
-                    </Link>
+                    </div>
 
-                    <p className="flex-1">{tool.description}</p>
+                    <p className="flex-1 pl-12">{tool.description}</p>
                   </div>
 
-                  <div className="flex gap-4 transition items-center">
+                  <div className="flex items-center gap-4 transition">
                     <Link
-                      href={tool.website}
+                      href={`/tool/${tool.title
+                        .toLowerCase()
+                        .replaceAll(' ', '')}`}
                       target="_blank"
                       title={`Go to external ${tool.title} project page`}
                       aria-label={`Go to ${tool.title} project page`}
-                      className="flex items-center justify-center rounded-2xl p-4 transition bg-gray-5 group"
+                      className="group flex items-center justify-center rounded-2xl bg-gray-5 p-4 transition hover:bg-gray-4"
                     >
                       <ArrowRightIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
                     </Link>

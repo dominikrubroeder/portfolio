@@ -75,14 +75,14 @@ export default function ControlBar({
           state.mobileMenu === 'invisible'
             ? 'invisible -translate-y-4'
             : 'visible translate-y-0'
-        } sm:visible sm:relative sm:top-4 sm:flex sm:rounded-full`}
+        } md:visible md:relative md:top-4 md:flex md:rounded-full`}
       >
         {sections.map((section) => (
           <Link
             key={section.id}
             href={`#${section.id}`}
             className={`${
-              state.activeTab === section.id ? '' : 'hover:text-white/60'
+              state.activeTab === section.id ? '' : 'hover:text-theme-contrary'
             } relative cursor-pointer select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2`}
             onClick={(e) => handleScroll(e, section.id)}
           >
@@ -97,8 +97,8 @@ export default function ControlBar({
             <div
               className={`relative z-20 w-max ${
                 state.activeTab === section.id
-                  ? 'text-white'
-                  : 'hover:text-white'
+                  ? 'text-theme-contrary'
+                  : 'hover:text-theme-contrary'
               }`}
             >
               {section.label}
@@ -110,7 +110,7 @@ export default function ControlBar({
       <div
         className={`flex items-center gap-2 rounded-full bg-gray-5 transition ${
           state.activeTab ? 'pl-4' : 'pl-0'
-        } sm:hidden`}
+        } md:hidden`}
       >
         {state.activeTab && <h3>{capitalize(state.activeTab ?? '')}</h3>}
         <button
@@ -120,7 +120,7 @@ export default function ControlBar({
             setState((prevState) => {
               return {
                 ...prevState,
-                controlBar: 'expanded',
+                controlBar: prevState.controlBar,
                 mobileMenu:
                   prevState.mobileMenu === 'invisible' ? 'visible' : 'invisible'
               };
@@ -157,7 +157,7 @@ function ControlBarAction({ type }: { type: 'Avatar' | 'Up' | 'Back' }) {
         onClick={() => scrollToTop()}
         className="group flex h-14 w-14 cursor-pointer items-center justify-center gap-4 rounded-full border-2 border-gray-5 bg-gray-5 transition hover:border-gray-4 hover:bg-gray-4"
       >
-        <ArrowUpIcon className="h-4 w-4 transition group-hover:text-white" />
+        <ArrowUpIcon className="h-4 w-4 transition group-hover:text-theme-contrary" />
       </div>
     );
 

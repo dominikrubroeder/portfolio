@@ -68,7 +68,7 @@ export default function HomeHeroSection() {
     <>
       <section className="realtive flex h-[calc(100dvh-5rem)] items-center justify-center">
         <div className="max-w-max">
-          <h1 className="mx-auto text-center text-5xl font-bold text-white md:text-8xl">
+          <h1 className="mx-auto text-center text-5xl font-bold text-theme-contrary sm:text-7xl md:text-8xl">
             Team Frontend.
           </h1>
 

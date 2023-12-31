@@ -5,11 +5,11 @@ import { Tool } from '@/lib/interfaces';
 
 export default function Tool({ tool }: { tool: Tool }) {
   return (
-    <div className="grid gap-6 w-80 whitespace-normal">
-      <div className="relative border rounded-xl h-80 w-80">
+    <div className="grid w-80 gap-6 whitespace-normal">
+      <div className="relative h-80 w-80 rounded-xl border border-gray-4">
         <Link
           href={`/tool/${tool.title.toLowerCase().replaceAll(' ', '-')}`}
-          className="absolute flex justify-center items-center inset-0 w-full h-full cursor-pointer"
+          className="absolute inset-0 flex h-full w-full cursor-pointer items-center justify-center"
         >
           <Image
             src={
@@ -18,33 +18,33 @@ export default function Tool({ tool }: { tool: Tool }) {
                 : tool.logo
             }
             alt={tool.title}
-            className="max-h-32 max-w-32 object-contain shrink-0"
+            className="max-h-32 max-w-32 shrink-0 object-contain"
             width="128"
             height="128"
             draggable={false}
           />
         </Link>
       </div>
-      <div className="rounded-3xl border w-max mx-auto px-3 py-2 font-bold text-theme-contrary">
+      <div className="mx-auto w-max rounded-3xl border border-gray-4 px-3 py-2 font-bold text-theme-contrary">
         {tool.keyword}
       </div>
 
-      <div className="grid content-start gap-2 h-20">
+      <div className="grid h-20 content-start gap-2">
         <Link
           href={tool.website}
-          className="text-theme-contrary font-bold mx-auto"
+          className="mx-auto font-bold text-theme-contrary"
           target="_blank"
         >
           <h2>{tool.title}</h2>
         </Link>
-        <p className="italic text-center line-clamp-2">{tool.description}</p>
+        <p className="line-clamp-2 text-center italic">{tool.description}</p>
       </div>
 
-      <div className="opacity-0 invisible grid grid-cols-2 gap-4 translate-y-4 transition group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+      <div className="invisible grid translate-y-4 grid-cols-2 gap-4 opacity-0 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
         <button
           title={`Projects with ${tool.title} are coming soon.`}
           aria-label={`Projects with ${tool.title} are coming soon.`}
-          className="flex items-center justify-center h-16 rounded-2xl bg-gray-5 text-xs"
+          className="flex h-16 items-center justify-center rounded-2xl bg-gray-5 text-xs"
           disabled
         >
           Projects coming soon
@@ -54,7 +54,7 @@ export default function Tool({ tool }: { tool: Tool }) {
           target="_blank"
           title={`Go to external ${tool.title} landingpage`}
           aria-label={`Go to external ${tool.title} landingpage`}
-          className="group flex items-center justify-center h-16 rounded-2xl transition hover:bg-gray-5"
+          className="group flex h-16 items-center justify-center rounded-2xl transition hover:bg-gray-5"
         >
           <ArrowTopRightOnSquareIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
         </Link>
