@@ -69,7 +69,9 @@ export default function ControlBar({
       </div>
 
       <div
-        className={`absolute top-[4.5rem] z-50 grid w-min items-center gap-4 rounded-2xl bg-gray-5 p-3 px-4 transition ${
+        className={`absolute ${
+          collapse ? 'bottom-[4.5rem]' : 'top-[4.5rem]'
+        } z-50 grid w-min items-center gap-4 rounded-2xl bg-gray-5 p-3 px-4 transition ${
           state.mobileMenu === 'invisible'
             ? 'invisible -translate-y-4'
             : 'visible translate-y-0'
@@ -153,7 +155,7 @@ function ControlBarAction({ type }: { type: 'Avatar' | 'Up' | 'Back' }) {
     return (
       <div
         onClick={() => scrollToTop()}
-        className="group flex h-14 w-14 cursor-pointer items-center justify-center gap-4 rounded-full bg-gray-5 transition hover:bg-gray-4"
+        className="group flex h-14 w-14 cursor-pointer items-center justify-center gap-4 rounded-full border-2 border-gray-5 bg-gray-5 transition hover:border-gray-4 hover:bg-gray-4"
       >
         <ArrowUpIcon className="h-4 w-4 transition group-hover:text-white" />
       </div>
@@ -161,7 +163,7 @@ function ControlBarAction({ type }: { type: 'Avatar' | 'Up' | 'Back' }) {
 
   if (type === 'Back')
     return (
-      <div className="flex h-14 w-14 items-center justify-center gap-4 rounded-full bg-gray-5">
+      <div className="flex h-14 w-14 items-center justify-center gap-4 rounded-full border-2 border-gray-5 bg-gray-5 hover:border-gray-4">
         <ArrowLeftIcon className="h-4 w-4 text-white" />
       </div>
     );
