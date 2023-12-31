@@ -15,6 +15,8 @@ const sections = [
   { id: 'socials', label: 'Socials' }
 ];
 
+// To data.json?
+// Create Type?
 const skillBadges = [
   {
     id: 'interfacedesign',
@@ -129,7 +131,12 @@ export default function HomeHeroSection() {
         </h2>
       </section>
 
-      <ControlBar sections={sections} collapse={isInView} />
+      <ControlBar
+        sections={sections}
+        collapse={isInView}
+        leftControlAction="Avatar"
+        rightControlAction="Up"
+      />
     </>
   );
 }
