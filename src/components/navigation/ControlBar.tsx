@@ -6,6 +6,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Bars3Icon } from '@heroicons/react/24/outline';
+import { capitalize } from '@/lib/helpers';
 
 export default function ControlBar({
   sections,
@@ -104,24 +105,31 @@ export default function ControlBar({
         ))}
       </div>
 
-      <button
-        aria-label="Open mobile menu"
-        className="z-50 flex h-14 w-14 cursor-pointer items-center justify-center gap-4 rounded-full bg-gray-5 transition hover:bg-gray-4 sm:hidden"
-        onClick={() =>
-          setState((prevState) => {
-            return {
-              ...prevState,
-              controlBar: 'expanded',
-              mobileMenu:
-                prevState.mobileMenu === 'invisible' ? 'visible' : 'invisible'
-            };
-          })
-        }
+      <div
+        className={`flex items-center gap-2 rounded-full bg-gray-5 transition ${
+          state.activeTab ? 'pl-4' : 'pl-0'
+        } sm:hidden`}
       >
-        <div className="rounded-full bg-gray-4 p-2">
-          <Bars3Icon className="h-5 w-5 text-theme-contrary transition" />
-        </div>
-      </button>
+        {state.activeTab && <h3>{capitalize(state.activeTab ?? '')}</h3>}
+        <button
+          aria-label="Open mobile menu"
+          className="z-50 flex h-14 w-14 cursor-pointer items-center justify-center gap-4 rounded-full bg-gray-5 transition hover:bg-gray-4"
+          onClick={() =>
+            setState((prevState) => {
+              return {
+                ...prevState,
+                controlBar: 'expanded',
+                mobileMenu:
+                  prevState.mobileMenu === 'invisible' ? 'visible' : 'invisible'
+              };
+            })
+          }
+        >
+          <div className="rounded-full bg-gray-4 p-2">
+            <Bars3Icon className="h-5 w-5 text-theme-contrary transition" />
+          </div>
+        </button>
+      </div>
 
       <div
         className={`absolute right-0 top-0 transition ${
