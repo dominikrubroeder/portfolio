@@ -17,7 +17,7 @@ export default function SkillBadge({
     <div
       className={`absolute ${
         position ? position : 'left-4 top-12'
-      } animate-scale flex w-max items-center gap-2 rounded-full bg-gray-5 px-4 py-3 pl-5`}
+      } flex w-max animate-scale items-center gap-2 rounded-full bg-gray-5 px-4 py-3 pl-5`}
     >
       {text}
       <button

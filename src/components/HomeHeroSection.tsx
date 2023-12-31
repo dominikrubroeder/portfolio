@@ -25,7 +25,7 @@ const skillBadges = [
   {
     id: 'concept',
     title: 'Concept',
-    position: 'left-4 top-48 md:top-32 md:left-1/2 md:-translate-x-1/2'
+    position: 'left-4 top-48 lg:top-32 lg:left-1/2 lg:-translate-x-1/2'
   },
   {
     id: 'prototyping',
@@ -33,8 +33,8 @@ const skillBadges = [
     position: 'top-64 right-4 lg:top-auto lg:bottom-32 lg:bottom-16'
   },
   {
-    id: 'microanimations',
-    title: 'Microanimations',
+    id: 'microinteractions',
+    title: 'Microinteractions',
     position: 'right-4 top-32'
   },
   {
@@ -46,6 +46,16 @@ const skillBadges = [
     id: 'supportive-animations',
     title: 'Supportive Animations',
     position: 'bottom-80 left-4 lg:left-32 lg:bottom-72'
+  },
+  {
+    id: 'frontend-development',
+    title: 'Frontend development',
+    position: 'hidden lg:flex lg:right-4 lg:bottom-72'
+  },
+  {
+    id: 'design-system',
+    title: 'Design System',
+    position: 'hidden lg:flex lg:left-72 lg:top-56'
   }
 ];
 
@@ -59,7 +69,7 @@ export default function HomeHeroSection() {
       <section className="realtive flex h-[calc(100dvh-5rem)] items-center justify-center">
         <div className="max-w-max">
           <h1 className="mx-auto text-center text-5xl font-bold text-white md:text-8xl">
-            Team frontend.
+            Team Frontend.
           </h1>
 
           {uxEffects &&
