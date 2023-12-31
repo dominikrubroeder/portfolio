@@ -49,8 +49,18 @@ const skillBadges = [
   },
   {
     id: 'frontend-development',
-    title: 'Frontend development',
+    title: 'Frontend Development',
     position: 'hidden lg:flex lg:right-4 lg:bottom-72'
+  },
+  {
+    id: 'code-architecture',
+    title: 'Code Architecture',
+    position: 'hidden lg:flex lg:right-4 lg:top-72'
+  },
+  {
+    id: 'design-patterns',
+    title: 'Design Patterns',
+    position: 'hidden lg:flex lg:right-96 lg: bottom-80'
   },
   {
     id: 'design-system',

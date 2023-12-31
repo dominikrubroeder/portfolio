@@ -50,7 +50,7 @@
     --color-apple-gray-6: 28 28 30;
 }
 
-/** @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --color-theme-base: 0 0 0;
         --color-theme-contrary: 255 255 255;
@@ -82,7 +82,7 @@
         color: white;
         background: black;
     }
-} */
+}
 
 * {
     box-sizing: border-box;
@@ -137,6 +137,10 @@ a {
     }
 
     .interactive {
-        @apply scale-105 cursor-pointer;
+        @apply transition cursor-pointer active:scale-95;
+    }
+
+    button, .button {
+        @apply interactive
     }
 }

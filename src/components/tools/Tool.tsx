@@ -52,9 +52,9 @@ export default function Tool({ tool }: { tool: Tool }) {
         <Link
           href={tool.website}
           target="_blank"
-          title={`Go to external ${tool.title} landingpage`}
-          aria-label={`Go to external ${tool.title} landingpage`}
-          className="group flex h-16 items-center justify-center rounded-2xl transition hover:bg-gray-5"
+          title={`Go to external ${tool.title} website`}
+          aria-label={`Go to external ${tool.title} website`}
+          className="button group flex h-16 items-center justify-center rounded-2xl transition hover:bg-gray-5"
         >
           <ArrowTopRightOnSquareIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
         </Link>

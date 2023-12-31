@@ -24,15 +24,18 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
         }
       >
         <button
+          aria-label="Hide and show more tools"
           className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 hover:text-theme-contrary"
-          aria-label="Show more tools"
         >
           {state.isVisible && <MinusIcon className="h-4 w-4" />}
           {!state.isVisible && <PlusIcon className="h-4 w-4" />}
         </button>
-        <div className="rounded-full bg-gray-5 p-4 px-6 transition hover:text-theme-contrary">
+        <button
+          aria-label="Hide and show more tools"
+          className="rounded-full bg-gray-5 p-4 px-6 transition hover:text-theme-contrary"
+        >
           {state.isVisible ? 'Hide' : 'More on Tools'}
-        </div>
+        </button>
       </div>
 
       <ul
@@ -45,7 +48,7 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
             return (
               <li key={tool.title}>
                 <div className="group flex items-center justify-between gap-4 border-b border-gray-5 py-4 pr-4 text-xs">
-                  <div className="grid gap-4 lg:flex lg:items-center">
+                  <div className="grid gap-4">
                     <div className="flex items-center justify-center gap-4">
                       <Image
                         width={32}
@@ -53,6 +56,7 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
                         className="object-contain"
                         src={tool.logo}
                         alt={tool.title}
+                        draggable={false}
                       />
 
                       <h3 className="font-bold text-theme-contrary">
@@ -70,7 +74,9 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
                       </div>
                     </div>
 
-                    <p className="flex-1 pl-12">{tool.description}</p>
+                    <p className="max-w-screen-lg flex-1 pl-12">
+                      {tool.description}
+                    </p>
                   </div>
 
                   <div className="flex items-center gap-4 transition">
@@ -81,7 +87,7 @@ export default function ToolMoreOn({ tools }: { tools: Tool[] }) {
                       target="_blank"
                       title={`Go to external ${tool.title} project page`}
                       aria-label={`Go to ${tool.title} project page`}
-                      className="group flex items-center justify-center rounded-2xl bg-gray-5 p-4 transition hover:bg-gray-4"
+                      className="button group flex items-center justify-center rounded-2xl bg-gray-5 p-4 transition hover:bg-gray-4"
                     >
                       <ArrowRightIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
                     </Link>
