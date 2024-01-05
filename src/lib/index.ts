@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs';
-import { Data, Social, Technology, Tool } from '@/lib/interfaces';
+import { Data } from '@/lib/interfaces';
 
 export async function getData(): Promise<Data> {
   if (process.env.NODE_ENV === 'development') {
@@ -13,7 +13,7 @@ export async function getData(): Promise<Data> {
   }
 }
 
-export async function getTools(): Promise<Tool[]> {
+export async function getTools() {
   const { tools } = await getData();
   return tools;
 }
@@ -25,12 +25,12 @@ export async function getTool(toolTitle: string) {
   );
 }
 
-export async function getTechnologies(): Promise<Technology[]> {
+export async function getTechnologies() {
   const { technologies } = await getData();
   return technologies;
 }
 
-export async function getSocials(): Promise<Social[]> {
+export async function getSocials() {
   const { socials } = await getData();
   return socials;
 }
