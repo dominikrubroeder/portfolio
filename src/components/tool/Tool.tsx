@@ -44,10 +44,13 @@ export default function Tool({ tool }: { tool: Tool }) {
         <button
           title={`Projects with ${tool.title} are coming soon.`}
           aria-label={`Projects with ${tool.title} are coming soon.`}
-          className="flex h-16 items-center justify-center rounded-2xl bg-gray-5 text-xs"
+          className="relative flex h-16 items-center justify-center rounded-2xl bg-gray-5"
           disabled
         >
-          Projects coming soon
+          <span className="absolute -right-2 -top-2 rounded bg-accent p-1 px-1.5 text-xs text-white">
+            Soon
+          </span>
+          Projects coming
         </button>
         <Link
           href={tool.website}
