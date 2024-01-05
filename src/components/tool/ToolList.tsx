@@ -1,6 +1,6 @@
 import { getTools } from '@/lib';
-import Tool from '@/components/tools/Tool';
-import ToolMoreOn from '@/components/tools/ToolMoreOn';
+import Tool from '@/components/tool/Tool';
+import ToolMoreOn from '@/components/tool/ToolMoreOn';
 
 export default async function ToolList() {
   const tools = await getTools();
@@ -16,7 +16,7 @@ export default async function ToolList() {
             return (
               <li
                 key={tool.title}
-                className="group inline-block mr-8 first-of-type:ml-16"
+                className="group mr-8 inline-block first-of-type:ml-16"
               >
                 <Tool tool={tool} />
               </li>
