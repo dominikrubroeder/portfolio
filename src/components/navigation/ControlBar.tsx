@@ -63,25 +63,23 @@ export default function ControlBar({
   );
 
   return (
-    <nav className="sticky top-4 z-50 mx-auto flex w-max items-center justify-center gap-3 text-center">
+    <nav className="fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:w-max">
       <div
-        className={`absolute left-0 top-0 transition ${
+        className={`absolute left-1/2 top-0 transition ${
           state.controlBar === 'collapsed'
-            ? 'translate-x-0 scale-95'
-            : '-translate-x-16 scale-100'
+            ? '-translate-x-1/2 scale-95'
+            : '-translate-x-24 scale-100'
         }`}
       >
         <ControlBarAction type={leftControlAction} />
       </div>
 
       <div
-        className={`absolute ${
-          collapse ? 'bottom-[4.5rem]' : 'top-[4.5rem]'
-        } z-50 grid w-min items-center gap-4 rounded-2xl bg-gray-5 p-3 px-4 transition ${
+        className={`absolute bottom-20 z-50 grid w-[90dvw] items-center gap-4 rounded-2xl bg-gray-5 p-3 px-4 transition ${
           state.mobileMenu === 'invisible'
             ? 'invisible -translate-y-4'
             : 'visible translate-y-0'
-        } md:visible md:relative md:top-4 md:flex md:rounded-full`}
+        } md:visible md:relative md:top-4 md:flex md:w-min md:rounded-full`}
       >
         {sections.map((section) => (
           <Link
@@ -140,10 +138,10 @@ export default function ControlBar({
       </div>
 
       <div
-        className={`absolute right-0 top-0 transition ${
+        className={`absolute right-1/2 top-0 transition ${
           state.controlBar === 'collapsed'
-            ? 'translate-x-0 scale-95'
-            : 'translate-x-16 scale-100'
+            ? 'translate-x-1/2 scale-95'
+            : 'translate-x-24 scale-100'
         }`}
       >
         <ControlBarAction type={rightControlAction} />
