@@ -2,7 +2,7 @@
 
 import { useIsInView } from '@/hooks/useIsInView';
 import { useRef, useState } from 'react';
-import ControlBar from '@/components/navigation/ControlBar';
+import ControlBar from '@/components/navigation/control-bar/ControlBar';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import SkillBadge from '@/components/SkillBadge';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
