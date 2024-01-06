@@ -140,7 +140,7 @@ a {
         @apply transition cursor-pointer active:scale-95;
     }
 
-    button, .button {
+    button:not(:disabled), .button:not(:disabled) {
         @apply interactive
     }
 }
