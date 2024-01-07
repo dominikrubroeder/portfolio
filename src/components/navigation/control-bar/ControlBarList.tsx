@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import React, { useCallback } from 'react';
+import DynamicIcon from '@/components/DynamicIcon';
 
 export default function ControlBarList({
   sections,
@@ -8,7 +9,7 @@ export default function ControlBarList({
   mobileMenu,
   setState
 }: {
-  sections: { id: string; label: string }[];
+  sections: { id: string; label: string; icon: string }[];
   activeTab: string | null;
   mobileMenu: 'visible' | 'invisible';
   setState: React.Dispatch<
@@ -68,12 +69,14 @@ export default function ControlBarList({
             />
           )}
           <div
-            className={`relative z-20 w-max ${
+            className={`relative z-20 flex w-max items-center gap-4 ${
               activeTab === section.id
                 ? 'text-theme-contrary'
                 : 'hover:text-theme-contrary'
-            }`}
+            } md:gap-2`}
           >
+            <DynamicIcon name={section.icon} className="h-5 w-5" />
+            <span className="text-gray-4">|</span>
             {section.label}
           </div>
         </Link>

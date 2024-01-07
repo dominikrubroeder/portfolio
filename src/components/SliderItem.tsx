@@ -17,6 +17,7 @@ export default function SliderItem({
           href={sliderItem.href}
           className="absolute inset-0 flex h-full w-full cursor-pointer items-center justify-center"
           target={sliderItem.href.includes('https') ? '_blank' : '_self'}
+          aria-label={`Go to ${sliderItem.href}`}
         >
           <Image
             src={sliderItem.logo}
@@ -25,6 +26,7 @@ export default function SliderItem({
             width="128"
             height="128"
             draggable={false}
+            aria-label={`${sliderItem.title} logo`}
           />
         </Link>
       </div>

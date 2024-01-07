@@ -13,7 +13,7 @@ export default function ControlBar({
   leftControlAction = 'Avatar',
   rightControlAction = 'Up'
 }: {
-  sections: { id: string; label: string }[];
+  sections: { id: string; label: string; icon: string }[];
   collapse: boolean;
   leftControlAction: ControlBarActionType;
   rightControlAction: ControlBarActionType;

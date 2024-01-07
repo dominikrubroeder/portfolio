@@ -9,10 +9,10 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 
 const sections = [
-  { id: 'projects', label: 'Projects' },
-  { id: 'tools', label: 'Tools' },
-  { id: 'technologies', label: 'Technologies' },
-  { id: 'socials', label: 'Socials' }
+  { id: 'projects', label: 'Projects', icon: 'DocumentDuplicateIcon' },
+  { id: 'tools', label: 'Tools', icon: 'PaintBrushIcon' },
+  { id: 'technologies', label: 'Technologies', icon: 'Cog6ToothIcon' },
+  { id: 'socials', label: 'Socials', icon: 'CheckBadgeIcon' }
 ];
 
 // To data.json?
