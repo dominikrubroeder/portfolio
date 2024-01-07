@@ -30,6 +30,14 @@ export async function getTechnologies() {
   return technologies;
 }
 
+export async function getTechnology(technologyTitle: string) {
+  const { technologies } = await getData();
+  return technologies.find(
+    (technology) =>
+      technology.title.toLowerCase() === technologyTitle.toLowerCase()
+  );
+}
+
 export async function getSocials() {
   const { socials } = await getData();
   return socials;
