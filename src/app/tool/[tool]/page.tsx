@@ -12,10 +12,14 @@ export default async function ToolPage({
   if (tool === null || tool === undefined) redirect('/');
 
   const sections = [
-    { id: 'projects', label: `Projects with ${tool?.title}` },
-    { id: 'experience', label: 'Experience' },
-    { id: 'usage', label: 'Usage' },
-    { id: 'related-usage', label: 'Related usage' }
+    {
+      id: 'projects',
+      label: `Projects with ${tool?.title}`,
+      icon: 'DocumentDuplicateIcon'
+    },
+    { id: 'experience', label: 'Experience', icon: 'CheckCircleIcon' },
+    { id: 'usage', label: 'Usage', icon: 'ArrowUturnRightIcon' },
+    { id: 'related-usage', label: 'Related usage', icon: 'PlusIcon' }
   ];
 
   return (

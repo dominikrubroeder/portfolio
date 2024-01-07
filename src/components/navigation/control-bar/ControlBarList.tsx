@@ -76,7 +76,11 @@ export default function ControlBarList({
             } md:gap-2`}
           >
             <DynamicIcon name={section.icon} className="h-5 w-5" />
-            <span className="text-gray-4">|</span>
+            <span
+              className={`inline-block h-4 w-[1px] ${
+                activeTab === section.id ? 'bg-gray-2' : 'bg-gray-4'
+              }`}
+            ></span>
             {section.label}
           </div>
         </Link>
