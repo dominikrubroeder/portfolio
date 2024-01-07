@@ -1,7 +1,8 @@
 export interface Tool {
   title: string;
-  website: string;
   logo: string;
+  href: string;
+  website: string;
   description: string;
   keyword: string;
   priority: 'low' | 'high';
@@ -13,8 +14,9 @@ export interface Technology extends Tool {}
 
 export interface Social {
   title: string;
-  website: string;
   logo: string;
+  href: string;
+  website: string;
   badge: string;
 }
 
