@@ -1,6 +1,6 @@
 import { getTools } from '@/lib';
 import Tool from '@/components/tool/Tool';
-import ToolMoreOn from '@/components/tool/ToolMoreOn';
+import MoreItemsSection from '@/components/MoreItemsSection';
 
 export default async function ToolList() {
   const tools = await getTools();
@@ -25,7 +25,7 @@ export default async function ToolList() {
       </ul>
 
       <div className="ml-16">
-        <ToolMoreOn tools={tools} />
+        <MoreItemsSection items={tools} />
       </div>
     </>
   );
