@@ -5,7 +5,7 @@ import { Technology, Tool } from '@/lib/interfaces';
 
 export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
   return (
-    <div className="group flex items-center justify-between gap-4 border-b border-gray-5 py-4 pr-4 text-xs">
+    <div className="group flex items-start justify-between gap-4 border-b border-gray-5 py-4 pr-4 text-xs md:items-center">
       <div className="grid gap-4">
         <div className="flex items-center justify-center gap-4">
           <Image
