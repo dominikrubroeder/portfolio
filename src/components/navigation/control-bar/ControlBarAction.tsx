@@ -42,6 +42,7 @@ export default function ControlBarAction({ type }: { type: ControlBarAction }) {
         width="56"
         height="56"
         className="shrink-0 rounded-full border-2 border-gray-5"
+        draggable={false}
       />
     </Link>
   );
