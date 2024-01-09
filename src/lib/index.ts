@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import { Data } from '@/lib/interfaces';
+import { formatTitle } from '@/lib/helpers';
 
 export async function getData(): Promise<Data> {
   if (process.env.NODE_ENV === 'development') {
@@ -21,7 +22,7 @@ export async function getTools() {
 export async function getTool(toolTitle: string) {
   const { tools } = await getData();
   return tools.find(
-    (tool) => tool.title.toLowerCase() === toolTitle.toLowerCase()
+    (tool) => formatTitle(tool.title) === formatTitle(toolTitle)
   );
 }
 
@@ -34,7 +35,7 @@ export async function getTechnology(technologyTitle: string) {
   const { technologies } = await getData();
   return technologies.find(
     (technology) =>
-      technology.title.toLowerCase() === technologyTitle.toLowerCase()
+      formatTitle(technology.title) === formatTitle(technologyTitle)
   );
 }
 
