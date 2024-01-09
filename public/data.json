@@ -171,6 +171,16 @@
       "keyword": "React-based motion library",
       "priority": "high",
       "projects": []
+    },
+    {
+      "title": "Auth.js",
+      "website": "https://authjs.dev/",
+      "logo": "https://dominikrubroeder.vercel.app/authjs.png",
+      "href": "/technology/auth-js",
+      "description": "Authentication for the Web",
+      "keyword": "Authentication Library",
+      "priority": "low",
+      "projects": []
     }
   ],
   "socials": [
@@ -202,5 +212,6 @@
       "href": "https://instagram.com/domirubroeder",
       "badge": "Dominik Rubröder"
     }
-  ]
+  ],
+  "projects": []
 }
