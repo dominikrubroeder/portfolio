@@ -17,6 +17,7 @@ export default function SliderItem({
           href={sliderItem.href}
           className="absolute inset-0 flex h-full w-full cursor-pointer items-center justify-center"
           target={sliderItem.href.includes('https') ? '_blank' : '_self'}
+          title={`Go to ${sliderItem.href}`}
           aria-label={`Go to ${sliderItem.href}`}
         >
           <Image
