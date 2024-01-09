@@ -96,7 +96,7 @@
       "title": "Next.js",
       "website": "https://nextjs.org/",
       "logo": "https://dominikrubroeder.vercel.app/nextjs.png",
-      "href": "/technology/nextjs",
+      "href": "/technology/next-js",
       "description": "The React Framework for the Web",
       "keyword": "React-based fullstack web framework",
       "priority": "high",
@@ -156,7 +156,7 @@
       "title": "Tailwind CSS",
       "website": "https://tailwindcss.com/",
       "logo": "https://dominikrubroeder.vercel.app/tailwind.png",
-      "href": "/technology/tailwindcss",
+      "href": "/technology/tailwind-css",
       "description": "Rapidly build modern websites without ever leaving your HTML.",
       "keyword": "CSS Framework",
       "priority": "high",
@@ -170,6 +170,16 @@
       "description": "A declarative motion library for animating react UIs and apply motion to it",
       "keyword": "React-based motion library",
       "priority": "high",
+      "projects": []
+    },
+    {
+      "title": "Auth.js",
+      "website": "https://authjs.dev/",
+      "logo": "https://dominikrubroeder.vercel.app/authjs.png",
+      "href": "/technology/auth-js",
+      "description": "Authentication for the Web",
+      "keyword": "Authentication Library",
+      "priority": "low",
       "projects": []
     }
   ],
@@ -202,5 +212,6 @@
       "href": "https://instagram.com/domirubroeder",
       "badge": "Dominik Rubröder"
     }
-  ]
+  ],
+  "projects": []
 }
