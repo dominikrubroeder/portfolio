@@ -7,6 +7,7 @@ import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import SkillBadge from '@/components/SkillBadge';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
+import Toggle from '@/components/Toggle';
 
 const sections = [
   { id: 'projects', label: 'Projects', icon: 'DocumentDuplicateIcon' },
@@ -74,7 +75,12 @@ const skillBadges = [
 export default function HomeHeroSection() {
   const ref = useRef(null);
   const isInView = useIsInView(ref);
-  const [uxEffects, setUxEffects] = useState(false);
+  const [state, setState] = useState({
+    uxEffects: false,
+    designMode: false,
+    devMode: false,
+    animate: false
+  });
 
   return (
     <>
@@ -84,12 +90,53 @@ export default function HomeHeroSection() {
             Team Frontend.
           </h1>
 
-          {uxEffects &&
+          {state.uxEffects && (
+            <Toggle
+              label="Design mode"
+              enabled={state.designMode}
+              onClick={() =>
+                setState((prevState) => {
+                  return { ...prevState, designMode: !prevState.designMode };
+                })
+              }
+              className="absolute right-4 top-4"
+            />
+          )}
+
+          {state.uxEffects && (
+            <Toggle
+              label="Dev mode"
+              enabled={state.designMode}
+              onClick={() =>
+                setState((prevState) => {
+                  return { ...prevState, devMode: !prevState.devMode };
+                })
+              }
+              className="absolute right-4 top-14"
+            />
+          )}
+
+          {state.uxEffects && (
+            <Toggle
+              label="Animate"
+              enabled={state.animate}
+              onClick={() =>
+                setState((prevState) => {
+                  return { ...prevState, animate: !prevState.animate };
+                })
+              }
+              className="absolute right-4 top-24"
+            />
+          )}
+
+          {state.uxEffects &&
             skillBadges.map((skillBadge) => (
               <SkillBadge
                 key={skillBadge.id}
                 text={skillBadge.title}
                 position={skillBadge.position}
+                designMode={state.designMode}
+                devMode={state.devMode}
               />
             ))}
         </div>
@@ -110,7 +157,11 @@ export default function HomeHeroSection() {
           <button
             aria-label="UX Engineer at mediawave"
             className="pt-12 text-violet-400"
-            onClick={() => setUxEffects((prevState) => !prevState)}
+            onClick={() =>
+              setState((prevState) => {
+                return { ...prevState, uxEffects: !prevState.uxEffects };
+              })
+            }
           >
             UX Engineer
           </button>
