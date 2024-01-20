@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import { Technology, Tool } from '@/lib/interfaces';
 import { PlusIcon } from '@heroicons/react/24/solid';
@@ -37,7 +38,7 @@ export default function MoreItemsSection({
           aria-label="Hide and show more items"
           className="rounded-full bg-gray-5 p-4 px-6 transition hover:text-theme-contrary"
         >
-          {state.isVisible ? 'Hide' : 'More on items'}
+          {state.isVisible ? 'Hide' : 'See more'}
         </button>
       </div>
 
