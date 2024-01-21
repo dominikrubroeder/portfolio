@@ -38,7 +38,7 @@ const skillBadges = [
   {
     id: 'microinteractions',
     title: 'Microinteractions',
-    position: 'right-4 top-32'
+    position: 'right-4 top-40'
   },
   {
     id: 'transitions',
@@ -133,7 +133,7 @@ export default function HomeHeroSection() {
             skillBadges.map((skillBadge) => (
               <SkillBadge
                 key={skillBadge.id}
-                text={skillBadge.title}
+                label={skillBadge.title}
                 position={skillBadge.position}
                 designMode={state.designMode}
                 devMode={state.devMode}
