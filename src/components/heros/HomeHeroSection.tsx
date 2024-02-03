@@ -92,7 +92,6 @@ export default function HomeHeroSection() {
           {state.uxEffects && (
             <Toggle
               label="Design mode"
-              enabled={state.designMode}
               onClick={() =>
                 setState((prevState) => {
                   return { ...prevState, designMode: !prevState.designMode };
@@ -105,7 +104,6 @@ export default function HomeHeroSection() {
           {state.uxEffects && (
             <Toggle
               label="Dev mode"
-              enabled={state.designMode}
               onClick={() =>
                 setState((prevState) => {
                   return { ...prevState, devMode: !prevState.devMode };

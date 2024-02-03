@@ -61,7 +61,7 @@ export default function SkillBadge({
         )}
 
         {devMode && (
-          <span className="peer absolute -bottom-10 left-1/2 -translate-x-1/2 select-none rounded bg-gray-5 p-1 px-1.5 text-xs">
+          <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 select-none rounded bg-gray-5 p-1 px-1.5 text-xs">
             Badge.tsx
           </span>
         )}
