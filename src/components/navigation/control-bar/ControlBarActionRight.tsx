@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ControlBarAction as ControlBarActionType } from '@/lib/types';
+import type { ControlBarAction as ControlBarActionType } from '@/types';
 import ControlBarAction from '@/components/navigation/control-bar/ControlBarAction';
 
 export default function ControlBarActionRight({

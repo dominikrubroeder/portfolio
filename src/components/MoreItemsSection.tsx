@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Technology, Tool } from '@/lib/interfaces';
+import { Technology, Tool } from '@/interfaces';
 import { PlusIcon } from '@heroicons/react/24/solid';
 import { MinusIcon } from '@heroicons/react/20/solid';
 import RowItem from '@/components/RowItem';

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import { Technology, Tool } from '@/lib/interfaces';
+import { Technology, Tool } from '@/interfaces';
 
 export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
   return (

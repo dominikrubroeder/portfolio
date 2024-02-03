@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import type { ControlBarAction as ControlBarActionType } from '@/lib/types';
+import type { ControlBarAction as ControlBarActionType } from '@/types';
 import ControlBarList from '@/components/navigation/control-bar/ControlBarList';
 import ControlBarMobileTrigger from '@/components/navigation/control-bar/ControlBarMobileTrigger';
 import ControlBarActionLeft from '@/components/navigation/control-bar/ControlBarActionLeft';

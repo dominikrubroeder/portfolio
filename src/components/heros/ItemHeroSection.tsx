@@ -1,4 +1,4 @@
-import { Technology, Tool } from '@/lib/interfaces';
+import { Technology, Tool } from '@/interfaces';
 import Image from 'next/image';
 import Link from 'next/link';
 

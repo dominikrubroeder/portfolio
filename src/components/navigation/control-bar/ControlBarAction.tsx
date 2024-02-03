@@ -1,5 +1,5 @@
 import { useRouter } from 'next/navigation';
-import type { ControlBarAction } from '@/lib/types';
+import type { ControlBarAction } from '@/types';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import Image from 'next/image';

@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs';
-import { Data } from '@/lib/interfaces';
+import { Data } from '@/interfaces';
 import { formatTitle } from '@/lib/helpers';
 
 export async function getData(): Promise<Data> {
