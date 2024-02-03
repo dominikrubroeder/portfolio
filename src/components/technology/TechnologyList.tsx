@@ -1,6 +1,6 @@
 import { getTechnologies } from '@/lib';
 import Technology from '@/components/technology/Technology';
-import TechnologyMoreOn from '@/components/technology/TechnologyMoreOn';
+import MoreItemsSection from '@/components/MoreItemsSection';
 
 export default async function TechnologyList() {
   const technologies = await getTechnologies();
@@ -18,7 +18,7 @@ export default async function TechnologyList() {
         {technologies.map((technology) => (
           <li
             key={technology.title}
-            className="group inline-block mr-8 first-of-type:ml-16"
+            className="group mr-8 inline-block first-of-type:ml-16"
           >
             <Technology technology={technology} />
           </li>
@@ -26,7 +26,7 @@ export default async function TechnologyList() {
       </ul>
 
       <div className="ml-16">
-        <TechnologyMoreOn technologies={technologies} />
+        <MoreItemsSection items={technologies} />
       </div>
     </>
   );

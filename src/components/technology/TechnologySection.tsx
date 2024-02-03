@@ -6,10 +6,10 @@ export default function TechnologySection() {
   return (
     <section
       id="technologies"
-      className="min-h-dvh flex flex-col justify-center py-16 gap-8"
+      className="flex min-h-dvh flex-col justify-center gap-8 py-16"
     >
       <header className="flex gap-1 px-16">
-        <h2 className="text-white font-bold">Technologies</h2>
+        <h2 className="font-bold text-theme-contrary">Technologies</h2>
         <span>I use</span>
       </header>
 

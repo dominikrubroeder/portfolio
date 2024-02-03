@@ -4,6 +4,7 @@
       "title": "Figma",
       "website": "https://www.figma.com",
       "logo": "https://dominikrubroeder.vercel.app/figma.png",
+      "href": "/tool/figma",
       "description": "How you design, align, and build  matters. Do it together with Figma",
       "keyword": "Interfacetool",
       "priority": "high",
@@ -13,6 +14,7 @@
       "title": "Webstorm",
       "website": "https://www.jetbrains.com/de-de/webstorm/",
       "logo": "https://dominikrubroeder.vercel.app/webstorm.png",
+      "href": "/tool/webstorm",
       "description": "The smartest JavaScript IDE",
       "keyword": "IDE",
       "priority": "high",
@@ -22,6 +24,7 @@
       "title": "Inkdrop",
       "website": "https://www.inkdrop.app/",
       "logo": "https://dominikrubroeder.vercel.app/inkdrop.png",
+      "href": "/tool/inkdrop",
       "description": "Organizing your tech notes made simple",
       "keyword": "Note-taking",
       "priority": "high",
@@ -31,6 +34,7 @@
       "title": "GitHub",
       "website": "https://github.com/dominikrubroeder",
       "logo": "https://dominikrubroeder.vercel.app/github.png",
+      "href": "https://github.com/dominikrubroeder",
       "description": "The world’s leading AI-powered developer platform.",
       "keyword": "Version control",
       "priority": "high",
@@ -40,24 +44,17 @@
       "title": "GitLab",
       "website": "https://about.gitlab.com",
       "logo": "https://dominikrubroeder.vercel.app/gitlab.png",
+      "href": "https://about.gitlab.com",
       "description": "Software. Faster. GitLab is the most comprehensive AI-powered DevSecOps Platform.",
       "keyword": "Version control",
       "priority": "high",
       "projects": []
     },
     {
-      "title": "Miro",
-      "website": "https://miro.com",
-      "logo": "https://dominikrubroeder.vercel.app/miro.png",
-      "description": "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company. Don't Let Distances or Timezones Stop You from Building Beautiful Products for Your Users. Miro for UX & Design.",
-      "keyword": "Collaborative Whiteboard",
-      "priority": "low",
-      "projects": []
-    },
-    {
       "title": "Showpare",
       "website": "https://www.shopware.com",
       "logo": "https://dominikrubroeder.vercel.app/shopware.png",
+      "href": "/tool/shopware",
       "description": "Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.",
       "keyword": "Shop System",
       "priority": "low",
@@ -67,8 +64,19 @@
       "title": "Storyblok",
       "website": "https://www.storyblok.com",
       "logo": "https://dominikrubroeder.vercel.app/storyblok.png",
+      "href": "/tool/storyblok",
       "description": "The Way to Modern Content",
       "keyword": "Headless CMS",
+      "priority": "low",
+      "projects": []
+    },
+    {
+      "title": "Miro",
+      "website": "https://miro.com",
+      "logo": "https://dominikrubroeder.vercel.app/miro.png",
+      "href": "/tool/miro",
+      "description": "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company. Don't Let Distances or Timezones Stop You from Building Beautiful Products for Your Users. Miro for UX & Design.",
+      "keyword": "Collaborative Whiteboard",
       "priority": "low",
       "projects": []
     }
@@ -78,6 +86,7 @@
       "title": "React",
       "website": "https://react.dev/",
       "logo": "https://dominikrubroeder.vercel.app/react.png",
+      "href": "/technology/react",
       "description": "The library for web and native user interfaces",
       "keyword": "UI library",
       "priority": "high",
@@ -87,6 +96,7 @@
       "title": "Next.js",
       "website": "https://nextjs.org/",
       "logo": "https://dominikrubroeder.vercel.app/nextjs.png",
+      "href": "/technology/next-js",
       "description": "The React Framework for the Web",
       "keyword": "React-based fullstack web framework",
       "priority": "high",
@@ -96,6 +106,7 @@
       "title": "TypeScript",
       "website": "https://www.typescriptlang.org",
       "logo": "https://dominikrubroeder.vercel.app/typescript.png",
+      "href": "/technology/typescript",
       "description": "TypeScript is JavaScript with syntax for types.",
       "keyword": "JavaScript-based typed language",
       "priority": "high",
@@ -105,6 +116,7 @@
       "title": "JavaScript",
       "website": "https://www.w3schools.com/js/",
       "logo": "https://dominikrubroeder.vercel.app/javascript.png",
+      "href": "/technology/javascript",
       "description": "JavaScript is the programming language of the Web.",
       "keyword": "Programming Language",
       "priority": "high",
@@ -114,6 +126,7 @@
       "title": "Markdown",
       "website": "https://markdown.de/",
       "logo": "https://dominikrubroeder.vercel.app/markdown.png",
+      "href": "/technology/markdown",
       "description": "A simplified markup language",
       "keyword": "Markup language",
       "priority": "high",
@@ -123,6 +136,7 @@
       "title": "HTML",
       "website": "https://www.w3schools.com/html/",
       "logo": "https://dominikrubroeder.vercel.app/html.png",
+      "href": "/technology/html",
       "description": "The standard markup language for Web pages",
       "keyword": "Basic Markup language",
       "priority": "high",
@@ -132,6 +146,7 @@
       "title": "CSS",
       "website": "https://www.w3schools.com/css/",
       "logo": "https://dominikrubroeder.vercel.app/css.png",
+      "href": "/technology/css",
       "description": "The language we use to style an HTML document.",
       "keyword": "Cascading Style Sheet",
       "priority": "high",
@@ -141,6 +156,7 @@
       "title": "Tailwind CSS",
       "website": "https://tailwindcss.com/",
       "logo": "https://dominikrubroeder.vercel.app/tailwind.png",
+      "href": "/technology/tailwind-css",
       "description": "Rapidly build modern websites without ever leaving your HTML.",
       "keyword": "CSS Framework",
       "priority": "high",
@@ -150,9 +166,20 @@
       "title": "Framer Motion",
       "website": "https://www.framer.com/motion/",
       "logo": "https://dominikrubroeder.vercel.app/framer.png",
+      "href": "/technology/framer-motion",
       "description": "A declarative motion library for animating react UIs and apply motion to it",
       "keyword": "React-based motion library",
       "priority": "high",
+      "projects": []
+    },
+    {
+      "title": "Auth.js",
+      "website": "https://authjs.dev/",
+      "logo": "https://dominikrubroeder.vercel.app/authjs.png",
+      "href": "/technology/auth-js",
+      "description": "Authentication for the Web",
+      "keyword": "Authentication Library",
+      "priority": "low",
       "projects": []
     }
   ],
@@ -161,25 +188,30 @@
       "title": "GitHub",
       "website": "https://github.com/dominikrubroeder",
       "logo": "https://dominikrubroeder.vercel.app/github.png",
+      "href": "https://github.com/dominikrubroeder",
       "badge": "Dominik Rubröder"
     },
     {
       "title": "LinkedIn",
       "website": "https://de.linkedin.com/in/dominik-rubr%C3%B6der-49a63817b",
       "logo": "https://dominikrubroeder.vercel.app/linkedin.png",
+      "href": "https://de.linkedin.com/in/dominik-rubr%C3%B6der-49a63817b",
       "badge": "Dominik Rubröder"
     },
     {
       "title": "Xing",
       "website": "https://www.xing.com/profile/Dominik_Rubroeder",
       "logo": "https://dominikrubroeder.vercel.app/xing.png",
+      "href": "https://www.xing.com/profile/Dominik_Rubroeder",
       "badge": "Dominik Rubröder"
     },
     {
       "title": "Instagram",
       "website": "https://instagram.com/domirubroeder",
       "logo": "https://dominikrubroeder.vercel.app/instagram.png",
+      "href": "https://instagram.com/domirubroeder",
       "badge": "Dominik Rubröder"
     }
-  ]
+  ],
+  "projects": []
 }
