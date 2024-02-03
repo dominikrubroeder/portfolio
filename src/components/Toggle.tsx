@@ -1,13 +1,12 @@
 'use client';
+
 import { useState } from 'react';
 
 export default function Toggle({
-  enabled,
   onClick,
   label,
   className
 }: {
-  enabled: boolean;
   onClick: () => void;
   label?: string;
   className?: string;

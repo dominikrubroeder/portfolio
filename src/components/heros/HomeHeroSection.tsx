@@ -78,8 +78,7 @@ export default function HomeHeroSection() {
   const [state, setState] = useState({
     uxEffects: false,
     designMode: false,
-    devMode: false,
-    animate: false
+    devMode: false
   });
 
   return (
@@ -113,19 +112,6 @@ export default function HomeHeroSection() {
                 })
               }
               className="absolute right-4 top-14"
-            />
-          )}
-
-          {state.uxEffects && (
-            <Toggle
-              label="Animate"
-              enabled={state.animate}
-              onClick={() =>
-                setState((prevState) => {
-                  return { ...prevState, animate: !prevState.animate };
-                })
-              }
-              className="absolute right-4 top-24"
             />
           )}
 
