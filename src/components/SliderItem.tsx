@@ -14,12 +14,20 @@ export default function SliderItem({
   return (
     <div className="grid w-80 gap-6 whitespace-normal">
       <div className="relative h-80 w-80 rounded-xl border border-gray-4">
+        {/* Change in later release to
+             – href={sliderItem.href}
+             – target={sliderItem.href.includes('https') ? '_blank' : '_self'}
+             – title={`Go to ${sliderItem.href}`}
+             – aria-label={`Go to ${sliderItem.href}`}`}
+
+             When Detail pages are available
+             */}
         <Link
-          href={sliderItem.href}
+          href={sliderItem.website}
           className="absolute inset-0 flex h-full w-full cursor-pointer items-center justify-center"
-          target={sliderItem.href.includes('https') ? '_blank' : '_self'}
-          title={`Go to ${sliderItem.href}`}
-          aria-label={`Go to ${sliderItem.href}`}
+          target="_blank"
+          title={`Go to ${sliderItem.title} page`}
+          aria-label={`Go to ${sliderItem.title} page`}
         >
           <Image
             src={sliderItem.logo}
