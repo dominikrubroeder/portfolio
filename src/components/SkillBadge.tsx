@@ -4,12 +4,10 @@ import {XMarkIcon} from '@heroicons/react/24/outline';
 /** Property `position` should be a CSS class */
 export default function SkillBadge({
   label,
-  position,
   designMode,
   devMode
 }: {
   label: string;
-  position: string;
   designMode?: boolean;
   devMode?: boolean;
   animate?: boolean;
@@ -22,9 +20,9 @@ export default function SkillBadge({
   return (
     <button
       ref={ref}
-      className={`group absolute animate-scale cursor-pointer ${
-        position ? position : 'left-4 top-12'
-      }`}
+      className="group animate-scale cursor-pointer"
+      title={`Frontend skill: ${label}`}
+      aria-label={`Frontend skill: ${label}`}
     >
       <div
         className={`relative flex w-max items-center gap-2 rounded-full border bg-gray-5 px-4 py-3 pl-5 ${

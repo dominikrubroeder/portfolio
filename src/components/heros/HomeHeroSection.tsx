@@ -33,7 +33,7 @@ const skillBadges = [
   {
     id: 'prototyping',
     title: 'Prototyping',
-    position: 'top-64 right-4 lg:top-[40rem]'
+    position: 'top-64 right-4 lg:top-auto lg:bottom-32'
   },
   {
     id: 'microinteractions',
@@ -43,17 +43,17 @@ const skillBadges = [
   {
     id: 'transitions',
     title: 'Transitions',
-    position: 'top-[34rem] right-4 lg:right-auto lg:left-16 lg:top-[44rem]'
+    position: 'bottom-[15rem] right-4 lg:right-auto lg:left-16 lg:bottom-24'
   },
   {
     id: 'supportive-animations',
     title: 'Supportive Animations',
-    position: 'top-[28rem] left-4 lg:left-32 lg:top-[34rem]'
+    position: 'bottom-80 left-4 lg:left-32 lg:bottom-72'
   },
   {
     id: 'frontend-development',
     title: 'Frontend Development',
-    position: 'hidden lg:flex lg:right-4 lg:top-[32rem]'
+    position: 'hidden lg:flex lg:right-4 lg:bottom-72'
   },
   {
     id: 'code-architecture',
@@ -63,7 +63,7 @@ const skillBadges = [
   {
     id: 'design-patterns',
     title: 'Design Patterns',
-    position: 'hidden lg:flex lg:right-96 lg:top-[30rem]'
+    position: 'hidden lg:flex lg:right-96 lg:bottom-80'
   },
   {
     id: 'design-system',
@@ -115,13 +115,19 @@ export default function HomeHeroSection() {
 
           {state.uxEffects &&
             skillBadges.map((skillBadge) => (
-              <SkillBadge
+              <div
                 key={skillBadge.id}
-                label={skillBadge.title}
-                position={skillBadge.position}
-                designMode={state.designMode}
-                devMode={state.devMode}
-              />
+                className={`absolute ${
+                  skillBadge.position ? skillBadge.position : 'left-4 top-12'
+                }`}
+              >
+                <SkillBadge
+                  key={skillBadge.id}
+                  label={skillBadge.title}
+                  designMode={state.designMode}
+                  devMode={state.devMode}
+                />
+              </div>
             ))}
         </div>
 
