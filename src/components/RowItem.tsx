@@ -6,7 +6,7 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
 export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-gray-5 py-4 pr-4 text-xs md:items-center">
+    <div className="grid gap-4 border-b border-gray-5 py-4 pr-4 text-xs sm:flex sm:items-start sm:justify-between md:items-center">
       <div className="grid gap-4">
         <Link
           href={rowItem.website}
@@ -39,7 +39,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
              - title={`Go to external ${rowItem.title} project page`}
              - aria-label={`Go to ${rowItem.title} project page`}
              */}
-      <div className="flex items-center gap-2 transition">
+      <div className="flex items-center justify-end gap-2 transition sm:justify-start">
         <Link
           href={rowItem.website}
           className="button group flex items-center justify-center rounded-2xl bg-gray-5 p-4 transition hover:bg-gray-4"
