@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <footer className="p-4 pb-24 text-center text-xs md:pb-4">
-      <p>
+      <p className="mb-1.5">
         <a
-          href="mailto:dominik.rubroeder@icloud.com"
+          href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
           title="Send mail to dominik.rubroeder@icloud.com"
           aria-label="Send mail to dominik.rubroeder@icloud.com"
         >
