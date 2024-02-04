@@ -6,9 +6,9 @@ export default function SocialSection() {
   return (
     <section
       id="socials"
-      className="flex min-h-dvh flex-col justify-center gap-8 py-16"
+      className="flex min-h-screen flex-col justify-center gap-8 py-16"
     >
-      <header className="flex gap-1 px-16">
+      <header className="flex gap-1 px-4 sm:px-16">
         <h2 className="font-bold text-theme-contrary">Social Accounts</h2>
         <span>I use</span>
       </header>
