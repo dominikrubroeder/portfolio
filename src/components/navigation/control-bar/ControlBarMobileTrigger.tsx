@@ -1,4 +1,3 @@
-import { capitalize } from '@/lib/helpers';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import React from 'react';
 
@@ -16,12 +15,7 @@ export default function ControlBarMobileTrigger({
   >;
 }) {
   return (
-    <div
-      className={`flex items-center gap-2 rounded-full bg-gray-5 transition ${
-        activeTab ? 'pl-4' : 'pl-0'
-      } md:hidden`}
-    >
-      {activeTab && <h3>{capitalize(activeTab ?? '')}</h3>}
+    <div className="flex items-center gap-2 rounded-full bg-gray-5 pl-0 transition md:hidden">
       <button
         aria-label="Open mobile menu"
         className="z-50 flex h-14 w-14 cursor-pointer items-center justify-center gap-4 rounded-full bg-gray-5 transition hover:bg-gray-4"
