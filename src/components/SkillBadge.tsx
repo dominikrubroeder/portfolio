@@ -15,12 +15,12 @@ export default function SkillBadge({
   animate?: boolean;
 }) {
   const [isVisible, setIsVisible] = useState(true);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLButtonElement | null>(null);
 
   if (!isVisible) return null;
 
   return (
-    <div
+    <button
       ref={ref}
       className={`group absolute animate-scale cursor-pointer ${
         position ? position : 'left-4 top-12'
@@ -33,39 +33,45 @@ export default function SkillBadge({
             : 'border-transparent'
         }`}
       >
-        {devMode && (
-          <div className="invisible absolute -left-12 top-1/2 -translate-y-1/2 select-none group-hover:visible">
+        {designMode && (
+          <div className="invisible absolute -left-12 top-1/2 -translate-y-1/2 select-none group-active:visible md:group-hover:visible">
             {ref.current?.clientHeight}px
           </div>
         )}
 
-        {devMode && (
-          <div className="invisible absolute -top-8 left-1/2 -translate-x-1/2 select-none rounded group-hover:visible">
+        {designMode && (
+          <div className="invisible absolute -top-8 left-1/2 -translate-x-1/2 select-none rounded group-active:visible md:group-hover:visible">
             {ref.current?.clientWidth}px
           </div>
         )}
 
         <span>{label}</span>
-        <button
+        <div
           aria-label={`Close this ${label} skill badge`}
           className="group rounded-full bg-gray-4 p-2"
           onClick={() => setIsVisible(false)}
         >
           <XMarkIcon className="h-4 w-4 group-hover:text-theme-contrary" />
-        </button>
+        </div>
 
-        {devMode && (
-          <div className="invisible absolute -right-12 top-1/2 -translate-y-1/2 select-none group-hover:visible">
+        {designMode && (
+          <div className="invisible absolute -right-12 top-1/2 -translate-y-1/2 select-none group-active:visible md:group-hover:visible">
             {ref.current?.clientHeight}px
           </div>
         )}
 
+        {designMode && !devMode && (
+          <span className="invisible absolute -bottom-8 left-1/2 -translate-x-1/2 select-none group-active:visible md:group-hover:visible">
+            {ref.current?.clientWidth}px
+          </span>
+        )}
+
         {devMode && (
-          <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 select-none rounded bg-gray-5 p-1 px-1.5 text-xs">
+          <span className="invisible absolute -bottom-10 left-1/2 -translate-x-1/2 select-none rounded border border-transparent bg-gray-5 p-1 px-1.5 text-xs group-hover:border-gray-4 group-active:visible group-active:border-gray-4 md:group-hover:visible">
             Badge.tsx
           </span>
         )}
       </div>
-    </div>
+    </button>
   );
 }

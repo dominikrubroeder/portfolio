@@ -33,27 +33,27 @@ const skillBadges = [
   {
     id: 'prototyping',
     title: 'Prototyping',
-    position: 'top-64 right-4 lg:top-auto lg:bottom-32 lg:bottom-16'
+    position: 'top-64 right-4 lg:top-[40rem]'
   },
   {
     id: 'microinteractions',
     title: 'Microinteractions',
-    position: 'right-4 top-40'
+    position: 'right-4 top-32 lg:top-40'
   },
   {
     id: 'transitions',
     title: 'Transitions',
-    position: 'bottom-[15rem] right-4 lg:right-auto lg:left-16 lg:bottom-24'
+    position: 'top-[34rem] right-4 lg:right-auto lg:left-16 lg:top-[44rem]'
   },
   {
     id: 'supportive-animations',
     title: 'Supportive Animations',
-    position: 'bottom-80 left-4 lg:left-32 lg:bottom-72'
+    position: 'top-[28rem] left-4 lg:left-32 lg:top-[34rem]'
   },
   {
     id: 'frontend-development',
     title: 'Frontend Development',
-    position: 'hidden lg:flex lg:right-4 lg:bottom-72'
+    position: 'hidden lg:flex lg:right-4 lg:top-[32rem]'
   },
   {
     id: 'code-architecture',
@@ -63,7 +63,7 @@ const skillBadges = [
   {
     id: 'design-patterns',
     title: 'Design Patterns',
-    position: 'hidden lg:flex lg:right-96 lg: bottom-80'
+    position: 'hidden lg:flex lg:right-96 lg:top-[30rem]'
   },
   {
     id: 'design-system',
