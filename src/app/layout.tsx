@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" className="dark">
-      <body className="grid min-h-screen grid-rows-[auto_1fr_auto] bg-theme-base leading-[1.8] text-theme-contrary/40">
+    <html lang="en">
+      <body className="no-scrollbar min-h-screen bg-gray-6 font-normal text-gray">
         <Header />
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
