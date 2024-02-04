@@ -15,14 +15,17 @@ export default async function TechnologyList() {
   return (
     <>
       <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
-        {technologies.map((technology) => (
-          <li
-            key={technology.title}
-            className="group mr-8 inline-block first-of-type:ml-16"
-          >
-            <Technology technology={technology} />
-          </li>
-        ))}
+        {technologies.map((technology) => {
+          if (technology.priority === 'high')
+            return (
+              <li
+                key={technology.title}
+                className="group mr-8 inline-block first-of-type:ml-16"
+              >
+                <Technology technology={technology} />
+              </li>
+            );
+        })}
       </ul>
 
       <div className="ml-16">
