@@ -12,7 +12,7 @@ export default async function SocialList() {
       {socials.map((social) => (
         <li
           key={social.title}
-          className="group inline-block mr-8 first-of-type:ml-16"
+          className="group mr-8 inline-block first-of-type:ml-4 sm:first-of-type:ml-16"
         >
           <Social social={social} />
         </li>

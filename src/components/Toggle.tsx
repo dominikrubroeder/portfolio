@@ -26,7 +26,7 @@ export default function Toggle({
       {label && <span>{label}</span>}
       <div
         className={`relative flex h-6 w-10 cursor-pointer items-center rounded-full px-1 transition ${
-          isEnabled ? 'bg-green' : 'bg-gray-5'
+          isEnabled ? 'bg-accent' : 'bg-gray-5'
         }`}
         onClick={handleOnClick}
       >

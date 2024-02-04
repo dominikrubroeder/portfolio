@@ -16,7 +16,7 @@ export default async function ToolList() {
             return (
               <li
                 key={tool.title}
-                className="group mr-8 inline-block first-of-type:ml-16"
+                className="group mr-8 inline-block first-of-type:ml-4 sm:first-of-type:ml-16"
               >
                 <Tool tool={tool} />
               </li>
@@ -24,7 +24,7 @@ export default async function ToolList() {
         })}
       </ul>
 
-      <div className="ml-16">
+      <div className="ml-4 sm:ml-16">
         <MoreItemsSection items={tools} />
       </div>
     </>

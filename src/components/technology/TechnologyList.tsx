@@ -20,7 +20,7 @@ export default async function TechnologyList() {
             return (
               <li
                 key={technology.title}
-                className="group mr-8 inline-block first-of-type:ml-16"
+                className="group mr-8 inline-block first-of-type:ml-4 sm:first-of-type:ml-16"
               >
                 <Technology technology={technology} />
               </li>
@@ -28,7 +28,7 @@ export default async function TechnologyList() {
         })}
       </ul>
 
-      <div className="ml-16">
+      <div className="ml-4 sm:ml-16">
         <MoreItemsSection items={technologies} />
       </div>
     </>
