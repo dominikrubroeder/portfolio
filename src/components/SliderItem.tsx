@@ -2,6 +2,7 @@ import { Social, Technology, Tool } from '@/interfaces';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
 export default function SliderItem({
   sliderItem,
@@ -54,18 +55,6 @@ export default function SliderItem({
 
       {showActions && (
         <div className="invisible grid translate-y-4 grid-cols-2 gap-4 opacity-0 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-          <button
-            title={`Projects with ${sliderItem.title} are coming soon.`}
-            aria-label={`Projects with ${sliderItem.title} are coming soon.`}
-            className="relative flex h-16 items-center justify-center rounded-2xl bg-gray-5"
-            disabled
-          >
-            <span className="absolute -right-2 -top-2 rounded bg-accent p-1 px-1.5 text-xs text-white">
-              Soon
-            </span>
-            Projects coming
-          </button>
-
           <Link
             href={sliderItem.website}
             target="_blank"
@@ -75,6 +64,22 @@ export default function SliderItem({
           >
             <ArrowTopRightOnSquareIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
           </Link>
+
+          <button
+            title={`Projects with ${sliderItem.title}`}
+            aria-label={`Projects with ${sliderItem.title}`}
+            className="relative flex h-16 items-center justify-center rounded-2xl hover:bg-gray-5"
+            disabled
+          >
+            <ArrowLongRightIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
+            <span
+              title={`Projects with ${sliderItem.title}`}
+              aria-label={`Projects with ${sliderItem.title}`}
+              className="absolute top-0 -translate-y-2 rounded bg-accent p-1 px-1.5 text-xs text-white"
+            >
+              Soon
+            </span>
+          </button>
         </div>
       )}
     </div>
