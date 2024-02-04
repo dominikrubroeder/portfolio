@@ -7,7 +7,7 @@ export async function getData(): Promise<Data> {
     const res = await fs.readFile(process.cwd() + '/public/data.json', 'utf8');
     return JSON.parse(res);
   } else {
-    const res = await fetch('https://dominikrubroeder.vercel.app/data.json', {
+    const res = await fetch('https://www.dominikrubroeder.dev/data.json', {
       next: { revalidate: 300 }
     });
     return res.json();

@@ -106,7 +106,7 @@
       "title": "TypeScript",
       "website": "https://www.typescriptlang.org",
       "logo": "https://dominikrubroeder.vercel.app/typescript.png",
-      "href": "/technology/typescript"
+      "href": "/technology/typescript",
       "description": "TypeScript is JavaScript with syntax for types.",
       "keyword": "JavaScript-based typed language",
       "priority": "high",
@@ -137,7 +137,6 @@
       "website": "https://www.w3schools.com/html/",
       "logo": "https://dominikrubroeder.vercel.app/html.png",
       "href": "/technology/html",
-      "href": "https://www.w3schools.com/html/",
       "description": "The standard markup language for Web pages",
       "keyword": "Basic Markup language",
       "priority": "high",
