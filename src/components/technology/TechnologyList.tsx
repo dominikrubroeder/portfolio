@@ -15,14 +15,17 @@ export default async function TechnologyList() {
   return (
     <>
       <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
-        {technologies.map((technology) => {
+        {technologies.map((technology, index) => {
           if (technology.priority === 'high')
             return (
               <li
                 key={technology.title}
                 className="group mr-8 inline-block first-of-type:ml-4 sm:first-of-type:ml-16"
               >
-                <Technology technology={technology} />
+                <Technology
+                  technology={technology}
+                  isFirstItemInList={index === 0}
+                />
               </li>
             );
         })}

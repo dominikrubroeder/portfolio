@@ -6,13 +6,15 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
 export default function SliderItem({
   sliderItem,
-  showActions
+  showActions,
+  isFirstItemInList
 }: {
   sliderItem: Tool | Technology | Social;
   showActions?: boolean;
+  isFirstItemInList?: boolean;
 }) {
   return (
-    <div className="grid w-80 gap-6 whitespace-normal">
+    <div className="group grid w-80 gap-6 whitespace-normal">
       <div className="relative h-80 w-80 rounded-xl border border-gray-4">
         {/* Change in later release to
              – href={sliderItem.href}
@@ -62,7 +64,13 @@ export default function SliderItem({
       </div>
 
       {showActions && (
-        <div className="invisible grid translate-y-4 grid-cols-2 gap-4 opacity-0 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+        <div
+          className={`${
+            isFirstItemInList
+              ? 'visible translate-y-0 opacity-100'
+              : 'invisible translate-y-4 opacity-0'
+          } grid grid-cols-2 gap-4 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100`}
+        >
           <Link
             href={sliderItem.website}
             target="_blank"
@@ -70,7 +78,13 @@ export default function SliderItem({
             aria-label={`Go to external ${sliderItem.title} website`}
             className="button group flex h-16 items-center justify-center rounded-2xl transition hover:bg-gray-5"
           >
-            <ArrowTopRightOnSquareIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
+            <ArrowTopRightOnSquareIcon
+              className={`${
+                isFirstItemInList
+                  ? 'text-theme-contrary'
+                  : 'group-hover:text-theme-contrary'
+              } h-5 w-5 transition`}
+            />
           </Link>
 
           <button
