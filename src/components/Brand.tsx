@@ -7,6 +7,15 @@ import Gitlab from '@/components/svg/gitlab';
 import Shopware from '@/components/svg/shopware';
 import Storyblok from '@/components/svg/storyblok';
 import Miro from '@/components/svg/miro';
+import Markdown from '@/components/svg/markdown';
+import React from '@/components/svg/react';
+import NextJs from '@/components/svg/nextjs';
+import TypeScript from '@/components/svg/typescript';
+import JavaScript from '@/components/svg/javascript';
+import HTML from '@/components/svg/html';
+import CSS from '@/components/svg/css';
+import TailwindCSS from '@/components/svg/tailwind-css';
+import FramerMotion from '@/components/svg/framer-motion';
 
 export default function Brand({
   brand,
@@ -41,5 +50,32 @@ export default function Brand({
 
     case 'Miro':
       return <Miro className={className} />;
+
+    case 'React':
+      return <React className={className} />;
+
+    case 'Next.js':
+      return <NextJs className={className} />;
+
+    case 'TypeScript':
+      return <TypeScript className={className} />;
+
+    case 'JavaScript':
+      return <JavaScript className={className} />;
+
+    case 'Markdown':
+      return <Markdown className={className} />;
+
+    case 'HTML':
+      return <HTML className={className} />;
+
+    case 'CSS':
+      return <CSS className={className} />;
+
+    case 'Tailwind CSS':
+      return <TailwindCSS className={className} />;
+
+    case 'Framer Motion':
+      return <FramerMotion className={className} />;
   }
 }

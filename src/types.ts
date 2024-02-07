@@ -8,4 +8,13 @@ export type Brand =
   | 'GitLab'
   | 'Shopware'
   | 'Storyblok'
-  | 'Miro';
+  | 'Miro'
+  | 'React'
+  | 'Next.js'
+  | 'TypeScript'
+  | 'JavaScript'
+  | 'Markdown'
+  | 'HTML'
+  | 'CSS'
+  | 'Tailwind CSS'
+  | 'Framer Motion';

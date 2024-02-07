@@ -34,7 +34,7 @@ export default function SliderItem({
         >
           <Brand
             brand={sliderItem.title as BrandType}
-            className="h-32 w-32"
+            className="h-32 w-auto"
             aria-label={`${sliderItem.title} logo`}
           />
         </Link>
