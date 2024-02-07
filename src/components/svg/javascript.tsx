@@ -9,7 +9,7 @@ export default function JavaScript({ className }: { className?: string }) {
       className={className ? className : defaultSize}
       style={{ borderRadius: '.75rem' }}
     >
-      <g id="Brand Logo">
+      <g>
         <g clipPath="url(#clip0_748_1013)">
           <g id="JavaScript" clipPath="url(#clip1_748_1013)">
             <path id="Vector" d="M128 0H0V128H128V0Z" fill="#F7DF1E" />

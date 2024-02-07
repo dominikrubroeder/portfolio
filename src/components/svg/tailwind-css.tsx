@@ -6,7 +6,7 @@ export default function TailwindCSS({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className="h-[5rem] w-auto"
     >
-      <g id="Brand Logo">
+      <g>
         <g id="Tailwind">
           <g id="Clip path group">
             <mask

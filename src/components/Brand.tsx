@@ -17,6 +17,9 @@ import CSS from '@/components/svg/css';
 import TailwindCSS from '@/components/svg/tailwind-css';
 import FramerMotion from '@/components/svg/framer-motion';
 import AuthJs from '@/components/img/auth-js';
+import Xing from '@/components/svg/xing';
+import Instagram from '@/components/img/instagram';
+import LinkedIn from '@/components/svg/linkedin';
 
 export default function Brand({
   brand,
@@ -81,5 +84,14 @@ export default function Brand({
 
     case 'Auth.js':
       return <AuthJs className={className} />;
+
+    case 'LinkedIn':
+      return <LinkedIn className={className} />;
+
+    case 'Xing':
+      return <Xing className={className} />;
+
+    case 'Instagram':
+      return <Instagram className={className} />;
   }
 }

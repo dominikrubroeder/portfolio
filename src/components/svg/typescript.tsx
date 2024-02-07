@@ -8,8 +8,8 @@ export default function TypeScript({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={className ? className : defaultSize}
     >
-      <g id="Brand Logo" clipPath="url(#clip0_748_1013)">
-        <g id="TypeScript" clipPath="url(#clip1_748_1013)">
+      <g clipPath="url(#clip0_748_1013)">
+        <g clipPath="url(#clip1_748_1013)">
           <path
             id="Vector"
             d="M115.5 0H12.5C5.59644 0 0 5.59644 0 12.5V115.5C0 122.404 5.59644 128 12.5 128H115.5C122.404 128 128 122.404 128 115.5V12.5C128 5.59644 122.404 0 115.5 0Z"
