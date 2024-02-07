@@ -1,8 +1,9 @@
 import { Social, Technology, Tool } from '@/interfaces';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import Brand from '@/components/Brand';
+import type { Brand as BrandType } from '@/types';
 
 export default function SliderItem({
   sliderItem,
@@ -31,13 +32,9 @@ export default function SliderItem({
           title={`Go to ${sliderItem.title} page`}
           aria-label={`Go to ${sliderItem.title} page`}
         >
-          <Image
-            src={sliderItem.logo}
-            alt={sliderItem.title}
-            className="max-h-32 max-w-32 shrink-0 object-contain"
-            width="128"
-            height="128"
-            draggable={false}
+          <Brand
+            brand={sliderItem.title as BrandType}
+            className="h-32 w-32"
             aria-label={`${sliderItem.title} logo`}
           />
         </Link>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import type { ControlBarAction as ControlBarActionType } from '@/types';
+import type { ControlBar as IControlBar } from '@/interfaces';
 import ControlBarList from '@/components/navigation/control-bar/ControlBarList';
 import ControlBarMobileTrigger from '@/components/navigation/control-bar/ControlBarMobileTrigger';
 import ControlBarActionLeft from '@/components/navigation/control-bar/ControlBarActionLeft';
@@ -12,12 +12,7 @@ export default function ControlBar({
   collapse,
   leftControlAction = 'Avatar',
   rightControlAction = 'Up'
-}: {
-  sections: { id: string; label: string; icon: string }[];
-  collapse: boolean;
-  leftControlAction: ControlBarActionType;
-  rightControlAction: ControlBarActionType;
-}) {
+}: IControlBar) {
   const [state, setState] = useState<{
     controlBar: 'collapsed' | 'expanded';
     activeTab: string | null;
