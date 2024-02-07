@@ -8,7 +8,7 @@ export default function CSS({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={className ? className : defaultSize}
     >
-      <g id="Brand Logo">
+      <g>
         <g id="CSS" clipPath="url(#clip0_748_1013)">
           <path
             id="polygon2989"

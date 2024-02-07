@@ -65,8 +65,8 @@ export default function SliderItem({
           className={`${
             isFirstItemInList
               ? 'visible translate-y-0 opacity-100'
-              : 'invisible translate-y-4 opacity-0'
-          } grid grid-cols-2 gap-4 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100`}
+              : 'sm:invisible sm:translate-y-4 sm:opacity-0'
+          } grid grid-cols-2 gap-4 transition sm:group-hover:visible sm:group-hover:translate-y-0 sm:group-hover:opacity-100`}
         >
           <Link
             href={sliderItem.website}
