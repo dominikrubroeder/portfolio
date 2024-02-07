@@ -1,159 +1,45 @@
-import type { Brand } from '@/types';
+import Figma from '@/components/svg/figma';
+import WebStorm from '@/components/svg/webstorm';
+import GitHub from '@/components/svg/github';
+import type { Brand as BrandType } from '@/types';
+import Inkdrop from '@/components/img/inkdrop';
+import Gitlab from '@/components/svg/gitlab';
+import Shopware from '@/components/svg/shopware';
+import Storyblok from '@/components/svg/storyblok';
+import Miro from '@/components/svg/miro';
 
 export default function Brand({
   brand,
-  className = 'w-8 h-8'
+  className = 'w-32 h-32'
 }: {
-  brand: Brand;
+  brand: BrandType;
   className?: string;
 }) {
+  if (!(brand satisfies BrandType)) return null;
+
   switch (brand) {
     case 'Figma':
-      return (
-        <svg
-          width="128"
-          height="128"
-          viewBox="0 0 128 128"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={className}
-        >
-          <g clipPath="url(#clip0_738_834)">
-            <path
-              d="M42.3333 128C54.1093 128 63.6667 118.443 63.6667 106.667V85.3333H42.3333C30.5573 85.3333 21 94.8906 21 106.667C21 118.443 30.5573 128 42.3333 128Z"
-              fill="#0ACF83"
-            />
-            <path
-              d="M21 64.0001C21 52.2241 30.5573 42.6667 42.3333 42.6667H63.6667V85.3334H42.3333C30.5573 85.3334 21 75.7761 21 64.0001Z"
-              fill="#A259FF"
-            />
-            <path
-              d="M21 21.3333C21 9.55733 30.5573 0 42.3333 0H63.6667V42.6667H42.3333C30.5573 42.6667 21 33.1093 21 21.3333Z"
-              fill="#F24E1E"
-            />
-            <path
-              d="M63.6667 0H85C96.776 0 106.333 9.55733 106.333 21.3333C106.333 33.1093 96.776 42.6667 85 42.6667H63.6667V0Z"
-              fill="#FF7262"
-            />
-            <path
-              d="M106.333 64.0001C106.333 75.7761 96.776 85.3334 85 85.3334C73.224 85.3334 63.6667 75.7761 63.6667 64.0001C63.6667 52.2241 73.224 42.6667 85 42.6667C96.776 42.6667 106.333 52.2241 106.333 64.0001Z"
-              fill="#1ABCFE"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_738_834">
-              <rect
-                width="86"
-                height="128"
-                fill="white"
-                transform="translate(21)"
-              />
-            </clipPath>
-          </defs>
-        </svg>
-      );
+      return <Figma className={className} />;
 
     case 'WebStorm':
-      return (
-        <svg
-          width="128"
-          height="128"
-          viewBox="0 0 128 128"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clipPath="url(#clip0_738_834)">
-            <path
-              d="M17.1886 115.749L0 13.3486L32 0.182861L52.2971 12.2514L70.9486 2.19429L109.897 17.1886L87.9543 128L17.1886 115.749Z"
-              fill="url(#paint0_linear_738_834)"
-            />
-            <path
-              d="M128 43.3371L111.543 2.56L81.5543 0L35.2914 44.4343L47.7257 101.669L70.9486 118.126L128 84.1143L113.92 57.9657L128 43.3371Z"
-              fill="url(#paint1_linear_738_834)"
-            />
-            <path
-              d="M102.4 37.3028L113.92 57.9656L128 43.3371L117.76 17.9199L102.4 37.3028Z"
-              fill="url(#paint2_linear_738_834)"
-            />
-            <path
-              d="M103.497 24.5029H24.5029V103.497H103.497V24.5029Z"
-              fill="black"
-            />
-            <path
-              d="M61.6229 88.6858H32V93.6229H61.6229V88.6858Z"
-              fill="white"
-            />
-            <path
-              d="M70.7657 62.72L74.9715 57.6C77.8972 59.9772 81.0057 61.6229 84.6629 61.6229C87.5886 61.6229 89.2343 60.5258 89.2343 58.5143V58.3315C89.2343 56.5029 88.1372 55.5886 82.6515 54.1258C76.0686 52.48 72.0457 50.6515 72.0457 44.0686V43.8858C72.0457 37.8515 76.8 34.0115 83.3829 34.0115C88.1372 34.0115 92.16 35.4743 95.4515 38.2172L91.7943 43.7029C88.8686 41.6915 86.1257 40.4115 83.3829 40.4115C80.64 40.4115 79.1772 41.6915 79.1772 43.3372V43.52C79.1772 45.7143 80.64 46.4458 86.1257 47.9086C92.7086 49.7372 96.3657 52.1143 96.3657 57.7829V57.9658C96.3657 64.5486 91.4286 68.2058 84.48 68.2058C79.5429 68.0229 74.6057 66.1943 70.7657 62.72Z"
-              fill="white"
-            />
-            <path
-              d="M64.3657 34.7429L59.4286 53.7601L53.9429 34.7429H48.4572L42.7886 53.7601L37.8515 34.7429H30.3543L39.68 67.4743H45.7143L51.2 48.4572L56.5029 67.4743H62.72L72.0457 34.7429H64.3657Z"
-              fill="white"
-            />
-          </g>
-          <defs>
-            <linearGradient
-              id="paint0_linear_738_834"
-              x1="45.8386"
-              y1="2.66954"
-              x2="78.9632"
-              y2="121.92"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0.2849" stopColor="#00CDD7" />
-              <stop offset="0.9409" stopColor="#2086D7" />
-            </linearGradient>
-            <linearGradient
-              id="paint1_linear_738_834"
-              x1="56.1737"
-              y1="17.7999"
-              x2="112.21"
-              y2="99.9698"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0.1398" stopColor="#FFF045" />
-              <stop offset="0.3656" stopColor="#00CDD7" />
-            </linearGradient>
-            <linearGradient
-              id="paint2_linear_738_834"
-              x1="111.693"
-              y1="27.9588"
-              x2="119.051"
-              y2="54.0232"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0.2849" stopColor="#00CDD7" />
-              <stop offset="0.9409" stopColor="#2086D7" />
-            </linearGradient>
-            <clipPath id="clip0_738_834">
-              <rect width="128" height="128" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-      );
+      return <WebStorm className={className} />;
 
     case 'GitHub':
-      return (
-        <svg
-          width="128"
-          height="128"
-          viewBox="0 0 128 128"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={className}
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M64.053 0C28.6333 0 0 28.8444 0 64.5289C0 93.0534 18.3464 117.199 43.7976 125.745C46.9797 126.387 48.1453 124.356 48.1453 122.648C48.1453 121.152 48.0404 116.024 48.0404 110.681C30.2224 114.528 26.512 102.989 26.512 102.989C23.6485 95.5104 19.4057 93.5883 19.4057 93.5883C13.5739 89.6353 19.8305 89.6353 19.8305 89.6353C26.2996 90.0627 29.694 96.259 29.694 96.259C35.4196 106.087 44.6459 103.31 48.3577 101.601C48.8873 97.4338 50.5852 94.5494 52.388 92.9472C38.1769 91.4512 23.225 85.896 23.225 61.1095C23.225 54.0584 25.7686 48.2895 29.7989 43.8029C29.163 42.2007 26.9354 35.5756 30.4361 26.7086C30.4361 26.7086 35.8444 24.9989 48.0391 33.3323C53.26 31.9198 58.6443 31.2013 64.053 31.1952C69.4613 31.1952 74.9745 31.9439 80.0655 33.3323C92.2615 24.9989 97.6698 26.7086 97.6698 26.7086C101.17 35.5756 98.9416 42.2007 98.3057 43.8029C102.442 48.2895 104.881 54.0584 104.881 61.1095C104.881 85.896 89.929 91.3437 75.6117 92.9472C77.9455 94.9768 79.9593 98.8223 79.9593 104.912C79.9593 113.566 79.8545 120.511 79.8545 122.646C79.8545 124.356 81.0213 126.387 84.2021 125.746C109.653 117.197 128 93.0534 128 64.5289C128.105 28.8444 99.3664 0 64.053 0Z"
-            fill="none"
-            className="fill-black dark:fill-white"
-          />
-        </svg>
-      );
+      return <GitHub className={className} />;
 
-    default:
-      return null;
+    case 'Inkdrop':
+      return <Inkdrop className={className} />;
+
+    case 'GitLab':
+      return <Gitlab className={className} />;
+
+    case 'Shopware':
+      return <Shopware className={className} />;
+
+    case 'Storyblok':
+      return <Storyblok className={className} />;
+
+    case 'Miro':
+      return <Miro className={className} />;
   }
 }

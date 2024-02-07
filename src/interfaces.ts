@@ -1,3 +1,5 @@
+import type { ControlBarAction as ControlBarActionType } from '@/types';
+
 export interface Tool {
   title: string;
   logo: string;
@@ -24,4 +26,11 @@ export interface Data {
   tools: Tool[];
   technologies: Technology[];
   socials: Social[];
+}
+
+export interface ControlBar {
+  sections: { id: string; label: string; icon: string }[];
+  collapse: boolean;
+  leftControlAction: ControlBarActionType;
+  rightControlAction: ControlBarActionType;
 }

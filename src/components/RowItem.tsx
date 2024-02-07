@@ -1,8 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { Technology, Tool } from '@/interfaces';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import type { Brand as BrandType } from '@/types';
+import Brand from '@/components/Brand';
 
 export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
   return (
@@ -15,13 +16,10 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
           target="_blank"
           className="flex items-center justify-center gap-4"
         >
-          <Image
-            width={32}
-            height={32}
-            className="object-contain"
-            src={rowItem.logo}
-            alt={rowItem.title}
-            draggable={false}
+          <Brand
+            brand={rowItem.title as BrandType}
+            className="h-8 w-8"
+            aria-label={`${rowItem.title} logo`}
           />
 
           <h3 className="font-bold text-theme-contrary">{rowItem.title}</h3>
