@@ -10,8 +10,6 @@ import Miro from '@/components/svg/miro';
 import Markdown from '@/components/svg/markdown';
 import React from '@/components/svg/react';
 import NextJs from '@/components/svg/next-js';
-import TypeScript from '@/components/svg/typescript';
-import JavaScript from '@/components/svg/javascript';
 import HTML from '@/components/svg/html';
 import CSS from '@/components/svg/css';
 import TailwindCSS from '@/components/svg/tailwind-css';
@@ -20,6 +18,8 @@ import AuthJs from '@/components/img/auth-js';
 import Xing from '@/components/svg/xing';
 import Instagram from '@/components/img/instagram';
 import LinkedIn from '@/components/svg/linkedin';
+import TypeScript from '@/components/svg/typescript';
+import JavaScript from '@/components/svg/javascript';
 
 export default function Brand({
   brand,
