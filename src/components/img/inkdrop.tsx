@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function Inkdrop() {
+export default function Inkdrop({ className }: { className?: string }) {
   return (
     <Image
       src="/inkdrop.png"
@@ -8,6 +8,7 @@ export default function Inkdrop() {
       height={128}
       alt="Inkdrop logo"
       draggable={false}
+      className={className}
     />
   );
 }

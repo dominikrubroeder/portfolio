@@ -1,11 +1,12 @@
-export default function WebStorm() {
+import { defaultSize } from '@/components/svg/config';
+
+export default function WebStorm({ className }: { className?: string }) {
   return (
     <svg
-      width="128"
-      height="128"
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className ? className : defaultSize}
     >
       <g clipPath="url(#clip0_748_1013)">
         <g clipPath="url(#clip1_748_1013)">
