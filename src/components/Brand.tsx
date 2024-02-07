@@ -9,13 +9,14 @@ import Storyblok from '@/components/svg/storyblok';
 import Miro from '@/components/svg/miro';
 import Markdown from '@/components/svg/markdown';
 import React from '@/components/svg/react';
-import NextJs from '@/components/svg/nextjs';
+import NextJs from '@/components/svg/next-js';
 import TypeScript from '@/components/svg/typescript';
 import JavaScript from '@/components/svg/javascript';
 import HTML from '@/components/svg/html';
 import CSS from '@/components/svg/css';
 import TailwindCSS from '@/components/svg/tailwind-css';
 import FramerMotion from '@/components/svg/framer-motion';
+import AuthJs from '@/components/img/auth-js';
 
 export default function Brand({
   brand,
@@ -77,5 +78,8 @@ export default function Brand({
 
     case 'Framer Motion':
       return <FramerMotion className={className} />;
+
+    case 'Auth.js':
+      return <AuthJs className={className} />;
   }
 }
