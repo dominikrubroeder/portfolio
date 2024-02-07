@@ -7,6 +7,7 @@ export default function JavaScript({ className }: { className?: string }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className ? className : defaultSize}
+      style={{ borderRadius: '.75rem' }}
     >
       <g id="Brand Logo">
         <g clipPath="url(#clip0_748_1013)">
