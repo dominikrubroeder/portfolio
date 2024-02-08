@@ -6,23 +6,23 @@ async function getGitHubUser(userName: string) {
   return await res.json();
 }
 
-export default async function GitHub() {
+export default async function GithubUser() {
   const gitHubUser = await getGitHubUser('dominikrubroeder');
   const gitHubUserArray = convertObjectToArray(gitHubUser);
 
   return (
-    <div className="grid gap-4 relative max-w-lg ml-auto">
-      <header className="flex gap-4 justify-end">
+    <div className="relative ml-auto grid max-w-lg gap-4">
+      <header className="flex justify-end gap-4">
         <Image
           src={gitHubUser.avatar_url}
           alt={gitHubUser.name}
           width={32}
           height={32}
-          className="rounded-full shrink-0"
+          className="shrink-0 rounded-full"
         />
       </header>
 
-      <div className="bg-white/5 p-4 max-h-[50vh] overflow-hidden overflow-y-auto rounded absolute top-12 right-0 z-50">
+      <div className="absolute right-0 top-12 z-50 max-h-[50vh] overflow-hidden overflow-y-auto rounded bg-white/5 p-4">
         <code className="text-xs">
           <span>{`{`}</span>
           <ul className="grid gap-2">

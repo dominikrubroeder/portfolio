@@ -1,6 +1,6 @@
 import { getTools } from '@/lib';
-import Tool from '@/components/tool/Tool';
-import MoreItemsSection from '@/components/MoreItemsSection';
+import Tool from '@/components/tool/tool';
+import MoreItemsSection from '@/components/more-items-section';
 
 export default async function ToolList() {
   const tools = await getTools();

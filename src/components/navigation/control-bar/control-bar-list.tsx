@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import React, { useCallback } from 'react';
-import DynamicIcon from '@/components/DynamicIcon';
+import DynamicIcon from '@/components/dynamic-icon';
 
 export default function ControlBarList({
   sections,

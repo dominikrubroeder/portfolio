@@ -3,7 +3,7 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { Technology, Tool } from '@/interfaces';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import type { Brand as BrandType } from '@/types';
-import Brand from '@/components/Brand';
+import Brand from '@/components/brand';
 
 export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
   return (
