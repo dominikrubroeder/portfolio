@@ -5,10 +5,12 @@ import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
 
 export default function Accordion({
   title,
-  children
+  children,
+  focusView = 'center'
 }: {
   title: ReactNode;
   children: ReactNode;
+  focusView?: 'start' | 'center';
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -16,7 +18,7 @@ export default function Accordion({
   useEffect(() => center(), [open]);
 
   const center = () =>
-    ref.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    ref.current?.scrollIntoView({ behavior: 'smooth', block: focusView });
 
   return (
     <div ref={ref}>
@@ -25,8 +27,10 @@ export default function Accordion({
         onClick={() => setOpen((prevState) => !prevState)}
       >
         <h2>{title}</h2>
-        {open && <MinusIcon className="h-4 w-4 text-gray-2" />}
-        {!open && <PlusIcon className="h-4 w-4 text-gray-2" />}
+        <div className="flex items-center gap-2">
+          {open && <MinusIcon className="h-4 w-4 text-gray-2" />}
+          {!open && <PlusIcon className="h-4 w-4 text-gray-2" />}
+        </div>
       </div>
 
       {open ? <div className="animate-fadeUp mb-5 p-4">{children}</div> : null}

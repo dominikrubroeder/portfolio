@@ -1,7 +1,8 @@
 import Mindset from '@/components/notes/mindset';
 import UxRole from '@/components/notes/ux-role';
 import Books from '@/components/notes/books';
-import UxPredicates from '@/components/notes/ux-predicates';
+import UxPredicatesDesigner from '@/components/notes/ux-predicates-designer';
+import UxPredicatesUxEngineer from '@/components/notes/ux-predicates-ux-engineer';
 
 export default function NotesSection() {
   return (
@@ -10,7 +11,8 @@ export default function NotesSection() {
         <UxRole />
         <Mindset />
         <Books />
-        <UxPredicates />
+        <UxPredicatesDesigner />
+        <UxPredicatesUxEngineer />
       </div>
     </section>
   );

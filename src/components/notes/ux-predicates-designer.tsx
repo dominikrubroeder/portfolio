@@ -1,18 +1,23 @@
 import Accordion from '@/components/accordion';
+import Label from '@/components/label';
 
-export default function UxPredicates() {
+export default function UxPredicatesDesigner() {
   return (
     <Accordion
       title={
         <>
           Hey ChatGPT,
           <span className="ml-1 text-gray-2">
-            what predicates does an UX Engineer need to fulfill?
+            on which predicates should a UX Designer focus on?
           </span>
         </>
       }
+      focusView="start"
     >
-      <h3 className="font-bold text-white">UX Predicates</h3>
+      <h3 className="font-bold text-white">
+        UX Predicates
+        <Label text="UX Designer" />
+      </h3>
 
       <br />
 
@@ -71,7 +76,7 @@ export default function UxPredicates() {
         </li>
         <li>
           <strong className="text-theme-contrary">Visual Hierarchy:</strong> Use
-          a clear visual hierarchy to guide users' attention to important
+          a clear visual hierarchy to guide users attention to important
           elements on the screen. Proper hierarchy aids in understanding the
           structure of information and the flow of interactions.
         </li>
@@ -115,6 +120,16 @@ export default function UxPredicates() {
           and improving the user experience.
         </li>
       </ol>
+
+      <p>
+        By emphasizing these predicates, UX designers can contribute to creating
+        a product that not only meets business goals but also delights and
+        satisfies the needs of the users. Regular collaboration, feedback loops,
+        and a commitment to user-centric design principles are essential for
+        success.
+      </p>
+
+      <br />
 
       <p>
         <span>UX Design: Key Predicates</span>
