@@ -1,5 +1,5 @@
 import { Technology } from '@/interfaces';
-import SliderItem from '@/components/SliderItem';
+import SliderItem from '@/components/slider-item';
 
 export default function Technology({
   technology,

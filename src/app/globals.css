@@ -139,4 +139,8 @@ a {
     button:not(:disabled), .button:not(:disabled) {
         @apply interactive
     }
+  
+    .external-link {
+        @apply text-violet-400
+    }
 }

@@ -1,7 +1,7 @@
-import ControlBar from '@/components/navigation/control-bar/ControlBar';
+import ControlBar from '@/components/navigation/control-bar/control-bar';
 import { getTechnology } from '@/lib';
 import { redirect } from 'next/navigation';
-import ItemHeroSection from '@/components/heros/ItemHeroSection';
+import ItemHeroSection from '@/components/heros/item-hero-section';
 import Link from 'next/link';
 
 export default async function TechnologyPage({

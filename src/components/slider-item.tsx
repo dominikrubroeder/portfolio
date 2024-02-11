@@ -2,7 +2,7 @@ import { Social, Technology, Tool } from '@/interfaces';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import Brand from '@/components/Brand';
+import Brand from '@/components/brand';
 import type { Brand as BrandType } from '@/types';
 
 export default function SliderItem({

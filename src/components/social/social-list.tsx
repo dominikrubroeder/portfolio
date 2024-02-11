@@ -1,5 +1,5 @@
 import { getSocials } from '@/lib';
-import Social from '@/components/social/Social';
+import Social from '@/components/social/social';
 
 export default async function SocialList() {
   const socials = await getSocials();

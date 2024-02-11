@@ -2,12 +2,12 @@
 
 import { useIsInView } from '@/hooks/useIsInView';
 import { useRef, useState } from 'react';
-import ControlBar from '@/components/navigation/control-bar/ControlBar';
+import ControlBar from '@/components/navigation/control-bar/control-bar';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
-import SkillBadge from '@/components/SkillBadge';
+import SkillBadge from '@/components/skill-badge';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import Toggle from '@/components/Toggle';
+import Toggle from '@/components/toggle';
 
 const sections = [
   { id: 'projects', label: 'Projects', icon: 'DocumentDuplicateIcon' },
