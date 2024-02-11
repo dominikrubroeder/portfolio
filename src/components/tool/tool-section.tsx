@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
-import LoadingList from '@/components/LoadingList';
-import ToolList from '@/components/tool/ToolList';
+import LoadingList from '@/components/loading-list';
+import ToolList from '@/components/tool/tool-list';
 
 export default function ToolSection() {
   return (

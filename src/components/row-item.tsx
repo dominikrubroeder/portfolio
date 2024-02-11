@@ -3,11 +3,11 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { Technology, Tool } from '@/interfaces';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 import type { Brand as BrandType } from '@/types';
-import Brand from '@/components/Brand';
+import Brand from '@/components/brand';
 
 export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
   return (
-    <div className="grid gap-4 border-b border-gray-5 py-4 pr-4 text-xs sm:flex sm:items-start sm:justify-between md:items-center">
+    <div className="grid gap-4 border-b border-gray-5 py-4 pr-4 sm:flex sm:items-start sm:justify-between md:items-center">
       <div className="grid gap-4">
         <Link
           href={rowItem.website}
@@ -24,7 +24,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
 
           <h3 className="font-bold text-theme-contrary">{rowItem.title}</h3>
 
-          <div className="mr-auto w-max whitespace-nowrap rounded-3xl border border-gray-4 px-3 py-2 font-bold text-theme-contrary">
+          <div className="mr-auto w-max whitespace-nowrap rounded-3xl border border-gray-4 px-3 py-2 text-xs font-bold text-theme-contrary">
             {rowItem.keyword}
           </div>
         </Link>

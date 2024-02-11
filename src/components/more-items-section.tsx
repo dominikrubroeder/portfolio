@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Technology, Tool } from '@/interfaces';
 import { PlusIcon } from '@heroicons/react/24/solid';
 import { MinusIcon } from '@heroicons/react/20/solid';
-import RowItem from '@/components/RowItem';
+import RowItem from '@/components/row-item';
 
 export default function MoreItemsSection({
   items

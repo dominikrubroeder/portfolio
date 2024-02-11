@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
-import LoadingList from '@/components/LoadingList';
-import TechnologyList from '@/components/technology/TechnologyList';
+import LoadingList from '@/components/loading-list';
+import TechnologyList from '@/components/technology/technology-list';
 
 export default function TechnologySection() {
   return (

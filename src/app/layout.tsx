@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import './globals.css';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
 import { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 

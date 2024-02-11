@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
-import LoadingList from '@/components/LoadingList';
-import SocialList from '@/components/social/SocialList';
+import LoadingList from '@/components/loading-list';
+import SocialList from '@/components/social/social-list';
 
 export default function SocialSection() {
   return (

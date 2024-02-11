@@ -36,10 +36,15 @@ module.exports = {
         scale: {
           '0%': { transform: 'scale(0.82)' },
           '100%': { transform: 'scale(1)' }
+        },
+        fadeUp: {
+          '0%': { transform: 'translateY(4%)' },
+          '100%': { transform: 'translateY(0%)' }
         }
       },
       animation: {
-        scale: 'scale 0.16s ease-out forwards'
+        scale: 'scale 0.16s ease-out forwards',
+        fadeUp: 'fadeUp 0.3s ease-out forwards'
       }
     }
   },

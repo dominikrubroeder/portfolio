@@ -1,8 +1,9 @@
-import TechnologySection from '@/components/technology/TechnologySection';
-import ToolSection from '@/components/tool/ToolSection';
-import SocialSection from '@/components/social/SocialSection';
-import ProjectSection from '@/components/projects/ProjectSection';
-import HomeHeroSection from '@/components/heros/HomeHeroSection';
+import TechnologySection from '@/components/technology/technology-section';
+import ToolSection from '@/components/tool/tool-section';
+import SocialSection from '@/components/social/social-section';
+import ProjectSection from '@/components/projects/project-section';
+import HomeHeroSection from '@/components/heros/home-hero-section';
+import NotesSection from '@/components/notes/notes-section';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,8 @@ export default function HomePage() {
       <TechnologySection />
 
       <SocialSection />
+
+      <NotesSection />
     </>
   );
 }
