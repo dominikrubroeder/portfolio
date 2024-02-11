@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
 
 export default function Accordion({
@@ -15,10 +15,14 @@ export default function Accordion({
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => center(), [open]);
+  const center = useCallback(
+    () => ref.current?.scrollIntoView({ behavior: 'smooth', block: focusView }),
+    []
+  );
 
-  const center = () =>
-    ref.current?.scrollIntoView({ behavior: 'smooth', block: focusView });
+  useEffect(() => {
+    open ? center() : null;
+  }, [center, open]);
 
   return (
     <div ref={ref}>
@@ -33,7 +37,7 @@ export default function Accordion({
         </div>
       </div>
 
-      {open ? <div className="animate-fadeUp mb-5 p-4">{children}</div> : null}
+      {open ? <div className="mb-5 animate-fadeUp p-4">{children}</div> : null}
     </div>
   );
 }
