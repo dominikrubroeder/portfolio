@@ -7,7 +7,7 @@ export default function UxPredicatesDesigner() {
       title={
         <>
           Hey ChatGPT,
-          <span className="ml-1 text-gray-2">
+          <span className="ml-1 font-normal text-gray-2">
             on which predicates should a UX Designer focus on?
           </span>
         </>

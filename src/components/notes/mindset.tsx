@@ -17,6 +17,7 @@ export default function Mindset() {
           Engage with your co-workers, exchange your ideas, evaluate if another
           opinion has some truth in it
         </li>
+        <li>Work with heart</li>
       </ul>
 
       <h3 className="font-bold text-theme-contrary">Pen and Paper</h3>
