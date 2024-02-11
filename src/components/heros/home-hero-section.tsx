@@ -1,13 +1,16 @@
 'use client';
 
 import { useIsInView } from '@/hooks/useIsInView';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import ControlBar from '@/components/navigation/control-bar/control-bar';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
-import SkillBadge from '@/components/skill-badge';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import Toggle from '@/components/toggle';
+import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
+import DesignModeToggle from '@/components/toggle/design-mode-toggle';
+import DevModeToggle from '@/components/toggle/dev-mode-toggle';
+import SkillBadges from '@/components/skill-badge/skill-badges';
+import UxEffectsButton from '@/components/button/ux-effects-button';
 
 const sections = [
   { id: 'projects', label: 'Projects', icon: 'DocumentDuplicateIcon' },
@@ -16,70 +19,13 @@ const sections = [
   { id: 'socials', label: 'Socials', icon: 'CheckBadgeIcon' }
 ];
 
-// To data.json?
-// Create Type?
-const skillBadges = [
-  {
-    id: 'interfacedesign',
-    title: 'Interfacedesign',
-    position: 'left-4 top-12'
-    // scrollTo: 'tools'
-  },
-  {
-    id: 'concept',
-    title: 'Concept',
-    position: 'left-4 top-48 lg:top-32 lg:left-1/2 lg:-translate-x-1/2'
-  },
-  {
-    id: 'prototyping',
-    title: 'Prototyping',
-    position: 'top-64 right-4 lg:top-auto lg:bottom-32'
-  },
-  {
-    id: 'microinteractions',
-    title: 'Microinteractions',
-    position: 'right-4 top-32 lg:top-40'
-  },
-  {
-    id: 'transitions',
-    title: 'Transitions',
-    position: 'bottom-[15rem] right-4 lg:right-auto lg:left-16 lg:bottom-24'
-  },
-  {
-    id: 'supportive-animations',
-    title: 'Supportive Animations',
-    position: 'bottom-80 left-4 lg:left-32 lg:bottom-72'
-  },
-  {
-    id: 'frontend-development',
-    title: 'Frontend Development',
-    position: 'hidden lg:flex lg:right-4 lg:bottom-72'
-  },
-  {
-    id: 'code-architecture',
-    title: 'Code Architecture',
-    position: 'hidden lg:flex lg:right-4 lg:top-72'
-  },
-  {
-    id: 'design-patterns',
-    title: 'Design Patterns',
-    position: 'hidden lg:flex lg:right-96 lg:bottom-80'
-  },
-  {
-    id: 'design-system',
-    title: 'Design System',
-    position: 'hidden lg:flex lg:left-72 lg:top-56'
-  }
-];
-
 export default function HomeHeroSection() {
   const ref = useRef(null);
   const isInView = useIsInView(ref);
-  const [state, setState] = useState({
-    uxEffects: false,
-    designMode: false,
-    devMode: false
-  });
+
+  const { searchParams } = useUpdateSearchParams();
+  const uxEffects =
+    searchParams.get('uxEffects') && searchParams.get('uxEffects') === 'true';
 
   return (
     <>
@@ -89,46 +35,11 @@ export default function HomeHeroSection() {
             Team Frontend.
           </h1>
 
-          {state.uxEffects && (
-            <Toggle
-              label="Design mode"
-              onClick={() =>
-                setState((prevState) => {
-                  return { ...prevState, designMode: !prevState.designMode };
-                })
-              }
-              className="absolute right-4 top-4"
-            />
-          )}
+          {uxEffects && <DesignModeToggle />}
 
-          {state.uxEffects && (
-            <Toggle
-              label="Dev mode"
-              onClick={() =>
-                setState((prevState) => {
-                  return { ...prevState, devMode: !prevState.devMode };
-                })
-              }
-              className="absolute right-4 top-14"
-            />
-          )}
+          {uxEffects && <DevModeToggle />}
 
-          {state.uxEffects &&
-            skillBadges.map((skillBadge) => (
-              <div
-                key={skillBadge.id}
-                className={`absolute ${
-                  skillBadge.position ? skillBadge.position : 'left-4 top-12'
-                }`}
-              >
-                <SkillBadge
-                  key={skillBadge.id}
-                  label={skillBadge.title}
-                  designMode={state.designMode}
-                  devMode={state.devMode}
-                />
-              </div>
-            ))}
+          {uxEffects && <SkillBadges />}
         </div>
 
         <h2 ref={ref} className="absolute bottom-24 mx-auto flex gap-1">
@@ -144,17 +55,9 @@ export default function HomeHeroSection() {
               Dominik Rubröder
             </h2>
           </div>
-          <button
-            aria-label="UX Engineer at mediawave"
-            className="pt-12 text-violet-400"
-            onClick={() =>
-              setState((prevState) => {
-                return { ...prevState, uxEffects: !prevState.uxEffects };
-              })
-            }
-          >
-            UX Engineer
-          </button>
+
+          <UxEffectsButton />
+
           <span className="pt-12">@</span>
           <div className="relative">
             <Link

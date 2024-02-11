@@ -5,13 +5,15 @@ import { useState } from 'react';
 export default function Toggle({
   onClick,
   label,
-  className
+  className,
+  enabled
 }: {
   onClick: () => void;
   label?: string;
   className?: string;
+  enabled?: boolean;
 }) {
-  const [isEnabled, setIsEnabled] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(enabled);
   const classes = className
     ? `flex items-center gap-2 cursor-pointer select-none ${className}`
     : 'flex items-center gap-2 cursor-pointer select-none';
