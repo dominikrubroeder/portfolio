@@ -17,7 +17,7 @@ export default function Accordion({
 
   const center = useCallback(
     () => ref.current?.scrollIntoView({ behavior: 'smooth', block: focusView }),
-    []
+    [focusView]
   );
 
   useEffect(() => {

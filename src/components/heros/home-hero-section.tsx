@@ -59,6 +59,7 @@ export default function HomeHeroSection() {
           <UxEffectsButton />
 
           <span className="pt-12">@</span>
+
           <div className="relative">
             <Link
               href="https://www.mediawave.de/"

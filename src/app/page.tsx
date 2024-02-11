@@ -4,11 +4,14 @@ import SocialSection from '@/components/social/social-section';
 import ProjectSection from '@/components/projects/project-section';
 import HomeHeroSection from '@/components/heros/home-hero-section';
 import NotesSection from '@/components/notes/notes-section';
+import { Suspense } from 'react';
 
 export default function HomePage() {
   return (
     <>
-      <HomeHeroSection />
+      <Suspense>
+        <HomeHeroSection />
+      </Suspense>
 
       <ProjectSection />
 
