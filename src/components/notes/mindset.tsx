@@ -3,7 +3,7 @@ import Accordion from '@/components/accordion';
 export default function Mindset() {
   return (
     <Accordion title="Mindset">
-      <h3 className="font-bold text-white">
+      <h3 className="font-bold text-theme-contrary">
         Training, Training, Training and fun
       </h3>
 
@@ -19,7 +19,7 @@ export default function Mindset() {
         </li>
       </ul>
 
-      <h3 className="font-bold text-white">Pen and Paper</h3>
+      <h3 className="font-bold text-theme-contrary">Pen and Paper</h3>
 
       <br />
 
@@ -32,7 +32,7 @@ export default function Mindset() {
         </li>
       </ul>
 
-      <h3 className="font-bold text-white">Notes</h3>
+      <h3 className="font-bold text-theme-contrary">Notes</h3>
 
       <br />
 

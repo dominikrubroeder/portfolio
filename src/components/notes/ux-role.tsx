@@ -3,7 +3,7 @@ import Accordion from '@/components/accordion';
 export default function UxRole() {
   return (
     <Accordion title="What is an UX Engineer?">
-      <h3 className="font-bold text-white">UX Engineer</h3>
+      <h3 className="font-bold text-theme-contrary">UX Engineer</h3>
 
       <br />
 

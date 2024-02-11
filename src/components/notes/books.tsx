@@ -3,7 +3,7 @@ import Accordion from '@/components/accordion';
 export default function Books() {
   return (
     <Accordion title="Books">
-      <h3 className="font-bold text-white">Book Recommendations</h3>
+      <h3 className="font-bold text-theme-contrary">Book Recommendations</h3>
 
       <br />
 

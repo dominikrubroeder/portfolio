@@ -14,7 +14,7 @@ export default function UxPredicatesDesigner() {
       }
       focusView="start"
     >
-      <h3 className="font-bold text-white">
+      <h3 className="font-bold text-theme-contrary">
         UX Predicates
         <Label text="UX Designer" />
       </h3>
