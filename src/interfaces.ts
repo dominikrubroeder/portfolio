@@ -1,4 +1,9 @@
-import type { ControlBarAction as ControlBarActionType } from '@/types';
+import {
+  ControlBarAction,
+  ControlBarMobileMenuVisibility,
+  ControlBarSections,
+  ControlBarVisibility
+} from '@/types';
 
 export interface Tool {
   title: string;
@@ -29,8 +34,14 @@ export interface Data {
 }
 
 export interface ControlBar {
-  sections: { id: string; label: string; icon: string }[];
+  sections: ControlBarSections;
   collapse: boolean;
-  leftControlAction: ControlBarActionType;
-  rightControlAction: ControlBarActionType;
+  leftControlAction: ControlBarAction;
+  rightControlAction: ControlBarAction;
+}
+
+export interface ControlBarState {
+  controlBarVisibility: ControlBarVisibility;
+  mobileMenuVisibility: ControlBarMobileMenuVisibility;
+  activeSection: string | null;
 }

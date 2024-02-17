@@ -14,29 +14,26 @@ export default function ControlBar({
   leftControlAction = 'Avatar',
   rightControlAction = 'Up'
 }: IControlBar) {
-  const { state, setState } = useControlBar(collapse);
+  const { state, scrollIntoView, toggleMobileMenu } = useControlBar(collapse);
 
   return (
     <nav className="fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:w-max">
       <ControlBarActionLeft
-        controlBar={state.controlBar}
+        controlBar={state.controlBarVisibility}
         leftControlAction={leftControlAction}
       />
 
       <ControlBarList
         sections={sections}
-        activeTab={state.activeTab}
-        mobileMenu={state.mobileMenu}
-        setState={setState}
+        activeSection={state.activeSection}
+        mobileMenu={state.mobileMenuVisibility}
+        scrollIntoView={scrollIntoView}
       />
 
-      <ControlBarMobileTrigger
-        activeTab={state.activeTab}
-        setState={setState}
-      />
+      <ControlBarMobileTrigger toggleMobileMenu={toggleMobileMenu} />
 
       <ControlBarActionRight
-        controlBar={state.controlBar}
+        controlBar={state.controlBarVisibility}
         rightControlAction={rightControlAction}
       />
     </nav>
