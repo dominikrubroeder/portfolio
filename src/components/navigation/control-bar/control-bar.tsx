@@ -14,7 +14,8 @@ export default function ControlBar({
   leftControlAction = 'Avatar',
   rightControlAction = 'Up'
 }: IControlBar) {
-  const { state, scrollIntoView, toggleMobileMenu } = useControlBar(collapse);
+  const { state, scrollIntoView, toggleMobileMenu, activeSection } =
+    useControlBar(collapse);
 
   return (
     <nav className="fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:w-max">
@@ -25,7 +26,7 @@ export default function ControlBar({
 
       <ControlBarList
         sections={sections}
-        activeSection={state.activeSection}
+        activeSection={activeSection}
         mobileMenu={state.mobileMenuVisibility}
         scrollIntoView={scrollIntoView}
       />

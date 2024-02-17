@@ -43,5 +43,4 @@ export interface ControlBar {
 export interface ControlBarState {
   controlBarVisibility: ControlBarVisibility;
   mobileMenuVisibility: ControlBarMobileMenuVisibility;
-  activeSection: string | null;
 }

@@ -1,46 +1,22 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { ControlBarState } from '@/interfaces';
+import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 
 export const useControlBar = (collapse: boolean) => {
+  const { updateSearchParams, searchParams } = useUpdateSearchParams();
+
   const [state, setState] = useState<ControlBarState>({
     controlBarVisibility: 'collapsed',
-    activeSection: null,
     mobileMenuVisibility: 'invisible'
   });
 
-  useEffect(
-    () =>
-      setState((prevState) => {
-        return {
-          activeSection: collapse ? null : prevState.activeSection,
-          controlBarVisibility: collapse ? 'collapsed' : 'expanded',
-          mobileMenuVisibility: 'invisible'
-        };
-      }),
-    [collapse]
-  );
-
   const scrollIntoView = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-      // first prevent the default behavior
       e.preventDefault();
 
-      // get the element by id and use scrollIntoView
-      const element = document.getElementById(targetId);
-
-      element?.scrollIntoView({
-        behavior: 'smooth'
-      });
-
-      setState(() => {
-        return {
-          controlBarVisibility: 'expanded',
-          activeSection: targetId,
-          mobileMenuVisibility: 'invisible'
-        };
-      });
+      updateSearchParams({ withName: 'section', withValue: targetId });
     },
-    [setState]
+    [updateSearchParams]
   );
 
   const toggleMobileMenu = () => {
@@ -56,7 +32,41 @@ export const useControlBar = (collapse: boolean) => {
     });
   };
 
-  /** Handle active section with Search Params */
+  useEffect(
+    () =>
+      setState({
+        controlBarVisibility: collapse ? 'collapsed' : 'expanded',
+        mobileMenuVisibility: 'invisible'
+      }),
+    [collapse]
+  );
 
-  return { state, scrollIntoView, toggleMobileMenu };
+  useEffect(() => {
+    if (searchParams.get('section')) {
+      const targetId = searchParams.get('section');
+
+      if (targetId === null) return;
+
+      const element = document.getElementById(targetId);
+
+      element?.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+      setState(() => {
+        return {
+          controlBarVisibility: 'expanded',
+          activeSection: targetId,
+          mobileMenuVisibility: 'invisible'
+        };
+      });
+    }
+  }, [searchParams]);
+
+  return {
+    state,
+    scrollIntoView,
+    toggleMobileMenu,
+    activeSection: searchParams.get('section')
+  };
 };
