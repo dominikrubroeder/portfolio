@@ -34,9 +34,9 @@ export default function ControlBarList({
         <Link
           key={section.id}
           href={`#${section.id}`}
-          className={`${
+          className={`relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2 ${
             activeSection === section.id ? '' : 'hover:text-theme-contrary'
-          } relative cursor-pointer select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2`}
+          }`}
           onClick={(e) => scrollIntoView(e, section.id)}
         >
           {activeSection === section.id && (
@@ -47,8 +47,9 @@ export default function ControlBarList({
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
           )}
+
           <div
-            className={`relative z-20 flex w-max items-center gap-4 ${
+            className={`relative z-20 flex w-max cursor-pointer items-center gap-4 ${
               activeSection === section.id
                 ? 'text-theme-contrary'
                 : 'hover:text-theme-contrary'
