@@ -42,23 +42,6 @@ export const useUpdateSearchParams = () => {
     [searchParams]
   );
 
-  const updatedSearchParamsUrl = useCallback(
-    ({
-      withName,
-      withValue,
-      withCleanup
-    }: {
-      withName: string;
-      withValue: string;
-      withCleanup?: boolean;
-    }) => {
-      return (
-        pathname + '?' + createQueryString(withName, withValue, withCleanup)
-      );
-    },
-    [pathname, createQueryString]
-  );
-
   const updateSearchParams = ({
     withName,
     withValue,
@@ -80,11 +63,23 @@ export const useUpdateSearchParams = () => {
     );
   };
 
+  const deleteSearchParam = useCallback(
+    (key: string) => {
+      const params = new URLSearchParams(searchParams);
+
+      if (!params.has(key)) return;
+
+      params.delete(key);
+      router.push(pathname + '?' + params.toString(), { scroll: false });
+    },
+    [pathname, router, searchParams]
+  );
+
   return {
     router: router,
     pathname: pathname,
     searchParams: searchParams,
     updateSearchParams: updateSearchParams,
-    updatedSearchParamsUrl: updatedSearchParamsUrl
+    deleteSearchParam
   };
 };

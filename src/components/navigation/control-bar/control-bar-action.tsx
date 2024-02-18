@@ -1,15 +1,16 @@
-import { useRouter } from 'next/navigation';
 import type { ControlBarAction } from '@/types';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
+import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 
 export default function ControlBarAction({ type }: { type: ControlBarAction }) {
-  const router = useRouter();
+  const { router, deleteSearchParam } = useUpdateSearchParams();
 
   function scrollToTop() {
     document.body.scrollIntoView({ behavior: 'smooth' });
+    deleteSearchParam('section');
   }
 
   if (type === 'Up')
