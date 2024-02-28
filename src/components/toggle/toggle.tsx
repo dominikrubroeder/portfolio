@@ -26,13 +26,14 @@ export default function Toggle({
   return (
     <div className={classes} onClick={handleOnClick}>
       {label && <span>{label}</span>}
+
       <div
-        className={`relative flex h-6 w-10 items-center rounded-full px-1 transition ${
+        className={`relative flex h-8 w-14 items-center rounded-full px-1 transition ${
           isEnabled ? 'bg-accent' : 'bg-gray-5'
         }`}
       >
         <span
-          className={`absolute h-4 w-4 rounded-full bg-white transition ${
+          className={`absolute h-6 w-6 rounded-full bg-white transition ${
             isEnabled ? 'translate-x-full' : 'translate-x-0'
           }`}
         ></span>

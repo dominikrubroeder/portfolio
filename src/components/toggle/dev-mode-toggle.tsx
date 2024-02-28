@@ -14,7 +14,7 @@ export default function DevModeToggle() {
           withValue: devMode ? 'false' : 'true'
         })
       }
-      className="absolute right-4 top-12"
+      className="absolute right-4 top-[3.75rem]"
       enabled={devMode === 'true'}
     />
   );
