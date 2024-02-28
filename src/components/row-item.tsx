@@ -29,7 +29,9 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
           </div>
         </Link>
 
-        <p className="max-w-screen-lg flex-1 pl-12">{rowItem.description}</p>
+        <p className="max-w-screen-lg flex-1 pl-12 italic">
+          {rowItem.description}
+        </p>
       </div>
 
       {/* Change in later release to Technology Detail Page
