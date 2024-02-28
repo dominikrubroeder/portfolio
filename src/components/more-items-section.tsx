@@ -34,6 +34,7 @@ export default function MoreItemsSection({
           {state.isVisible && <MinusIcon className="h-4 w-4" />}
           {!state.isVisible && <PlusIcon className="h-4 w-4" />}
         </button>
+
         <button
           aria-label="Hide and show more items"
           className="rounded-full bg-gray-5 p-4 px-6 transition hover:text-theme-contrary"
@@ -42,20 +43,18 @@ export default function MoreItemsSection({
         </button>
       </div>
 
-      <ul
-        className={`transition ${
-          state.isVisible ? 'visible translate-y-0' : 'invisible translate-y-6'
-        }`}
-      >
-        {items.map((item) => {
-          if (item.priority === 'low')
-            return (
-              <li key={item.title}>
-                <RowItem rowItem={item} />
-              </li>
-            );
-        })}
-      </ul>
+      {state.isVisible && (
+        <ul className="animate-fadeUp">
+          {items.map((item) => {
+            if (item.priority === 'low')
+              return (
+                <li key={item.title}>
+                  <RowItem rowItem={item} />
+                </li>
+              );
+          })}
+        </ul>
+      )}
     </div>
   );
 }

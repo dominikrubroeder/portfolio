@@ -24,12 +24,14 @@ export default function HomeHeroSection() {
   const isInView = useIsInView(ref);
 
   const { searchParams } = useUpdateSearchParams();
-  const uxEffects =
-    searchParams.get('uxEffects') && searchParams.get('uxEffects') === 'true';
+
+  const uxEffects = !!(
+    searchParams.get('uxEffects') && searchParams.get('uxEffects') === 'true'
+  );
 
   return (
     <>
-      <section className="realtive flex h-[calc(100dvh-5rem)] items-center justify-center">
+      <section className="realtive flex h-[calc(100svh-5rem)] items-center justify-center">
         <div className="max-w-max">
           <h1 className="mx-auto text-center text-5xl font-bold text-theme-contrary sm:text-7xl md:text-8xl">
             Team Frontend.
