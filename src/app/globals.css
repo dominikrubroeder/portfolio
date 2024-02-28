@@ -125,6 +125,11 @@ a {
     background-color: transparent;
 }
 
+.hero {
+    height: calc(100vh - 5rem);
+    height: calc(100svh - 5rem);
+}
+
 @layer base {
     * {
         @apply disabled:cursor-not-allowed;
