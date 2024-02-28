@@ -24,8 +24,10 @@ export default function HomeHeroSection() {
   const isInView = useIsInView(ref);
 
   const { searchParams } = useUpdateSearchParams();
-  const uxEffects =
-    searchParams.get('uxEffects') && searchParams.get('uxEffects') === 'true';
+
+  const uxEffects = !!(
+    searchParams.get('uxEffects') && searchParams.get('uxEffects') === 'true'
+  );
 
   return (
     <>
