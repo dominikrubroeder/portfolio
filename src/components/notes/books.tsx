@@ -18,7 +18,7 @@ export default function Books() {
           The Creative Act: A Way of Being – <i>Rick Rubin</i>
         </li>
         <li>
-          Refactoring UI – <i>Steve Schroger, Adam Wathan</i>
+          Refactoring UI – <i>Adam Wathan, Steve Schoger</i>
         </li>
       </ul>
     </Accordion>
