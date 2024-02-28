@@ -1,12 +1,15 @@
 import React from 'react';
-import type { ControlBarAction as ControlBarActionType } from '@/types';
+import type {
+  ControlBarAction as ControlBarActionType,
+  ControlBarVisibility
+} from '@/types';
 import ControlBarAction from '@/components/navigation/control-bar/control-bar-action';
 
 export default function ControlBarActionRight({
   controlBar,
   rightControlAction
 }: {
-  controlBar: 'collapsed' | 'expanded';
+  controlBar: ControlBarVisibility;
   rightControlAction: ControlBarActionType;
 }) {
   return (
