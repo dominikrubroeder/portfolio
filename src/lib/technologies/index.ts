@@ -1,4 +1,4 @@
-import { fetchURLDevelopment } from '@/lib';
+import { fetchURLDevelopment, fetchURLProduction } from '@/lib';
 import { promises as fs } from 'fs';
 import { formatTitle } from '@/lib/helpers';
 import { Technology } from '@/interfaces';
@@ -14,7 +14,7 @@ export async function fetchTechnologies(): Promise<Technology[] | undefined> {
 
       return technologies;
     } else {
-      const res = await fetch('https://www.dominikrubroeder.dev/data.json', {
+      const res = await fetch(fetchURLProduction + '/technologies.json', {
         next: { revalidate: 300 }
       });
 
@@ -45,7 +45,7 @@ export async function fetchTechnology(
           formatTitle(technology.title) === formatTitle(technologyHandle)
       );
     } else {
-      const res = await fetch('https://www.dominikrubroeder.dev/data.json', {
+      const res = await fetch(fetchURLProduction + '/technologies.json', {
         next: { revalidate: 300 }
       });
 

@@ -1,6 +1,6 @@
 import { Tool } from '@/interfaces';
 import { promises as fs } from 'fs';
-import { fetchURLDevelopment } from '@/lib';
+import { fetchURLDevelopment, fetchURLProduction } from '@/lib';
 import { formatTitle } from '@/lib/helpers';
 
 export async function fetchTools(): Promise<Tool[] | undefined> {
@@ -14,7 +14,7 @@ export async function fetchTools(): Promise<Tool[] | undefined> {
 
       return tools;
     } else {
-      const res = await fetch('https://www.dominikrubroeder.dev/data.json', {
+      const res = await fetch(fetchURLProduction + '/tools.json', {
         next: { revalidate: 300 }
       });
 
@@ -42,7 +42,7 @@ export async function fetchTool(toolHandle: string): Promise<Tool | undefined> {
         (tool) => formatTitle(tool.title) === formatTitle(toolHandle)
       );
     } else {
-      const res = await fetch('https://www.dominikrubroeder.dev/data.json', {
+      const res = await fetch(fetchURLProduction + '/tools.json', {
         next: { revalidate: 300 }
       });
 
