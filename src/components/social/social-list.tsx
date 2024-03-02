@@ -1,8 +1,8 @@
-import { getSocials } from '@/lib';
 import Social from '@/components/social/social';
+import { fetchSocials } from '@/lib/socials';
 
 export default async function SocialList() {
-  const socials = await getSocials();
+  const socials = await fetchSocials();
 
   if (socials === null || socials === undefined || socials.length === 0)
     return <div>No socials listed.</div>;

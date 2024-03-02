@@ -1,9 +1,9 @@
-import { getTools } from '@/lib';
 import Tool from '@/components/tool/tool';
 import MoreItemsSection from '@/components/more-items-section';
+import { fetchTools } from '@/lib/tools';
 
 export default async function ToolList() {
-  const tools = await getTools();
+  const tools = await fetchTools();
 
   if (tools === null || tools === undefined || tools.length === 0)
     return <div>No tools listed.</div>;

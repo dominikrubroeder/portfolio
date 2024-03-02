@@ -1,9 +1,9 @@
-import { getTechnologies } from '@/lib';
 import Technology from '@/components/technology/technology';
 import MoreItemsSection from '@/components/more-items-section';
+import { fetchTechnologies } from '@/lib/technologies';
 
 export default async function TechnologyList() {
-  const technologies = await getTechnologies();
+  const technologies = await fetchTechnologies();
 
   if (
     technologies === null ||

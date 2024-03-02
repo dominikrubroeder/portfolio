@@ -1,13 +1,13 @@
 import ControlBar from '@/components/navigation/control-bar/control-bar';
-import { getTool } from '@/lib';
 import { redirect } from 'next/navigation';
+import { fetchTool } from '@/lib/tools';
 
 export default async function ToolPage({
   params
 }: {
   params: { tool: string };
 }) {
-  const tool = await getTool(params.tool);
+  const tool = await fetchTool(params.tool);
 
   if (tool === null || tool === undefined) redirect('/');
 

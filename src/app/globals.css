@@ -126,8 +126,8 @@ a {
 }
 
 .hero {
-    height: calc(100vh - 5rem);
-    height: calc(100svh - 5rem);
+    min-height: calc(100vh - 5rem);
+    min-height: calc(100svh - 5rem);
 }
 
 @layer base {
