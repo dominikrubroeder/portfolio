@@ -1,4 +1,4 @@
-import { fetchURLDevelopment, fetchURLProduction } from '@/lib';
+import { fetchURLDevelopment } from '@/lib';
 import { promises as fs } from 'fs';
 import { Social } from '@/interfaces';
 
@@ -12,10 +12,11 @@ export async function fetchSocials(): Promise<Social[] | undefined> {
       const { socials } = JSON.parse(response);
       return socials;
     } else {
-      const res = await fetch(fetchURLProduction + '/socials.json', {
+      const res = await fetch('https://www.dominikrubroeder.dev/data.json', {
         next: { revalidate: 300 }
       });
-      return res.json();
+      const { socials } = await res.json();
+      return socials;
     }
   } catch (e) {
     console.error('Error fetching socials – fetchSocials()', e);

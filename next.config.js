@@ -10,7 +10,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'dominikrubroeder.vercel.app',
+        hostname: 'dominikrubroeder.dev',
         port: '',
         pathname: '/**'
       },

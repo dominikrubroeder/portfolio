@@ -3,7 +3,7 @@
     {
       "title": "React",
       "website": "https://react.dev/",
-      "logo": "https://dominikrubroeder.vercel.app/react.png",
+      "logo": "https://dominikrubroeder.dev/react.png",
       "href": "/technology/react",
       "description": "The library for web and native user interfaces",
       "keyword": "UI library",
@@ -13,7 +13,7 @@
     {
       "title": "Next.js",
       "website": "https://nextjs.org/",
-      "logo": "https://dominikrubroeder.vercel.app/nextjs.png",
+      "logo": "https://dominikrubroeder.dev/nextjs.png",
       "href": "/technology/next-js",
       "description": "The React Framework for the Web",
       "keyword": "React-based fullstack web framework",
@@ -23,7 +23,7 @@
     {
       "title": "TypeScript",
       "website": "https://www.typescriptlang.org",
-      "logo": "https://dominikrubroeder.vercel.app/typescript.png",
+      "logo": "https://dominikrubroeder.dev/typescript.png",
       "href": "/technology/typescript",
       "description": "TypeScript is JavaScript with syntax for types.",
       "keyword": "JavaScript-based typed language",
@@ -33,7 +33,7 @@
     {
       "title": "JavaScript",
       "website": "https://www.w3schools.com/js/",
-      "logo": "https://dominikrubroeder.vercel.app/javascript.png",
+      "logo": "https://dominikrubroeder.dev/javascript.png",
       "href": "/technology/javascript",
       "description": "JavaScript is the programming language of the Web.",
       "keyword": "Programming Language",
@@ -43,7 +43,7 @@
     {
       "title": "Markdown",
       "website": "https://markdown.de/",
-      "logo": "https://dominikrubroeder.vercel.app/markdown.png",
+      "logo": "https://dominikrubroeder.dev/markdown.png",
       "href": "/technology/markdown",
       "description": "A simplified markup language",
       "keyword": "Markup language",
@@ -53,7 +53,7 @@
     {
       "title": "HTML",
       "website": "https://www.w3schools.com/html/",
-      "logo": "https://dominikrubroeder.vercel.app/html.png",
+      "logo": "https://dominikrubroeder.dev/html.png",
       "href": "/technology/html",
       "description": "The standard markup language for Web pages",
       "keyword": "Basic Markup language",
@@ -63,7 +63,7 @@
     {
       "title": "CSS",
       "website": "https://www.w3schools.com/css/",
-      "logo": "https://dominikrubroeder.vercel.app/css.png",
+      "logo": "https://dominikrubroeder.dev/css.png",
       "href": "/technology/css",
       "description": "The language we use to style an HTML document.",
       "keyword": "Cascading Style Sheet",
@@ -73,7 +73,7 @@
     {
       "title": "Tailwind CSS",
       "website": "https://tailwindcss.com/",
-      "logo": "https://dominikrubroeder.vercel.app/tailwind.png",
+      "logo": "https://dominikrubroeder.dev/tailwind.png",
       "href": "/technology/tailwind-css",
       "description": "Rapidly build modern websites without ever leaving your HTML.",
       "keyword": "CSS Framework",
@@ -83,7 +83,7 @@
     {
       "title": "Framer Motion",
       "website": "https://www.framer.com/motion/",
-      "logo": "https://dominikrubroeder.vercel.app/framer.png",
+      "logo": "https://dominikrubroeder.dev/framer.png",
       "href": "/technology/framer-motion",
       "description": "A declarative motion library for animating react UIs and apply motion to it",
       "keyword": "React-based motion library",
@@ -93,7 +93,7 @@
     {
       "title": "Auth.js",
       "website": "https://authjs.dev/",
-      "logo": "https://dominikrubroeder.vercel.app/authjs.png",
+      "logo": "https://dominikrubroeder.dev/authjs.png",
       "href": "/technology/auth-js",
       "description": "Authentication for the Web",
       "keyword": "Authentication Library",

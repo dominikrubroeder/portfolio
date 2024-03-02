@@ -1,4 +1,4 @@
-import { fetchURLDevelopment, fetchURLProduction } from '@/lib';
+import { fetchURLDevelopment } from '@/lib';
 import { promises as fs } from 'fs';
 import { formatTitle } from '@/lib/helpers';
 import { Technology } from '@/interfaces';
@@ -14,10 +14,12 @@ export async function fetchTechnologies(): Promise<Technology[] | undefined> {
 
       return technologies;
     } else {
-      const res = await fetch(fetchURLProduction + '/technologies.json', {
+      const res = await fetch('https://www.dominikrubroeder.dev/data.json', {
         next: { revalidate: 300 }
       });
-      return res.json();
+
+      const { technologies } = await res.json();
+      return technologies;
     }
   } catch (e) {
     console.error('Error fetching technologies – fetchTechnologies()', e);
@@ -43,10 +45,17 @@ export async function fetchTechnology(
           formatTitle(technology.title) === formatTitle(technologyHandle)
       );
     } else {
-      const res = await fetch(fetchURLProduction + '/technologies.json', {
+      const res = await fetch('https://www.dominikrubroeder.dev/data.json', {
         next: { revalidate: 300 }
       });
-      return res.json();
+
+      const data = await res.json();
+      const technologies = data.technologies as Technology[];
+
+      return technologies.find(
+        (technology) =>
+          formatTitle(technology.title) === formatTitle(technologyHandle)
+      );
     }
   } catch (e) {
     console.error(
