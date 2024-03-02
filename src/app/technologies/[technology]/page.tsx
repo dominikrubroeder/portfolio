@@ -1,15 +1,15 @@
 import ControlBar from '@/components/navigation/control-bar/control-bar';
-import { getTechnology } from '@/lib';
 import { redirect } from 'next/navigation';
 import ItemHeroSection from '@/components/heros/item-hero-section';
 import Link from 'next/link';
+import { fetchTechnology } from '@/lib/technologies';
 
 export default async function TechnologyPage({
   params
 }: {
   params: { technology: string };
 }) {
-  const technology = await getTechnology(params.technology);
+  const technology = await fetchTechnology(params.technology);
 
   if (technology === null || technology === undefined) redirect('/');
 
