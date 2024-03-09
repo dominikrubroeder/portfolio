@@ -54,7 +54,7 @@ export default function SliderItem({
         </Link>
 
         {'description' in sliderItem && (
-          <p className="line-clamp-2 text-center italic">
+          <p className="line-clamp-2 h-16 text-center italic">
             {sliderItem.description}
           </p>
         )}

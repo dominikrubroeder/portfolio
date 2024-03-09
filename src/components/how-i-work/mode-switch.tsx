@@ -1,4 +1,5 @@
 'use client';
+
 import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 import React from 'react';
 import { motion } from 'framer-motion';

@@ -134,6 +134,14 @@ a {
     * {
         @apply disabled:cursor-not-allowed;
     }
+
+    html {
+        @apply leading-[1.8]
+    }
+
+    hr {
+        @apply border-gray-5
+    }
 }
 
 @layer components {
