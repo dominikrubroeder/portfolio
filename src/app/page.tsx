@@ -16,13 +16,13 @@ export default function HomePage() {
 
       <ProjectSection />
 
+      <NotesSection />
+
       <ToolSection />
 
       <TechnologySection />
 
       <SocialSection />
-
-      <NotesSection />
     </>
   );
 }
