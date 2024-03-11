@@ -3,6 +3,7 @@ import UxRole from '@/components/notes/ux-role';
 import Books from '@/components/notes/books';
 import UxPredicatesDesigner from '@/components/notes/ux-predicates-designer';
 import UxPredicatesUxEngineer from '@/components/notes/ux-predicates-ux-engineer';
+import DesignEngineerVsUxEngineer from '@/components/notes/design-engineer-vs-ux-engineer';
 
 export default function NotesSection() {
   return (
@@ -13,6 +14,9 @@ export default function NotesSection() {
         <Books />
         <UxPredicatesDesigner />
         <UxPredicatesUxEngineer />
+        <div className="pt-4">
+          <DesignEngineerVsUxEngineer />
+        </div>
       </div>
     </section>
   );

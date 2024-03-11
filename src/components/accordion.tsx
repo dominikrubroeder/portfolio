@@ -27,7 +27,9 @@ export default function Accordion({
   return (
     <div ref={ref} className="pt-4">
       <div
-        className="mx-auto flex cursor-pointer select-none items-center justify-between gap-4 rounded-2xl bg-gray-5 px-4 py-3 text-violet-400"
+        className="mx-auto flex cursor-pointer select-none items-center justify-between gap-4 rounded-2xl bg-gray-5 px-4 py-3 text-violet-400 transition hover:bg-gray-4"
+        title="Open accordion to see more content"
+        aria-label="Open accordion to see more content"
         onClick={() => setOpen((prevState) => !prevState)}
       >
         <h2 className="font-bold">{title}</h2>
