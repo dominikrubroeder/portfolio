@@ -6,6 +6,7 @@ import NotesSection from '@/components/notes/notes-section';
 import { Suspense } from 'react';
 import HomeHeroSectionLoading from '@/components/heros/home-hero-section-loading';
 import HomeHeroSection from '@/components/heros/home-hero-section';
+import HistorySection from '@/components/history/history-section';
 
 export default function HomePage() {
   return (
@@ -23,6 +24,8 @@ export default function HomePage() {
       <TechnologySection />
 
       <SocialSection />
+
+      <HistorySection />
     </>
   );
 }
