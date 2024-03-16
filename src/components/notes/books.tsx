@@ -3,7 +3,7 @@ import Accordion from '@/components/accordion';
 export default function Books() {
   return (
     <Accordion title="Books">
-      <h3 className="font-bold text-theme-contrary">Book Recommendations</h3>
+      <h3 className="font-bold text-theme-contrary">Book recommendations</h3>
 
       <br />
 
@@ -12,13 +12,16 @@ export default function Books() {
           The Design of Everyday Things – <i>Don Norman</i>
         </li>
         <li>
+          Refactoring UI – <i>Adam Wathan, Steve Schoger</i>
+        </li>
+        <li>
+          The Path to Senior Product Designer – <i>Artiom Dashinsky</i>
+        </li>
+        <li>
           Neurowebdesign – <i>Jonas Reggelin</i>
         </li>
         <li>
           The Creative Act: A Way of Being – <i>Rick Rubin</i>
-        </li>
-        <li>
-          Refactoring UI – <i>Adam Wathan, Steve Schoger</i>
         </li>
       </ul>
     </Accordion>

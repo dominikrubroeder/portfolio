@@ -10,7 +10,10 @@ export default function DesignEngineerVsUxEngineer() {
       title="View 'Design Engineer vs UX Engineer' on ChatGPT"
       aria-label="View 'Design Engineer vs UX Engineer' on ChatGPT"
     >
-      <h2 className="font-bold">Design Engineer vs UX Engineer</h2>
+      <h2 className="font-bold">
+        Design Engineer <span className="font-normal text-gray-2">vs</span> UX
+        Engineer
+      </h2>
       <ArrowTopRightOnSquareIcon className="h-4 w-4 text-gray-2" />
     </Link>
   );
