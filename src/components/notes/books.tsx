@@ -18,6 +18,15 @@ export default function Books() {
           The Path to Senior Product Designer – <i>Artiom Dashinsky</i>
         </li>
         <li>
+          Atomic Design – <i>Brad Frost</i>
+        </li>
+        <li>
+          Laws of UX – <i>Jon Yablonski</i>
+        </li>
+        <li>
+          User Friendly – <i>Cliff Kuang with Robert Fabricant</i>
+        </li>
+        <li>
           Neurowebdesign – <i>Jonas Reggelin</i>
         </li>
         <li>
