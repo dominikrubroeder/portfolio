@@ -15,6 +15,9 @@ export default function Books() {
           Refactoring UI – <i>Adam Wathan, Steve Schoger</i>
         </li>
         <li>
+          Practical UI – <i>Adham Dannaway</i>
+        </li>
+        <li>
           The Path to Senior Product Designer – <i>Artiom Dashinsky</i>
         </li>
         <li>
