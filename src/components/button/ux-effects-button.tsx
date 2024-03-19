@@ -7,8 +7,8 @@ export default function UxEffectsButton() {
   return (
     <button
       className="pt-12 text-violet-400"
-      title="Toggle UX effects, UX Engineer at mediawave"
-      aria-label="Toggle UX effects, UX Engineer at mediawave"
+      title="Toggle UX effects"
+      aria-label="Toggle UX effects"
       onClick={() =>
         updateSearchParams({
           withName: 'uxEffects',
@@ -17,7 +17,7 @@ export default function UxEffectsButton() {
         })
       }
     >
-      UX Engineer
+      UX engineer
     </button>
   );
 }
