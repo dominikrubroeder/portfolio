@@ -33,9 +33,15 @@ export default function HomeHeroSection() {
     <>
       <section className="realtive hero flex items-center justify-center">
         <div className="max-w-max">
-          <h1 className="mx-auto text-center text-5xl font-bold text-theme-contrary sm:text-7xl md:text-8xl">
+          <h2 className="mx-auto text-center text-5xl font-bold text-theme-contrary sm:text-7xl md:text-8xl">
             Team Frontend.
-          </h1>
+          </h2>
+
+          <p>UX and UI with passion</p>
+
+          <p>Love for supportive animations and smooth transitions</p>
+
+          <p>Designed, with code in mind</p>
 
           {uxEffects && <DesignModeToggle />}
 
@@ -44,38 +50,40 @@ export default function HomeHeroSection() {
           {uxEffects && <SkillBadges />}
         </div>
 
-        <h2 ref={ref} className="absolute bottom-24 mx-auto flex gap-1">
-          <div className="relative">
-            <h2 className="group cursor-pointer pt-12 transition hover:text-theme-contrary">
-              <a
-                className="absolute bottom-0 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
-                aria-label="Write email to dominik.rubroeder@icloud.com"
-                href="mailto:dominik.rubroeder@icloud.com?subject=Hey buddy!"
-              >
-                <EnvelopeIcon className="h-5 w-5 text-theme-contrary" />
-              </a>
-              Dominik Rubröder
-            </h2>
+        <h1
+          ref={ref}
+          className="absolute bottom-24 mx-auto flex gap-1"
+          aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
+        >
+          <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
+            <Link
+              href="mailto:dominik.rubroeder@icloud.com?subject=Hey buddy!"
+              className="absolute bottom-0 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
+              title="Write email to dominik.rubroeder@icloud.com"
+              aria-label="Write email to dominik.rubroeder@icloud.com"
+            >
+              <EnvelopeIcon className="h-5 w-5 text-theme-contrary" />
+            </Link>
+            Dominik Rubröder
           </div>
 
           <UxEffectsButton />
 
           <span className="pt-12">@</span>
 
-          <div className="relative">
-            <Link
-              href="https://www.mediawave.de/"
-              target="_blank"
-              className="group block cursor-pointer pt-12 transition hover:text-theme-contrary"
-              aria-label="Go to external mediawave commerce GmbH website"
-            >
-              <div className="absolute bottom-0 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
-                <ArrowRightIcon className="h-5 w-5 -rotate-45 text-theme-contrary" />
-              </div>
-              mediawave
-            </Link>
-          </div>
-        </h2>
+          <Link
+            href="https://www.mediawave.de/"
+            className="group relative block cursor-pointer pt-12 transition hover:text-theme-contrary"
+            title="Go to external mediawave commerce GmbH website"
+            aria-label="Go to external mediawave commerce GmbH website"
+            target="_blank"
+          >
+            <div className="absolute bottom-0 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
+              <ArrowRightIcon className="h-5 w-5 -rotate-45 text-theme-contrary" />
+            </div>
+            mediawave
+          </Link>
+        </h1>
       </section>
 
       <ControlBar
