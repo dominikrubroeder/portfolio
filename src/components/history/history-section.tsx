@@ -6,7 +6,8 @@ import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 export default function HistorySection() {
   return (
     <section className="mx-auto grid max-w-screen-sm grid-cols-[auto_1fr] gap-4 px-4 md:pl-16">
-      <div className="h-full w-1 shrink-0 rounded-full bg-gray-5"></div>
+      <div className="h-full w-1 shrink-0 rounded-full bg-accent"></div>
+
       <div className="grid gap-12">
         <HistoryEntry
           entryDate="01 April, 2023"
@@ -38,7 +39,7 @@ export default function HistorySection() {
           <div className="mb-2">
             <hr className="my-8 ml-32" />
 
-            <p>Dual study</p>
+            <p>Dual study (Work 3 days, study 2)</p>
             <p>Volunteer on Application Engineering</p>
             <p>
               B. A. Bachelor of Arts – Media Design,
@@ -90,7 +91,7 @@ export default function HistorySection() {
           <hr className="my-8 ml-32" />
           <div className="grid gap-4">
             <div className="mb-2">
-              <p>Dual study</p>
+              <p>Dual study (Work 3 days, study 2)</p>
               <p>Frontend Design and Development</p>
               <p>
                 B. A. Bachelor of Arts – Media Design,
@@ -115,7 +116,7 @@ export default function HistorySection() {
             <div className="mb-2">
               <p>Full time</p>
               <p>Frontend Design and Development</p>
-              <p>February, 2019 – September 2019</p>
+              <p>February, 2019 – September, 2019</p>
             </div>
           </div>
 
