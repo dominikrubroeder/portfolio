@@ -37,11 +37,16 @@ export default function HomeHeroSection() {
             Team Frontend.
           </h2>
 
-          <p>UX and UI with passion</p>
+          <p className="max-w-screen-sm">
+            <span className="mx-1 text-6xl font-bold text-violet-400">
+              UX and UI with passion
+              <br /> Love for supportive animations and smooth transitions.
+            </span>
+          </p>
 
-          <p>Love for supportive animations and smooth transitions</p>
+          <hr className="my-4" />
 
-          <p>Designed, with code in mind</p>
+          <p>Designed, with code in mind – Coded, by design</p>
 
           {uxEffects && <DesignModeToggle />}
 
