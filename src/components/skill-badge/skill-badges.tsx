@@ -62,19 +62,17 @@ export default function SkillBadges() {
   const designMode = searchParams.get('designMode');
   const devMode = searchParams.get('devMode');
 
-  return skillBadges.map((skillBadge) => (
-    <div
-      key={skillBadge.id}
-      className={`absolute ${
-        skillBadge.position ? skillBadge.position : 'left-4 top-12'
-      }`}
-    >
-      <SkillBadge
-        key={skillBadge.id}
-        label={skillBadge.title}
-        designMode={designMode === 'true'}
-        devMode={devMode === 'true'}
-      />
-    </div>
-  ));
+  if (devMode) return null;
+
+  if (designMode === 'null' || designMode !== 'true') return null;
+
+  return (
+    <ul className="space-x-4 overflow-x-auto whitespace-nowrap">
+      {skillBadges.map((skillBadge) => (
+        <li key={skillBadge.id} className="inline-block">
+          <SkillBadge label={skillBadge.title} />
+        </li>
+      ))}
+    </ul>
+  );
 }

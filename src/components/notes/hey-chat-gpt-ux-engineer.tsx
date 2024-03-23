@@ -1,7 +1,7 @@
 import Accordion from '@/components/accordion';
 import Label from '@/components/label';
 
-export default function UxPredicatesUxEngineer() {
+export default function HeyChatGptUxEngineer() {
   return (
     <Accordion
       title={

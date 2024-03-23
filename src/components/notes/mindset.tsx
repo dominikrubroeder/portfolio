@@ -3,6 +3,17 @@ import Accordion from '@/components/accordion';
 export default function Mindset() {
   return (
     <Accordion title="Mindset">
+      <h3 className="font-bold text-theme-contrary">I like</h3>
+
+      <ul className="mb-5 list-disc pl-8">
+        <li>Bringing an idea from paper to production</li>
+        <li>Refining a product/feature to specific needs</li>
+        <li>
+          Getting to know a product/brand/concept know and what it is designed
+          to fulfill
+        </li>
+      </ul>
+
       <h3 className="font-bold text-theme-contrary">
         Training, Training, Training and fun
       </h3>
