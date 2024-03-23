@@ -21,11 +21,21 @@
       "projects": []
     },
     {
+      "title": "Notes",
+      "website": "https://apps.apple.com/us/app/notes/id1110145109",
+      "logo": "https://dominikrubroeder.dev/apple-notes.png",
+      "href": "/tool/notes",
+      "description": "Writing, notes",
+      "keyword": "Note-taking",
+      "priority": "high",
+      "projects": []
+    },
+    {
       "title": "Inkdrop",
       "website": "https://www.inkdrop.app/",
       "logo": "https://dominikrubroeder.dev/inkdrop.png",
       "href": "/tool/inkdrop",
-      "description": "Organizing your tech notes made simple",
+      "description": "Technical notes, organizing your tech notes made simple",
       "keyword": "Note-taking",
       "priority": "high",
       "projects": []
