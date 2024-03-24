@@ -18,7 +18,7 @@ export default function HowIWorkPage({
 
   return (
     <div className="py-8">
-      <section className="mt-32 grid gap-8">
+      <section className="grid gap-8">
         <div className="px-4 text-center">
           <ModeSwitch />
         </div>

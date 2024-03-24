@@ -4,8 +4,6 @@ import Books from '@/components/sections/notes-section/books';
 import HeyChatGptUxDesigner from '@/components/sections/notes-section/hey-chat-gpt-ux-designer';
 import HeyChatGptUxEngineer from '@/components/sections/notes-section/hey-chat-gpt-ux-engineer';
 import DesignEngineerVsUxEngineer from '@/components/sections/notes-section/design-engineer-vs-ux-engineer';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
 import React from 'react';
 
 export default function NotesSection() {
@@ -37,25 +35,6 @@ export default function NotesSection() {
         <div className="pt-4">
           <DesignEngineerVsUxEngineer />
         </div>
-      </div>
-
-      <Link
-        href="/how-i-work"
-        className="mx-auto flex min-w-44 max-w-max items-center justify-between gap-4 rounded-full bg-gray-5 p-3 px-5 transition hover:bg-gray-4"
-        title="Link to how i work page"
-        aria-label="Link to How i work page"
-      >
-        <span className="font-bold text-violet-400">How i work</span>
-        <ArrowLongRightIcon className="h-4 w-4" />
-      </Link>
-
-      <hr className="mx-auto max-w-screen-md" />
-
-      <div className="mx-auto flex max-w-screen-md gap-2">
-        Further reading:
-        <Link href="/public" className="text-accent">
-          Argumentative-based Design Decisions
-        </Link>
       </div>
     </section>
   );

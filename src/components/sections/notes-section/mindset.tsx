@@ -12,7 +12,7 @@ export default function Mindset() {
         <li>Refining a product/feature to specific needs</li>
         <li>
           Getting to know a product/brand/concept in order to know what it is
-          designed to fulfill
+          designed to be and to fulfill
         </li>
       </ul>
 
@@ -26,7 +26,6 @@ export default function Mindset() {
         <li>Don&apos;t forget to have some fun during the process</li>
         <li>Enjoy colors</li>
         <li>Typography is important</li>
-        <li>Spacing and whitespace create hierarchy</li>
         <li>
           Engage with your co-workers, exchange your ideas, evaluate if another
           opinion has some truth in it

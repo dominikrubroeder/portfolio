@@ -41,7 +41,7 @@ export default function HomeHeroSection() {
             </h2>
 
             <p className="max-w-screen-sm">
-              <span className="mx-1 text-6xl font-bold text-violet-400">
+              <span className="mx-1 text-6xl font-bold text-violet-400 sm:text-6xl">
                 UX and UI with passion
                 <br /> Love for supportive animations and smooth transitions.
               </span>

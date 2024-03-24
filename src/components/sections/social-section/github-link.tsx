@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import GitHub from '@/components/svg/github';
+import GitHub from '@/components/ui/svg/github';
 import { clsx } from 'clsx';
 
 export default function GitHubLink({ className }: { className?: string }) {
