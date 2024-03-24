@@ -2,7 +2,7 @@ import { Social, Technology, Tool } from '@/interfaces';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import Brand from '@/components/brand';
+import Brand from '@/components/ui/brand';
 import type { Brand as BrandType } from '@/types';
 
 export default function SliderItem({
@@ -94,7 +94,7 @@ export default function SliderItem({
             <span
               title={`Projects with ${sliderItem.title}`}
               aria-label={`Projects with ${sliderItem.title}`}
-              className="absolute top-0 -translate-y-2 rounded bg-accent p-1 px-1.5 text-xs text-white"
+              className="bg-accent-600 absolute top-0 -translate-y-2 rounded p-1 px-1.5 text-xs text-white"
             >
               Soon
             </span>

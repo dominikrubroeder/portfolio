@@ -1,8 +1,8 @@
 import React from 'react';
-import ModeSwitch from '@/components/how-i-work/mode-switch';
+import ModeSwitch from '@/components/blog/how-i-work/mode-switch';
 import { Metadata } from 'next';
-import TheDesignProcess from '@/components/how-i-work/the-design-process';
-import ComponentDrivenDevelopment from '@/components/how-i-work/component-driven-development';
+import TheDesignProcess from '@/components/blog/how-i-work/the-design-process';
+import ComponentDrivenDevelopment from '@/components/blog/how-i-work/component-driven-development';
 
 export const metadata: Metadata = {
   title: 'How i work | Portfolio',

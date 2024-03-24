@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        'accent-600': 'rgb(var(--color-accent-600) / <alpha-value>)',
         red: 'rgb(var(--color-apple-red) / <alpha-value>)',
         orange: 'rgb(var(--color-apple-orange) / <alpha-value>)',
         yellow: 'rgb(var(--color-apple-yellow) / <alpha-value>)',
