@@ -17,7 +17,7 @@ export default function UxEffectsButton() {
         })
       }
     >
-      UX engineer
+      UX Engineer
     </button>
   );
 }

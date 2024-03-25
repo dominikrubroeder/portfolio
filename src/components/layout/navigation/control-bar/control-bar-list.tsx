@@ -7,8 +7,6 @@ import type {
   ControlBarMobileMenuVisibility,
   ControlBarSections
 } from '@/types';
-import { usePathname } from 'next/navigation';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
 
 export default function ControlBarList({
   sections,
@@ -24,8 +22,6 @@ export default function ControlBarList({
     targetId: string
   ) => void;
 }) {
-  const pathname = usePathname();
-
   return (
     <div
       className={`absolute bottom-20 z-50 grid w-[95vw] max-w-screen-sm items-center gap-4 rounded-2xl bg-gray-5 p-3 px-4 transition ${
@@ -69,22 +65,6 @@ export default function ControlBarList({
           </div>
         </Link>
       ))}
-
-      <div className="grid gap-4 px-4 pb-3 md:hidden md:p-0 md:px-0 md:pb-0">
-        <div className="h-[1px] w-full bg-gray-4"></div>
-
-        <Link
-          href="/how-i-work"
-          className={`flex items-center justify-between gap-4 transition hover:text-theme-contrary ${
-            pathname === '/how-i-work' ? 'text-theme-contrary' : 'text-muted'
-          }`}
-          title="How i work page"
-          aria-label="Link to How i work page"
-        >
-          How i work
-          <ArrowLongRightIcon className="h-4 w-4" />
-        </Link>
-      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Accordion from '@/components/ui/accordion';
 import Label from '@/components/ui/label';
+import Link from 'next/link';
 
 export default function HeyChatGptUxEngineer() {
   return (
@@ -18,6 +19,13 @@ export default function HeyChatGptUxEngineer() {
         UX Predicates
         <Label text="UX Engineer" />
       </h3>
+
+      <br />
+
+      <blockquote className="border-l-4 border-l-gray-4 pl-4 font-bold text-theme-contrary">
+        You are a Chief Developer. On which predicates should a UX Engineer
+        focus on?
+      </blockquote>
 
       <br />
 
@@ -187,14 +195,14 @@ export default function HeyChatGptUxEngineer() {
 
       <p>
         <span>UX Engineer Focus Areas</span>
-        <a
+        <Link
           href="https://chat.openai.com/share/c8344fb3-ea8b-4d0e-830c-185d3aab2a27"
           target="_blank"
           title="UX Engineer: Focus Areas on ChatGPT"
           className="external-link ml-1"
         >
           https://chat.openai.com/share/c8344fb3-ea8b-4d0e-830c-185d3aab2a27
-        </a>
+        </Link>
       </p>
     </Accordion>
   );

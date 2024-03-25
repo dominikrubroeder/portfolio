@@ -33,10 +33,10 @@ export default function HomeHeroSection() {
 
   return (
     <>
-      <section className="realtive hero flex items-center justify-center overflow-hidden">
-        <div className="max-w-max pb-8">
+      <section className="realtive hero flex flex-col justify-center overflow-hidden sm:flex-row sm:items-center">
+        <div className="max-w-max pb-8 pt-4">
           <div className="px-4">
-            <h2 className="text-8xl font-bold text-theme-contrary">
+            <h2 className="text-7xl font-bold text-theme-contrary sm:text-8xl">
               Team Frontend.
             </h2>
 
@@ -49,10 +49,10 @@ export default function HomeHeroSection() {
 
             <hr className="my-4" />
 
-            <p className="flex gap-1.5">
+            <p>
               Designed with code in mind – Coded, by design
               <button
-                className="text-accent"
+                className="ml-1.5 inline-block text-accent"
                 onClick={() => scrollIntoView('projects')}
               >
                 More
@@ -73,7 +73,7 @@ export default function HomeHeroSection() {
 
         <h1
           ref={ref}
-          className="absolute bottom-24 mx-auto flex gap-1"
+          className="mx-auto mt-6 flex gap-1 sm:absolute sm:bottom-24 sm:mt-0"
           aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
         >
           <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">

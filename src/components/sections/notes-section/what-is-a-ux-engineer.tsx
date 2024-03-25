@@ -9,10 +9,10 @@ export default function WhatIsAUxEngineer() {
       <br />
 
       <p>
-        The bridge between design and development. A UX engineer can also be the
+        The bridge between design and development. A UX Engineer can also be the
         combo package itself, a Designer which is capable of developing his
         thoughts, layouts and concepts into real world (production)
-        applications. So the UX engineer is strong at coding, design, motion,
+        applications. So the UX Engineer is strong at coding, design, motion,
         system architecture, and able to communicate his vision to all members
         of the team – especially on the how to, and why.
       </p>

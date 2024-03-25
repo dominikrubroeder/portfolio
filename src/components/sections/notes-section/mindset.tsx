@@ -12,7 +12,7 @@ export default function Mindset() {
         <li>Refining a product/feature to specific needs</li>
         <li>
           Getting to know a product/brand/concept in order to know what it is
-          designed to be and to fulfill
+          designed to be and designed to fulfill
         </li>
       </ul>
 

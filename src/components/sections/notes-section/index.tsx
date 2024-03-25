@@ -11,12 +11,16 @@ export default function NotesSection() {
     <section className="space-y-16 px-4 py-12">
       <p className="mx-auto max-w-screen-sm px-4">
         <b className="text-theme-contrary">My work is</b>, I am as much a
-        designer as an design engineer, like a waiter who is actually a chef in
-        the kitchen, free in delivering on both lines – or on both endpoints.
+        Designer as an Design Engineer, like a waiter who is actually a chef in
+        the kitchen, free in delivering on both lines – or on both endpoints +
+        <span className="ml-1.5 font-bold text-theme-contrary">
+          committed to the frontend
+        </span>
+        .
         <br />
         <br />
         Combining the best of both worlds into the knowledge and precision of a
-        refined product that is enjoyable to use – the world of UX. I love
+        refined product UI that is enjoyable to use – the world of UX. I love
         supportive animations and transitions, designing with UI-shows-business
         focus and code in mind; developing, engineering by design.
         <br />
@@ -32,9 +36,7 @@ export default function NotesSection() {
         <Books />
         <HeyChatGptUxDesigner />
         <HeyChatGptUxEngineer />
-        <div className="pt-4">
-          <DesignEngineerVsUxEngineer />
-        </div>
+        <DesignEngineerVsUxEngineer />
       </div>
     </section>
   );
