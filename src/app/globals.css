@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 :root {
-    --color-accent: 124 58 237;
+    --color-accent-400: 167 139 250;
+    --color-accent: 167 139 250;
+    --color-accent-600: 124 58 237;
     --color-theme-base: 255 255 255;
     --color-theme-contrary: 48 48 48;
     --color-apple-red: 255 59 48;

@@ -3,6 +3,7 @@ export type ControlBarAction = 'Avatar' | 'Back' | 'Up';
 export type Brand =
   | 'Figma'
   | 'WebStorm'
+  | 'Notes'
   | 'GitHub'
   | 'Inkdrop'
   | 'GitLab'

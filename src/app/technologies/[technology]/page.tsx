@@ -1,4 +1,4 @@
-import ControlBar from '@/components/navigation/control-bar/control-bar';
+import ControlBar from '@/components/layout/navigation/control-bar/control-bar';
 import { redirect } from 'next/navigation';
 import ItemHeroSection from '@/components/heros/item-hero-section';
 import Link from 'next/link';
