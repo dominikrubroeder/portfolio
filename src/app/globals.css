@@ -147,11 +147,6 @@ a {
 }
 
 @layer components {
-    .text-gradient {
-        -webkit-text-fill-color: transparent;
-        @apply bg-clip-text;
-    }
-
     .interactive {
         @apply transition cursor-pointer active:scale-95;
     }
@@ -159,7 +154,7 @@ a {
     button:not(:disabled), .button:not(:disabled) {
         @apply interactive
     }
-
+  
     .external-link {
         @apply text-violet-400
     }
