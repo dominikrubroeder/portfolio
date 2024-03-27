@@ -28,6 +28,10 @@ export default function DesignEngineerVsUxEngineer() {
 
       <br />
 
+      <p>ChatGPT:</p>
+
+      <br />
+
       <p>
         Certainly! Both Design Engineers and UX Engineers play crucial roles in
         frontend development, but they focus on different aspects of the user
@@ -125,13 +129,13 @@ export default function DesignEngineerVsUxEngineer() {
       </ol>
 
       <p>
-        In summary, while both Design Engineers and UX Engineers contribute to
-        frontend development, Design Engineers focus more on the visual and
-        interactive aspects of the user interface, while UX Engineers
-        concentrate on optimizing the overall user experience through a
-        combination of design and technical expertise. Both roles are essential
-        for creating successful digital products and services that meet the
-        needs and expectations of users.
+        <b className="text-theme-contrary">In summary</b>, while both Design
+        Engineers and UX Engineers contribute to frontend development, Design
+        Engineers focus more on the visual and interactive aspects of the user
+        interface, while UX Engineers concentrate on optimizing the overall user
+        experience through a combination of design and technical expertise. Both
+        roles are essential for creating successful digital products and
+        services that meet the needs and expectations of users.
       </p>
 
       <br />

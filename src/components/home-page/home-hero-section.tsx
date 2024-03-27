@@ -33,7 +33,7 @@ export default function HomeHeroSection() {
 
   return (
     <>
-      <section className="realtive hero flex flex-col justify-center overflow-hidden sm:flex-row sm:items-center">
+      <section className="realtive hero flex flex-col justify-center overflow-hidden md:flex-row md:items-center">
         <div className="max-w-max pb-8 pt-4">
           <div className="px-4">
             <h2 className="text-7xl font-bold text-theme-contrary sm:text-8xl">
@@ -73,7 +73,7 @@ export default function HomeHeroSection() {
 
         <h1
           ref={ref}
-          className="mx-auto mt-6 flex gap-1 sm:absolute sm:bottom-24 sm:mt-0"
+          className="mx-auto mt-6 flex gap-1 md:absolute md:bottom-24 md:mt-0"
           aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
         >
           <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">

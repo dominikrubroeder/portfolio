@@ -21,6 +21,13 @@ export default function HeyChatGptUxDesigner() {
 
       <br />
 
+      <blockquote className="border-l-4 border-l-gray-4 pl-4 font-bold text-theme-contrary">
+        You are a Chief Designer. On which predicates should a UX Designer focus
+        on?
+      </blockquote>
+
+      <br />
+
       <p>ChatGPT:</p>
 
       <br />
