@@ -33,7 +33,7 @@ export default function HomeHeroSection() {
 
   return (
     <>
-      <section className="realtive hero flex flex-col justify-center overflow-hidden md:flex-row md:items-center">
+      <section className="hero flex flex-col justify-center overflow-hidden md:flex-row md:items-center">
         <div className="max-w-max pb-8 pt-4">
           <div className="px-4">
             <h2 className="text-7xl font-bold text-theme-contrary sm:text-8xl">
@@ -79,11 +79,11 @@ export default function HomeHeroSection() {
           <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
             <Link
               href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-              className="absolute bottom-0 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
+              className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
               title="Write email to dominik.rubroeder@icloud.com"
               aria-label="Write email to dominik.rubroeder@icloud.com"
             >
-              <EnvelopeIcon className="h-5 w-5 text-theme-contrary" />
+              <EnvelopeIcon className="size-5 text-theme-contrary" />
             </Link>
             Dominik Rubröder
           </div>
@@ -99,8 +99,8 @@ export default function HomeHeroSection() {
             aria-label="Go to external mediawave commerce GmbH website"
             target="_blank"
           >
-            <div className="absolute bottom-0 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
-              <ArrowRightIcon className="h-5 w-5 -rotate-45 text-theme-contrary" />
+            <div className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
+              <ArrowRightIcon className="size-5 -rotate-45 text-theme-contrary" />
             </div>
             mediawave
           </Link>

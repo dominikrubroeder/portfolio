@@ -11,12 +11,12 @@ export default function SecondaryNavigation() {
   return (
     <div className="flex items-center p-4">
       <button
-        className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-5"
+        className="mr-4 flex size-8 items-center justify-center rounded-full bg-gray-5"
         title="Navigate back"
         aria-label="Navigate one page back"
         onClick={() => router.back()}
       >
-        <ArrowLongLeftIcon className="h-4 w-4" />
+        <ArrowLongLeftIcon className="size-4" />
       </button>
 
       <div className="mx-auto flex w-full max-w-screen-lg items-center justify-between gap-4">
@@ -26,7 +26,7 @@ export default function SecondaryNavigation() {
         </div>
 
         <div>
-          <GitHubLink className="h-5 w-5 text-gray transition hover:text-theme-contrary" />
+          <GitHubLink className="size-5 text-gray transition hover:text-theme-contrary" />
         </div>
       </div>
     </div>

@@ -38,7 +38,7 @@ export default function TheDesignProcess() {
 
       <ContainedSection className="grid gap-8">
         <div className="flex items-center gap-2">
-          <LockClosedIcon className="h-4 w-4" />
+          <LockClosedIcon className="size-4" />
           Description follows
         </div>
 

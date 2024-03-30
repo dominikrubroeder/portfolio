@@ -29,10 +29,10 @@ export default function MoreItemsSection({
       >
         <button
           aria-label="Hide and show more items"
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 hover:text-theme-contrary"
+          className="flex size-14 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 hover:text-theme-contrary"
         >
-          {state.isVisible && <MinusIcon className="h-4 w-4" />}
-          {!state.isVisible && <PlusIcon className="h-4 w-4" />}
+          {state.isVisible && <MinusIcon className="size-4" />}
+          {!state.isVisible && <PlusIcon className="size-4" />}
         </button>
 
         <button

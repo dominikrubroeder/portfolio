@@ -55,9 +55,9 @@ export default function ControlBarList({
                 : 'hover:text-theme-contrary'
             } md:gap-2`}
           >
-            <DynamicIcon name={section.icon} className="h-5 w-5" />
+            <DynamicIcon name={section.icon} className="size-5" />
             <span
-              className={`inline-block h-4 w-[1px] ${
+              className={`inline-block h-4 w-px ${
                 activeSection === section.id ? 'bg-gray-2' : 'bg-gray-4'
               }`}
             ></span>

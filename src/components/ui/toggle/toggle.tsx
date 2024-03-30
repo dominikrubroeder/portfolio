@@ -33,7 +33,7 @@ export default function Toggle({
         }`}
       >
         <span
-          className={`absolute h-6 w-6 rounded-full bg-white transition ${
+          className={`absolute size-6 rounded-full bg-white transition ${
             isEnabled ? 'translate-x-full' : 'translate-x-0'
           }`}
         ></span>
