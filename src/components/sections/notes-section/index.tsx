@@ -12,7 +12,8 @@ export default function NotesSection() {
       <p className="mx-auto max-w-screen-sm px-4">
         <b className="text-theme-contrary">My work is</b>, I am as much a
         Designer as an Design Engineer, like a waiter who is actually a chef in
-        the kitchen, free in delivering on both lines – or on both endpoints +
+        the kitchen, free in delivering on both lines – or on both endpoints,
+        but
         <span className="ml-1.5 font-bold text-theme-contrary">
           committed to the frontend
         </span>
@@ -21,13 +22,17 @@ export default function NotesSection() {
         <br />
         Combining the best of both worlds into the knowledge and precision of a
         refined product UI that is enjoyable to use – the world of UX. I love
-        supportive animations and transitions, designing with UI-shows-business
+        supportive animations and transitions, designing with
+        <b className="mx-1.5 text-theme-contrary">UI-shows-business</b>
         focus and code in mind; developing, engineering by design.
         <br />
         <br />
-        When the idea and the vision is clear, you can follow them from the
-        first thought over designing, reiterating, engineering, until it is the
-        one final, refined product that it needs to be.
+        <b className="text-theme-contrary">
+          When the idea and the vision is clear
+        </b>
+        , you can follow them from the first thought over designing,
+        reiterating, engineering, until it is the one final, refined product
+        that it needs to be.
       </p>
 
       <div className="mx-auto max-w-2xl">

@@ -16,7 +16,12 @@ export default function Accordion({
   const ref = useRef<HTMLDivElement | null>(null);
 
   const center = useCallback(
-    () => ref.current?.scrollIntoView({ behavior: 'smooth', block: focusView }),
+    () =>
+      ref.current?.scrollIntoView({
+        behavior: 'smooth',
+        block:
+          window.innerWidth > 768 ? 'center' : focusView ? focusView : 'start'
+      }),
     [focusView]
   );
 
@@ -34,8 +39,8 @@ export default function Accordion({
       >
         <h2 className="font-bold">{title}</h2>
         <div className="flex items-center gap-2">
-          {open && <MinusIcon className="h-4 w-4 text-gray-2" />}
-          {!open && <PlusIcon className="h-4 w-4 text-gray-2" />}
+          {open && <MinusIcon className="size-4 text-gray-2" />}
+          {!open && <PlusIcon className="size-4 text-gray-2" />}
         </div>
       </div>
 

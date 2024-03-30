@@ -31,6 +31,10 @@ module.exports = {
         theme: {
           base: 'rgb(var(--color-theme-base) / <alpha-value>)',
           contrary: 'rgb(var(--color-theme-contrary) / <alpha-value>)'
+        },
+        base: 'rgb(var(--color-theme-base) / <alpha-value>)',
+        text: {
+          muted: 'rgb(var(--color-theme-gray) / <alpha-value>)'
         }
       },
       keyframes: {
