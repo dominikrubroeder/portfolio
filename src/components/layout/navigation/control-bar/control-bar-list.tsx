@@ -7,6 +7,8 @@ import type {
   ControlBarMobileMenuVisibility,
   ControlBarSections
 } from '@/types';
+import GitHub from '@/components/ui/svg/github';
+import LinkedIn from '@/components/ui/svg/linkedin';
 
 export default function ControlBarList({
   sections,
@@ -65,6 +67,17 @@ export default function ControlBarList({
           </div>
         </Link>
       ))}
+
+      <div className="mx-4 flex justify-between border-t border-gray-4 pb-2 pt-4 md:hidden">
+        <span>
+          <b className="text-theme-contrary">Dominik Rubröder</b> UX Engineer
+        </span>
+
+        <div className="flex gap-2.5">
+          <GitHub className="size-6 shrink-0 grayscale transition hover:grayscale-0" />
+          <LinkedIn className="size-6 shrink-0 grayscale transition hover:grayscale-0" />
+        </div>
+      </div>
     </div>
   );
 }
