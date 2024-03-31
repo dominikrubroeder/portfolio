@@ -3,11 +3,21 @@
 @tailwind utilities;
 
 :root {
-    --color-accent-400: 167 139 250;
+    --color-accent-50: 248 245 255;
+    --color-accent-100: 240 235 254;
+    --color-accent-200: 222 211 253;
+    --color-accent-300: 203 187 252;
+    --color-accent-400: 185 162 251;
     --color-accent: 167 139 250;
-    --color-accent-600: 124 58 237;
+    --color-accent-600: 147 113 249;
+    --color-accent-700: 129 89 248;
+    --color-accent-800: 124 58 237;
+    --color-accent-900: 124 58 237;
+    --color-accent-950: 124 58 237;
+
     --color-theme-base: 255 255 255;
     --color-theme-contrary: 48 48 48;
+
     --color-apple-red: 255 59 48;
     --color-apple-orange: 255 149 0;
     --color-apple-yellow: 255 204 0;
@@ -26,7 +36,6 @@
     --color-apple-gray-4: 209 209 214;
     --color-apple-gray-5: 229 229 234;
     --color-apple-gray-6: 242 242 247;
-    --text-muted: var(--color-apple-gray);
 }
 
 .dark,
@@ -51,7 +60,6 @@
     --color-apple-gray-4: 58 58 60;
     --color-apple-gray-5: 44 44 46;
     --color-apple-gray-6: 28 28 30;
-    --text-muted: var(--color-apple-gray);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,7 +84,6 @@
         --color-apple-gray-4: 58 58 60;
         --color-apple-gray-5: 44 44 46;
         --color-apple-gray-6: 28 28 30;
-        --text-muted: var(--color-apple-gray);
     }
 
     html {
