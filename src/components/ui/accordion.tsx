@@ -20,7 +20,7 @@ export default function Accordion({
       ref.current?.scrollIntoView({
         behavior: 'smooth',
         block:
-          window.innerWidth > 768 ? 'center' : focusView ? focusView : 'start'
+          window.innerWidth > 768 ? (focusView ? focusView : 'center') : 'start'
       }),
     [focusView]
   );
