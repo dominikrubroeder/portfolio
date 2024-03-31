@@ -2,6 +2,7 @@ import Accordion from '@/components/ui/accordion';
 import Link from 'next/link';
 import AccordionMini from '@/components/ui/accordion-mini';
 import Divider from '@/components/ui/divider';
+import Image from 'next/image';
 
 export default function WhatIsAUxEngineer() {
   return (
@@ -9,6 +10,38 @@ export default function WhatIsAUxEngineer() {
       <h3 className="font-bold text-theme-contrary">UX Engineer</h3>
 
       <br />
+
+      <blockquote className="border-l-4 border-l-gray-4 pl-4">
+        <span>UX Engineering at Google</span>
+        <br />
+        &quot;
+        <b className="text-theme-contrary">
+          Bring all your skills into one role
+        </b>
+        . As a UX Engineer at Google, you’ll combine your design, engineering,
+        and product intuition to help build experiences for everyone to
+        enjoy.&quot;
+      </blockquote>
+
+      <figure className="my-12">
+        <Image
+          src="/uxe-user-experience-engineer-at-google.png"
+          alt="UXE user experience engineer at google"
+          width={1024}
+          height={292}
+          className="object-contain"
+        />
+        <figcaption>
+          Reference to UXE user experience engineering work areas at
+          <Link
+            href="https://uxe.withgoogle.com"
+            target="_blank"
+            className="ml-1 transition hover:text-theme-contrary"
+          >
+            uxe.google.com
+          </Link>
+        </figcaption>
+      </figure>
 
       <p>
         <b className="text-theme-contrary">
@@ -19,7 +52,9 @@ export default function WhatIsAUxEngineer() {
         world (production) applications. Also, the ability of communicating on
         the how to, and why is crucial for this role.
       </p>
+
       <br />
+
       <p>
         The working tools (Wireframe tools like <i>Figma</i> for Designers or
         IDEs for developers etc.), are not the crucial part,
@@ -39,7 +74,9 @@ export default function WhatIsAUxEngineer() {
         The tools are just a way of making the concept
         <i className="mx-1">visual</i>and<i className="ml-1">visible</i>.
       </p>
-      <br />
+
+      <Divider className="mb-8 mt-12" spacing="wider" indented />
+
       <div>
         Softskills
         <ul className="list-disc pl-8">
@@ -49,7 +86,7 @@ export default function WhatIsAUxEngineer() {
         </ul>
       </div>
 
-      <Divider indented spacing="wider" className="mb-8 mt-12" />
+      <Divider className="mb-8 mt-12" spacing="wider" indented />
 
       <AccordionMini title="Experience design">
         <br />
