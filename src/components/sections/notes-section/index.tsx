@@ -11,9 +11,8 @@ export default function NotesSection() {
     <section className="space-y-16 px-4 py-12">
       <p className="mx-auto max-w-screen-sm px-4">
         <b className="text-theme-contrary">My work is</b>, I am as much a
-        Designer as an Design Engineer, like a waiter who is actually a chef in
-        the kitchen, free in delivering on both lines – or on both endpoints,
-        but
+        Designer as an UX Engineer, like a waiter who is actually a chef in the
+        kitchen, free in delivering on both lines – or on both endpoints, but
         <span className="ml-1.5 font-bold text-theme-contrary">
           committed to the frontend
         </span>

@@ -129,11 +129,11 @@ export default function HeyChatGptUxDesigner() {
       </ol>
 
       <p>
-        By emphasizing these predicates, UX designers can contribute to creating
-        a product that not only meets business goals but also delights and
-        satisfies the needs of the users. Regular collaboration, feedback loops,
-        and a commitment to user-centric design principles are essential for
-        success.
+        <b className="text-theme-contrary">By emphasizing these predicates</b>,
+        UX designers can contribute to creating a product that not only meets
+        business goals but also delights and satisfies the needs of the users.
+        Regular collaboration, feedback loops, and a commitment to user-centric
+        design principles are essential for success.
       </p>
 
       <br />

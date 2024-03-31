@@ -185,10 +185,10 @@ export default function HeyChatGptUxEngineer() {
       </ol>
 
       <p>
-        By focusing on these predicates, a UX Engineer can contribute
-        significantly to creating user-centric and engaging software
-        applications. This approach helps in building products that meet user
-        expectations and improve overall satisfaction.
+        <b className="text-theme-contrary">By focusing on these predicates</b>,
+        a UX Engineer can contribute significantly to creating user-centric and
+        engaging software applications. This approach helps in building products
+        that meet user expectations and improve overall satisfaction.
       </p>
 
       <br />
