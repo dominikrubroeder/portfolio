@@ -73,7 +73,7 @@ export default function HomeHeroSection() {
 
         <h1
           ref={ref}
-          className="mx-auto mt-6 flex gap-1 md:absolute md:bottom-24 md:mt-0"
+          className="mx-auto mt-6 flex gap-1 md:absolute md:bottom-28 md:mt-0"
           aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
         >
           <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
