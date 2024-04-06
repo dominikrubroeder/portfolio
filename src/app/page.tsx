@@ -1,4 +1,4 @@
-import NotesSection from '@/components/sections/notes-section';
+import IntroductionSection from '../components/sections/introduction-section';
 import { Suspense } from 'react';
 import HomeHeroSectionLoading from '@/components/home-page/home-hero-section-loading';
 import HomeHeroSection from '@/components/home-page/home-hero-section';
@@ -14,9 +14,9 @@ export default function HomePage() {
         <HomeHeroSection />
       </Suspense>
 
-      <ProjectSection />
+      <IntroductionSection />
 
-      <NotesSection />
+      <ProjectSection />
 
       <ToolSection />
 
