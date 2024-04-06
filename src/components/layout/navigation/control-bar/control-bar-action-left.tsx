@@ -14,7 +14,7 @@ export default function ControlBarActionLeft({
 }) {
   return (
     <div
-      className={`absolute left-1/2 transition md:left-0 md:top-3 ${
+      className={`absolute left-1/2 transition md:left-0 md:top-1 ${
         controlBar === 'collapsed'
           ? '-translate-x-1/2 scale-95 md:translate-x-0'
           : '-translate-x-24 scale-100 md:-translate-x-16'

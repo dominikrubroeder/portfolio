@@ -27,17 +27,17 @@ export default function ControlBarList({
 }) {
   return (
     <div
-      className={`no-scrollbar absolute bottom-20 z-50 grid max-h-[70svh] w-[95vw] max-w-screen-sm items-center gap-4 overflow-hidden overflow-y-auto rounded-2xl bg-gray-5 px-4 pt-3 transition ${
+      className={`absolute bottom-20 z-50 grid w-[95vw] max-w-screen-sm items-center gap-4 rounded-2xl bg-gray-5 p-3 px-4 transition ${
         mobileMenu === 'invisible'
           ? 'invisible -translate-y-4'
           : 'visible translate-y-0'
-      } md:visible md:relative md:top-4 md:flex md:w-min md:max-w-none md:rounded-full md:p-2`}
+      } md:visible md:relative md:top-4 md:flex md:w-min md:max-w-none md:rounded-full`}
     >
       {sections.map((section) => (
         <Link
           key={section.id}
           href={`#${section.id}`}
-          className={`relative z-0 select-none rounded-full px-2.5 py-2 outline-sky-400 transition focus-visible:outline-2 ${
+          className={`relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2 ${
             activeSection === section.id ? '' : 'hover:text-theme-contrary'
           }`}
           onClick={(e) => scrollIntoView(e, section.id)}
@@ -45,22 +45,20 @@ export default function ControlBarList({
           {activeSection === section.id && (
             <motion.span
               layoutId="bubble"
-              className="absolute inset-0 z-10 bg-gray-4 md:bg-accent/20"
+              className="absolute inset-0 z-10 bg-gray-4"
               style={{ borderRadius: 9999 }}
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
           )}
 
           <div
-            className={`relative z-20 flex w-max cursor-pointer items-center gap-4 md:pr-2 ${
+            className={`relative z-20 flex w-max cursor-pointer items-center gap-4 ${
               activeSection === section.id
                 ? 'text-theme-contrary'
                 : 'hover:text-theme-contrary'
             } md:gap-2`}
           >
-            <div className="flex size-12 items-center justify-center rounded-full bg-accent/20">
-              <DynamicIcon name={section.icon} className="size-6 text-accent" />
-            </div>
+            <DynamicIcon name={section.icon} className="size-5" />
             {section.label}
           </div>
         </Link>

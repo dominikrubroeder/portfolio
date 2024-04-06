@@ -4,6 +4,7 @@ import { ArrowLongLeftIcon } from '@heroicons/react/24/outline';
 import Avatar from '@/components/ui/avatar';
 import { useRouter } from 'next/navigation';
 import GitHubLink from '@/components/sections/social-section/github-link';
+import Link from 'next/link';
 
 export default function SecondaryNavigation() {
   const router = useRouter();
@@ -20,10 +21,10 @@ export default function SecondaryNavigation() {
       </button>
 
       <div className="mx-auto flex w-full max-w-screen-lg items-center justify-between gap-4">
-        <div className="flex items-center gap-4">
-          <Avatar width={44} height={44} />
+        <Link href="/" className="flex items-center gap-4">
+          <Avatar width={44} height={44} as="Image" />
           Dominik Rubröder
-        </div>
+        </Link>
 
         <div>
           <GitHubLink className="size-5 text-gray transition hover:text-theme-contrary" />
