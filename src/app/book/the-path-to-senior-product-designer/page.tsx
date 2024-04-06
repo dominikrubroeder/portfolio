@@ -11,16 +11,19 @@ export default function ThePathToSeniorProductDesignerPage() {
       summaryDescription={
         <div>
           <p>
-            If you ever felt in the need of, or being curious for guidance, this
-            book is for you. But not only when you&apos;re currently just
-            starting on your design career, also when you&apos;re already in and
-            you just want to have a look up on written down practises,
-            behaviours, patterns and expertise of design work (and a little
-            beyond, outside the design glass), have a read-on. This book is all
-            about making and rasing awareness of your growth in design work,
-            thinking as a designer and how to have impact as a designer, also in
-            places you may not thought about first — benefiting your own goals,
-            the team’s and the company one‘s.
+            <b className="mr-1 text-theme-contrary">
+              If you ever felt in the need of, or being curious for guidance,
+              this book is for you.
+            </b>
+            But not only when you&apos;re currently just starting on your design
+            career, also when you&apos;re already in and you just want to have a
+            look up on written down practises, behaviours, patterns and
+            expertise of design work (and a little beyond, outside the design
+            glass), have a read-on. This book is all about making and rasing
+            awareness of your growth in design work, thinking as a designer and
+            how to have impact as a designer, also in places you may not thought
+            about first — benefiting your own goals, the team’s and the company
+            one‘s.
           </p>
           <p className="ml-8">
             Also, i noticed that you can also use this book, by just opening up
@@ -64,9 +67,10 @@ export default function ThePathToSeniorProductDesignerPage() {
             <b className="mr-1 text-theme-contrary">
               Focus on the business impact of design
             </b>
-            in one of the last sections of this book, Artiom Dashinksy writes
+            in one of the last sections of this book. In it, Artiom Dashinksy
+            writes:
           </p>
-          <blockquote>
+          <blockquote className="relative mx-auto my-8 ml-8 pl-4 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-theme-contrary">
             „If there is one thing you should learn from this book, it‘s this —
             designers are hired to help companies drive their business
             objectives, and therefore all of your work should be looked at,
@@ -80,12 +84,11 @@ export default function ThePathToSeniorProductDesignerPage() {
             — Thanks Artiom, this just underlines my already-in-view perception
             of how important the business (objectives) is for design decisions,
             how the business drives the user interface, it surrounding topics
-            and thinking outside the &apos;visual appearance&apos; section of
+            and thinking outside the &apos;visual appearance&apos; part of
             design work.
           </p>
         </div>
       }
-      furtherReading="New text here"
     />
   );
 }
