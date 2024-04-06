@@ -7,7 +7,7 @@ import ControlBarAction from '@/components/layout/navigation/control-bar/control
 
 export default function ControlBarActionRight({
   controlBar,
-  rightControlAction
+  rightControlAction = 'Up'
 }: {
   controlBar: ControlBarVisibility;
   rightControlAction: ControlBarActionType;

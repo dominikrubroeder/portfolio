@@ -12,7 +12,7 @@ export default function ControlBar({
   sections,
   collapse,
   leftControlAction,
-  rightControlAction = 'Up'
+  rightControlAction
 }: IControlBar) {
   const { state, scrollIntoView, toggleMobileMenu, activeSection } =
     useControlBar(collapse);
