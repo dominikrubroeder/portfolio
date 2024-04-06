@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div>
-      <SecondaryNavigation />
+      <SecondaryNavigation sticky backButton />
       {children}
     </div>
   );

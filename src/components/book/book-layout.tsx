@@ -1,14 +1,6 @@
 import { ReactNode } from 'react';
 import Divider from '@/components/ui/divider';
 import Image from 'next/image';
-import ControlBar from '@/components/layout/navigation/control-bar/control-bar';
-
-const sections = [
-  { id: 'introduction', label: 'Introduction', icon: 'DocumentDuplicateIcon' },
-  { id: 'learnings', label: 'Learnings', icon: 'PaintBrushIcon' },
-  { id: 'outcome', label: 'Outcome', icon: 'Cog6ToothIcon' },
-  { id: 'further', label: 'Further reading', icon: 'CheckBadgeIcon' }
-];
 
 export default function BookLayout({
   title,
@@ -33,71 +25,91 @@ export default function BookLayout({
   outcome: ReactNode;
   furtherReading?: ReactNode;
 }) {
-  const released = releaseDate.toLocaleDateString('de-DE');
-  const updated = updateDate?.toLocaleDateString('de-DE');
+  const dateFormattingOptions: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: '2-digit'
+  };
+
+  const released = releaseDate.toLocaleDateString(
+    'en-US',
+    dateFormattingOptions
+  );
+  const updated = updateDate?.toLocaleDateString(
+    'en-US',
+    dateFormattingOptions
+  );
 
   return (
-    <div className="space-y-32">
-      <section className="mx-auto">
+    <div>
+      <section className="mx-auto flex flex-col items-center justify-center pt-12">
         <Image
           src={cover}
-          width={320}
-          height={415}
-          className="mx-auto object-contain"
+          width={375}
+          height={480}
+          className="mx-auto h-auto max-w-64 object-contain shadow-2xl xl:max-w-none"
           alt={`${title} book cover`}
         />
 
-        <div className="mx-auto my-16  max-w-screen-sm px-4 text-center">
-          <blockquote className="border-l-4 border-l-black pl-4 text-left">
+        <div className="mx-auto my-16 grid max-w-screen-sm gap-4 px-4 text-center">
+          <blockquote className="relative mx-auto pl-4 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-theme-contrary">
             {summaryQuote}
           </blockquote>
-
-          <div className="mt-4">
-            <button className="text-accent">Read more</button>
-          </div>
         </div>
       </section>
 
-      <ControlBar sections={sections} collapse={false} />
+      <div className="space-y-32">
+        <section className="mx-auto max-w-screen-sm px-4" id="introduction">
+          <h1 className="mb-4 border-b border-b-gray-5 pb-4 text-4xl font-bold text-theme-contrary">
+            {title}
+          </h1>
+          <p>
+            by
+            <i className="ml-1">{author}</i>,
+          </p>
 
-      <section className="mx-auto max-w-screen-sm px-4" id="introduction">
-        <h1 className="mb-4 border-b border-b-gray-5 pb-4 text-4xl font-bold text-theme-contrary">
-          {title}
-        </h1>
+          <p className="flex items-center justify-between gap-4">
+            <span>
+              reviewed at <i>{released}</i>
+            </span>
+            <span className="rounded-full bg-accent-100 p-2 text-xs text-accent">
+              Recommended read
+            </span>
+          </p>
 
-        <p>
-          by
-          <i className="ml-1">{author}</i>, reviewed at {released}
-        </p>
+          <p>Dominik Rubröder</p>
 
-        {updated && <p>{updated}</p>}
+          {updated && <p>{updated}</p>}
 
-        <div className="mt-16">{summaryDescription}</div>
-      </section>
-
-      <section className="mx-auto max-w-screen-sm px-4" id="learnings">
-        <h2 className="sticky top-0 mb-4 bg-gray-6 py-2">
-          Learnings on <i>{title}</i>
-        </h2>
-        <h3>
-          <b className="text-theme-contrary">My takes on</b> <i>{title}</i>
-        </h3>
-        {learnings}
-      </section>
-
-      <section className="mx-auto max-w-screen-sm px-4" id="outcome">
-        <h2 className="mb-4">
-          Outcome on <i>{title}</i>
-        </h2>
-        {outcome}
-      </section>
-
-      {furtherReading && (
-        <section className="mx-auto max-w-screen-sm px-4">
-          <Divider />
-          {furtherReading}
+          <div className="mt-16">{summaryDescription}</div>
         </section>
-      )}
+
+        <section
+          className="relative mx-auto max-w-screen-sm px-4"
+          id="learnings"
+        >
+          <h2 className="sticky top-[4.75rem] mb-6 border-b border-gray-5 bg-gray-6 py-2 pb-3">
+            <b className="text-theme-contrary">Learnings</b> on <i>{title}</i>
+          </h2>
+
+          {learnings}
+        </section>
+
+        <section className="mx-auto max-w-screen-sm px-4" id="outcome">
+          <h2 className="sticky top-[4.75rem] mb-6 border-b border-gray-5 bg-gray-6 py-2 pb-3">
+            <b className="text-theme-contrary">Outcome</b> on <i>{title}</i>
+          </h2>
+
+          {outcome}
+        </section>
+
+        {furtherReading && (
+          <section className="mx-auto max-w-screen-sm px-4">
+            <Divider />
+            {furtherReading}
+          </section>
+        )}
+      </div>
     </div>
   );
 }
