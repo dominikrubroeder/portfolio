@@ -1,4 +1,24 @@
 import Accordion from '@/components/ui/accordion';
+import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
+
+const books: { title: string; author: string; href: string | undefined }[] = [
+  {
+    title: 'The Design of Everyday Things',
+    author: 'Don Norman',
+    href: undefined
+  },
+  {
+    title: 'Refactoring UI',
+    author: 'Adam Wathan, Steve Schoger',
+    href: undefined
+  },
+  {
+    title: 'Practical UI',
+    author: 'Adham Dannaway',
+    href: undefined
+  }
+];
 
 export default function Books() {
   return (
@@ -7,7 +27,7 @@ export default function Books() {
 
       <br />
 
-      <ul className="mb-5 list-disc pl-8">
+      <ul className="mb-5 list-disc pl-8 leading-loose">
         <li>
           The Design of Everyday Things – <i>Don Norman</i>
         </li>
@@ -18,7 +38,15 @@ export default function Books() {
           Practical UI – <i>Adham Dannaway</i>
         </li>
         <li>
-          The Path to Senior Product Designer – <i>Artiom Dashinsky</i>
+          <Link
+            href="/book/the-path-to-senior-product-designer"
+            className="flex items-center justify-between gap-4 rounded-xl px-0 transition-all hover:bg-gray-5 hover:px-2"
+          >
+            <p>
+              The Path to Senior Product Designer – <i>Artiom Dashinsky</i>
+            </p>
+            <ArrowRightIcon className="size-4" />
+          </Link>
         </li>
         <li>
           Atomic Design – <i>Brad Frost</i>

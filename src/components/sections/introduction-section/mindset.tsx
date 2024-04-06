@@ -8,12 +8,15 @@ export default function Mindset() {
       <br />
 
       <ul className="mb-5 list-disc pl-8">
+        <li>Designing – in code</li>
+        <li>Engineering – by design</li>
         <li>Bringing an idea from paper to production</li>
         <li>Refining a product/feature to specific needs</li>
         <li>
           Getting to know a product/brand/concept in order to know what it is
           designed to be and designed to fulfill
         </li>
+        <li>Writing documentation</li>
       </ul>
 
       <h3 className="font-bold text-theme-contrary">

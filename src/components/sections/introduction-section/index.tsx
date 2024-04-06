@@ -1,15 +1,19 @@
-import Mindset from '@/components/sections/notes-section/mindset';
-import WhatIsAUxEngineer from '@/components/sections/notes-section/what-is-a-ux-engineer';
-import Books from '@/components/sections/notes-section/books';
-import HeyChatGptUxDesigner from '@/components/sections/notes-section/hey-chat-gpt-ux-designer';
-import HeyChatGptUxEngineer from '@/components/sections/notes-section/hey-chat-gpt-ux-engineer';
-import DesignEngineerVsUxEngineer from '@/components/sections/notes-section/design-engineer-vs-ux-engineer';
+import Mindset from '@/components/sections/introduction-section/mindset';
+import WhatIsAUxEngineer from '@/components/sections/introduction-section/what-is-a-ux-engineer';
+import Books from '@/components/sections/introduction-section/books';
+import HeyChatGptUxDesigner from '@/components/sections/introduction-section/hey-chat-gpt-ux-designer';
+import HeyChatGptUxEngineer from '@/components/sections/introduction-section/hey-chat-gpt-ux-engineer';
+import DesignEngineerVsUxEngineer from '@/components/sections/introduction-section/design-engineer-vs-ux-engineer';
 import React from 'react';
 
-export default function NotesSection() {
+export default function IntroductionSection() {
   return (
-    <section className="space-y-16 px-4 py-12">
-      <p className="mx-auto max-w-screen-sm px-4">
+    <section className="px-4 py-12 pt-32" id="introduction">
+      <h2 className="mx-auto max-w-screen-sm px-4">Introduction</h2>
+
+      <br />
+
+      <p className="mx-auto mb-16 max-w-screen-sm px-4">
         <b className="text-theme-contrary">My work is</b>, I am as much a
         Designer as an UX Engineer, like a waiter who is actually a chef in the
         kitchen, free in delivering on both lines – or on both endpoints, but
