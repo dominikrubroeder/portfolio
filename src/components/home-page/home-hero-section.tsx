@@ -33,7 +33,10 @@ export default function HomeHeroSection() {
 
   return (
     <>
-      <section className="hero flex flex-col justify-center overflow-hidden md:flex-row md:items-center">
+      <section
+        ref={ref}
+        className="hero flex flex-col justify-center overflow-hidden md:flex-row md:items-center"
+      >
         <div className="max-w-max pb-8 pt-4">
           <div className="px-4">
             <h2 className="text-7xl font-bold text-theme-contrary sm:text-8xl">
@@ -53,7 +56,9 @@ export default function HomeHeroSection() {
               Designed with code in mind – Coded, by design
               <button
                 className="ml-1.5 inline-block text-accent"
-                onClick={() => scrollIntoView('projects')}
+                onClick={() =>
+                  scrollIntoView('introduction', { block: 'start' })
+                }
               >
                 More
               </button>
@@ -70,42 +75,41 @@ export default function HomeHeroSection() {
             </div>
           )}
         </div>
-
-        <h1
-          ref={ref}
-          className="mx-auto mt-6 flex gap-1 md:absolute md:bottom-28 md:mt-0"
-          aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
-        >
-          <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
-            <Link
-              href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-              className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
-              title="Write email to dominik.rubroeder@icloud.com"
-              aria-label="Write email to dominik.rubroeder@icloud.com"
-            >
-              <EnvelopeIcon className="size-5 text-theme-contrary" />
-            </Link>
-            Dominik Rubröder
-          </div>
-
-          <UxEffectsButton />
-
-          <span className="pt-12">@</span>
-
-          <Link
-            href="https://www.mediawave.de/"
-            className="group relative block cursor-pointer pt-12 transition hover:text-theme-contrary"
-            title="Go to external mediawave commerce GmbH website"
-            aria-label="Go to external mediawave commerce GmbH website"
-            target="_blank"
-          >
-            <div className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
-              <ArrowRightIcon className="size-5 -rotate-45 text-theme-contrary" />
-            </div>
-            mediawave
-          </Link>
-        </h1>
       </section>
+
+      <h1
+        className="sticky top-0 mx-auto mt-6 flex w-max gap-1 bg-gray-6 text-center"
+        aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
+      >
+        <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
+          <Link
+            href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
+            className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
+            title="Write email to dominik.rubroeder@icloud.com"
+            aria-label="Write email to dominik.rubroeder@icloud.com"
+          >
+            <EnvelopeIcon className="size-5 text-theme-contrary" />
+          </Link>
+          Dominik Rubröder
+        </div>
+
+        <UxEffectsButton />
+
+        <span className="pt-12">@</span>
+
+        <Link
+          href="https://www.mediawave.de/"
+          className="group relative block cursor-pointer pt-12 transition hover:text-theme-contrary"
+          title="Go to external mediawave commerce GmbH website"
+          aria-label="Go to external mediawave commerce GmbH website"
+          target="_blank"
+        >
+          <div className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
+            <ArrowRightIcon className="size-5 -rotate-45 text-theme-contrary" />
+          </div>
+          mediawave
+        </Link>
+      </h1>
 
       <ControlBar
         sections={sections}
