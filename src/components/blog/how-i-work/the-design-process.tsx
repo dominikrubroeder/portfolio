@@ -1,6 +1,6 @@
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 import TextBlockPlaceholder from '@/components/ui/placeholder/text-block';
-import ContainedSection from '@/components/section/contained-section';
+import ContainedSection from '@/components/ui/section/contained-section';
 
 export default function TheDesignProcess() {
   return (
