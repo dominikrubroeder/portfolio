@@ -4,7 +4,7 @@ import React from 'react';
  * Provide `name` as PascalCase – Example: `UserIcon`
  * @type {string}
  * */
-export default function DynamicIcon({
+export default function DynamicHeroIcon({
   name,
   className,
   ...props
