@@ -16,7 +16,7 @@ export default function SliderItem({
 }) {
   return (
     <div className="group grid w-80 gap-6 whitespace-normal">
-      <div className="relative h-80 w-80 rounded-xl border border-gray-4">
+      <div className="relative size-80 rounded-xl border border-gray-4">
         {/* Change in later release to
              – href={sliderItem.href}
              – target={sliderItem.href.includes('https') ? '_blank' : '_self'}
@@ -27,7 +27,7 @@ export default function SliderItem({
              */}
         <Link
           href={sliderItem.website}
-          className="absolute inset-0 flex h-full w-full cursor-pointer items-center justify-center"
+          className="absolute inset-0 flex size-full cursor-pointer items-center justify-center"
           target="_blank"
           title={`Go to ${sliderItem.title} page`}
           aria-label={`Go to ${sliderItem.title} page`}
@@ -80,7 +80,7 @@ export default function SliderItem({
                 isFirstItemInList
                   ? 'text-theme-contrary'
                   : 'group-hover:text-theme-contrary'
-              } h-5 w-5 transition`}
+              } size-5 transition`}
             />
           </Link>
 
@@ -90,11 +90,11 @@ export default function SliderItem({
             className="relative flex h-16 items-center justify-center rounded-2xl hover:bg-gray-5"
             disabled
           >
-            <ArrowLongRightIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
+            <ArrowLongRightIcon className="size-5 transition group-hover:text-theme-contrary" />
             <span
               title={`Projects with ${sliderItem.title}`}
               aria-label={`Projects with ${sliderItem.title}`}
-              className="bg-accent-600 absolute top-0 -translate-y-2 rounded p-1 px-1.5 text-xs text-white"
+              className="absolute top-0 -translate-y-2 rounded bg-accent-600 p-1 px-1.5 text-xs text-white"
             >
               Soon
             </span>

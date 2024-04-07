@@ -51,7 +51,7 @@ export default function Index() {
                 <span className="border-b transition group-hover:text-theme-contrary">
                   IU international university
                 </span>
-                <ArrowTopRightOnSquareIcon className="h-4 w-4 transition group-hover:text-theme-contrary" />
+                <ArrowTopRightOnSquareIcon className="size-4 transition group-hover:text-theme-contrary" />
               </Link>
             </p>
             <p className="-mt-1">Semester 5 – 7</p>
@@ -64,7 +64,7 @@ export default function Index() {
               >
                 <span className="inline-block border-b">Pre work</span>
                 <span>(DE)</span>
-                <ArrowDownTrayIcon className="h-4 w-4" />
+                <ArrowDownTrayIcon className="size-4" />
               </Link>
             </p>
             <p>
@@ -76,7 +76,7 @@ export default function Index() {
               >
                 <span className="inline-block border-b">Final exam</span>
                 <span>(DE)</span>
-                <ArrowDownTrayIcon className="h-4 w-4" />
+                <ArrowDownTrayIcon className="size-4" />
               </Link>
             </p>
           </div>
@@ -103,7 +103,7 @@ export default function Index() {
                   <span className="border-b transition group-hover:text-theme-contrary">
                     IU international university
                   </span>
-                  <ArrowTopRightOnSquareIcon className="h-4 w-4 transition group-hover:text-theme-contrary" />
+                  <ArrowTopRightOnSquareIcon className="size-4 transition group-hover:text-theme-contrary" />
                 </Link>
               </p>
               <p className="-mt-1">Semester 1 – 4</p>

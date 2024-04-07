@@ -28,7 +28,7 @@ export default function Navigation() {
           <Link
             href="/how-i-work"
             className={`transition hover:text-theme-contrary ${
-              pathname === '/how-i-work' ? 'text-theme-contrary' : 'text-muted'
+              pathname === '/how-i-work' ? 'text-theme-contrary' : ''
             }`}
             title="How i work page"
             aria-label="Link to How i work page"
@@ -40,7 +40,7 @@ export default function Navigation() {
           <Link
             href="/books"
             className={`transition hover:text-theme-contrary ${
-              pathname === '/books' ? 'text-theme-contrary' : 'text-muted'
+              pathname === '/books' ? 'text-theme-contrary' : ''
             }`}
             title="Books page"
             aria-label="Link to Books page"

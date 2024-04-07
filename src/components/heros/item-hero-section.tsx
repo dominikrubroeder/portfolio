@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function ItemHeroSection({ item }: { item: Tool | Technology }) {
   return (
-    <section className="realtive flex h-[calc(100dvh-5rem)] items-center justify-center">
+    <section className="relative flex h-[calc(100dvh-5rem)] items-center justify-center">
       <div className="grid max-w-max gap-4">
         <Link href={item.website} target="_blank">
           <Image

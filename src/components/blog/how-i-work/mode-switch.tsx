@@ -34,7 +34,7 @@ export default function ModeSwitch() {
         )}
         <span
           className={`relative z-10 p-4 ${
-            mode === null || isDesignMode ? 'text-theme-contrary' : 'text-muted'
+            mode === null || isDesignMode ? 'text-theme-contrary' : ''
           }`}
         >
           Design
@@ -57,7 +57,7 @@ export default function ModeSwitch() {
         )}
         <span
           className={`relative z-10 p-4 ${
-            isDevelopmentMode ? 'text-theme-contrary' : 'text-muted'
+            isDevelopmentMode ? 'text-theme-contrary' : ''
           }`}
         >
           Development

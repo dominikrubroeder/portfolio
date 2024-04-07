@@ -11,18 +11,20 @@ import { useControlBar } from '@/hooks/useControlBar';
 export default function ControlBar({
   sections,
   collapse,
-  leftControlAction = 'Avatar',
-  rightControlAction = 'Up'
+  leftControlAction,
+  rightControlAction
 }: IControlBar) {
   const { state, scrollIntoView, toggleMobileMenu, activeSection } =
     useControlBar(collapse);
 
   return (
-    <nav className="fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:w-max">
-      <ControlBarActionLeft
-        controlBar={state.controlBarVisibility}
-        leftControlAction={leftControlAction}
-      />
+    <nav className="no-scrollbar fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:w-max">
+      {leftControlAction && (
+        <ControlBarActionLeft
+          controlBar={state.controlBarVisibility}
+          leftControlAction={leftControlAction}
+        />
+      )}
 
       <ControlBarList
         sections={sections}
@@ -33,10 +35,12 @@ export default function ControlBar({
 
       <ControlBarMobileTrigger toggleMobileMenu={toggleMobileMenu} />
 
-      <ControlBarActionRight
-        controlBar={state.controlBarVisibility}
-        rightControlAction={rightControlAction}
-      />
+      {rightControlAction && (
+        <ControlBarActionRight
+          controlBar={state.controlBarVisibility}
+          rightControlAction={rightControlAction}
+        />
+      )}
     </nav>
   );
 }

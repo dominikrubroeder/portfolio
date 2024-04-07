@@ -36,8 +36,8 @@ export interface Data {
 export interface ControlBar {
   sections: ControlBarSections;
   collapse: boolean;
-  leftControlAction: ControlBarAction;
-  rightControlAction: ControlBarAction;
+  leftControlAction?: ControlBarAction;
+  rightControlAction?: ControlBarAction;
 }
 
 export interface ControlBarState {

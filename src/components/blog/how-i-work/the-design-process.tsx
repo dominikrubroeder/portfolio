@@ -1,6 +1,6 @@
 import { LockClosedIcon } from '@heroicons/react/24/outline';
 import TextBlockPlaceholder from '@/components/ui/placeholder/text-block';
-import ContainedSection from '@/components/section/contained-section';
+import ContainedSection from '@/components/ui/section/contained-section';
 
 export default function TheDesignProcess() {
   return (
@@ -38,7 +38,7 @@ export default function TheDesignProcess() {
 
       <ContainedSection className="grid gap-8">
         <div className="flex items-center gap-2">
-          <LockClosedIcon className="h-4 w-4" />
+          <LockClosedIcon className="size-4" />
           Description follows
         </div>
 

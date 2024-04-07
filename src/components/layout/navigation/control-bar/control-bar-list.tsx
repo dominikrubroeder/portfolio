@@ -1,12 +1,15 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import React from 'react';
-import DynamicIcon from '@/components/ui/dynamic-icon';
+import DynamicHeroIcon from '@/components/ui/dynamic-hero-icon';
 import type {
   ControlBarActiveSection,
   ControlBarMobileMenuVisibility,
   ControlBarSections
 } from '@/types';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import GitHubLink from '@/components/ui/links/github-link';
+import LinkedInLink from '@/components/ui/links/linked-in-link';
 
 export default function ControlBarList({
   sections,
@@ -28,7 +31,7 @@ export default function ControlBarList({
         mobileMenu === 'invisible'
           ? 'invisible -translate-y-4'
           : 'visible translate-y-0'
-      } md:visible md:relative md:top-4 md:flex md:w-min md:max-w-none md:rounded-full`}
+      } no-scrollbar md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[70svw] md:overflow-x-auto md:rounded-full lg:max-w-none`}
     >
       {sections.map((section) => (
         <Link
@@ -55,16 +58,44 @@ export default function ControlBarList({
                 : 'hover:text-theme-contrary'
             } md:gap-2`}
           >
-            <DynamicIcon name={section.icon} className="h-5 w-5" />
-            <span
-              className={`inline-block h-4 w-[1px] ${
-                activeSection === section.id ? 'bg-gray-2' : 'bg-gray-4'
-              }`}
-            ></span>
+            <DynamicHeroIcon name={section.icon} className="size-5" />
             {section.label}
           </div>
         </Link>
       ))}
+
+      <div className="sticky bottom-0 z-10 inline-flex gap-4 overflow-x-auto border-t border-gray-4 bg-gray-5 p-4 pb-3.5 md:hidden">
+        <div className="no-scrollbar flex-1 overflow-x-auto whitespace-nowrap border-r border-r-gray-4 pr-2 text-left">
+          <b className="mr-1.5 inline-block text-theme-contrary">
+            Dominik Rubröder
+          </b>
+          UX Engineer @
+          <Link
+            href="https://www.mediawave.de"
+            title="mediawave commerce GmbH"
+            aria-label="Go to external mediawave commerce GmbH website"
+            className="ml-1.5 inline-block transition hover:text-white"
+            target="_blank"
+          >
+            mediawave GmbH
+          </Link>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <GitHubLink />
+
+          <LinkedInLink />
+
+          <Link
+            href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
+            className="group flex size-8 items-center justify-center rounded-full bg-gray-4 transition hover:bg-gray-3"
+            title="Mail to Dominik Rubröder"
+            aria-label="Write a mail to Dominik Rubröder"
+          >
+            <EnvelopeIcon className="size-4 shrink-0 transition group-hover:text-white" />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default async function ToolGrid() {
              */}
                   <Link
                     href={tool.website}
-                    className="absolute inset-0 flex h-full w-full cursor-pointer items-center justify-center"
+                    className="absolute inset-0 flex size-full cursor-pointer items-center justify-center"
                     target="_blank"
                     title={`Go to ${tool.title} page`}
                     aria-label={`Go to ${tool.title} page`}

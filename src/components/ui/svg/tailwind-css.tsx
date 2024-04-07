@@ -4,7 +4,7 @@ export default function TailwindCSS({ className }: { className?: string }) {
       viewBox="0 0 128 79"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-[5rem] w-auto"
+      className="h-20 w-auto"
     >
       <g>
         <g id="Tailwind">

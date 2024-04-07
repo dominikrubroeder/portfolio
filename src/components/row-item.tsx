@@ -18,7 +18,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
         >
           <Brand
             brand={rowItem.title as BrandType}
-            className="h-8 w-8"
+            className="size-8"
             aria-label={`${rowItem.title} logo`}
           />
 
@@ -47,7 +47,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
           title={`Go to ${rowItem.title} website`}
           aria-label={`Go to ${rowItem.title} website`}
         >
-          <ArrowTopRightOnSquareIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
+          <ArrowTopRightOnSquareIcon className="size-5 transition group-hover:text-theme-contrary" />
         </Link>
 
         <button
@@ -56,7 +56,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
           aria-label={`Projects with ${rowItem.title}`}
           disabled
         >
-          <ArrowLongRightIcon className="h-5 w-5 transition group-hover:text-theme-contrary" />
+          <ArrowLongRightIcon className="size-5 transition group-hover:text-theme-contrary" />
           <span
             title={`Projects with ${rowItem.title}`}
             aria-label={`Projects with ${rowItem.title}`}

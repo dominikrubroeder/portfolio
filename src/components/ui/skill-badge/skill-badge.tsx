@@ -49,7 +49,7 @@ export default function SkillBadge({
           className="group rounded-full bg-gray-4 p-2"
           onClick={() => setIsVisible(false)}
         >
-          <XMarkIcon className="h-4 w-4 group-hover:text-theme-contrary" />
+          <XMarkIcon className="size-4 group-hover:text-theme-contrary" />
         </div>
 
         {designMode && (
