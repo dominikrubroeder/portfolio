@@ -1,6 +1,7 @@
 import Accordion from '@/components/ui/accordion/accordion';
 import Label from '@/components/ui/label';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import Blockquote from '@/components/ui/blockquote';
 
 export default function HeyChatGptUxDesigner() {
   return (
@@ -22,10 +23,12 @@ export default function HeyChatGptUxDesigner() {
 
       <br />
 
-      <blockquote className="border-l-4 border-l-gray-4 pl-4 font-bold text-theme-contrary">
-        You are a Chief Designer. On which predicates should a UX Designer focus
-        on?
-      </blockquote>
+      <Blockquote horizontalOffset={false}>
+        <b className="text-theme-contrary">
+          You are a Chief Designer. On which predicates should a UX Designer
+          focus on?
+        </b>
+      </Blockquote>
 
       <br />
 

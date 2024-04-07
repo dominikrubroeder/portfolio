@@ -2,6 +2,7 @@ import Accordion from '@/components/ui/accordion/accordion';
 import Label from '@/components/ui/label';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import Blockquote from '@/components/ui/blockquote';
 
 export default function DesignEngineerVsUxEngineer() {
   return (
@@ -22,10 +23,12 @@ export default function DesignEngineerVsUxEngineer() {
 
       <br />
 
-      <blockquote className="border-l-4 border-l-gray-4 pl-4 font-bold text-theme-contrary">
-        You are a senior HR worker. Compare an Design Engineer with an UX
-        Engineer for frontend work.
-      </blockquote>
+      <Blockquote horizontalOffset={false}>
+        <b className="text-theme-contrary">
+          You are a senior HR worker. Compare an Design Engineer with an UX
+          Engineer for frontend work.
+        </b>
+      </Blockquote>
 
       <br />
 
