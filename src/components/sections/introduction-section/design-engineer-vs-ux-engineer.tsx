@@ -1,6 +1,7 @@
-import Accordion from '@/components/ui/accordion';
+import Accordion from '@/components/ui/accordion/accordion';
 import Label from '@/components/ui/label';
 import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
 export default function DesignEngineerVsUxEngineer() {
   return (
@@ -12,8 +13,8 @@ export default function DesignEngineerVsUxEngineer() {
           UX Engineer
         </>
       }
-      focusView="start"
       aria-label="View 'Design Engineer vs UX Engineer' on ChatGPT"
+      restrictHeight
     >
       <h3 className="font-bold text-theme-contrary">
         Prompt <Label text="ChatGPT" />
@@ -146,9 +147,10 @@ export default function DesignEngineerVsUxEngineer() {
           href="https://chat.openai.com/share/955dcf23-a3d1-4381-bf7d-d1078c5a89fa"
           target="_blank"
           title="Design Engineer vs UX Engineer for frontend work on ChatGPT"
-          className="external-link ml-1"
+          className="external-link ml-1 break-all"
         >
           https://chat.openai.com/share/955dcf23-a3d1-4381-bf7d-d1078c5a89fa
+          <ArrowRightIcon className="mb-0.5 ml-1.5 inline-block size-4 shrink-0 -rotate-45" />
         </Link>
       </p>
     </Accordion>

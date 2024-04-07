@@ -1,4 +1,5 @@
 import BookLayout from '@/components/book/book-layout';
+import Blockquote from '@/components/ui/blockquote';
 
 export default function ThePathToSeniorProductDesignerPage() {
   return (
@@ -58,6 +59,7 @@ export default function ThePathToSeniorProductDesignerPage() {
           <li>
             There are chances to grow everywhere, you just have to look closely
           </li>
+          <li>Focus on shipping</li>
           <li>Focus on the business impact of design</li>
         </ul>
       }
@@ -70,7 +72,8 @@ export default function ThePathToSeniorProductDesignerPage() {
             in one of the last sections of this book. In it, Artiom Dashinksy
             writes:
           </p>
-          <blockquote className="relative mx-auto my-8 ml-8 pl-4 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-theme-contrary">
+
+          <Blockquote indent>
             „If there is one thing you should learn from this book, it‘s this —
             designers are hired to help companies drive their business
             objectives, and therefore all of your work should be looked at,
@@ -79,7 +82,8 @@ export default function ThePathToSeniorProductDesignerPage() {
             successful designer, including your ability to design better
             products, receive approvals for your ideas, and get your
             achievements recognized.“
-          </blockquote>
+          </Blockquote>
+
           <p>
             — Thanks Artiom, this just underlines my already-in-view perception
             of how important the business (objectives) is for design decisions,

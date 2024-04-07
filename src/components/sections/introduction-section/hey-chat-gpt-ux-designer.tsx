@@ -1,5 +1,6 @@
-import Accordion from '@/components/ui/accordion';
+import Accordion from '@/components/ui/accordion/accordion';
 import Label from '@/components/ui/label';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
 export default function HeyChatGptUxDesigner() {
   return (
@@ -12,7 +13,7 @@ export default function HeyChatGptUxDesigner() {
           </span>
         </>
       }
-      focusView="start"
+      restrictHeight
     >
       <h3 className="font-bold text-theme-contrary">
         UX Predicates
@@ -144,9 +145,10 @@ export default function HeyChatGptUxDesigner() {
           href="https://chat.openai.com/share/ca8c7c7e-95da-46bb-bd06-fbb81ac53dea"
           target="_blank"
           title="UX Design: Key Predicates on ChatGPT"
-          className="external-link ml-1"
+          className="external-link ml-1 break-all"
         >
           https://chat.openai.com/share/ca8c7c7e-95da-46bb-bd06-fbb81ac53dea
+          <ArrowRightIcon className="mb-0.5 ml-1.5 inline-block size-4 shrink-0 -rotate-45" />
         </a>
       </p>
     </Accordion>

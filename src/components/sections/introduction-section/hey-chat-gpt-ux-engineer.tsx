@@ -1,6 +1,7 @@
-import Accordion from '@/components/ui/accordion';
+import Accordion from '@/components/ui/accordion/accordion';
 import Label from '@/components/ui/label';
 import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
 export default function HeyChatGptUxEngineer() {
   return (
@@ -13,7 +14,7 @@ export default function HeyChatGptUxEngineer() {
           </span>
         </>
       }
-      focusView="start"
+      restrictHeight
     >
       <h3 className="font-bold text-theme-contrary">
         UX Predicates
@@ -199,9 +200,10 @@ export default function HeyChatGptUxEngineer() {
           href="https://chat.openai.com/share/c8344fb3-ea8b-4d0e-830c-185d3aab2a27"
           target="_blank"
           title="UX Engineer: Focus Areas on ChatGPT"
-          className="external-link ml-1"
+          className="external-link ml-1 break-all"
         >
           https://chat.openai.com/share/c8344fb3-ea8b-4d0e-830c-185d3aab2a27
+          <ArrowRightIcon className="mb-0.5 ml-1.5 inline-block size-4 shrink-0 -rotate-45" />
         </Link>
       </p>
     </Accordion>

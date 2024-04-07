@@ -1,15 +1,19 @@
-import Accordion from '@/components/ui/accordion';
+import Accordion from '@/components/ui/accordion/accordion';
 
 export default function Mindset() {
   return (
-    <Accordion title="Mindset">
+    <Accordion title="Mindset" restrictHeight>
       <h3 className="font-bold text-theme-contrary">I like</h3>
 
       <br />
 
       <ul className="mb-5 list-disc pl-8">
-        <li>Designing – in code</li>
-        <li>Engineering – by design</li>
+        <li>
+          <b className="text-theme-contrary">Designing</b> – in code, in Figma
+        </li>
+        <li>
+          <b className="text-theme-contrary">Engineering, Coding</b> – by design
+        </li>
         <li>Bringing an idea from paper to production</li>
         <li>Refining a product/feature to specific needs</li>
         <li>
@@ -42,10 +46,9 @@ export default function Mindset() {
 
       <ul className="mb-5 list-disc pl-8">
         <li>
-          No worries, you don&apos;t have to &apos;draw&apos; – but fast
-          sketching and scribble can improve visualize your ideas fast. Trust
-          me, i also had to learn this and get rid of &apos;Ahh, i don&apos;t
-          need this&apos;
+          You don&apos;t have to &apos;draw&apos; – but fast sketching and
+          scribble can improve visualize your ideas fast. I also had to learn
+          this and get rid of &apos;Ahh, i don&apos;t need this&apos;
         </li>
       </ul>
 

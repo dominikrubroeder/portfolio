@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import GitHubLink from '@/components/sections/social-section/github-link';
 import Link from 'next/link';
 import { cn } from '@/utils';
+import LinkedInLink from '@/components/ui/links/linked-in-link';
 
 export default function SecondaryNavigation({
   sticky,
@@ -19,7 +20,7 @@ export default function SecondaryNavigation({
   return (
     <div
       className={cn(
-        'z-50 flex items-center border-b border-gray-5 bg-gray-6 p-4',
+        'z-50 flex items-center border-b border-gray-5 bg-gray-6 p-4 backdrop-blur',
         sticky && 'sticky top-0'
       )}
     >
@@ -40,8 +41,9 @@ export default function SecondaryNavigation({
           Dominik Rubröder
         </Link>
 
-        <div>
+        <div className="flex items-center gap-2">
           <GitHubLink className="size-5 text-gray transition hover:text-theme-contrary" />
+          <LinkedInLink />
         </div>
       </div>
     </div>

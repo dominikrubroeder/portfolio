@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import React from 'react';
-import DynamicIcon from '@/components/ui/dynamic-icon';
+import DynamicHeroIcon from '@/components/ui/dynamic-hero-icon';
 import type {
   ControlBarActiveSection,
   ControlBarMobileMenuVisibility,
@@ -9,7 +9,7 @@ import type {
 } from '@/types';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import GitHubLink from '@/components/ui/links/github-link';
-import LinkedinLink from '@/components/ui/links/linkedin-link';
+import LinkedInLink from '@/components/ui/links/linked-in-link';
 
 export default function ControlBarList({
   sections,
@@ -31,7 +31,7 @@ export default function ControlBarList({
         mobileMenu === 'invisible'
           ? 'invisible -translate-y-4'
           : 'visible translate-y-0'
-      } md:visible md:relative md:top-4 md:flex md:w-min md:max-w-none md:rounded-full`}
+      } no-scrollbar md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[70svw] md:overflow-x-auto md:rounded-full lg:max-w-none`}
     >
       {sections.map((section) => (
         <Link
@@ -58,7 +58,7 @@ export default function ControlBarList({
                 : 'hover:text-theme-contrary'
             } md:gap-2`}
           >
-            <DynamicIcon name={section.icon} className="size-5" />
+            <DynamicHeroIcon name={section.icon} className="size-5" />
             {section.label}
           </div>
         </Link>
@@ -83,7 +83,8 @@ export default function ControlBarList({
 
         <div className="flex items-center gap-3">
           <GitHubLink />
-          <LinkedinLink />
+
+          <LinkedInLink />
 
           <Link
             href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."

@@ -6,14 +6,11 @@ import ControlBar from '@/components/layout/navigation/control-bar/control-bar';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
-import DesignModeToggle from '@/components/ui/toggle/design-mode-toggle';
-import DevModeToggle from '@/components/ui/toggle/dev-mode-toggle';
-import SkillBadges from '@/components/ui/skill-badge/skill-badges';
 import UxEffectsButton from '@/components/ui/button/ux-effects-button';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 
 const sections = [
+  { id: 'introduction', label: 'Introduction', icon: 'ArrowRightCircleIcon' },
   { id: 'projects', label: 'Projects', icon: 'DocumentDuplicateIcon' },
   { id: 'tools', label: 'Tools', icon: 'PaintBrushIcon' },
   { id: 'technologies', label: 'Technologies', icon: 'Cog6ToothIcon' },
@@ -25,18 +22,9 @@ export default function HomeHeroSection() {
   const isInView = useIsInView(ref);
   const { scrollIntoView } = useScrollIntoView();
 
-  const { searchParams } = useUpdateSearchParams();
-
-  const uxEffects = !!(
-    searchParams.get('uxEffects') && searchParams.get('uxEffects') === 'true'
-  );
-
   return (
     <>
-      <section
-        ref={ref}
-        className="hero flex flex-col justify-center overflow-hidden md:flex-row md:items-center"
-      >
+      <section className="hero flex flex-col justify-center overflow-hidden md:flex-row md:items-center">
         <div className="max-w-max pb-8 pt-4">
           <div className="px-4">
             <h2 className="text-7xl font-bold text-theme-contrary sm:text-8xl">
@@ -64,52 +52,43 @@ export default function HomeHeroSection() {
               </button>
             </p>
           </div>
-
-          {uxEffects && <DesignModeToggle />}
-
-          {uxEffects && <DevModeToggle />}
-
-          {uxEffects && (
-            <div className="no-scrollbar mx-auto max-w-screen-sm border-r border-r-gray-5 py-2">
-              <SkillBadges />
-            </div>
-          )}
-        </div>
-      </section>
-
-      <h1
-        className="sticky top-0 mx-auto mt-6 flex w-max gap-1 bg-gray-6 text-center"
-        aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
-      >
-        <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
-          <Link
-            href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-            className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
-            title="Write email to dominik.rubroeder@icloud.com"
-            aria-label="Write email to dominik.rubroeder@icloud.com"
-          >
-            <EnvelopeIcon className="size-5 text-theme-contrary" />
-          </Link>
-          Dominik Rubröder
         </div>
 
-        <UxEffectsButton />
-
-        <span className="pt-12">@</span>
-
-        <Link
-          href="https://www.mediawave.de/"
-          className="group relative block cursor-pointer pt-12 transition hover:text-theme-contrary"
-          title="Go to external mediawave commerce GmbH website"
-          aria-label="Go to external mediawave commerce GmbH website"
-          target="_blank"
+        <h1
+          ref={ref}
+          className="mx-auto mt-6 flex gap-1 md:absolute md:bottom-24 md:mt-0"
+          aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
         >
-          <div className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
-            <ArrowRightIcon className="size-5 -rotate-45 text-theme-contrary" />
+          <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
+            <Link
+              href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
+              className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
+              title="Write email to dominik.rubroeder@icloud.com"
+              aria-label="Write email to dominik.rubroeder@icloud.com"
+            >
+              <EnvelopeIcon className="size-5 text-theme-contrary" />
+            </Link>
+            Dominik Rubröder
           </div>
-          mediawave
-        </Link>
-      </h1>
+
+          <UxEffectsButton />
+
+          <span className="pt-12">@</span>
+
+          <Link
+            href="https://www.mediawave.de/"
+            className="group relative block cursor-pointer pt-12 transition hover:text-theme-contrary"
+            title="Go to external mediawave commerce GmbH website"
+            aria-label="Go to external mediawave commerce GmbH website"
+            target="_blank"
+          >
+            <div className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
+              <ArrowRightIcon className="size-5 -rotate-45 text-theme-contrary" />
+            </div>
+            mediawave
+          </Link>
+        </h1>
+      </section>
 
       <ControlBar
         sections={sections}

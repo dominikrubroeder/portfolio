@@ -2,20 +2,23 @@
 
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
+import { cn } from '@/utils';
 
 export default function Accordion({
   title,
   children,
-  focusView = 'center'
+  focusView = 'center',
+  restrictHeight
 }: {
   title: ReactNode;
   children: ReactNode;
   focusView?: 'start' | 'center';
+  restrictHeight?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const center = useCallback(
+  const scrollIntoViewAction = useCallback(
     () =>
       ref.current?.scrollIntoView({
         behavior: 'smooth',
@@ -26,8 +29,8 @@ export default function Accordion({
   );
 
   useEffect(() => {
-    open ? center() : null;
-  }, [center, open]);
+    open ? scrollIntoViewAction() : null;
+  }, [scrollIntoViewAction, open]);
 
   return (
     <div ref={ref} className="pt-4">
@@ -44,7 +47,17 @@ export default function Accordion({
         </div>
       </div>
 
-      {open ? <div className="mb-5 animate-fadeUp p-4">{children}</div> : null}
+      {open ? (
+        <div
+          className={cn(
+            'mb-5 animate-fadeUp p-4',
+            restrictHeight &&
+              'no-scrollbar md:max-h-[60svh] md:overflow-y-auto md:border-b md:border-b-gray-5'
+          )}
+        >
+          {children}
+        </div>
+      ) : null}
     </div>
   );
 }

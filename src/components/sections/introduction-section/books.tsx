@@ -1,4 +1,4 @@
-import Accordion from '@/components/ui/accordion';
+import Accordion from '@/components/ui/accordion/accordion';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
@@ -17,6 +17,36 @@ const books: { title: string; author: string; href: string | undefined }[] = [
     title: 'Practical UI',
     author: 'Adham Dannaway',
     href: undefined
+  },
+  {
+    title: 'The Path to Senior Product Designer',
+    author: 'Artiom Dashinsky',
+    href: '/book/the-path-to-senior-product-designer'
+  },
+  {
+    title: 'Atomic Design',
+    author: 'Brad Frost',
+    href: undefined
+  },
+  {
+    title: 'Laws of UX',
+    author: 'Jon Yablonski',
+    href: undefined
+  },
+  {
+    title: 'User Friendly',
+    author: 'Cliff Kuang with Robert Fabricant',
+    href: undefined
+  },
+  {
+    title: 'Neurowebdesign',
+    author: 'Jonas Reggelin',
+    href: undefined
+  },
+  {
+    title: 'The Creative Act: A Way of Being',
+    author: 'Rick Rubin',
+    href: undefined
   }
 ];
 
@@ -27,42 +57,26 @@ export default function Books() {
 
       <br />
 
-      <ul className="mb-5 list-disc pl-8 leading-loose">
-        <li>
-          The Design of Everyday Things – <i>Don Norman</i>
-        </li>
-        <li>
-          Refactoring UI – <i>Adam Wathan, Steve Schoger</i>
-        </li>
-        <li>
-          Practical UI – <i>Adham Dannaway</i>
-        </li>
-        <li>
-          <Link
-            href="/book/the-path-to-senior-product-designer"
-            className="flex items-center justify-between gap-4 rounded-xl px-0 transition-all hover:bg-gray-5 hover:px-2"
-          >
-            <p>
-              The Path to Senior Product Designer – <i>Artiom Dashinsky</i>
-            </p>
-            <ArrowRightIcon className="size-4" />
-          </Link>
-        </li>
-        <li>
-          Atomic Design – <i>Brad Frost</i>
-        </li>
-        <li>
-          Laws of UX – <i>Jon Yablonski</i>
-        </li>
-        <li>
-          User Friendly – <i>Cliff Kuang with Robert Fabricant</i>
-        </li>
-        <li>
-          Neurowebdesign – <i>Jonas Reggelin</i>
-        </li>
-        <li>
-          The Creative Act: A Way of Being – <i>Rick Rubin</i>
-        </li>
+      <ul className="mb-5 grid list-disc gap-1 pl-8 leading-relaxed md:gap-0">
+        {books.map((book) => (
+          <li key={book.title}>
+            {book.href ? (
+              <Link
+                href={book.href}
+                className="flex items-start justify-between gap-4 rounded-xl px-0 py-1 transition-all hover:bg-gray-5 hover:px-2 md:items-center"
+              >
+                <p>
+                  {book.title} – <i>{book.author}</i>
+                </p>
+                <ArrowRightIcon className="mt-1.5 size-4 shrink-0 md:mt-0" />
+              </Link>
+            ) : (
+              <p className="py-1">
+                {book.title} – <i>{book.author}</i>
+              </p>
+            )}
+          </li>
+        ))}
       </ul>
     </Accordion>
   );

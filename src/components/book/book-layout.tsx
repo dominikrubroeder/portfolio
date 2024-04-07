@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import Divider from '@/components/ui/divider';
 import Image from 'next/image';
+import Blockquote from '@/components/ui/blockquote';
 
 export default function BookLayout({
   title,
@@ -52,9 +53,7 @@ export default function BookLayout({
         />
 
         <div className="mx-auto my-16 grid max-w-screen-sm gap-4 px-4 text-center">
-          <blockquote className="relative mx-auto pl-4 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-theme-contrary">
-            {summaryQuote}
-          </blockquote>
+          <Blockquote>{summaryQuote}</Blockquote>
         </div>
       </section>
 
@@ -88,7 +87,7 @@ export default function BookLayout({
           className="relative mx-auto max-w-screen-sm px-4"
           id="learnings"
         >
-          <h2 className="sticky top-[4.75rem] mb-6 border-b border-gray-5 bg-gray-6 py-2 pb-3">
+          <h2 className="sticky top-[4.75rem] mb-6 border-b border-gray-5 bg-gray-6 py-3">
             <b className="text-theme-contrary">Learnings</b> on <i>{title}</i>
           </h2>
 
@@ -96,7 +95,7 @@ export default function BookLayout({
         </section>
 
         <section className="mx-auto max-w-screen-sm px-4" id="outcome">
-          <h2 className="sticky top-[4.75rem] mb-6 border-b border-gray-5 bg-gray-6 py-2 pb-3">
+          <h2 className="sticky top-[4.75rem] mb-6 border-b border-gray-5 bg-gray-6 py-3">
             <b className="text-theme-contrary">Outcome</b> on <i>{title}</i>
           </h2>
 
