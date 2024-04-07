@@ -3,15 +3,15 @@
 import { useState } from 'react';
 
 export default function Toggle({
-  onClick,
   label,
   className,
-  enabled
+  enabled,
+  onClick
 }: {
-  onClick: () => void;
   label?: string;
   className?: string;
   enabled?: boolean;
+  onClick?: () => void;
 }) {
   const [isEnabled, setIsEnabled] = useState(enabled);
   const classes = className
