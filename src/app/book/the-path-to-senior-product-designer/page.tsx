@@ -69,7 +69,7 @@ export default function ThePathToSeniorProductDesignerPage() {
             <b className="mr-1 text-theme-contrary">
               Focus on the business impact of design
             </b>
-            in one of the last sections of this book. In it, Artiom Dashinksy
+            is one of the last sections of this book. In it, Artiom Dashinksy
             writes:
           </p>
 
