@@ -6,7 +6,6 @@ import ControlBar from '@/components/layout/navigation/control-bar/control-bar';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import UxEffectsButton from '@/components/ui/button/ux-effects-button';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 
 const sections = [
@@ -62,7 +61,7 @@ export default function HomeHeroSection() {
           <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
             <Link
               href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-              className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4"
+              className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition group-hover:bg-gray-4"
               title="Write email to dominik.rubroeder@icloud.com"
               aria-label="Write email to dominik.rubroeder@icloud.com"
             >
@@ -70,11 +69,8 @@ export default function HomeHeroSection() {
             </Link>
             Dominik Rubröder
           </div>
-
-          <UxEffectsButton />
-
+          <span className="pt-12">UX Engineer</span>
           <span className="pt-12">@</span>
-
           <Link
             href="https://www.mediawave.de/"
             className="group relative block cursor-pointer pt-12 transition hover:text-theme-contrary"
@@ -82,7 +78,7 @@ export default function HomeHeroSection() {
             aria-label="Go to external mediawave commerce GmbH website"
             target="_blank"
           >
-            <div className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 group-hover:visible group-hover:-translate-y-10 md:invisible md:-translate-y-4">
+            <div className="absolute bottom-0 left-1/2 flex size-12 -translate-x-1/2 -translate-y-10 items-center justify-center rounded-full bg-gray-5 transition group-hover:bg-gray-4">
               <ArrowRightIcon className="size-5 -rotate-45 text-theme-contrary" />
             </div>
             mediawave
