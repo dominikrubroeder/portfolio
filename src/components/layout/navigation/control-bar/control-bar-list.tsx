@@ -31,7 +31,7 @@ export default function ControlBarList({
         mobileMenu === 'invisible'
           ? 'invisible -translate-y-4'
           : 'visible translate-y-0'
-      } no-scrollbar md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[70svw] md:overflow-x-auto md:rounded-full lg:max-w-none`}
+      } no-scrollbar md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[80svw] md:overflow-x-auto md:rounded-full lg:max-w-none`}
     >
       {sections.map((section) => (
         <Link

@@ -69,7 +69,7 @@ export default function ThePathToSeniorProductDesignerPage() {
             <b className="mr-1 text-theme-contrary">
               Focus on the business impact of design
             </b>
-            in one of the last sections of this book. In it, Artiom Dashinksy
+            is one of the last sections of this book. In it, Artiom Dashinksy
             writes:
           </p>
 
@@ -85,11 +85,11 @@ export default function ThePathToSeniorProductDesignerPage() {
           </Blockquote>
 
           <p>
-            — Thanks Artiom, this just underlines my already-in-view perception
-            of how important the business (objectives) is for design decisions,
-            how the business drives the user interface, it surrounding topics
-            and thinking outside the &apos;visual appearance&apos; part of
-            design work.
+            — Thanks Artiom, this just underlines my pre-existing perception of
+            how important the business (objectives) is for design decisions, how
+            the business drives the user interface, it surrounding topics and
+            thinking outside the &apos;visual appearance&apos; part of design
+            work.
           </p>
         </div>
       }
