@@ -11,6 +11,7 @@ export default function Tool({
   return (
     <SliderItem
       sliderItem={tool}
+      type="Tool"
       showActions
       isFirstItemInList={isFirstItemInList}
     />

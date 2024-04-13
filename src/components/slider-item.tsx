@@ -1,16 +1,22 @@
 import { Social, Technology, Tool } from '@/interfaces';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
-import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowLongRightIcon,
+  ArrowUpRightIcon
+} from '@heroicons/react/24/outline';
 import Brand from '@/components/ui/brand';
 import type { Brand as BrandType } from '@/types';
+import { cn } from '@/utils';
 
 export default function SliderItem({
   sliderItem,
+  type,
   showActions,
   isFirstItemInList
 }: {
   sliderItem: Tool | Technology | Social;
+  type: 'Tool' | 'Technology' | 'Social';
   showActions?: boolean;
   isFirstItemInList?: boolean;
 }) {
@@ -44,13 +50,21 @@ export default function SliderItem({
         {'keyword' in sliderItem ? sliderItem.keyword : sliderItem.badge}
       </div>
 
-      <div className="grid h-20 content-start gap-2">
+      <div
+        className={cn(
+          'grid content-start gap-2',
+          (type === 'Tool' || type === 'Technology') && 'h-20'
+        )}
+      >
         <Link
           href={sliderItem.website}
-          className="mx-auto font-bold text-theme-contrary"
+          className="group mx-auto flex items-center gap-2 font-bold text-theme-contrary"
           target="_blank"
         >
           <h2>{sliderItem.title}</h2>
+          {type === 'Social' && (
+            <ArrowUpRightIcon className="size-5 shrink-0 text-gray transition group-hover:text-theme-contrary" />
+          )}
         </Link>
 
         {'description' in sliderItem && (

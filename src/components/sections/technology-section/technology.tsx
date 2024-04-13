@@ -11,6 +11,7 @@ export default function Technology({
   return (
     <SliderItem
       sliderItem={technology}
+      type="Technology"
       showActions
       isFirstItemInList={isFirstItemInList}
     />
