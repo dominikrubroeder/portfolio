@@ -2,10 +2,14 @@ import HistoryEntry from '@/components/sections/history-section/history-entry';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import Section from '@/components/sections/section';
 
 export default function Index() {
   return (
-    <section className="mx-auto grid max-w-screen-sm grid-cols-[auto_1fr] gap-4 px-4 md:pl-16">
+    <Section
+      id="history"
+      className="mx-auto grid max-w-screen-sm grid-cols-[auto_1fr] gap-4 px-4 md:pl-28"
+    >
       <div className="h-full w-1 shrink-0 rounded-full bg-accent"></div>
 
       <div className="grid gap-12">
@@ -139,6 +143,6 @@ export default function Index() {
           Kickoff
         </HistoryEntry>
       </div>
-    </section>
+    </Section>
   );
 }
