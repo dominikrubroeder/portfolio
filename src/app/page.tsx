@@ -6,7 +6,6 @@ import ProjectSection from '@/components/sections/project-section';
 import ToolSection from '@/components/sections/tool-section';
 import TechnologySection from '@/components/sections/technology-section';
 import SocialSection from '@/components/sections/social-section';
-import WorkedForSection from '@/components/sections/worked-for-section/worked-for-section';
 
 export default function HomePage() {
   return (
@@ -16,8 +15,6 @@ export default function HomePage() {
       </Suspense>
 
       <IntroductionSection />
-
-      <WorkedForSection />
 
       <ProjectSection />
 
