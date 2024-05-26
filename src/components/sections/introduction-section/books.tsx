@@ -1,4 +1,3 @@
-import Accordion from '@/components/ui/accordion/accordion';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
@@ -22,6 +21,11 @@ const books: { title: string; author: string; href: string | undefined }[] = [
     title: 'The Path to Senior Product Designer',
     author: 'Artiom Dashinsky',
     href: '/book/the-path-to-senior-product-designer'
+  },
+  {
+    title: 'Articulating Design Decisions',
+    author: 'Tom Greever',
+    href: undefined
   },
   {
     title: 'Atomic Design',
@@ -52,32 +56,26 @@ const books: { title: string; author: string; href: string | undefined }[] = [
 
 export default function Books() {
   return (
-    <Accordion title="Books">
-      <h3 className="font-bold text-theme-contrary">Book recommendations</h3>
-
-      <br />
-
-      <ul className="mb-5 grid list-disc gap-1 pl-8 leading-relaxed md:gap-0">
-        {books.map((book) => (
-          <li key={book.title}>
-            {book.href ? (
-              <Link
-                href={book.href}
-                className="flex items-start justify-between gap-4 rounded-xl px-0 py-1 transition-all hover:bg-gray-5 hover:px-2 md:items-center"
-              >
-                <p>
-                  {book.title} – <i>{book.author}</i>
-                </p>
-                <ArrowRightIcon className="mt-1.5 size-4 shrink-0 md:mt-0" />
-              </Link>
-            ) : (
-              <p className="py-1">
+    <ul className="mb-5 grid list-disc gap-1 pl-6 leading-relaxed md:gap-0">
+      {books.map((book) => (
+        <li key={book.title}>
+          {book.href ? (
+            <Link
+              href={book.href}
+              className="flex items-start justify-between gap-4 rounded-xl px-0 py-1 transition-all hover:bg-gray-5 hover:px-2 md:items-center"
+            >
+              <p>
                 {book.title} – <i>{book.author}</i>
               </p>
-            )}
-          </li>
-        ))}
-      </ul>
-    </Accordion>
+              <ArrowRightIcon className="mt-1.5 size-4 shrink-0 md:mt-0" />
+            </Link>
+          ) : (
+            <p className="py-1">
+              {book.title} – <i>{book.author}</i>
+            </p>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }
