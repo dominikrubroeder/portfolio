@@ -1,4 +1,4 @@
-import ControlBar from '@/components/layout/navigation/control-bar/control-bar';
+import ControlBar from '@/components/navigation/control-bar/control-bar';
 import { redirect } from 'next/navigation';
 import { fetchTool } from '@/lib/tools';
 

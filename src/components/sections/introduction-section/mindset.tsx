@@ -1,9 +1,7 @@
-import Accordion from '@/components/ui/accordion/accordion';
-
 export default function Mindset() {
   return (
-    <Accordion title="Mindset" restrictHeight>
-      <h3 className="font-bold text-theme-contrary">I like</h3>
+    <div>
+      <h3>I like</h3>
 
       <br />
 
@@ -12,7 +10,11 @@ export default function Mindset() {
           <b className="text-theme-contrary">Designing</b> – in code, in Figma
         </li>
         <li>
-          <b className="text-theme-contrary">Engineering, Coding</b> – by design
+          <b className="text-theme-contrary">Coding</b> – by design
+        </li>
+        <li>
+          <b className="text-theme-contrary">Using Psychology </b>
+          to design and build better user interfaces
         </li>
         <li>Bringing an idea from paper to production</li>
         <li>Refining a product/feature to specific needs</li>
@@ -23,9 +25,7 @@ export default function Mindset() {
         <li>Writing documentation</li>
       </ul>
 
-      <h3 className="font-bold text-theme-contrary">
-        Training, Training, Training and fun
-      </h3>
+      <h3>Training, Training, Training and fun</h3>
 
       <br />
 
@@ -40,7 +40,7 @@ export default function Mindset() {
         <li>Work with heart, mindfulness</li>
       </ul>
 
-      <h3 className="font-bold text-theme-contrary">Pen and Paper</h3>
+      <h3>Pen and Paper</h3>
 
       <br />
 
@@ -52,7 +52,7 @@ export default function Mindset() {
         </li>
       </ul>
 
-      <h3 className="font-bold text-theme-contrary">Notes</h3>
+      <h3>Notes</h3>
 
       <br />
 
@@ -64,6 +64,6 @@ export default function Mindset() {
           if you get stuck in a concept.
         </li>
       </ul>
-    </Accordion>
+    </div>
   );
 }

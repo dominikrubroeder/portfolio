@@ -36,7 +36,7 @@ export default function SecondaryNavigation({
       )}
 
       <div className="mx-auto flex w-full max-w-screen-lg items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-4">
+        <Link href="/public" className="flex items-center gap-4">
           <Avatar width={44} height={44} as="Image" />
           Dominik Rubröder
         </Link>

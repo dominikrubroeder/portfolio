@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    * {
+        @apply disabled:cursor-not-allowed;
+    }
+
+    html {
+        @apply leading-[1.8]
+    }
+
+    hr {
+        @apply border-gray-5
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply text-balance
+    }
+}
+
+@layer components {
+    .interactive {
+        @apply transition cursor-pointer active:scale-95;
+    }
+
+    button:not(:disabled), .button:not(:disabled) {
+        @apply interactive
+    }
+
+    .external-link {
+        @apply text-violet-400
+    }
+}
+
 :root {
     --color-accent-50: 248 245 255;
     --color-accent-100: 240 235 254;
@@ -140,32 +172,4 @@ a {
 .hero {
     min-height: calc(100vh - 5rem);
     min-height: calc(100svh - 5rem);
-}
-
-@layer base {
-    * {
-        @apply disabled:cursor-not-allowed;
-    }
-
-    html {
-        @apply leading-[1.8]
-    }
-
-    hr {
-        @apply border-gray-5
-    }
-}
-
-@layer components {
-    .interactive {
-        @apply transition cursor-pointer active:scale-95;
-    }
-
-    button:not(:disabled), .button:not(:disabled) {
-        @apply interactive
-    }
-
-    .external-link {
-        @apply text-violet-400
-    }
 }

@@ -1,56 +1,71 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
-const books: { title: string; author: string; href: string | undefined }[] = [
+const books: {
+  title: string;
+  author: string;
+  href: string | undefined;
+  new: boolean | undefined;
+}[] = [
   {
     title: 'The Design of Everyday Things',
     author: 'Don Norman',
-    href: undefined
+    href: undefined,
+    new: undefined
   },
   {
     title: 'Refactoring UI',
     author: 'Adam Wathan, Steve Schoger',
-    href: undefined
+    href: undefined,
+    new: undefined
   },
   {
     title: 'Practical UI',
     author: 'Adham Dannaway',
-    href: undefined
+    href: undefined,
+    new: undefined
   },
   {
     title: 'The Path to Senior Product Designer',
     author: 'Artiom Dashinsky',
-    href: '/book/the-path-to-senior-product-designer'
+    href: '/book/the-path-to-senior-product-designer',
+    new: true
   },
   {
     title: 'Articulating Design Decisions',
     author: 'Tom Greever',
-    href: undefined
+    href: undefined,
+    new: undefined
   },
   {
     title: 'Atomic Design',
     author: 'Brad Frost',
-    href: undefined
+    href: undefined,
+    new: undefined
   },
   {
     title: 'Laws of UX',
     author: 'Jon Yablonski',
-    href: undefined
+    href: undefined,
+    new: undefined
   },
   {
     title: 'User Friendly',
     author: 'Cliff Kuang with Robert Fabricant',
-    href: undefined
+    href: undefined,
+    new: undefined
   },
   {
     title: 'Neurowebdesign',
     author: 'Jonas Reggelin',
-    href: undefined
+    href: undefined,
+    new: undefined
   },
   {
     title: 'The Creative Act: A Way of Being',
     author: 'Rick Rubin',
-    href: undefined
+    href: undefined,
+    new: undefined
   }
 ];
 
@@ -67,7 +82,9 @@ export default function Books() {
               <p>
                 {book.title} – <i>{book.author}</i>
               </p>
-              <ArrowRightIcon className="mt-1.5 size-4 shrink-0 md:mt-0" />
+              <div className="flex items-center gap-2">
+                <ArrowRightIcon className="mt-1.5 size-4 shrink-0 md:mt-0" />
+              </div>
             </Link>
           ) : (
             <p className="py-1">

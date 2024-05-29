@@ -4,77 +4,52 @@ import HeyChatGptUxEngineer from '@/components/sections/introduction-section/hey
 import DesignEngineerVsUxEngineer from '@/components/sections/introduction-section/design-engineer-vs-ux-engineer';
 import React from 'react';
 import Books from '@/components/sections/introduction-section/books';
+import Mindset from '@/components/sections/introduction-section/mindset';
+import Section from '@/components/sections/introduction-section/section';
+import Introduction from '@/components/sections/introduction-section/introduction';
 
 export default function IntroductionSection() {
   return (
-    <section className="px-4 py-12 pt-28 md:pt-32" id="introduction">
-      <div>
-        <h2 className="sticky top-0 mx-auto w-full max-w-screen-sm border-b border-b-gray-5 bg-gray-6 py-3 md:hidden">
-          Introduction
-        </h2>
+    <section
+      className="grid gap-16 px-4 py-12 pt-28 md:pt-32"
+      id="introduction"
+    >
+      <section className="mx-auto mb-16 w-full max-w-screen-sm">
+        <div>
+          <h2 className="text-7xl font-bold text-theme-contrary sm:text-8xl">
+            Team Frontend.
+          </h2>
 
-        <br />
-
-        <div className="grid gap-4">
-          <p className="mx-auto w-full max-w-screen-sm font-bold text-theme-contrary">
-            My work is committed to the frontend.
+          <p className="max-w-screen-sm">
+            <span className="mx-1 text-6xl font-bold text-violet-400 sm:text-6xl">
+              UX and UI with passion
+              <br /> Love for supportive animations and smooth transitions.
+            </span>
           </p>
 
-          <p className="mx-auto w-full max-w-screen-sm">
-            I am a Designer and a UX Engineer, working for good user interfaces
-            that transport emotion and does care about the business impact of
-            design, and the product. I want the user to enjoy their actions,
-            feeling pleasent and delightful while scrolling through the page.
-          </p>
+          <hr className="my-4" />
 
-          <p className="mx-auto w-full max-w-screen-sm">
-            With smooth animations and transitions that support user behaviour
-            and provide guidance, the application should feel interactive, yet
-            stable. Supporting the user to achieve their goals and intensions on
-            the side.
-          </p>
-
-          <p className="mx-auto mb-16 w-full max-w-screen-sm">
-            I think that when the idea and the vision is clear, so can the
-            product be, therefore fullfilling the business needs of the
-            application.
-          </p>
+          <p>Designed with code in mind – Coded, by design</p>
         </div>
-      </div>
+      </section>
 
-      <div>
-        <h2 className="sticky top-0 mx-auto max-w-screen-sm border-b border-b-gray-5 bg-gray-6 py-3 lg:top-20">
-          Books
-        </h2>
+      <Section headline="Introduction" showHeadlineMobileOnly>
+        <Introduction />
+      </Section>
 
-        <br />
+      <Section headline="Mindset">
+        <Mindset />
+      </Section>
 
-        <div className="mx-auto mb-16 max-w-screen-sm py-4">
-          <Books />
-        </div>
-      </div>
+      <Section headline="Books">
+        <Books />
+      </Section>
 
-      <div>
-        <h2 className="sticky top-0 mx-auto max-w-screen-sm border-b border-b-gray-5 bg-gray-6 py-3 lg:top-20">
-          Blog
-        </h2>
+      <Section headline="Blog">
+        <div>Blog here</div>
+      </Section>
 
-        <br />
-
-        <p className="mx-auto mb-16 max-w-screen-sm py-4">Blog articles here</p>
-      </div>
-
-      <div>
-        <h2 className="sticky top-0 mx-auto max-w-screen-sm border-b border-b-gray-5 bg-gray-6 py-3 lg:top-20">
-          Mindset
-        </h2>
-
-        <br />
-
-        <p className="mx-auto mb-16 max-w-screen-sm py-4">Mindset here</p>
-      </div>
-
-      <div className="mx-auto max-w-2xl" id="accordion-group">
+      <div className="mx-auto w-full max-w-screen-sm" id="accordion-group">
         <WhatIsAUxEngineer />
         <HeyChatGptUxDesigner />
         <HeyChatGptUxEngineer />

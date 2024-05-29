@@ -3,7 +3,7 @@ import type {
   ControlBarAction as ControlBarActionType,
   ControlBarVisibility
 } from '@/types';
-import ControlBarAction from '@/components/layout/navigation/control-bar/control-bar-action';
+import ControlBarAction from '@/components/navigation/control-bar/control-bar-action';
 
 export default function ControlBarActionRight({
   controlBar,

@@ -2,11 +2,11 @@
 
 import { useIsInView } from '@/hooks/useIsInView';
 import { useRef } from 'react';
-import ControlBar from '@/components/layout/navigation/control-bar/control-bar';
+import ControlBar from '@/components/navigation/control-bar/control-bar';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import { useScrollIntoView } from '@/hooks/useScrollIntoView';
+import Avatar from '@/components/ui/avatar';
 
 const sections = [
   { id: 'introduction', label: 'Introduction', icon: 'ArrowRightCircleIcon' },
@@ -19,45 +19,17 @@ const sections = [
 export default function HomeHeroSection() {
   const ref = useRef(null);
   const isInView = useIsInView(ref);
-  const { scrollIntoView } = useScrollIntoView();
 
   return (
     <>
-      <section className="hero flex flex-col justify-center overflow-hidden md:flex-row md:items-center">
-        <div className="max-w-max pb-8 pt-4">
-          <div className="px-4">
-            <h2 className="text-7xl font-bold text-theme-contrary sm:text-8xl">
-              Team Frontend.
-            </h2>
-
-            <p className="max-w-screen-sm">
-              <span className="mx-1 text-6xl font-bold text-violet-400 sm:text-6xl">
-                UX and UI with passion
-                <br /> Love for supportive animations and smooth transitions.
-              </span>
-            </p>
-
-            <hr className="my-4" />
-
-            <p>
-              Designed with code in mind – Coded, by design
-              <button
-                className="ml-1.5 inline-block text-accent"
-                onClick={() =>
-                  scrollIntoView('introduction', { block: 'start' })
-                }
-              >
-                More
-              </button>
-            </p>
-          </div>
-        </div>
-
+      <section className="hero flex items-center justify-center">
         <h1
           ref={ref}
-          className="mx-auto mt-6 flex gap-1 md:absolute md:bottom-24 md:mt-0"
+          className="mx-auto mt-6 flex gap-1"
           aria-label="Dominik Rubröder, UX engineer at mediawave commerce GmbH"
         >
+          <Avatar width={44} height={44} as="Image" />
+
           <div className="group relative cursor-pointer pt-12 transition hover:text-theme-contrary">
             <Link
               href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
@@ -69,7 +41,9 @@ export default function HomeHeroSection() {
             </Link>
             Dominik Rubröder
           </div>
+
           <span className="pt-12">UX Engineer</span>
+
           <span className="pt-12">@</span>
           <Link
             href="https://www.mediawave.de/"

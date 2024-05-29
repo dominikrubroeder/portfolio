@@ -11,8 +11,6 @@ import { ArrowDownIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 export default function HomePage() {
   return (
     <>
-      <section></section>
-
       <Suspense fallback={<HomeHeroSectionLoading />}>
         <HomeHeroSection />
       </Suspense>

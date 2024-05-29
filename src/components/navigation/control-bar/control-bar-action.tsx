@@ -38,7 +38,7 @@ export default function ControlBarAction({ type }: { type: ControlBarAction }) {
     );
 
   return (
-    <Link href="/" className="button flex items-center gap-4">
+    <Link href="/public" className="button flex items-center gap-4">
       <Image
         src="/avatar.jpg"
         alt="Dominik Rubröder Avatar"
