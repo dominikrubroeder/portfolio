@@ -7,6 +7,7 @@ import Books from '@/components/sections/introduction-section/books';
 import Mindset from '@/components/sections/introduction-section/mindset';
 import Section from '@/components/sections/introduction-section/section';
 import Introduction from '@/components/sections/introduction-section/introduction';
+import ContactSection from '@/components/sections/contact-section';
 
 export default function IntroductionSection() {
   return (
@@ -37,16 +38,14 @@ export default function IntroductionSection() {
         <Introduction />
       </Section>
 
+      <ContactSection />
+
       <Section headline="Mindset">
         <Mindset />
       </Section>
 
       <Section headline="Books">
         <Books />
-      </Section>
-
-      <Section headline="Blog">
-        <div>Blog here</div>
       </Section>
 
       <div className="mx-auto w-full max-w-screen-sm" id="accordion-group">

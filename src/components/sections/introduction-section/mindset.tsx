@@ -7,7 +7,7 @@ export default function Mindset() {
 
       <ul className="mb-5 list-disc pl-8">
         <li>
-          <b className="text-theme-contrary">Designing</b> – in code, in Figma
+          <b className="text-theme-contrary">Designing</b> – in code
         </li>
         <li>
           <b className="text-theme-contrary">Coding</b> – by design
@@ -16,13 +16,13 @@ export default function Mindset() {
           <b className="text-theme-contrary">Using Psychology </b>
           to design and build better user interfaces
         </li>
+        <li>Writing documentation</li>
         <li>Bringing an idea from paper to production</li>
         <li>Refining a product/feature to specific needs</li>
         <li>
           Getting to know a product/brand/concept in order to know what it is
           designed to be and designed to fulfill
         </li>
-        <li>Writing documentation</li>
       </ul>
 
       <h3>Training, Training, Training and fun</h3>
