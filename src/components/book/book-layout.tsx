@@ -71,7 +71,7 @@ export default function BookLayout({
             <span>
               reviewed at <i>{released}</i>
             </span>
-            <span className="rounded-full bg-accent-100 p-2 text-xs text-accent">
+            <span className="rounded-full bg-accent p-2 text-xs text-white">
               Recommended read
             </span>
           </p>

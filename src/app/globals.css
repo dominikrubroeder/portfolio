@@ -3,6 +3,90 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        --color-accent: 147 113 249;
+
+        --color-theme-base: 255 255 255;
+        --color-theme-contrary: 48 48 48;
+
+        --color-apple-red: 255 59 48;
+        --color-apple-orange: 255 149 0;
+        --color-apple-yellow: 255 204 0;
+        --color-apple-green: 40 205 65;
+        --color-apple-mint: 0 199 190;
+        --color-apple-teal: 89 173 196;
+        --color-apple-cyan: 85 190 240;
+        --color-apple-blue: 0 122 255;
+        --color-apple-indigo: 88 86 214;
+        --color-apple-purple: 175 82 222;
+        --color-apple-pink: 255 45 85;
+        --color-apple-brown: 162 132 94;
+        --color-apple-gray: 142 142 147;
+        --color-apple-gray-2: 174 174 178;
+        --color-apple-gray-3: 199 199 204;
+        --color-apple-gray-4: 209 209 214;
+        --color-apple-gray-5: 229 229 234;
+        --color-apple-gray-6: 242 242 247;
+    }
+
+    .dark,
+    [data-theme='dark'] {
+        --color-theme-base: 0 0 0;
+        --color-theme-contrary: 255 255 255;
+        --color-apple-red: 255 69 58;
+        --color-apple-orange: 255 159 10;
+        --color-apple-yellow: 255 214 10;
+        --color-apple-green: 50 215 75;
+        --color-apple-mint: 102 212 207;
+        --color-apple-teal: 106 196 220;
+        --color-apple-cyan: 90 200 245;
+        --color-apple-blue: 10 132 255;
+        --color-apple-indigo: 94 92 230;
+        --color-apple-purple: 191 90 242;
+        --color-apple-pink: 255 55 95;
+        --color-apple-brown: 172 142 104;
+        --color-apple-gray: 152 152 157;
+        --color-apple-gray-2: 99 99 102;
+        --color-apple-gray-3: 72 72 74;
+        --color-apple-gray-4: 58 58 60;
+        --color-apple-gray-5: 44 44 46;
+        --color-apple-gray-6: 28 28 30;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-theme-base: 0 0 0;
+            --color-theme-contrary: 255 255 255;
+            --color-apple-red: 255 69 58;
+            --color-apple-orange: 255 159 10;
+            --color-apple-yellow: 255 214 10;
+            --color-apple-green: 50 215 75;
+            --color-apple-mint: 102 212 207;
+            --color-apple-teal: 106 196 220;
+            --color-apple-cyan: 90 200 245;
+            --color-apple-blue: 10 132 255;
+            --color-apple-indigo: 94 92 230;
+            --color-apple-purple: 191 90 242;
+            --color-apple-pink: 255 55 95;
+            --color-apple-brown: 172 142 104;
+            --color-apple-gray: 152 152 157;
+            --color-apple-gray-2: 99 99 102;
+            --color-apple-gray-3: 72 72 74;
+            --color-apple-gray-4: 58 58 60;
+            --color-apple-gray-5: 44 44 46;
+            --color-apple-gray-6: 28 28 30;
+        }
+
+        html {
+            color-scheme: dark;
+        }
+
+        body {
+            color: white;
+            background: black;
+        }
+    }
+
     * {
         @apply disabled:cursor-not-allowed border-gray-5;
     }
@@ -34,95 +118,7 @@
     }
 
     .external-link {
-        @apply text-violet-400
-    }
-}
-
-:root {
-    --color-accent-300: 203 187 252;
-    --color-accent-400: 185 162 251;
-    --color-accent: 147 113 249;
-    --color-accent-600: 147 113 249;
-    --color-accent-700: 129 89 248;
-
-    --color-theme-base: 255 255 255;
-    --color-theme-contrary: 48 48 48;
-
-    --color-apple-red: 255 59 48;
-    --color-apple-orange: 255 149 0;
-    --color-apple-yellow: 255 204 0;
-    --color-apple-green: 40 205 65;
-    --color-apple-mint: 0 199 190;
-    --color-apple-teal: 89 173 196;
-    --color-apple-cyan: 85 190 240;
-    --color-apple-blue: 0 122 255;
-    --color-apple-indigo: 88 86 214;
-    --color-apple-purple: 175 82 222;
-    --color-apple-pink: 255 45 85;
-    --color-apple-brown: 162 132 94;
-    --color-apple-gray: 142 142 147;
-    --color-apple-gray-2: 174 174 178;
-    --color-apple-gray-3: 199 199 204;
-    --color-apple-gray-4: 209 209 214;
-    --color-apple-gray-5: 229 229 234;
-    --color-apple-gray-6: 242 242 247;
-}
-
-.dark,
-[data-theme='dark'] {
-    --color-theme-base: 0 0 0;
-    --color-theme-contrary: 255 255 255;
-    --color-apple-red: 255 69 58;
-    --color-apple-orange: 255 159 10;
-    --color-apple-yellow: 255 214 10;
-    --color-apple-green: 50 215 75;
-    --color-apple-mint: 102 212 207;
-    --color-apple-teal: 106 196 220;
-    --color-apple-cyan: 90 200 245;
-    --color-apple-blue: 10 132 255;
-    --color-apple-indigo: 94 92 230;
-    --color-apple-purple: 191 90 242;
-    --color-apple-pink: 255 55 95;
-    --color-apple-brown: 172 142 104;
-    --color-apple-gray: 152 152 157;
-    --color-apple-gray-2: 99 99 102;
-    --color-apple-gray-3: 72 72 74;
-    --color-apple-gray-4: 58 58 60;
-    --color-apple-gray-5: 44 44 46;
-    --color-apple-gray-6: 28 28 30;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-theme-base: 0 0 0;
-        --color-theme-contrary: 255 255 255;
-        --color-apple-red: 255 69 58;
-        --color-apple-orange: 255 159 10;
-        --color-apple-yellow: 255 214 10;
-        --color-apple-green: 50 215 75;
-        --color-apple-mint: 102 212 207;
-        --color-apple-teal: 106 196 220;
-        --color-apple-cyan: 90 200 245;
-        --color-apple-blue: 10 132 255;
-        --color-apple-indigo: 94 92 230;
-        --color-apple-purple: 191 90 242;
-        --color-apple-pink: 255 55 95;
-        --color-apple-brown: 172 142 104;
-        --color-apple-gray: 152 152 157;
-        --color-apple-gray-2: 99 99 102;
-        --color-apple-gray-3: 72 72 74;
-        --color-apple-gray-4: 58 58 60;
-        --color-apple-gray-5: 44 44 46;
-        --color-apple-gray-6: 28 28 30;
-    }
-
-    html {
-        color-scheme: dark;
-    }
-
-    body {
-        color: white;
-        background: black;
+        @apply text-accent
     }
 }
 

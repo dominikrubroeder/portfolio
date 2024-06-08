@@ -8,12 +8,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        'accent-300': 'rgb(var(--color-accent-300) / <alpha-value>)',
-        'accent-400': 'rgb(var(--color-accent-400) / <alpha-value>)',
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
-        'accent-600': 'rgb(var(--color-accent-600) / <alpha-value>)',
-        'accent-700': 'rgb(var(--color-accent-700) / <alpha-value>)',
-
         red: 'rgb(var(--color-apple-red) / <alpha-value>)',
         orange: 'rgb(var(--color-apple-orange) / <alpha-value>)',
         yellow: 'rgb(var(--color-apple-yellow) / <alpha-value>)',
@@ -26,14 +21,14 @@ module.exports = {
         purple: 'rgb(var(--color-apple-purple) / <alpha-value>)',
         pink: 'rgb(var(--color-apple-pink) / <alpha-value>)',
         brown: 'rgb(var(--color-apple-brown) / <alpha-value>)',
-
-        gray: 'rgb(var(--color-apple-gray) / <alpha-value>)',
-        'gray-2': 'rgb(var(--color-apple-gray-2) / <alpha-value>)',
-        'gray-3': 'rgb(var(--color-apple-gray-3) / <alpha-value>)',
-        'gray-4': 'rgb(var(--color-apple-gray-4) / <alpha-value>)',
-        'gray-5': 'rgb(var(--color-apple-gray-5) / <alpha-value>)',
-        'gray-6': 'rgb(var(--color-apple-gray-6) / <alpha-value>)',
-
+        gray: {
+          DEFAULT: 'rgb(var(--color-apple-gray) / <alpha-value>)',
+          '2': 'rgb(var(--color-apple-gray-2) / <alpha-value>)',
+          '3': 'rgb(var(--color-apple-gray-3) / <alpha-value>)',
+          '4': 'rgb(var(--color-apple-gray-4) / <alpha-value>)',
+          '5': 'rgb(var(--color-apple-gray-5) / <alpha-value>)',
+          '6': 'rgb(var(--color-apple-gray-6) / <alpha-value>)'
+        },
         theme: {
           base: 'rgb(var(--color-theme-base) / <alpha-value>)',
           contrary: 'rgb(var(--color-theme-contrary) / <alpha-value>)'

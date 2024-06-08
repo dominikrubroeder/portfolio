@@ -12,16 +12,21 @@ import ContactRow from '../contact-row';
 export default function IntroductionSection() {
   return (
     <section className="grid gap-16 px-4 md:pt-32" id="introduction">
-      <Section headline="Introduction" showHeadlineMobileOnly>
+      <Section
+        headline="Introduction"
+        className="mt-12 md:mt-0"
+        arrowLeft
+        showHeadlineMobileOnly
+      >
         <Introduction />
         <ContactRow />
       </Section>
 
-      <Section headline="Mindset">
+      <Section headline="Mindset" arrowLeft id="mindset">
         <Mindset />
       </Section>
 
-      <Section headline="Books">
+      <Section headline="Books" arrowLeft>
         <Books />
       </Section>
 

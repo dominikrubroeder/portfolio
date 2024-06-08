@@ -38,7 +38,7 @@ export default async function TechnologyPage({
       <section className="flex min-h-dvh items-center justify-center">
         <Link
           href={technology.website}
-          className="absolute bottom-24 mx-auto flex gap-1 text-violet-400"
+          className="absolute bottom-24 mx-auto flex gap-1 text-accent"
           target="_blank"
         >
           {technology.website}

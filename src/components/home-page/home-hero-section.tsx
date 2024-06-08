@@ -1,7 +1,4 @@
-'use client';
-
-import { useIsInView } from '@/hooks/useIsInView';
-import React, { useRef } from 'react';
+import React from 'react';
 import ControlBar from '@/components/navigation/control-bar/control-bar';
 
 const sections = [
@@ -13,9 +10,6 @@ const sections = [
 ];
 
 export default function HomeHeroSection() {
-  const ref = useRef(null);
-  const isInView = useIsInView(ref, 0.01);
-
   return (
     <>
       <section className="mx-auto flex w-full max-w-screen-sm items-center justify-center p-4 md:h-[80svh]">
@@ -39,7 +33,7 @@ export default function HomeHeroSection() {
 
       <ControlBar
         sections={sections}
-        collapse={isInView}
+        collapse={false}
         leftControlAction="Avatar"
         rightControlAction="Up"
       />

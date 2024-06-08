@@ -20,7 +20,7 @@ export default function MoreItemsSection({
   return (
     <div>
       <div
-        className="mb-4 mr-4 flex cursor-pointer select-none items-center justify-end gap-4"
+        className="mb-4 mr-4 flex cursor-pointer select-none items-center gap-4"
         onClick={() =>
           setState((prevState) => {
             return { isVisible: !prevState.isVisible };
@@ -44,7 +44,7 @@ export default function MoreItemsSection({
       </div>
 
       {state.isVisible && (
-        <ul className="mx-auto grid max-w-screen-lg animate-fadeUp gap-12">
+        <ul className="grid max-w-screen-md animate-fadeUp gap-12">
           {items.map((item) => {
             if (item.priority === 'low')
               return (

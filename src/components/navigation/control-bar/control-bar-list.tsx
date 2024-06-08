@@ -65,7 +65,7 @@ export default function ControlBarList({
       ))}
 
       <div className="sticky bottom-0 z-10 inline-flex gap-4 overflow-x-auto border-t border-gray-4 bg-gray-5 p-4 pb-3.5 md:hidden">
-        <div className="no-scrollbar flex-1 overflow-x-auto whitespace-nowrap border-r border-r-gray-4 pr-2 text-left">
+        <div className="no-scrollbar mt-2 flex-1 overflow-x-auto whitespace-nowrap border-r border-r-gray-4 pr-2 text-left">
           <b className="mr-1.5 inline-block text-theme-contrary">
             Dominik Rubröder
           </b>
@@ -88,11 +88,11 @@ export default function ControlBarList({
 
           <Link
             href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-            className="group flex size-8 items-center justify-center rounded-full bg-gray-4 transition hover:bg-gray-3"
+            className="group flex size-10 items-center justify-center rounded-full bg-gray-4 transition hover:bg-gray-3"
             title="Mail to Dominik Rubröder"
             aria-label="Write a mail to Dominik Rubröder"
           >
-            <EnvelopeIcon className="size-4 shrink-0 transition group-hover:text-white" />
+            <EnvelopeIcon className="size-5 shrink-0 transition group-hover:text-white" />
           </Link>
         </div>
       </div>

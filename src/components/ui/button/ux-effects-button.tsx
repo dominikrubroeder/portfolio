@@ -6,7 +6,7 @@ export default function UxEffectsButton() {
 
   return (
     <button
-      className="pt-12 text-violet-400"
+      className="pt-12 text-accent"
       title="Toggle UX effects"
       aria-label="Toggle UX effects"
       onClick={() =>
