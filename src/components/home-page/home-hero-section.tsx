@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ControlBar from '@/components/navigation/control-bar/control-bar';
 
 const sections = [
@@ -31,12 +31,14 @@ export default function HomeHeroSection() {
         </div>
       </section>
 
-      <ControlBar
-        sections={sections}
-        collapse={false}
-        leftControlAction="Avatar"
-        rightControlAction="Up"
-      />
+      <Suspense>
+        <ControlBar
+          sections={sections}
+          collapse={false}
+          leftControlAction="Avatar"
+          rightControlAction="Up"
+        />
+      </Suspense>
     </>
   );
 }
