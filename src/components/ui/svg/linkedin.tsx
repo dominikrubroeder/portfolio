@@ -7,13 +7,13 @@ export default function LinkedIn({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultSize, className)}
+      className={cn('text-[#007EBB]', defaultSize, className)}
     >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
         d="M14.2222 127.78H113.778C121.632 127.78 128 121.413 128 113.558V14.0025C128 6.14778 121.632 -0.219727 113.778 -0.219727H14.2222C6.36751 -0.219727 0 6.14778 0 14.0025V113.558C0 121.413 6.36751 127.78 14.2222 127.78Z"
-        fill="#007EBB"
+        className="fill-current"
       />
       <path
         fillRule="evenodd"

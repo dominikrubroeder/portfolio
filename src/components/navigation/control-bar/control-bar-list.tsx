@@ -9,7 +9,7 @@ import type {
 } from '@/types';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import GitHubLink from '@/components/ui/links/github-link';
-import LinkedInLink from '@/components/ui/links/linked-in-link';
+import LinkedinLink from '@/components/ui/links/linkedin-link';
 
 export default function ControlBarList({
   sections,
@@ -37,14 +37,14 @@ export default function ControlBarList({
         <Link
           key={section.id}
           href={`#${section.id}`}
-          className={`relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2 ${
+          className={`interactive relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2 ${
             activeSection === section.id ? '' : 'hover:text-theme-contrary'
           }`}
           onClick={(e) => scrollIntoView(e, section.id)}
         >
           {activeSection === section.id && (
             <motion.span
-              layoutId="bubble"
+              layoutId="page-navigation"
               className="absolute inset-0 z-10 bg-gray-4"
               style={{ borderRadius: 9999 }}
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
@@ -84,7 +84,7 @@ export default function ControlBarList({
         <div className="flex items-center gap-3">
           <GitHubLink />
 
-          <LinkedInLink />
+          <LinkedinLink />
 
           <Link
             href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."

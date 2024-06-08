@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import LinkedIn from '@/components/ui/svg/linkedin';
 
-export default function LinkedInLink() {
+export default function LinkedinLink({ className }: { className?: string }) {
   return (
     <Link
       href="https://www.linkedin.com/in/dominik-rubröder-49a63817b"
@@ -9,7 +9,7 @@ export default function LinkedInLink() {
       title="LinkedIn Dominik Rubröder"
       aria-label="Go to external LinkedIn page from Dominik Rubröder"
     >
-      <LinkedIn className="size-6 shrink-0" />
+      <LinkedIn className={className} />
     </Link>
   );
 }

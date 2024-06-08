@@ -7,7 +7,8 @@ export default function Mindset() {
 
       <ul className="mb-5 list-disc pl-8">
         <li>
-          <b className="text-theme-contrary">Designing</b> – in code
+          <b className="text-theme-contrary">Designing</b> – with care, in code,
+          with joy
         </li>
         <li>
           <b className="text-theme-contrary">Coding</b> – by design

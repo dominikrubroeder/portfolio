@@ -1,1 +1,1 @@
-export const defaultSize = 'h-8 w-8';
+export const defaultSize = 'size-8';

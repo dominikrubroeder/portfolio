@@ -4,7 +4,7 @@
 
 @layer base {
     * {
-        @apply disabled:cursor-not-allowed;
+        @apply disabled:cursor-not-allowed border-gray-5;
     }
 
     html {
@@ -17,6 +17,10 @@
 
     h1, h2, h3, h4, h5, h6 {
         @apply text-balance
+    }
+
+    hr {
+        @apply border-gray-5
     }
 }
 
@@ -35,17 +39,11 @@
 }
 
 :root {
-    --color-accent-50: 248 245 255;
-    --color-accent-100: 240 235 254;
-    --color-accent-200: 222 211 253;
     --color-accent-300: 203 187 252;
     --color-accent-400: 185 162 251;
-    --color-accent: 167 139 250;
+    --color-accent: 147 113 249;
     --color-accent-600: 147 113 249;
     --color-accent-700: 129 89 248;
-    --color-accent-800: 124 58 237;
-    --color-accent-900: 124 58 237;
-    --color-accent-950: 124 58 237;
 
     --color-theme-base: 255 255 255;
     --color-theme-contrary: 48 48 48;

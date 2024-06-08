@@ -7,38 +7,15 @@ import Books from '@/components/sections/introduction-section/books';
 import Mindset from '@/components/sections/introduction-section/mindset';
 import Section from '@/components/sections/introduction-section/section';
 import Introduction from '@/components/sections/introduction-section/introduction';
-import ContactSection from '@/components/sections/contact-section';
+import ContactRow from '../contact-row';
 
 export default function IntroductionSection() {
   return (
-    <section
-      className="grid gap-16 px-4 py-12 pt-28 md:pt-32"
-      id="introduction"
-    >
-      <section className="mx-auto mb-16 w-full max-w-screen-sm">
-        <div>
-          <h2 className="text-7xl font-bold text-theme-contrary sm:text-8xl">
-            Team Frontend.
-          </h2>
-
-          <p className="max-w-screen-sm">
-            <span className="mx-1 text-6xl font-bold text-violet-400 sm:text-6xl">
-              UX and UI with passion
-              <br /> Love for supportive animations and smooth transitions.
-            </span>
-          </p>
-
-          <hr className="my-4" />
-
-          <p>Designed with code in mind – Coded, by design</p>
-        </div>
-      </section>
-
+    <section className="grid gap-16 px-4 md:pt-32" id="introduction">
       <Section headline="Introduction" showHeadlineMobileOnly>
         <Introduction />
+        <ContactRow />
       </Section>
-
-      <ContactSection />
 
       <Section headline="Mindset">
         <Mindset />

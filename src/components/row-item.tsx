@@ -7,7 +7,7 @@ import Brand from '@/components/ui/brand';
 
 export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
   return (
-    <div className="grid gap-4 border-b border-gray-5 py-4 pr-4 sm:flex sm:items-start sm:justify-between md:items-center">
+    <div className="grid gap-4 border-b py-4 pl-2 sm:flex sm:items-start sm:justify-between md:items-center lg:p-6">
       <div className="grid gap-4">
         <Link
           href={rowItem.website}

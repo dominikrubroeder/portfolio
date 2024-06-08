@@ -8,17 +8,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        'accent-50': 'rgb(var(--color-accent-50) / <alpha-value>)',
-        'accent-100': 'rgb(var(--color-accent-100) / <alpha-value>)',
-        'accent-200': 'rgb(var(--color-accent-200) / <alpha-value>)',
         'accent-300': 'rgb(var(--color-accent-300) / <alpha-value>)',
         'accent-400': 'rgb(var(--color-accent-400) / <alpha-value>)',
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
         'accent-600': 'rgb(var(--color-accent-600) / <alpha-value>)',
         'accent-700': 'rgb(var(--color-accent-700) / <alpha-value>)',
-        'accent-800': 'rgb(var(--color-accent-800) / <alpha-value>)',
-        'accent-900': 'rgb(var(--color-accent-900) / <alpha-value>)',
-        'accent-950': 'rgb(var(--color-accent-950) / <alpha-value>)',
 
         red: 'rgb(var(--color-apple-red) / <alpha-value>)',
         orange: 'rgb(var(--color-apple-orange) / <alpha-value>)',
