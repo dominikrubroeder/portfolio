@@ -2,14 +2,18 @@ import ControlBar from '@/components/navigation/control-bar/control-bar';
 import { redirect } from 'next/navigation';
 import ItemHeroSection from '@/components/heros/item-hero-section';
 import Link from 'next/link';
-import { fetchTechnology } from '@/lib/technologies';
+import { technologies } from '@/components/sections/technology-section/data';
+import { formatTitle } from '@/lib/helpers';
 
-export default async function TechnologyPage({
+export default function TechnologyPage({
   params
 }: {
   params: { technology: string };
 }) {
-  const technology = await fetchTechnology(params.technology);
+  const technology = technologies.find(
+    (currentTechnology) =>
+      formatTitle(currentTechnology.title) === formatTitle(params.technology)
+  );
 
   if (technology === null || technology === undefined) redirect('/');
 
