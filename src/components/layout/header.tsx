@@ -11,9 +11,9 @@ export default function Header() {
         <h1>Dominik Rubröder UX Engineer @ mediawave</h1>
       </div>
 
-      <div className="flex items-center gap-2">
-        <GitHubLink className="size-6 text-gray-2 transition hover:text-theme-contrary" />
-        <LinkedinLink className="size-6 text-gray-2 transition hover:text-theme-contrary" />
+      <div className="flex -space-x-2">
+        <GitHubLink className="size-6 text-gray transition group-hover:text-theme-contrary" />
+        <LinkedinLink className="size-6 text-gray transition group-hover:text-[#007EBB]" />
       </div>
     </header>
   );
