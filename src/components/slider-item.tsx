@@ -8,6 +8,7 @@ import {
 import Brand from '@/components/ui/brand';
 import type { Brand as BrandType } from '@/types';
 import { cn } from '@/utils';
+import Button from '@/components/atoms/button';
 
 export default function SliderItem({
   sliderItem,
@@ -82,12 +83,13 @@ export default function SliderItem({
               : 'sm:invisible sm:translate-y-4 sm:opacity-0'
           } grid grid-cols-2 gap-4 transition sm:group-hover:visible sm:group-hover:translate-y-0 sm:group-hover:opacity-100`}
         >
-          <Link
+          <Button
+            priority="secondary"
+            asLink
             href={sliderItem.website}
             target="_blank"
             title={`Go to external ${sliderItem.title} website`}
             aria-label={`Go to external ${sliderItem.title} website`}
-            className="button group flex h-16 items-center justify-center rounded-2xl transition hover:bg-gray-5"
           >
             <ArrowTopRightOnSquareIcon
               className={`${
@@ -96,9 +98,10 @@ export default function SliderItem({
                   : 'group-hover:text-theme-contrary'
               } size-5 transition`}
             />
-          </Link>
+          </Button>
 
-          <button
+          <Button
+            priority="secondary"
             title={`Projects with ${sliderItem.title}`}
             aria-label={`Projects with ${sliderItem.title}`}
             className="relative flex h-16 items-center justify-center rounded-2xl hover:bg-gray-5"
@@ -112,7 +115,7 @@ export default function SliderItem({
             >
               Soon
             </span>
-          </button>
+          </Button>
         </div>
       )}
     </div>
