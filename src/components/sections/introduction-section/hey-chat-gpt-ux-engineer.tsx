@@ -1,4 +1,4 @@
-import Accordion from '@/components/ui/accordion/accordion';
+import Accordion from '@/components/atoms/accordion';
 import Label from '@/components/ui/label';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';

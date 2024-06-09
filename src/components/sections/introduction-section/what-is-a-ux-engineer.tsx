@@ -1,6 +1,6 @@
-import Accordion from '@/components/ui/accordion/accordion';
+import Accordion from '@/components/atoms/accordion';
 import Link from 'next/link';
-import AccordionMini from '@/components/ui/accordion/accordion-mini';
+import AccordionMini from '@/components/atoms/accordion-mini';
 import Divider from '@/components/ui/divider';
 import Image from 'next/image';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';

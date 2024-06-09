@@ -26,7 +26,7 @@ export default function Button({
   onClick?: () => void;
 }) {
   const classNames = cn(
-    'relative flex items-center justify-center gap-2 px-4 py-3 transition-all',
+    'interactive relative flex items-center justify-center gap-2 px-4 py-3 transition-all',
     priority === 'primary' &&
       'rounded-2xl bg-accent text-white hover:rounded-xl hover:bg-violet-500',
     priority === 'secondary' &&
