@@ -2,10 +2,10 @@
 
 import React from 'react';
 import type { ControlBar as IControlBar } from '@/interfaces';
-import ControlBarList from '@/components/layout/navigation/control-bar/control-bar-list';
-import ControlBarMobileTrigger from '@/components/layout/navigation/control-bar/control-bar-mobile-trigger';
-import ControlBarActionLeft from '@/components/layout/navigation/control-bar/control-bar-action-left';
-import ControlBarActionRight from '@/components/layout/navigation/control-bar/control-bar-action-right';
+import ControlBarList from '@/components/navigation/control-bar/control-bar-list';
+import ControlBarMobileTrigger from '@/components/navigation/control-bar/control-bar-mobile-trigger';
+import ControlBarActionLeft from '@/components/navigation/control-bar/control-bar-action-left';
+import ControlBarActionRight from '@/components/navigation/control-bar/control-bar-action-right';
 import { useControlBar } from '@/hooks/useControlBar';
 
 export default function ControlBar({

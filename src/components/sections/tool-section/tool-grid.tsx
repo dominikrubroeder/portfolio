@@ -1,17 +1,12 @@
-import { fetchTools } from '@/lib/tools';
 import Link from 'next/link';
 import Brand from '@/components/ui/brand';
 import type { Brand as BrandType } from '@/types';
+import { tools } from '@/components/sections/tool-section/data';
 
-export default async function ToolGrid() {
-  const tools = await fetchTools();
-
-  if (tools === null || tools === undefined || tools.length === 0)
-    return <div>No tools listed.</div>;
-
+export default function ToolGrid() {
   return (
     <ul className="grid grid-cols-3 gap-4">
-      {tools.map((tool, index) => {
+      {tools.map((tool) => {
         if (tool.priority === 'high')
           return (
             <li key={tool.title}>

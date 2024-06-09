@@ -29,7 +29,7 @@ export default function Toggle({
 
       <div
         className={`relative flex h-8 w-14 items-center rounded-full px-1 transition ${
-          isEnabled ? 'bg-accent-600' : 'bg-gray-5'
+          isEnabled ? 'bg-accent' : 'bg-gray-5'
         }`}
       >
         <span

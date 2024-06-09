@@ -1,13 +1,8 @@
 import Tool from '@/components/sections/tool-section/tool';
 import MoreItemsSection from '@/components/more-items-section';
-import { fetchTools } from '@/lib/tools';
+import { tools } from '@/components/sections/tool-section/data';
 
-export default async function ToolList() {
-  const tools = await fetchTools();
-
-  if (tools === null || tools === undefined || tools.length === 0)
-    return <div>No tools listed.</div>;
-
+export default function ToolList() {
   return (
     <>
       <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">

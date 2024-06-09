@@ -1,16 +1,18 @@
-import Link from 'next/link';
 import GitHub from '@/components/ui/svg/github';
-import { clsx } from 'clsx';
+import { cn } from '@/utils';
+import Button from '@/components/atoms/button';
 
 export default function GitHubLink({ className }: { className?: string }) {
   return (
-    <Link
+    <Button
+      priority="secondary"
+      asLink
       href="https://github.com/dominikrubroeder"
       target="_blank"
-      title="Go to GitHub | Dominik Rubröder repositories"
-      aria-label="Go to GitHub | Dominik Rubröder repositories"
+      title="Go to GitHub repositories from Dominik Rubröder"
+      aria-label="Go to GitHub repositories from Dominik Rubröder"
     >
-      <GitHub className={clsx(className)} />
-    </Link>
+      <GitHub className={cn(className)} />
+    </Button>
   );
 }

@@ -1,12 +1,7 @@
 import Social from '@/components/sections/social-section/social';
-import { fetchSocials } from '@/lib/socials';
+import { socials } from '@/components/sections/social-section/data';
 
-export default async function SocialList() {
-  const socials = await fetchSocials();
-
-  if (socials === null || socials === undefined || socials.length === 0)
-    return <div>No socials listed.</div>;
-
+export default function SocialList() {
   return (
     <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
       {socials.map((social) => (

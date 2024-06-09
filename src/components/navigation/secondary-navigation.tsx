@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import GitHubLink from '@/components/sections/social-section/github-link';
 import Link from 'next/link';
 import { cn } from '@/utils';
-import LinkedInLink from '@/components/ui/links/linked-in-link';
+import LinkedinLink from '@/components/ui/links/linkedin-link';
 
 export default function SecondaryNavigation({
   sticky,
@@ -43,7 +43,7 @@ export default function SecondaryNavigation({
 
         <div className="flex items-center gap-2">
           <GitHubLink className="size-5 text-gray transition hover:text-theme-contrary" />
-          <LinkedInLink />
+          <LinkedinLink />
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ export type Brand =
   | 'WebStorm'
   | 'Notes'
   | 'GitHub'
-  | 'Inkdrop'
+  | 'Craft'
   | 'GitLab'
   | 'Shopware'
   | 'Storyblok'

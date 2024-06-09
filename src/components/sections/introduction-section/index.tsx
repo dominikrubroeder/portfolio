@@ -1,52 +1,37 @@
-import Mindset from '@/components/sections/introduction-section/mindset';
 import WhatIsAUxEngineer from '@/components/sections/introduction-section/what-is-a-ux-engineer';
-import Books from '@/components/sections/introduction-section/books';
 import HeyChatGptUxDesigner from '@/components/sections/introduction-section/hey-chat-gpt-ux-designer';
 import HeyChatGptUxEngineer from '@/components/sections/introduction-section/hey-chat-gpt-ux-engineer';
 import DesignEngineerVsUxEngineer from '@/components/sections/introduction-section/design-engineer-vs-ux-engineer';
 import React from 'react';
+import Books from '@/components/sections/introduction-section/books';
+import Mindset from '@/components/sections/introduction-section/mindset';
+import Section from '@/components/sections/introduction-section/section';
+import Introduction from '@/components/sections/introduction-section/introduction';
+import ContactRow from '../contact-row';
 
 export default function IntroductionSection() {
   return (
-    <section className="px-4 py-12 pt-28 md:pt-32" id="introduction">
-      <div>
-        <h2 className="sticky top-0 mx-auto max-w-screen-sm border-b border-b-gray-5 bg-gray-6 p-3 md:hidden">
-          Introduction
-        </h2>
+    <section className="grid gap-16 px-4 md:pt-32" id="introduction">
+      <Section
+        headline="Introduction"
+        className="mt-12 md:mt-0"
+        arrowLeft
+        showHeadlineMobileOnly
+      >
+        <Introduction />
+        <ContactRow />
+      </Section>
 
-        <br />
-
-        <p className="mx-auto mb-16 max-w-screen-sm px-4">
-          <b className="text-theme-contrary">My work is</b>, I am as much a
-          Designer as an UX Engineer, like a waiter who is actually a chef in
-          the kitchen, free in delivering on both lines – or on both endpoints,
-          but
-          <span className="ml-1.5 font-bold text-theme-contrary">
-            committed to the frontend
-          </span>
-          .
-          <br />
-          <br />
-          Combining the best of both worlds into the knowledge and precision of
-          a refined product UI that is enjoyable to use – the world of UX. I
-          love supportive animations and transitions, designing with
-          <b className="mx-1.5 text-theme-contrary">UI-shows-business</b>
-          focus and code in mind; developing, engineering by design.
-          <br />
-          <br />
-          <b className="text-theme-contrary">
-            When the idea and the vision is clear
-          </b>
-          , you can follow them from the first thought over designing,
-          reiterating, engineering, until it is the one final, refined product
-          that it needs to be.
-        </p>
-      </div>
-
-      <div className="mx-auto max-w-2xl" id="accordion-group">
-        <WhatIsAUxEngineer />
+      <Section headline="Mindset" arrowLeft id="mindset">
         <Mindset />
+      </Section>
+
+      <Section headline="Books" arrowLeft>
         <Books />
+      </Section>
+
+      <div className="mx-auto w-full max-w-screen-sm" id="accordion-group">
+        <WhatIsAUxEngineer />
         <HeyChatGptUxDesigner />
         <HeyChatGptUxEngineer />
         <DesignEngineerVsUxEngineer />
