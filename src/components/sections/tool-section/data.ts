@@ -41,7 +41,7 @@ export const tools: Tool[] = [
     logo: 'https://dominikrubroeder.dev/github.png',
     href: 'https://github.com/dominikrubroeder',
     description: 'The world’s leading AI-powered developer platform.',
-    keyword: 'Version control',
+    keyword: 'Version Control',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -53,7 +53,7 @@ export const tools: Tool[] = [
     href: 'https://about.gitlab.com',
     description:
       'Software. Faster. GitLab is the most comprehensive AI-powered DevSecOps Platform.',
-    keyword: 'Version control',
+    keyword: 'Version Control',
     priority: 'high',
     projects: [],
     experience: 'high'

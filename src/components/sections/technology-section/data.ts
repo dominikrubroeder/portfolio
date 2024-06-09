@@ -18,7 +18,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/nextjs.png',
     href: '/technology/next-js',
     description: 'The React Framework for the Web',
-    keyword: 'React-based fullstack web framework',
+    keyword: 'Fullstack Web Framework',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -29,7 +29,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/typescript.png',
     href: '/technology/typescript',
     description: 'TypeScript is JavaScript with syntax for types.',
-    keyword: 'JavaScript-based typed language',
+    keyword: 'Programming Language',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -51,7 +51,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/markdown.png',
     href: '/technology/markdown',
     description: 'A simplified markup language',
-    keyword: 'Markup language',
+    keyword: 'Markup Language',
     priority: 'high',
     projects: [],
     experience: 'high'
@@ -62,7 +62,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/html.png',
     href: '/technology/html',
     description: 'The standard markup language for Web pages',
-    keyword: 'Basic Markup language',
+    keyword: 'Fundamental Markup Language',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -73,7 +73,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/css.png',
     href: '/technology/css',
     description: 'The language we use to style an HTML document.',
-    keyword: 'Cascading Style Sheet',
+    keyword: 'Fundamental Styling Syntax',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -97,7 +97,7 @@ export const technologies: Technology[] = [
     href: '/technology/framer-motion',
     description:
       'A declarative motion library for animating react UIs and apply motion to it',
-    keyword: 'React-based motion library',
+    keyword: 'Motion Library',
     priority: 'high',
     projects: [],
     experience: 'daily'
