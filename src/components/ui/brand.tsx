@@ -2,7 +2,6 @@ import Figma from '@/components/ui/svg/figma';
 import WebStorm from '@/components/ui/svg/webstorm';
 import GitHub from '@/components/ui/svg/github';
 import type { Brand as BrandType } from '@/types';
-import Inkdrop from '@/components/ui/img/inkdrop';
 import Gitlab from '@/components/ui/svg/gitlab';
 import Shopware from '@/components/ui/svg/shopware';
 import Storyblok from '@/components/ui/svg/storyblok';
@@ -21,6 +20,7 @@ import LinkedIn from '@/components/ui/svg/linkedin';
 import TypeScript from '@/components/ui/svg/typescript';
 import JavaScript from '@/components/ui/svg/javascript';
 import Notes from '@/components/ui/svg/notes';
+import Craft from '@/components/ui/svg/craft';
 
 export default function Brand({
   brand,
@@ -43,9 +43,6 @@ export default function Brand({
 
     case 'GitHub':
       return <GitHub className={className} />;
-
-    case 'Inkdrop':
-      return <Inkdrop className={className} />;
 
     case 'GitLab':
       return <Gitlab className={className} />;
@@ -97,5 +94,8 @@ export default function Brand({
 
     case 'Instagram':
       return <Instagram className={className} />;
+
+    case 'Craft':
+      return <Craft className={className} />;
   }
 }

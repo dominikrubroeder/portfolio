@@ -27,10 +27,10 @@ export const tools: Tool[] = [
   {
     title: 'Craft',
     website: 'https://www.craft.do',
-    logo: 'https://dominikrubroeder.dev/craft.png',
+    logo: '/tool/craft.png',
     href: '/tool/craft',
     description: 'Craft the best docs in the world',
-    keyword: 'Note-taking',
+    keyword: 'Notes / Docs',
     priority: 'high',
     projects: [],
     experience: 'high'
@@ -59,6 +59,17 @@ export const tools: Tool[] = [
     experience: 'high'
   },
   {
+    title: 'Storyblok',
+    website: 'https://www.storyblok.com',
+    logo: 'https://dominikrubroeder.dev/storyblok.png',
+    href: '/tool/storyblok',
+    description: 'The Way to Modern Content',
+    keyword: 'Headless CMS',
+    priority: 'low',
+    projects: [],
+    experience: 'high'
+  },
+  {
     title: 'Shopware',
     website: 'https://www.shopware.com',
     logo: 'https://dominikrubroeder.dev/shopware.png',
@@ -66,17 +77,6 @@ export const tools: Tool[] = [
     description:
       'Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.',
     keyword: 'Shop System',
-    priority: 'low',
-    projects: [],
-    experience: 'high'
-  },
-  {
-    title: 'Storyblok',
-    website: 'https://www.storyblok.com',
-    logo: 'https://dominikrubroeder.dev/storyblok.png',
-    href: '/tool/storyblok',
-    description: 'The Way to Modern Content',
-    keyword: 'Headless CMS',
     priority: 'low',
     projects: [],
     experience: 'high'

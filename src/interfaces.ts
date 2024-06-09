@@ -27,12 +27,6 @@ export interface Social {
   badge: string;
 }
 
-export interface Data {
-  tools: Tool[];
-  technologies: Technology[];
-  socials: Social[];
-}
-
 export interface ControlBar {
   sections: ControlBarSections;
   collapse: boolean;
