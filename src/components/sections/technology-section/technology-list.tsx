@@ -1,17 +1,8 @@
 import Technology from '@/components/sections/technology-section/technology';
 import MoreItemsSection from '@/components/more-items-section';
-import { fetchTechnologies } from '@/lib/technologies';
+import { technologies } from '@/components/sections/technology-section/data';
 
-export default async function TechnologyList() {
-  const technologies = await fetchTechnologies();
-
-  if (
-    technologies === null ||
-    technologies === undefined ||
-    technologies.length === 0
-  )
-    return <div>No technology listed.</div>;
-
+export default function TechnologyList() {
   return (
     <>
       <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
