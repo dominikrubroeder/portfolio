@@ -42,10 +42,10 @@ export default function Section({
               )}
             ></div>
             {arrowLeft && (
-              <ArrowLongRightIcon className="absolute -left-12 -top-[5px] size-16 stroke-2 text-accent sm:-left-20" />
+              <ArrowLongRightIcon className="absolute -left-12 top-[-5px] size-16 stroke-2 text-accent sm:-left-20" />
             )}
             {arrowRight && (
-              <ArrowLongLeftIcon className="absolute -right-12 -top-[5px] size-16 stroke-2 text-accent sm:-right-20" />
+              <ArrowLongLeftIcon className="absolute -right-12 top-[-5px] size-16 stroke-2 text-accent sm:-right-20" />
             )}
           </div>
         )}
