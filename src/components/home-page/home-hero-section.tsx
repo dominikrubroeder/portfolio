@@ -12,23 +12,16 @@ const sections = [
 export default function HomeHeroSection() {
   return (
     <>
-      <section className="mx-auto flex w-full max-w-screen-sm items-center justify-center p-4 md:h-[80svh]">
-        <div>
-          <h2 className="text-6xl font-bold text-theme-contrary sm:text-8xl">
-            Team Frontend.
-          </h2>
+      <section className="mx-auto flex w-full max-w-screen-sm flex-col items-center justify-center space-y-6 p-4 md:min-h-[80svh]">
+        <h2 className="text-6xl font-bold text-theme-contrary sm:text-8xl">
+          Team Frontend.
+        </h2>
 
-          <p className="max-w-screen-sm">
-            <span className="mx-1 text-6xl font-bold text-accent sm:text-6xl">
-              UX and UI design with passion
-              <br /> Love for supportive animations and smooth transitions.
-            </span>
-          </p>
-
-          <hr className="my-4" />
-
-          <p>Designed with code in mind – Coded, by design</p>
-        </div>
+        <ul className="mx-1 space-y-6 text-6xl font-bold text-accent sm:text-6xl">
+          <li>UX and UI design with passion</li>
+          <li>Love for supportive animations and smooth transitions.</li>
+          <li>Coding to bring everything to life.</li>
+        </ul>
       </section>
 
       <Suspense>
