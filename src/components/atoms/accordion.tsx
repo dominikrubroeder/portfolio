@@ -35,7 +35,7 @@ export default function Accordion({
   return (
     <div ref={ref} className="pt-4">
       <div
-        className="interactive sticky top-4 z-10 mx-auto flex cursor-pointer select-none items-center justify-between gap-4 rounded-2xl bg-gray-5 px-4 py-3 leading-[1.6] text-accent transition-all hover:px-6 md:relative md:top-0"
+        className="interactive sticky top-4 z-10 mx-auto flex cursor-pointer select-none items-center justify-between gap-4 rounded-2xl bg-gray-5 px-4 py-3 leading-[1.6] text-accent transition-all md:relative md:top-0"
         title="Open accordion to see more content"
         aria-label="Open accordion to see more content"
         onClick={() => setOpen((prevState) => !prevState)}
