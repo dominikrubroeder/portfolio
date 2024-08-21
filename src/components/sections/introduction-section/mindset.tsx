@@ -7,11 +7,10 @@ export default function Mindset() {
 
       <ul className="mb-5 list-disc pl-8">
         <li>
-          <b className="text-theme-contrary">Designing</b> – with care, in code,
-          with joy
+          <b className="text-theme-contrary">Designing</b> – with care
         </li>
         <li>
-          <b className="text-theme-contrary">Coding</b> – by design
+          <b className="text-theme-contrary">Coding</b> – for production
         </li>
         <li>
           <b className="text-theme-contrary">Using Psychology </b>
@@ -19,26 +18,8 @@ export default function Mindset() {
         </li>
         <li>Writing documentation</li>
         <li>Bringing an idea from paper to production</li>
-        <li>Refining a product/feature to specific needs</li>
-        <li>
-          Getting to know a product/brand/concept in order to know what it is
-          designed to be and designed to fulfill
-        </li>
-      </ul>
-
-      <h3>Training, Training, Training and fun</h3>
-
-      <br />
-
-      <ul className="mb-5 list-disc pl-8">
-        <li>Don&apos;t forget to have some fun during the process</li>
-        <li>Enjoy colors</li>
-        <li>Typography is important</li>
-        <li>
-          Engage with your co-workers, exchange your ideas, evaluate if another
-          opinion has some truth in it
-        </li>
-        <li>Work with heart, mindfulness</li>
+        <li>Refining a feature to specific needs</li>
+        <li>Working for brands</li>
       </ul>
 
       <h3>Pen and Paper</h3>

@@ -1,10 +1,7 @@
 import { Social, Technology, Tool } from '@/interfaces';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
-import {
-  ArrowLongRightIcon,
-  ArrowUpRightIcon
-} from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Brand from '@/components/ui/brand';
 import type { Brand as BrandType } from '@/types';
 import { cn } from '@/utils';
@@ -22,16 +19,8 @@ export default function SliderItem({
   isFirstItemInList?: boolean;
 }) {
   return (
-    <div className="group grid w-80 gap-6 whitespace-normal">
-      <div className="relative size-80 rounded-xl border border-gray-4">
-        {/* Change in later release to
-             – href={sliderItem.href}
-             – target={sliderItem.href.includes('https') ? '_blank' : '_self'}
-             – title={`Go to ${sliderItem.href}`}
-             – aria-label={`Go to ${sliderItem.href}`}`}
-
-             When Detail pages are available
-             */}
+    <div className="group w-80 space-y-6 whitespace-normal">
+      <div className="interactive relative size-80 rounded-xl border border-gray-4 transition group-hover:bg-gray-5">
         <Link
           href={sliderItem.website}
           className="absolute inset-0 flex size-full cursor-pointer items-center justify-center"
@@ -81,7 +70,7 @@ export default function SliderItem({
             isFirstItemInList
               ? 'visible translate-y-0 opacity-100'
               : 'sm:invisible sm:translate-y-4 sm:opacity-0'
-          } grid grid-cols-2 gap-4 transition sm:group-hover:visible sm:group-hover:translate-y-0 sm:group-hover:opacity-100`}
+          } text-center transition sm:group-hover:visible sm:group-hover:translate-y-0 sm:group-hover:opacity-100`}
         >
           <Button
             priority="secondary"
@@ -90,6 +79,7 @@ export default function SliderItem({
             target="_blank"
             title={`Go to external ${sliderItem.title} website`}
             aria-label={`Go to external ${sliderItem.title} website`}
+            className="mx-auto"
           >
             <ArrowTopRightOnSquareIcon
               className={`${
@@ -98,23 +88,6 @@ export default function SliderItem({
                   : 'group-hover:text-theme-contrary'
               } size-5 transition`}
             />
-          </Button>
-
-          <Button
-            priority="secondary"
-            title={`Projects with ${sliderItem.title}`}
-            aria-label={`Projects with ${sliderItem.title}`}
-            className="relative flex h-16 items-center justify-center rounded-2xl hover:bg-gray-5"
-            disabled
-          >
-            <ArrowLongRightIcon className="size-5 transition group-hover:text-theme-contrary" />
-            <span
-              title={`Projects with ${sliderItem.title}`}
-              aria-label={`Projects with ${sliderItem.title}`}
-              className="absolute top-0 -translate-y-2 rounded bg-accent p-1 px-1.5 text-xs text-white"
-            >
-              Soon
-            </span>
           </Button>
         </div>
       )}

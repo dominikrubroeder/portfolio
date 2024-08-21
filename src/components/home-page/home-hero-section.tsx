@@ -12,25 +12,20 @@ const sections = [
 export default function HomeHeroSection() {
   return (
     <>
-      <section className="mx-auto flex w-full max-w-screen-sm flex-col items-center justify-center space-y-6 p-4 md:min-h-[80svh]">
+      <section className="mx-auto flex w-full max-w-screen-sm flex-col items-center justify-center p-4 md:min-h-[80svh]">
         <h2 className="text-6xl font-bold text-theme-contrary sm:text-8xl">
           Team Frontend.
         </h2>
-
-        <ul className="mx-1 space-y-6 text-6xl font-bold text-accent sm:text-6xl">
-          <li>UX and UI design with passion</li>
-          <li>Love for supportive animations and smooth transitions.</li>
-          <li>Coding to bring everything to life.</li>
-        </ul>
+        <p className="mx-1 space-y-6 text-6xl font-bold text-accent sm:text-6xl">
+          UX and UI design with passion
+        </p>
+        <p className="mx-1 space-y-6 text-6xl font-bold text-accent sm:text-6xl">
+          Love for supportive animations and smooth transitions.
+        </p>
       </section>
 
       <Suspense>
-        <ControlBar
-          sections={sections}
-          collapse={false}
-          leftControlAction="Avatar"
-          rightControlAction="Up"
-        />
+        <ControlBar sections={sections} collapse={false} />
       </Suspense>
     </>
   );

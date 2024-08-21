@@ -34,13 +34,6 @@ export default function Section({
       >
         {(arrowLeft || arrowRight) && (
           <div>
-            <div
-              className={cn(
-                'absolute top-6 hidden h-1.5 w-full rounded-full bg-accent sm:block',
-                arrowLeft && '-left-8 -translate-x-full',
-                arrowRight && '-right-8 translate-x-full'
-              )}
-            ></div>
             {arrowLeft && (
               <ArrowLongRightIcon className="absolute -left-12 top-[-5px] size-16 stroke-2 text-accent sm:-left-20" />
             )}

@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { Technology, Tool } from '@/interfaces';
 import { PlusIcon } from '@heroicons/react/24/solid';
 import { MinusIcon } from '@heroicons/react/20/solid';
-import RowItem from '@/components/row-item';
+import Button from '@/components/atoms/button';
+import SliderItem from '@/components/slider-item';
 
 export default function MoreItemsSection({
   items
@@ -18,9 +19,9 @@ export default function MoreItemsSection({
   if (!items.some((item) => item.priority === 'low')) return null;
 
   return (
-    <div>
+    <div className="space-y-8">
       <div
-        className="mb-4 mr-4 flex cursor-pointer select-none items-center gap-4"
+        className="mb-4 mr-4 flex cursor-pointer select-none items-center gap-3"
         onClick={() =>
           setState((prevState) => {
             return { isVisible: !prevState.isVisible };
@@ -29,27 +30,24 @@ export default function MoreItemsSection({
       >
         <button
           aria-label="Hide and show more items"
-          className="flex size-14 items-center justify-center rounded-full bg-gray-5 transition hover:bg-gray-4 hover:text-theme-contrary"
+          className="flex size-14 items-center justify-center rounded-full bg-accent font-bold text-white transition"
         >
-          {state.isVisible && <MinusIcon className="size-4" />}
-          {!state.isVisible && <PlusIcon className="size-4" />}
+          {state.isVisible && <MinusIcon className="size-5" />}
+          {!state.isVisible && <PlusIcon className="size-5" />}
         </button>
 
-        <button
-          aria-label="Hide and show more items"
-          className="rounded-full bg-gray-5 p-4 px-6 transition hover:text-theme-contrary"
-        >
-          {state.isVisible ? 'Hide' : 'See more'}
-        </button>
+        <Button priority="secondary" aria-label="Hide and show more items">
+          {state.isVisible ? 'Less' : 'More'}
+        </Button>
       </div>
 
       {state.isVisible && (
-        <ul className="grid max-w-screen-md animate-fadeUp gap-12">
+        <ul className="grid animate-fadeUp grid-cols-4 gap-4">
           {items.map((item) => {
             if (item.priority === 'low')
               return (
                 <li key={item.title}>
-                  <RowItem rowItem={item} />
+                  <SliderItem sliderItem={item} type="Tool" />
                 </li>
               );
           })}
