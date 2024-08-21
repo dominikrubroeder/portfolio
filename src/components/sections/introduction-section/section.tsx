@@ -23,7 +23,7 @@ export default function Section({
 } & HTMLProps<HTMLElement>) {
   return (
     <section
-      className={cn('grid gap-2 sm:gap-6 sm:pl-10 md:pl-0', className)}
+      className={cn('z-100 grid gap-2 sm:gap-6 sm:pl-10 md:pl-0', className)}
       {...rest}
     >
       <h2

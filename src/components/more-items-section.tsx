@@ -21,7 +21,7 @@ export default function MoreItemsSection({
   return (
     <div className="space-y-8">
       <div
-        className="mb-4 mr-4 flex cursor-pointer select-none items-center gap-3"
+        className="mx-4 mb-4 flex cursor-pointer select-none items-center gap-3 sm:ml-16"
         onClick={() =>
           setState((prevState) => {
             return { isVisible: !prevState.isVisible };
@@ -42,12 +42,16 @@ export default function MoreItemsSection({
       </div>
 
       {state.isVisible && (
-        <ul className="grid animate-fadeUp grid-cols-4 gap-4">
+        <ul className="mx-4 grid animate-fadeUp gap-12 sm:mx-16 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {items.map((item) => {
             if (item.priority === 'low')
               return (
                 <li key={item.title}>
-                  <SliderItem sliderItem={item} type="Tool" />
+                  <SliderItem
+                    className="w-full md:max-w-sm"
+                    sliderItem={item}
+                    type="Tool"
+                  />
                 </li>
               );
           })}

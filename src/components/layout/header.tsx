@@ -12,8 +12,9 @@ export default function Header() {
           <p className="font-bold leading-none text-theme-contrary">
             Dominik Rubröder
           </p>
-          <p className="leading-none">
-            UX Design Engineer @
+          <p className="space-x-1 leading-none">
+            <span>UX Design Engineer</span>
+            <span>@</span>
             <a href="https://www.mediawave.de" target="_blank">
               mediawave
             </a>
@@ -21,7 +22,7 @@ export default function Header() {
         </h1>
       </div>
 
-      <div className="flex -space-x-2">
+      <div className="flex -space-x-1">
         <GitHubLink className="size-6" />
         <LinkedinLink className="size-6" />
       </div>

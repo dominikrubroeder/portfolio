@@ -12,7 +12,7 @@ const sections = [
 export default function HomeHeroSection() {
   return (
     <>
-      <section className="mx-auto flex w-full max-w-screen-sm flex-col items-center justify-center p-4 md:min-h-[80svh]">
+      <section className="mx-auto flex w-full max-w-screen-sm flex-col p-4 sm:items-center sm:justify-center md:min-h-[80svh]">
         <h2 className="text-6xl font-bold text-theme-contrary sm:text-8xl">
           Team Frontend.
         </h2>

@@ -62,7 +62,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/css.png',
     href: '/technology/css',
     description: 'The language we use to style an HTML document.',
-    keyword: 'Fundamental Styling Syntax',
+    keyword: 'Styling',
     priority: 'high',
     projects: [],
     experience: 'daily'

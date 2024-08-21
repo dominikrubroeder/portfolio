@@ -9,10 +9,10 @@ export default function Introduction() {
 
       <p>
         I am a designer and a UX design engineer, working for good user
-        interfaces that transport emotion and do care about the business impact
-        of design. I want the user to enjoy their actions, feeling pleasant and
-        delightful while scrolling through the page, pursuing his or her actions
-        with joyful ease.
+        interfaces that transport emotion and care about the impact of design. I
+        want the user to enjoy their actions, feeling pleasant and delightful
+        while scrolling through the page, pursuing his or her actions with
+        joyful ease.
       </p>
 
       <p>

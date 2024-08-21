@@ -11,16 +11,18 @@ export default function SliderItem({
   sliderItem,
   type,
   showActions,
-  isFirstItemInList
+  isFirstItemInList,
+  className
 }: {
   sliderItem: Tool | Technology | Social;
   type: 'Tool' | 'Technology' | 'Social';
   showActions?: boolean;
   isFirstItemInList?: boolean;
+  className?: string;
 }) {
   return (
-    <div className="group w-80 space-y-6 whitespace-normal">
-      <div className="interactive relative size-80 rounded-xl border border-gray-4 transition group-hover:bg-gray-5">
+    <div className={cn('group w-80 space-y-6 whitespace-normal', className)}>
+      <div className="interactive relative mx-auto size-80 rounded-xl border border-gray-4 transition group-hover:bg-gray-5">
         <Link
           href={sliderItem.website}
           className="absolute inset-0 flex size-full cursor-pointer items-center justify-center"
