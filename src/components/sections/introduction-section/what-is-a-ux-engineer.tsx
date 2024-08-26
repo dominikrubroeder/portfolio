@@ -11,7 +11,7 @@ export default function WhatIsAUxEngineer() {
     <Accordion title="What is an UX Engineer?">
       <div className="space-y-8">
         <p>
-          <b className="text-theme-contrary">
+          <b className="text-foreground">
             The bridge between design and development
           </b>
           . A UX Engineer can also be the combo package itself, a Designer which
@@ -23,7 +23,7 @@ export default function WhatIsAUxEngineer() {
         <p>
           The working tools (Wireframe tools like <i>Figma</i> for Designers or
           IDEs for developers etc.), are not the crucial part,
-          <b className="mx-1.5 text-theme-contrary">
+          <b className="mx-1.5 text-foreground">
             the thoughts and mental model are.
           </b>
           The tools are just a way of making the concept
@@ -44,9 +44,7 @@ export default function WhatIsAUxEngineer() {
 
       <AccordionMini title="UX Engineer at Google">
         <Blockquote quotes>
-          <b className="text-theme-contrary">
-            Bring all your skills into one role
-          </b>
+          <b className="text-foreground">Bring all your skills into one role</b>
           . As a UX Engineer at Google, you’ll combine your design, engineering,
           and product intuition to help build experiences for everyone to enjoy.
         </Blockquote>
@@ -70,7 +68,7 @@ export default function WhatIsAUxEngineer() {
             <Link
               href="https://uxe.withgoogle.com"
               target="_blank"
-              className="ml-1 transition hover:text-theme-contrary"
+              className="ml-1 transition hover:text-foreground"
               title="Go to external uxe.google.com website"
               aria-label="UX Engineer landingpage from Google at uxe.google.com describing the role as an UX Engineer while working for Google"
             >

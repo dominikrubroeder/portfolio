@@ -4,7 +4,7 @@ export default function ComponentDrivenDevelopment() {
       <section className="grid gap-8">
         <div className="mx-auto grid w-full max-w-screen-lg gap-2 px-4">
           <h2>How i work</h2>
-          <h1 className="text-6xl font-bold text-theme-contrary">
+          <h1 className="text-6xl font-bold text-foreground">
             Component-driven Development
           </h1>
         </div>

@@ -13,7 +13,7 @@ export default function HomeHeroSection() {
   return (
     <>
       <section className="mx-auto flex w-full max-w-screen-sm flex-col p-4 sm:items-center sm:justify-center md:min-h-[80svh]">
-        <h2 className="text-6xl font-bold text-theme-contrary sm:text-8xl">
+        <h2 className="text-6xl font-bold text-foreground sm:text-8xl">
           Team Frontend.
         </h2>
         <p className="mx-1 space-y-6 text-6xl font-bold text-accent sm:text-6xl">

@@ -15,7 +15,7 @@ export default function AllesautoLogo({
       height="49"
       viewBox="0 0 497 49"
       fill="none"
-      className={cn('text-theme-contrary', className)}
+      className={cn('text-foreground', className)}
       {...restProps}
     >
       <path

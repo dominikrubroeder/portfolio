@@ -20,7 +20,7 @@ export default function SecondaryNavigation({
   return (
     <div
       className={cn(
-        'z-50 flex items-center border-b border-gray-5 bg-gray-6 p-4 backdrop-blur',
+        'z-50 flex items-center border-b border-gray-5 bg-background p-4 backdrop-blur',
         sticky && 'sticky top-0'
       )}
     >
@@ -42,7 +42,7 @@ export default function SecondaryNavigation({
         </Link>
 
         <div className="flex items-center gap-2">
-          <GitHubLink className="size-5 text-gray transition hover:text-theme-contrary" />
+          <GitHubLink className="size-5 text-gray transition hover:text-foreground" />
           <LinkedinLink />
         </div>
       </div>

@@ -3,7 +3,7 @@ import React from 'react';
 export default function Introduction() {
   return (
     <div className="grid gap-4">
-      <p className="font-bold text-theme-contrary">
+      <p className="font-bold text-foreground">
         My work is committed to the frontend.
       </p>
 

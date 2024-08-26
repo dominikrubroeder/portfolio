@@ -21,7 +21,7 @@ export default function AccordionMini({
         aria-label="Open accordion to see more content"
         onClick={() => setOpen((prevState) => !prevState)}
       >
-        <h3 className="font-bold text-theme-contrary">{title}</h3>
+        <h3 className="font-bold text-foreground">{title}</h3>
 
         <ChevronDownIcon
           className={clsx(

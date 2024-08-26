@@ -22,7 +22,7 @@ export default function ControlBarAction({ type }: { type: ControlBarAction }) {
         aria-label="Scroll to top"
         onClick={() => scrollToTop()}
       >
-        <ArrowUpIcon className="size-4 transition group-hover:text-theme-contrary" />
+        <ArrowUpIcon className="size-4 transition group-hover:text-foreground" />
       </button>
     );
 
@@ -33,7 +33,7 @@ export default function ControlBarAction({ type }: { type: ControlBarAction }) {
         aria-label="Navigate back"
         onClick={() => router.back()}
       >
-        <ArrowLeftIcon className="size-4 transition group-hover:text-theme-contrary" />
+        <ArrowLeftIcon className="size-4 transition group-hover:text-foreground" />
       </button>
     );
 

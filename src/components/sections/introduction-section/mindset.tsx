@@ -7,19 +7,19 @@ export default function Mindset() {
 
       <ul className="mb-5 list-disc pl-8">
         <li>
-          <b className="text-theme-contrary">Designing</b> – with care
+          <b className="text-foreground">Designing</b> – with care
         </li>
         <li>
-          <b className="text-theme-contrary">Coding</b> – for production
+          <b className="text-foreground">Coding</b> – for production
         </li>
         <li>
-          <b className="text-theme-contrary">Using Psychology </b>
+          <b className="text-foreground">Using Psychology </b>
           to design and build better user interfaces
         </li>
         <li>Writing documentation</li>
         <li>Bringing an idea from paper to production</li>
         <li>Refining a feature to specific needs</li>
-        <li>Working for brands</li>
+        <li>Working for good brands</li>
       </ul>
 
       <h3>Pen and Paper</h3>

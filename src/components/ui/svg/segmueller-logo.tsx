@@ -15,7 +15,7 @@ export default function SegmuellerLogo({
       height="48"
       viewBox="0 0 294 48"
       fill="none"
-      className={cn('text-theme-contrary', className)}
+      className={cn('text-foreground', className)}
       {...restProps}
     >
       <path

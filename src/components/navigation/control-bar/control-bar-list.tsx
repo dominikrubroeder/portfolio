@@ -38,7 +38,7 @@ export default function ControlBarList({
           key={section.id}
           href={`#${section.id}`}
           className={`interactive relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2 ${
-            activeSection === section.id ? '' : 'hover:text-theme-contrary'
+            activeSection === section.id ? '' : 'hover:text-foreground'
           }`}
           onClick={(e) => scrollIntoView(e, section.id)}
         >
@@ -54,8 +54,8 @@ export default function ControlBarList({
           <div
             className={`relative z-20 flex w-max cursor-pointer items-center gap-4 ${
               activeSection === section.id
-                ? 'text-theme-contrary'
-                : 'hover:text-theme-contrary'
+                ? 'text-foreground'
+                : 'hover:text-foreground'
             } md:gap-2`}
           >
             <DynamicHeroIcon name={section.icon} className="size-5" />
@@ -66,7 +66,7 @@ export default function ControlBarList({
 
       <div className="sticky bottom-0 z-10 inline-flex gap-4 overflow-x-auto border-t border-gray-4 bg-gray-5 p-4 pb-3.5 md:hidden">
         <div className="no-scrollbar mt-2 flex-1 overflow-x-auto whitespace-nowrap border-r border-r-gray-4 pr-2 text-left">
-          <b className="mr-1.5 inline-block text-theme-contrary">
+          <b className="mr-1.5 inline-block text-foreground">
             Dominik Rubröder
           </b>
           UX Engineer @

@@ -23,12 +23,12 @@ export default function Section({
 } & HTMLProps<HTMLElement>) {
   return (
     <section
-      className={cn('z-100 grid gap-2 sm:gap-6 sm:pl-10 md:pl-0', className)}
+      className={cn('z-10 grid gap-2 sm:gap-6 sm:pl-10 md:pl-0', className)}
       {...rest}
     >
       <h2
         className={cn(
-          'sticky top-0 mx-auto w-full max-w-screen-sm border-b border-b-gray-5 bg-gray-6 py-3 pl-6 sm:pl-0 md:top-20',
+          'sticky top-0 mx-auto w-full max-w-screen-sm border-b border-b-gray-5 bg-gray-6 py-3 pl-6 text-foreground sm:pl-0 md:top-20',
           showHeadlineMobileOnly && 'lg:hidden'
         )}
       >

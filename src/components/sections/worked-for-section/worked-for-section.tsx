@@ -12,7 +12,7 @@ export default function WorkedForSection() {
           <li>
             <div className="flex gap-6">
               <div className="w-80 text-right">
-                <div className="text-xl font-bold text-theme-contrary">HD+</div>
+                <div className="text-xl font-bold text-foreground">HD+</div>
                 <div>German HD-TV provider</div>
               </div>
               <Link
@@ -29,7 +29,7 @@ export default function WorkedForSection() {
           <li>
             <div className="flex gap-6">
               <div className="w-80 text-right">
-                <div className="text-xl font-bold text-theme-contrary">
+                <div className="text-xl font-bold text-foreground">
                   Segmüller
                 </div>
                 <div>Furniture shop</div>
@@ -48,7 +48,7 @@ export default function WorkedForSection() {
           <li>
             <div className="flex gap-6">
               <div className="w-80 text-right">
-                <div className="text-xl font-bold text-theme-contrary">
+                <div className="text-xl font-bold text-foreground">
                   alles.auto
                 </div>
                 <div>Digital car dealership</div>

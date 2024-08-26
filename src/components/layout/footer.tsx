@@ -12,7 +12,7 @@ export default function Footer() {
       </p>
       <p>
         &copy; {new Date().getFullYear()}
-        <span className="ml-1.5 text-theme-contrary">Dominik Rubröder</span>
+        <span className="ml-1.5 text-foreground">Dominik Rubröder</span>
       </p>
     </footer>
   );

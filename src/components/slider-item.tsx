@@ -38,7 +38,7 @@ export default function SliderItem({
         </Link>
       </div>
 
-      <div className="mx-auto w-max rounded-3xl border border-gray-4 px-3 py-2 font-bold text-theme-contrary">
+      <div className="mx-auto w-max rounded-3xl border border-gray-4 px-3 py-2 font-bold text-foreground">
         {'keyword' in sliderItem ? sliderItem.keyword : sliderItem.badge}
       </div>
 
@@ -50,12 +50,12 @@ export default function SliderItem({
       >
         <Link
           href={sliderItem.website}
-          className="group mx-auto flex items-center gap-2 font-bold text-theme-contrary"
+          className="group mx-auto flex items-center gap-2 font-bold text-foreground"
           target="_blank"
         >
           <h2>{sliderItem.title}</h2>
           {type === 'Social' && (
-            <ArrowUpRightIcon className="size-5 shrink-0 text-gray transition group-hover:text-theme-contrary" />
+            <ArrowUpRightIcon className="size-5 shrink-0 text-gray transition group-hover:text-foreground" />
           )}
         </Link>
 
@@ -86,8 +86,8 @@ export default function SliderItem({
             <ArrowTopRightOnSquareIcon
               className={`${
                 isFirstItemInList
-                  ? 'text-theme-contrary'
-                  : 'group-hover:text-theme-contrary'
+                  ? 'text-foreground'
+                  : 'group-hover:text-foreground'
               } size-5 transition`}
             />
           </Button>

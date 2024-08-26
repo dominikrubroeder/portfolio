@@ -25,9 +25,7 @@ export default function ToolPage({ params }: { params: { tool: string } }) {
     <>
       <section className="flex h-[calc(100dvh-5rem)] items-center justify-center">
         <div className="max-w-max">
-          <h1 className="text-8xl font-bold text-theme-contrary">
-            {tool.title}
-          </h1>
+          <h1 className="text-8xl font-bold text-foreground">{tool.title}</h1>
         </div>
       </section>
 

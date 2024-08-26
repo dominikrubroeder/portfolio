@@ -17,14 +17,14 @@ export default function DesignEngineerVsUxEngineer() {
       aria-label="View 'Design Engineer vs UX Engineer' on ChatGPT"
       restrictHeight
     >
-      <h3 className="font-bold text-theme-contrary">
+      <h3 className="font-bold text-foreground">
         Prompt <Label text="ChatGPT" />
       </h3>
 
       <br />
 
       <Blockquote horizontalOffset={false}>
-        <b className="text-theme-contrary">
+        <b className="text-foreground">
           You are a senior HR worker. Compare an Design Engineer with an UX
           Engineer for frontend work.
         </b>
@@ -47,10 +47,10 @@ export default function DesignEngineerVsUxEngineer() {
 
       <ol className="mb-5 grid list-decimal gap-4 pl-8">
         <li>
-          <p className="font-bold text-theme-contrary">Design Engineer:</p>
+          <p className="font-bold text-foreground">Design Engineer:</p>
           <ul className="mb-5 grid list-disc gap-4 pl-8">
             <li>
-              <span className="mr-1 font-bold text-theme-contrary">
+              <span className="mr-1 font-bold text-foreground">
                 Primary Focus:
               </span>
               Design Engineers primarily focus on the visual and interactive
@@ -59,16 +59,14 @@ export default function DesignEngineerVsUxEngineer() {
               aesthetically pleasing user interfaces.
             </li>
             <li>
-              <span className="mr-1 font-bold text-theme-contrary">
-                Skills:
-              </span>
+              <span className="mr-1 font-bold text-foreground">Skills:</span>
               Proficiency in HTML, CSS, and JavaScript is essential for Design
               Engineers. They often have strong graphic design skills and are
               adept at using design tools like Adobe Photoshop, Illustrator, or
               Sketch.
             </li>
             <li>
-              <span className="mr-1 font-bold text-theme-contrary">
+              <span className="mr-1 font-bold text-foreground">
                 Responsibilities:
               </span>
               Design Engineers are responsible for implementing the frontend
@@ -78,9 +76,7 @@ export default function DesignEngineerVsUxEngineer() {
               browsers.
             </li>
             <li>
-              <span className="mr-1 font-bold text-theme-contrary">
-                Key Tasks:
-              </span>
+              <span className="mr-1 font-bold text-foreground">Key Tasks:</span>
               Building responsive layouts, creating animations and transitions,
               optimizing the frontend for performance, and collaborating closely
               with designers and backend developers.
@@ -88,10 +84,10 @@ export default function DesignEngineerVsUxEngineer() {
           </ul>
         </li>
         <li>
-          <p className="font-bold text-theme-contrary">UX Engineer:</p>
+          <p className="font-bold text-foreground">UX Engineer:</p>
           <ul className="mb-5 grid list-disc gap-4 pl-8">
             <li>
-              <span className="mr-1 font-bold text-theme-contrary">
+              <span className="mr-1 font-bold text-foreground">
                 Primary Focus:
               </span>
               UX Engineers focus on enhancing the overall user experience of a
@@ -100,9 +96,7 @@ export default function DesignEngineerVsUxEngineer() {
               user interfaces.
             </li>
             <li>
-              <span className="mr-1 font-bold text-theme-contrary">
-                Skills:
-              </span>
+              <span className="mr-1 font-bold text-foreground">Skills:</span>
               In addition to proficiency in frontend technologies like HTML,
               CSS, and JavaScript, UX Engineers have a deep understanding of
               user research, interaction design, and usability principles. They
@@ -110,7 +104,7 @@ export default function DesignEngineerVsUxEngineer() {
               improve the user experience.
             </li>
             <li>
-              <span className="mr-1 font-bold text-theme-contrary">
+              <span className="mr-1 font-bold text-foreground">
                 Responsibilities:
               </span>
               UX Engineers are responsible for designing and implementing
@@ -120,9 +114,7 @@ export default function DesignEngineerVsUxEngineer() {
               objectives and user expectations.
             </li>
             <li>
-              <span className="mr-1 font-bold text-theme-contrary">
-                Key Tasks:
-              </span>
+              <span className="mr-1 font-bold text-foreground">Key Tasks:</span>
               Conducting user research and analysis, creating wireframes and
               prototypes, optimizing user flows and navigation, and advocating
               for user-centered design principles throughout the development
@@ -133,7 +125,7 @@ export default function DesignEngineerVsUxEngineer() {
       </ol>
 
       <p>
-        <b className="text-theme-contrary">In summary</b>, while both Design
+        <b className="text-foreground">In summary</b>, while both Design
         Engineers and UX Engineers contribute to frontend development, Design
         Engineers focus more on the visual and interactive aspects of the user
         interface, while UX Engineers concentrate on optimizing the overall user
