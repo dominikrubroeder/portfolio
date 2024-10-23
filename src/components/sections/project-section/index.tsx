@@ -5,11 +5,11 @@ export default function ProjectSection() {
       className="flex min-h-[44rem] flex-col items-center justify-center gap-4"
     >
       <p>
-        <span className="rounded bg-accent p-1 px-1.5 text-xs text-white">
+        Projects
+        <span className="mx-4 rounded bg-accent p-1 px-1.5 text-xs text-white">
           Soon
         </span>
       </p>
-      <p>Projects will be added soon.</p>
     </section>
   );
 }

@@ -22,9 +22,9 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
             aria-label={`${rowItem.title} logo`}
           />
 
-          <h3 className="font-bold text-theme-contrary">{rowItem.title}</h3>
+          <h3 className="font-bold text-foreground">{rowItem.title}</h3>
 
-          <div className="mr-auto w-max whitespace-nowrap rounded-3xl border border-gray-4 px-3 py-2 text-xs font-bold text-theme-contrary">
+          <div className="mr-auto w-max whitespace-nowrap rounded-3xl border border-gray-4 px-3 py-2 text-xs font-bold text-foreground">
             {rowItem.keyword}
           </div>
         </Link>
@@ -47,7 +47,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
           title={`Go to ${rowItem.title} website`}
           aria-label={`Go to ${rowItem.title} website`}
         >
-          <ArrowTopRightOnSquareIcon className="size-5 transition group-hover:text-theme-contrary" />
+          <ArrowTopRightOnSquareIcon className="size-5 transition group-hover:text-foreground" />
         </Link>
 
         <button
@@ -56,7 +56,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
           aria-label={`Projects with ${rowItem.title}`}
           disabled
         >
-          <ArrowLongRightIcon className="size-5 transition group-hover:text-theme-contrary" />
+          <ArrowLongRightIcon className="size-5 transition group-hover:text-foreground" />
           <span
             title={`Projects with ${rowItem.title}`}
             aria-label={`Projects with ${rowItem.title}`}

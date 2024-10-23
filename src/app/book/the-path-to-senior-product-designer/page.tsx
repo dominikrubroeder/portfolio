@@ -12,7 +12,7 @@ export default function ThePathToSeniorProductDesignerPage() {
       summaryDescription={
         <div>
           <p>
-            <b className="mr-1 text-theme-contrary">
+            <b className="mr-1 text-foreground">
               If you ever felt in the need of, or being curious for guidance,
               this book is for you.
             </b>
@@ -66,7 +66,7 @@ export default function ThePathToSeniorProductDesignerPage() {
       outcome={
         <div>
           <p>
-            <b className="mr-1 text-theme-contrary">
+            <b className="mr-1 text-foreground">
               Focus on the business impact of design
             </b>
             is one of the last sections of this book. In it, Artiom Dashinksy

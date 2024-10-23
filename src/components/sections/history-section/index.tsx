@@ -52,17 +52,17 @@ export default function Index() {
                 target="_blank"
                 className="group ml-1 inline-flex items-center gap-1 pb-1"
               >
-                <span className="border-b transition group-hover:text-theme-contrary">
+                <span className="border-b transition group-hover:text-foreground">
                   IU international university
                 </span>
-                <ArrowTopRightOnSquareIcon className="size-4 transition group-hover:text-theme-contrary" />
+                <ArrowTopRightOnSquareIcon className="size-4 transition group-hover:text-foreground" />
               </Link>
             </p>
             <p className="-mt-1">Semester 5 – 7</p>
             <p>
               <Link
                 href="/work/bachelor-thesis-prework-dominik-rubroeder-nintendo.pdf"
-                className="inline-flex items-center gap-1 hover:text-theme-contrary"
+                className="inline-flex items-center gap-1 hover:text-foreground"
                 target="_blank"
                 download
               >
@@ -74,7 +74,7 @@ export default function Index() {
             <p>
               <Link
                 href="/work/bachelor-thesis-dominik-rubroeder-nintendo.pdf"
-                className="inline-flex items-center gap-1 hover:text-theme-contrary"
+                className="inline-flex items-center gap-1 hover:text-foreground"
                 target="_blank"
                 download
               >
@@ -104,10 +104,10 @@ export default function Index() {
                   target="_blank"
                   className="group ml-1 inline-flex items-center gap-1 pb-1"
                 >
-                  <span className="border-b transition group-hover:text-theme-contrary">
+                  <span className="border-b transition group-hover:text-foreground">
                     IU international university
                   </span>
-                  <ArrowTopRightOnSquareIcon className="size-4 transition group-hover:text-theme-contrary" />
+                  <ArrowTopRightOnSquareIcon className="size-4 transition group-hover:text-foreground" />
                 </Link>
               </p>
               <p className="-mt-1">Semester 1 – 4</p>

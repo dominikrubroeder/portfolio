@@ -1,4 +1,4 @@
-import { defaultSize } from '@/components/ui/svg/config';
+import { defaultIconSize } from '@/components/ui/svg/config';
 
 export default function Shopware({ className }: { className?: string }) {
   return (
@@ -6,7 +6,7 @@ export default function Shopware({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : defaultSize}
+      className={className ? className : defaultIconSize}
     >
       <path
         d="M102.067 114.744C96.5088 110.558 88.3104 107.371 79.6352 104.01C69.3086 100.01 57.5983 95.4631 48.8068 88.4741C38.8524 80.5431 34.0031 70.5422 34.0031 57.9015C34.0031 46.5517 38.7128 36.8531 47.6206 29.8408C57.6099 21.9796 72.7508 17.8165 91.3921 17.8165C96.5437 17.8165 101.463 18.1305 106.021 18.7584C106.428 18.8166 106.812 18.5956 106.975 18.2351C107.149 17.863 107.056 17.4327 106.754 17.1652C95.0087 6.59451 79.8212 0.780029 64.0058 0.780029C46.9113 0.780029 30.84 7.4318 18.7459 19.5259C6.6634 31.6084 0 47.6797 0 64.7626C0 81.8572 6.65177 97.9284 18.7459 110.011C30.8284 122.093 46.8996 128.757 64.0058 128.757C77.8211 128.757 90.9734 124.419 102.056 116.221C102.288 116.046 102.428 115.779 102.428 115.488C102.428 115.197 102.3 114.918 102.067 114.744Z"

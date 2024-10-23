@@ -1,31 +1,15 @@
 import Accordion from '@/components/atoms/accordion';
-import Label from '@/components/ui/label';
-import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Blockquote from '@/components/ui/blockquote';
+import Anchor from '@/components/atoms/link';
 
-export default function HeyChatGptUxEngineer() {
+export default function UxEngineer() {
   return (
     <Accordion
-      title={
-        <>
-          Hey ChatGPT,
-          <span className="ml-1 font-normal text-gray-2">
-            on which predicates should a UX Engineer focus on?
-          </span>
-        </>
-      }
+      title="On which predicates should a UX Engineer focus on?"
       restrictHeight
     >
-      <h3 className="font-bold text-theme-contrary">
-        UX Predicates
-        <Label text="UX Engineer" />
-      </h3>
-
-      <br />
-
       <Blockquote horizontalOffset={false}>
-        <b className="text-theme-contrary">
+        <b className="text-foreground">
           You are a Chief Developer. On which predicates should a UX Engineer
           focus on?
         </b>
@@ -39,7 +23,7 @@ export default function HeyChatGptUxEngineer() {
 
       <ol className="mb-5 grid list-decimal gap-4 pl-8">
         <li>
-          <strong className="text-theme-contrary">User Research:</strong>
+          <strong className="text-foreground">User Research:</strong>
           <ul className="list-disc pl-4">
             <li>
               Conduct thorough research to understand the target audience.
@@ -52,9 +36,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">
-            User Persona Development:
-          </strong>
+          <strong className="text-foreground">User Persona Development:</strong>
           <ul className="list-disc pl-4">
             <li>
               Create detailed user personas to represent different user types.
@@ -63,16 +45,14 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">
-            Information Architecture:
-          </strong>
+          <strong className="text-foreground">Information Architecture:</strong>
           <ul className="list-disc pl-4">
             <li>Design a clear and intuitive navigation structure.</li>
             <li>Organize information logically to facilitate easy access.</li>
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">
+          <strong className="text-foreground">
             Wireframing and Prototyping:
           </strong>
           <ul className="list-disc pl-4">
@@ -85,7 +65,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">Visual Design:</strong>
+          <strong className="text-foreground">Visual Design:</strong>
           <ul className="list-disc pl-4">
             <li>Focus on creating visually appealing and cohesive designs.</li>
             <li>
@@ -94,7 +74,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">Accessibility:</strong>
+          <strong className="text-foreground">Accessibility:</strong>
           <ul className="list-disc pl-4">
             <li>
               Pay attention to accessibility standards to make the software
@@ -107,7 +87,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">Usability Testing:</strong>
+          <strong className="text-foreground">Usability Testing:</strong>
           <ul className="list-disc pl-4">
             <li>
               Conduct regular usability testing with real users to identify any
@@ -120,7 +100,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">Responsive Design:</strong>
+          <strong className="text-foreground">Responsive Design:</strong>
           <ul className="list-disc pl-4">
             <li>
               Ensure that the user interface is responsive across various
@@ -130,9 +110,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">
-            Performance Optimization:
-          </strong>
+          <strong className="text-foreground">Performance Optimization:</strong>
           <ul className="list-disc pl-4">
             <li>
               Consider the performance of the application to ensure quick load
@@ -144,7 +122,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">
+          <strong className="text-foreground">
             User Feedback and Iteration:
           </strong>
           <ul className="list-disc pl-4">
@@ -157,7 +135,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">
+          <strong className="text-foreground">
             Collaboration with Development Teams:
           </strong>
           <ul className="list-disc pl-4">
@@ -172,7 +150,7 @@ export default function HeyChatGptUxEngineer() {
           </ul>
         </li>
         <li>
-          <strong className="text-theme-contrary">
+          <strong className="text-foreground">
             Stay Updated on Industry Trends:
           </strong>
           <ul className="list-disc pl-4">
@@ -189,8 +167,8 @@ export default function HeyChatGptUxEngineer() {
       </ol>
 
       <p>
-        <b className="text-theme-contrary">By focusing on these predicates</b>,
-        a UX Engineer can contribute significantly to creating user-centric and
+        <b className="text-foreground">By focusing on these predicates</b>, a UX
+        Engineer can contribute significantly to creating user-centric and
         engaging software applications. This approach helps in building products
         that meet user expectations and improve overall satisfaction.
       </p>
@@ -198,16 +176,13 @@ export default function HeyChatGptUxEngineer() {
       <br />
 
       <p>
-        <span>UX Engineer Focus Areas</span>
-        <Link
+        <span>UX Engineer Focus Areas on ChatGPT:</span>
+        <Anchor
           href="https://chat.openai.com/share/c8344fb3-ea8b-4d0e-830c-185d3aab2a27"
-          target="_blank"
           title="UX Engineer: Focus Areas on ChatGPT"
-          className="external-link ml-1 break-all"
         >
-          https://chat.openai.com/share/c8344fb3-ea8b-4d0e-830c-185d3aab2a27
-          <ArrowRightIcon className="mb-0.5 ml-1.5 inline-block size-4 shrink-0 -rotate-45" />
-        </Link>
+          Source
+        </Anchor>
       </p>
     </Accordion>
   );

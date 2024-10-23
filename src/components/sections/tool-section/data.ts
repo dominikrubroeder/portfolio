@@ -92,5 +92,16 @@ export const tools: Tool[] = [
     priority: 'low',
     projects: [],
     experience: 'moderate'
+  },
+  {
+    title: 'Algolia',
+    website: 'https://www.algolia.com',
+    logo: 'https://dominikrubroeder.dev/miro.png',
+    href: '/tool/algolia',
+    description: 'AI-Search, that understands',
+    keyword: 'Search',
+    priority: 'low',
+    projects: [],
+    experience: 'moderate'
   }
 ];

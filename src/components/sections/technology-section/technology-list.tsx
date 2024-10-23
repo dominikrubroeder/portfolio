@@ -22,7 +22,7 @@ export default function TechnologyList() {
         })}
       </ul>
 
-      <div className="ml-4 sm:ml-16">
+      <div>
         <MoreItemsSection items={technologies} />
       </div>
     </>

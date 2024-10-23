@@ -1,12 +1,12 @@
-import { defaultSize } from '@/components/ui/svg/config';
+import { defaultIconSize } from '@/components/ui/svg/config';
 
-export default function NextJs({ className }: { className?: string }) {
+export default function NextJsIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : defaultSize}
+      className={className ? className : defaultIconSize}
     >
       <defs>
         <linearGradient

@@ -14,7 +14,7 @@ export default function ControlBarMobileTrigger({
         onClick={() => toggleMobileMenu()}
       >
         <div className="rounded-full bg-gray-4 p-2">
-          <Bars3Icon className="size-5 text-theme-contrary transition" />
+          <Bars3Icon className="size-5 text-foreground transition" />
         </div>
       </button>
     </div>

@@ -1,68 +1,38 @@
-export default function Mindset() {
-  return (
-    <div>
-      <h3>I like</h3>
+import { cn } from '@/lib/utils';
 
-      <br />
+export default function Mindset({ className }: { className?: string }) {
+  return (
+    <div className={cn('mx-auto w-full max-w-screen-sm space-y-6', className)}>
+      <h3>I like</h3>
 
       <ul className="mb-5 list-disc pl-8">
         <li>
-          <b className="text-theme-contrary">Designing</b> – with care, in code,
-          with joy
+          <b className="text-foreground">Designing</b> – with care, joy
         </li>
         <li>
-          <b className="text-theme-contrary">Coding</b> – by design
+          <b className="text-foreground">Coding</b> and
+          <b className="text-foreground"> Building</b> – for production
         </li>
         <li>
-          <b className="text-theme-contrary">Using Psychology </b>
+          <b className="text-foreground">Using Psychology </b>
           to design and build better user interfaces
         </li>
         <li>Writing documentation</li>
+        <li>Working for good brands, products or services</li>
         <li>Bringing an idea from paper to production</li>
-        <li>Refining a product/feature to specific needs</li>
+        <li>Refining a feature to specific needs</li>
         <li>
-          Getting to know a product/brand/concept in order to know what it is
-          designed to be and designed to fulfill
+          Pen and Paper: I don&apos;t have to &apos;draw&apos; – but fast
+          sketching and scribbling can improve visualizing my ideas faster. I
+          can also turn back to them later, when something else blocks the
+          opportunity working on it immediately
         </li>
-      </ul>
-
-      <h3>Training, Training, Training and fun</h3>
-
-      <br />
-
-      <ul className="mb-5 list-disc pl-8">
-        <li>Don&apos;t forget to have some fun during the process</li>
-        <li>Enjoy colors</li>
-        <li>Typography is important</li>
         <li>
-          Engage with your co-workers, exchange your ideas, evaluate if another
-          opinion has some truth in it
-        </li>
-        <li>Work with heart, mindfulness</li>
-      </ul>
-
-      <h3>Pen and Paper</h3>
-
-      <br />
-
-      <ul className="mb-5 list-disc pl-8">
-        <li>
-          You don&apos;t have to &apos;draw&apos; – but fast sketching and
-          scribble can improve visualize your ideas fast. I also had to learn
-          this and get rid of &apos;Ahh, i don&apos;t need this&apos;
-        </li>
-      </ul>
-
-      <h3>Notes</h3>
-
-      <br />
-
-      <ul className="list-disc pl-8">
-        <li>
-          Take notes. Just do it. It will help your brain organize the current
-          task and summarize the outcome of your work while being in the
-          process. You also will notice you will find more clarity and structure
-          if you get stuck in a concept.
+          Notes: I like to take them. Similar to Pen and Paper work, it will
+          help my brain to organize the current work on a task and summarize the
+          outcome of it while being in the process. I often find myself with
+          more clarity and a feeling of structure if i get stuck in a concept
+          for too long
         </li>
       </ul>
     </div>

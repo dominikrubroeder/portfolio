@@ -1,5 +1,5 @@
-import { defaultSize } from '@/components/ui/svg/config';
-import { cn } from '@/utils';
+import { defaultIconSize } from '@/components/ui/svg/config';
+import { cn } from '@/lib/utils';
 
 export default function LinkedIn({ className }: { className?: string }) {
   return (
@@ -7,7 +7,7 @@ export default function LinkedIn({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn('text-[#007EBB]', defaultSize, className)}
+      className={cn('text-[#007EBB]', defaultIconSize, className)}
     >
       <path
         fillRule="evenodd"

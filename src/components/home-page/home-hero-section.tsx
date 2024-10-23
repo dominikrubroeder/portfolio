@@ -1,43 +1,38 @@
 import React, { Suspense } from 'react';
 import ControlBar from '@/components/navigation/control-bar/control-bar';
+import { PauseIcon } from '@heroicons/react/20/solid';
 
 const sections = [
+  { id: 'header', label: '', icon: 'HomeIcon' },
   { id: 'introduction', label: 'Introduction', icon: 'ArrowRightCircleIcon' },
   { id: 'projects', label: 'Projects', icon: 'DocumentDuplicateIcon' },
   { id: 'tools', label: 'Tools', icon: 'PaintBrushIcon' },
   { id: 'technologies', label: 'Technologies', icon: 'Cog6ToothIcon' },
-  { id: 'socials', label: 'Socials', icon: 'CheckBadgeIcon' }
+  { id: 'socials', label: 'Socials', icon: 'CheckBadgeIcon' },
+  { id: 'mail', label: '', icon: 'EnvelopeIcon' },
+  { id: 'header', label: '', icon: 'ArrowUpIcon' }
 ];
 
 export default function HomeHeroSection() {
   return (
     <>
-      <section className="mx-auto flex w-full max-w-screen-sm items-center justify-center p-4 md:h-[80svh]">
-        <div>
-          <h2 className="text-6xl font-bold text-theme-contrary sm:text-8xl">
-            Team Frontend.
-          </h2>
-
-          <p className="max-w-screen-sm">
-            <span className="mx-1 text-6xl font-bold text-accent sm:text-6xl">
-              UX and UI design with passion
-              <br /> Love for supportive animations and smooth transitions.
+      <section
+        id="hero"
+        className="mx-auto sm:flex sm:items-center sm:justify-center md:min-h-[80svh]"
+      >
+        <div className="p-4">
+          <h2 className="text-8xl font-bold text-foreground">Team Frontend.</h2>
+          <p className="mx-1 flex flex-wrap items-center gap-4 space-y-6 text-6xl font-bold text-accent sm:text-6xl">
+            Build your vision
+            <span className="flex size-10 items-center justify-center rounded-full bg-black/5">
+              <PauseIcon className="size-4 shrink-0" />
             </span>
           </p>
-
-          <hr className="my-4" />
-
-          <p>Designed with code in mind – Coded, by design</p>
         </div>
       </section>
 
       <Suspense>
-        <ControlBar
-          sections={sections}
-          collapse={false}
-          leftControlAction="Avatar"
-          rightControlAction="Up"
-        />
+        <ControlBar sections={sections} collapse={false} />
       </Suspense>
     </>
   );

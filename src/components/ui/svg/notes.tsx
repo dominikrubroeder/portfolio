@@ -1,4 +1,4 @@
-import { defaultSize } from '@/components/ui/svg/config';
+import { defaultIconSize } from '@/components/ui/svg/config';
 
 export default function Notes({ className }: { className?: string }) {
   return (
@@ -8,7 +8,7 @@ export default function Notes({ className }: { className?: string }) {
       width="120"
       height="120"
       viewBox="0 0 120 120"
-      className={className ? className : defaultSize}
+      className={className ? className : defaultIconSize}
     >
       <defs>
         <linearGradient id="e" x1="50%" x2="50%" y1="0%" y2="100%">

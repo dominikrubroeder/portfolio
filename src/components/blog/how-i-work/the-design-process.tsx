@@ -8,7 +8,7 @@ export default function TheDesignProcess() {
       <ContainedSection className="grid max-w-screen-sm gap-8">
         <div className="grid gap-2">
           <h2>How i work</h2>
-          <h1 className="text-6xl font-bold text-theme-contrary">
+          <h1 className="text-6xl font-bold text-foreground">
             The Design Process
           </h1>
         </div>

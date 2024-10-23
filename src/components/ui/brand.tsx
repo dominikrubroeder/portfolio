@@ -1,5 +1,5 @@
 import Figma from '@/components/ui/svg/figma';
-import WebStorm from '@/components/ui/svg/webstorm';
+import WebstormIcon from '@/components/ui/svg/webstorm-icon';
 import GitHub from '@/components/ui/svg/github';
 import type { Brand as BrandType } from '@/types';
 import Gitlab from '@/components/ui/svg/gitlab';
@@ -7,17 +7,17 @@ import Shopware from '@/components/ui/svg/shopware';
 import Storyblok from '@/components/ui/svg/storyblok';
 import Miro from '@/components/ui/svg/miro';
 import Markdown from '@/components/ui/svg/markdown';
-import React from '@/components/ui/svg/react';
-import NextJs from '@/components/ui/svg/next-js';
+import ReactIcon from '@/components/ui/svg/react-icon';
+import NextJsIcon from '@/components/ui/svg/next-js-icon';
 import HTML from '@/components/ui/svg/html';
 import CSS from '@/components/ui/svg/css';
-import TailwindCSS from '@/components/ui/svg/tailwind-css';
-import FramerMotion from '@/components/ui/svg/framer-motion';
+import TailwindCssIcon from '@/components/ui/svg/tailwind-css-icon';
+import FramerMotionIcon from '@/components/ui/svg/framer-motion-icon';
 import AuthJs from '@/components/ui/img/auth-js';
 import Xing from '@/components/ui/svg/xing';
 import Instagram from '@/components/ui/img/instagram';
 import LinkedIn from '@/components/ui/svg/linkedin';
-import TypeScript from '@/components/ui/svg/typescript';
+import TypescriptIcon from '@/components/ui/svg/typescript-icon';
 import JavaScript from '@/components/ui/svg/javascript';
 import Notes from '@/components/ui/svg/notes';
 import Craft from '@/components/ui/svg/craft';
@@ -36,7 +36,7 @@ export default function Brand({
       return <Figma className={className} />;
 
     case 'WebStorm':
-      return <WebStorm className={className} />;
+      return <WebstormIcon className={className} />;
 
     case 'Notes':
       return <Notes className={className} />;
@@ -57,13 +57,13 @@ export default function Brand({
       return <Miro className={className} />;
 
     case 'React':
-      return <React className={className} />;
+      return <ReactIcon className={className} />;
 
     case 'Next.js':
-      return <NextJs className={className} />;
+      return <NextJsIcon className={className} />;
 
     case 'TypeScript':
-      return <TypeScript className={className} />;
+      return <TypescriptIcon className={className} />;
 
     case 'JavaScript':
       return <JavaScript className={className} />;
@@ -78,10 +78,10 @@ export default function Brand({
       return <CSS className={className} />;
 
     case 'Tailwind CSS':
-      return <TailwindCSS className={className} />;
+      return <TailwindCssIcon className={className} />;
 
     case 'Framer Motion':
-      return <FramerMotion className={className} />;
+      return <FramerMotionIcon className={className} />;
 
     case 'Auth.js':
       return <AuthJs className={className} />;

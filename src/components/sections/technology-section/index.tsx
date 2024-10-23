@@ -7,7 +7,7 @@ export default function TechnologySection() {
   return (
     <Section id="technologies">
       <header className="flex gap-1 px-4 sm:px-16">
-        <h2 className="font-bold text-theme-contrary">Technologies</h2>
+        <h2 className="font-bold text-foreground">Technologies</h2>
         <span>I use</span>
       </header>
 

@@ -19,7 +19,7 @@ export default function ToolList() {
         })}
       </ul>
 
-      <div className="ml-4 sm:ml-16">
+      <div>
         <MoreItemsSection items={tools} />
       </div>
     </>

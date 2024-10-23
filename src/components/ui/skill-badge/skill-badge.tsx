@@ -1,5 +1,5 @@
-import {useRef, useState} from 'react';
-import {XMarkIcon} from '@heroicons/react/24/outline';
+import { useRef, useState } from 'react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 /** Property `position` should be a CSS class */
 export default function SkillBadge({
@@ -49,7 +49,7 @@ export default function SkillBadge({
           className="group rounded-full bg-gray-4 p-2"
           onClick={() => setIsVisible(false)}
         >
-          <XMarkIcon className="size-4 group-hover:text-theme-contrary" />
+          <XMarkIcon className="size-4 group-hover:text-foreground" />
         </div>
 
         {designMode && (

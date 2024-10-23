@@ -7,7 +7,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/react.png',
     href: '/technology/react',
     description: 'The library for web and native user interfaces',
-    keyword: 'UI library',
+    keyword: 'Framework',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -46,23 +46,12 @@ export const technologies: Technology[] = [
     experience: 'daily'
   },
   {
-    title: 'Markdown',
-    website: 'https://markdown.de/',
-    logo: 'https://dominikrubroeder.dev/markdown.png',
-    href: '/technology/markdown',
-    description: 'A simplified markup language',
-    keyword: 'Markup Language',
-    priority: 'high',
-    projects: [],
-    experience: 'high'
-  },
-  {
     title: 'HTML',
     website: 'https://www.w3schools.com/html/',
     logo: 'https://dominikrubroeder.dev/html.png',
     href: '/technology/html',
     description: 'The standard markup language for Web pages',
-    keyword: 'Fundamental Markup Language',
+    keyword: 'Markup Language',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -73,7 +62,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/css.png',
     href: '/technology/css',
     description: 'The language we use to style an HTML document.',
-    keyword: 'Fundamental Styling Syntax',
+    keyword: 'Styling',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -89,6 +78,17 @@ export const technologies: Technology[] = [
     priority: 'high',
     projects: [],
     experience: 'daily'
+  },
+  {
+    title: 'Markdown',
+    website: 'https://markdown.de/',
+    logo: 'https://dominikrubroeder.dev/markdown.png',
+    href: '/technology/markdown',
+    description: 'A simplified markup language',
+    keyword: 'Markup Language',
+    priority: 'high',
+    projects: [],
+    experience: 'high'
   },
   {
     title: 'Framer Motion',

@@ -46,12 +46,12 @@ export default function HistoryEntry({
         <p>
           <span>{entryDate}</span> {exitDate && <span>– {exitDate}</span>}
           {isCurrent && (
-            <span className="mx-1 rounded-full border border-gray-4 px-2 py-1.5 text-theme-contrary">
+            <span className="mx-1 rounded-full border border-gray-4 px-2 py-1.5 text-foreground">
               Current
             </span>
           )}
         </p>
-        <h3 className="font-bold text-theme-contrary">{companyTitle}</h3>
+        <h3 className="font-bold text-foreground">{companyTitle}</h3>
         <p>{jobTitle}</p>
 
         {state === 'expanded' && (

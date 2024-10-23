@@ -1,39 +1,28 @@
 import WhatIsAUxEngineer from '@/components/sections/introduction-section/what-is-a-ux-engineer';
-import HeyChatGptUxDesigner from '@/components/sections/introduction-section/hey-chat-gpt-ux-designer';
-import HeyChatGptUxEngineer from '@/components/sections/introduction-section/hey-chat-gpt-ux-engineer';
+import UxDesigner from '@/components/sections/introduction-section/ux-designer';
+import UxEngineer from '@/components/sections/introduction-section/ux-engineer';
 import DesignEngineerVsUxEngineer from '@/components/sections/introduction-section/design-engineer-vs-ux-engineer';
 import React from 'react';
 import Books from '@/components/sections/introduction-section/books';
 import Mindset from '@/components/sections/introduction-section/mindset';
-import Section from '@/components/sections/introduction-section/section';
 import Introduction from '@/components/sections/introduction-section/introduction';
-import ContactRow from '../contact-row';
+import TechStack from '@/components/sections/introduction-section/tech-stack';
 
 export default function IntroductionSection() {
   return (
-    <section className="grid gap-16 px-4 md:pt-32" id="introduction">
-      <Section
-        headline="Introduction"
-        className="mt-12 md:mt-0"
-        arrowLeft
-        showHeadlineMobileOnly
-      >
-        <Introduction />
-        <ContactRow />
-      </Section>
+    <section className="space-y-16 px-4 md:pt-32" id="introduction">
+      <Introduction />
 
-      <Section headline="Mindset" arrowLeft id="mindset">
-        <Mindset />
-      </Section>
+      <Mindset />
 
-      <Section headline="Books" arrowLeft>
-        <Books />
-      </Section>
+      <Books />
+
+      <TechStack />
 
       <div className="mx-auto w-full max-w-screen-sm" id="accordion-group">
         <WhatIsAUxEngineer />
-        <HeyChatGptUxDesigner />
-        <HeyChatGptUxEngineer />
+        <UxDesigner />
+        <UxEngineer />
         <DesignEngineerVsUxEngineer />
       </div>
     </section>

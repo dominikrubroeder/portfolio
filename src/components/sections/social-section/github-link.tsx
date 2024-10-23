@@ -1,11 +1,11 @@
 import GitHub from '@/components/ui/svg/github';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
 
 export default function GitHubLink({ className }: { className?: string }) {
   return (
     <Button
-      priority="secondary"
+      variant="secondary"
       asLink
       href="https://github.com/dominikrubroeder"
       target="_blank"

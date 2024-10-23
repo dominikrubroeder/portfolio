@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 import { ReactNode, useCallback } from 'react';
 import DynamicHeroIcon from '@/components/ui/dynamic-hero-icon';
 import { ClassValue } from 'clsx';

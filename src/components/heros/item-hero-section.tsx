@@ -18,7 +18,7 @@ export default function ItemHeroSection({ item }: { item: Tool | Technology }) {
           />
         </Link>
         <div className="grid gap-4">
-          <h1 className="text-center text-8xl font-bold text-theme-contrary">
+          <h1 className="text-center text-8xl font-bold text-foreground">
             {item.title}
           </h1>
           <p className="mx-auto text-center">

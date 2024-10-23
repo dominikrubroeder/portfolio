@@ -1,4 +1,4 @@
-import { defaultSize } from '@/components/ui/svg/config';
+import { defaultIconSize } from '@/components/ui/svg/config';
 
 export default function JavaScript({ className }: { className?: string }) {
   return (
@@ -8,7 +8,7 @@ export default function JavaScript({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : defaultSize}
+      className={className ? className : defaultIconSize}
     >
       <g clipPath="url(#clip0_753_1434)">
         <g clipPath="url(#clip1_753_1434)">
