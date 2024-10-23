@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import AnimatedProgress from '@/components/atoms/animated-progress';
+import { cn } from '@/lib/utils';
 
 export interface Book {
   title: string;
@@ -83,27 +84,31 @@ const books: Book[] = [
   }
 ];
 
-export default function Books() {
+export default function Books({ className }: { className?: string }) {
   return (
-    <ul className="mb-5 space-y-6 leading-relaxed md:gap-0">
-      {books.map((book) => (
-        <li key={book.title}>
-          {book.href ? (
-            <Link
-              href={book.href}
-              className="flex items-start justify-between gap-4 rounded-xl px-0 py-1 transition-all hover:bg-gray-5 hover:px-2 md:items-center"
-            >
+    <div className={cn('mx-auto w-full max-w-screen-sm space-y-6', className)}>
+      <h3>Books</h3>
+
+      <ul className="space-y-6 leading-relaxed">
+        {books.map((book) => (
+          <li key={book.title}>
+            {book.href ? (
+              <Link
+                href={book.href}
+                className="flex items-start justify-between gap-4 rounded-xl px-0 py-1 transition-all hover:bg-gray-5 hover:px-2 md:items-center"
+              >
+                <Book book={book} />
+                <div className="flex items-center gap-2">
+                  <ArrowRightIcon className="mt-1.5 size-5 shrink-0 md:mt-0" />
+                </div>
+              </Link>
+            ) : (
               <Book book={book} />
-              <div className="flex items-center gap-2">
-                <ArrowRightIcon className="mt-1.5 size-5 shrink-0 md:mt-0" />
-              </div>
-            </Link>
-          ) : (
-            <Book book={book} />
-          )}
-        </li>
-      ))}
-    </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

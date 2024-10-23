@@ -4,7 +4,7 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Brand from '@/components/ui/brand';
 import type { Brand as BrandType } from '@/types';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
 
 export default function SliderItem({
@@ -75,7 +75,7 @@ export default function SliderItem({
           } text-center transition sm:group-hover:visible sm:group-hover:translate-y-0 sm:group-hover:opacity-100`}
         >
           <Button
-            priority="secondary"
+            variant="secondary"
             asLink
             href={sliderItem.website}
             target="_blank"
