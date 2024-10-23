@@ -1,12 +1,13 @@
-import { defaultSize } from '@/components/ui/svg/config';
+import { defaultIconSize } from '@/components/ui/svg/config';
+import { cn } from '@/lib/utils';
 
-export default function TypeScript({ className }: { className?: string }) {
+export default function TypescriptIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : defaultSize}
+      className={cn(defaultIconSize, className)}
     >
       <g clipPath="url(#clip0_753_1437)">
         <g clipPath="url(#clip1_753_1438)">
