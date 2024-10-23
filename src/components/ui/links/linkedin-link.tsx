@@ -1,4 +1,4 @@
-import LinkedIn from '@/components/ui/svg/linkedin';
+import LinkedinIcon from '@/components/ui/svg/linkedin-icon';
 import Button from '@/components/atoms/button';
 
 export default function LinkedinLink({ className }: { className?: string }) {
@@ -10,7 +10,7 @@ export default function LinkedinLink({ className }: { className?: string }) {
       title="LinkedIn Dominik Rubröder"
       aria-label="Go to external LinkedIn page from Dominik Rubröder"
     >
-      <LinkedIn className={className} />
+      <LinkedinIcon className={className} />
     </Button>
   );
 }

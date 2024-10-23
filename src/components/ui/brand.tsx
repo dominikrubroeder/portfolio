@@ -1,6 +1,6 @@
 import Figma from '@/components/ui/svg/figma';
 import WebstormIcon from '@/components/ui/svg/webstorm-icon';
-import GitHub from '@/components/ui/svg/github';
+import GithubIcon from '@/components/ui/svg/github-icon';
 import type { Brand as BrandType } from '@/types';
 import Gitlab from '@/components/ui/svg/gitlab';
 import Shopware from '@/components/ui/svg/shopware';
@@ -16,7 +16,7 @@ import FramerMotionIcon from '@/components/ui/svg/framer-motion-icon';
 import AuthJs from '@/components/ui/img/auth-js';
 import Xing from '@/components/ui/svg/xing';
 import Instagram from '@/components/ui/img/instagram';
-import LinkedIn from '@/components/ui/svg/linkedin';
+import LinkedinIcon from '@/components/ui/svg/linkedin-icon';
 import TypescriptIcon from '@/components/ui/svg/typescript-icon';
 import JavaScript from '@/components/ui/svg/javascript';
 import Notes from '@/components/ui/svg/notes';
@@ -42,7 +42,7 @@ export default function Brand({
       return <Notes className={className} />;
 
     case 'GitHub':
-      return <GitHub className={className} />;
+      return <GithubIcon className={className} />;
 
     case 'GitLab':
       return <Gitlab className={className} />;
@@ -87,7 +87,7 @@ export default function Brand({
       return <AuthJs className={className} />;
 
     case 'LinkedIn':
-      return <LinkedIn className={className} />;
+      return <LinkedinIcon className={className} />;
 
     case 'Xing':
       return <Xing className={className} />;

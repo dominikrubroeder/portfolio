@@ -11,7 +11,7 @@ export default function TechStack({ className }: { className?: string }) {
   return (
     <div className={cn('mx-auto w-full max-w-screen-sm space-y-6', className)}>
       <h3>My tech stack</h3>
-      <ul className="flex items-center gap-4">
+      <ul className="flex flex-wrap items-center gap-4">
         <li>
           <Button
             variant="secondary"

@@ -1,7 +1,7 @@
 import { defaultIconSize } from '@/components/ui/svg/config';
 import { cn } from '@/lib/utils';
 
-export default function GitHub({ className }: { className?: string }) {
+export default function GithubIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"

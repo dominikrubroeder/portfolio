@@ -1,4 +1,4 @@
-import GitHub from '@/components/ui/svg/github';
+import GithubIcon from '@/components/ui/svg/github-icon';
 import Link from 'next/link';
 
 export default function GitHubLink() {
@@ -9,7 +9,7 @@ export default function GitHubLink() {
       title="GitHub Dominik Rubröder"
       aria-label="Go to external GitHub page from Dominik Rubröder"
     >
-      <GitHub className="size-6 shrink-0" />
+      <GithubIcon className="size-6 shrink-0" />
     </Link>
   );
 }

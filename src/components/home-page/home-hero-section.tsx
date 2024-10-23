@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import ControlBar from '@/components/navigation/control-bar/control-bar';
-import { PauseIcon } from '@heroicons/react/20/solid';
 
 const sections = [
   { id: 'header', label: '', icon: 'HomeIcon' },
@@ -21,12 +20,11 @@ export default function HomeHeroSection() {
         className="mx-auto sm:flex sm:items-center sm:justify-center md:min-h-[80svh]"
       >
         <div className="p-4">
-          <h2 className="text-8xl font-bold text-foreground">Team Frontend.</h2>
-          <p className="mx-1 flex flex-wrap items-center gap-4 space-y-6 text-6xl font-bold text-accent sm:text-6xl">
+          <h2 className="text-6xl font-bold text-foreground sm:text-8xl">
+            Team Frontend.
+          </h2>
+          <p className="mx-1 flex flex-wrap items-center gap-4 space-y-6 text-4xl font-bold text-accent sm:text-6xl">
             Build your vision
-            <span className="flex size-10 items-center justify-center rounded-full bg-black/5">
-              <PauseIcon className="size-4 shrink-0" />
-            </span>
           </p>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import GitHub from '@/components/ui/svg/github';
+import GithubIcon from '@/components/ui/svg/github-icon';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
 
@@ -12,7 +12,7 @@ export default function GitHubLink({ className }: { className?: string }) {
       title="Go to GitHub repositories from Dominik Rubröder"
       aria-label="Go to GitHub repositories from Dominik Rubröder"
     >
-      <GitHub className={cn(className)} />
+      <GithubIcon className={cn(className)} />
     </Button>
   );
 }
