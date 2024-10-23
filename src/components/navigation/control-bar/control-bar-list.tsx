@@ -10,6 +10,7 @@ import type {
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import GitHubLink from '@/components/ui/links/github-link';
 import LinkedinLink from '@/components/ui/links/linkedin-link';
+import { cn } from '@/lib/utils';
 
 export default function ControlBarList({
   sections,
@@ -37,29 +38,33 @@ export default function ControlBarList({
         <Link
           key={section.id}
           href={`#${section.id}`}
-          className={`interactive relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2 ${
-            activeSection === section.id ? '' : 'hover:text-foreground'
-          }`}
+          className={cn(
+            'interactive group relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2',
+            activeSection === section.id ? '' : 'hover:bg-black/5'
+          )}
           onClick={(e) => scrollIntoView(e, section.id)}
         >
+          {activeSection !== section.id && (
+            <div className="invisible absolute inset-0 z-10 scale-50 rounded-full bg-black/5 opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
+          )}
+
           {activeSection === section.id && (
             <motion.span
               layoutId="page-navigation"
-              className="absolute inset-0 z-10 bg-gray-4"
+              className="absolute inset-0 z-10 bg-primary"
               style={{ borderRadius: 9999 }}
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
           )}
 
           <div
-            className={`relative z-20 flex w-max cursor-pointer items-center gap-4 ${
-              activeSection === section.id
-                ? 'text-foreground'
-                : 'hover:text-foreground'
-            } md:gap-2`}
+            className={cn(
+              'relative z-20 flex w-max cursor-pointer items-center gap-4 md:gap-2',
+              activeSection === section.id && 'text-white'
+            )}
           >
-            <DynamicHeroIcon name={section.icon} className="size-5" />
-            {section.label}
+            <DynamicHeroIcon name={section.icon} className="size-5 shrink-0" />
+            {section.label && section.label !== '' ? section.label : null}
           </div>
         </Link>
       ))}
