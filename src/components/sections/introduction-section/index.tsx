@@ -5,30 +5,19 @@ import DesignEngineerVsUxEngineer from '@/components/sections/introduction-secti
 import React from 'react';
 import Books from '@/components/sections/introduction-section/books';
 import Mindset from '@/components/sections/introduction-section/mindset';
-import Section from '@/components/sections/introduction-section/section';
 import Introduction from '@/components/sections/introduction-section/introduction';
 import ContactRow from '../contact-row';
 
 export default function IntroductionSection() {
   return (
     <section className="grid gap-16 px-4 md:pt-32" id="introduction">
-      <Section
-        headline="Introduction"
-        className="mt-12 md:mt-0"
-        arrowLeft
-        showHeadlineMobileOnly
-      >
-        <Introduction />
-        <ContactRow />
-      </Section>
+      <Introduction />
 
-      <Section headline="Mindset" arrowLeft id="mindset">
-        <Mindset />
-      </Section>
+      <ContactRow />
 
-      <Section headline="Books" arrowLeft>
-        <Books />
-      </Section>
+      <Mindset />
+
+      <Books />
 
       <div className="mx-auto w-full max-w-screen-sm" id="accordion-group">
         <WhatIsAUxEngineer />
