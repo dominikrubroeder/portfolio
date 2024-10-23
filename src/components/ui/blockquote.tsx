@@ -1,4 +1,4 @@
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 import React, { ReactNode } from 'react';
 
 export default function Blockquote({

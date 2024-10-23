@@ -2,7 +2,7 @@
 
 import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 
 export default function Accordion({
   title,
