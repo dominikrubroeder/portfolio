@@ -4,7 +4,7 @@ import Button from '@/components/atoms/button';
 export default function LinkedinLink({ className }: { className?: string }) {
   return (
     <Button
-      priority="secondary"
+      variant="secondary"
       href="https://www.linkedin.com/in/dominik-rubröder-49a63817b"
       target="_blank"
       title="LinkedIn Dominik Rubröder"

@@ -36,7 +36,7 @@ export default function MoreItemsSection({
           {!state.isVisible && <PlusIcon className="size-5" />}
         </button>
 
-        <Button priority="secondary" aria-label="Hide and show more items">
+        <Button variant="secondary" aria-label="Hide and show more items">
           {state.isVisible ? 'Less' : 'More'}
         </Button>
       </div>
