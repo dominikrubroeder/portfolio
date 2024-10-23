@@ -13,7 +13,7 @@ export default function Header() {
     >
       <div className="flex items-center gap-4">
         <Avatar
-          className="size-10 shrink-0 sm:size-12"
+          className="size-11 shrink-0 sm:size-14"
           width={56}
           height={56}
           as="Image"

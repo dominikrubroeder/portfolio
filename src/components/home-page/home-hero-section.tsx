@@ -17,9 +17,9 @@ export default function HomeHeroSection() {
     <>
       <section
         id="hero"
-        className="mx-auto sm:flex sm:items-center sm:justify-center md:min-h-[80svh]"
+        className="pb-12 pt-6 sm:mx-auto sm:flex sm:items-center sm:justify-center md:min-h-[80svh]"
       >
-        <div className="p-4">
+        <div className="space-y-1 px-4 sm:space-y-0">
           <h2 className="text-6xl font-bold text-foreground sm:text-8xl">
             Team Frontend.
           </h2>
