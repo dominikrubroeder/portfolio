@@ -39,7 +39,7 @@ export default function ControlBarList({
           key={section.id}
           href={`#${section.id}`}
           className={cn(
-            'interactive group relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition focus-visible:outline-2',
+            'interactive group relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition hover:text-foreground focus-visible:outline-2',
             activeSection === section.id ? '' : 'hover:bg-black/5'
           )}
           onClick={(e) => scrollIntoView(e, section.id)}

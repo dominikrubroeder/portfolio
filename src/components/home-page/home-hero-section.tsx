@@ -8,7 +8,9 @@ const sections = [
   { id: 'projects', label: 'Projects', icon: 'DocumentDuplicateIcon' },
   { id: 'tools', label: 'Tools', icon: 'PaintBrushIcon' },
   { id: 'technologies', label: 'Technologies', icon: 'Cog6ToothIcon' },
-  { id: 'socials', label: 'Socials', icon: 'CheckBadgeIcon' }
+  { id: 'socials', label: 'Socials', icon: 'CheckBadgeIcon' },
+  { id: 'mail', label: '', icon: 'EnvelopeIcon' },
+  { id: 'header', label: '', icon: 'ArrowUpIcon' }
 ];
 
 export default function HomeHeroSection() {

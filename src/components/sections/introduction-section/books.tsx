@@ -89,7 +89,7 @@ export default function Books({ className }: { className?: string }) {
     <div className={cn('mx-auto w-full max-w-screen-sm space-y-6', className)}>
       <h3>Books</h3>
 
-      <ul className="space-y-6 leading-relaxed">
+      <ul className="space-y-4 leading-relaxed">
         {books.map((book) => (
           <li key={book.title}>
             {book.href ? (

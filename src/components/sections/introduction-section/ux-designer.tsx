@@ -1,28 +1,13 @@
 import Accordion from '@/components/atoms/accordion';
-import Label from '@/components/ui/label';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import Blockquote from '@/components/ui/blockquote';
+import Anchor from '@/components/atoms/link';
 
-export default function HeyChatGptUxDesigner() {
+export default function UxDesigner() {
   return (
     <Accordion
-      title={
-        <>
-          Hey ChatGPT,
-          <span className="ml-1 font-normal text-gray-2">
-            on which predicates should a UX Designer focus on?
-          </span>
-        </>
-      }
+      title="On which predicates should a UX Designer focus on?"
       restrictHeight
     >
-      <h3 className="font-bold text-foreground">
-        UX Predicates
-        <Label text="UX Designer" />
-      </h3>
-
-      <br />
-
       <Blockquote horizontalOffset={false}>
         <b className="text-foreground">
           You are a Chief Designer. On which predicates should a UX Designer
@@ -141,16 +126,13 @@ export default function HeyChatGptUxDesigner() {
       <br />
 
       <p>
-        <span>UX Design: Key Predicates</span>
-        <a
+        <span>UX Design: Key Predicates on ChatGPT:</span>
+        <Anchor
           href="https://chat.openai.com/share/ca8c7c7e-95da-46bb-bd06-fbb81ac53dea"
-          target="_blank"
           title="UX Design: Key Predicates on ChatGPT"
-          className="external-link ml-1 break-all"
         >
-          https://chat.openai.com/share/ca8c7c7e-95da-46bb-bd06-fbb81ac53dea
-          <ArrowRightIcon className="mb-0.5 ml-1.5 inline-block size-4 shrink-0 -rotate-45" />
-        </a>
+          Source
+        </Anchor>
       </p>
     </Accordion>
   );

@@ -8,12 +8,14 @@ export default function Accordion({
   title,
   children,
   focusView = 'center',
-  restrictHeight
+  restrictHeight,
+  className
 }: {
   title: ReactNode;
   children: ReactNode;
   focusView?: 'start' | 'center';
   restrictHeight?: boolean;
+  className?: string;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -33,9 +35,9 @@ export default function Accordion({
   }, [scrollIntoViewAction, open]);
 
   return (
-    <div ref={ref} className="pt-4">
+    <div ref={ref} className={cn('pt-4', className)}>
       <div
-        className="sticky top-4 z-10 mx-auto flex cursor-pointer select-none items-center justify-between gap-4 rounded-2xl bg-gray-5 px-4 py-3 leading-[1.6] text-accent transition-all hover:bg-gray-4 md:relative md:top-0"
+        className="group sticky top-4 z-10 mx-auto flex cursor-pointer select-none items-center justify-between gap-4 overflow-hidden rounded-2xl bg-gray-5 px-4 py-3 leading-[1.6] text-accent transition-all md:relative md:top-0"
         title="Open accordion to see more content"
         aria-label="Open accordion to see more content"
         onClick={() => setOpen((prevState) => !prevState)}
@@ -45,6 +47,8 @@ export default function Accordion({
           {open && <MinusIcon className="size-4 text-gray-2" />}
           {!open && <PlusIcon className="size-4 text-gray-2" />}
         </div>
+
+        <div className="invisible absolute inset-0 -z-10 scale-95 rounded-2xl bg-gray-4 opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
       </div>
 
       {open ? (

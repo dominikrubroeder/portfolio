@@ -10,27 +10,29 @@ export default function Mindset({ className }: { className?: string }) {
           <b className="text-foreground">Designing</b> – with care, joy
         </li>
         <li>
-          <b className="text-foreground">Coding</b> – for production
+          <b className="text-foreground">Coding</b> and
+          <b className="text-foreground"> Building</b> – for production
         </li>
         <li>
           <b className="text-foreground">Using Psychology </b>
           to design and build better user interfaces
         </li>
         <li>Writing documentation</li>
+        <li>Working for good brands, products or services</li>
         <li>Bringing an idea from paper to production</li>
         <li>Refining a feature to specific needs</li>
-        <li>Working for good brands</li>
         <li>
-          Pen and Paper: You don&apos;t have to &apos;draw&apos; – but fast
-          sketching and scribble can improve visualize your ideas fast. I also
-          had to learn this and get rid of &apos;Ahh, i don&apos;t need
-          this&apos;
+          Pen and Paper: I don&apos;t have to &apos;draw&apos; – but fast
+          sketching and scribbling can improve visualizing my ideas faster. I
+          can also turn back to them later, when something else blocks the
+          opportunity working on it immediately
         </li>
         <li>
-          Notes. I like to do it. It will help my brain organize the current
-          task and summarize the outcome of your work while being in the
-          process. You also will notice you will find more clarity and structure
-          if you get stuck in a concept.
+          Notes: I like to take them. Similar to Pen and Paper work, it will
+          help my brain to organize the current work on a task and summarize the
+          outcome of it while being in the process. I often find myself with
+          more clarity and a feeling of structure if i get stuck in a concept
+          for too long
         </li>
       </ul>
     </div>
