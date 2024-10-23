@@ -5,7 +5,7 @@ import Avatar from '@/components/ui/avatar';
 import { useRouter } from 'next/navigation';
 import GitHubLink from '@/components/sections/social-section/github-link';
 import Link from 'next/link';
-import { cn } from '@/utils';
+import { cn } from '@/lib/utils';
 import LinkedinLink from '@/components/ui/links/linkedin-link';
 
 export default function SecondaryNavigation({
