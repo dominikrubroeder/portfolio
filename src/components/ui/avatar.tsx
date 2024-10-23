@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 export default function Avatar({
   width,
   height,
-  as
+  as,
+  className
 }: {
   width: number;
   height: number;
   as?: 'Image' | 'Link';
+  className?: string;
 }) {
   if (as === 'Image')
     return (
@@ -17,7 +20,10 @@ export default function Avatar({
         alt="Dominik Rubröder Avatar"
         width={width}
         height={height}
-        className="shrink-0 rounded-full border-2 border-gray-5"
+        className={cn(
+          'shrink-0 rounded-full border-2 border-gray-5',
+          className
+        )}
         draggable={false}
       />
     );
@@ -29,7 +35,10 @@ export default function Avatar({
         alt="Dominik Rubröder Avatar"
         width={width}
         height={height}
-        className="shrink-0 rounded-full border-2 border-gray-5"
+        className={cn(
+          'shrink-0 rounded-full border-2 border-gray-5',
+          className
+        )}
         draggable={false}
       />
     </Link>

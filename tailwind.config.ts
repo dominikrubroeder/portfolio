@@ -122,6 +122,9 @@ const config = {
       zIndex: {
         '100': '100',
         max: '250'
+      },
+      screens: {
+        xs: '375px'
       }
     }
   },
