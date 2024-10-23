@@ -120,7 +120,8 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out'
       },
       zIndex: {
-        '100': '100'
+        '100': '100',
+        max: '250'
       }
     }
   },

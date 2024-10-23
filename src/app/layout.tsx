@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import './globals.css';
-import Header from '@/components/layout/header';
+import Header from '@/components/molecules/header';
 import Footer from '@/components/layout/footer';
 import { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
