@@ -30,14 +30,15 @@ export default function Accordion({
     [focusView]
   );
 
-  useEffect(() => {
-    open ? scrollIntoViewAction() : null;
-  }, [scrollIntoViewAction, open]);
+  useEffect(() => scrollIntoViewAction(), [scrollIntoViewAction, open]);
 
   return (
-    <div ref={ref} className={cn('pt-4', className)}>
+    <div
+      ref={ref}
+      className={cn('scroll-mt-20 pt-4 md:scroll-mt-0', className)}
+    >
       <div
-        className="group sticky top-4 z-10 mx-auto flex cursor-pointer select-none items-center justify-between gap-4 overflow-hidden rounded-2xl bg-muted px-4 py-3 leading-[1.6] text-primary transition-all md:relative md:top-0"
+        className="group sticky top-24 z-10 mx-auto flex cursor-pointer select-none items-center justify-between gap-4 overflow-hidden rounded-2xl bg-muted px-4 py-3 leading-[1.6] text-primary transition-all md:relative md:top-0"
         title="Open accordion to see more content"
         aria-label="Open accordion to see more content"
         onClick={() => setOpen((prevState) => !prevState)}
