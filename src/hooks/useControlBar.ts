@@ -11,7 +11,7 @@ export const useControlBar = (collapse: boolean) => {
   });
 
   const scrollIntoView = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, targetId: string) => {
       e.preventDefault();
 
       updateSearchParams({ withName: 'section', withValue: targetId });

@@ -11,7 +11,7 @@ export default function TechnologyList() {
             return (
               <li
                 key={technology.title}
-                className="group mr-8 inline-block first-of-type:ml-4 sm:first-of-type:ml-16"
+                className="group mr-8 inline-block first-of-type:ml-4 md:first-of-type:ml-16"
               >
                 <Technology
                   technology={technology}

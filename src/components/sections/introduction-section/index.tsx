@@ -7,7 +7,7 @@ import Introduction from '@/components/sections/introduction-section/introductio
 
 export default function IntroductionSection() {
   return (
-    <section className="space-y-8 px-4 md:pt-32" id="introduction">
+    <section className="scroll-mt-32 space-y-8 px-4" id="introduction">
       <Introduction />
 
       <div className="mx-auto w-full max-w-screen-sm" id="accordion-group">

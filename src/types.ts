@@ -24,7 +24,13 @@ export type Brand =
   | 'Xing'
   | 'Instagram';
 
-export type ControlBarSections = { id: string; label: string; icon: string }[];
+export type ControlBarSections = {
+  id: string;
+  label: string;
+  icon: string;
+  className: string;
+  defaultActive: boolean;
+}[];
 
 export type ControlBarVisibility = 'collapsed' | 'expanded';
 
