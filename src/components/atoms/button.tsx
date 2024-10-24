@@ -30,7 +30,7 @@ export default function Button({
     variant === 'primary' &&
       'rounded-2xl bg-accent text-white hover:rounded-xl hover:bg-violet-500',
     variant === 'secondary' &&
-      "relative z-10 rounded-2xl after:absolute after:inset-0 after:-z-10 after:scale-75 after:rounded-lg after:bg-hover after:opacity-0 after:transition after:content-[''] hover:text-gray hover:after:scale-100 hover:after:rounded-xl hover:after:opacity-100 group-hover:text-gray group-hover:after:scale-100 group-hover:after:rounded-xl group-hover:after:opacity-100",
+      "relative z-10 rounded-2xl after:absolute after:inset-0 after:-z-10 after:scale-75 after:rounded-lg after:bg-hover after:opacity-0 after:transition after:content-[''] hover:text-muted-foreground hover:after:scale-100 hover:after:rounded-xl hover:after:opacity-100 group-hover:text-muted-foreground group-hover:after:scale-100 group-hover:after:rounded-xl group-hover:after:opacity-100",
     className
   );
 

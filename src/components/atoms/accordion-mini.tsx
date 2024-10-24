@@ -25,7 +25,7 @@ export default function AccordionMini({
 
         <ChevronDownIcon
           className={clsx(
-            'h-4 w-4 text-gray-2 transition',
+            'h-4 w-4 text-muted-foreground transition',
             open ? '-rotate-90' : 'rotate-0'
           )}
         />

@@ -27,7 +27,7 @@ export default function ModeSwitch() {
         {(mode === null || isDesignMode) && (
           <motion.span
             layoutId="tab"
-            className="absolute inset-0 z-10 bg-gray-4"
+            className="absolute inset-0 z-10 bg-muted"
             style={{ borderRadius: 9999 }}
             transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
           />
@@ -50,7 +50,7 @@ export default function ModeSwitch() {
         {isDevelopmentMode && (
           <motion.span
             layoutId="tab"
-            className="absolute inset-0 z-10 bg-gray-4"
+            className="absolute inset-0 z-10 bg-muted"
             style={{ borderRadius: 9999 }}
             transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
           />

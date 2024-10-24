@@ -42,7 +42,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
       <div className="flex items-center justify-end gap-2 transition sm:justify-start">
         <Link
           href={rowItem.website}
-          className="button group flex items-center justify-center rounded-2xl bg-muted p-4 transition hover:bg-gray-4"
+          className="button group flex items-center justify-center rounded-2xl bg-muted p-4 transition hover:bg-muted-hover"
           target="_blank"
           title={`Go to ${rowItem.title} website`}
           aria-label={`Go to ${rowItem.title} website`}

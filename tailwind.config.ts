@@ -22,14 +22,6 @@ const config = {
     },
     extend: {
       colors: {
-        gray: {
-          DEFAULT: 'rgb(var(--color-apple-gray) / <alpha-value>)',
-          '2': 'rgb(var(--color-apple-gray-2) / <alpha-value>)',
-          '3': 'rgb(var(--color-apple-gray-3) / <alpha-value>)',
-          '4': 'rgb(var(--color-apple-gray-4) / <alpha-value>)',
-          '5': 'rgb(var(--color-apple-gray-5) / <alpha-value>)',
-          '6': 'rgb(var(--color-apple-gray-6) / <alpha-value>)'
-        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -57,11 +49,12 @@ const config = {
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
+          foreground: 'hsl(var(--muted-foreground))',
+          hover: 'hsl(var(--muted-hover))'
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
+          contrast: 'hsl(var(--accent-foreground))'
         },
         hover: {
           DEFAULT: 'hsl(var(--hover))'
