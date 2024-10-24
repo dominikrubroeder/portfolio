@@ -4,6 +4,7 @@ import AccordionClean from '@/components/atoms/accordion-clean';
 import Mindset from '@/components/sections/introduction-section/mindset';
 import Books from '@/components/sections/introduction-section/books';
 import TechStack from '@/components/sections/introduction-section/tech-stack';
+import Link from '@/components/atoms/link';
 
 export default function Introduction({ className }: { className?: string }) {
   return (
@@ -36,8 +37,24 @@ export default function Introduction({ className }: { className?: string }) {
           </p>
 
           <p>
-            I like to use psychological and design principles to build better
-            and stable production applications.
+            I like to use
+            <Link
+              href="https://lawsofux.com"
+              title="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
+              aria-label="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
+            >
+              psychological and design principles
+            </Link>
+            to build better and stable
+            <Link
+              href="https://nextjs.org/docs/app/building-your-application/deploying/production-checklist"
+              title="Open production checklist on the Next.js documenation"
+              aria-label="Open production checklist on the Next.js documenation"
+              className="ml-0"
+            >
+              production
+            </Link>
+            applications.
           </p>
 
           <p>

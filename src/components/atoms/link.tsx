@@ -1,43 +1,43 @@
-import NextLink from 'next/link';
+import NextLink, { LinkProps } from 'next/link';
 import { cn } from '@/lib/utils';
-import { ReactNode } from 'react';
-import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
+import { AnchorHTMLAttributes, ReactNode } from 'react';
+import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/react/16/solid';
 
 export default function Link({
-  href,
-  title,
-  target = '_self',
-  ariaLabel,
+  variant = 'underline',
   className,
-  children
+  children,
+  ...linkProps
 }: {
-  href: string;
-  title?: string;
-  target?: '_blank' | '_self';
-  ariaLabel?: string;
+  variant?: 'underline' | 'marker' | 'inline-text';
   className?: string;
   children: ReactNode;
-}) {
-  const externalLink = href.includes('https');
+} & LinkProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>) {
+  const externalLink = linkProps.href.toString().includes('https');
 
   return (
     <NextLink
-      href={href}
-      title={title}
-      target={externalLink ? '_blank' : target}
-      aria-label={ariaLabel}
+      {...linkProps}
+      target={externalLink ? '_blank' : '_self'}
       className={cn(
-        'relative ml-1 inline-flex items-center gap-1 text-foreground transition',
+        'relative mx-1 inline-flex items-center gap-1 text-foreground transition',
+        variant === 'marker' &&
+          'rounded-md bg-violet-200 px-1 hover:bg-violet-300',
         className
       )}
     >
       {children}
 
-      <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary" />
+      {variant === 'underline' && (
+        <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary" />
+      )}
 
       {externalLink ? (
         <ArrowUpRightIcon className="size-4 text-primary" />
-      ) : null}
+      ) : (
+        <ArrowRightIcon className="size-4 text-primary" />
+      )}
     </NextLink>
   );
 }
