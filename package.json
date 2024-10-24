@@ -10,6 +10,7 @@
     "lint": "eslint ./src",
     "lint:debug": "eslint ./src --debug",
     "lint:fix": "eslint ./src --fix",
+    "format": "npx prettier --write .",
     "upgrade-next@latest": "npm i next@latest react@latest react-dom@latest eslint-config-next@latest @types/react@latest @types/react-dom@latest"
   },
   "dependencies": {
