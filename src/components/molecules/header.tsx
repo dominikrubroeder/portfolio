@@ -25,7 +25,13 @@ export default function Header() {
           </p>
           <p className="space-x-1 text-xs xs:text-base md:text-muted-foreground">
             <span>UX Design Engineer @</span>
-            <Link href="https://www.mediawave.de">mediawave</Link>
+            <Link
+              href="https://www.mediawave.de"
+              title="Open mediawave commerce GmbH website"
+              aria-label="Open mediawave commerce GmbH website"
+            >
+              mediawave
+            </Link>
           </p>
         </h1>
       </div>
