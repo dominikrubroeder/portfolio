@@ -21,11 +21,31 @@ export default function TechnologyPage({
     {
       id: 'projects',
       label: `Projects with ${technology?.title}`,
-      icon: 'DocumentDuplicateIcon'
+      icon: 'DocumentDuplicateIcon',
+      className: '',
+      defaultActive: false
     },
-    { id: 'experience', label: 'Experience', icon: 'CheckCircleIcon' },
-    { id: 'usage', label: 'Usage', icon: 'ArrowUturnRightIcon' },
-    { id: 'related-usage', label: 'Related usage', icon: 'PlusIcon' }
+    {
+      id: 'experience',
+      label: 'Experience',
+      icon: 'CheckCircleIcon',
+      className: '',
+      defaultActive: false
+    },
+    {
+      id: 'usage',
+      label: 'Usage',
+      icon: 'ArrowUturnRightIcon',
+      className: '',
+      defaultActive: false
+    },
+    {
+      id: 'related-usage',
+      label: 'Related usage',
+      icon: 'PlusIcon',
+      className: '',
+      defaultActive: false
+    }
   ];
 
   return (
