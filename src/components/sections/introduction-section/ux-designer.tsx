@@ -1,6 +1,6 @@
 import Accordion from '@/components/atoms/accordion';
 import Blockquote from '@/components/ui/blockquote';
-import Anchor from '@/components/atoms/link';
+import Link from '@/components/atoms/link';
 
 export default function UxDesigner() {
   return (
@@ -127,12 +127,13 @@ export default function UxDesigner() {
 
       <p>
         <span>UX Design: Key Predicates on ChatGPT:</span>
-        <Anchor
+        <Link
           href="https://chat.openai.com/share/ca8c7c7e-95da-46bb-bd06-fbb81ac53dea"
-          title="UX Design: Key Predicates on ChatGPT"
+          title="Open UX Design: Key Predicates on ChatGPT"
+          aria-label="Open UX Design: Key Predicates on ChatGPT"
         >
           Source
-        </Anchor>
+        </Link>
       </p>
     </Accordion>
   );

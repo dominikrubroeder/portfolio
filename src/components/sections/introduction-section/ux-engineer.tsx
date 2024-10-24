@@ -1,6 +1,6 @@
 import Accordion from '@/components/atoms/accordion';
 import Blockquote from '@/components/ui/blockquote';
-import Anchor from '@/components/atoms/link';
+import Link from '@/components/atoms/link';
 
 export default function UxEngineer() {
   return (
@@ -177,12 +177,13 @@ export default function UxEngineer() {
 
       <p>
         <span>UX Engineer Focus Areas on ChatGPT:</span>
-        <Anchor
+        <Link
           href="https://chat.openai.com/share/c8344fb3-ea8b-4d0e-830c-185d3aab2a27"
-          title="UX Engineer: Focus Areas on ChatGPT"
+          title="Open UX Engineer: Focus Areas on ChatGPT"
+          aria-label="Open UX Engineer: Focus Areas on ChatGPT"
         >
           Source
-        </Anchor>
+        </Link>
       </p>
     </Accordion>
   );

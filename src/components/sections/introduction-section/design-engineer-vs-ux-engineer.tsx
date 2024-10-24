@@ -1,6 +1,6 @@
 import Accordion from '@/components/atoms/accordion';
 import Blockquote from '@/components/ui/blockquote';
-import Anchor from '@/components/atoms/link';
+import Link from '@/components/atoms/link';
 
 export default function DesignEngineerVsUxEngineer() {
   return (
@@ -121,12 +121,13 @@ export default function DesignEngineerVsUxEngineer() {
 
         <p>
           <span>Frontend Design vs. UX on ChatGPT:</span>
-          <Anchor
+          <Link
             href="https://chat.openai.com/share/955dcf23-a3d1-4381-bf7d-d1078c5a89fa"
             title="Design Engineer vs UX Engineer for frontend work on ChatGPT"
+            aria-label="Open Design Engineer vs UX Engineer for frontend work on ChatGPT"
           >
             Source
-          </Anchor>
+          </Link>
         </p>
       </div>
     </Accordion>

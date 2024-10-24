@@ -1,7 +1,7 @@
 import Accordion from '@/components/atoms/accordion';
 import Image from 'next/image';
 import Blockquote from '@/components/ui/blockquote';
-import Anchor from '@/components/atoms/link';
+import Link from '@/components/atoms/link';
 
 export default function WhatIsAUxEngineer() {
   return (
@@ -30,13 +30,13 @@ export default function WhatIsAUxEngineer() {
 
         <figcaption>
           Reference to UXE user experience engineering work areas at
-          <Anchor
+          <Link
             href="https://uxe.withgoogle.com"
-            title="Go to external uxe.google.com website"
-            aria-label="UX Engineer landingpage from Google at uxe.google.com describing the role as an UX Engineer while working for Google"
+            title="Open external uxe.google.com website describing the role as an UX Engineer while working for Google"
+            aria-label="Open external uxe.google.com website describing the role as an UX Engineer while working for Google"
           >
             uxe.google.com
-          </Anchor>
+          </Link>
         </figcaption>
       </figure>
     </Accordion>
