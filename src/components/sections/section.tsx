@@ -12,7 +12,7 @@ export default function Section({
   return (
     <section
       className={cn(
-        'flex scroll-mt-24 flex-col justify-center gap-8 md:scroll-mt-16',
+        'mb-16 flex scroll-mt-24 flex-col justify-center gap-8 md:mb-0 md:scroll-mt-28 xl:scroll-mt-16',
         className
       )}
       {...restProps}

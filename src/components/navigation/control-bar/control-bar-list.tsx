@@ -28,7 +28,7 @@ export default function ControlBarList({
   return (
     <div
       className={cn(
-        'no-scrollbar absolute bottom-20 z-50 w-[95vw] max-w-screen-sm items-center space-y-4 rounded-2xl bg-muted p-3 px-4 transition md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[80svw] md:gap-4 md:space-y-0 md:overflow-x-auto md:rounded-full lg:max-w-none',
+        'no-scrollbar absolute bottom-20 z-50 w-[95vw] max-w-screen-sm items-center space-y-4 rounded-2xl bg-muted p-3 px-4 transition md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[85svw] md:gap-4 md:space-y-0 md:overflow-x-auto md:rounded-full lg:max-w-none',
         mobileMenu === 'invisible'
           ? 'invisible -translate-y-4'
           : 'visible translate-y-0'
