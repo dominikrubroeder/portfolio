@@ -24,7 +24,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
 
           <h3 className="font-bold text-foreground">{rowItem.title}</h3>
 
-          <div className="mr-auto w-max whitespace-nowrap rounded-3xl border border-gray-4 px-3 py-2 text-xs font-bold text-foreground">
+          <div className="mr-auto w-max whitespace-nowrap rounded-3xl border  px-3 py-2 text-xs font-bold text-foreground">
             {rowItem.keyword}
           </div>
         </Link>
@@ -42,7 +42,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
       <div className="flex items-center justify-end gap-2 transition sm:justify-start">
         <Link
           href={rowItem.website}
-          className="button group flex items-center justify-center rounded-2xl bg-gray-5 p-4 transition hover:bg-gray-4"
+          className="button group flex items-center justify-center rounded-2xl bg-muted p-4 transition hover:bg-muted-hover"
           target="_blank"
           title={`Go to ${rowItem.title} website`}
           aria-label={`Go to ${rowItem.title} website`}
@@ -51,7 +51,7 @@ export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
         </Link>
 
         <button
-          className="button group relative flex items-center justify-center rounded-2xl p-4 transition hover:bg-gray-5"
+          className="button group relative flex items-center justify-center rounded-2xl p-4 transition hover:bg-muted"
           title={`Projects with ${rowItem.title}`}
           aria-label={`Projects with ${rowItem.title}`}
           disabled

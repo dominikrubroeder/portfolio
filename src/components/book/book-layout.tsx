@@ -59,7 +59,7 @@ export default function BookLayout({
 
       <div className="space-y-32">
         <section className="mx-auto max-w-screen-sm px-4" id="introduction">
-          <h1 className="mb-4 border-b border-b-gray-5 pb-4 text-4xl font-bold text-foreground">
+          <h1 className="mb-4 border-b pb-4 text-4xl font-bold text-foreground">
             {title}
           </h1>
           <p>
@@ -87,7 +87,7 @@ export default function BookLayout({
           className="relative mx-auto max-w-screen-sm px-4"
           id="learnings"
         >
-          <h2 className="sticky top-[4.75rem] mb-6 border-b border-gray-5 bg-background py-3">
+          <h2 className="sticky top-[4.75rem] mb-6 border-b  bg-background py-3">
             <b className="text-foreground">Learnings</b> on <i>{title}</i>
           </h2>
 
@@ -95,7 +95,7 @@ export default function BookLayout({
         </section>
 
         <section className="mx-auto max-w-screen-sm px-4" id="outcome">
-          <h2 className="sticky top-[4.75rem] mb-6 border-b border-gray-5 bg-background py-3">
+          <h2 className="sticky top-[4.75rem] mb-6 border-b  bg-background py-3">
             <b className="text-foreground">Outcome</b> on <i>{title}</i>
           </h2>
 

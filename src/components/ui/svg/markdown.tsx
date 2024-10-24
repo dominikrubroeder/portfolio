@@ -10,12 +10,12 @@ export default function Markdown({ className }: { className?: string }) {
         d="M193 5H15C9.47715 5 5 9.47715 5 15V113C5 118.523 9.47715 123 15 123H193C198.523 123 203 118.523 203 113V15C203 9.47715 198.523 5 193 5Z"
         stroke="none"
         strokeWidth="10"
-        className="stroke-theme-contrary"
+        className="stroke-foreground"
       />
       <path
         d="M30 98V30H50L70 55L90 30H110V98H90V59L70 84L50 59V98H30ZM155 98L125 65H145V30H165V65H185L155 98Z"
         fill="none"
-        className="fill-theme-contrary"
+        className="fill-foreground"
       />
       <defs>
         <clipPath id="clip0_748_1013">
@@ -23,7 +23,7 @@ export default function Markdown({ className }: { className?: string }) {
             width="208"
             height="128"
             fill="none"
-            className="fill-theme-contrary"
+            className="fill-foreground"
           />
         </clipPath>
       </defs>

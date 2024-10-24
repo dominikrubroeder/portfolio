@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mx-16 mt-16 border-t border-gray-5 p-4 pb-24 text-center text-xs md:pb-4">
+    <footer className="mx-16 mt-16 border-t  p-4 pb-24 text-center text-xs md:pb-4">
       <p className="mb-1.5">
         <a
           href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."

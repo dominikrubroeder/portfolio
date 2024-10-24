@@ -26,7 +26,7 @@ export default function Blockquote({
         horizontalOffset && 'my-8',
         indent && 'ml-4 md:ml-8',
         quoteBar &&
-          'relative pl-4 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-theme-contrary',
+          'relative pl-4 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-foreground',
         centered && 'mx-auto',
         className
       )}

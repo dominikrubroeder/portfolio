@@ -97,7 +97,7 @@ export default function AnimatedProgress({
             fill="none"
             strokeWidth={strokeWidth}
             strokeLinecap="round"
-            className="stroke-gray-5"
+            className="stroke-muted"
           />
           <motion.circle
             cx={center}

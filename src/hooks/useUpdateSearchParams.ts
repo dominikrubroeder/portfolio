@@ -1,7 +1,7 @@
 'use client';
 
-import {useCallback} from 'react';
-import {usePathname, useRouter, useSearchParams} from 'next/navigation';
+import { useCallback } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 /** To use in `Client Components`
  * - Mark your Component with 'use client' at the top of your file

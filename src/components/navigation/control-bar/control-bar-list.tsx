@@ -28,7 +28,7 @@ export default function ControlBarList({
 }) {
   return (
     <div
-      className={`absolute bottom-20 z-50 grid w-[95vw] max-w-screen-sm items-center gap-4 rounded-2xl bg-gray-5 p-3 px-4 transition ${
+      className={`absolute bottom-20 z-50 grid w-[95vw] max-w-screen-sm items-center gap-4 rounded-2xl bg-muted p-3 px-4 transition ${
         mobileMenu === 'invisible'
           ? 'invisible -translate-y-4'
           : 'visible translate-y-0'
@@ -45,7 +45,7 @@ export default function ControlBarList({
           onClick={(e) => scrollIntoView(e, section.id)}
         >
           {activeSection !== section.id && (
-            <div className="invisible absolute inset-0 z-10 scale-50 rounded-full bg-black/5 opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
+            <div className="invisible absolute inset-0 z-10 scale-50 rounded-full bg-muted-hover opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
           )}
 
           {activeSection === section.id && (
@@ -69,8 +69,8 @@ export default function ControlBarList({
         </Link>
       ))}
 
-      <div className="sticky bottom-0 z-10 inline-flex gap-4 overflow-x-auto border-t border-gray-4 bg-gray-5 p-4 pb-3.5 md:hidden">
-        <div className="no-scrollbar mt-2 flex-1 overflow-x-auto whitespace-nowrap border-r border-r-gray-4 pr-2 text-left">
+      <div className="sticky bottom-0 z-10 inline-flex gap-4 overflow-x-auto border-t bg-muted p-4 pb-3.5 md:hidden">
+        <div className="no-scrollbar mt-2 flex-1 overflow-x-auto whitespace-nowrap text-left">
           <b className="mr-1.5 inline-block text-foreground">
             Dominik Rubröder
           </b>
@@ -93,7 +93,7 @@ export default function ControlBarList({
 
           <Link
             href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-            className="group flex size-10 items-center justify-center rounded-full bg-gray-4 transition hover:bg-gray-3"
+            className="group flex size-10 items-center justify-center rounded-full bg-muted transition hover:bg-muted-hover"
             title="Mail to Dominik Rubröder"
             aria-label="Write a mail to Dominik Rubröder"
           >
