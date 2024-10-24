@@ -4,14 +4,20 @@ import { cn } from '@/lib/utils';
 export default function Introduction({ className }: { className?: string }) {
   return (
     <div className={cn('mx-auto w-full max-w-screen-sm space-y-6', className)}>
+      <p>Hey there,</p>
+
       <h3 className="font-bold text-foreground">
-        My work is committed to the frontend.
+        My work is committed to the frontend. I like to create and build
+        interfaces that are designed to be for a joyful web.
+        <span className="ml-1 font-normal text-muted-foreground">
+          – later on, native mobile apps might join that pardigm.
+        </span>
       </h3>
 
       <div className="space-y-4">
         <p>
-          I am a UX design engineer working for good user interfaces that
-          transport emotion and cares about the impact of design. I want the
+          As a UX Design Engineer, i am working for good user interfaces that
+          transport emotion and do care about the impact of design. I want the
           user to enjoy their actions, feeling pleasant and delightful while
           scrolling through the page, pursuing his or her actions with joyful
           ease.
@@ -25,8 +31,8 @@ export default function Introduction({ className }: { className?: string }) {
         </p>
 
         <p>
-          I like to use psychological and design principles to build better
-          production applications.
+          I like to use psychological and design principles to build better and
+          stable production applications.
         </p>
 
         <p>
