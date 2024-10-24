@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import {useRef, useState} from 'react';
+import {XMarkIcon} from '@heroicons/react/24/outline';
 
 /** Property `position` should be a CSS class */
 export default function SkillBadge({
@@ -25,7 +25,7 @@ export default function SkillBadge({
       aria-label={`Frontend skill: ${label}`}
     >
       <div
-        className={`relative flex w-max items-center gap-2 rounded-full border bg-gray-5 px-4 py-3 pl-5 ${
+        className={`relative flex w-max items-center gap-2 rounded-full border bg-muted px-4 py-3 pl-5 ${
           designMode || devMode
             ? 'border-accent hover:border-violet-600'
             : 'border-transparent'
@@ -65,7 +65,7 @@ export default function SkillBadge({
         )}
 
         {devMode && (
-          <span className="invisible absolute -bottom-10 left-1/2 -translate-x-1/2 select-none rounded border border-transparent bg-gray-5 p-1 px-1.5 text-xs group-hover:border-gray-4 group-active:visible group-active:border-gray-4 md:group-hover:visible">
+          <span className="group-hover: group-active: invisible absolute -bottom-10 left-1/2 -translate-x-1/2 select-none rounded border border-transparent bg-muted p-1 px-1.5 text-xs group-active:visible md:group-hover:visible">
             Badge.tsx
           </span>
         )}

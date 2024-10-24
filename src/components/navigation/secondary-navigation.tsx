@@ -20,13 +20,13 @@ export default function SecondaryNavigation({
   return (
     <div
       className={cn(
-        'z-50 flex items-center border-b border-gray-5 bg-background p-4 backdrop-blur',
+        'z-50 flex items-center border-b  bg-background p-4 backdrop-blur',
         sticky && 'sticky top-0'
       )}
     >
       {backButton && (
         <button
-          className="mr-4 flex size-8 shrink-0 items-center justify-center rounded-full bg-gray-5"
+          className="mr-4 flex size-8 shrink-0 items-center justify-center rounded-full bg-muted"
           title="Navigate back"
           aria-label="Navigate one page back"
           onClick={() => router.back()}

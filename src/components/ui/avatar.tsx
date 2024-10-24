@@ -20,10 +20,7 @@ export default function Avatar({
         alt="Dominik Rubröder Avatar"
         width={width}
         height={height}
-        className={cn(
-          'shrink-0 rounded-full border-2 border-gray-5',
-          className
-        )}
+        className={cn('shrink-0 rounded-full border-2 ', className)}
         draggable={false}
       />
     );
@@ -35,10 +32,7 @@ export default function Avatar({
         alt="Dominik Rubröder Avatar"
         width={width}
         height={height}
-        className={cn(
-          'shrink-0 rounded-full border-2 border-gray-5',
-          className
-        )}
+        className={cn('shrink-0 rounded-full border-2 ', className)}
         draggable={false}
       />
     </Link>

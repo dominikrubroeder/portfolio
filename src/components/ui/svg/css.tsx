@@ -39,19 +39,19 @@ export default function CSS({ className }: { className?: string }) {
             id="path2999"
             d="M40.3418 0H54.0918V5.75H46.0918V11.5H54.0918V17.25H40.3418V0Z"
             fill="none"
-            className="fill-theme-contrary"
+            className="fill-foreground"
           />
           <path
             id="path3001"
             d="M56.8418 0H70.5918V5H62.5918V6H70.5918V17.5H56.8418V12.25H64.8418V11.25H56.8418V0Z"
             fill="none"
-            className="fill-theme-contrary"
+            className="fill-foreground"
           />
           <path
             id="path3003"
             d="M73.3418 0H87.0918V5H79.0918V6H87.0918V17.5H73.3418V12.25H81.3418V11.25H73.3418V0Z"
             fill="none"
-            className="fill-theme-contrary"
+            className="fill-foreground"
           />
           <path
             id="polygon3005"

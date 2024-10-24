@@ -34,7 +34,7 @@ export default function TheDesignProcess() {
         </p>
       </ContainedSection>
 
-      <div className="mx-4 h-96 max-w-screen-2xl animate-fadeUp rounded-2xl bg-gray-5"></div>
+      <div className="mx-4 h-96 max-w-screen-2xl animate-fadeUp rounded-2xl bg-muted"></div>
 
       <ContainedSection className="grid gap-8">
         <div className="flex items-center gap-2">

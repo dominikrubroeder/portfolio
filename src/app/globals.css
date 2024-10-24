@@ -4,23 +4,6 @@
 
 @layer base {
     :root {
-        --color-accent: 147 113 249;
-
-        --color-theme-base: 255 255 255;
-        --color-theme-contrary: 48 48 48;
-
-        --color-apple-red: 255 59 48;
-        --color-apple-orange: 255 149 0;
-        --color-apple-yellow: 255 204 0;
-        --color-apple-green: 40 205 65;
-        --color-apple-mint: 0 199 190;
-        --color-apple-teal: 89 173 196;
-        --color-apple-cyan: 85 190 240;
-        --color-apple-blue: 0 122 255;
-        --color-apple-indigo: 88 86 214;
-        --color-apple-purple: 175 82 222;
-        --color-apple-pink: 255 45 85;
-        --color-apple-brown: 162 132 94;
         --color-apple-gray: 142 142 147;
         --color-apple-gray-2: 174 174 178;
         --color-apple-gray-3: 199 199 204;
@@ -30,17 +13,13 @@
 
         --background: 240 23.8% 95.9%;
         --foreground: 0 0% 18.8%;
-        --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-        --primary: 255, 92%, 71%;
+        --primary: 255 92% 71%;
         --primary-foreground: 0 0% 98%;
         --secondary: 0 0% 96.1%;
         --secondary-foreground: 0 0% 9%;
-        --muted: 0 0% 96.1%;
+        --muted: 240 10.9% 90.8%;
         --muted-foreground: 240 2.3% 56.7%;
-        --accent: 0 0% 96.1%;
+        --accent: 257 89% 71%;
         --accent-foreground: 0 0% 9%;
         --success: 141 84% 93%;
         --success-foreground: 142 76% 36%;
@@ -48,25 +27,14 @@
         --warning-foreground: 32 95% 44%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 89.8%;
+        --border: 240 10.9% 90.8%;
         --input: 0 0% 89.8%;
         --ring: 0 0% 3.9%;
         --radius: 0.5rem;
+        --hover: 0 0% 90%;
     }
 
     .dark {
-        --color-apple-red: 255 69 58;
-        --color-apple-orange: 255 159 10;
-        --color-apple-yellow: 255 214 10;
-        --color-apple-green: 50 215 75;
-        --color-apple-mint: 102 212 207;
-        --color-apple-teal: 106 196 220;
-        --color-apple-cyan: 90 200 245;
-        --color-apple-blue: 10 132 255;
-        --color-apple-indigo: 94 92 230;
-        --color-apple-purple: 191 90 242;
-        --color-apple-pink: 255 55 95;
-        --color-apple-brown: 172 142 104;
         --color-apple-gray: 152 152 157;
         --color-apple-gray-2: 99 99 102;
         --color-apple-gray-3: 72 72 74;
@@ -76,17 +44,13 @@
 
         --background: 240 3.4% 11.4%;
         --foreground: 0 0% 100%;
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
+        --primary: 255 92% 71%;
         --primary-foreground: 0 0% 9%;
         --secondary: 0 0% 14.9%;
         --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 240 2.5% 60.6%;
-        --accent: 0 0% 14.9%;
+        --muted: 240 2.2% 17.6%;
+        --muted-foreground: 0 0% 80%;
+        --accent: 257 89% 71%;
         --accent-foreground: 0 0% 98%;
         --success: 141 84% 93%;
         --success-foreground: 142 76% 36%;
@@ -94,28 +58,14 @@
         --warning-foreground: 32 95% 44%;
         --destructive: 0 62.8% 30.6%;
         --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 14.9%;
+        --border: 240 2.2% 17.6%;
         --input: 0 0% 14.9%;
         --ring: 0 0% 83.1%;
+        --hover: 0 0% 10%;
     }
 
     @media (prefers-color-scheme: dark) {
         :root {
-            --color-theme-base: 0 0 0;
-            --color-theme-contrary: 255 255 255;
-
-            --color-apple-red: 255 69 58;
-            --color-apple-orange: 255 159 10;
-            --color-apple-yellow: 255 214 10;
-            --color-apple-green: 50 215 75;
-            --color-apple-mint: 102 212 207;
-            --color-apple-teal: 106 196 220;
-            --color-apple-cyan: 90 200 245;
-            --color-apple-blue: 10 132 255;
-            --color-apple-indigo: 94 92 230;
-            --color-apple-purple: 191 90 242;
-            --color-apple-pink: 255 55 95;
-            --color-apple-brown: 172 142 104;
             --color-apple-gray: 152 152 157;
             --color-apple-gray-2: 99 99 102;
             --color-apple-gray-3: 72 72 74;
@@ -129,13 +79,13 @@
             --card-foreground: 0 0% 98%;
             --popover: 0 0% 3.9%;
             --popover-foreground: 0 0% 98%;
-            --primary: 0 0% 98%;
+            --primary: 255 92% 71%;
             --primary-foreground: 0 0% 9%;
             --secondary: 0 0% 14.9%;
             --secondary-foreground: 0 0% 98%;
             --muted: 0 0% 14.9%;
             --muted-foreground: 240 2.5% 60.6%;
-            --accent: 0 0% 14.9%;
+            --accent: 257 89% 71%;
             --accent-foreground: 0 0% 98%;
             --success: 141 84% 93%;
             --success-foreground: 142 76% 36%;
@@ -143,23 +93,15 @@
             --warning-foreground: 32 95% 44%;
             --destructive: 0 62.8% 30.6%;
             --destructive-foreground: 0 0% 98%;
-            --border: 0 0% 14.9%;
+            --border: 240 2.2% 17.6%;
             --input: 0 0% 14.9%;
             --ring: 0 0% 83.1%;
-        }
-
-        html {
-            color-scheme: dark;
-        }
-
-        body {
-            color: white;
-            background: black;
+            --hover: 0 0% 10%;
         }
     }
 
     * {
-        @apply border-border disabled:cursor-not-allowed border-gray-5;
+        @apply border-border disabled:cursor-not-allowed;
     }
 
     html {
@@ -170,30 +112,18 @@
         @apply bg-background text-foreground;
     }
 
-    hr {
-        @apply border-gray-5
-    }
-
     h1, h2, h3, h4, h5, h6 {
         @apply text-balance
     }
-
-    hr {
-        @apply border-gray-5
-    }
 }
 
-@layer components {
+@layer utilities {
     .interactive {
         @apply transition cursor-pointer active:scale-95;
     }
 
     button:not(:disabled), .button:not(:disabled) {
         @apply interactive
-    }
-
-    .external-link {
-        @apply text-accent
     }
 }
 

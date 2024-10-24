@@ -11,7 +11,7 @@ export default function ToolGrid() {
           return (
             <li key={tool.title}>
               <div className="group grid gap-6 whitespace-normal">
-                <div className="relative h-80 rounded-xl border border-gray-4">
+                <div className="relative h-80 rounded-xl border ">
                   {/* Change in later release to
              – href={tool.href}
              – target={tool.href.includes('https') ? '_blank' : '_self'}
@@ -35,7 +35,7 @@ export default function ToolGrid() {
                   </Link>
                 </div>
 
-                <div className="mx-auto w-max rounded-3xl border border-gray-4 px-3 py-2 font-bold text-foreground">
+                <div className="mx-auto w-max rounded-3xl border  px-3 py-2 font-bold text-foreground">
                   {tool.keyword}
                 </div>
 

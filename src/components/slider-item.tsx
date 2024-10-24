@@ -22,7 +22,7 @@ export default function SliderItem({
 }) {
   return (
     <div className={cn('group w-80 space-y-6 whitespace-normal', className)}>
-      <div className="interactive relative mx-auto size-80 rounded-xl border border-gray-4 transition group-hover:bg-gray-5">
+      <div className="interactive relative mx-auto size-80 rounded-xl border  transition group-hover:bg-muted">
         <Link
           href={sliderItem.website}
           className="absolute inset-0 flex size-full cursor-pointer items-center justify-center"
@@ -38,7 +38,7 @@ export default function SliderItem({
         </Link>
       </div>
 
-      <div className="mx-auto w-max rounded-3xl border border-gray-4 px-3 py-2 font-bold text-foreground">
+      <div className="mx-auto w-max rounded-3xl border  px-3 py-2 font-bold text-foreground">
         {'keyword' in sliderItem ? sliderItem.keyword : sliderItem.badge}
       </div>
 

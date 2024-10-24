@@ -12,7 +12,7 @@ export default function HTML({ className }: { className?: string }) {
         <path
           d="M27.1 0H32.85V5.7H38.15V0H43.9V17.25H38.15V11.5H32.9V17.25H27.1M51.5 5.75H46.425V0H62.35V5.75H57.25V17.25H51.5M64.875 0H70.9L74.6 6.075L78.3 0H84.325V17.25H78.575V8.7L74.55 14.9L70.525 8.7V17.25H64.875M87.175 0H92.925V11.55H101.075V17.25H87.175"
           fill="none"
-          className="fill-theme-contrary"
+          className="fill-foreground"
         />
         <path
           d="M26.9 117.75L18.65 25.15H109.35L101.1 117.7L63.925 128"

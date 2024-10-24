@@ -18,7 +18,7 @@ export default function ControlBarAction({ type }: { type: ControlBarAction }) {
   if (type === 'Up')
     return (
       <button
-        className="group flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full border-2 border-gray-5 bg-gray-5 transition hover:border-gray-4 hover:bg-gray-4"
+        className="hover: group flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full  border-2 bg-muted transition hover:bg-gray-4"
         aria-label="Scroll to top"
         onClick={() => scrollToTop()}
       >
@@ -29,7 +29,7 @@ export default function ControlBarAction({ type }: { type: ControlBarAction }) {
   if (type === 'Back')
     return (
       <button
-        className="group flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full border-2 border-gray-5 bg-gray-5 transition hover:border-gray-4 hover:bg-gray-4"
+        className="hover: group flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full  border-2 bg-muted transition hover:bg-gray-4"
         aria-label="Navigate back"
         onClick={() => router.back()}
       >
@@ -44,7 +44,7 @@ export default function ControlBarAction({ type }: { type: ControlBarAction }) {
         alt="Dominik Rubröder Avatar"
         width="56"
         height="56"
-        className="shrink-0 rounded-full border-2 border-gray-5"
+        className="shrink-0 rounded-full border-2 "
         draggable={false}
       />
     </Link>

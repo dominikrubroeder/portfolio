@@ -17,7 +17,7 @@ export default function FramerMotionIcon({
         id="Vector"
         d="M105.669 -0.219727V42.4469H63.3343L21 -0.219727H105.669ZM21 42.4469H63.3343L105.669 85.1136H63.3343V127.78L21 85.1136V42.4469Z"
         fill="none"
-        className="fill-theme-contrary"
+        className="fill-foreground"
       />
       <defs>
         <clipPath id="clip0_748_1013">

@@ -24,7 +24,7 @@ export default function ComponentDrivenDevelopment() {
           </p>
         </div>
 
-        <div className="mx-32 mt-32 h-96 animate-fadeUp rounded-2xl bg-gray-5"></div>
+        <div className="mx-32 mt-32 h-96 animate-fadeUp rounded-2xl bg-muted"></div>
       </section>
     </>
   );

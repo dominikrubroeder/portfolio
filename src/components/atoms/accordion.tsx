@@ -37,7 +37,7 @@ export default function Accordion({
   return (
     <div ref={ref} className={cn('pt-4', className)}>
       <div
-        className="group sticky top-4 z-10 mx-auto flex cursor-pointer select-none items-center justify-between gap-4 overflow-hidden rounded-2xl bg-gray-5 px-4 py-3 leading-[1.6] text-accent transition-all md:relative md:top-0"
+        className="group sticky top-4 z-10 mx-auto flex cursor-pointer select-none items-center justify-between gap-4 overflow-hidden rounded-2xl bg-muted px-4 py-3 leading-[1.6] text-accent transition-all md:relative md:top-0"
         title="Open accordion to see more content"
         aria-label="Open accordion to see more content"
         onClick={() => setOpen((prevState) => !prevState)}
@@ -56,7 +56,7 @@ export default function Accordion({
           className={cn(
             'mb-5 animate-fadeUp p-4',
             restrictHeight &&
-              'no-scrollbar md:max-h-[60svh] md:overflow-y-auto md:border-b md:border-b-gray-5'
+              'no-scrollbar md:max-h-[60svh] md:overflow-y-auto md:border-b'
           )}
         >
           {children}

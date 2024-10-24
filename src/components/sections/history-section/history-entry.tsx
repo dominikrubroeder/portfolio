@@ -30,7 +30,7 @@ export default function HistoryEntry({
       <button
         className={clsx(
           'absolute -left-11 top-16 flex flex-none shrink-0 items-center justify-center self-start rounded-full p-4 transition',
-          isCurrent ? 'bg-accent text-violet-200' : 'bg-gray-5'
+          isCurrent ? 'bg-accent text-violet-200' : 'bg-muted'
         )}
         onClick={toggle}
       >
@@ -46,7 +46,7 @@ export default function HistoryEntry({
         <p>
           <span>{entryDate}</span> {exitDate && <span>– {exitDate}</span>}
           {isCurrent && (
-            <span className="mx-1 rounded-full border border-gray-4 px-2 py-1.5 text-foreground">
+            <span className="mx-1 rounded-full border  px-2 py-1.5 text-foreground">
               Current
             </span>
           )}
