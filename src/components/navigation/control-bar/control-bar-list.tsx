@@ -38,7 +38,8 @@ export default function ControlBarList({
         <button
           key={section.id}
           className={cn(
-            'interactive group relative block select-none rounded-full px-3 py-1.5 pr-4 transition hover:text-foreground md:inline-block',
+            'interactive group relative block select-none rounded-full px-3 py-1.5 transition hover:text-foreground md:inline-block',
+            section.className.includes('hidden') ? 'pr-4 md:pr-3' : 'pr-4',
             activeSection === section.id ? '' : 'hover:bg-muted-hover'
           )}
           title={`Scroll to ${section.label} section`}
