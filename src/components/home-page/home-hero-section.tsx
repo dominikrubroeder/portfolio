@@ -1,15 +1,50 @@
 import React, { Suspense } from 'react';
 import ControlBar from '@/components/navigation/control-bar/control-bar';
+import { ControlBarSections } from '@/types';
 
-const sections = [
-  { id: 'header', label: '', icon: 'HomeIcon' },
-  { id: 'introduction', label: 'Introduction', icon: 'ArrowRightCircleIcon' },
-  { id: 'projects', label: 'Projects', icon: 'DocumentDuplicateIcon' },
-  { id: 'tools', label: 'Tools', icon: 'PaintBrushIcon' },
-  { id: 'technologies', label: 'Technologies', icon: 'Cog6ToothIcon' },
-  { id: 'socials', label: 'Socials', icon: 'CheckBadgeIcon' },
-  { id: 'mail', label: '', icon: 'EnvelopeIcon' },
-  { id: 'header', label: '', icon: 'ArrowUpIcon' }
+const sections: ControlBarSections = [
+  {
+    id: 'header',
+    label: 'Start',
+    icon: 'HomeIcon',
+    className: 'md:hidden',
+    defaultActive: true
+  },
+  {
+    id: 'introduction',
+    label: 'Introduction',
+    icon: 'ArrowRightCircleIcon',
+    className: '',
+    defaultActive: false
+  },
+  {
+    id: 'projects',
+    label: 'Projects',
+    icon: 'DocumentDuplicateIcon',
+    className: '',
+    defaultActive: false
+  },
+  {
+    id: 'tools',
+    label: 'Tools',
+    icon: 'PaintBrushIcon',
+    className: '',
+    defaultActive: false
+  },
+  {
+    id: 'technologies',
+    label: 'Technologies',
+    icon: 'Cog6ToothIcon',
+    className: '',
+    defaultActive: false
+  },
+  {
+    id: 'socials',
+    label: 'Socials',
+    icon: 'CheckBadgeIcon',
+    className: '',
+    defaultActive: false
+  }
 ];
 
 export default function HomeHeroSection() {

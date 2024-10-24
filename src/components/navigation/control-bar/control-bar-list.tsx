@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import React from 'react';
 import DynamicHeroIcon from '@/components/ui/dynamic-hero-icon';
@@ -7,10 +6,10 @@ import type {
   ControlBarMobileMenuVisibility,
   ControlBarSections
 } from '@/types';
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
-import GitHubLink from '@/components/ui/links/github-link';
-import LinkedinLink from '@/components/ui/links/linkedin-link';
 import { cn } from '@/lib/utils';
+import Button from '@/components/atoms/button';
+import GithubIcon from '@/components/ui/svg/github-icon';
+import LinkedinIcon from '@/components/ui/svg/linkedin-icon';
 
 export default function ControlBarList({
   sections,
@@ -22,33 +21,37 @@ export default function ControlBarList({
   activeSection: ControlBarActiveSection;
   mobileMenu: ControlBarMobileMenuVisibility;
   scrollIntoView: (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    e: React.MouseEvent<HTMLButtonElement>,
     targetId: string
   ) => void;
 }) {
   return (
     <div
-      className={`absolute bottom-20 z-50 grid w-[95vw] max-w-screen-sm items-center gap-4 rounded-2xl bg-muted p-3 px-4 transition ${
+      className={cn(
+        'no-scrollbar absolute bottom-20 z-50 w-[95vw] max-w-screen-sm items-center space-y-4 rounded-2xl bg-muted p-3 px-4 transition md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[85svw] md:gap-4 md:space-y-0 md:overflow-x-auto md:rounded-full lg:max-w-none',
         mobileMenu === 'invisible'
           ? 'invisible -translate-y-4'
           : 'visible translate-y-0'
-      } no-scrollbar md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[80svw] md:overflow-x-auto md:rounded-full lg:max-w-none`}
+      )}
     >
       {sections.map((section) => (
-        <Link
+        <button
           key={section.id}
-          href={`#${section.id}`}
           className={cn(
-            'interactive group relative select-none rounded-full px-3 py-1.5 outline-sky-400 transition hover:text-foreground focus-visible:outline-2',
-            activeSection === section.id ? '' : 'hover:bg-black/5'
+            'interactive group relative block select-none rounded-full px-3 py-1.5 transition hover:text-foreground md:inline-block',
+            section.className.includes('hidden') ? 'pr-4 md:pr-3' : 'pr-4',
+            activeSection === section.id ? '' : 'hover:bg-muted-hover'
           )}
+          title={`Scroll to ${section.label} section`}
+          aria-label={`Scroll to ${section.label} section`}
           onClick={(e) => scrollIntoView(e, section.id)}
         >
           {activeSection !== section.id && (
             <div className="invisible absolute inset-0 z-10 scale-50 rounded-full bg-muted-hover opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
           )}
 
-          {activeSection === section.id && (
+          {(activeSection === section.id ||
+            (section.defaultActive && activeSection === null)) && (
             <motion.span
               layoutId="page-navigation"
               className="absolute inset-0 z-10 bg-primary"
@@ -59,47 +62,45 @@ export default function ControlBarList({
 
           <div
             className={cn(
-              'relative z-20 flex w-max cursor-pointer items-center gap-4 md:gap-2',
-              activeSection === section.id && 'text-white'
+              'relative z-20 flex w-auto cursor-pointer items-center gap-4 md:gap-2',
+              (activeSection === section.id ||
+                (section.defaultActive && activeSection === null)) &&
+                'text-white'
             )}
           >
             <DynamicHeroIcon name={section.icon} className="size-5 shrink-0" />
-            {section.label && section.label !== '' ? section.label : null}
+
+            {section.label && section.label !== '' ? (
+              <span className={cn(section.className)}>{section.label}</span>
+            ) : null}
           </div>
-        </Link>
+        </button>
       ))}
 
-      <div className="sticky bottom-0 z-10 inline-flex gap-4 overflow-x-auto border-t bg-muted p-4 pb-3.5 md:hidden">
-        <div className="no-scrollbar mt-2 flex-1 overflow-x-auto whitespace-nowrap text-left">
-          <b className="mr-1.5 inline-block text-foreground">
-            Dominik Rubröder
-          </b>
-          UX Engineer @
-          <Link
-            href="https://www.mediawave.de"
-            title="mediawave commerce GmbH"
-            aria-label="Go to external mediawave commerce GmbH website"
-            className="ml-1.5 inline-block transition hover:text-white"
-            target="_blank"
-          >
-            mediawave GmbH
-          </Link>
-        </div>
+      <div className="sticky bottom-0 z-10 flex justify-end overflow-x-auto border-t bg-muted p-4 pb-3.5 md:hidden">
+        <Button
+          variant="secondary"
+          href="https://github.com/dominikrubroeder"
+          target="_blank"
+          title="Go to GitHub profile of Dominik Rubröder"
+          aria-label="Go to GitHub profile of Dominik Rubröder"
+          asLink
+          className="hover:after:bg-muted-hover"
+        >
+          <GithubIcon />
+        </Button>
 
-        <div className="flex items-center gap-3">
-          <GitHubLink />
-
-          <LinkedinLink />
-
-          <Link
-            href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-            className="group flex size-10 items-center justify-center rounded-full bg-muted transition hover:bg-muted-hover"
-            title="Mail to Dominik Rubröder"
-            aria-label="Write a mail to Dominik Rubröder"
-          >
-            <EnvelopeIcon className="size-5 shrink-0 transition group-hover:text-white" />
-          </Link>
-        </div>
+        <Button
+          variant="secondary"
+          href="https://www.linkedin.com/in/dominik-rubröder-49a63817b"
+          target="_blank"
+          title="Go to LinkedIn profile of Dominik Rubröder"
+          aria-label="Go to LinkedIn profile of Dominik Rubröder"
+          asLink
+          className="hover:after:bg-muted-hover"
+        >
+          <LinkedinIcon />
+        </Button>
       </div>
     </div>
   );

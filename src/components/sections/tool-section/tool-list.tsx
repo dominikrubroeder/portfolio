@@ -11,7 +11,7 @@ export default function ToolList() {
             return (
               <li
                 key={tool.title}
-                className="mr-8 inline-block first-of-type:ml-4 sm:first-of-type:ml-16"
+                className="mr-8 inline-block first-of-type:ml-4 xl:first-of-type:ml-16"
               >
                 <Tool tool={tool} isFirstItemInList={index === 0} />
               </li>

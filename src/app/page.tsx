@@ -7,7 +7,7 @@ import SocialSection from '@/components/sections/social-section';
 
 export default function HomePage() {
   return (
-    <>
+    <div className="md:space-y-24">
       <HomeHeroSection />
 
       <IntroductionSection />
@@ -19,6 +19,6 @@ export default function HomePage() {
       <TechnologySection />
 
       <SocialSection />
-    </>
+    </div>
   );
 }

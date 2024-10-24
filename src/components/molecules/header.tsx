@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header
       id="header"
-      className="sticky top-0 z-max mx-auto flex max-w-screen-xl items-center justify-between gap-4 border-b bg-background p-4 sm:relative sm:py-3 md:py-4 xl:px-0"
+      className="sticky top-0 z-max mx-auto flex max-w-screen-xl items-center justify-between gap-4 border-b bg-background p-4 sm:py-3 md:relative md:py-4 xl:px-0"
     >
       <div className="flex items-center gap-4">
         <Avatar
@@ -23,14 +23,14 @@ export default function Header() {
           <p className="font-bold leading-none text-foreground">
             Dominik Rubröder
           </p>
-          <p className="space-x-1 text-xs xs:text-sm md:text-base md:text-muted-foreground">
+          <p className="space-x-1 text-xs xs:text-base md:text-muted-foreground">
             <span>UX Design Engineer @</span>
             <Link href="https://www.mediawave.de">mediawave</Link>
           </p>
         </h1>
       </div>
 
-      <div className="hidden sm:flex sm:-space-x-1">
+      <div className="hidden md:flex md:-space-x-1">
         <Button
           variant="secondary"
           href="https://github.com/dominikrubroeder"
