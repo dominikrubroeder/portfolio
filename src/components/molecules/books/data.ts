@@ -70,5 +70,12 @@ export const books: Book[] = [
     href: undefined,
     new: undefined,
     progress: 0
+  },
+  {
+    title: 'Living with Complexity',
+    author: 'Don Norman',
+    href: undefined,
+    new: undefined,
+    progress: 0
   }
 ];
