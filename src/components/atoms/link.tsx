@@ -20,6 +20,7 @@ export default function Link({
     <NextLink
       {...linkProps}
       target={externalLink ? '_blank' : '_self'}
+      rel={externalLink ? 'noopener noreferrer' : undefined}
       className={cn(
         'relative mx-1 inline-flex items-center gap-1 text-foreground transition',
         variant === 'marker' &&
