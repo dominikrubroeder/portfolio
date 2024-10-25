@@ -2,7 +2,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import AccordionClean from '@/components/atoms/accordion-clean';
 import Mindset from '@/components/sections/introduction-section/mindset';
-import Books from '@/components/sections/introduction-section/books';
+import Books from '@/components/molecules/books/books';
 import TechStack from '@/components/sections/introduction-section/tech-stack';
 import Vision from '@/components/sections/introduction-section/vision';
 
