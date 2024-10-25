@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import LoadingList from '@/components/ui/loading-list';
-import ToolList from '@/components/sections/tool-section/tool-list';
-import Section from '@/components/sections/section';
+import ToolList from '@/components/organisms/sections/tool-section/tool-list';
+import Section from '@/components/organisms/sections/section';
 
 export default function ToolSection() {
   return (

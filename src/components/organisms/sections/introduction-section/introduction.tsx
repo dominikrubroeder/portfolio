@@ -1,10 +1,10 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import AccordionClean from '@/components/atoms/accordion-clean';
-import Mindset from '@/components/sections/introduction-section/mindset';
+import Mindset from '@/components/organisms/sections/introduction-section/mindset';
 import Books from '@/components/molecules/books/books';
-import TechStack from '@/components/sections/introduction-section/tech-stack';
-import Vision from '@/components/sections/introduction-section/vision';
+import TechStack from '@/components/organisms/sections/introduction-section/tech-stack';
+import Vision from '@/components/organisms/sections/introduction-section/vision';
 
 export default function Introduction({ className }: { className?: string }) {
   return (

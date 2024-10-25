@@ -1,8 +1,8 @@
-import HistoryEntry from '@/components/sections/history-section/history-entry';
+import HistoryEntry from '@/components/organisms/sections/history-section/history-entry';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
-import Section from '@/components/sections/section';
+import Section from '@/components/organisms/sections/section';
 
 export default function Index() {
   return (

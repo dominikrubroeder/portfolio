@@ -1,6 +1,6 @@
 import ControlBar from '@/components/navigation/control-bar/control-bar';
 import { redirect } from 'next/navigation';
-import { tools } from '@/components/sections/tool-section/data';
+import { tools } from '@/components/organisms/sections/tool-section/data';
 import { formatTitle } from '@/lib/helpers';
 
 export default function ToolPage({ params }: { params: { tool: string } }) {

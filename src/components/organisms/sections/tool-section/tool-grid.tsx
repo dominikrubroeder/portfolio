@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Brand from '@/components/ui/brand';
 import type { Brand as BrandType } from '@/types';
-import { tools } from '@/components/sections/tool-section/data';
+import { tools } from '@/components/organisms/sections/tool-section/data';
 
 export default function ToolGrid() {
   return (

@@ -15,7 +15,7 @@ export default function Vision() {
       <p>
         With smooth animations and transitions that support the user&apos;s
         behaviour and provide guidance, the application should feel interactive,
-        yet stable. Supporting the user to achieve their goals and intentions on
+        yet stable. Supporting people to achieve their goals and intentions on
         the site seamlessly.
       </p>
 

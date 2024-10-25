@@ -1,4 +1,4 @@
-import Section from '@/components/sections/section';
+import Section from '@/components/organisms/sections/section';
 import Link from 'next/link';
 import SegmuellerLogo from '@/components/ui/svg/segmueller-logo';
 import AllesautoLogo from '@/components/ui/svg/allesauto-logo';
