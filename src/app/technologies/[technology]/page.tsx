@@ -2,7 +2,7 @@ import ControlBar from '@/components/navigation/control-bar/control-bar';
 import { redirect } from 'next/navigation';
 import ItemHeroSection from '@/components/heros/item-hero-section';
 import Link from 'next/link';
-import { technologies } from '@/components/sections/technology-section/data';
+import { technologies } from '@/components/organisms/sections/technology-section/data';
 import { formatTitle } from '@/lib/helpers';
 
 export default function TechnologyPage({

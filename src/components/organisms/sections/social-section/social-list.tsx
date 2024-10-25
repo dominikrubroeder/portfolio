@@ -1,5 +1,5 @@
-import Social from '@/components/sections/social-section/social';
-import { socials } from '@/components/sections/social-section/data';
+import Social from '@/components/organisms/sections/social-section/social';
+import { socials } from '@/components/organisms/sections/social-section/data';
 
 export default function SocialList() {
   return (

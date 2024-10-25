@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import ToolGrid from '@/components/sections/tool-section/tool-grid';
+import ToolGrid from '@/components/organisms/sections/tool-section/tool-grid';
 
 export default function Tools() {
   return (

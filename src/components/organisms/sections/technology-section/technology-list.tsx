@@ -1,6 +1,6 @@
-import Technology from '@/components/sections/technology-section/technology';
+import Technology from '@/components/organisms/sections/technology-section/technology';
 import MoreItemsSection from '@/components/more-items-section';
-import { technologies } from '@/components/sections/technology-section/data';
+import { technologies } from '@/components/organisms/sections/technology-section/data';
 
 export default function TechnologyList() {
   return (

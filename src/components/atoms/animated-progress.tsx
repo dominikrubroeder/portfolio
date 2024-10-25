@@ -13,7 +13,6 @@ interface AnimatedProgressProps {
   color?: 'text-primary' | string;
   strokeColor?: 'stroke-primary' | string;
   backgroundColor?: 'bg-background' | string;
-  highlightCompletion?: boolean;
 }
 
 export default function AnimatedProgress({
@@ -24,8 +23,7 @@ export default function AnimatedProgress({
   animateProgress = true,
   color = 'text-primary',
   strokeColor = 'stroke-primary',
-  backgroundColor = 'bg-transparent',
-  highlightCompletion
+  backgroundColor = 'bg-transparent'
 }: AnimatedProgressProps) {
   const controls = useAnimation();
   const ref = useRef(null);

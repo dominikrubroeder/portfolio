@@ -1,6 +1,6 @@
-import Tool from '@/components/sections/tool-section/tool';
+import Tool from '@/components/organisms/sections/tool-section/tool';
 import MoreItemsSection from '@/components/more-items-section';
-import { tools } from '@/components/sections/tool-section/data';
+import { tools } from '@/components/organisms/sections/tool-section/data';
 
 export default function ToolList() {
   return (

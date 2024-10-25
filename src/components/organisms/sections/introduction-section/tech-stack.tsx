@@ -18,6 +18,7 @@ export default function TechStack({ className }: { className?: string }) {
             href="https://react.dev"
             target="_blank"
             asLink
+            className="[&>svg]:size-12 [&>svg]:sm:size-8"
           >
             <ReactIcon />
           </Button>
@@ -29,6 +30,7 @@ export default function TechStack({ className }: { className?: string }) {
             href="https://nextjs.org"
             target="_blank"
             asLink
+            className="[&>svg]:size-12 [&>svg]:sm:size-8"
           >
             <NextJsIcon />
           </Button>
@@ -40,6 +42,7 @@ export default function TechStack({ className }: { className?: string }) {
             href="https://www.typescriptlang.org"
             target="_blank"
             asLink
+            className="[&>svg]:size-12 [&>svg]:sm:size-8"
           >
             <TypescriptIcon />
           </Button>
@@ -51,6 +54,7 @@ export default function TechStack({ className }: { className?: string }) {
             href="https://www.tailwindcss.com"
             target="_blank"
             asLink
+            className="[&>svg]:size-12 [&>svg]:sm:size-8"
           >
             <TailwindCssIcon />
           </Button>
@@ -62,6 +66,7 @@ export default function TechStack({ className }: { className?: string }) {
             href="https://www.framer.com/motion/"
             target="_blank"
             asLink
+            className="[&>svg]:size-12 [&>svg]:sm:size-8"
           >
             <FramerMotionIcon />
           </Button>
