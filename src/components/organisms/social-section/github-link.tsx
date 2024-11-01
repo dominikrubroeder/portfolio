@@ -1,4 +1,4 @@
-import GithubIcon from '@/components/ui/svg/github-icon';
+import GithubIcon from '@/components/atoms/svg/github-icon';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
 

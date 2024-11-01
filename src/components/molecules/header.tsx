@@ -2,8 +2,8 @@ import React from 'react';
 import Avatar from '@/components/atoms/avatar';
 import Link from '@/components/atoms/link';
 import Button from '@/components/atoms/button';
-import LinkedinIcon from '@/components/ui/svg/linkedin-icon';
-import GithubIcon from '@/components/ui/svg/github-icon';
+import LinkedinIcon from '@/components/atoms/svg/linkedin-icon';
+import GithubIcon from '@/components/atoms/svg/github-icon';
 
 export default function Header() {
   return (

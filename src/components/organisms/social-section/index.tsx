@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
-import LoadingList from '@/components/ui/loading-list';
+import LoadingList from '@/components/atoms/loading-list';
 import SocialList from '@/components/organisms/social-section/social-list';
-import Section from '@/components/organisms/section/section';
+import Section from '@/components/organisms/section';
 
 export default function SocialSection() {
   return (

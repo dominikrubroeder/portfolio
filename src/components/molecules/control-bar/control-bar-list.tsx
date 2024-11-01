@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import DynamicHeroIcon from '@/components/ui/dynamic-hero-icon';
+import DynamicHeroIcon from '@/components/atoms/dynamic-hero-icon';
 import type {
   ControlBarActiveSection,
   ControlBarMobileMenuVisibility,
@@ -8,8 +8,8 @@ import type {
 } from '@/types';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
-import GithubIcon from '@/components/ui/svg/github-icon';
-import LinkedinIcon from '@/components/ui/svg/linkedin-icon';
+import GithubIcon from '@/components/atoms/svg/github-icon';
+import LinkedinIcon from '@/components/atoms/svg/linkedin-icon';
 
 export default function ControlBarList({
   sections,

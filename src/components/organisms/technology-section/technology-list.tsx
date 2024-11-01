@@ -1,5 +1,5 @@
 import Technology from '@/components/organisms/technology-section/technology';
-import MoreItemsSection from '@/components/more-items-section';
+import MoreItemsSection from '@/components/organisms/more-items-section';
 import { technologies } from '@/components/organisms/technology-section/data';
 
 export default function TechnologyList() {

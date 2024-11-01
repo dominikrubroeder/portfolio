@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
-import LoadingList from '@/components/ui/loading-list';
+import LoadingList from '@/components/atoms/loading-list';
 import TechnologyList from '@/components/organisms/technology-section/technology-list';
-import Section from '@/components/organisms/section/section';
+import Section from '@/components/organisms/section';
 
 export default function TechnologySection() {
   return (

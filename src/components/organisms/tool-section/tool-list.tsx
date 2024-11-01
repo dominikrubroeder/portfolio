@@ -1,5 +1,5 @@
 import Tool from '@/components/organisms/tool-section/tool';
-import MoreItemsSection from '@/components/more-items-section';
+import MoreItemsSection from '@/components/organisms/more-items-section';
 import { tools } from '@/components/organisms/tool-section/data';
 
 export default function ToolList() {

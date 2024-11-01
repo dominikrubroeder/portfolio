@@ -1,9 +1,9 @@
 import Button from '@/components/atoms/button';
-import ReactIcon from '@/components/ui/svg/react-icon';
-import NextJsIcon from '@/components/ui/svg/next-js-icon';
-import TypescriptIcon from '@/components/ui/svg/typescript-icon';
-import TailwindCssIcon from '@/components/ui/svg/tailwind-css-icon';
-import FramerMotionIcon from '@/components/ui/svg/framer-motion-icon';
+import ReactIcon from '@/components/atoms/svg/react-icon';
+import NextJsIcon from '@/components/atoms/svg/next-js-icon';
+import TypescriptIcon from '@/components/atoms/svg/typescript-icon';
+import TailwindCssIcon from '@/components/atoms/svg/tailwind-css-icon';
+import FramerMotionIcon from '@/components/atoms/svg/framer-motion-icon';
 import React from 'react';
 import { cn } from '@/lib/utils';
 

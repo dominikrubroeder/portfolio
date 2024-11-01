@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Brand from '@/components/ui/brand';
+import Brand from '@/components/atoms/brand';
 import type { Brand as BrandType } from '@/types';
 import { tools } from '@/components/organisms/tool-section/data';
 
