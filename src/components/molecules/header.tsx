@@ -16,7 +16,7 @@ export default function Header() {
           className="size-11 shrink-0 sm:size-14"
           width={56}
           height={56}
-          as="Image"
+          as="Link"
         />
 
         <h1 className="space-y-1 text-wrap">
