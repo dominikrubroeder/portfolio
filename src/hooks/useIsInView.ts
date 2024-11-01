@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
-export const useIsInView = (
-  ref: React.MutableRefObject<HTMLElement | null>,
-  threshold = 1
-) => {
+export const useIsInView = ({
+  ref,
+  options
+}: {
+  ref: React.MutableRefObject<HTMLElement | null>;
+  options?: IntersectionObserverInit;
+}) => {
   const [isIntersecting, setIntersecting] = useState(false);
-  const thresholdValue = threshold;
+  const threshold = options?.threshold ?? 1;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -15,17 +18,16 @@ export const useIsInView = (
         });
       },
       {
-        threshold: thresholdValue
+        ...options
       }
     );
 
     if (ref.current) observer.observe(ref.current);
 
-    // Remove the observer as soon as the component is unmounted
     return () => {
       observer.disconnect();
     };
-  }, [ref, thresholdValue]);
+  }, [options, ref, threshold]);
 
   return isIntersecting;
 };

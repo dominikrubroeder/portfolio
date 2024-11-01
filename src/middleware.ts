@@ -1,13 +1,11 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-// This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith('/social')) {
-    return NextResponse.redirect(new URL('/', request.url));
-  }
+  return NextResponse.next();
 }
 
+// Optional: Configure middleware to run only for specific paths
 export const config = {
   matcher: [
     /*

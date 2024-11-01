@@ -2,8 +2,9 @@ import { useCallback } from 'react';
 
 export const useScrollIntoView = () => {
   const scrollIntoView = useCallback(
-    (elementId: string, options?: ScrollIntoViewOptions | undefined) => {
-      const element = document.getElementById(elementId);
+    (id: string, options?: ScrollIntoViewOptions) => {
+      const element = document.getElementById(id);
+
       const defaultOptions: ScrollIntoViewOptions = {
         behavior: 'smooth',
         block: 'center'
