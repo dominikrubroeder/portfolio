@@ -1,9 +1,9 @@
-import IntroductionSection from '@/components/organisms/sections/introduction-section';
+import IntroductionSection from '../components/organisms/introduction-section';
 import HomeHeroSection from '@/components/home-page/home-hero-section';
-import ProjectSection from '@/components/organisms/sections/project-section';
-import ToolSection from '@/components/organisms/sections/tool-section';
-import TechnologySection from '@/components/organisms/sections/technology-section';
-import SocialSection from '@/components/organisms/sections/social-section';
+import ProjectSection from '../components/organisms/project-section';
+import ToolSection from '../components/organisms/tool-section';
+import TechnologySection from '../components/organisms/technology-section';
+import SocialSection from '../components/organisms/social-section';
 
 export default function HomePage() {
   return (

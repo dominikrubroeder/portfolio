@@ -1,5 +1,5 @@
 import React from 'react';
-import Avatar from '@/components/ui/avatar';
+import Avatar from '@/components/atoms/avatar';
 import Link from '@/components/atoms/link';
 import Button from '@/components/atoms/button';
 import LinkedinIcon from '@/components/ui/svg/linkedin-icon';

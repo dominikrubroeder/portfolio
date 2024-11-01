@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import ControlBar from '@/components/navigation/control-bar/control-bar';
+import ControlBar from '@/components/molecules/control-bar/control-bar';
 import { ControlBarSections } from '@/types';
 
 const sections: ControlBarSections = [

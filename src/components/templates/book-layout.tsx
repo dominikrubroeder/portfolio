@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import Divider from '@/components/ui/divider';
+import Divider from '@/components/atoms/divider';
 import Image from 'next/image';
-import Blockquote from '@/components/ui/blockquote';
+import Blockquote from '@/components/atoms/blockquote';
 
 export default function BookLayout({
   title,
