@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-export default function Inkdrop({ className }: { className?: string }) {
+export default function InstagramIcon({ className }: { className?: string }) {
   return (
     <Image
-      src="/inkdrop.png"
+      src="/instagram.png"
       width={128}
       height={128}
-      alt="Inkdrop logo"
+      alt="Instagram logo"
       draggable={false}
       className={className}
     />

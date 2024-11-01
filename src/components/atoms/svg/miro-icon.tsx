@@ -1,12 +1,13 @@
-import { defaultIconSize } from '@/components/atoms/svg/config';
+import { defaultIconSize } from '@/components/atoms/svg/index';
+import { cn } from '@/lib/utils';
 
-export default function Miro({ className }: { className?: string }) {
+export default function MiroIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : defaultIconSize}
+      className={cn(defaultIconSize, className)}
     >
       <path
         d="M27.7333 0H100.267C115.467 0 128 12.5333 128 27.7333V100.267C128 115.467 115.467 128 100.267 128H27.7333C12.5333 128 0 115.467 0 100.267V27.7333C0 12.5333 12.5333 0 27.7333 0Z"

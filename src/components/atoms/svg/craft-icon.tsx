@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
+import { defaultIconSize } from '@/components/atoms/svg';
 
-export default function Craft({ className }: { className?: string }) {
+export default function CraftIcon({ className }: { className?: string }) {
   return (
     <svg
       width="129"
@@ -8,7 +9,7 @@ export default function Craft({ className }: { className?: string }) {
       viewBox="0 0 129 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(className)}
+      className={cn(defaultIconSize, className)}
     >
       <g clipPath="url(#clip0_10_3)">
         <path

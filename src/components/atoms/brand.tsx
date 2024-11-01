@@ -1,30 +1,32 @@
-import Figma from '@/components/atoms/svg/figma';
-import WebstormIcon from '@/components/atoms/svg/webstorm-icon';
-import GithubIcon from '@/components/atoms/svg/github-icon';
 import type { Brand as BrandType } from '@/types';
-import Gitlab from '@/components/atoms/svg/gitlab';
-import Shopware from '@/components/atoms/svg/shopware';
-import Storyblok from '@/components/atoms/svg/storyblok';
-import Miro from '@/components/atoms/svg/miro';
-import Markdown from '@/components/atoms/svg/markdown';
-import ReactIcon from '@/components/atoms/svg/react-icon';
-import NextJsIcon from '@/components/atoms/svg/next-js-icon';
-import HTML from '@/components/atoms/svg/html';
-import CSS from '@/components/atoms/svg/css';
-import TailwindCssIcon from '@/components/atoms/svg/tailwind-css-icon';
-import FramerMotionIcon from '@/components/atoms/svg/framer-motion-icon';
-import AuthJs from '@/components/atoms/img/auth-js';
-import Xing from '@/components/atoms/svg/xing';
-import Instagram from '@/components/atoms/img/instagram';
-import LinkedinIcon from '@/components/atoms/svg/linkedin-icon';
-import TypescriptIcon from '@/components/atoms/svg/typescript-icon';
-import JavaScript from '@/components/atoms/svg/javascript';
-import Notes from '@/components/atoms/svg/notes';
-import Craft from '@/components/atoms/svg/craft';
+import {
+  CraftIcon,
+  CSSIcon,
+  FigmaIcon,
+  FramerMotionIcon,
+  GithubIcon,
+  GitlabIcon,
+  HTMLIcon,
+  JavaScriptIcon,
+  LinkedinIcon,
+  MarkdownIcon,
+  MiroIcon,
+  NextJsIcon,
+  NotesIcon,
+  ReactIcon,
+  ShopwareIcon,
+  StoryblokIcon,
+  TailwindCssIcon,
+  TypescriptIcon,
+  WebstormIcon,
+  XingIcon
+} from '@/components/atoms/svg';
+import AuthJsIcon from '@/components/atoms/img/auth-js-icon';
+import InstagramIcon from '@/components/atoms/img/instagram-icon';
 
 export default function Brand({
   brand,
-  className = 'w-32 h-32'
+  className = 'size-32'
 }: {
   brand: BrandType;
   className?: string;
@@ -33,28 +35,28 @@ export default function Brand({
 
   switch (brand) {
     case 'Figma':
-      return <Figma className={className} />;
+      return <FigmaIcon className={className} />;
 
     case 'WebStorm':
       return <WebstormIcon className={className} />;
 
     case 'Notes':
-      return <Notes className={className} />;
+      return <NotesIcon className={className} />;
 
     case 'GitHub':
       return <GithubIcon className={className} />;
 
     case 'GitLab':
-      return <Gitlab className={className} />;
+      return <GitlabIcon className={className} />;
 
     case 'Shopware':
-      return <Shopware className={className} />;
+      return <ShopwareIcon className={className} />;
 
     case 'Storyblok':
-      return <Storyblok className={className} />;
+      return <StoryblokIcon className={className} />;
 
     case 'Miro':
-      return <Miro className={className} />;
+      return <MiroIcon className={className} />;
 
     case 'React':
       return <ReactIcon className={className} />;
@@ -66,16 +68,16 @@ export default function Brand({
       return <TypescriptIcon className={className} />;
 
     case 'JavaScript':
-      return <JavaScript className={className} />;
+      return <JavaScriptIcon className={className} />;
 
     case 'Markdown':
-      return <Markdown className={className} />;
+      return <MarkdownIcon className={className} />;
 
     case 'HTML':
-      return <HTML className={className} />;
+      return <HTMLIcon className={className} />;
 
     case 'CSS':
-      return <CSS className={className} />;
+      return <CSSIcon className={className} />;
 
     case 'Tailwind CSS':
       return <TailwindCssIcon className={className} />;
@@ -84,18 +86,18 @@ export default function Brand({
       return <FramerMotionIcon className={className} />;
 
     case 'Auth.js':
-      return <AuthJs className={className} />;
+      return <AuthJsIcon className={className} />;
 
     case 'LinkedIn':
       return <LinkedinIcon className={className} />;
 
     case 'Xing':
-      return <Xing className={className} />;
+      return <XingIcon className={className} />;
 
     case 'Instagram':
-      return <Instagram className={className} />;
+      return <InstagramIcon className={className} />;
 
     case 'Craft':
-      return <Craft className={className} />;
+      return <CraftIcon className={className} />;
   }
 }

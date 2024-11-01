@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg/config';
+
+import { defaultIconSize } from '@/components/atoms/svg/index';
 
 export default function WebstormIcon({ className }: { className?: string }) {
   return (

@@ -1,4 +1,5 @@
-import { defaultIconSize } from '@/components/atoms/svg/config';
+import { defaultIconSize } from '@/components/atoms/svg/index';
+import { cn } from '@/lib/utils';
 
 export default function NextJsIcon({ className }: { className?: string }) {
   return (
@@ -6,7 +7,7 @@ export default function NextJsIcon({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : defaultIconSize}
+      className={cn(defaultIconSize, className)}
     >
       <defs>
         <linearGradient

@@ -1,12 +1,13 @@
-import { defaultIconSize } from '@/components/atoms/svg/config';
+import { defaultIconSize } from '@/components/atoms/svg/index';
+import { cn } from '@/lib/utils';
 
-export default function Xing({ className }: { className?: string }) {
+export default function XingIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : defaultIconSize}
+      className={cn(defaultIconSize, className)}
     >
       <g clipPath="url(#clip0_752_1287)">
         <g clipPath="url(#clip1_752_1287)">

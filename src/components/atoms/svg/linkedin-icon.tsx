@@ -1,5 +1,5 @@
-import { defaultIconSize } from '@/components/atoms/svg/config';
 import { cn } from '@/lib/utils';
+import { defaultIconSize } from '@/components/atoms/svg/index';
 
 export default function LinkedinIcon({ className }: { className?: string }) {
   return (

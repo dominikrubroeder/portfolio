@@ -1,10 +1,13 @@
-export default function Markdown({ className }: { className?: string }) {
+import { cn } from '@/lib/utils';
+import { defaultIconSize } from '@/components/atoms/svg/index';
+
+export default function MarkdownIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 208 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : 'h-8 w-auto'}
+      className={cn('h-8 w-auto', defaultIconSize, className)}
     >
       <path
         d="M193 5H15C9.47715 5 5 9.47715 5 15V113C5 118.523 9.47715 123 15 123H193C198.523 123 203 118.523 203 113V15C203 9.47715 198.523 5 193 5Z"

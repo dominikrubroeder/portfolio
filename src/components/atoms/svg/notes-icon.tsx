@@ -1,6 +1,7 @@
-import { defaultIconSize } from '@/components/atoms/svg/config';
+import { defaultIconSize } from '@/components/atoms/svg/index';
+import { cn } from '@/lib/utils';
 
-export default function Notes({ className }: { className?: string }) {
+export default function NotesIcon({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +9,7 @@ export default function Notes({ className }: { className?: string }) {
       width="120"
       height="120"
       viewBox="0 0 120 120"
-      className={className ? className : defaultIconSize}
+      className={cn(defaultIconSize, className)}
     >
       <defs>
         <linearGradient id="e" x1="50%" x2="50%" y1="0%" y2="100%">

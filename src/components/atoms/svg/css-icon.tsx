@@ -1,12 +1,13 @@
-import { defaultIconSize } from '@/components/atoms/svg/config';
+import { defaultIconSize } from '@/components/atoms/svg';
+import { cn } from '@/lib/utils';
 
-export default function CSS({ className }: { className?: string }) {
+export default function CssIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className ? className : defaultIconSize}
+      className={cn(defaultIconSize, className)}
     >
       <g>
         <g id="CSS" clipPath="url(#clip0_748_1013)">
