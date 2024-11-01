@@ -12,8 +12,8 @@ export default function Introduction({ className }: { className?: string }) {
       <p>Hey there,</p>
 
       <h3 className="font-bold text-foreground">
-        My work is committed to the frontend. I like to create and build
-        interfaces that are designed to be for a joyful web
+        My work is committed to the frontend. I like to create and build dynamic
+        interfaces that are designed to be for a joyful Web
         <span className="ml-1 font-normal text-muted-foreground">
           – later on, native mobile apps might join that paradigm.
         </span>
