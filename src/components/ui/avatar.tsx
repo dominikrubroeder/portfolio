@@ -17,7 +17,7 @@ export default function Avatar({
     return (
       <Image
         src="/avatar.jpg"
-        alt="Dominik Rubröder Avatar"
+        alt="Image of Dominik Rubröder"
         width={width}
         height={height}
         className={cn('shrink-0 rounded-full border-2 ', className)}
@@ -26,10 +26,15 @@ export default function Avatar({
     );
 
   return (
-    <Link href="/" className="button flex items-center">
+    <Link
+      href="/"
+      className="interactive"
+      title="Go to Home page"
+      aria-label="Click to go to Home page"
+    >
       <Image
         src="/avatar.jpg"
-        alt="Dominik Rubröder Avatar"
+        alt="Image of Dominik Rubröder"
         width={width}
         height={height}
         className={cn('shrink-0 rounded-full border-2 ', className)}
