@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { Technology, Tool } from '@/interfaces';
-import { PlusIcon } from '@heroicons/react/24/solid';
-import { MinusIcon } from '@heroicons/react/20/solid';
 import Button from '@/components/atoms/button';
-import SliderItem from '@/components/atoms/slider-item';
+import Brand from '@/components/atoms/brand';
+import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 export default function MoreItemsSection({
   items
@@ -16,46 +16,83 @@ export default function MoreItemsSection({
     isVisible: false
   });
 
-  if (!items.some((item) => item.priority === 'low')) return null;
+  if (!items.some((item) => item.priority === 'normal')) return null;
 
   return (
     <div className="space-y-8">
       <div
-        className="mx-4 mb-4 flex cursor-pointer select-none items-center gap-3 sm:ml-16"
+        className="mx-4 mb-4 flex cursor-pointer select-none items-center justify-end gap-3 md:mr-20"
         onClick={() =>
           setState((prevState) => {
             return { isVisible: !prevState.isVisible };
           })
         }
       >
-        <button
+        <Button
+          variant="secondary"
+          className="gap-3"
           aria-label="Hide and show more items"
-          className="flex size-14 items-center justify-center rounded-full bg-accent font-bold text-white transition"
         >
-          {state.isVisible && <MinusIcon className="size-5" />}
-          {!state.isVisible && <PlusIcon className="size-5" />}
-        </button>
-
-        <Button variant="secondary" aria-label="Hide and show more items">
-          {state.isVisible ? 'Less' : 'More'}
+          <span>{state.isVisible ? 'Done' : `More items`}</span>
+          {state.isVisible && (
+            <MinusIcon className="size-6 rounded-full bg-primary/10 p-1 text-primary" />
+          )}
+          {!state.isVisible && (
+            <PlusIcon className="size-6 rounded-full bg-primary p-1 text-primary-foreground" />
+          )}
         </Button>
       </div>
 
       {state.isVisible && (
-        <ul className="mx-4 grid animate-fadeUp gap-12 sm:mx-16 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-          {items.map((item) => {
-            if (item.priority === 'low')
-              return (
-                <li key={item.title}>
-                  <SliderItem
-                    className="w-full md:max-w-sm"
-                    sliderItem={item}
-                    type="Tool"
-                  />
-                </li>
-              );
-          })}
-        </ul>
+        <div className="mx-4 w-full max-w-screen-sm space-y-8 md:mx-auto md:pl-16">
+          <h3 className="flex items-center justify-between gap-4 font-bold text-foreground">
+            Tools
+            <span className="mr-5 text-sm font-normal text-muted-foreground">
+              {items.length}
+            </span>
+          </h3>
+          <ul className="animate-fade-up space-y-8">
+            {items
+              .sort((a, b) => a.title.localeCompare(b.title))
+              .map((item) => {
+                if (item.priority === 'normal')
+                  return (
+                    <li key={item.title} className="space-y-6">
+                      <div>
+                        <div className="flex gap-4">
+                          <Brand
+                            brand={item.title}
+                            className="size-10 shrink-0"
+                          />
+                          <div className="flex-1">
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                              <h3 className="flex-1 font-bold text-foreground">
+                                {item.title}
+                              </h3>
+
+                              <div className="inline-flex rounded-full border px-3 py-2">
+                                {item.keyword}
+                              </div>
+                              <Button
+                                variant="secondary"
+                                href={item.website}
+                                title={`Go to external ${item.title} website`}
+                                aria-label={`Go to external ${item.title} website`}
+                                asLink
+                              >
+                                <ArrowTopRightOnSquareIcon className="size-5 shrink-0" />
+                              </Button>
+                            </div>
+                            <p>{item.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <hr className="ml-16" />
+                    </li>
+                  );
+              })}
+          </ul>
+        </div>
       )}
     </div>
   );

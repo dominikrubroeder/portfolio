@@ -65,7 +65,7 @@ export const tools: Tool[] = [
     href: '/tool/storyblok',
     description: 'The Way to Modern Content',
     keyword: 'Headless CMS',
-    priority: 'low',
+    priority: 'normal',
     projects: [],
     experience: 'high'
   },
@@ -77,7 +77,7 @@ export const tools: Tool[] = [
     description:
       'Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.',
     keyword: 'Shop System',
-    priority: 'low',
+    priority: 'normal',
     projects: [],
     experience: 'high'
   },
@@ -89,7 +89,7 @@ export const tools: Tool[] = [
     description:
       "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company. Don't Let Distances or Timezones Stop You from Building Beautiful Products for Your Users. Miro for UX & Design.",
     keyword: 'Collaborative Whiteboard',
-    priority: 'low',
+    priority: 'normal',
     projects: [],
     experience: 'moderate'
   },
@@ -100,7 +100,7 @@ export const tools: Tool[] = [
     href: '/tool/algolia',
     description: 'AI-Search, that understands',
     keyword: 'Search',
-    priority: 'low',
+    priority: 'normal',
     projects: [],
     experience: 'moderate'
   }

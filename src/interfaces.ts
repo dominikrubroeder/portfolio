@@ -12,7 +12,7 @@ export interface Tool {
   website: string;
   description: string;
   keyword: string;
-  priority: 'low' | 'high';
+  priority: 'normal' | 'high';
   experience: 'low' | 'moderate' | 'high' | 'daily';
   projects: string[];
 }

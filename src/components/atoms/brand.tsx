@@ -23,6 +23,7 @@ import {
 } from '@/components/atoms/svg';
 import AuthJsIcon from '@/components/atoms/img/auth-js-icon';
 import InstagramIcon from '@/components/atoms/img/instagram-icon';
+import { cn } from '@/lib/utils';
 
 export default function Brand({
   brand,
@@ -99,5 +100,8 @@ export default function Brand({
 
     case 'Craft':
       return <CraftIcon className={className} />;
+
+    default:
+      return <div className={cn('rounded bg-muted', className)} />;
   }
 }

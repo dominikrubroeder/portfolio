@@ -31,7 +31,7 @@ export default function AccordionMini({
         />
       </div>
 
-      {open ? <div className="my-5 animate-fadeUp">{children}</div> : null}
+      {open ? <div className="my-5 animate-fade-up">{children}</div> : null}
     </div>
   );
 }

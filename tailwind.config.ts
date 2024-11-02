@@ -70,9 +70,13 @@ const config = {
           '0%': { transform: 'scale(0.82)' },
           '100%': { transform: 'scale(1)' }
         },
-        fadeUp: {
+        'fade-up': {
           '0%': { transform: 'translateY(4%)' },
           '100%': { transform: 'translateY(0%)' }
+        },
+        'fade-up-1rem': {
+          '0%': { transform: 'translateY(1rem)' },
+          '100%': { transform: 'translateY(0)' }
         },
         'accordion-down': {
           from: { height: '0' },
@@ -85,7 +89,8 @@ const config = {
       },
       animation: {
         scale: 'scale 0.16s ease-out forwards',
-        fadeUp: 'fadeUp 0.3s ease-out forwards',
+        'fade-up': 'fade-up 0.3s ease-out forwards',
+        'fade-up-1rem': 'fade-up-1rem 0.3s ease-out forwards',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
       },

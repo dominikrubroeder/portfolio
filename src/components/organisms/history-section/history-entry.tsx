@@ -55,7 +55,7 @@ export default function HistoryEntry({
         <p>{jobTitle}</p>
 
         {state === 'expanded' && (
-          <div className="mt-4 animate-fadeUp">{children}</div>
+          <div className="mt-4 animate-fade-up">{children}</div>
         )}
       </div>
     </div>

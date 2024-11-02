@@ -109,7 +109,7 @@ export const technologies: Technology[] = [
     href: '/technology/auth-js',
     description: 'Authentication for the Web',
     keyword: 'Authentication Library',
-    priority: 'low',
+    priority: 'normal',
     projects: [],
     experience: 'high'
   }

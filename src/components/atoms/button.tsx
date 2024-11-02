@@ -39,7 +39,7 @@ export default function Button({
       <Link
         href={href}
         className={classNames}
-        target={target}
+        target={href.includes('https') ? '_blank' : target}
         title={title}
         aria-label={ariaLabel}
       >

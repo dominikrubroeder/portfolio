@@ -25,7 +25,7 @@ export default function AccordionClean({
         <p>{title}</p>
       </button>
 
-      {open && <div className="animate-fadeUp">{children}</div>}
+      {open && <div className="animate-fade-up">{children}</div>}
     </div>
   );
 }

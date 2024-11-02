@@ -55,7 +55,7 @@ export default function Accordion({
       {open ? (
         <div
           className={cn(
-            'mb-5 animate-fadeUp p-4',
+            'mb-5 animate-fade-up p-4',
             restrictHeight &&
               'no-scrollbar md:max-h-[60svh] md:overflow-y-auto md:border-b'
           )}
