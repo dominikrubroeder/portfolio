@@ -61,7 +61,7 @@ const config = {
         }
       },
       borderRadius: {
-        lg: 'var(--radius)',
+        DEFAULT: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
       },
@@ -75,7 +75,7 @@ const config = {
           '100%': { transform: 'translateY(0%)' }
         },
         'fade-up-1rem': {
-          '0%': { transform: 'translateY(1rem)' },
+          '0%': { transform: 'translateY(-1rem)' },
           '100%': { transform: 'translateY(0)' }
         },
         'accordion-down': {

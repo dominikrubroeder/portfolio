@@ -6,6 +6,7 @@ import Button from '@/components/atoms/button';
 import Brand from '@/components/atoms/brand';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { BrandType } from '@/types';
 
 export default function MoreItemsSection({
   items
@@ -19,9 +20,9 @@ export default function MoreItemsSection({
   if (!items.some((item) => item.priority === 'normal')) return null;
 
   return (
-    <div className="space-y-8">
+    <div className="ml-2 space-y-8 xl:ml-12">
       <div
-        className="mx-4 mb-4 flex cursor-pointer select-none items-center justify-end gap-3 md:mr-20"
+        className="mb-4 flex cursor-pointer select-none items-center gap-3 md:mr-20"
         onClick={() =>
           setState((prevState) => {
             return { isVisible: !prevState.isVisible };
@@ -33,24 +34,25 @@ export default function MoreItemsSection({
           className="gap-3"
           aria-label="Hide and show more items"
         >
-          <span>{state.isVisible ? 'Done' : `More items`}</span>
           {state.isVisible && (
             <MinusIcon className="size-6 rounded-full bg-primary/10 p-1 text-primary" />
           )}
           {!state.isVisible && (
             <PlusIcon className="size-6 rounded-full bg-primary p-1 text-primary-foreground" />
           )}
+          <span>{state.isVisible ? 'Done' : `More items`}</span>
         </Button>
       </div>
 
       {state.isVisible && (
-        <div className="mx-4 w-full max-w-screen-sm space-y-8 md:mx-auto md:pl-16">
+        <div className="mx-auto w-full max-w-screen-sm space-y-8 px-4 md:pl-16">
           <h3 className="flex items-center justify-between gap-4 font-bold text-foreground">
             Tools
             <span className="mr-5 text-sm font-normal text-muted-foreground">
-              {items.length}
+              {items.filter((item) => item.priority === 'normal').length} more
             </span>
           </h3>
+
           <ul className="animate-fade-up space-y-8">
             {items
               .sort((a, b) => a.title.localeCompare(b.title))
@@ -61,7 +63,7 @@ export default function MoreItemsSection({
                       <div>
                         <div className="flex gap-4">
                           <Brand
-                            brand={item.title}
+                            brand={item.title as BrandType}
                             className="size-10 shrink-0"
                           />
                           <div className="flex-1">
@@ -83,7 +85,6 @@ export default function MoreItemsSection({
                                 <ArrowTopRightOnSquareIcon className="size-5 shrink-0" />
                               </Button>
                             </div>
-                            <p>{item.description}</p>
                           </div>
                         </div>
                       </div>

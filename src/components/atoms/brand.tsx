@@ -1,4 +1,4 @@
-import type { Brand as BrandType } from '@/types';
+import type { BrandType } from '@/types';
 import {
   CraftIcon,
   CSSIcon,

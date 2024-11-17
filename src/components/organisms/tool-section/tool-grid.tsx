@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Brand from '@/components/atoms/brand';
-import type { Brand as BrandType } from '@/types';
+import type { BrandType as BrandType } from '@/types';
 import { tools } from '@/components/organisms/tool-section/data';
 
 export default function ToolGrid() {
@@ -11,15 +11,7 @@ export default function ToolGrid() {
           return (
             <li key={tool.title}>
               <div className="group grid gap-6 whitespace-normal">
-                <div className="relative h-80 rounded-xl border ">
-                  {/* Change in later release to
-             – href={tool.href}
-             – target={tool.href.includes('https') ? '_blank' : '_self'}
-             – title={`Go to ${tool.href}`}
-             – aria-label={`Go to ${tool.href}`}`}
-
-             When Detail pages are available
-             */}
+                <div className="relative h-80 rounded-xl border">
                   <Link
                     href={tool.website}
                     className="absolute inset-0 flex size-full cursor-pointer items-center justify-center"

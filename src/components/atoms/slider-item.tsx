@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Brand from '@/components/atoms/brand';
-import type { Brand as BrandType } from '@/types';
+import type { BrandType as BrandType } from '@/types';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
 

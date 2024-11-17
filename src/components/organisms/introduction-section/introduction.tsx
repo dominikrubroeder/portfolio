@@ -9,14 +9,13 @@ import Vision from '@/components/organisms/introduction-section/vision';
 export default function Introduction({ className }: { className?: string }) {
   return (
     <div className={cn('mx-auto w-full max-w-screen-sm space-y-6', className)}>
-      <p>Hey there,</p>
+      <p>
+        Hey there <span className="ml-1 inline-block rotate-45">=)</span>
+      </p>
 
       <h2 className="text-wrap font-bold text-foreground">
         My work is committed to the frontend. I like to create and build dynamic
-        interfaces that are designed to be for a joyful Web
-        <span className="ml-1 font-normal text-muted-foreground">
-          – later on, native mobile apps might join that paradigm.
-        </span>
+        interfaces that are designed to be for a joyful Web.
       </h2>
 
       <AccordionClean title="More about my vision">

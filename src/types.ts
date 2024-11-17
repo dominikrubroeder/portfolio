@@ -1,6 +1,6 @@
 export type ControlBarAction = 'Avatar' | 'Back' | 'Up';
 
-export type Brand =
+export type BrandType =
   | 'Figma'
   | 'WebStorm'
   | 'Notes'

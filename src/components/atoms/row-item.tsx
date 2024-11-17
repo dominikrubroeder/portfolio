@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { Technology, Tool } from '@/interfaces';
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline';
-import type { Brand as BrandType } from '@/types';
+import type { BrandType as BrandType } from '@/types';
 import Brand from '@/components/atoms/brand';
 
 export default function RowItem({ rowItem }: { rowItem: Tool | Technology }) {
