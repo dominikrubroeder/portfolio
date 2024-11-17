@@ -4,10 +4,12 @@ import ProjectSection from '@/components/organisms/project-section';
 import ToolSection from '@/components/organisms/tool-section';
 import TechnologySection from '@/components/organisms/technology-section';
 import SocialSection from '@/components/organisms/social-section';
+import React from 'react';
+import FaqSection from '@/components/organisms/faq-section';
 
 export default function HomePage() {
   return (
-    <div className="md:space-y-24">
+    <div className="animate-fade-up-1rem md:space-y-24">
       <HomeHeroSection />
 
       <IntroductionSection />
@@ -19,6 +21,8 @@ export default function HomePage() {
       <TechnologySection />
 
       <SocialSection />
+
+      <FaqSection />
     </div>
   );
 }
