@@ -48,7 +48,7 @@ export const books: Book[] = [
     author: 'Jon Yablonski',
     href: undefined,
     new: undefined,
-    progress: 10
+    progress: 20
   },
   {
     title: 'User Friendly',
