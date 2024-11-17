@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { ReactNode, useState } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 export default function AccordionClean({
   title,
@@ -21,7 +21,12 @@ export default function AccordionClean({
         className="flex items-center gap-4"
         onClick={() => setOpen((previousState) => !previousState)}
       >
-        <ChevronDownIcon className="size-5 shrink-0 text-primary" />
+        <ChevronRightIcon
+          className={cn(
+            'size-5 shrink-0 text-primary transition',
+            open && 'rotate-90'
+          )}
+        />
         <p>{title}</p>
       </button>
 
