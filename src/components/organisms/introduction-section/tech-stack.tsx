@@ -9,9 +9,13 @@ import { cn } from '@/lib/utils';
 
 export default function TechStack({ className }: { className?: string }) {
   return (
-    <div className={cn('mx-auto w-full max-w-screen-sm space-y-6', className)}>
-      <h3>Tech stack</h3>
-      <ul className="flex flex-wrap items-center gap-4">
+    <div>
+      <ul
+        className={cn(
+          'mx-auto flex w-full max-w-screen-sm flex-wrap items-center gap-4',
+          className
+        )}
+      >
         <li>
           <Button
             variant="secondary"

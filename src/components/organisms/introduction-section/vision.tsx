@@ -8,8 +8,7 @@ export default function Vision() {
         As a UX Design Engineer, i am working for good user interfaces that
         transport emotion and do care about the impact of design. I want the
         user to enjoy their actions, feeling pleasant and delightful while
-        scrolling through the page, pursuing his or her actions with joyful
-        ease.
+        scrolling through the page, pursuing their actions with joyful ease.
       </p>
 
       <p>
@@ -20,7 +19,7 @@ export default function Vision() {
       </p>
 
       <p>
-        I like to use
+        When creating user interfaces, using
         <Link
           href="https://lawsofux.com"
           title="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
@@ -28,13 +27,13 @@ export default function Vision() {
         >
           psychological and design principles
         </Link>
-        to build better and stable
+        helps to build better, more thoughtful
         <Link
           href="https://nextjs.org/docs/app/building-your-application/deploying/production-checklist"
           title="Open production checklist on the Next.js documenation"
           aria-label="Open production checklist on the Next.js documenation"
         >
-          production
+          stable production
         </Link>
         applications.
       </p>
