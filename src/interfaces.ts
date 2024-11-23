@@ -5,6 +5,31 @@ import {
   ControlBarVisibility
 } from '@/types';
 
+export type ToolCategory =
+  | 'AI'
+  | 'API'
+  | 'Authentication'
+  | 'Browser'
+  | 'Chat'
+  | 'CMS'
+  | 'Color'
+  | 'Deployment'
+  | 'Design'
+  | 'Docs'
+  | 'DX'
+  | 'Icon'
+  | 'IDE'
+  | 'Image'
+  | 'Motion'
+  | 'Payment'
+  | 'Performance'
+  | 'Project Management'
+  | 'Search'
+  | 'Shop System'
+  | 'Testing'
+  | 'UI'
+  | 'Version Control';
+
 export interface Tool {
   title: string;
   logo: string;
@@ -15,6 +40,7 @@ export interface Tool {
   priority: 'normal' | 'high';
   experience: 'low' | 'moderate' | 'high' | 'daily';
   projects: string[];
+  category: ToolCategory;
 }
 
 export interface Technology extends Tool {}

@@ -9,7 +9,7 @@ export default function Mindset({ className }: { className?: string }) {
       )}
     >
       <li>
-        <b className="text-foreground">Designing</b> – with care, joy
+        <b className="text-foreground">Designing</b> – with care, joy, curiosity
       </li>
       <li>
         <b className="text-foreground">Coding</b> and
@@ -21,6 +21,7 @@ export default function Mindset({ className }: { className?: string }) {
       </li>
       <li>Writing documentation</li>
       <li>Being mindful</li>
+      <li>Working for good Brands, Products or Services</li>
       <li>Bringing an idea from paper to production</li>
       <li>Refining a feature to specific needs</li>
       <li>

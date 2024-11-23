@@ -55,19 +55,18 @@ export default function HomeHeroSection() {
         id="hero"
         className="pb-12 pt-6 sm:mx-auto sm:flex sm:flex-col sm:items-center sm:justify-center sm:gap-8 md:min-h-[80svh]"
       >
-        <div className="max-w-screen-md space-y-3 px-4">
-          <p className="text-primary">Build your vision</p>
+        <div className="max-w-screen-md space-y-4 px-4">
           <h2 className="text-6xl font-bold text-foreground sm:text-8xl">
             For the Frontend
           </h2>
-          <p className="mx-1 text-4xl font-bold leading-[4rem] text-primary sm:text-6xl">
+          <p className="mx-1 text-4xl font-bold leading-relaxed text-primary sm:text-6xl">
             Building applications by
             <code className="relative ml-2 inline-block">
               code
-              <small className="absolute -top-3 right-9 rounded border bg-muted text-xs">
+              <small className="absolute -top-3 right-10 rounded border bg-muted px-0.5 text-xs">
                 .ts
               </small>
-              <small className="absolute -top-3 right-0 rounded border bg-muted text-xs">
+              <small className="absolute -top-3 right-0 rounded border bg-muted px-0.5 text-xs">
                 .tsx
               </small>
             </code>
@@ -79,13 +78,19 @@ export default function HomeHeroSection() {
               <span className="absolute -bottom-1 -right-1 size-2 rounded-full bg-primary" />
               design
             </span>
-            and <span className="text-4xl">🧐</span> psychological principles
+            and psychological principles
           </p>
         </div>
 
-        <Button variant="outline" className="hidden sm:block">
-          Get to know me
-        </Button>
+        <div className="flex w-full max-w-screen-md gap-2 px-5">
+          <Button variant="primary" className="hidden sm:block">
+            Download CV
+          </Button>
+
+          <Button variant="outline" className="hidden sm:block">
+            Get to know me
+          </Button>
+        </div>
       </section>
 
       <Suspense>

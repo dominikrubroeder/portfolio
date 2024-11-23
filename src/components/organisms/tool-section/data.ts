@@ -11,7 +11,8 @@ export const tools: Tool[] = [
     keyword: 'Interfacetool',
     priority: 'high',
     projects: [],
-    experience: 'daily'
+    experience: 'daily',
+    category: 'Design'
   },
   {
     title: 'WebStorm',
@@ -22,7 +23,8 @@ export const tools: Tool[] = [
     keyword: 'IDE',
     priority: 'high',
     projects: [],
-    experience: 'daily'
+    experience: 'daily',
+    category: 'IDE'
   },
   {
     title: 'Craft',
@@ -33,7 +35,8 @@ export const tools: Tool[] = [
     keyword: 'Notes / Docs',
     priority: 'high',
     projects: [],
-    experience: 'high'
+    experience: 'high',
+    category: 'Docs'
   },
   {
     title: 'GitHub',
@@ -44,7 +47,8 @@ export const tools: Tool[] = [
     keyword: 'Version Control',
     priority: 'high',
     projects: [],
-    experience: 'daily'
+    experience: 'daily',
+    category: 'Version Control'
   },
   {
     title: 'GitLab',
@@ -56,7 +60,8 @@ export const tools: Tool[] = [
     keyword: 'Version Control',
     priority: 'high',
     projects: [],
-    experience: 'high'
+    experience: 'high',
+    category: 'Version Control'
   },
   {
     title: 'Storyblok',
@@ -67,7 +72,8 @@ export const tools: Tool[] = [
     keyword: 'Headless CMS',
     priority: 'normal',
     projects: [],
-    experience: 'high'
+    experience: 'high',
+    category: 'CMS'
   },
   {
     title: 'Shopware',
@@ -79,7 +85,8 @@ export const tools: Tool[] = [
     keyword: 'Shop System',
     priority: 'normal',
     projects: [],
-    experience: 'high'
+    experience: 'high',
+    category: 'Shop System'
   },
   {
     title: 'Miro',
@@ -91,7 +98,8 @@ export const tools: Tool[] = [
     keyword: 'Collaborative Whiteboard',
     priority: 'normal',
     projects: [],
-    experience: 'moderate'
+    experience: 'moderate',
+    category: 'Design'
   },
   {
     title: 'Algolia',
@@ -102,6 +110,7 @@ export const tools: Tool[] = [
     keyword: 'Search',
     priority: 'normal',
     projects: [],
-    experience: 'moderate'
+    experience: 'moderate',
+    category: 'Search'
   }
 ];

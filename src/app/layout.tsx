@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
-  title: 'Dominik Rubröder | UX Design Engineer',
+  title: 'UX Design Engineer | Dominik Rubröder',
   description:
     'Creating and building dynamic interfaces that are designed to be for a joyful Web'
 };

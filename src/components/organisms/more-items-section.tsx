@@ -30,7 +30,7 @@ export default function MoreItemsSection({
         }
       >
         <Button
-          variant="secondary"
+          variant="outline"
           className="gap-3"
           aria-label="Hide and show more items"
         >
@@ -46,8 +46,8 @@ export default function MoreItemsSection({
 
       {state.isVisible && (
         <div className="mx-auto w-full max-w-screen-sm space-y-8 px-4 md:pl-16">
-          <h3 className="flex items-center justify-between gap-4 font-bold text-foreground">
-            Tools
+          <h3 className="flex items-center justify-between gap-4">
+            I also work or worked with
             <span className="mr-5 text-sm font-normal text-muted-foreground">
               {items.filter((item) => item.priority === 'normal').length} more
             </span>
@@ -72,9 +72,6 @@ export default function MoreItemsSection({
                                 {item.title}
                               </h3>
 
-                              <div className="inline-flex rounded-full border px-3 py-2">
-                                {item.keyword}
-                              </div>
                               <Button
                                 variant="secondary"
                                 href={item.website}
