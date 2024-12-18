@@ -6,7 +6,7 @@ export default function Vision() {
   return (
     <div className="space-y-4">
       <Marker color="yellow" as="p">
-        I think when the idea and the vision is clear, you can build the best
+        I believe when the idea and the vision is clear, you can build the best
         product possible, with the right people, and the right technology.
       </Marker>
 

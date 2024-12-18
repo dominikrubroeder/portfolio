@@ -27,10 +27,11 @@ export default function Avatar({
 
   return (
     <Link
-      href="/public"
+      href="/"
       className="interactive"
       title="Go to Home page"
       aria-label="Click to go to Home page"
+      prefetch
     >
       <Image
         src="/avatar.jpg"

@@ -50,7 +50,6 @@ export interface Social {
   logo: string;
   href: string;
   website: string;
-  badge: string;
 }
 
 export interface ControlBar {

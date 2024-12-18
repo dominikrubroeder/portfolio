@@ -1,7 +1,6 @@
 import { Social, Technology, Tool } from '@/interfaces';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
-import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import Brand from '@/components/atoms/brand';
 import type { BrandType as BrandType } from '@/types';
 import { cn } from '@/lib/utils';
@@ -38,9 +37,11 @@ export default function SliderItem({
         </Link>
       </div>
 
-      <div className="mx-auto w-max rounded-3xl border px-3 py-2 font-bold text-foreground">
-        {'keyword' in sliderItem ? sliderItem.keyword : sliderItem.badge}
-      </div>
+      {'keyword' in sliderItem && (
+        <div className="mx-auto w-max rounded-3xl border px-3 py-2 font-bold text-foreground">
+          {sliderItem.keyword}
+        </div>
+      )}
 
       <div
         className={cn(
@@ -48,16 +49,23 @@ export default function SliderItem({
           (type === 'Tool' || type === 'Technology') && 'h-20'
         )}
       >
-        <Link
-          href={sliderItem.website}
-          className="group mx-auto flex items-center gap-2 font-bold text-foreground"
-          target="_blank"
-        >
-          <h2>{sliderItem.title}</h2>
-          {type === 'Social' && (
-            <ArrowUpRightIcon className="size-5 shrink-0 text-muted-foreground transition group-hover:text-foreground" />
-          )}
-        </Link>
+        {type === 'Social' ? (
+          <Link
+            href={sliderItem.website}
+            className="group mx-auto flex items-center gap-2 font-bold text-foreground"
+            target="_blank"
+          >
+            <h2>{sliderItem.title}</h2>
+          </Link>
+        ) : (
+          <Link
+            href={sliderItem.website}
+            className="group mx-auto flex items-center gap-2 font-bold text-foreground"
+            target="_blank"
+          >
+            <h2>{sliderItem.title}</h2>
+          </Link>
+        )}
 
         {'description' in sliderItem && (
           <p className="line-clamp-2 h-16 text-center italic">
