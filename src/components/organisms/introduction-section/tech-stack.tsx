@@ -3,7 +3,7 @@ import ReactIcon from '@/components/atoms/svg/react-icon';
 import NextJsIcon from '@/components/atoms/svg/next-js-icon';
 import TypescriptIcon from '@/components/atoms/svg/typescript-icon';
 import TailwindCssIcon from '@/components/atoms/svg/tailwind-css-icon';
-import FramerMotionIcon from '@/components/atoms/svg/framer-motion-icon';
+import MotionIcon from '@/components/atoms/svg/motion-icon';
 import React from 'react';
 import { cn } from '@/lib/utils';
 
@@ -68,7 +68,7 @@ export default function TechStack({ className }: { className?: string }) {
             asLink
             className="[&>svg]:size-12 [&>svg]:sm:size-8"
           >
-            <FramerMotionIcon />
+            <MotionIcon />
           </Button>
         </li>
       </ul>

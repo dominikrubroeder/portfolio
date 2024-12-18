@@ -11,7 +11,7 @@ export { default as NextJsIcon } from './next-js-icon';
 export { default as HTMLIcon } from './html-icon';
 export { default as CSSIcon } from './css-icon';
 export { default as TailwindCssIcon } from './tailwind-css-icon';
-export { default as FramerMotionIcon } from './framer-motion-icon';
+export { default as MotionIcon } from './motion-icon';
 export { default as XingIcon } from './xing-icon';
 export { default as LinkedinIcon } from './linkedin-icon';
 export { default as TypescriptIcon } from './typescript-icon';

@@ -1,11 +1,7 @@
 import { cn } from '@/lib/utils';
 import { defaultIconSize } from '@/components/atoms/svg/index';
 
-export default function FramerMotionIcon({
-  className
-}: {
-  className?: string;
-}) {
+export default function MotionIcon({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"
