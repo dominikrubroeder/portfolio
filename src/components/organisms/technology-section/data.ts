@@ -91,10 +91,10 @@ export const technologies: Technology[] = [
     experience: 'high'
   },
   {
-    title: 'Framer Motion',
+    title: 'Motion (formerly Framer Motion)',
     website: 'https://www.framer.com/motion/',
     logo: 'https://dominikrubroeder.dev/framer.png',
-    href: '/technology/framer-motion',
+    href: '/technology/motion',
     description:
       'A declarative motion library for animating react UIs and apply motion to it',
     keyword: 'Motion Library',

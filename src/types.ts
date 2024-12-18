@@ -18,7 +18,7 @@ export type Brand =
   | 'HTML'
   | 'CSS'
   | 'Tailwind CSS'
-  | 'Framer Motion'
+  | 'Motion (formerly Framer Motion)'
   | 'Auth.js'
   | 'LinkedIn'
   | 'Xing'
