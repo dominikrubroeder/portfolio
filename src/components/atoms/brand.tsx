@@ -3,7 +3,6 @@ import {
   CraftIcon,
   CSSIcon,
   FigmaIcon,
-  FramerMotionIcon,
   GithubIcon,
   GitlabIcon,
   HTMLIcon,
@@ -11,6 +10,7 @@ import {
   LinkedinIcon,
   MarkdownIcon,
   MiroIcon,
+  MotionIcon,
   NextJsIcon,
   NotesIcon,
   ReactIcon,
@@ -83,8 +83,8 @@ export default function Brand({
     case 'Tailwind CSS':
       return <TailwindCssIcon className={className} />;
 
-    case 'Framer Motion':
-      return <FramerMotionIcon className={className} />;
+    case 'Motion (formerly Framer Motion)':
+      return <MotionIcon className={className} />;
 
     case 'Auth.js':
       return <AuthJsIcon className={className} />;

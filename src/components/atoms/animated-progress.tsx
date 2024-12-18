@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation, useInView } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 interface AnimatedProgressProps {
