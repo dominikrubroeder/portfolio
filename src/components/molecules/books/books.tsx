@@ -12,23 +12,25 @@ export default function Books({ className }: { className?: string }) {
         className
       )}
     >
-      {books.map((book) => (
-        <li key={book.title}>
-          {book.href ? (
-            <Link
-              href={book.href}
-              className="flex items-start justify-between gap-4 rounded-xl px-0 py-1 transition-all hover:bg-hover hover:px-2 md:items-center"
-            >
+      {books
+        .sort((a, b) => a.title.localeCompare(b.title))
+        .map((book) => (
+          <li key={book.title}>
+            {book.href ? (
+              <Link
+                href={book.href}
+                className="flex items-start justify-between gap-4 rounded-xl px-0 py-1 transition-all hover:bg-hover hover:px-2 md:items-center"
+              >
+                <Book book={book} />
+                <div className="flex items-center gap-2">
+                  <ArrowRightIcon className="mt-1.5 size-5 shrink-0 md:mt-0" />
+                </div>
+              </Link>
+            ) : (
               <Book book={book} />
-              <div className="flex items-center gap-2">
-                <ArrowRightIcon className="mt-1.5 size-5 shrink-0 md:mt-0" />
-              </div>
-            </Link>
-          ) : (
-            <Book book={book} />
-          )}
-        </li>
-      ))}
+            )}
+          </li>
+        ))}
     </ul>
   );
 }
