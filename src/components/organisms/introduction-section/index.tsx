@@ -13,9 +13,7 @@ export default function IntroductionSection() {
       id="introduction"
     >
       <div className="mx-auto w-full max-w-screen-sm space-y-6">
-        <p>
-          Hey there <span className="ml-1 inline-block rotate-45">=)</span>
-        </p>
+        <p>Hey there!</p>
 
         <h2 className="text-wrap font-bold text-foreground">
           My work is committed to the frontend. I like to create and build
