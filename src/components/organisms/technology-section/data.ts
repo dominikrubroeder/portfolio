@@ -7,7 +7,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/react.png',
     href: '/technology/react',
     description: 'The library for web and native user interfaces',
-    keyword: 'Framework',
+    type: 'Framework',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -18,7 +18,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/nextjs.png',
     href: '/technology/next-js',
     description: 'The React Framework for the Web',
-    keyword: 'Fullstack Web Framework',
+    type: 'Fullstack Web Framework',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -29,7 +29,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/typescript.png',
     href: '/technology/typescript',
     description: 'TypeScript is JavaScript with syntax for types.',
-    keyword: 'Programming Language',
+    type: 'Programming Language',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -40,7 +40,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/javascript.png',
     href: '/technology/javascript',
     description: 'JavaScript is the programming language of the Web.',
-    keyword: 'Programming Language',
+    type: 'Programming Language',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -51,7 +51,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/html.png',
     href: '/technology/html',
     description: 'The standard markup language for Web pages',
-    keyword: 'Markup Language',
+    type: 'Markup Language',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -62,7 +62,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/css.png',
     href: '/technology/css',
     description: 'The language we use to style an HTML document.',
-    keyword: 'Styling',
+    type: 'Styling',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -74,7 +74,7 @@ export const technologies: Technology[] = [
     href: '/technology/tailwind-css',
     description:
       'Rapidly build modern websites without ever leaving your HTML.',
-    keyword: 'CSS Framework',
+    type: 'CSS Framework',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -85,7 +85,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/markdown.png',
     href: '/technology/markdown',
     description: 'A simplified markup language',
-    keyword: 'Markup Language',
+    type: 'Markup Language',
     priority: 'high',
     projects: [],
     experience: 'high'
@@ -97,7 +97,7 @@ export const technologies: Technology[] = [
     href: '/technology/motion',
     description:
       'A declarative motion library for animating react UIs and apply motion to it',
-    keyword: 'Motion Library',
+    type: 'Motion Library',
     priority: 'high',
     projects: [],
     experience: 'daily'
@@ -108,7 +108,7 @@ export const technologies: Technology[] = [
     logo: 'https://dominikrubroeder.dev/authjs.png',
     href: '/technology/auth-js',
     description: 'Authentication for the Web',
-    keyword: 'Authentication Library',
+    type: 'Authentication Library',
     priority: 'normal',
     projects: [],
     experience: 'high'
