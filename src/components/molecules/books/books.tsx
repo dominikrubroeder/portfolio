@@ -13,7 +13,7 @@ export default function Books({ className }: { className?: string }) {
       )}
     >
       {books
-        .sort((a, b) => a.title.localeCompare(b.title))
+        .sort((a, b) => b.progress - a.progress)
         .map((book) => (
           <li key={book.title}>
             {book.href ? (
