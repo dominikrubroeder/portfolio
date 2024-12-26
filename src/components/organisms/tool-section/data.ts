@@ -66,27 +66,96 @@ export const tools: { group: string; children: Tool[] }[] = [
       },
       {
         title: 'Claude AI',
-        website: 'https://chatgpt.com',
+        website: 'https://claude.ai',
         logo: '',
-        description:
-          'A conversational AI system that listens, learns, and challenges.',
+        description: 'Talk with Claude, an AI assistant from Antrophic',
         type: 'AI'
       },
       {
         title: 'Cursor AI',
-        website: 'https://chatgpt.com',
+        website: '',
         logo: '',
-        description:
-          'A conversational AI system that listens, learns, and challenges.',
+        description: '',
         type: 'AI'
       },
       {
         title: 'v0.dev',
-        website: 'https://chatgpt.com',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'AI'
+      }
+    ]
+  },
+  {
+    group: 'Analyse',
+    children: [
+      {
+        title: 'Google Analytics',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Analyse'
+      },
+      {
+        title: 'Hotjar',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Analyse'
+      },
+      {
+        title: 'Vercel Speedinsights',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Analyse'
+      },
+      {
+        title: 'Vercel Web Analytics',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Analyse'
+      }
+    ]
+  },
+  {
+    group: 'API',
+    children: [
+      {
+        title: 'Axios',
+        website: '',
+        logo: '',
+        description: 'Promise based HTTP client for the browser and node.js',
+        type: 'API'
+      },
+      {
+        title: 'Postman',
+        website: '',
+        logo: '',
+        description: "The World's Leading API Platform",
+        type: 'API'
+      }
+    ]
+  },
+  {
+    group: 'Authentication',
+    children: [
+      {
+        title: 'Auth.js',
+        website: 'https://authjs.dev',
+        logo: '',
+        description: 'Authentication for the Web. Free and open source.',
+        type: 'Authentication'
+      },
+      {
+        title: 'Clerk',
+        website: 'https://clerk.com',
         logo: '',
         description:
-          'A conversational AI system that listens, learns, and challenges.',
-        type: 'AI'
+          'The easiest way to add authentication and user management to your application.',
+        type: 'Authentication'
       }
     ]
   },
