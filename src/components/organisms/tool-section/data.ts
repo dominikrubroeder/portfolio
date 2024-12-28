@@ -160,6 +160,46 @@ export const tools: { group: string; children: Tool[] }[] = [
     ]
   },
   {
+    group: 'Browser',
+    children: [
+      {
+        title: 'Arc',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Browser'
+      },
+      {
+        title: 'Brave',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Browser'
+      },
+      {
+        title: 'Chrome',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Browser'
+      },
+      {
+        title: 'Firefox',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Browser'
+      },
+      {
+        title: 'Safari',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Browser'
+      }
+    ]
+  },
+  {
     group: 'CMS',
     children: [
       {
@@ -168,6 +208,167 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '/storyblok.png',
         description: 'The Way to Modern Content',
         type: 'CMS'
+      }
+    ]
+  },
+  {
+    group: 'Communication',
+    children: [
+      {
+        title: 'Slack',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Communication'
+      },
+      {
+        title: 'Teams',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Communication'
+      }
+    ]
+  },
+  {
+    group: 'Deployment & Hosting',
+    children: [
+      {
+        title: 'AWS Amplify',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Deployment & Hosting'
+      },
+      {
+        title: 'Netlify',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Deployment & Hosting'
+      },
+      {
+        title: 'platform.sh',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Deployment & Hosting'
+      },
+      {
+        title: 'Vercel',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Deployment & Hosting'
+      }
+    ]
+  },
+  {
+    group: 'Design & Interface',
+    children: [
+      {
+        title: 'Adobe XD (deprecated)',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Design & Interface'
+      },
+      {
+        title: 'Figma',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Design & Interface'
+      },
+      {
+        title: 'InVision Studio',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Design & Interface'
+      },
+      {
+        title: 'Sketch',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Design & Interface'
+      }
+    ]
+  },
+  {
+    group: 'Digital Art',
+    children: [
+      {
+        title: 'Procreate',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Digital Art'
+      }
+    ]
+  },
+  {
+    group: 'Docs & Notes',
+    children: [
+      {
+        title: 'Craft',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Docs & Notes'
+      },
+      {
+        title: 'Inkdrop',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Docs & Notes'
+      }
+    ]
+  },
+  {
+    group: 'DX',
+    children: [
+      {
+        title: 'ESLint',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'DX'
+      },
+      {
+        title: 'prettier',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'DX'
+      }
+    ]
+  },
+  {
+    group: 'Photo & Graphics',
+    children: [
+      {
+        title: 'Illustrator',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Photo & Graphics'
+      },
+      {
+        title: 'InDesign',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Photo & Graphics'
+      },
+      {
+        title: 'Photoshop',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Photo & Graphics'
       }
     ]
   },
