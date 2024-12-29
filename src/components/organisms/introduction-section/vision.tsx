@@ -1,15 +1,9 @@
 import Link from '@/components/atoms/link';
 import React from 'react';
-import Marker from '@/components/atoms/marker';
 
 export default function Vision() {
   return (
     <div className="space-y-4">
-      <Marker color="yellow" as="p">
-        I believe when the idea and the vision is clear, you can build the best
-        product possible, with the right people, and the right technology.
-      </Marker>
-
       <p>
         As a UX Design Engineer, i am working for good user interfaces that
         transport emotion and do care about the impact of design. I want the
@@ -25,7 +19,7 @@ export default function Vision() {
       </p>
 
       <p>
-        When it comes to creating user interfaces, using
+        I like to use
         <Link
           href="https://lawsofux.com"
           title="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
@@ -33,15 +27,20 @@ export default function Vision() {
         >
           psychological and design principles
         </Link>
-        helps to build better, more thoughtful, accessible and
+        to build better and stable
         <Link
           href="https://nextjs.org/docs/app/building-your-application/deploying/production-checklist"
           title="Open production checklist on the Next.js documenation"
           aria-label="Open production checklist on the Next.js documenation"
         >
-          stable production
+          production
         </Link>
         applications.
+      </p>
+
+      <p>
+        I believe when the idea and the vision is clear, you can build the best
+        product possible, with the right people, and the right technology.
       </p>
     </div>
   );
