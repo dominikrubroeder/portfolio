@@ -5,7 +5,6 @@ import ToolSection from '@/components/organisms/tool-section';
 import TechnologySection from '@/components/organisms/technology-section';
 import SocialSection from '@/components/organisms/social-section';
 import React from 'react';
-import FaqSection from '@/components/organisms/faq-section';
 
 export default function HomePage() {
   return (
@@ -21,8 +20,6 @@ export default function HomePage() {
       <TechnologySection />
 
       <SocialSection />
-
-      <FaqSection />
     </div>
   );
 }
