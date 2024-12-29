@@ -75,7 +75,7 @@ const config = {
           '100%': { transform: 'translateY(0%)' }
         },
         'fade-up-1rem': {
-          '0%': { transform: 'translateY(-1rem)' },
+          '0%': { transform: 'translateY(1rem)' },
           '100%': { transform: 'translateY(0)' }
         },
         'accordion-down': {

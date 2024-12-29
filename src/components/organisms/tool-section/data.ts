@@ -55,7 +55,7 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: 'p11ty is your automated accessibility testing pal.',
         type: 'Accessibility',
-        knowledge: 'Daily'
+        knowledge: 'Not started'
       }
     ]
   },
