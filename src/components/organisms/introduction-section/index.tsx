@@ -4,7 +4,10 @@ import Vision from '@/components/organisms/introduction-section/vision';
 import Mindset from '@/components/organisms/introduction-section/mindset';
 import Books from '@/components/molecules/books';
 import TechStack from '@/components/organisms/introduction-section/tech-stack';
-import Button from '@/components/atoms/button';
+import WhatIsAUxEngineer from '@/components/organisms/introduction-section/what-is-a-ux-engineer';
+import UxDesigner from '@/components/organisms/introduction-section/ux-designer';
+import UxEngineer from '@/components/organisms/introduction-section/ux-engineer';
+import DesignEngineerVsUxEngineer from '@/components/organisms/introduction-section/design-engineer-vs-ux-engineer';
 
 export default function IntroductionSection() {
   return (
@@ -15,9 +18,12 @@ export default function IntroductionSection() {
       <div className="mx-auto w-full max-w-screen-sm space-y-6">
         <p>Hey there!</p>
 
-        <h2 className="text-wrap font-bold text-foreground">
-          My work is committed to the frontend. I like to create and build
-          dynamic interfaces that are designed to be for a joyful Web.
+        <h2 className="text-wrap">
+          <b className="mr-1.5 text-foreground">
+            My work is committed to the frontend. I like to create and build
+            dynamic interfaces that are designed to be for a joyful web
+          </b>
+          – later on, native mobile apps might join that paradigm.
         </h2>
 
         <AccordionClean title="More about my vision">
@@ -35,25 +41,16 @@ export default function IntroductionSection() {
         <AccordionClean title="My tech stack">
           <TechStack />
         </AccordionClean>
+      </div>
 
-        <div className="flex flex-wrap gap-2">
-          <Button variant="primary">Watch my Design System</Button>
-          <Button variant="outline">Watch my GitHub Repo</Button>
-        </div>
-
-        <hr />
-
-        <AccordionClean title="Design Principles">
-          <p>Define here</p>
-        </AccordionClean>
-
-        <AccordionClean title="Code Principles">
-          <p>Define here</p>
-        </AccordionClean>
-
-        <AccordionClean title="Psychological Principles">
-          <p>Define here</p>
-        </AccordionClean>
+      <div
+        className="mx-auto w-full max-w-screen-sm"
+        id="accordion-group"
+      >
+        <WhatIsAUxEngineer />
+        <UxDesigner />
+        <UxEngineer />
+        <DesignEngineerVsUxEngineer />
       </div>
     </section>
   );
