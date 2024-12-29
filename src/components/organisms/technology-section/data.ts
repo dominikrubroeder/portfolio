@@ -80,17 +80,6 @@ export const technologies: Technology[] = [
     experience: 'daily'
   },
   {
-    title: 'Markdown',
-    website: 'https://markdown.de/',
-    logo: 'https://dominikrubroeder.dev/markdown.png',
-    href: '/technology/markdown',
-    description: 'A simplified markup language',
-    type: 'Markup Language',
-    priority: 'high',
-    projects: [],
-    experience: 'high'
-  },
-  {
     title: 'Motion (formerly Framer Motion)',
     website: 'https://www.framer.com/motion/',
     logo: 'https://dominikrubroeder.dev/framer.png',
@@ -101,6 +90,17 @@ export const technologies: Technology[] = [
     priority: 'high',
     projects: [],
     experience: 'daily'
+  },
+  {
+    title: 'Markdown',
+    website: 'https://markdown.de/',
+    logo: 'https://dominikrubroeder.dev/markdown.png',
+    href: '/technology/markdown',
+    description: 'A simplified markup language',
+    type: 'Markup Language',
+    priority: 'high',
+    projects: [],
+    experience: 'high'
   },
   {
     title: 'Auth.js',
