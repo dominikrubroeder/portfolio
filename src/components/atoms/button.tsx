@@ -26,7 +26,7 @@ export default function Button({
   onClick?: () => void;
 }) {
   const classNames = cn(
-    'interactive group relative inline-flex items-center justify-center gap-2 px-4 py-3 transition-all',
+    'interactive group relative inline-flex min-h-11 shrink-0 items-center justify-center gap-2 px-4 py-3 transition-all',
     variant === 'primary' &&
       'rounded-2xl bg-accent text-white hover:rounded-xl hover:bg-violet-500',
     variant === 'outline' && 'rounded border hover:bg-muted',
