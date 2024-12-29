@@ -231,68 +231,87 @@ export const tools: { group: string; children: Tool[] }[] = [
     ]
   },
   {
-    group: 'Deployment & Hosting',
+    group: 'Color',
+    children: [
+      {
+        title: 'Color Designer',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Color'
+      },
+      {
+        title: 'uicolors',
+        description: '',
+        website: 'https://uicolors.app',
+        logo: '',
+        type: 'Color'
+      }
+    ]
+  },
+  {
+    group: 'Deployment + Hosting',
     children: [
       {
         title: 'AWS Amplify',
         description: '',
         website: '',
         logo: '',
-        type: 'Deployment & Hosting'
+        type: 'Deployment + Hosting'
       },
       {
         title: 'Netlify',
         description: '',
         website: '',
         logo: '',
-        type: 'Deployment & Hosting'
+        type: 'Deployment + Hosting'
       },
       {
         title: 'platform.sh',
         description: '',
         website: '',
         logo: '',
-        type: 'Deployment & Hosting'
+        type: 'Deployment + Hosting'
       },
       {
         title: 'Vercel',
         description: '',
         website: '',
         logo: '',
-        type: 'Deployment & Hosting'
+        type: 'Deployment + Hosting'
       }
     ]
   },
   {
-    group: 'Design & Interface',
+    group: 'Design + Interface',
     children: [
       {
         title: 'Adobe XD (deprecated)',
         description: '',
         website: '',
         logo: '',
-        type: 'Design & Interface'
+        type: 'Design + Interface'
       },
       {
         title: 'Figma',
         description: '',
         website: '',
         logo: '',
-        type: 'Design & Interface'
+        type: 'Design + Interface'
       },
       {
         title: 'InVision Studio',
         description: '',
         website: '',
         logo: '',
-        type: 'Design & Interface'
+        type: 'Design + Interface'
       },
       {
         title: 'Sketch',
         description: '',
         website: '',
         logo: '',
-        type: 'Design & Interface'
+        type: 'Design + Interface'
       }
     ]
   },
@@ -309,21 +328,21 @@ export const tools: { group: string; children: Tool[] }[] = [
     ]
   },
   {
-    group: 'Docs & Notes',
+    group: 'Docs + Notes',
     children: [
       {
         title: 'Craft',
         description: '',
         website: '',
         logo: '',
-        type: 'Docs & Notes'
+        type: 'Docs + Notes'
       },
       {
         title: 'Inkdrop',
         description: '',
         website: '',
         logo: '',
-        type: 'Docs & Notes'
+        type: 'Docs + Notes'
       }
     ]
   },
@@ -347,28 +366,356 @@ export const tools: { group: string; children: Tool[] }[] = [
     ]
   },
   {
-    group: 'Photo & Graphics',
+    group: 'Icons',
+    children: [
+      {
+        title: 'heroicons',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Icons'
+      },
+      {
+        title: 'luicide-react',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Icons'
+      },
+      {
+        title: 'Material Icons',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Icons'
+      }
+    ]
+  },
+  {
+    group: 'IDE',
+    children: [
+      {
+        title: 'VS Code',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'IDE'
+      },
+      {
+        title: 'WebStorm',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'IDE'
+      }
+    ]
+  },
+  {
+    group: 'Image',
+    children: [
+      {
+        title: 'Dall-E',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Image'
+      },
+      {
+        title: 'Midjourney',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Image'
+      },
+      {
+        title: 'Unplash',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Image'
+      }
+    ]
+  },
+  {
+    group: 'Inspiration',
+    children: [
+      {
+        title: 'Dribble',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Inspiration'
+      },
+      {
+        title: 'Mobbin',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Inspiration'
+      },
+      {
+        title: 'Pinterest',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Inspiration'
+      },
+      {
+        title: 'Toolfolio',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Inspiration'
+      }
+    ]
+  },
+  {
+    group: 'Learning',
+    children: [
+      {
+        title: 'animations.dev',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'Build UI',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'Builder.io',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'Design+Code',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'dev.to',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'Fireship',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'FrontendMasters',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'frontendmentor.io',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'Learn Next.js',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'Refactoring UI',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      },
+      {
+        title: 'Udemy',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Learning'
+      }
+    ]
+  },
+  {
+    group: 'Motion',
+    children: [
+      {
+        title: 'jitter.video',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Motion'
+      },
+      {
+        title: 'LottieFiles',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Motion'
+      },
+      {
+        title: 'LottieFiles for Developers',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Motion'
+      },
+      {
+        title: 'motion (formerly framer-motion)',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Motion'
+      },
+      {
+        title: 'Procreate Dreams',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Motion'
+      }
+    ]
+  },
+  {
+    group: 'News',
+    children: [
+      {
+        title: 'daily.dev',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'News'
+      },
+      {
+        title: 'The Verge',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'News'
+      }
+    ]
+  },
+  {
+    group: 'Package Manager',
+    children: [
+      {
+        title: 'bun',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Package Manager'
+      },
+      {
+        title: 'npm',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Package Manager'
+      },
+      {
+        title: 'pnpM',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Package Manager'
+      },
+      {
+        title: 'yarn',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Package Manager'
+      }
+    ]
+  },
+  {
+    group: 'Packages',
+    children: [
+      {
+        title: 'html-react-parser',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages'
+      }
+    ]
+  },
+  {
+    group: 'Payment',
+    children: [
+      {
+        title: 'Klarna',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Payment'
+      },
+      {
+        title: 'PayOne',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Payment'
+      },
+      {
+        title: 'Stripe',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Payment'
+      }
+    ]
+  },
+  {
+    group: 'Performance',
+    children: [
+      {
+        title: 'Lighthouse',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Performance'
+      }
+    ]
+  },
+  {
+    group: 'Photo + Graphics',
     children: [
       {
         title: 'Illustrator',
         description: '',
         website: '',
         logo: '',
-        type: 'Photo & Graphics'
+        type: 'Photo + Graphics'
       },
       {
         title: 'InDesign',
         description: '',
         website: '',
         logo: '',
-        type: 'Photo & Graphics'
+        type: 'Photo + Graphics'
       },
       {
         title: 'Photoshop',
         description: '',
         website: '',
         logo: '',
-        type: 'Photo & Graphics'
+        type: 'Photo + Graphics'
       }
     ]
   },
@@ -376,25 +723,59 @@ export const tools: { group: string; children: Tool[] }[] = [
     group: 'Project Management',
     children: [
       {
+        title: 'Jira',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Project Management'
+      },
+      {
         title: 'Miro',
         website: 'https://miro.com',
         logo: '/miro.png',
         description:
           "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company. Don't Let Distances or Timezones Stop You from Building Beautiful Products for Your Users. Miro for UX & Design.",
         type: 'Project Management'
+      },
+      {
+        title: 'TeamGrid',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Project Management'
       }
     ]
   },
   {
-    group: 'Shop System',
+    group: 'Research + Study',
     children: [
       {
-        title: 'Shopware',
-        website: 'https://www.shopware.com',
-        logo: '/shopware.png',
-        description:
-          'Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.',
-        type: 'Shop System'
+        title: 'Baymard Institute',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Research + Study'
+      },
+      {
+        title: 'Human Interface Guidelines (Apple)',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Research + Study'
+      },
+      {
+        title: 'nn/g Group',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Research + Study'
+      },
+      {
+        title: 'Statista',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Research + Study'
       }
     ]
   },
@@ -407,6 +788,111 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '/algolia.png',
         description: 'AI-Search, that understands',
         type: 'Search'
+      },
+      {
+        title: 'Elastic Search',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Search'
+      }
+    ]
+  },
+  {
+    group: 'Shop System',
+    children: [
+      {
+        title: 'Shopify',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Shop System'
+      },
+      {
+        title: 'Shopware',
+        website: 'https://www.shopware.com',
+        logo: '/shopware.png',
+        description:
+          'Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.',
+        type: 'Shop System'
+      }
+    ]
+  },
+  {
+    group: 'Testing',
+    children: [
+      {
+        title: 'Jest',
+        website: '',
+        logo: '',
+        description: '',
+        type: 'Testing'
+      }
+    ]
+  },
+  {
+    group: 'UI',
+    children: [
+      {
+        title: 'Headless UI',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'UI'
+      },
+      {
+        title: 'Material UI',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'UI'
+      },
+      {
+        title: 'Practical UI',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'UI'
+      },
+      {
+        title: 'Radix UI',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'UI'
+      },
+      {
+        title: 'shadcn/ui',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'UI'
+      },
+      {
+        title: 'Tailwind UI',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'UI'
+      }
+    ]
+  },
+  {
+    group: 'Version Control',
+    children: [
+      {
+        title: 'GitHub',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Version Control'
+      },
+      {
+        title: 'GitLab',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Version Control'
       }
     ]
   }

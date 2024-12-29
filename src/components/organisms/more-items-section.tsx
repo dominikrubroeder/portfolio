@@ -11,13 +11,18 @@ import { BrandType } from '@/types';
 export default function MoreItemsSection({
   items
 }: {
-  items: Tool[] | Technology[];
+  items: { group: string; children: (Tool | Technology)[] }[];
 }) {
   const [state, setState] = useState<{ isVisible: boolean }>({
     isVisible: false
   });
 
-  if (!items.some((item) => item.priority === 'normal')) return null;
+  const length = items.reduce(
+    (previousValue, currentValue, currentIndex, array) => {
+      return currentValue.children?.length + previousValue;
+    },
+    0
+  );
 
   return (
     <div className="ml-2 space-y-8 xl:ml-12">
@@ -45,27 +50,32 @@ export default function MoreItemsSection({
       </div>
 
       {state.isVisible && (
-        <div className="mx-auto w-full max-w-screen-sm space-y-8 px-4 md:pl-16">
+        <div className="mx-auto w-full space-y-8 px-4 md:max-w-screen-sm md:pl-16">
           <h3 className="flex items-center justify-between gap-4">
-            I also work or worked with
+            I also work, plan to work or worked with
             <span className="mr-5 text-sm font-normal text-muted-foreground">
-              {items.filter((item) => item.priority === 'normal').length} more
+              {length} more
             </span>
           </h3>
 
-          <ul className="animate-fade-up space-y-8">
+          <ul className="animate-fade-up-1rem space-y-8">
             {items
-              .sort((a, b) => a.title.localeCompare(b.title))
-              .map((item) => {
-                if (item.priority === 'normal')
-                  return (
-                    <li key={item.title} className="space-y-6">
-                      <div>
-                        <div className="flex gap-4">
+              .sort((a, b) => a.group.localeCompare(b.group))
+              .map((item) => (
+                <li key={item.group} className="space-y-6">
+                  <div className="space-y-6">
+                    <h3 className="font-semibold text-foreground">
+                      {item.group}
+                    </h3>
+
+                    <ul className="space-y-5 rounded border p-4">
+                      {item.children.map((item, index) => (
+                        <li key={index} className="flex gap-4">
                           <Brand
                             brand={item.title as BrandType}
                             className="size-10 shrink-0"
                           />
+
                           <div className="flex-1">
                             <div className="flex flex-wrap items-center justify-between gap-2">
                               <h3 className="flex-1 font-bold text-foreground">
@@ -83,12 +93,12 @@ export default function MoreItemsSection({
                               </Button>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                      <hr className="ml-16" />
-                    </li>
-                  );
-              })}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              ))}
           </ul>
         </div>
       )}
