@@ -19,8 +19,8 @@ export default function Mindset({ className }: { className?: string }) {
         <b className="text-foreground">Using Psychology </b>
         to design and build better user interfaces
       </li>
-      <li>Writing documentation</li>
       <li>Being mindful</li>
+      <li>Writing documentation</li>
       <li>Working for good Brands, Products or Services</li>
       <li>Bringing an idea from paper to production</li>
       <li>Refining a feature to specific needs</li>
@@ -34,10 +34,6 @@ export default function Mindset({ className }: { className?: string }) {
         the current work on a task and summarize the outcome of it while being
         in the process. I often find myself with more clarity and a feeling of
         structure if i get stuck in a concept for too long
-      </li>
-      <li>
-        Following these principles is a good way for me to start dealing daily
-        on the things that matter
       </li>
     </ul>
   );
