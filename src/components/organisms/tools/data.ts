@@ -1,4 +1,4 @@
-import { Tool } from '@/interfaces';
+import { Tool } from './types';
 
 export const highlightTools: Tool[] = [
   {
@@ -8,7 +8,8 @@ export const highlightTools: Tool[] = [
     description:
       'How you design, align, and build  matters. Do it together with Figma',
     type: 'Interfacetool',
-    knowledge: 'Daily'
+    knowledge: 'Daily',
+    certificate: '/Dominik-Rubröder-Udemy-Figma-Motion-Design-UX.pdf'
   },
   {
     title: 'WebStorm',

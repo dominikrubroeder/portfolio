@@ -1,7 +1,8 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { Knowledge } from '@/interfaces';
+
+import { Knowledge } from '@/components/organisms/tools/types';
 
 export default function ExperienceBar({
   progress,

@@ -4,22 +4,7 @@ import {
   ControlBarSections,
   ControlBarVisibility
 } from '@/types';
-
-export type Knowledge =
-  | 'Not started'
-  | 'Used'
-  | 'Experienced'
-  | 'Professional'
-  | 'Daily';
-
-export interface Tool {
-  title: string;
-  description: string;
-  website: string;
-  logo: string;
-  type: string;
-  knowledge: Knowledge;
-}
+import { Tool } from '@/components/organisms/tools/types';
 
 export interface Technology extends Tool {}
 

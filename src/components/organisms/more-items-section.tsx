@@ -1,13 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { Technology, Tool } from '@/interfaces';
+import { Technology } from '@/interfaces';
 import Button from '@/components/atoms/button';
 import Brand from '@/components/atoms/brand';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { BrandType } from '@/types';
 import ExperienceBar from '@/components/atoms/experience-bar';
+import ToolSearch from '@/components/atoms/tool-search';
+import { Tool } from '@/components/organisms/tools/types';
 
 export default function MoreItemsSection({
   items
@@ -27,33 +29,43 @@ export default function MoreItemsSection({
 
   return (
     <div className="space-y-8 px-4 xl:ml-12">
-      <Button
-        variant="outline"
-        className="gap-3"
-        aria-label="Hide and show more items"
-        onClick={() =>
-          setState((prevState) => {
-            return { isVisible: !prevState.isVisible };
-          })
-        }
-      >
-        {state.isVisible && (
-          <MinusIcon className="size-6 rounded-full bg-primary/10 p-1 text-primary" />
-        )}
-        {!state.isVisible && (
-          <PlusIcon className="size-6 rounded-full bg-primary p-1 text-primary-foreground" />
-        )}
-        <span>{state.isVisible ? 'Done' : `More items`}</span>
-      </Button>
+      <div className="mx-auto flex w-full items-center justify-between gap-4 md:max-w-screen-sm">
+        <Button
+          variant="outline"
+          className="gap-3"
+          aria-label="Hide and show more items"
+          onClick={() =>
+            setState((prevState) => {
+              return { isVisible: !prevState.isVisible };
+            })
+          }
+        >
+          {state.isVisible && (
+            <MinusIcon className="size-6 rounded-full bg-primary/10 p-1 text-primary" />
+          )}
+          {!state.isVisible && (
+            <PlusIcon className="size-6 rounded-full bg-primary p-1 text-primary-foreground" />
+          )}
+          <span>{state.isVisible ? 'Done' : `More items`}</span>
+        </Button>
+
+        <span className="text-sm font-normal text-muted-foreground">
+          {length} more
+        </span>
+      </div>
 
       {state.isVisible && (
-        <div className="mx-auto w-full space-y-8 md:max-w-screen-sm md:pl-16">
+        <div className="mx-auto w-full space-y-8 md:max-w-screen-sm">
           <h3 className="flex items-center justify-between gap-4">
             I also work, plan to work or worked with
             <span className="mr-5 text-sm font-normal text-muted-foreground">
               {length} more
             </span>
           </h3>
+
+          <div>
+            <ToolSearch placeholder="Search Tool ..." />
+          </div>
 
           <ul className="animate-fade-up-1rem space-y-8">
             {items

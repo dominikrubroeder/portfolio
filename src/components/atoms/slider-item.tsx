@@ -1,4 +1,4 @@
-import { Social, Technology, Tool } from '@/interfaces';
+import { Social, Technology } from '@/interfaces';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Brand from '@/components/atoms/brand';
@@ -6,6 +6,8 @@ import type { BrandType as BrandType } from '@/types';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
 import ExperienceBar from '@/components/atoms/experience-bar';
+import { Tool } from '@/components/organisms/tools/types';
+import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 
 export default function SliderItem({
   sliderItem,
@@ -35,6 +37,13 @@ export default function SliderItem({
             className="h-32 w-auto"
             aria-label={`${sliderItem.title} logo`}
           />
+
+          {sliderItem['certificate'] && (
+            <div className="absolute bottom-14 right-5 flex w-24 items-center justify-between gap-1">
+              <span className="text-xs">Certified</span>
+              <CheckBadgeIcon className="size-5 shrink-0 text-primary" />
+            </div>
+          )}
 
           <ExperienceBar
             progress={sliderItem['knowledge']}
