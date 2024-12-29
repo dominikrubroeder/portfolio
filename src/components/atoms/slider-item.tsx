@@ -5,7 +5,7 @@ import Brand from '@/components/atoms/brand';
 import type { BrandType as BrandType } from '@/types';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
-import ExperienceBar from '@/components/organisms/tool-section/experience-bar';
+import ExperienceBar from '@/components/atoms/experience-bar';
 
 export default function SliderItem({
   sliderItem,

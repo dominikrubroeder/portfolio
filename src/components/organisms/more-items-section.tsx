@@ -7,7 +7,7 @@ import Brand from '@/components/atoms/brand';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { BrandType } from '@/types';
-import ExperienceBar from '@/components/organisms/tool-section/experience-bar';
+import ExperienceBar from '@/components/atoms/experience-bar';
 
 export default function MoreItemsSection({
   items

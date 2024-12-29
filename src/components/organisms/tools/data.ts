@@ -722,12 +722,133 @@ export const tools: { group: string; children: Tool[] }[] = [
     group: 'Packages',
     children: [
       {
+        title: '@vercel/analytics',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
+      },
+      {
+        title: '@vercel/speed-insights',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
+      },
+      {
+        title: 'class-variance-authority',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Experienced'
+      },
+      {
+        title: 'clsx',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
+      },
+      {
+        title: '@heroicons/react',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
+      },
+      {
+        title: '@shopware/api-client',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
+      },
+      {
+        title: '@storyblok/react',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
+      },
+      {
+        title: 'eslint-plugin-tailwindcss',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
+      },
+      {
         title: 'html-react-parser',
         description: '',
         website: '',
         logo: '',
         type: 'Packages',
         knowledge: 'Experienced'
+      },
+      {
+        title: 'lucide-react',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Used'
+      },
+      {
+        title: 'next-view-transitions',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Not started'
+      },
+      {
+        title: 'react-hook-form',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Experienced'
+      },
+      {
+        title: 'react-instantsearch-nextjs',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Experienced'
+      },
+      {
+        title: 'react-syntax-highlighter',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Used'
+      },
+      {
+        title: 'use-debounce',
+        description: '',
+        website: 'https://www.npmjs.com/package/use-debounce',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
+      },
+      {
+        title: 'zod',
+        description:
+          'TypeScript-first schema validation with static type inference',
+        website: 'https://zod.dev',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily'
       }
     ]
   },
