@@ -5,6 +5,7 @@ import Brand from '@/components/atoms/brand';
 import type { BrandType as BrandType } from '@/types';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
+import ExperienceBar from '@/components/organisms/tool-section/experience-bar';
 
 export default function SliderItem({
   sliderItem,
@@ -34,12 +35,17 @@ export default function SliderItem({
             className="h-32 w-auto"
             aria-label={`${sliderItem.title} logo`}
           />
+
+          <ExperienceBar
+            progress={sliderItem['knowledge']}
+            className="absolute bottom-4 right-5"
+          />
         </Link>
       </div>
 
-      {'keyword' in sliderItem && (
+      {'type' in sliderItem && (
         <div className="mx-auto w-max rounded-3xl border px-3 py-2 font-bold text-foreground">
-          {sliderItem.keyword}
+          {sliderItem.type}
         </div>
       )}
 
