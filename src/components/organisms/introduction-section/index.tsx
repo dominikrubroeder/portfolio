@@ -43,10 +43,7 @@ export default function IntroductionSection() {
         </AccordionClean>
       </div>
 
-      <div
-        className="mx-auto w-full max-w-screen-sm"
-        id="accordion-group"
-      >
+      <div className="mx-auto w-full max-w-screen-sm" id="accordion-group">
         <WhatIsAUxEngineer />
         <UxDesigner />
         <UxEngineer />
