@@ -28,7 +28,7 @@ export default function Avatar({
   return (
     <Link
       href="/"
-      className="interactive"
+      className="interactive shrink-0"
       title="Go to Home page"
       aria-label="Click to go to Home page"
       prefetch
