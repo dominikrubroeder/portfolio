@@ -9,7 +9,13 @@ export const highlightTools: Tool[] = [
       'How you design, align, and build  matters. Do it together with Figma',
     type: 'Interfacetool',
     knowledge: 'Daily',
-    certificate: '/Dominik-Rubröder-Udemy-Figma-Motion-Design-UX.pdf'
+    certificate: '/Dominik-Rubröder-Udemy-Figma-Motion-Design-UX.pdf',
+    certificateTitle:
+      'Motion Design with Figma: Animations, Motion Graphics, UX/UI (Udemy)',
+    certificateDescription:
+      'This certificate of completion confirms that Dominik Rubröder has completed the course Motion Design with Figma: Animations, Motion Graphics, UX/UI taught by Andrei Neagoie, Daniel Schifano on 19.12.2022. The certificate of completion states that all course lessons have the status “Completed”. The course duration corresponds to the total duration of the course videos at the time the course was last completed.',
+    certificateMaterial:
+      'https://www.udemy.com/share/105tUo3@TN2KmFo8eT5rr0ApIOlklOjl-SjnYlkLsMMwxb4J-X8BRmEBWRLeyH3PeiAzMeTq/'
   },
   {
     title: 'WebStorm',

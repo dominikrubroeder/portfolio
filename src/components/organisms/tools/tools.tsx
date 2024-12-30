@@ -1,7 +1,7 @@
 import Section from '@/components/organisms/section';
 import { highlightTools, tools } from '@/components/organisms/tools/data';
 import MoreItemsSection from '@/components/organisms/more-items-section';
-import SliderItem from '@/components/atoms/slider-item';
+import Tool from '@/components/organisms/tools/tool';
 
 export default function Tools() {
   return (
@@ -17,12 +17,7 @@ export default function Tools() {
             key={tool.title}
             className="mr-8 inline-block first-of-type:ml-4 xl:first-of-type:ml-16"
           >
-            <SliderItem
-              sliderItem={tool}
-              type="Tool"
-              showActions
-              isFirstItemInList={index === 0}
-            />
+            <Tool tool={tool} isFirstItemInList={index === 0} />
           </li>
         ))}
       </ul>

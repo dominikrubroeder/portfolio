@@ -1,0 +1,84 @@
+'use client';
+
+import * as React from 'react';
+import parse from 'html-react-parser';
+
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger
+} from './drawer';
+import { CheckBadgeIcon } from '@heroicons/react/24/outline';
+import Button from '@/components/atoms/button';
+import Link from 'next/link';
+import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
+
+export function CertificateDrawer({
+  title,
+  certificate,
+  certificateTitle,
+  certificateDescription,
+  certificateMaterial
+}: {
+  title: string;
+  certificate: string;
+  certificateTitle: string;
+  certificateDescription: string;
+  certificateMaterial: string;
+}) {
+  return (
+    <Drawer>
+      <DrawerTrigger asChild>
+        <Button variant="secondary">
+          <span className="sr-only text-xs">Certified</span>
+          <CheckBadgeIcon className="size-5 shrink-0 text-primary" />
+        </Button>
+      </DrawerTrigger>
+
+      <DrawerContent>
+        <div className="mx-auto w-full max-w-screen-sm">
+          <DrawerHeader className="text-foreground">
+            <DrawerTitle>Certificate for {title}</DrawerTitle>
+
+            <DrawerDescription>
+              <Link
+                className="group flex items-center gap-2 transition"
+                href={certificateMaterial}
+                target="_blank"
+                title={`Open ${title} course materials in separate tab`}
+                aria-label={`Open ${title} course materials in separate tab`}
+              >
+                <ArrowUpRightIcon className="size-4 shrink-0 text-primary" />
+
+                <span className="group-hover:text-foreground">
+                  {certificateTitle}
+                </span>
+              </Link>
+            </DrawerDescription>
+          </DrawerHeader>
+
+          <div className="space-y-4 p-4 pb-0">
+            <div className="rounded border p-4">PDF preview here</div>
+
+            <div>{parse(certificateDescription)}</div>
+          </div>
+
+          <DrawerFooter>
+            <DrawerClose className="order-1" asChild>
+              <Button variant="primary">Got it</Button>
+            </DrawerClose>
+
+            <Button variant="secondary" className="order-1">
+              Download Certificate
+            </Button>
+          </DrawerFooter>
+        </div>
+      </DrawerContent>
+    </Drawer>
+  );
+}

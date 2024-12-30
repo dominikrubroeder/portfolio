@@ -14,5 +14,7 @@ export interface Tool {
   knowledge: Knowledge;
   for?: string[];
   certificate?: string;
+  certificateTitle?: string;
   certificateDescription?: string;
+  certificateMaterial?: string;
 }

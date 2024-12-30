@@ -16,8 +16,8 @@ export default function SliderItem({
   isFirstItemInList,
   className
 }: {
-  sliderItem: Tool | Technology | Social;
-  type: 'Tool' | 'Technology' | 'Social';
+  sliderItem: Technology | Social;
+  type: 'Technology' | 'Social';
   showActions?: boolean;
   isFirstItemInList?: boolean;
   className?: string;
