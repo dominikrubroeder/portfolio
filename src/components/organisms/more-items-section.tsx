@@ -5,11 +5,14 @@ import { Technology } from '@/interfaces';
 import Button from '@/components/atoms/button';
 import Brand from '@/components/atoms/brand';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 import { BrandType } from '@/types';
 import ExperienceBar from '@/components/atoms/experience-bar';
 import ToolSearch from '@/components/atoms/tool-search';
 import { Tool } from '@/components/organisms/tools/types';
+import { ToolFilterSelect } from '@/components/atoms/select/tool-filter-select';
+import { ToolSortSelect } from '@/components/atoms/select/tool-sort-select';
+import { useSearchParams } from 'next/navigation';
 
 export default function MoreItemsSection({
   items
@@ -19,6 +22,9 @@ export default function MoreItemsSection({
   const [state, setState] = useState<{ isVisible: boolean }>({
     isVisible: false
   });
+  const searchParams = useSearchParams();
+  const filter = searchParams.get('tool-filter');
+  const sorting = searchParams.get('tool-sort');
 
   const length = items.reduce(
     (previousValue, currentValue, currentIndex, array) => {
@@ -28,8 +34,15 @@ export default function MoreItemsSection({
   );
 
   return (
-    <div className="space-y-8 px-4 xl:ml-12">
+    <div className="space-y-4 px-4 xl:ml-12">
       <div className="mx-auto flex w-full items-center justify-between gap-4 md:max-w-screen-sm">
+        <h3 className="flex flex-1 items-center justify-between gap-4">
+          I also work, plan to work or worked with
+          <span className="font-normal text-muted-foreground">
+            {length} more
+          </span>
+        </h3>
+
         <Button
           variant="outline"
           className="gap-3"
@@ -46,30 +59,33 @@ export default function MoreItemsSection({
           {!state.isVisible && (
             <PlusIcon className="size-6 rounded-full bg-primary p-1 text-primary-foreground" />
           )}
-          <span>{state.isVisible ? 'Done' : `More items`}</span>
+          <span>{state.isVisible ? 'Done' : 'Show them'}</span>
         </Button>
-
-        <span className="text-sm font-normal text-muted-foreground">
-          {length} more
-        </span>
       </div>
 
       {state.isVisible && (
         <div className="mx-auto w-full space-y-8 md:max-w-screen-sm">
-          <h3 className="flex items-center justify-between gap-4">
-            I also work, plan to work or worked with
-            <span className="mr-5 text-sm font-normal text-muted-foreground">
-              {length} more
-            </span>
-          </h3>
-
-          <div>
+          <div className="sticky top-24 z-10 flex items-center gap-2">
             <ToolSearch placeholder="Search Tool ..." />
+
+            <ToolFilterSelect />
+
+            <ToolSortSelect />
           </div>
 
-          <ul className="animate-fade-up-1rem space-y-8">
+          <ul className="animate-fade-up-1rem space-y-8" id="tool-list">
             {items
-              .sort((a, b) => a.group.localeCompare(b.group))
+              .sort((a, b) => {
+                if (sorting === 'a-z') {
+                  return a.group.localeCompare(b.group);
+                }
+
+                if (sorting === 'z-a') {
+                  return b.group.localeCompare(a.group);
+                }
+
+                return a.group.localeCompare(b.group);
+              })
               .map((item) => (
                 <li key={item.group} className="space-y-6">
                   <div className="space-y-6">
@@ -81,7 +97,11 @@ export default function MoreItemsSection({
                       {item.children
                         .sort((a, b) => a.title.localeCompare(b.title))
                         .map((item, index) => (
-                          <li key={index} className="flex gap-4">
+                          <li key={index} className="relative flex gap-4">
+                            {item.knowledge === 'Daily' && (
+                              <StarIcon className="absolute -left-12 top-1/2 -mt-1 size-5 -translate-y-1/2 text-primary" />
+                            )}
+
                             <Brand
                               brand={item.title as BrandType}
                               className="size-10 shrink-0"

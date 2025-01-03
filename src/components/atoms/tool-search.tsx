@@ -1,24 +1,18 @@
 'use client';
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 
 export default function ToolSearch({ placeholder }: { placeholder: string }) {
-  const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const { push } = useRouter();
+  const { searchParams, updateSearchParams } = useUpdateSearchParams();
 
   const handleSearch = useDebouncedCallback((term: string) => {
-    const params = new URLSearchParams(searchParams);
-
-    if (term) {
-      params.set('tool', term);
-    } else {
-      params.delete('tool');
-    }
-
-    push(`${pathname}?${params.toString()}`, { scroll: false });
+    updateSearchParams({
+      withName: 'tool-search',
+      withValue: term,
+      scroll: false
+    });
   }, 300);
 
   return (

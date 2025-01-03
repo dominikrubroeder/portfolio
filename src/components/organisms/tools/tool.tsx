@@ -15,7 +15,7 @@ export default function Tool({
   isFirstItemInList: boolean;
 }) {
   return (
-    <div className="group w-80 space-y-6">
+    <div className="group relative w-80 space-y-6">
       <Link
         href={tool.website}
         className="interactive relative mx-auto  flex size-80 cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
