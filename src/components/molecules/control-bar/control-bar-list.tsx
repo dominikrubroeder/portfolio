@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'motion/react';
 import React from 'react';
 import DynamicHeroIcon from '@/components/atoms/dynamic-hero-icon';
@@ -10,21 +12,19 @@ import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
 import GithubIcon from '@/components/atoms/svg/github-icon';
 import LinkedinIcon from '@/components/atoms/svg/linkedin-icon';
+import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 
 export default function ControlBarList({
   sections,
   activeSection,
-  mobileMenu,
-  scrollIntoView
+  mobileMenu
 }: {
   sections: ControlBarSections;
   activeSection: ControlBarActiveSection;
   mobileMenu: ControlBarMobileMenuVisibility;
-  scrollIntoView: (
-    e: React.MouseEvent<HTMLButtonElement>,
-    targetId: string
-  ) => void;
 }) {
+  const { scrollIntoView } = useScrollIntoView();
+
   return (
     <div
       className={cn(
@@ -44,7 +44,7 @@ export default function ControlBarList({
           )}
           title={`Scroll to ${section.label} section`}
           aria-label={`Scroll to ${section.label} section`}
-          onClick={(e) => scrollIntoView(e, section.id)}
+          onClick={() => scrollIntoView({ id: section.id })}
         >
           {activeSection !== section.id && (
             <div className="invisible absolute inset-0 z-10 scale-50 rounded-full bg-muted-hover opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />

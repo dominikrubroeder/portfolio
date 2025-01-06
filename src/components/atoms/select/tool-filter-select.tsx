@@ -15,7 +15,7 @@ import {
 } from './select';
 import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 
-export function ToolFilterSelect() {
+export function ToolFilterSelect({ defaultValue }: { defaultValue?: string }) {
   const { updateSearchParams } = useUpdateSearchParams();
 
   const handleFilter = useCallback(
@@ -30,7 +30,7 @@ export function ToolFilterSelect() {
   );
 
   return (
-    <Select onValueChange={handleFilter}>
+    <Select defaultValue={defaultValue} onValueChange={handleFilter}>
       <SelectTrigger className="w-40">
         <SelectValue placeholder="Filter for" />
       </SelectTrigger>
@@ -44,7 +44,7 @@ export function ToolFilterSelect() {
 
         <SelectGroup>
           <SelectLabel>Knowledge</SelectLabel>
-          <SelectItem value="not-started">Not started</SelectItem>
+          <SelectItem value="not started">Not started</SelectItem>
           <SelectItem value="used">Used</SelectItem>
           <SelectItem value="experienced">Experienced</SelectItem>
           <SelectItem value="professional">Professional</SelectItem>

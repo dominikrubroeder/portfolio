@@ -14,7 +14,7 @@ import {
 } from './select';
 import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 
-export function ToolSortSelect() {
+export function ToolSortSelect({ defaultValue }: { defaultValue?: string }) {
   const { updateSearchParams } = useUpdateSearchParams();
 
   const handleSort = useCallback(
@@ -29,7 +29,7 @@ export function ToolSortSelect() {
   );
 
   return (
-    <Select onValueChange={handleSort}>
+    <Select defaultValue={defaultValue} onValueChange={handleSort}>
       <SelectTrigger className="w-40">
         <SelectValue placeholder="Sort by" />
       </SelectTrigger>

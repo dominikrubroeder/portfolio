@@ -13,16 +13,19 @@ import { Tool } from '@/components/organisms/tools/types';
 import { ToolFilterSelect } from '@/components/atoms/select/tool-filter-select';
 import { ToolSortSelect } from '@/components/atoms/select/tool-sort-select';
 import { useSearchParams } from 'next/navigation';
+import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 
 export default function MoreItemsSection({
   items
 }: {
   items: { group: string; children: (Tool | Technology)[] }[];
 }) {
+  const { scrollIntoView } = useScrollIntoView();
   const [state, setState] = useState<{ isVisible: boolean }>({
     isVisible: false
   });
   const searchParams = useSearchParams();
+  const searchTerm = searchParams.get('tool-search')?.toLowerCase();
   const filter = searchParams.get('tool-filter');
   const sorting = searchParams.get('tool-sort');
 
@@ -34,7 +37,7 @@ export default function MoreItemsSection({
   );
 
   return (
-    <div className="space-y-4 px-4 xl:ml-12">
+    <div className="scroll-mt-24 space-y-4 px-4 xl:ml-12" id="tools-list">
       <div className="mx-auto flex w-full items-center justify-between gap-4 md:max-w-screen-sm">
         <h3 className="flex flex-1 items-center justify-between gap-4">
           I also work, plan to work or worked with
@@ -47,11 +50,13 @@ export default function MoreItemsSection({
           variant="outline"
           className="gap-3"
           aria-label="Hide and show more items"
-          onClick={() =>
+          onClick={() => {
             setState((prevState) => {
               return { isVisible: !prevState.isVisible };
-            })
-          }
+            });
+
+            scrollIntoView({ id: 'tools-list' });
+          }}
         >
           {state.isVisible && (
             <MinusIcon className="size-6 rounded-full bg-primary/10 p-1 text-primary" />
@@ -64,17 +69,36 @@ export default function MoreItemsSection({
       </div>
 
       {state.isVisible && (
-        <div className="mx-auto w-full space-y-8 md:max-w-screen-sm">
-          <div className="sticky top-24 z-10 flex items-center gap-2">
-            <ToolSearch placeholder="Search Tool ..." />
+        <div
+          className="mx-auto w-full space-y-8 md:max-w-screen-sm"
+          id="tool-list"
+        >
+          <div className="sticky z-10 flex items-center gap-2 lg:top-24">
+            <ToolSearch placeholder="Search tools ..." />
 
-            <ToolFilterSelect />
+            <ToolFilterSelect defaultValue={filter ?? undefined} />
 
-            <ToolSortSelect />
+            <ToolSortSelect defaultValue={sorting ?? undefined} />
           </div>
 
-          <ul className="animate-fade-up-1rem space-y-8" id="tool-list">
+          <ul className="animate-fade-up-1rem space-y-8">
             {items
+              .filter((item) =>
+                searchTerm
+                  ? item.children.some((nestedTool) =>
+                      nestedTool.title.toLowerCase().includes(searchTerm)
+                    )
+                  : item
+              )
+              .filter((item) =>
+                filter
+                  ? item.children.some((nestedTool) =>
+                      item.children.some((nestedTool) =>
+                        nestedTool.knowledge.toLowerCase().includes(filter)
+                      )
+                    )
+                  : item
+              )
               .sort((a, b) => {
                 if (sorting === 'a-z') {
                   return a.group.localeCompare(b.group);
@@ -95,6 +119,18 @@ export default function MoreItemsSection({
 
                     <ul className="space-y-5 rounded border p-4">
                       {item.children
+                        .filter((nestedItem) =>
+                          searchTerm
+                            ? nestedItem.title
+                                .toLowerCase()
+                                .includes(searchTerm)
+                            : nestedItem
+                        )
+                        .filter((item) =>
+                          filter
+                            ? item.knowledge.toLowerCase().includes(filter)
+                            : item
+                        )
                         .sort((a, b) => a.title.localeCompare(b.title))
                         .map((item, index) => (
                           <li key={index} className="relative flex gap-4">

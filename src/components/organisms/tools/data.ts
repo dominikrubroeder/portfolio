@@ -15,7 +15,8 @@ export const highlightTools: Tool[] = [
     certificateDescription:
       'This certificate of completion confirms that Dominik Rubröder has completed the course Motion Design with Figma: Animations, Motion Graphics, UX/UI taught by Andrei Neagoie, Daniel Schifano on 19.12.2022. The certificate of completion states that all course lessons have the status “Completed”. The course duration corresponds to the total duration of the course videos at the time the course was last completed.',
     certificateMaterial:
-      'https://www.udemy.com/share/105tUo3@TN2KmFo8eT5rr0ApIOlklOjl-SjnYlkLsMMwxb4J-X8BRmEBWRLeyH3PeiAzMeTq/'
+      'https://www.udemy.com/share/105tUo3@TN2KmFo8eT5rr0ApIOlklOjl-SjnYlkLsMMwxb4J-X8BRmEBWRLeyH3PeiAzMeTq/',
+    searchKeywords: ['figma', 'design', 'ui', 'interface']
   },
   {
     title: 'WebStorm',
@@ -23,7 +24,8 @@ export const highlightTools: Tool[] = [
     logo: '/webstorm.png',
     description: 'The smartest JavaScript IDE',
     type: 'IDE',
-    knowledge: 'Daily'
+    knowledge: 'Daily',
+    searchKeywords: ['webstorm', 'code', 'ide']
   },
   {
     title: 'Craft',
@@ -31,7 +33,15 @@ export const highlightTools: Tool[] = [
     logo: '/tool/craft.png',
     description: 'Craft the best docs in the world',
     type: 'Notes / Docs',
-    knowledge: 'Daily'
+    knowledge: 'Daily',
+    searchKeywords: [
+      'craft',
+      'notes',
+      'docs',
+      'documentation',
+      'brainstorm',
+      'ideation'
+    ]
   },
   {
     title: 'GitHub',
@@ -39,7 +49,8 @@ export const highlightTools: Tool[] = [
     logo: '/github.png',
     description: 'The world’s leading AI-powered developer platform.',
     type: 'Version Control',
-    knowledge: 'Daily'
+    knowledge: 'Daily',
+    searchKeywords: ['github', 'git', 'version control', 'versioning']
   },
   {
     title: 'GitLab',
@@ -48,7 +59,8 @@ export const highlightTools: Tool[] = [
     description:
       'Software. Faster. GitLab is the most comprehensive AI-powered DevSecOps Platform.',
     type: 'Version Control',
-    knowledge: 'Daily'
+    knowledge: 'Daily',
+    searchKeywords: ['gitlab', 'git', 'version control', 'versioning']
   }
 ];
 
@@ -62,7 +74,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: 'p11ty is your automated accessibility testing pal.',
         type: 'Accessibility',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: ['pa11ty', 'accessibility']
       }
     ]
   },
@@ -76,7 +89,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         description:
           'A conversational AI system that listens, learns, and challenges.',
         type: 'AI',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: ['chatgpt', 'ai', 'artificial', 'intelligence']
       },
       {
         title: 'Claude AI',
@@ -84,7 +98,14 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: 'Talk with Claude, an AI assistant from Antrophic',
         type: 'AI',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'claude',
+          'claude ai',
+          'ai',
+          'artificial',
+          'intelligence'
+        ]
       },
       {
         title: 'Cursor AI',
@@ -92,7 +113,14 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'AI',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: [
+          'cursor',
+          'cursor ai',
+          'ai',
+          'artificial',
+          'intelligence'
+        ]
       },
       {
         title: 'v0.dev',
@@ -100,7 +128,17 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'AI',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: [
+          'v0',
+          'v0.dev',
+          'v0 dev',
+          'dev',
+          'vercel',
+          'ai',
+          'artificial',
+          'intelligence'
+        ]
       }
     ]
   },
@@ -113,7 +151,14 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Analyse',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'google analytics',
+          'google',
+          'analytics',
+          'analyse',
+          'tracking'
+        ]
       },
       {
         title: 'Hotjar',
@@ -121,7 +166,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Analyse',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: ['hotjar', 'analytics', 'analyse', 'tracking']
       },
       {
         title: 'Vercel Speedinsights',
@@ -129,7 +175,16 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Analyse',
-        knowledge: 'Experienced'
+        knowledge: 'Experienced',
+        searchKeywords: [
+          'vercel speedinsights',
+          'vercel',
+          'speed',
+          'speedtest',
+          'performance',
+          'analytics',
+          'analyse'
+        ]
       },
       {
         title: 'Vercel Web Analytics',
@@ -137,7 +192,14 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Analyse',
-        knowledge: 'Experienced'
+        knowledge: 'Experienced',
+        searchKeywords: [
+          'vercel analytics',
+          'vercel',
+          'performance',
+          'analytics',
+          'analyse'
+        ]
       }
     ]
   },
@@ -150,7 +212,17 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: 'Promise based HTTP client for the browser and node.js',
         type: 'API',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'axios',
+          'npm',
+          'fetch',
+          'http',
+          'https',
+          'network',
+          'networking',
+          'data fetching'
+        ]
       },
       {
         title: 'Postman',
@@ -158,7 +230,17 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: "The World's Leading API Platform",
         type: 'API',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'postman',
+          'fetch',
+          'http',
+          'https',
+          'network',
+          'networking',
+          'data fetching',
+          'dx'
+        ]
       }
     ]
   },
@@ -171,7 +253,18 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: 'Authentication for the Web. Free and open source.',
         type: 'Authentication',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: [
+          'auth.js',
+          'auth js',
+          'next-auth',
+          'next auth',
+          'auth',
+          'authentication',
+          'account',
+          'login',
+          'logout'
+        ]
       },
       {
         title: 'Clerk',
@@ -180,7 +273,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         description:
           'The easiest way to add authentication and user management to your application.',
         type: 'Authentication',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: [
+          'clerk',
+          'auth',
+          'authentication',
+          'account',
+          'login',
+          'logout'
+        ]
       }
     ]
   },
@@ -193,7 +294,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Browser',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: ['arc', 'browser']
       },
       {
         title: 'Brave',
@@ -201,7 +303,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Browser',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: ['brave', 'browser']
       },
       {
         title: 'Chrome',
@@ -209,7 +312,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Browser',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: ['chrome', 'google', 'google chrome', 'browser']
       },
       {
         title: 'Firefox',
@@ -217,7 +321,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Browser',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: ['firefox', 'mozilla', 'mozilla firefox', 'browser']
       },
       {
         title: 'Safari',
@@ -225,7 +330,16 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         description: '',
         type: 'Browser',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: [
+          'safari',
+          'macos',
+          'mac os',
+          'ios',
+          'ipados',
+          'ipad os',
+          'browser'
+        ]
       }
     ]
   },
@@ -238,7 +352,16 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '/storyblok.png',
         description: 'The Way to Modern Content',
         type: 'CMS',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: [
+          'storyblok',
+          'cms',
+          'headless',
+          'content',
+          'management',
+          'system',
+          'content management system'
+        ]
       }
     ]
   },
@@ -251,7 +374,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Communication',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: ['slack', 'chat', 'write', 'communication']
       },
       {
         title: 'Teams',
@@ -259,7 +383,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Communication',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: [
+          'teams',
+          'microsoft',
+          'microsoft teams',
+          'chat',
+          'write',
+          'communication'
+        ]
       }
     ]
   },
@@ -272,7 +404,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Color',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: ['color designer', 'hex', 'rgb', 'hsl', 'color']
       },
       {
         title: 'uicolors',
@@ -280,7 +413,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: 'https://uicolors.app',
         logo: '',
         type: 'Color',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: ['uicolors', 'hex', 'rgb', 'hsl', 'color']
       }
     ]
   },
@@ -293,7 +427,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Deployment + Hosting',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'aws',
+          'aws amplify',
+          'amazon',
+          'web services',
+          'deployment',
+          'hosting'
+        ]
       },
       {
         title: 'Netlify',
@@ -301,7 +443,13 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Deployment + Hosting',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'netlify',
+          'static deployment',
+          'deployment',
+          'hosting'
+        ]
       },
       {
         title: 'platform.sh',
@@ -309,7 +457,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Deployment + Hosting',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: ['platform.sh', 'deployment', 'hosting']
       },
       {
         title: 'Vercel',
@@ -317,7 +466,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Deployment + Hosting',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: ['vercel', 'deployment', 'hosting']
       }
     ]
   },
@@ -330,7 +480,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Design + Interface',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: ['adobe xd', 'adobe', 'design', 'ui', 'interface']
       },
       {
         title: 'Figma',
@@ -338,7 +489,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Design + Interface',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: ['figma', 'design', 'ui', 'interface']
       },
       {
         title: 'InVision Studio',
@@ -346,7 +498,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Design + Interface',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: ['invision studio', 'design', 'ui', 'interface']
       },
       {
         title: 'Sketch',
@@ -354,7 +507,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Design + Interface',
-        knowledge: 'Experienced'
+        knowledge: 'Experienced',
+        searchKeywords: ['sketch', 'design', 'ui', 'interface']
       }
     ]
   },
@@ -367,7 +521,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Digital Art',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'procreate',
+          'digital',
+          'art',
+          'sketch',
+          'drawing',
+          'digital art'
+        ]
       }
     ]
   },
@@ -380,7 +542,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Docs + Notes',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: [
+          'craft',
+          'notes',
+          'docs',
+          'documentation',
+          'brainstorm',
+          'ideation'
+        ]
       },
       {
         title: 'Inkdrop',
@@ -388,28 +558,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Docs + Notes',
-        knowledge: 'Daily'
-      }
-    ]
-  },
-  {
-    group: 'DX',
-    children: [
-      {
-        title: 'ESLint',
-        description: '',
-        website: '',
-        logo: '',
-        type: 'DX',
-        knowledge: 'Daily'
-      },
-      {
-        title: 'prettier',
-        description: '',
-        website: '',
-        logo: '',
-        type: 'DX',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: [
+          'inkdrop',
+          'notes',
+          'docs',
+          'documentation',
+          'brainstorm',
+          'ideation'
+        ]
       }
     ]
   },
@@ -422,7 +579,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Icons',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: ['heroicons', 'react', 'svg', 'icons']
       },
       {
         title: 'luicide-react',
@@ -430,7 +588,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Icons',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: ['luicide', 'react', 'svg', 'icons']
       },
       {
         title: 'Material Icons',
@@ -438,7 +597,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Icons',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'material icons',
+          'mui',
+          'material',
+          'react',
+          'svg',
+          'icons'
+        ]
       }
     ]
   },
@@ -451,7 +618,14 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'IDE',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: [
+          'vs code',
+          'visual studio code',
+          'microsoft',
+          'code',
+          'ide'
+        ]
       },
       {
         title: 'WebStorm',
@@ -459,7 +633,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'IDE',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: ['webstorm', 'jetbrains', 'code', 'ide']
       }
     ]
   },
@@ -472,7 +647,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Image',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: [
+          'dall-e',
+          'ai',
+          'artificial',
+          'intelligence',
+          'artificial intelligence',
+          'image'
+        ]
       },
       {
         title: 'Midjourney',
@@ -480,7 +663,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Image',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: [
+          'midjourney',
+          'ai',
+          'artificial',
+          'intelligence',
+          'artificial intelligence',
+          'image'
+        ]
       },
       {
         title: 'Unplash',
@@ -488,7 +679,20 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Image',
-        knowledge: 'Experienced'
+        knowledge: 'Experienced',
+        searchKeywords: [
+          'unsplash',
+          'foto',
+          'photo',
+          'stock',
+          'stock photo',
+          'inspiration',
+          'ai',
+          'artificial',
+          'intelligence',
+          'artificial intelligence',
+          'image'
+        ]
       }
     ]
   },
@@ -496,12 +700,13 @@ export const tools: { group: string; children: Tool[] }[] = [
     group: 'Inspiration',
     children: [
       {
-        title: 'Dribble',
+        title: 'Dribbble',
         description: '',
         website: '',
         logo: '',
         type: 'Inspiration',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: ['dribbble', 'portfolio', 'gallery', 'inspiration']
       },
       {
         title: 'Mobbin',
@@ -509,7 +714,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Inspiration',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: ['mobbin', 'portfolio', 'gallery', 'inspiration']
       },
       {
         title: 'Pinterest',
@@ -517,7 +723,17 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Inspiration',
-        knowledge: 'Experienced'
+        knowledge: 'Experienced',
+        searchKeywords: [
+          'pinterest',
+          'moodboard',
+          'mood',
+          'example',
+          'sample',
+          'stock',
+          'gallery',
+          'inspiration'
+        ]
       },
       {
         title: 'Toolfolio',
@@ -525,7 +741,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Inspiration',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: [
+          'toolfolio',
+          'tool',
+          'tools',
+          'moodboard',
+          'mood',
+          'inspiration'
+        ]
       }
     ]
   },
@@ -538,7 +762,20 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Experienced'
+        knowledge: 'Experienced',
+        searchKeywords: [
+          'animations.dev',
+          'animation',
+          'animations',
+          'emil',
+          'emil kowalski',
+          'motion',
+          'course',
+          'tutorial',
+          'guide',
+          'ux',
+          'learning'
+        ]
       },
       {
         title: 'Build UI',
@@ -546,7 +783,17 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: [
+          'build ui',
+          'ui',
+          'sam',
+          'sam selikoff',
+          'course',
+          'tutorial',
+          'guide',
+          'learning'
+        ]
       },
       {
         title: 'Builder.io',
@@ -554,7 +801,14 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: [
+          'builder.io',
+          'builder io',
+          'steve',
+          'guide',
+          'learning'
+        ]
       },
       {
         title: 'Design+Code',
@@ -562,7 +816,18 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Experienced'
+        knowledge: 'Experienced',
+        searchKeywords: [
+          'design + code',
+          'design + code',
+          'design',
+          'code',
+          'design code',
+          'course',
+          'tutorial',
+          'guide',
+          'learning'
+        ]
       },
       {
         title: 'dev.to',
@@ -570,7 +835,19 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Used'
+        knowledge: 'Used',
+        searchKeywords: [
+          'dev.to',
+          'dev to',
+          'dev',
+          'news',
+          'blog',
+          'guide',
+          'tutorial',
+          'guide',
+          'article',
+          'learning'
+        ]
       },
       {
         title: 'Fireship',
@@ -578,7 +855,8 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: ['fireship', 'youtube']
       },
       {
         title: 'FrontendMasters',
@@ -785,6 +1063,23 @@ export const tools: { group: string; children: Tool[] }[] = [
         knowledge: 'Daily'
       },
       {
+        title: 'ESLint',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'Packages',
+        knowledge: 'Daily',
+        searchKeywords: [
+          'eslint',
+          'syntax',
+          'highlight',
+          'syntax highlight',
+          'dx',
+          'package',
+          'packages'
+        ]
+      },
+      {
         title: 'eslint-plugin-tailwindcss',
         description: '',
         website: '',
@@ -847,6 +1142,23 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         type: 'Packages',
         knowledge: 'Daily'
+      },
+      {
+        title: 'prettier',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'DX',
+        knowledge: 'Daily',
+        searchKeywords: [
+          'prettier',
+          'syntax',
+          'highlight',
+          'syntax highlight',
+          'dx',
+          'package',
+          'packages'
+        ]
       },
       {
         title: 'zod',

@@ -17,4 +17,5 @@ export interface Tool {
   certificateTitle?: string;
   certificateDescription?: string;
   certificateMaterial?: string;
+  searchKeywords: string[];
 }
