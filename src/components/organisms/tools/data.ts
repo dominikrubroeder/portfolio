@@ -856,7 +856,14 @@ export const tools: { group: string; children: Tool[] }[] = [
         logo: '',
         type: 'Learning',
         knowledge: 'Professional',
-        searchKeywords: ['fireship', 'youtube']
+        searchKeywords: [
+          'fireship',
+          'youtube',
+          'course',
+          'guide',
+          'tutorial',
+          'learning'
+        ]
       },
       {
         title: 'FrontendMasters',
@@ -864,7 +871,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Not started'
+        knowledge: 'Not started',
+        searchKeywords: [
+          'frontendmasters',
+          'frontend masters',
+          'course',
+          'guide',
+          'tutorial',
+          'learning'
+        ]
       },
       {
         title: 'frontendmentor.io',
@@ -872,7 +887,14 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: [
+          'frontendmentor',
+          'frontendmentor.io',
+          'frontend',
+          'practise',
+          'learning'
+        ]
       },
       {
         title: 'Learn Next.js',
@@ -880,7 +902,18 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: [
+          'learn next.js',
+          'next',
+          'next.js',
+          'next js',
+          'js',
+          'best practise',
+          'how to',
+          'guide',
+          'learning'
+        ]
       },
       {
         title: 'Refactoring UI',
@@ -888,7 +921,17 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Daily'
+        knowledge: 'Daily',
+        searchKeywords: [
+          'refactoring ui',
+          'refactoring',
+          'ui',
+          'paper',
+          'guide',
+          'pdf',
+          'best practise',
+          'learning'
+        ]
       },
       {
         title: 'Udemy',
@@ -896,7 +939,16 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: '',
         logo: '',
         type: 'Learning',
-        knowledge: 'Professional'
+        knowledge: 'Professional',
+        searchKeywords: [
+          'udemy',
+          'video',
+          'tutorial',
+          'how to',
+          'guide',
+          'course',
+          'learning'
+        ]
       }
     ]
   },
