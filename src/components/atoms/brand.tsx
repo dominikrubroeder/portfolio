@@ -24,6 +24,7 @@ import {
 import AuthJsIcon from '@/components/atoms/img/auth-js-icon';
 import InstagramIcon from '@/components/atoms/img/instagram-icon';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export default function Brand({
   brand,
@@ -100,6 +101,17 @@ export default function Brand({
 
     case 'Craft':
       return <CraftIcon className={className} />;
+
+    case 'Inkdrop':
+      return (
+        <Image
+          src="/tools/inkdrop.png"
+          width={128}
+          height={128}
+          alt="Inkdrop"
+          className={cn('size-11', className)}
+        />
+      );
 
     default:
       return <div className={cn('rounded bg-muted', className)} />;

@@ -22,7 +22,8 @@ export type BrandType =
   | 'Auth.js'
   | 'LinkedIn'
   | 'Xing'
-  | 'Instagram';
+  | 'Instagram'
+  | 'Inkdrop';
 
 export type ControlBarSections = {
   id: string;

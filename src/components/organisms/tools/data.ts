@@ -556,7 +556,7 @@ export const tools: { group: string; children: Tool[] }[] = [
         title: 'Inkdrop',
         description: '',
         website: '',
-        logo: '',
+        logo: '/tools/inkdrop.png',
         type: 'Docs + Notes',
         knowledge: 'Daily',
         searchKeywords: [
@@ -635,6 +635,15 @@ export const tools: { group: string; children: Tool[] }[] = [
         type: 'IDE',
         knowledge: 'Daily',
         searchKeywords: ['webstorm', 'jetbrains', 'code', 'ide']
+      },
+      {
+        title: 'zed',
+        description: '',
+        website: '',
+        logo: '',
+        type: 'IDE',
+        knowledge: 'Used',
+        searchKeywords: ['zed', 'code', 'ide']
       }
     ]
   },

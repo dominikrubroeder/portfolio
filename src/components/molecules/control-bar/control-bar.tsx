@@ -7,6 +7,7 @@ import ControlBarMobileTrigger from '@/components/molecules/control-bar/control-
 import ControlBarActionLeft from '@/components/molecules/control-bar/control-bar-action-left';
 import ControlBarActionRight from '@/components/molecules/control-bar/control-bar-action-right';
 import { useControlBar } from '@/hooks/useControlBar';
+import { motion } from 'motion/react';
 
 export default function ControlBar({
   sections,
@@ -18,7 +19,17 @@ export default function ControlBar({
     useControlBar(collapse);
 
   return (
-    <nav className="no-scrollbar fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:w-max">
+    <motion.nav
+      animate={{ width: ['10%', '90%'] }}
+      transition={{
+        ease: 'easeOut',
+        type: 'spring',
+        delay: 0.8,
+        opacity: [0, 1],
+        duration: 0.8
+      }}
+      className="no-scrollbar fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:w-max"
+    >
       {leftControlAction && (
         <ControlBarActionLeft
           controlBar={state.controlBarVisibility}
@@ -41,6 +52,6 @@ export default function ControlBar({
           rightControlAction={rightControlAction}
         />
       )}
-    </nav>
+    </motion.nav>
   );
 }
