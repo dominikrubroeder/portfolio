@@ -1,30 +1,5 @@
 export type ControlBarAction = 'Avatar' | 'Back' | 'Up';
 
-export type BrandType =
-  | 'Figma'
-  | 'WebStorm'
-  | 'Notes'
-  | 'GitHub'
-  | 'Craft'
-  | 'GitLab'
-  | 'Shopware'
-  | 'Storyblok'
-  | 'Miro'
-  | 'React'
-  | 'Next.js'
-  | 'TypeScript'
-  | 'JavaScript'
-  | 'Markdown'
-  | 'HTML'
-  | 'CSS'
-  | 'Tailwind CSS'
-  | 'Motion (formerly Framer Motion)'
-  | 'Auth.js'
-  | 'LinkedIn'
-  | 'Xing'
-  | 'Instagram'
-  | 'Inkdrop';
-
 export type ControlBarSections = {
   id: string;
   label: string;

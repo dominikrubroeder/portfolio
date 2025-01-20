@@ -1,0 +1,15 @@
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { defaultIconSize } from '@/components/atoms/svg';
+
+export default function InkdropLogo({ className }: { className?: string }) {
+  return (
+    <Image
+      src="/tools/inkdrop.png"
+      width={128}
+      height={128}
+      alt="Inkdrop logo"
+      className={cn(defaultIconSize, className)}
+    />
+  );
+}

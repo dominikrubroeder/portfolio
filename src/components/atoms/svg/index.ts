@@ -18,5 +18,10 @@ export { default as TypescriptIcon } from './typescript-icon';
 export { default as JavaScriptIcon } from './javascript-icon';
 export { default as NotesIcon } from './notes-icon';
 export { default as CraftIcon } from './craft-icon';
+export { default as ChromeLogo } from './chrome-logo';
+export { default as FirefoxLogo } from './firefox-logo';
+export { default as SafariLogo } from './safari-logo';
+export { default as SlackLogo } from './slack-logo';
+export { default as TeamsLogo } from './teams-logo';
 
 export const defaultIconSize = 'size-8';

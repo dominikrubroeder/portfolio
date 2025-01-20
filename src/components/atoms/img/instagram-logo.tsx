@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-export default function AuthJsIcon({ className }: { className?: string }) {
+export default function InstagramLogo({ className }: { className?: string }) {
   return (
     <Image
-      src="/auth-js.png"
+      src="/instagram.png"
       width={128}
       height={128}
-      alt="Auth.js logo"
+      alt="Instagram logo"
       draggable={false}
       className={className}
     />

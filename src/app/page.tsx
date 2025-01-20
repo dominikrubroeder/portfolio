@@ -4,7 +4,7 @@ import ProjectSection from '@/components/organisms/project-section';
 import Tools from '@/components/organisms/tools/tools';
 import TechnologySection from '@/components/organisms/technology-section';
 import SocialSection from '@/components/organisms/social-section';
-import React, { Suspense } from 'react';
+import React from 'react';
 import ControlBar from '@/components/molecules/control-bar/control-bar';
 import { ControlBarSections } from '@/types';
 
@@ -59,9 +59,7 @@ export default function HomePage() {
       <HomeHeroSection />
 
       <div className="space-y-16">
-        <Suspense>
-          <ControlBar sections={sections} collapse={false} />
-        </Suspense>
+        <ControlBar sections={sections} collapse={false} />
 
         <IntroductionSection />
 

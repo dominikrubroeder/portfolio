@@ -1,8 +1,11 @@
-import type { BrandType } from '@/types';
+import { cn } from '@/lib/utils';
+
 import {
+  ChromeLogo,
   CraftIcon,
   CSSIcon,
   FigmaIcon,
+  FirefoxLogo,
   GithubIcon,
   GitlabIcon,
   HTMLIcon,
@@ -14,27 +17,26 @@ import {
   NextJsIcon,
   NotesIcon,
   ReactIcon,
+  SafariLogo,
   ShopwareIcon,
+  SlackLogo,
   StoryblokIcon,
   TailwindCssIcon,
+  TeamsLogo,
   TypescriptIcon,
   WebstormIcon,
   XingIcon
 } from '@/components/atoms/svg';
-import AuthJsIcon from '@/components/atoms/img/auth-js-icon';
-import InstagramIcon from '@/components/atoms/img/instagram-icon';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
+
+import { AuthJsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 
 export default function Brand({
   brand,
   className = 'size-32'
 }: {
-  brand: BrandType;
+  brand: string;
   className?: string;
 }) {
-  if (!(brand satisfies BrandType)) return null;
-
   switch (brand) {
     case 'Figma':
       return <FigmaIcon className={className} />;
@@ -88,7 +90,7 @@ export default function Brand({
       return <MotionIcon className={className} />;
 
     case 'Auth.js':
-      return <AuthJsIcon className={className} />;
+      return <AuthJsLogo className={className} />;
 
     case 'LinkedIn':
       return <LinkedinIcon className={className} />;
@@ -97,21 +99,28 @@ export default function Brand({
       return <XingIcon className={className} />;
 
     case 'Instagram':
-      return <InstagramIcon className={className} />;
+      return <InstagramLogo className={className} />;
 
     case 'Craft':
       return <CraftIcon className={className} />;
 
     case 'Inkdrop':
-      return (
-        <Image
-          src="/tools/inkdrop.png"
-          width={128}
-          height={128}
-          alt="Inkdrop"
-          className={cn('size-11', className)}
-        />
-      );
+      return <InkdropLogo className={className} />;
+
+    case 'Chrome':
+      return <ChromeLogo className={className} />;
+
+    case 'Firefox':
+      return <FirefoxLogo className={className} />;
+
+    case 'Safari':
+      return <SafariLogo className={className} />;
+
+    case 'Slack':
+      return <SlackLogo className={className} />;
+
+    case 'Teams':
+      return <TeamsLogo className={className} />;
 
     default:
       return <div className={cn('rounded bg-muted', className)} />;
