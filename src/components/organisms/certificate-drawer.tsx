@@ -41,7 +41,7 @@ export function CertificateDrawer({
       </DrawerTrigger>
 
       <DrawerContent>
-        <div className="mx-auto w-full max-w-screen-sm">
+        <div className="mx-auto w-full max-w-(--breakpoint-sm)">
           <DrawerHeader className="text-foreground">
             <DrawerTitle>Certificate for {title}</DrawerTitle>
 

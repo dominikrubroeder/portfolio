@@ -8,7 +8,7 @@ export default function Books({ className }: { className?: string }) {
   return (
     <ul
       className={cn(
-        'mx-auto w-full max-w-screen-sm space-y-4 pl-1 leading-relaxed',
+        'mx-auto w-full max-w-(--breakpoint-sm) space-y-4 pl-1 leading-relaxed',
         className
       )}
     >

@@ -38,7 +38,7 @@ export default function MoreItemsSection({
 
   return (
     <div className="scroll-mt-24 space-y-4 px-4 xl:ml-12" id="tools-list">
-      <div className="mx-auto flex w-full items-center justify-between gap-4 md:max-w-screen-sm">
+      <div className="mx-auto flex w-full items-center justify-between gap-4 md:max-w-(--breakpoint-sm)">
         <h3 className="flex flex-1 items-center justify-between gap-4">
           I also work, plan to work or worked with
           <span className="font-normal text-muted-foreground">
@@ -70,7 +70,7 @@ export default function MoreItemsSection({
 
       {state.isVisible && (
         <div
-          className="mx-auto w-full space-y-8 md:max-w-screen-sm"
+          className="mx-auto w-full space-y-8 md:max-w-(--breakpoint-sm)"
           id="tool-list"
         >
           <div className="sticky z-10 flex items-center gap-2 lg:top-24">

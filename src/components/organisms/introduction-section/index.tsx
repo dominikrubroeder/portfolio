@@ -15,7 +15,7 @@ export default function IntroductionSection() {
       className="scroll-mt-24 space-y-8 px-4 md:scroll-mt-32"
       id="introduction"
     >
-      <div className="mx-auto w-full max-w-screen-sm space-y-6">
+      <div className="mx-auto w-full max-w-(--breakpoint-sm) space-y-6">
         <p>Hey there!</p>
 
         <h2 className="text-wrap">
@@ -43,7 +43,7 @@ export default function IntroductionSection() {
         </AccordionClean>
       </div>
 
-      <div className="mx-auto w-full max-w-screen-sm" id="accordion-group">
+      <div className="mx-auto w-full max-w-(--breakpoint-sm)" id="accordion-group">
         <WhatIsAUxEngineer />
         <UxDesigner />
         <UxEngineer />
