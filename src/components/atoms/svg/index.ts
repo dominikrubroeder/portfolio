@@ -23,5 +23,6 @@ export { default as FirefoxLogo } from './firefox-logo';
 export { default as SafariLogo } from './safari-logo';
 export { default as SlackLogo } from './slack-logo';
 export { default as TeamsLogo } from './teams-logo';
+export { default as VercelLogo } from './vercel-logo';
 
 export const defaultIconSize = 'size-8';

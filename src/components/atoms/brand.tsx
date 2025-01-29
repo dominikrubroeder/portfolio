@@ -24,6 +24,7 @@ import {
   TailwindCssIcon,
   TeamsLogo,
   TypescriptIcon,
+  VercelLogo,
   WebstormIcon,
   XingIcon
 } from '@/components/atoms/svg';
@@ -121,6 +122,9 @@ export default function Brand({
 
     case 'Teams':
       return <TeamsLogo className={className} />;
+
+    case 'Vercel':
+      return <VercelLogo className={className} />;
 
     default:
       return <div className={cn('rounded bg-muted', className)} />;
