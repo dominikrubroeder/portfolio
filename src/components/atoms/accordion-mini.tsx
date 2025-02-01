@@ -16,7 +16,7 @@ export default function AccordionMini({
   return (
     <div>
       <div
-        className="interactive flex cursor-pointer select-none items-center justify-between gap-4 rounded-xl py-2 transition-all hover:bg-muted hover:px-3"
+        className="flex interactive cursor-pointer items-center justify-between gap-4 rounded-xl py-2 transition-all select-none hover:bg-muted hover:px-3"
         title="Open accordion to see more content"
         aria-label="Open accordion to see more content"
         onClick={() => setOpen((prevState) => !prevState)}

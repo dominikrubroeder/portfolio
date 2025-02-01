@@ -42,7 +42,7 @@ export default function ToolSearch({ placeholder }: { placeholder: string }) {
         defaultValue={searchParams.get('tool')?.toString()}
       />
 
-      <MagnifyingGlassIcon className="absolute left-3 top-1/2 size-[1.125rem] -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
+      <MagnifyingGlassIcon className="absolute top-1/2 left-3 size-[1.125rem] -translate-y-1/2 text-muted-foreground peer-focus:text-foreground" />
     </div>
   );
 }

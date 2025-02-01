@@ -1,107 +1,111 @@
 'use client';
 
-import {ReactNode} from 'react';
-import {cn} from '@/lib/utils';
-import {motion} from 'motion/react';
+import { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
 
 export default function Marker({
-                                   variant = 'background',
-                                   color = 'yellow',
-                                   as = 'span',
-                                   className,
-                                   animate,
-                                   children
-                               }: {
-    variant?: 'background' | 'underline';
-    color?: 'yellow' | 'red' | 'green' | 'purple' | 'primary';
-    as?: 'div' | 'p' | 'span';
-    animate?: boolean;
-    className?: string;
-    children: ReactNode;
+  variant = 'background',
+  color = 'yellow',
+  as = 'span',
+  className,
+  animate,
+  underlineSize,
+  children
+}: {
+  variant?: 'background' | 'underline';
+  color?: 'yellow' | 'red' | 'green' | 'purple' | 'primary';
+  as?: 'div' | 'p' | 'span';
+  animate?: boolean;
+  underlineSize?: string;
+  className?: string;
+  children: ReactNode;
 }) {
-    const Comp = as;
+  const Comp = as;
 
-    if (animate) {
-        if (variant === 'underline') {
-            return (
-                <Comp className={cn('relative px-1 py-0.5', className)}>
-                    <motion.span
-                        animate={{width: ['0%', '100%'], opacity: [0, 1]}}
-                        transition={{
-                            delay: 0.4,
-                            ease: 'easeOut',
-                            type: 'spring',
-                            duration: 0.72
-                        }}
-                        className={cn(
-                            'absolute inset-x-0 -bottom-2 -z-10 h-1 opacity-0',
-                            color === 'yellow' && 'bg-yellow-300',
-                            color === 'red' && 'bg-red-200',
-                            color === 'green' && 'bg-green-200',
-                            color === 'purple' && 'bg-purple-200',
-                            color === 'primary' && 'bg-primary'
-                        )}
-                    />
-                    {children}
-                </Comp>
-            );
-        }
-
-        return (
-            <Comp className={cn('relative pr-2 py-1', className)}>
-                <motion.span
-                    animate={{width: ['0%', '100%'], opacity: [0, 1]}}
-                    transition={{
-                        delay: 0.4,
-                        ease: 'easeOut',
-                        type: 'spring',
-                        duration: 0.72
-                    }}
-                    className={cn(
-                        'absolute -left-2 -top-1 -z-10 m-1 h-full opacity-0',
-                        color === 'yellow' && 'bg-yellow-300',
-                        color === 'red' && 'bg-red-200',
-                        color === 'green' && 'bg-green-200',
-                        color === 'purple' && 'bg-purple-200',
-                        color === 'primary' && 'bg-primary'
-                    )}
-                />
-                {children}
-            </Comp>
-        );
-    }
-
+  if (animate) {
     if (variant === 'underline') {
-        return (
-            <Comp className={cn('relative', className)}>
-        <span
+      return (
+        <Comp className={cn('relative px-1 py-0.5', className)}>
+          <motion.span
+            animate={{ width: ['0%', '100%'], opacity: [0, 1] }}
+            transition={{
+              delay: 0.4,
+              ease: 'easeOut',
+              type: 'spring',
+              duration: 0.72
+            }}
             className={cn(
-                'absolute -bottom-2 size-full h-1 w-full',
-                color === 'yellow' && 'bg-yellow-300',
-                color === 'red' && 'bg-red-200',
-                color === 'green' && 'bg-green-200',
-                color === 'purple' && 'bg-purple-200',
-                color === 'primary' && 'bg-primary'
+              'absolute inset-x-0 -bottom-2 -z-10 opacity-0',
+              underlineSize ?? 'h-1',
+              color === 'yellow' && 'bg-yellow-300',
+              color === 'red' && 'bg-red-200',
+              color === 'green' && 'bg-green-200',
+              color === 'purple' && 'bg-purple-200',
+              color === 'primary' && 'bg-primary'
             )}
-        />
-                {children}
-            </Comp>
-        );
+          />
+          {children}
+        </Comp>
+      );
     }
 
     return (
-        <Comp
-            className={cn(
-                'inline-block px-1',
-                color === 'yellow' && 'bg-yellow-300',
-                color === 'red' && 'bg-red-200',
-                color === 'green' && 'bg-green-200',
-                color === 'purple' && 'bg-purple-200',
-                color === 'primary' && 'bg-primary',
-                className
-            )}
-        >
-            {children}
-        </Comp>
+      <Comp className={cn('relative py-1 pr-2', className)}>
+        <motion.span
+          animate={{ width: ['0%', '100%'], opacity: [0, 1] }}
+          transition={{
+            delay: 0.4,
+            ease: 'easeOut',
+            type: 'spring',
+            duration: 0.72
+          }}
+          className={cn(
+            'absolute -top-1 -left-2 -z-10 m-1 h-full opacity-0',
+            color === 'yellow' && 'bg-yellow-300',
+            color === 'red' && 'bg-red-200',
+            color === 'green' && 'bg-green-200',
+            color === 'purple' && 'bg-purple-200',
+            color === 'primary' && 'bg-primary'
+          )}
+        />
+        {children}
+      </Comp>
     );
+  }
+
+  if (variant === 'underline') {
+    return (
+      <Comp className={cn('relative', className)}>
+        <span
+          className={cn(
+            'absolute -bottom-2 size-full w-full',
+            underlineSize ?? 'h-1',
+            color === 'yellow' && 'bg-yellow-300',
+            color === 'red' && 'bg-red-200',
+            color === 'green' && 'bg-green-200',
+            color === 'purple' && 'bg-purple-200',
+            color === 'primary' && 'bg-primary'
+          )}
+        />
+        {children}
+      </Comp>
+    );
+  }
+
+  return (
+    <Comp
+      className={cn(
+        'inline-block px-1',
+        color === 'yellow' && 'bg-yellow-300',
+        color === 'red' && 'bg-red-200',
+        color === 'green' && 'bg-green-200',
+        color === 'purple' && 'bg-purple-200',
+        color === 'primary' && 'bg-primary',
+        className
+      )}
+    >
+      {children}
+    </Comp>
+  );
 }

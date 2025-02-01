@@ -20,7 +20,7 @@ export default function Avatar({
         alt="Image of Dominik Rubröder"
         width={width}
         height={height}
-        className={cn('shrink-0 rounded-full border-2 ', className)}
+        className={cn('shrink-0 rounded-full border-2', className)}
         draggable={false}
       />
     );
@@ -28,7 +28,7 @@ export default function Avatar({
   return (
     <Link
       href="/"
-      className="interactive shrink-0"
+      className="shrink-0 interactive"
       title="Go to Home page"
       aria-label="Click to go to Home page"
       prefetch
@@ -38,7 +38,7 @@ export default function Avatar({
         alt="Image of Dominik Rubröder"
         width={width}
         height={height}
-        className={cn('shrink-0 rounded-full border-2 ', className)}
+        className={cn('shrink-0 rounded-full border-2', className)}
         draggable={false}
       />
     </Link>

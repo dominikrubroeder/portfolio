@@ -1,5 +1,5 @@
 import IntroductionSection from '@/components/organisms/introduction-section';
-import HomeHeroSection from '@/components/organisms/home-hero-section';
+import HomeHero from '@/components/organisms/home-hero';
 import ProjectSection from '@/components/organisms/project-section';
 import Tools from '@/components/organisms/tools/tools';
 import TechnologySection from '@/components/organisms/technology-section';
@@ -56,7 +56,7 @@ const sections: ControlBarSections = [
 export default function HomePage() {
   return (
     <div className="animate-fade-up-1rem">
-      <HomeHeroSection />
+      <HomeHero />
 
       <div className="space-y-16">
         <ControlBar sections={sections} collapse={false} />

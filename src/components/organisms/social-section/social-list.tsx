@@ -3,7 +3,7 @@ import { socials } from '@/components/organisms/social-section/data';
 
 export default function SocialList() {
   return (
-    <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
+    <ul className="no-scrollbar overflow-hidden overflow-x-auto pb-2 whitespace-nowrap">
       {socials.map((social) => (
         <li
           key={social.title}

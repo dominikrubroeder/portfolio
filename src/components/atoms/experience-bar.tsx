@@ -17,7 +17,7 @@ export default function ExperienceBar({
       <div className="relative h-2 w-24 overflow-hidden rounded-full bg-muted">
         <span
           className={cn(
-            'absolute left-0 top-0 h-full rounded-full border-0 bg-primary transition-all',
+            'absolute top-0 left-0 h-full rounded-full border-0 bg-primary transition-all',
             progress === 'Not started' && 'w-0',
             progress === 'Used' && 'w-1/4',
             progress === 'Experienced' && 'w-1/2',

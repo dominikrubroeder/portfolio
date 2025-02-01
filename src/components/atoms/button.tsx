@@ -1,62 +1,62 @@
-import {cn} from '@/lib/utils';
-import {HTMLAttributeAnchorTarget, ReactNode} from 'react';
+import { cn } from '@/lib/utils';
+import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
 import Link from 'next/link';
 
 export default function Button({
-                                   variant,
-                                   children,
-                                   className,
-                                   asLink,
-                                   href,
-                                   title,
-                                   ariaLabel,
-                                   target,
-                                   disabled,
-                                   onClick
-                               }: {
-    variant: 'primary' | 'secondary' | 'outline';
-    children: ReactNode;
-    className?: string;
-    asLink?: boolean;
-    href?: string;
-    title?: string;
-    ariaLabel?: string;
-    target?: HTMLAttributeAnchorTarget;
-    disabled?: boolean;
-    onClick?: () => void;
+  variant,
+  children,
+  className,
+  asLink,
+  href,
+  title,
+  ariaLabel,
+  target,
+  disabled,
+  onClick
+}: {
+  variant: 'primary' | 'secondary' | 'outline';
+  children: ReactNode;
+  className?: string;
+  asLink?: boolean;
+  href?: string;
+  title?: string;
+  ariaLabel?: string;
+  target?: HTMLAttributeAnchorTarget;
+  disabled?: boolean;
+  onClick?: () => void;
 }) {
-    const classNames = cn(
-        'interactive group relative inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center gap-2 px-2 py-3 transition',
-        variant === 'primary' &&
-        'rounded-2xl bg-primary text-white hover:rounded-xl hover:bg-violet-500',
-        variant === 'outline' && 'rounded border hover:bg-muted',
-        variant === 'secondary' &&
-        "relative z-10 rounded-2xl after:absolute after:inset-0 after:-z-10 after:scale-75 after:rounded-lg after:bg-hover after:opacity-0 after:transition after:content-[''] hover:text-muted-foreground hover:after:scale-100 hover:after:rounded-xl hover:after:opacity-100 group-hover:text-muted-foreground group-hover:after:scale-100 group-hover:after:rounded-xl group-hover:after:opacity-100",
-        className
-    );
+  const classNames = cn(
+    'interactive group relative inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center gap-2 px-2 py-3 transition',
+    variant === 'primary' &&
+      'rounded-2xl bg-primary text-white hover:rounded-xl hover:bg-violet-500',
+    variant === 'outline' && 'rounded border hover:bg-muted',
+    variant === 'secondary' &&
+      "relative z-10 rounded-2xl after:absolute after:inset-0 after:-z-10 after:scale-75 after:rounded-lg after:bg-hover after:opacity-0 after:transition after:content-[''] hover:text-muted-foreground hover:after:scale-100 hover:after:rounded-xl hover:after:opacity-100 group-hover:text-muted-foreground group-hover:after:scale-100 group-hover:after:rounded-xl group-hover:after:opacity-100",
+    className
+  );
 
-    if (asLink && href)
-        return (
-            <Link
-                href={href}
-                className={classNames}
-                target={href.includes('https') ? '_blank' : target}
-                title={title}
-                aria-label={ariaLabel}
-            >
-                {children}
-            </Link>
-        );
-
+  if (asLink && href)
     return (
-        <button
-            className={classNames}
-            title={title}
-            aria-label={ariaLabel}
-            disabled={disabled}
-            onClick={onClick}
-        >
-            {children}
-        </button>
+      <Link
+        href={href}
+        className={classNames}
+        target={href.includes('https') ? '_blank' : target}
+        title={title}
+        aria-label={ariaLabel}
+      >
+        {children}
+      </Link>
     );
+
+  return (
+    <button
+      className={classNames}
+      title={title}
+      aria-label={ariaLabel}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 }

@@ -21,7 +21,8 @@ export default function IntroductionSection() {
         <h2 className="text-wrap">
           <b className="mr-1.5 text-foreground">
             My work is committed to the frontend. I like to create and build
-            dynamic interfaces that are designed to be for a joyful web
+            dynamic interfaces that are designed to be for a joyful and
+            interactive web
           </b>
           – later on, native mobile apps might join that paradigm.
         </h2>
@@ -43,7 +44,10 @@ export default function IntroductionSection() {
         </AccordionClean>
       </div>
 
-      <div className="mx-auto w-full max-w-(--breakpoint-sm)" id="accordion-group">
+      <div
+        className="mx-auto w-full max-w-(--breakpoint-sm)"
+        id="accordion-group"
+      >
         <WhatIsAUxEngineer />
         <UxDesigner />
         <UxEngineer />

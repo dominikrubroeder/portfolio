@@ -24,7 +24,7 @@ export default function SliderItem({
 }) {
   return (
     <div className={cn('group w-80 space-y-6 whitespace-normal', className)}>
-      <div className="interactive relative mx-auto size-80 rounded-xl border transition group-hover:bg-muted">
+      <div className="relative mx-auto size-80 interactive rounded-xl border transition group-hover:bg-muted">
         <Link
           href={sliderItem.website}
           className="absolute inset-0 flex size-full cursor-pointer items-center justify-center"
@@ -39,7 +39,7 @@ export default function SliderItem({
           />
 
           {sliderItem['certificate'] && (
-            <div className="absolute bottom-14 right-5 flex w-24 items-center justify-between gap-1">
+            <div className="absolute right-5 bottom-14 flex w-24 items-center justify-between gap-1">
               <span className="text-xs">Certified</span>
               <CheckBadgeIcon className="size-5 shrink-0 text-primary" />
             </div>
@@ -47,7 +47,7 @@ export default function SliderItem({
 
           <ExperienceBar
             progress={sliderItem['knowledge']}
-            className="absolute bottom-4 right-5"
+            className="absolute right-5 bottom-4"
           />
         </Link>
       </div>

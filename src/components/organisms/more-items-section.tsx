@@ -6,7 +6,6 @@ import Button from '@/components/atoms/button';
 import Brand from '@/components/atoms/brand';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
-import { BrandType } from '@/types';
 import ExperienceBar from '@/components/atoms/experience-bar';
 import ToolSearch from '@/components/atoms/tool-search';
 import { Tool } from '@/components/organisms/tools/types';
@@ -135,11 +134,11 @@ export default function MoreItemsSection({
                         .map((item, index) => (
                           <li key={index} className="relative flex gap-4">
                             {item.knowledge === 'Daily' && (
-                              <StarIcon className="absolute -left-12 top-1/2 -mt-1 size-5 -translate-y-1/2 text-primary" />
+                              <StarIcon className="absolute top-1/2 -left-12 -mt-1 size-5 -translate-y-1/2 text-primary" />
                             )}
 
                             <Brand
-                              brand={item.title as BrandType}
+                              brand={item.title}
                               className="size-10 shrink-0"
                             />
 

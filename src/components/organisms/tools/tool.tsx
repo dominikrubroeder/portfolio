@@ -18,7 +18,7 @@ export default function Tool({
     <div className="group relative w-80 space-y-6">
       <Link
         href={tool.website}
-        className="interactive relative mx-auto  flex size-80 cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
+        className="relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
         target="_blank"
         title={`Go to ${tool.title} website`}
         aria-label={`Go to ${tool.title} website`}
@@ -31,7 +31,7 @@ export default function Tool({
 
         <ExperienceBar
           progress={tool.knowledge}
-          className="absolute bottom-4 right-5"
+          className="absolute right-5 bottom-4"
         />
       </Link>
 

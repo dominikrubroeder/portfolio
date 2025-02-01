@@ -1,7 +1,28 @@
 export default function Footer() {
   return (
-    <footer className="mx-16 mt-16 border-t  p-4 pb-24 text-center text-xs md:pb-4">
-      <p className="mb-1.5">
+    <footer className="mt-16 space-y-3 border-t p-4 pb-24 text-center text-xs md:pb-4">
+      <p>Build your vision. Do it with style.</p>
+      <p>Live your balance.</p>
+      <p>
+        <a href="https://nextjs.org" target="_blank" rel="nofollow">
+          Next.js 15.1.5
+        </a>{' '}
+        |{' '}
+        <a
+          href="https://react.dev/versions"
+          target="_blank"
+          title="Open React version docs"
+          aria-label="Open React version docs"
+          rel="nofollow"
+        >
+          React 19.0
+        </a>{' '}
+        |{' '}
+        <a href="https://tailwindcss.com/docs/installation/using-vite">
+          Tailwind CSS 4.0
+        </a>
+      </p>
+      <p>
         <a
           href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
           title="Send mail to dominik.rubroeder@icloud.com"

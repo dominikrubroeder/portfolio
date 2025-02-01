@@ -16,7 +16,9 @@ export default function AccordionClean({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={cn('max-w-(--breakpoint-sm) space-y-4 sm:mx-auto', className)}>
+    <div
+      className={cn('max-w-(--breakpoint-sm) space-y-4 sm:mx-auto', className)}
+    >
       <button
         className="flex items-center gap-4"
         onClick={() => setOpen((previousState) => !previousState)}
