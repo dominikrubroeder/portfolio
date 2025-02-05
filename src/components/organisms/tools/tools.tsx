@@ -7,12 +7,14 @@ export default function Tools() {
   return (
     <Section id="tools">
       <header className="space-y-2 px-4 xl:px-16">
-        <h2 className="text-3xl font-bold text-foreground">Tools</h2>
-        <h3>Tools help me building the things we want.</h3>
-        <span>I use:</span>
+        <h2 className="text-foreground text-3xl font-bold">Tools</h2>
+        <h3>
+          Tools help me building, visualizing and capturing the things we want.
+          Therefore i use:
+        </h3>
       </header>
 
-      <ul className="no-scrollbar overflow-hidden overflow-x-auto pb-2 whitespace-nowrap">
+      <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
         {highlightTools.map((tool, index) => (
           <li
             key={tool.title}

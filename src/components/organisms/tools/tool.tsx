@@ -1,41 +1,40 @@
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Brand from '@/components/atoms/brand';
-import type { BrandType as BrandType } from '@/types';
 import Button from '@/components/atoms/button';
 import ExperienceBar from '@/components/atoms/experience-bar';
-import { Tool } from '@/components/organisms/tools/types';
+import { Tool as ToolType } from '@/components/organisms/tools/types';
 import { CertificateDrawer } from '@/components/organisms/certificate-drawer';
 
 export default function Tool({
   tool,
   isFirstItemInList
 }: {
-  tool: Tool;
+  tool: ToolType;
   isFirstItemInList: boolean;
 }) {
   return (
     <div className="group relative w-80 space-y-6">
       <Link
         href={tool.website}
-        className="relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
+        className="interactive hover:bg-muted relative mx-auto flex size-80 cursor-pointer items-center justify-center rounded-xl border transition"
         target="_blank"
         title={`Go to ${tool.title} website`}
         aria-label={`Go to ${tool.title} website`}
       >
         <Brand
-          brand={tool.title as BrandType}
+          brand={tool.title}
           className="h-32 w-auto"
           aria-label={`${tool.title} logo`}
         />
 
         <ExperienceBar
           progress={tool.knowledge}
-          className="absolute right-5 bottom-4"
+          className="absolute bottom-4 right-5"
         />
       </Link>
 
-      <div className="mx-auto w-max rounded-3xl border px-3 py-2 font-bold text-foreground">
+      <div className="text-foreground mx-auto w-max rounded-3xl border px-3 py-2 font-bold">
         {tool.type}
       </div>
 
@@ -43,7 +42,7 @@ export default function Tool({
         <div className="mx-auto flex items-center justify-center gap-1">
           <Link
             href={tool.website}
-            className="font-bold text-foreground"
+            className="text-foreground font-bold"
             target="_blank"
             title={`Go to external ${tool.title} website`}
             aria-label={`Go to external ${tool.title} website`}

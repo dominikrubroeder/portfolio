@@ -1,9 +1,9 @@
-import IntroductionSection from '@/components/organisms/introduction-section';
+import IntroductionSection from '../components/organisms/introduction';
 import HomeHero from '@/components/organisms/home-hero';
 import ProjectSection from '@/components/organisms/project-section';
 import Tools from '@/components/organisms/tools/tools';
-import TechnologySection from '@/components/organisms/technology-section';
-import SocialSection from '@/components/organisms/social-section';
+import TechnologySection from '../components/organisms/technologies';
+import SocialSection from '../components/organisms/socials';
 import React from 'react';
 import ControlBar from '@/components/molecules/control-bar/control-bar';
 import { ControlBarSections } from '@/types';

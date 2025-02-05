@@ -4,25 +4,21 @@ import { Toggle } from '@/components/atoms/toggle';
 import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 import { cn } from '@/lib/utils';
 
-export default function DesignModeToggle({
-  className
-}: {
-  className?: string;
-}) {
+export default function CleanViewToggle({ className }: { className?: string }) {
   const { updateSearchParams, searchParams } = useUpdateSearchParams();
-  const designMode = searchParams.get('designMode');
+  const cleanViewMode = searchParams.get('clean-view');
 
   return (
     <Toggle
-      label="Design mode"
+      label="Clean view"
       onClick={() =>
         updateSearchParams({
-          withName: 'designMode',
-          withValue: designMode ? 'false' : 'true'
+          withName: 'clean-view',
+          withValue: cleanViewMode ? 'false' : 'true'
         })
       }
       className={cn('shrink-0', className)}
-      enabled={designMode === 'true'}
+      enabled={cleanViewMode === 'true'}
     />
   );
 }

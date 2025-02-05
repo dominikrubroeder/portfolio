@@ -4,25 +4,21 @@ import { Toggle } from '@/components/atoms/toggle';
 import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 import { cn } from '@/lib/utils';
 
-export default function DesignModeToggle({
-  className
-}: {
-  className?: string;
-}) {
+export default function AnimateToggle({ className }: { className?: string }) {
   const { updateSearchParams, searchParams } = useUpdateSearchParams();
-  const designMode = searchParams.get('designMode');
+  const animateMode = searchParams.get('animate');
 
   return (
     <Toggle
-      label="Design mode"
+      label="Animate"
       onClick={() =>
         updateSearchParams({
-          withName: 'designMode',
-          withValue: designMode ? 'false' : 'true'
+          withName: 'animate',
+          withValue: animateMode ? 'false' : 'true'
         })
       }
       className={cn('shrink-0', className)}
-      enabled={designMode === 'true'}
+      enabled={animateMode === 'true'}
     />
   );
 }

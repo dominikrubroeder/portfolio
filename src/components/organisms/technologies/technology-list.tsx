@@ -1,11 +1,11 @@
-import Technology from '@/components/organisms/technology-section/technology';
+import Technology from '@/components/organisms/technologies/technology';
 import MoreItemsSection from '@/components/organisms/more-items-section';
-import { technologies } from '@/components/organisms/technology-section/data';
+import { technologies } from '@/components/organisms/technologies/data';
 
 export default function TechnologyList() {
   return (
     <>
-      <ul className="no-scrollbar overflow-hidden overflow-x-auto pb-2 whitespace-nowrap">
+      <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
         {technologies.map((technology, index) => {
           if (technology.priority === 'high')
             return (

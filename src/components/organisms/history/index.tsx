@@ -1,4 +1,4 @@
-import HistoryEntry from '@/components/organisms/history-section/history-entry';
+import HistoryEntry from '@/components/organisms/history/history-entry';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
@@ -8,9 +8,9 @@ export default function Index() {
   return (
     <Section
       id="history"
-      className="mx-auto grid max-w-(--breakpoint-sm) grid-cols-[auto_1fr] gap-4 px-4 md:pl-28"
+      className="max-w-(--breakpoint-sm) mx-auto grid grid-cols-[auto_1fr] gap-4 px-4 md:pl-28"
     >
-      <div className="h-full w-1 shrink-0 rounded-full bg-primary"></div>
+      <div className="bg-primary h-full w-1 shrink-0 rounded-full"></div>
 
       <div className="grid gap-12">
         <HistoryEntry
@@ -52,17 +52,17 @@ export default function Index() {
                 target="_blank"
                 className="group ml-1 inline-flex items-center gap-1 pb-1"
               >
-                <span className="border-b transition group-hover:text-foreground">
+                <span className="group-hover:text-foreground border-b transition">
                   IU international university
                 </span>
-                <ArrowTopRightOnSquareIcon className="size-4 transition group-hover:text-foreground" />
+                <ArrowTopRightOnSquareIcon className="group-hover:text-foreground size-4 transition" />
               </Link>
             </p>
             <p className="-mt-1">Semester 5 – 7</p>
             <p>
               <Link
                 href="/work/bachelor-thesis-prework-dominik-rubroeder-nintendo.pdf"
-                className="inline-flex items-center gap-1 hover:text-foreground"
+                className="hover:text-foreground inline-flex items-center gap-1"
                 target="_blank"
                 download
               >
@@ -74,7 +74,7 @@ export default function Index() {
             <p>
               <Link
                 href="/work/bachelor-thesis-dominik-rubroeder-nintendo.pdf"
-                className="inline-flex items-center gap-1 hover:text-foreground"
+                className="hover:text-foreground inline-flex items-center gap-1"
                 target="_blank"
                 download
               >
@@ -104,10 +104,10 @@ export default function Index() {
                   target="_blank"
                   className="group ml-1 inline-flex items-center gap-1 pb-1"
                 >
-                  <span className="border-b transition group-hover:text-foreground">
+                  <span className="group-hover:text-foreground border-b transition">
                     IU international university
                   </span>
-                  <ArrowTopRightOnSquareIcon className="size-4 transition group-hover:text-foreground" />
+                  <ArrowTopRightOnSquareIcon className="group-hover:text-foreground size-4 transition" />
                 </Link>
               </p>
               <p className="-mt-1">Semester 1 – 4</p>

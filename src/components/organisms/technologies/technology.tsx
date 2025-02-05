@@ -1,11 +1,11 @@
-import { Technology } from '@/interfaces';
+import { Technology as TechnologyType } from '@/interfaces';
 import SliderItem from '@/components/atoms/slider-item';
 
 export default function Technology({
   technology,
   isFirstItemInList
 }: {
-  technology: Technology;
+  technology: TechnologyType;
   isFirstItemInList?: boolean;
 }) {
   return (

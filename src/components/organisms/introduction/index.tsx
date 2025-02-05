@@ -1,13 +1,13 @@
 import React from 'react';
 import AccordionClean from '@/components/atoms/accordion-clean';
-import Vision from '@/components/organisms/introduction-section/vision';
-import Mindset from '@/components/organisms/introduction-section/mindset';
+import Vision from '@/components/organisms/introduction/vision';
+import Mindset from '@/components/organisms/introduction/mindset';
 import Books from '@/components/molecules/books';
-import TechStack from '@/components/organisms/introduction-section/tech-stack';
-import WhatIsAUxEngineer from '@/components/organisms/introduction-section/what-is-a-ux-engineer';
-import UxDesigner from '@/components/organisms/introduction-section/ux-designer';
-import UxEngineer from '@/components/organisms/introduction-section/ux-engineer';
-import DesignEngineerVsUxEngineer from '@/components/organisms/introduction-section/design-engineer-vs-ux-engineer';
+import TechStack from '@/components/organisms/introduction/tech-stack';
+import WhatIsAUxEngineer from '@/components/organisms/introduction/what-is-a-ux-engineer';
+import UxDesigner from '@/components/organisms/introduction/ux-designer';
+import UxEngineer from '@/components/organisms/introduction/ux-engineer';
+import DesignEngineerVsUxEngineer from '@/components/organisms/introduction/design-engineer-vs-ux-engineer';
 
 export default function IntroductionSection() {
   return (
@@ -15,11 +15,11 @@ export default function IntroductionSection() {
       className="scroll-mt-24 space-y-8 px-4 md:scroll-mt-32"
       id="introduction"
     >
-      <div className="mx-auto w-full max-w-(--breakpoint-sm) space-y-6">
+      <div className="max-w-(--breakpoint-sm) mx-auto w-full space-y-6">
         <p>Hey there!</p>
 
         <h2 className="text-wrap">
-          <b className="mr-1.5 text-foreground">
+          <b className="text-foreground mr-1.5">
             My work is committed to the frontend. I like to create and build
             dynamic interfaces that are designed to be for a joyful and
             interactive web
@@ -45,7 +45,7 @@ export default function IntroductionSection() {
       </div>
 
       <div
-        className="mx-auto w-full max-w-(--breakpoint-sm)"
+        className="max-w-(--breakpoint-sm) mx-auto w-full"
         id="accordion-group"
       >
         <WhatIsAUxEngineer />

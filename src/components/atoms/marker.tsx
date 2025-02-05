@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 
-export default function Marker({
+export function Marker({
   variant = 'background',
   color = 'yellow',
   as = 'span',
@@ -61,7 +61,7 @@ export default function Marker({
             duration: 0.72
           }}
           className={cn(
-            'absolute -top-1 -left-2 -z-10 m-1 h-full opacity-0',
+            'absolute -left-2 -top-1 -z-10 m-1 h-full opacity-0',
             color === 'yellow' && 'bg-yellow-300',
             color === 'red' && 'bg-red-200',
             color === 'green' && 'bg-green-200',

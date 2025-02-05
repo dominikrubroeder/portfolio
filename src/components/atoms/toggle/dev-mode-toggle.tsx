@@ -1,7 +1,10 @@
-import Toggle from '@/components/atoms/toggle/toggle';
-import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
+'use client';
 
-export default function DevModeToggle() {
+import { Toggle } from '@/components/atoms/toggle';
+import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
+import { cn } from '@/lib/utils';
+
+export default function DevModeToggle({ className }: { className?: string }) {
   const { updateSearchParams, searchParams } = useUpdateSearchParams();
   const devMode = searchParams.get('devMode');
 
@@ -14,7 +17,7 @@ export default function DevModeToggle() {
           withValue: devMode ? 'false' : 'true'
         })
       }
-      className="absolute top-[3.75rem] right-4"
+      className={cn('shrink-0', className)}
       enabled={devMode === 'true'}
     />
   );

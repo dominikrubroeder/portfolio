@@ -25,7 +25,7 @@ export default function AccordionClean({
       >
         <ChevronRightIcon
           className={cn(
-            'size-5 shrink-0 text-primary transition',
+            'text-primary size-5 shrink-0 transition',
             open && 'rotate-90'
           )}
         />

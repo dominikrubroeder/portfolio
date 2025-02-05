@@ -1,9 +1,9 @@
-import Social from '@/components/organisms/social-section/social';
-import { socials } from '@/components/organisms/social-section/data';
+import Social from '@/components/organisms/socials/social';
+import { socials } from '@/components/organisms/socials/data';
 
 export default function SocialList() {
   return (
-    <ul className="no-scrollbar overflow-hidden overflow-x-auto pb-2 whitespace-nowrap">
+    <ul className="no-scrollbar overflow-hidden overflow-x-auto whitespace-nowrap pb-2">
       {socials.map((social) => (
         <li
           key={social.title}

@@ -12,4 +12,4 @@ export type ControlBarVisibility = 'collapsed' | 'expanded';
 
 export type ControlBarMobileMenuVisibility = 'visible' | 'invisible';
 
-export type ControlBarActiveSection = string | null;
+export type ControlBarActiveSection = number | null;

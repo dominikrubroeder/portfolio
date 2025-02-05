@@ -23,6 +23,7 @@ export interface ControlBar {
 }
 
 export interface ControlBarState {
+  activeSection: number;
   controlBarVisibility: ControlBarVisibility;
   mobileMenuVisibility: ControlBarMobileMenuVisibility;
 }

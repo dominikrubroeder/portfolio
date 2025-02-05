@@ -6,7 +6,7 @@ import ControlBarList from '@/components/molecules/control-bar/control-bar-list'
 import ControlBarMobileTrigger from '@/components/molecules/control-bar/control-bar-mobile-trigger';
 import ControlBarActionLeft from '@/components/molecules/control-bar/control-bar-action-left';
 import ControlBarActionRight from '@/components/molecules/control-bar/control-bar-action-right';
-import { useControlBar } from '@/hooks/useControlBar';
+import { useControlBar } from '@/components/molecules/control-bar/control-bar-context';
 
 export default function ControlBar({
   sections,
@@ -14,7 +14,7 @@ export default function ControlBar({
   leftControlAction,
   rightControlAction
 }: IControlBar) {
-  const { state, scrollIntoView, toggleMobileMenu, activeSection } =
+  const { state, toggleMobileMenu, activeSection, setActiveSection } =
     useControlBar(collapse);
 
   return (
@@ -28,9 +28,9 @@ export default function ControlBar({
 
       <ControlBarList
         sections={sections}
+        setActiveSection={setActiveSection}
         activeSection={activeSection}
         mobileMenu={state.mobileMenuVisibility}
-        scrollIntoView={scrollIntoView}
       />
 
       <ControlBarMobileTrigger toggleMobileMenu={toggleMobileMenu} />
