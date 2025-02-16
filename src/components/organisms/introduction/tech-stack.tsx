@@ -7,7 +7,7 @@ import MotionIcon from '@/components/atoms/svg/motion-icon';
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-const techStack = [
+export const techStack = [
   {
     href: 'https://react.dev',
     icon: <ReactIcon />,
@@ -44,7 +44,7 @@ export default function TechStack({ className }: { className?: string }) {
   return (
     <ul
       className={cn(
-        'max-w-(--breakpoint-sm) mx-auto flex w-full flex-wrap items-center gap-6',
+        'mx-auto flex w-full max-w-(--breakpoint-sm) flex-wrap items-center gap-6',
         className
       )}
     >

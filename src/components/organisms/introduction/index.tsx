@@ -3,11 +3,7 @@ import AccordionClean from '@/components/atoms/accordion-clean';
 import Vision from '@/components/organisms/introduction/vision';
 import Mindset from '@/components/organisms/introduction/mindset';
 import Books from '@/components/molecules/books';
-import TechStack from '@/components/organisms/introduction/tech-stack';
-import WhatIsAUxEngineer from '@/components/organisms/introduction/what-is-a-ux-engineer';
-import UxDesigner from '@/components/organisms/introduction/ux-designer';
-import UxEngineer from '@/components/organisms/introduction/ux-engineer';
-import DesignEngineerVsUxEngineer from '@/components/organisms/introduction/design-engineer-vs-ux-engineer';
+import ImageSlideIn from '@/components/atoms/ImageSlideIn';
 
 export default function IntroductionSection() {
   return (
@@ -15,11 +11,14 @@ export default function IntroductionSection() {
       className="scroll-mt-24 space-y-8 px-4 md:scroll-mt-32"
       id="introduction"
     >
-      <div className="max-w-(--breakpoint-sm) mx-auto w-full space-y-6">
-        <p>Hey there!</p>
+      <div className="mx-auto w-full max-w-(--breakpoint-sm) space-y-6">
+        <div className="flex items-center gap-2.5">
+          Hey there!
+          <ImageSlideIn />
+        </div>
 
         <h2 className="text-wrap">
-          <b className="text-foreground mr-1.5">
+          <b className="mr-1.5 text-foreground">
             My work is committed to the frontend. I like to create and build
             dynamic interfaces that are designed to be for a joyful and
             interactive web
@@ -38,20 +37,6 @@ export default function IntroductionSection() {
         <AccordionClean title="Books">
           <Books />
         </AccordionClean>
-
-        <AccordionClean title="My tech stack">
-          <TechStack />
-        </AccordionClean>
-      </div>
-
-      <div
-        className="max-w-(--breakpoint-sm) mx-auto w-full"
-        id="accordion-group"
-      >
-        <WhatIsAUxEngineer />
-        <UxDesigner />
-        <UxEngineer />
-        <DesignEngineerVsUxEngineer />
       </div>
     </section>
   );

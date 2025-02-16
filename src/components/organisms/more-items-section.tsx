@@ -7,10 +7,7 @@ import Brand from '@/components/atoms/brand';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 import ExperienceBar from '@/components/atoms/experience-bar';
-import ToolSearch from '@/components/atoms/tool-search';
 import { Tool } from '@/components/organisms/tools/types';
-import { ToolFilterSelect } from '@/components/atoms/select/tool-filter-select';
-import { ToolSortSelect } from '@/components/atoms/select/tool-sort-select';
 import { useSearchParams } from 'next/navigation';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 
@@ -36,34 +33,26 @@ export default function MoreItemsSection({
   );
 
   return (
-    <div className="scroll-mt-24 space-y-4 px-4 xl:ml-12" id="tools-list">
-      <div className="mx-auto flex w-full items-center justify-between gap-4 md:max-w-(--breakpoint-sm)">
-        <h3 className="flex flex-1 items-center justify-between gap-4">
-          I also work, plan to work or worked with
-          <span className="font-normal text-muted-foreground">
-            {length} more
-          </span>
-        </h3>
-
+    <div className="scroll-mt-24 space-y-8 px-4 xl:ml-12" id="tool-list">
+      <div className="block">
         <Button
-          variant="outline"
-          className="gap-3"
-          aria-label="Hide and show more items"
+          variant="primary"
+          className="mx-auto inline-flex justify-center"
           onClick={() => {
             setState((prevState) => {
               return { isVisible: !prevState.isVisible };
             });
 
-            scrollIntoView({ id: 'tools-list' });
+            scrollIntoView({ id: 'tool-list' });
           }}
         >
           {state.isVisible && (
-            <MinusIcon className="size-6 rounded-full bg-primary/10 p-1 text-primary" />
+            <MinusIcon className="size-6 text-primary-foreground" />
           )}
           {!state.isVisible && (
-            <PlusIcon className="size-6 rounded-full bg-primary p-1 text-primary-foreground" />
+            <PlusIcon className="size-6 text-primary-foreground" />
           )}
-          <span>{state.isVisible ? 'Done' : 'Show them'}</span>
+          I also work, plan to work or worked with {length} more
         </Button>
       </div>
 
@@ -72,14 +61,6 @@ export default function MoreItemsSection({
           className="mx-auto w-full space-y-8 md:max-w-(--breakpoint-sm)"
           id="tool-list"
         >
-          <div className="sticky z-10 flex items-center gap-2 lg:top-24">
-            <ToolSearch placeholder="Search tools ..." />
-
-            <ToolFilterSelect defaultValue={filter ?? undefined} />
-
-            <ToolSortSelect defaultValue={sorting ?? undefined} />
-          </div>
-
           <ul className="animate-fade-up-1rem space-y-8">
             {items
               .filter((item) =>

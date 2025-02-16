@@ -18,7 +18,7 @@ export default function ToolSearch({ placeholder }: { placeholder: string }) {
 
     if (term.trim() === '') return;
 
-    scrollIntoView({ id: 'tools-list' });
+    scrollIntoView({ id: 'tool-list' });
 
     updateSearchParams({
       withName: 'tool-search',

@@ -11,7 +11,7 @@ export default function VercelLogo({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultIconSize, className)}
     >
-      <g clip-path="url(#clip0_878_981)">
+      <g clipPath="url(#clip0_878_981)">
         <path d="M64 0L128 110.853H0L64 0Z" fill="black" />
       </g>
       <defs>

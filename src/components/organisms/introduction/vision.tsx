@@ -6,16 +6,29 @@ export default function Vision() {
     <div className="space-y-4">
       <p>
         As a UX Design Engineer, i am working for good user interfaces that
-        transport emotion and do care about the impact of design. I want the
-        user to enjoy their actions, feeling pleasant and delightful while
-        scrolling through the page, pursuing their actions with joyful ease.
+        cares about the impact of design. I want the user to enjoy their
+        actions, feeling pleasant and delightful while scrolling through the
+        page, pursuing their actions with joyful ease.
       </p>
 
       <p>
-        With smooth animations and transitions that support the user&apos;s
-        behaviour and provide guidance, the application should feel interactive,
-        yet stable. Supporting people to achieve their goals and intentions on
-        the site seamlessly.
+        When a brand, people related to the brand and their users can identify
+        and relate to the interface, it will be much likely be more appreciated
+        and accepted.
+      </p>
+
+      <p>
+        Smooth animations and transitions that support the user&apos;s behaviour
+        and provide guidance should feel interactive, yet stable. Supporting
+        people to achieve their goals and intentions on the site seamlessly.
+      </p>
+
+      <p>
+        I believe:
+        <i>
+          when the idea and the vision is clear, you can build the best product
+          possible, with the right people, and the right technology.
+        </i>
       </p>
 
       <p>
@@ -36,11 +49,6 @@ export default function Vision() {
           production
         </Link>
         applications.
-      </p>
-
-      <p>
-        I believe when the idea and the vision is clear, you can build the best
-        product possible, with the right people, and the right technology.
       </p>
     </div>
   );
