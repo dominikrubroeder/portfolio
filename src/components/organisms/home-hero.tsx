@@ -22,10 +22,13 @@ export default function HomeHero() {
             </p>
             <p>
               Connecting several systems together into one user interface is
-              something crucial and centric for me as a Design Engineer. Plus, i
-              love interfaces that just work and feel seamless, where it fit's
-              the use case and fulfills the purpose of the task. Together with a
-              little bit of psychology, we build a better user experience!
+              something crucial and centric for me as a Design Engineer.
+            </p>
+            <p>
+              Plus, i love interfaces that just work and feel seamless, where it
+              fit's the use case and fulfills the purpose of the task. Together
+              with a little bit of psychology, we build a better user
+              experience!
             </p>
           </div>
 

@@ -2,7 +2,7 @@ import IntroductionSection from '../components/organisms/introduction';
 import HomeHero from '@/components/organisms/home-hero';
 import ProjectSection from '@/components/organisms/project-section';
 import Tools from '@/components/organisms/tools/tools';
-import TechnologySection from '../components/organisms/technologies';
+import Technologies from '../components/organisms/technologies/technologies';
 import SocialSection from '../components/organisms/socials';
 import React from 'react';
 import ControlBar from '@/components/molecules/control-bar/control-bar';
@@ -12,8 +12,6 @@ import UxDesigner from '@/components/organisms/introduction/ux-designer';
 import UxEngineer from '@/components/organisms/introduction/ux-engineer';
 import DesignEngineerVsUxEngineer from '@/components/organisms/introduction/design-engineer-vs-ux-engineer';
 import Section from '@/components/organisms/section';
-import { techStack } from '@/components/organisms/introduction/tech-stack';
-import Button from '@/components/atoms/button';
 
 const sections: ControlBarSections = [
   {
@@ -70,31 +68,11 @@ export default function HomePage() {
 
         <IntroductionSection />
 
-        <div className="border-y px-4 py-8">
-          <ul className="mx-auto flex w-full flex-wrap gap-6">
-            {techStack.map((item) => (
-              <li key={item.title}>
-                <Button
-                  variant="secondary"
-                  href={item.href}
-                  className="[&>svg]:size-32"
-                  target="_blank"
-                  asLink
-                  ariaLabel={item.ariaLabel}
-                  title={item.title}
-                >
-                  {item.icon}
-                </Button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         <ProjectSection />
 
         <Tools />
 
-        <TechnologySection />
+        <Technologies />
 
         <SocialSection />
 

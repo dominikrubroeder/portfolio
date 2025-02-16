@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Technology } from '@/interfaces';
 import Button from '@/components/atoms/button';
 import Brand from '@/components/atoms/brand';
@@ -8,7 +8,6 @@ import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 import ExperienceBar from '@/components/atoms/experience-bar';
 import { Tool } from '@/components/organisms/tools/types';
-import { useSearchParams } from 'next/navigation';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 
 export default function MoreItemsSection({
@@ -20,41 +19,34 @@ export default function MoreItemsSection({
   const [state, setState] = useState<{ isVisible: boolean }>({
     isVisible: false
   });
-  const searchParams = useSearchParams();
-  const searchTerm = searchParams.get('tool-search')?.toLowerCase();
-  const filter = searchParams.get('tool-filter');
-  const sorting = searchParams.get('tool-sort');
 
-  const length = items.reduce(
-    (previousValue, currentValue, currentIndex, array) => {
-      return currentValue.children?.length + previousValue;
-    },
-    0
+  useEffect(
+    () =>
+      state.isVisible
+        ? scrollIntoView({ id: 'tool-list' })
+        : scrollIntoView({ id: 'tools' }),
+    [state.isVisible]
   );
 
   return (
     <div className="scroll-mt-24 space-y-8 px-4 xl:ml-12" id="tool-list">
-      <div className="block">
-        <Button
-          variant="primary"
-          className="mx-auto inline-flex justify-center"
-          onClick={() => {
-            setState((prevState) => {
-              return { isVisible: !prevState.isVisible };
-            });
-
-            scrollIntoView({ id: 'tool-list' });
-          }}
-        >
-          {state.isVisible && (
-            <MinusIcon className="size-6 text-primary-foreground" />
-          )}
-          {!state.isVisible && (
-            <PlusIcon className="size-6 text-primary-foreground" />
-          )}
-          I also work, plan to work or worked with {length} more
-        </Button>
-      </div>
+      <Button
+        variant="primary"
+        className="mx-auto inline-flex justify-center"
+        onClick={() => {
+          setState((prevState) => {
+            return { isVisible: !prevState.isVisible };
+          });
+        }}
+      >
+        {state.isVisible && (
+          <MinusIcon className="size-6 text-primary-foreground" />
+        )}
+        {!state.isVisible && (
+          <PlusIcon className="size-6 text-primary-foreground" />
+        )}
+        I also work, plan to work or worked with {length} more
+      </Button>
 
       {state.isVisible && (
         <div
@@ -63,31 +55,7 @@ export default function MoreItemsSection({
         >
           <ul className="animate-fade-up-1rem space-y-8">
             {items
-              .filter((item) =>
-                searchTerm
-                  ? item.children.some((nestedTool) =>
-                      nestedTool.title.toLowerCase().includes(searchTerm)
-                    )
-                  : item
-              )
-              .filter((item) =>
-                filter
-                  ? item.children.some((nestedTool) =>
-                      item.children.some((nestedTool) =>
-                        nestedTool.knowledge.toLowerCase().includes(filter)
-                      )
-                    )
-                  : item
-              )
               .sort((a, b) => {
-                if (sorting === 'a-z') {
-                  return a.group.localeCompare(b.group);
-                }
-
-                if (sorting === 'z-a') {
-                  return b.group.localeCompare(a.group);
-                }
-
                 return a.group.localeCompare(b.group);
               })
               .map((item) => (
@@ -99,18 +67,6 @@ export default function MoreItemsSection({
 
                     <ul className="space-y-5 rounded border p-4">
                       {item.children
-                        .filter((nestedItem) =>
-                          searchTerm
-                            ? nestedItem.title
-                                .toLowerCase()
-                                .includes(searchTerm)
-                            : nestedItem
-                        )
-                        .filter((item) =>
-                          filter
-                            ? item.knowledge.toLowerCase().includes(filter)
-                            : item
-                        )
                         .sort((a, b) => a.title.localeCompare(b.title))
                         .map((item, index) => (
                           <li key={index} className="relative flex gap-4">
@@ -151,6 +107,24 @@ export default function MoreItemsSection({
                 </li>
               ))}
           </ul>
+
+          <Button
+            variant="primary"
+            className="mx-auto inline-flex w-full justify-center"
+            onClick={() => {
+              setState((prevState) => {
+                return { isVisible: !prevState.isVisible };
+              });
+            }}
+          >
+            {state.isVisible && (
+              <MinusIcon className="size-6 text-primary-foreground" />
+            )}
+            {!state.isVisible && (
+              <PlusIcon className="size-6 text-primary-foreground" />
+            )}
+            Close
+          </Button>
         </div>
       )}
     </div>

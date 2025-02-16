@@ -4,6 +4,7 @@ import Vision from '@/components/organisms/introduction/vision';
 import Mindset from '@/components/organisms/introduction/mindset';
 import Books from '@/components/molecules/books';
 import ImageSlideIn from '@/components/atoms/ImageSlideIn';
+import TechStack from '@/components/organisms/introduction/tech-stack';
 
 export default function IntroductionSection() {
   return (
@@ -36,6 +37,10 @@ export default function IntroductionSection() {
 
         <AccordionClean title="Books">
           <Books />
+        </AccordionClean>
+
+        <AccordionClean title="My tech stack">
+          <TechStack />
         </AccordionClean>
       </div>
     </section>
