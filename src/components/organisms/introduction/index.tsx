@@ -27,7 +27,7 @@ export default function IntroductionSection() {
           – later on, native mobile apps might join that paradigm.
         </h2>
 
-        <AccordionClean title="More about my vision">
+        <AccordionClean title="More about my vision" open>
           <Vision />
         </AccordionClean>
 

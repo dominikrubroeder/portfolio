@@ -6,14 +6,16 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 export default function AccordionClean({
   title,
+  open,
   children,
   className
 }: {
   title: ReactNode;
+  open?: boolean;
   children: ReactNode;
   className?: string;
 }) {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(open);
 
   return (
     <div
@@ -21,18 +23,18 @@ export default function AccordionClean({
     >
       <button
         className="flex items-center gap-4"
-        onClick={() => setOpen((previousState) => !previousState)}
+        onClick={() => setIsOpen((previousState) => !previousState)}
       >
         <ChevronRightIcon
           className={cn(
             'size-5 shrink-0 text-primary transition',
-            open && 'rotate-90'
+            isOpen && 'rotate-90'
           )}
         />
         <p>{title}</p>
       </button>
 
-      {open && <div className="animate-fade-up">{children}</div>}
+      {isOpen && <div className="animate-fade-up">{children}</div>}
     </div>
   );
 }

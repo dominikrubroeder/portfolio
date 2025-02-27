@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Vision() {
   return (
-    <div className="space-y-4">
+    <div className="mb-8 space-y-4">
       <p>
         As a UX Design Engineer, i am working for good user interfaces that
         cares about the impact of design. I want the user to enjoy their
@@ -13,43 +13,69 @@ export default function Vision() {
 
       <p>
         When a brand, people related to the brand and their users can identify
-        and relate to the interface, it will be much likely be more appreciated
+        and relate to that interface, it will be much likely be more appreciated
         and accepted.
       </p>
 
       <p>
-        Smooth animations and transitions that support the user&apos;s behaviour
-        and provide guidance should feel interactive, yet stable. Supporting
-        people to achieve their goals and intentions on the site seamlessly.
+        In addition, the business and the business drivers are crucial for
+        making conscious and argumentative design decisions. And where to drive
+        and prioritize when it comes to feature implementation.
       </p>
 
-      <p>
-        I believe:
+      <div>
+        <p>
+          <b className="text-foreground">Animations and transitions</b>
+        </p>
+
+        <p>
+          Smooth animations and transitions that support the user&apos;s
+          behaviour and provide guidance should feel interactive, yet stable.
+          Supporting people to achieve their goals and intentions on the site
+          seamlessly.
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <b className="text-foreground">Vision claim</b>
+        </p>
+
         <i>
-          when the idea and the vision is clear, you can build the best product
-          possible, with the right people, and the right technology.
+          I believe: when the idea and the vision is clear, you can build the
+          best product possible, with the right people, and the right
+          technology.
         </i>
-      </p>
+      </div>
 
-      <p>
-        I like to use
-        <Link
-          href="https://lawsofux.com"
-          title="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
-          aria-label="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
-        >
-          psychological and design principles
-        </Link>
-        to build better and stable
-        <Link
-          href="https://nextjs.org/docs/app/building-your-application/deploying/production-checklist"
-          title="Open production checklist on the Next.js documenation"
-          aria-label="Open production checklist on the Next.js documenation"
-        >
-          production
-        </Link>
-        applications.
-      </p>
+      <div className="space-y-2">
+        <p>
+          <b className="text-foreground">Further links</b>
+        </p>
+
+        <ul className="ml-4 list-disc space-y-4 text-primary">
+          <li>
+            <Link
+              href="https://lawsofux.com"
+              title="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
+              aria-label="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
+              className="ml-0"
+            >
+              Psychological and design principles
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://nextjs.org/docs/app/building-your-application/deploying/production-checklist"
+              title="Open production checklist on the Next.js documenation"
+              aria-label="Open production checklist on the Next.js documenation"
+              className="ml-0"
+            >
+              Production checklist
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

@@ -7,8 +7,8 @@ export default function Technologies() {
   return (
     <Section id="technologies">
       <header className="space-y-2 px-4 xl:px-16">
-        <div className="inline-flex flex-wrap items-end gap-1">
-          <h2 className="text-3xl font-bold text-foreground">Technologies.</h2>
+        <div className="inline-flex flex-wrap items-end gap-4">
+          <h2 className="text-3xl font-bold text-foreground">Technologies:</h2>
           <p>
             Technologies are the foundation of building production ready code.
             For that:
