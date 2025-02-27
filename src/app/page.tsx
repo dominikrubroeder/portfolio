@@ -1,6 +1,6 @@
 import IntroductionSection from '../components/organisms/introduction';
 import HomeHero from '@/components/organisms/home-hero';
-import ProjectSection from '@/components/organisms/project-section';
+import Projects from '@/components/organisms/projects';
 import Tools from '@/components/organisms/tools/tools';
 import Technologies from '../components/organisms/technologies/technologies';
 import SocialSection from '../components/organisms/socials';
@@ -68,7 +68,7 @@ export default function HomePage() {
 
         <IntroductionSection />
 
-        <ProjectSection />
+        <Projects />
 
         <Tools />
 

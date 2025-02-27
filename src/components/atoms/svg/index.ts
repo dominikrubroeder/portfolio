@@ -7,7 +7,7 @@ export { default as StoryblokIcon } from './storyblok-icon';
 export { default as MiroIcon } from './miro-icon';
 export { default as MarkdownIcon } from './markdown-icon';
 export { default as ReactIcon } from './react-icon';
-export { default as NextJsIcon } from './next-js-icon';
+export { default as NextJsLogo } from './next-js-logo';
 export { default as HTMLIcon } from './html-icon';
 export { default as CSSIcon } from './css-icon';
 export { default as TailwindCssIcon } from './tailwind-css-icon';
@@ -25,5 +25,6 @@ export { default as SlackLogo } from './slack-logo';
 export { default as TeamsLogo } from './teams-logo';
 export { default as VercelLogo } from './vercel-logo';
 export { default as Shapes } from './shapes';
+export { default as FrontendMentorLogo } from './frontend-mentor-logo';
 
 export const defaultIconSize = 'size-8';

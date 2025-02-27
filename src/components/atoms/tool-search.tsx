@@ -34,7 +34,7 @@ export default function ToolSearch({ placeholder }: { placeholder: string }) {
       </label>
 
       <input
-        className="peer block h-11 w-full rounded-md border bg-background py-2 pl-10 font-semibold text-foreground placeholder:font-normal placeholder:text-muted-foreground focus:border-muted focus:outline-hidden"
+        className="peer block h-11 w-full rounded-md border bg-muted py-2 pl-10 font-semibold text-foreground placeholder:font-normal placeholder:text-muted-foreground focus:border-muted focus:outline-hidden"
         placeholder={placeholder}
         onChange={(e) => {
           handleSearch(e.target.value);

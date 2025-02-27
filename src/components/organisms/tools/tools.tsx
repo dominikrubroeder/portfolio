@@ -1,6 +1,5 @@
 import Section from '@/components/organisms/section';
-import { highlightTools, tools } from '@/components/organisms/tools/data';
-import MoreItemsSection from '@/components/organisms/more-items-section';
+import { highlightTools } from '@/components/organisms/tools/data';
 import Tool from '@/components/organisms/tools/tool';
 
 export default function Tools() {
@@ -29,8 +28,6 @@ export default function Tools() {
           </li>
         ))}
       </ul>
-
-      <MoreItemsSection items={tools} />
     </Section>
   );
 }

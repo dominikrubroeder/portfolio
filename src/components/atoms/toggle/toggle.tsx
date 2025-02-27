@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import { cn } from '@/lib/utils';
 
 export default function Toggle({
@@ -14,17 +14,14 @@ export default function Toggle({
   enabled?: boolean;
   onClick?: () => void;
 }) {
-  const [isEnabled, setIsEnabled] = useState(enabled);
-
   const handleOnClick = useCallback(() => {
-    setIsEnabled((prevState) => !prevState);
     onClick ? onClick() : null;
   }, []);
 
   return (
     <div
       className={cn(
-        'flex cursor-pointer select-none items-center gap-2',
+        'flex cursor-pointer items-center gap-2 select-none',
         className
       )}
       onClick={handleOnClick}
@@ -34,13 +31,13 @@ export default function Toggle({
       <div
         className={cn(
           'relative flex h-8 w-14 items-center rounded-full px-1 transition',
-          isEnabled ? 'bg-primary' : 'bg-muted'
+          enabled ? 'bg-primary' : 'bg-muted-hover'
         )}
       >
         <span
           className={cn(
-            'absolute size-6 rounded-full bg-white transition',
-            isEnabled ? 'translate-x-full' : 'translate-x-0'
+            'absolute size-6 rounded-full bg-primary-foreground transition',
+            enabled ? 'translate-x-full' : 'translate-x-0'
           )}
         ></span>
       </div>

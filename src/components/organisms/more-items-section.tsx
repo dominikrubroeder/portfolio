@@ -16,15 +16,17 @@ export default function MoreItemsSection({
   items: { group: string; children: (Tool | Technology)[] }[];
 }) {
   const { scrollIntoView } = useScrollIntoView();
-  const [state, setState] = useState<{ isVisible: boolean }>({
-    isVisible: false
+  const [state, setState] = useState<{ isVisible: undefined | boolean }>({
+    isVisible: undefined
   });
 
   useEffect(
     () =>
       state.isVisible
         ? scrollIntoView({ id: 'tool-list' })
-        : scrollIntoView({ id: 'tools' }),
+        : state.isVisible === false
+          ? scrollIntoView({ id: 'tools' })
+          : undefined,
     [state.isVisible]
   );
 

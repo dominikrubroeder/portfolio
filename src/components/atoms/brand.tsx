@@ -14,7 +14,7 @@ import {
   MarkdownIcon,
   MiroIcon,
   MotionIcon,
-  NextJsIcon,
+  NextJsLogo,
   NotesIcon,
   ReactIcon,
   SafariLogo,
@@ -30,6 +30,7 @@ import {
 } from '@/components/atoms/svg';
 
 import { AuthJsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
+import FrontendMentorLogo from '@/components/atoms/svg/frontend-mentor-logo';
 
 export default function Brand({
   brand,
@@ -67,7 +68,7 @@ export default function Brand({
       return <ReactIcon className={className} />;
 
     case 'Next.js':
-      return <NextJsIcon className={className} />;
+      return <NextJsLogo className={className} />;
 
     case 'TypeScript':
       return <TypescriptIcon className={className} />;
@@ -125,6 +126,12 @@ export default function Brand({
 
     case 'Vercel':
       return <VercelLogo className={className} />;
+
+    case 'frontendmentor.io':
+      return <FrontendMentorLogo className={className} />;
+
+    case 'Learn Next.js':
+      return <NextJsLogo className={className} />;
 
     default:
       return <div className={cn('rounded bg-muted', className)} />;

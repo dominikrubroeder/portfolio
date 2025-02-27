@@ -30,7 +30,7 @@ export default function ControlBarList({
   return (
     <div
       className={cn(
-        'no-scrollbar max-w-(--breakpoint-sm) bg-background absolute bottom-20 z-50 w-[95vw] items-center space-y-4 rounded-2xl border p-3 px-4 transition md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[85svw] md:gap-4 md:space-y-0 md:overflow-x-auto md:rounded-full lg:max-w-none',
+        'no-scrollbar absolute bottom-20 z-50 w-[95vw] max-w-(--breakpoint-sm) items-center space-y-4 rounded-2xl border bg-muted p-3 px-4 transition md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[85svw] md:gap-2 md:space-y-0 md:overflow-x-auto md:rounded-full lg:max-w-none',
         mobileMenu === 'invisible'
           ? 'invisible -translate-y-4'
           : 'visible translate-y-0'
@@ -40,8 +40,7 @@ export default function ControlBarList({
         <button
           key={section.id}
           className={cn(
-            'interactive hover:text-foreground group relative block select-none rounded-full px-3 py-1.5 transition md:inline-block',
-            section.className.includes('hidden') ? 'pr-4 md:pr-3' : 'pr-4',
+            'group relative block interactive rounded-full transition select-none hover:text-foreground md:inline-block',
             activeSection === index ? '' : 'hover:bg-muted'
           )}
           title={`Scroll to ${section.label} section`}
@@ -52,14 +51,14 @@ export default function ControlBarList({
           }}
         >
           {activeSection !== index && (
-            <div className="bg-muted invisible absolute inset-0 z-10 scale-50 rounded-full opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
+            <div className="invisible absolute inset-0 z-10 scale-50 rounded-full bg-muted opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
           )}
 
           {(activeSection === index ||
             (section.defaultActive && activeSection === null)) && (
             <motion.span
               layoutId="page-navigation"
-              className="bg-primary absolute inset-0 z-10"
+              className="absolute inset-0 z-10 bg-primary"
               style={{ borderRadius: 9999 }}
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
@@ -67,10 +66,10 @@ export default function ControlBarList({
 
           <div
             className={cn(
-              'relative z-20 flex w-auto cursor-pointer items-center gap-4 md:gap-2',
+              'relative z-20 flex w-auto cursor-pointer items-center gap-4 rounded-full px-3 py-2 hover:bg-black/6 md:gap-2',
               (activeSection === index ||
                 (section.defaultActive && activeSection === null)) &&
-                'text-white'
+                'text-white hover:bg-transparent'
             )}
           >
             <DynamicHeroIcon name={section.icon} className="size-5 shrink-0" />
@@ -82,7 +81,7 @@ export default function ControlBarList({
         </button>
       ))}
 
-      <div className="bg-muted sticky bottom-0 z-10 flex justify-end overflow-x-auto border-t p-4 pb-3.5 md:hidden">
+      <div className="sticky bottom-0 z-10 flex justify-end overflow-x-auto border-t bg-muted p-4 pb-3.5 md:hidden">
         <Button
           variant="secondary"
           href="https://github.com/dominikrubroeder"

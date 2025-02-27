@@ -5,6 +5,7 @@ import Footer from '@/components/molecules/footer';
 import { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ThemeProvider } from '@/components/organisms/app-context';
 
 export const metadata: Metadata = {
   title: 'UX Design Engineer | Dominik Rubröder',
@@ -14,14 +15,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth leading-[1.8]">
-      <body className="overflow-x-hidden bg-background font-normal text-muted-foreground">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+    <ThemeProvider>
+      <html
+        lang="en"
+        className="scroll-smooth bg-background leading-[1.8]"
+        data-theme="auto"
+      >
+        <body className="overflow-x-hidden font-normal text-muted-foreground">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }

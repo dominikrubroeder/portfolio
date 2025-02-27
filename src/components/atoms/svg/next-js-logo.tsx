@@ -1,7 +1,7 @@
 import { defaultIconSize } from '@/components/atoms/svg/index';
 import { cn } from '@/lib/utils';
 
-export default function NextJsIcon({ className }: { className?: string }) {
+export default function NextJsLogo({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"

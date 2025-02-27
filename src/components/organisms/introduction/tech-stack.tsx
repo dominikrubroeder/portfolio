@@ -1,6 +1,6 @@
 import Button from '@/components/atoms/button';
 import ReactIcon from '@/components/atoms/svg/react-icon';
-import NextJsIcon from '@/components/atoms/svg/next-js-icon';
+import NextJsLogo from '@/components/atoms/svg/next-js-logo';
 import TypescriptIcon from '@/components/atoms/svg/typescript-icon';
 import TailwindCssIcon from '@/components/atoms/svg/tailwind-css-icon';
 import MotionIcon from '@/components/atoms/svg/motion-icon';
@@ -16,7 +16,7 @@ export const techStack = [
   },
   {
     href: 'https://nextjs.org',
-    icon: <NextJsIcon />,
+    icon: <NextJsLogo />,
     title: 'Open Next.js landingpage',
     ariaLabel: 'Open Next.js landingpage'
   },

@@ -1,28 +1,25 @@
 'use client';
 
 import { Toggle } from '@/components/atoms/toggle';
-import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/components/organisms/app-context';
 
 export default function DesignModeToggle({
   className
 }: {
   className?: string;
 }) {
-  const { updateSearchParams, searchParams } = useUpdateSearchParams();
-  const designMode = searchParams.get('designMode');
+  const { theme, setTheme } = useTheme();
 
   return (
-    <Toggle
-      label="Design mode"
-      onClick={() =>
-        updateSearchParams({
-          withName: 'designMode',
-          withValue: designMode ? 'false' : 'true'
-        })
-      }
-      className={cn('shrink-0', className)}
-      enabled={designMode === 'true'}
-    />
+    <div className={cn('inline-grid gap-4 rounded border p-4', className)}>
+      <Toggle
+        label="Design mode"
+        onClick={() => {
+          setTheme('design');
+        }}
+        enabled={theme === 'design'}
+      />
+    </div>
   );
 }

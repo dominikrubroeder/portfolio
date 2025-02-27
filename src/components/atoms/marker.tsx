@@ -38,7 +38,8 @@ export function Marker({
             className={cn(
               'absolute inset-x-0 -bottom-2 -z-10 opacity-0',
               underlineSize ?? 'h-1',
-              color === 'yellow' && 'bg-yellow-300',
+              color === 'yellow' &&
+                'bg-signal-yellow text-signal-yellow-foreground',
               color === 'red' && 'bg-red-200',
               color === 'green' && 'bg-green-200',
               color === 'purple' && 'bg-purple-200',
@@ -61,8 +62,9 @@ export function Marker({
             duration: 0.72
           }}
           className={cn(
-            'absolute -left-2 -top-1 -z-10 m-1 h-full opacity-0',
-            color === 'yellow' && 'bg-yellow-300',
+            'absolute -top-1 -left-2 -z-10 m-1 h-full opacity-0',
+            color === 'yellow' &&
+              'bg-signal-yellow text-signal-yellow-foreground',
             color === 'red' && 'bg-red-200',
             color === 'green' && 'bg-green-200',
             color === 'purple' && 'bg-purple-200',
@@ -81,7 +83,8 @@ export function Marker({
           className={cn(
             'absolute -bottom-2 size-full w-full',
             underlineSize ?? 'h-1',
-            color === 'yellow' && 'bg-yellow-300',
+            color === 'yellow' &&
+              'bg-signal-yellow text-signal-yellow-foreground',
             color === 'red' && 'bg-red-200',
             color === 'green' && 'bg-green-200',
             color === 'purple' && 'bg-purple-200',
@@ -97,7 +100,7 @@ export function Marker({
     <Comp
       className={cn(
         'inline-block px-1',
-        color === 'yellow' && 'bg-yellow-300',
+        color === 'yellow' && 'bg-signal-yellow text-signal-yellow-foreground',
         color === 'red' && 'bg-red-200',
         color === 'green' && 'bg-green-200',
         color === 'purple' && 'bg-purple-200',

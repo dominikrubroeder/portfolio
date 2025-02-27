@@ -12,7 +12,7 @@ interface AnimatedProgressProps {
   animateProgress?: boolean;
   color?: 'text-primary' | string;
   strokeColor?: 'stroke-primary' | string;
-  backgroundColor?: 'bg-background' | string;
+  backgroundColor?: 'bg-muted' | string;
 }
 
 export default function AnimatedProgress({
