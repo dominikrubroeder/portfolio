@@ -1,9 +1,9 @@
-import IntroductionSection from '../components/organisms/introduction';
+import Introduction from '../components/organisms/introduction/introduction';
 import HomeHero from '@/components/organisms/home-hero';
 import Projects from '@/components/organisms/projects';
 import Tools from '@/components/organisms/tools/tools';
 import Technologies from '../components/organisms/technologies/technologies';
-import SocialSection from '../components/organisms/socials';
+import Socials from '../components/organisms/socials/socials';
 import React from 'react';
 import ControlBar from '@/components/molecules/control-bar/control-bar';
 import { ControlBarSections } from '@/types';
@@ -12,6 +12,7 @@ import UxDesigner from '@/components/organisms/introduction/ux-designer';
 import UxEngineer from '@/components/organisms/introduction/ux-engineer';
 import DesignEngineerVsUxEngineer from '@/components/organisms/introduction/design-engineer-vs-ux-engineer';
 import Section from '@/components/organisms/section';
+import ShapesBackground from '@/components/atoms/shapes-background';
 
 const sections: ControlBarSections = [
   {
@@ -61,12 +62,14 @@ const sections: ControlBarSections = [
 export default function HomePage() {
   return (
     <div className="animate-fade-up-1rem">
+      <ShapesBackground />
+
       <HomeHero />
 
       <div className="space-y-32">
         <ControlBar sections={sections} collapse={false} />
 
-        <IntroductionSection />
+        <Introduction />
 
         <Projects />
 
@@ -74,11 +77,11 @@ export default function HomePage() {
 
         <Technologies />
 
-        <SocialSection />
+        <Socials />
 
         <Section>
           <div
-            className="mx-auto w-full max-w-(--breakpoint-sm)"
+            className="mx-auto w-full px-4 sm:max-w-(--breakpoint-sm)"
             id="accordion-group"
           >
             <WhatIsAUxEngineer />

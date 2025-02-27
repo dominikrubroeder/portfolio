@@ -53,7 +53,7 @@ export default function Vision() {
           <b className="text-foreground">Further links</b>
         </p>
 
-        <ul className="ml-4 list-disc space-y-4 text-primary">
+        <ul className="ml-4 list-disc space-y-4">
           <li>
             <Link
               href="https://lawsofux.com"

@@ -9,9 +9,9 @@ export default function HomeHero() {
   return (
     <section
       id="hero"
-      className="mx-auto flex max-w-(--breakpoint-sm) items-center justify-center space-y-4 px-4 pt-8 pb-14 lg:min-h-[78svh] lg:px-0"
+      className="mx-auto flex items-center justify-center space-y-4 border bg-background px-4 pt-8 pb-14 lg:min-h-[78svh] lg:px-0"
     >
-      <div className="space-y-6">
+      <div className="space-y-6 sm:max-w-(--breakpoint-sm)">
         <div className="space-y-3 space-x-4">
           <AutoModeToggle className="inline-flex" />
           <DesignModeToggle />

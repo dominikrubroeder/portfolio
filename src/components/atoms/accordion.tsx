@@ -19,7 +19,7 @@ export default function Accordion({
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const scrollIntoViewAction = useCallback(
+  const handleScroll = useCallback(
     () =>
       ref.current?.scrollIntoView({
         behavior: 'smooth',
@@ -29,13 +29,13 @@ export default function Accordion({
   );
 
   useEffect(() => {
-    open ? scrollIntoViewAction() : null;
-  }, [open, scrollIntoViewAction]);
+    open ? handleScroll() : null;
+  }, [open, handleScroll]);
 
   return (
     <div
       ref={ref}
-      className={cn('scroll-mt-20 pt-4 md:scroll-mt-24', className)}
+      className={cn('scroll-mt-24 pt-4 md:scroll-mt-24', className)}
     >
       <div
         className="group sticky top-24 z-10 mx-auto flex cursor-pointer items-center justify-between gap-4 overflow-hidden rounded-2xl bg-muted px-4 py-3 leading-[1.6] text-primary transition-all select-none md:relative md:top-0"

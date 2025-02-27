@@ -5,6 +5,8 @@ import Button from '@/components/atoms/button';
 import ExperienceBar from '@/components/atoms/experience-bar';
 import { Tool as ToolType } from '@/components/organisms/tools/types';
 import { CertificateDrawer } from '@/components/organisms/certificate-drawer';
+import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
+import React from 'react';
 
 export default function Tool({
   tool,
@@ -22,6 +24,8 @@ export default function Tool({
         title={`Go to ${tool.title} website`}
         aria-label={`Go to ${tool.title} website`}
       >
+        <DevModeLabel className="z-10">div | slider-item.tsx</DevModeLabel>
+
         <Brand
           brand={tool.title}
           className="h-32 w-auto"

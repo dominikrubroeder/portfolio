@@ -5,14 +5,17 @@ import Mindset from '@/components/organisms/introduction/mindset';
 import Books from '@/components/molecules/books';
 import ImageSlideIn from '@/components/atoms/ImageSlideIn';
 import TechStack from '@/components/organisms/introduction/tech-stack';
+import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
 
-export default function IntroductionSection() {
+export default function Introduction() {
   return (
     <section
       className="scroll-mt-24 space-y-8 px-4 md:scroll-mt-32"
       id="introduction"
     >
-      <div className="mx-auto w-full max-w-(--breakpoint-sm) space-y-6">
+      <div className="relative mx-auto w-full space-y-6 rounded border bg-background px-4 py-4 sm:max-w-(--breakpoint-sm)">
+        <DevModeLabel>div | introduction.tsx</DevModeLabel>
+
         <div className="flex items-center gap-2.5">
           Hey there!
           <ImageSlideIn />
@@ -27,21 +30,31 @@ export default function IntroductionSection() {
           – later on, native mobile apps might join that paradigm.
         </h2>
 
-        <AccordionClean title="More about my vision" open>
-          <Vision />
-        </AccordionClean>
+        <ul className="space-y-6">
+          <li>
+            <AccordionClean title="More about my vision" open>
+              <Vision />
+            </AccordionClean>
+          </li>
 
-        <AccordionClean title="Things i like">
-          <Mindset />
-        </AccordionClean>
+          <li>
+            <AccordionClean title="Things i like">
+              <Mindset />
+            </AccordionClean>
+          </li>
 
-        <AccordionClean title="Books">
-          <Books />
-        </AccordionClean>
+          <li>
+            <AccordionClean title="Books">
+              <Books />
+            </AccordionClean>
+          </li>
 
-        <AccordionClean title="My tech stack">
-          <TechStack />
-        </AccordionClean>
+          <li>
+            <AccordionClean title="My tech stack">
+              <TechStack />
+            </AccordionClean>
+          </li>
+        </ul>
       </div>
     </section>
   );

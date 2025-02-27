@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header
       id="header"
-      className="sticky top-0 z-max border-b bg-muted md:relative md:py-4 xl:px-0"
+      className="sticky top-0 z-max border-b bg-muted py-1 md:relative md:py-4 xl:px-0"
     >
       <div className="mx-auto flex max-w-(--breakpoint-xl) items-center justify-between gap-4 p-4 sm:py-2">
         <div className="flex items-center gap-4">

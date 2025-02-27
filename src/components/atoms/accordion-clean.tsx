@@ -19,7 +19,10 @@ export default function AccordionClean({
 
   return (
     <div
-      className={cn('max-w-(--breakpoint-sm) space-y-4 sm:mx-auto', className)}
+      className={cn(
+        'space-y-4 sm:mx-auto sm:max-w-(--breakpoint-sm)',
+        className
+      )}
     >
       <button
         className="flex items-center gap-4"
