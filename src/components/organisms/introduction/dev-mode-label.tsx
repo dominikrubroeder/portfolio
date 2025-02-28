@@ -19,10 +19,10 @@ export default function DevModeLabel({
   if (theme !== 'dev') return null;
 
   return (
-    <motion.div className={cn('absolute inset-0', className)}>
+    <motion.div className={cn('absolute inset-0 -z-10', className)}>
       <div
         className={cn(
-          'absolute -top-4 right-0 w-max shrink-0 rounded-t bg-primary px-2 text-xs text-primary-foreground',
+          'absolute -top-4.5 right-0 w-max shrink-0 rounded-t bg-primary px-2 text-xs text-primary-foreground',
           classNameLabel
         )}
       >

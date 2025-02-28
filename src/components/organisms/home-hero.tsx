@@ -25,7 +25,7 @@ export default function HomeHero() {
         <div className="space-y-8">
           <div className="mx-1 space-y-2 text-xl leading-relaxed font-bold text-primary">
             <p>
-              Passionate about creating and building applications for the web.
+              Passionate about designing and building applications for the web.
             </p>
             <p>
               Connecting several systems together into one user interface is

@@ -10,7 +10,7 @@ import ExperienceBar from '@/components/atoms/experience-bar';
 import { Tool } from '@/components/organisms/tools/types';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 
-export default function MoreItemsSection({
+export default function MoreItems({
   items
 }: {
   items: { group: string; children: (Tool | Technology)[] }[];
@@ -47,15 +47,30 @@ export default function MoreItemsSection({
         {!state.isVisible && (
           <PlusIcon className="size-6 text-primary-foreground" />
         )}
-        I also work, plan to work or worked with {length} more
+        I also work, plan to work or worked with {items.length} more
       </Button>
 
       {state.isVisible && (
-        <div
-          className="mx-auto w-full space-y-8 md:max-w-(--breakpoint-sm)"
-          id="tool-list"
-        >
-          <ul className="animate-fade-up-1rem space-y-8">
+        <div className="mx-auto w-full space-y-6" id="tool-list">
+          <p className="flex items-center gap-4">
+            <div className="rounded border p-4">
+              <StarIcon className="size-5 text-primary" />
+            </div>
+            <span>Favorites (Daily usage)</span>
+          </p>
+
+          <p className="flex gap-4">
+            <div className="space-y-2 rounded border p-4">
+              <ExperienceBar progress="Daily" />
+              <ExperienceBar progress="Professional" />
+              <ExperienceBar progress="Experienced" />
+              <ExperienceBar progress="Used" />
+              <ExperienceBar progress="Not started" />
+            </div>
+            <span className="pt-4">Level of experience</span>
+          </p>
+
+          <ul className="grid animate-fade-up-1rem gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
             {items
               .sort((a, b) => {
                 return a.group.localeCompare(b.group);
@@ -112,7 +127,7 @@ export default function MoreItemsSection({
 
           <Button
             variant="primary"
-            className="mx-auto inline-flex w-full justify-center"
+            className="mx-auto inline-flex"
             onClick={() => {
               setState((prevState) => {
                 return { isVisible: !prevState.isVisible };

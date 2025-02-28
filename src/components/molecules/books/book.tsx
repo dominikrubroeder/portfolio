@@ -6,10 +6,10 @@ export default function Book({ book }: { book: Book }) {
     <div className="flex gap-4 py-1">
       <AnimatedProgress size={32} strokeWidth={5} progress={book.progress} />
       <div className="space-x-2">
-        <span>{book.title}</span>
+        <b className="text-foreground">{book.title}</b>
         <span>–</span>
         <span>
-          <i>{book.author}</i>
+          <i>by {book.author}</i>
         </span>
       </div>
     </div>

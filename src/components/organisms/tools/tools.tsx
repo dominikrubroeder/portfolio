@@ -1,6 +1,7 @@
 import Section from '@/components/organisms/section';
-import { highlightTools } from '@/components/organisms/tools/data';
+import { highlightTools, tools } from '@/components/organisms/tools/data';
 import Tool from '@/components/organisms/tools/tool';
+import MoreItems from '@/components/organisms/more-items';
 
 export default function Tools() {
   return (
@@ -19,16 +20,18 @@ export default function Tools() {
         </p>
       </header>
 
-      <ul className="no-scrollbar overflow-hidden overflow-x-auto pb-2 whitespace-nowrap">
+      <ul className="no-scrollbar space-x-8 overflow-hidden overflow-x-auto pb-2 whitespace-nowrap">
         {highlightTools.map((tool, index) => (
           <li
             key={tool.title}
-            className="mr-8 inline-block first-of-type:ml-4 xl:first-of-type:ml-16"
+            className="inline-flex first-of-type:ml-4 xl:first-of-type:ml-16"
           >
-            <Tool tool={tool} isFirstItemInList={index === 0} />
+            <Tool tool={tool} />
           </li>
         ))}
       </ul>
+
+      <MoreItems items={tools} />
     </Section>
   );
 }

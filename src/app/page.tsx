@@ -12,7 +12,7 @@ import UxDesigner from '@/components/organisms/introduction/ux-designer';
 import UxEngineer from '@/components/organisms/introduction/ux-engineer';
 import DesignEngineerVsUxEngineer from '@/components/organisms/introduction/design-engineer-vs-ux-engineer';
 import Section from '@/components/organisms/section';
-import ShapesBackground from '@/components/atoms/shapes-background';
+import DesignModeBackground from '@/components/atoms/design-mode-background';
 
 const sections: ControlBarSections = [
   {
@@ -62,7 +62,7 @@ const sections: ControlBarSections = [
 export default function HomePage() {
   return (
     <div className="animate-fade-up-1rem">
-      <ShapesBackground />
+      <DesignModeBackground />
 
       <HomeHero />
 

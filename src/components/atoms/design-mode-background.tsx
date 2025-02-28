@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { Shapes } from '@/components/atoms/svg';
 import { useTheme } from '@/components/organisms/app-context';
 
-export default function ShapesBackground() {
+export default function DesignModeBackground() {
   const { theme } = useTheme();
 
   if (theme !== 'design') return null;

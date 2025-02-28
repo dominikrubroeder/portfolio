@@ -23,7 +23,6 @@ export default function Mindset({ className }: { className?: string }) {
       <li>Writing documentation</li>
       <li>Working for good Brands, Products or Services</li>
       <li>Bringing an idea from paper to production</li>
-      <li>Refining a feature to specific needs</li>
       <li>
         Pen and Paper: Fast sketching and scribbling improves visualizing ideas
         faster. We can also turn back to them later, when something else blocks

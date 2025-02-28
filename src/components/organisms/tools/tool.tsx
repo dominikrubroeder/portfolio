@@ -4,19 +4,32 @@ import Brand from '@/components/atoms/brand';
 import Button from '@/components/atoms/button';
 import ExperienceBar from '@/components/atoms/experience-bar';
 import { Tool as ToolType } from '@/components/organisms/tools/types';
-import { CertificateDrawer } from '@/components/organisms/certificate-drawer';
 import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
 import React from 'react';
+import { cn } from '@/lib/utils';
 
-export default function Tool({
-  tool,
-  isFirstItemInList
-}: {
-  tool: ToolType;
-  isFirstItemInList: boolean;
-}) {
+export default function Tool({ tool }: { tool: ToolType }) {
   return (
-    <div className="group relative w-80 space-y-6">
+    <div className="group relative w-80 space-y-6 text-center whitespace-normal">
+      <div
+        className={cn(
+          'absolute top-4 right-4 z-10 text-center transition sm:invisible sm:translate-y-4 sm:opacity-0 sm:group-hover:visible sm:group-hover:translate-y-0 sm:group-hover:opacity-100'
+        )}
+      >
+        <Button
+          variant="secondary"
+          href={tool.website}
+          target="_blank"
+          title={`Go to external ${tool.title} website`}
+          aria-label={`Go to external ${tool.title} website`}
+          className="mx-auto min-h-11 min-w-11 shrink-0"
+          asLink
+        >
+          <span className="sr-only">Open</span>
+          <ArrowTopRightOnSquareIcon className="size-5 transition group-hover:text-foreground" />
+        </Button>
+      </div>
+
       <Link
         href={tool.website}
         className="relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
@@ -38,61 +51,22 @@ export default function Tool({
         />
       </Link>
 
-      <div className="mx-auto w-max rounded-3xl border px-3 py-2 font-bold text-foreground">
+      <div className="mx-auto inline-flex rounded-3xl border px-3 py-2 font-bold text-foreground">
         {tool.type}
       </div>
 
-      <div className="h-20">
-        <div className="mx-auto flex items-center justify-center gap-1">
-          <Link
-            href={tool.website}
-            className="font-bold text-foreground"
-            target="_blank"
-            title={`Go to external ${tool.title} website`}
-            aria-label={`Go to external ${tool.title} website`}
-          >
-            <h2>{tool.title}</h2>
-          </Link>
-
-          {tool.certificate && (
-            <CertificateDrawer
-              title={tool.title}
-              certificate={tool.certificate}
-              certificateTitle={tool.certificateTitle}
-              certificateDescription={tool.certificateDescription}
-              certificateMaterial={tool.certificateMaterial}
-            />
-          )}
-        </div>
-
-        <p className="line-clamp-2 text-center italic">{tool.description}</p>
-      </div>
-
-      <div
-        className={`${
-          isFirstItemInList
-            ? 'visible translate-y-0 opacity-100'
-            : 'sm:invisible sm:translate-y-4 sm:opacity-0'
-        } text-center transition sm:group-hover:visible sm:group-hover:translate-y-0 sm:group-hover:opacity-100`}
-      >
-        <Button
-          variant="secondary"
-          asLink
+      <div>
+        <Link
           href={tool.website}
+          className="mx-auto inline-flex items-center justify-center gap-1 font-bold text-foreground"
           target="_blank"
           title={`Go to external ${tool.title} website`}
           aria-label={`Go to external ${tool.title} website`}
-          className="mx-auto"
         >
-          <span className="sr-only">Open</span>
-          <ArrowTopRightOnSquareIcon
-            className={`${
-              isFirstItemInList
-                ? 'text-foreground'
-                : 'group-hover:text-foreground'
-            } size-5 transition`}
-          />
-        </Button>
+          <h2>{tool.title}</h2>
+        </Link>
+
+        <p className="text-center italic">{tool.description}</p>
       </div>
     </div>
   );
