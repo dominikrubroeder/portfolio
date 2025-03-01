@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Technology } from '@/interfaces';
 import Button from '@/components/atoms/button';
 import Brand from '@/components/atoms/brand';
@@ -9,6 +9,7 @@ import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 import ExperienceBar from '@/components/atoms/experience-bar';
 import { Tool } from '@/components/organisms/tools/types';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
+import Expandable from '@/components/molecules/expandable';
 
 export default function MoreItems({
   items
@@ -20,56 +21,77 @@ export default function MoreItems({
     isVisible: undefined
   });
 
+  const count = useMemo(
+    () =>
+      items.reduce((acc, item) => {
+        if (item.children) {
+          acc += item.children.length;
+        }
+
+        return acc;
+      }, 0),
+    []
+  );
+
   useEffect(
     () =>
       state.isVisible
         ? scrollIntoView({ id: 'tool-list' })
         : state.isVisible === false
-          ? scrollIntoView({ id: 'tools' })
+          ? scrollIntoView({ id: 'tool-list-trigger' })
           : undefined,
     [state.isVisible]
   );
 
   return (
-    <div className="scroll-mt-24 space-y-8 px-4 xl:ml-12" id="tool-list">
-      <Button
-        variant="primary"
-        className="mx-auto inline-flex justify-center"
-        onClick={() => {
-          setState((prevState) => {
-            return { isVisible: !prevState.isVisible };
-          });
-        }}
-      >
+    <div className="scroll-mt-28 space-y-8 px-4 xl:ml-12" id="tool-list">
+      <div className="flex w-full flex-wrap justify-between gap-6 md:gap-8">
+        <Button
+          variant="primary"
+          className="inline-flex scroll-mt-28 self-start"
+          onClick={() => {
+            setState((prevState) => {
+              return { isVisible: !prevState.isVisible };
+            });
+          }}
+          id="tool-list-trigger"
+        >
+          {state.isVisible && (
+            <MinusIcon className="size-6 text-primary-foreground" />
+          )}
+          {!state.isVisible && (
+            <PlusIcon className="size-6 text-primary-foreground" />
+          )}
+          I also work, plan to work or worked with {count} more
+        </Button>
+
         {state.isVisible && (
-          <MinusIcon className="size-6 text-primary-foreground" />
+          <div className="animate-fade-up-1rem space-y-4 md:flex md:items-start md:gap-8 md:space-y-0">
+            <div className="flex items-center gap-4">
+              <div className="rounded border p-4">
+                <StarIcon className="size-5 text-primary" />
+              </div>
+              <span>Favorites (= daily usage)</span>
+            </div>
+
+            <div className="flex gap-4">
+              <Expandable
+                className="space-y-2"
+                alwaysVisible={<ExperienceBar progress="Daily" />}
+              >
+                <ExperienceBar progress="Professional" />
+                <ExperienceBar progress="Experienced" />
+                <ExperienceBar progress="Used" />
+                <ExperienceBar progress="Not started" />
+              </Expandable>
+              <span className="pt-4">Level of experience</span>
+            </div>
+          </div>
         )}
-        {!state.isVisible && (
-          <PlusIcon className="size-6 text-primary-foreground" />
-        )}
-        I also work, plan to work or worked with {items.length} more
-      </Button>
+      </div>
 
       {state.isVisible && (
         <div className="mx-auto w-full space-y-6" id="tool-list">
-          <p className="flex items-center gap-4">
-            <div className="rounded border p-4">
-              <StarIcon className="size-5 text-primary" />
-            </div>
-            <span>Favorites (Daily usage)</span>
-          </p>
-
-          <p className="flex gap-4">
-            <div className="space-y-2 rounded border p-4">
-              <ExperienceBar progress="Daily" />
-              <ExperienceBar progress="Professional" />
-              <ExperienceBar progress="Experienced" />
-              <ExperienceBar progress="Used" />
-              <ExperienceBar progress="Not started" />
-            </div>
-            <span className="pt-4">Level of experience</span>
-          </p>
-
           <ul className="grid animate-fade-up-1rem gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
             {items
               .sort((a, b) => {

@@ -12,6 +12,7 @@ export default function Button({
   ariaLabel,
   target,
   disabled,
+  id,
   onClick
 }: {
   variant: 'primary' | 'secondary' | 'outline';
@@ -23,6 +24,7 @@ export default function Button({
   ariaLabel?: string;
   target?: HTMLAttributeAnchorTarget;
   disabled?: boolean;
+  id?: string;
   onClick?: () => void;
 }) {
   const classNames = cn(
@@ -42,6 +44,7 @@ export default function Button({
         target="_blank"
         rel="noopener noreferrer"
         className={classNames}
+        id={id}
       >
         {children}
       </a>
@@ -56,6 +59,7 @@ export default function Button({
         target={href.includes('https') ? '_blank' : target}
         title={title}
         aria-label={ariaLabel}
+        id={id}
       >
         {children}
       </Link>
@@ -68,6 +72,7 @@ export default function Button({
       aria-label={ariaLabel}
       disabled={disabled}
       onClick={onClick}
+      id={id}
     >
       {children}
     </button>

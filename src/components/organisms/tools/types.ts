@@ -10,12 +10,5 @@ export interface Tool {
   description: string;
   website: string;
   logo: string;
-  type: string;
   knowledge: Knowledge;
-  for?: string[];
-  certificate?: string;
-  certificateTitle?: string;
-  certificateDescription?: string;
-  certificateMaterial?: string;
-  searchKeywords: string[];
 }

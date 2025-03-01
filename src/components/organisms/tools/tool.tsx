@@ -8,7 +8,13 @@ import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-export default function Tool({ tool }: { tool: ToolType }) {
+export default function Tool({
+  tool,
+  group
+}: {
+  tool: ToolType;
+  group: string;
+}) {
   return (
     <div className="group relative w-80 space-y-6 text-center whitespace-normal">
       <div
@@ -47,12 +53,12 @@ export default function Tool({ tool }: { tool: ToolType }) {
 
         <ExperienceBar
           progress={tool.knowledge}
-          className="absolute right-5 bottom-4"
+          className="absolute right-5 bottom-4 text-right"
         />
       </Link>
 
       <div className="mx-auto inline-flex rounded-3xl border px-3 py-2 font-bold text-foreground">
-        {tool.type}
+        {group}
       </div>
 
       <div>
