@@ -10,7 +10,7 @@ export default function DesignModeBackground() {
   if (theme !== 'design') return null;
 
   return (
-    <motion.div animate={{ scale: [0.8, 1] }} className="absolute top-96 -z-10">
+    <motion.div animate={{ scale: [0.8, 1] }} className="absolute top-96 -z-20">
       <Shapes />
     </motion.div>
   );

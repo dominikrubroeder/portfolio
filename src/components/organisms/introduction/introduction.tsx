@@ -3,7 +3,7 @@ import AccordionClean from '@/components/atoms/accordion-clean';
 import Vision from '@/components/organisms/introduction/vision';
 import Mindset from '@/components/organisms/introduction/mindset';
 import Books from '@/components/molecules/books';
-import ImageSlideIn from '@/components/atoms/ImageSlideIn';
+import ImageSlideIn from '@/components/atoms/image-slide-in';
 import TechStack from '@/components/organisms/introduction/tech-stack';
 import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
 import Animate from '@/components/organisms/animate';

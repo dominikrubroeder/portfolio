@@ -11,8 +11,8 @@ export default function Social({
   className?: string;
 }) {
   return (
-    <div className={cn('group w-80 space-y-6 whitespace-normal', className)}>
-      <div className="relative mx-auto size-80 interactive rounded-xl border transition group-hover:bg-muted">
+    <div className={cn('group w-80 space-y-6 text-center', className)}>
+      <div className="relative mx-auto size-80 interactive rounded-xl border text-center transition group-hover:bg-muted">
         <Link
           href={social.website}
           className="absolute inset-0 flex size-full cursor-pointer items-center justify-center"

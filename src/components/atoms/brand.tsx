@@ -88,7 +88,7 @@ export default function Brand({
     case 'Tailwind CSS':
       return <TailwindCssIcon className={className} />;
 
-    case 'Motion (formerly Framer Motion)':
+    case 'motion (formerly framer-motion)':
       return <MotionIcon className={className} />;
 
     case 'Auth.js':

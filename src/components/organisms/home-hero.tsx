@@ -1,5 +1,4 @@
 import React from 'react';
-import { Marker } from '@/components/atoms/marker';
 import ButtonScrollToIntroduction from '@/components/atoms/button-scroll-to-introduction';
 import ButtonContactMe from '@/components/atoms/button-contact-me';
 import { DesignModeToggle, DevModeToggle } from '@/components/atoms/toggle';
@@ -18,9 +17,7 @@ export default function HomeHero() {
           <DevModeToggle />
         </div>
 
-        <h2 className="text-7xl font-bold text-foreground">
-          Team <Marker animate>Frontend</Marker>.
-        </h2>
+        <h2 className="text-7xl font-bold text-foreground">Team Frontend.</h2>
 
         <div className="space-y-8">
           <div className="mx-1 space-y-2 text-xl leading-relaxed font-bold text-primary">

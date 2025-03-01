@@ -2,18 +2,6 @@ import { Technology } from '@/interfaces';
 
 export const technologies: { group: string; children: Technology[] }[] = [
   {
-    group: 'Library',
-    children: [
-      {
-        title: 'React',
-        website: 'https://react.dev/',
-        logo: 'https://dominikrubroeder.dev/react.png',
-        description: 'The library for web and native user interfaces',
-        knowledge: 'Daily'
-      }
-    ]
-  },
-  {
     group: 'Full-Stack Framework',
     children: [
       {
@@ -86,7 +74,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
     ]
   },
   {
-    group: 'Style Sheet Language',
+    group: 'Style Sheet Language + Framework',
     children: [
       {
         title: 'CSS',
@@ -94,18 +82,25 @@ export const technologies: { group: string; children: Technology[] }[] = [
         logo: 'https://dominikrubroeder.dev/css.png',
         description: 'The language we use to style an HTML document.',
         knowledge: 'Daily'
-      }
-    ]
-  },
-  {
-    group: 'CSS Framework',
-    children: [
+      },
       {
         title: 'Tailwind CSS',
         website: 'https://tailwindcss.com/',
         logo: 'https://dominikrubroeder.dev/tailwind.png',
         description:
           'Rapidly build modern websites without ever leaving your HTML.',
+        knowledge: 'Daily'
+      }
+    ]
+  },
+  {
+    group: 'Animation Library',
+    children: [
+      {
+        title: 'motion (formerly framer-motion)',
+        description: 'A modern animation library for JavaScript and React',
+        website: 'https://motion.dev/',
+        logo: '',
         knowledge: 'Daily'
       }
     ]
@@ -142,36 +137,12 @@ export const technologies: { group: string; children: Technology[] }[] = [
     ]
   },
   {
-    group: 'Island-Based Framework',
-    children: [
-      {
-        title: 'Astro',
-        description: 'The web framework for content-driven websites',
-        website: 'https://astro.build/',
-        logo: '',
-        knowledge: 'Not started'
-      }
-    ]
-  },
-  {
-    group: 'Static Site Generator',
-    children: [
-      {
-        title: 'Gatsby',
-        description: '',
-        website: '',
-        logo: '',
-        knowledge: 'Not started'
-      }
-    ]
-  },
-  {
     group: 'Build Tool',
     children: [
       {
         title: 'Vite',
         description: '',
-        website: '',
+        website: 'https://vite.dev/',
         logo: '',
         knowledge: 'Not started'
       }
@@ -181,47 +152,53 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Framework + Library',
     children: [
       {
+        title: 'React',
+        website: 'https://react.dev/',
+        logo: 'https://dominikrubroeder.dev/react.png',
+        description: 'The library for web and native user interfaces',
+        knowledge: 'Daily'
+      },
+      {
         title: 'Vue.js',
         description: '',
         website: '',
         logo: '',
         knowledge: 'Experienced'
-      }
-    ]
-  },
-  {
-    group: 'Microframework',
-    children: [
+      },
       {
         title: 'Nue.js',
         description: '',
         website: 'https://nuejs.org/',
         logo: '',
-        knowledge: 'Experienced'
-      }
-    ]
-  },
-  {
-    group: 'Compiler + Framework',
-    children: [
+        knowledge: 'Not started'
+      },
       {
         title: 'Svelte',
         description: 'web development for the rest of us',
         website: 'https://svelte.dev/',
         logo: '',
-        knowledge: 'Experienced'
-      }
-    ]
-  },
-  {
-    group: 'UI Framework',
-    children: [
+        knowledge: 'Used'
+      },
       {
         title: 'SwiftUI',
         description: '',
         website: '',
         logo: '',
         knowledge: 'Experienced'
+      },
+      {
+        title: 'Astro',
+        description: 'The web framework for content-driven websites',
+        website: 'https://astro.build/',
+        logo: '',
+        knowledge: 'Not started'
+      },
+      {
+        title: 'Gatsby',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Not started'
       }
     ]
   },

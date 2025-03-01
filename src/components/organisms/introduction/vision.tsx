@@ -32,7 +32,7 @@ export default function Vision() {
           Smooth animations and transitions that support the user&apos;s
           behaviour and provide guidance should feel interactive, yet stable.
           Supporting people to achieve their goals and intentions on the site
-          with a seamless feel.
+          with a seamless feel and the use of microinteractions.
         </p>
 
         <ul className="mt-2 ml-4 list-disc space-y-4">
@@ -47,6 +47,16 @@ export default function Vision() {
                 Animations on the Web, by Emil Kowalski
               </Link>
             </div>
+          </li>
+          <li>
+            <span>See</span>
+            <Link
+              href="https://www.nngroup.com/articles/microinteractions/"
+              title="Open Animations on the Web, by Emil Kowalski"
+              aria-label="Open Animations on the Web, by Emil Kowalski"
+            >
+              Microinteractions in User Experience, by NN/g
+            </Link>
           </li>
         </ul>
       </div>

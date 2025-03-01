@@ -599,8 +599,8 @@ export const tools: { group: string; children: Tool[] }[] = [
       },
       {
         title: 'motion (formerly framer-motion)',
-        description: '',
-        website: '',
+        description: 'A modern animation library for JavaScript and React',
+        website: 'https://motion.dev/',
         logo: '',
         knowledge: 'Daily'
       },

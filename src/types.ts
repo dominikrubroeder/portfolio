@@ -1,9 +1,11 @@
+import { ReactNode } from 'react';
+
 export type ControlBarAction = 'Avatar' | 'Back' | 'Up';
 
 export type ControlBarSections = {
   id: string;
   label: string;
-  icon: string;
+  icon: ReactNode;
   className: string;
   defaultActive: boolean;
 }[];

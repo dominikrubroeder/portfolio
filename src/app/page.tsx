@@ -13,47 +13,55 @@ import UxEngineer from '@/components/organisms/introduction/ux-engineer';
 import DesignEngineerVsUxEngineer from '@/components/organisms/introduction/design-engineer-vs-ux-engineer';
 import Section from '@/components/organisms/section';
 import DesignModeBackground from '@/components/atoms/design-mode-background';
+import {
+  ArrowRightCircleIcon,
+  CheckBadgeIcon,
+  Cog6ToothIcon,
+  DocumentDuplicateIcon,
+  HomeIcon,
+  PaintBrushIcon
+} from '@heroicons/react/24/outline';
 
 const sections: ControlBarSections = [
   {
     id: 'header',
     label: 'Start',
-    icon: 'HomeIcon',
+    icon: <HomeIcon className="size-5" />,
     className: 'md:hidden',
     defaultActive: true
   },
   {
     id: 'introduction',
     label: 'Introduction',
-    icon: 'ArrowRightCircleIcon',
+    icon: <ArrowRightCircleIcon className="size-5" />,
     className: '',
     defaultActive: false
   },
   {
     id: 'projects',
     label: 'Projects',
-    icon: 'DocumentDuplicateIcon',
+    icon: <DocumentDuplicateIcon className="size-5" />,
     className: '',
     defaultActive: false
   },
   {
     id: 'tools',
     label: 'Tools',
-    icon: 'PaintBrushIcon',
+    icon: <PaintBrushIcon className="size-5" />,
     className: '',
     defaultActive: false
   },
   {
     id: 'technologies',
     label: 'Technologies',
-    icon: 'Cog6ToothIcon',
+    icon: <Cog6ToothIcon className="size-5" />,
     className: '',
     defaultActive: false
   },
   {
     id: 'socials',
     label: 'Socials',
-    icon: 'CheckBadgeIcon',
+    icon: <CheckBadgeIcon className="size-5" />,
     className: '',
     defaultActive: false
   }

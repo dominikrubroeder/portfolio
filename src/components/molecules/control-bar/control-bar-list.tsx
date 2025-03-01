@@ -2,7 +2,6 @@
 
 import { motion } from 'motion/react';
 import React from 'react';
-import DynamicHeroIcon from '@/components/atoms/dynamic-hero-icon';
 import type {
   ControlBarActiveSection,
   ControlBarMobileMenuVisibility,
@@ -72,7 +71,7 @@ export default function ControlBarList({
                 'text-white hover:bg-transparent'
             )}
           >
-            <DynamicHeroIcon name={section.icon} className="size-5 shrink-0" />
+            {section.icon}
 
             {section.label && section.label !== '' ? (
               <span className={cn(section.className)}>{section.label}</span>
