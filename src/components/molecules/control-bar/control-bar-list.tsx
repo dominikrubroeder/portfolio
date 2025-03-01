@@ -6,7 +6,7 @@ import type {
   ControlBarActiveSection,
   ControlBarMobileMenuVisibility,
   ControlBarSections
-} from '@/types';
+} from '@/components/molecules/control-bar/types';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
 import GithubIcon from '@/components/atoms/svg/github-icon';

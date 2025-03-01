@@ -3,7 +3,7 @@ import {
   ControlBarMobileMenuVisibility,
   ControlBarSections,
   ControlBarVisibility
-} from '@/types';
+} from '@/components/molecules/control-bar/types';
 import { Tool } from '@/components/organisms/tools/types';
 
 export interface Technology extends Tool {}

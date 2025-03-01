@@ -1,6 +1,6 @@
 'use client';
 
-import type { ControlBarAction } from '@/types';
+import type { ControlBarAction } from '@/components/molecules/control-bar/types';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import Image from 'next/image';

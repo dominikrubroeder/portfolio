@@ -2,7 +2,7 @@ import React from 'react';
 import type {
   ControlBarAction as ControlBarActionType,
   ControlBarVisibility
-} from '@/types';
+} from '@/components/molecules/control-bar/types';
 import ControlBarAction from '@/components/molecules/control-bar/control-bar-action';
 
 export default function ControlBarActionLeft({

@@ -6,7 +6,7 @@ import Technologies from '../components/organisms/technologies/technologies';
 import Socials from '../components/organisms/socials/socials';
 import React from 'react';
 import ControlBar from '@/components/molecules/control-bar/control-bar';
-import { ControlBarSections } from '@/types';
+import { ControlBarSections } from '@/components/molecules/control-bar/types';
 import WhatIsAUxEngineer from '@/components/organisms/introduction/what-is-a-ux-engineer';
 import UxDesigner from '@/components/organisms/introduction/ux-designer';
 import UxEngineer from '@/components/organisms/introduction/ux-engineer';
