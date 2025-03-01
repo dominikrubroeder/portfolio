@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ControlBarState } from '@/interfaces';
+
+import { ControlBarState } from '@/components/molecules/control-bar/types';
 
 export const useControlBar = (collapse: boolean) => {
   const [state, setState] = useState<ControlBarState>({

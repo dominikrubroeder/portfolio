@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
-import type { ControlBar as IControlBar } from '@/interfaces';
 import ControlBarList from '@/components/molecules/control-bar/control-bar-list';
 import ControlBarMobileTrigger from '@/components/molecules/control-bar/control-bar-mobile-trigger';
 import ControlBarActionLeft from '@/components/molecules/control-bar/control-bar-action-left';
 import ControlBarActionRight from '@/components/molecules/control-bar/control-bar-action-right';
 import { useControlBar } from '@/components/molecules/control-bar/control-bar-context';
 import { useTheme } from '@/components/organisms/app-context';
+import { ControlBar as IControlBar } from '@/components/molecules/control-bar/types';
 
 export default function ControlBar({
   sections,
