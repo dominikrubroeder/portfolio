@@ -12,9 +12,13 @@ import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 import Expandable from '@/components/molecules/expandable';
 
 export default function MoreItems({
-  items
+  items,
+  openScrollToId,
+  closedScrollToId
 }: {
   items: { group: string; children: (Tool | Technology)[] }[];
+  openScrollToId: string;
+  closedScrollToId: string;
 }) {
   const { scrollIntoView } = useScrollIntoView();
   const [state, setState] = useState<{ isVisible: undefined | boolean }>({
@@ -36,9 +40,9 @@ export default function MoreItems({
   useEffect(
     () =>
       state.isVisible
-        ? scrollIntoView({ id: 'tool-list' })
+        ? scrollIntoView({ id: openScrollToId })
         : state.isVisible === false
-          ? scrollIntoView({ id: 'tool-list-trigger' })
+          ? scrollIntoView({ id: closedScrollToId })
           : undefined,
     [state.isVisible]
   );

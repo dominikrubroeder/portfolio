@@ -30,7 +30,11 @@ export default function Tools() {
         )}
       </ul>
 
-      <MoreItems items={tools} />
+      <MoreItems
+        items={tools}
+        openScrollToId="tool-list"
+        closedScrollToId="tool-list-trigger"
+      />
     </Section>
   );
 }
