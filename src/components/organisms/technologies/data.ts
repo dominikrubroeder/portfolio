@@ -1,116 +1,240 @@
 import { Technology } from '@/interfaces';
 
-export const technologies: Technology[] = [
+export const technologies: { group: string; children: Technology[] }[] = [
   {
-    title: 'React',
-    website: 'https://react.dev/',
-    logo: 'https://dominikrubroeder.dev/react.png',
-    href: '/technology/react',
-    description: 'The library for web and native user interfaces',
-    type: 'Framework',
-    priority: 'high',
-    projects: [],
-    experience: 'daily'
+    group: 'Library',
+    children: [
+      {
+        title: 'React',
+        website: 'https://react.dev/',
+        logo: 'https://dominikrubroeder.dev/react.png',
+        description: 'The library for web and native user interfaces',
+        knowledge: 'Daily'
+      }
+    ]
   },
   {
-    title: 'Next.js',
-    website: 'https://nextjs.org/',
-    logo: 'https://dominikrubroeder.dev/nextjs.png',
-    href: '/technology/next-js',
-    description: 'The React Framework for the Web',
-    type: 'Fullstack Web Framework',
-    priority: 'high',
-    projects: [],
-    experience: 'daily'
+    group: 'Full-Stack Framework',
+    children: [
+      {
+        title: 'Next.js',
+        description: 'The React Framework for the Web',
+        website: 'https://nextjs.org/',
+        logo: 'https://dominikrubroeder.dev/nextjs.png',
+        knowledge: 'Daily'
+      },
+      {
+        title: 'Remix',
+        description:
+          'Focused on web standards and modern web app UX, you’re simply going to build better websites',
+        website: 'https://remix.run/',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
+        title: 'Nuxt.js',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Used'
+      }
+    ]
   },
   {
-    title: 'TypeScript',
-    website: 'https://www.typescriptlang.org',
-    logo: 'https://dominikrubroeder.dev/typescript.png',
-    href: '/technology/typescript',
-    description: 'TypeScript is JavaScript with syntax for types.',
-    type: 'Programming Language',
-    priority: 'high',
-    projects: [],
-    experience: 'daily'
+    group: 'Programming Language',
+    children: [
+      {
+        title: 'TypeScript',
+        website: 'https://www.typescriptlang.org',
+        logo: 'https://dominikrubroeder.dev/typescript.png',
+        description: 'TypeScript is JavaScript with syntax for types.',
+        knowledge: 'Daily'
+      },
+      {
+        title: 'JavaScript',
+        website: 'https://www.w3schools.com/js/',
+        logo: 'https://dominikrubroeder.dev/javascript.png',
+        description: 'JavaScript is the programming language of the Web.',
+        knowledge: 'Daily'
+      },
+      {
+        title: 'Swift',
+        website: '',
+        logo: '',
+        description: '',
+        knowledge: 'Used'
+      }
+    ]
   },
   {
-    title: 'JavaScript',
-    website: 'https://www.w3schools.com/js/',
-    logo: 'https://dominikrubroeder.dev/javascript.png',
-    href: '/technology/javascript',
-    description: 'JavaScript is the programming language of the Web.',
-    type: 'Programming Language',
-    priority: 'high',
-    projects: [],
-    experience: 'daily'
+    group: 'Markup Language',
+    children: [
+      {
+        title: 'HTML',
+        website: 'https://www.w3schools.com/html/',
+        logo: 'https://dominikrubroeder.dev/html.png',
+        description: 'The standard markup language for Web pages',
+        knowledge: 'Daily'
+      },
+      {
+        title: 'Markdown',
+        website: 'https://markdown.de/',
+        logo: 'https://dominikrubroeder.dev/markdown.png',
+        description: 'A simplified markup language',
+        knowledge: 'Used'
+      }
+    ]
   },
   {
-    title: 'HTML',
-    website: 'https://www.w3schools.com/html/',
-    logo: 'https://dominikrubroeder.dev/html.png',
-    href: '/technology/html',
-    description: 'The standard markup language for Web pages',
-    type: 'Markup Language',
-    priority: 'high',
-    projects: [],
-    experience: 'daily'
+    group: 'Style Sheet Language',
+    children: [
+      {
+        title: 'CSS',
+        website: 'https://www.w3schools.com/css/',
+        logo: 'https://dominikrubroeder.dev/css.png',
+        description: 'The language we use to style an HTML document.',
+        knowledge: 'Daily'
+      }
+    ]
   },
   {
-    title: 'CSS',
-    website: 'https://www.w3schools.com/css/',
-    logo: 'https://dominikrubroeder.dev/css.png',
-    href: '/technology/css',
-    description: 'The language we use to style an HTML document.',
-    type: 'Styling',
-    priority: 'high',
-    projects: [],
-    experience: 'daily'
+    group: 'CSS Framework',
+    children: [
+      {
+        title: 'Tailwind CSS',
+        website: 'https://tailwindcss.com/',
+        logo: 'https://dominikrubroeder.dev/tailwind.png',
+        description:
+          'Rapidly build modern websites without ever leaving your HTML.',
+        knowledge: 'Daily'
+      }
+    ]
   },
   {
-    title: 'Tailwind CSS',
-    website: 'https://tailwindcss.com/',
-    logo: 'https://dominikrubroeder.dev/tailwind.png',
-    href: '/technology/tailwind-css',
-    description:
-      'Rapidly build modern websites without ever leaving your HTML.',
-    type: 'CSS Framework',
-    priority: 'high',
-    projects: [],
-    experience: 'daily'
+    group: 'Runtime Environment',
+    children: [
+      {
+        title: 'Node.js',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
+        title: 'Deno',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Not started'
+      }
+    ]
   },
   {
-    title: 'Motion (formerly Framer Motion)',
-    website: 'https://www.framer.com/motion/',
-    logo: 'https://dominikrubroeder.dev/framer.png',
-    href: '/technology/motion',
-    description:
-      'A declarative motion library for animating react UIs and apply motion to it',
-    type: 'Motion Library',
-    priority: 'high',
-    projects: [],
-    experience: 'daily'
+    group: 'Query Language',
+    children: [
+      {
+        title: 'GraphQL',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Not started'
+      }
+    ]
   },
   {
-    title: 'Markdown',
-    website: 'https://markdown.de/',
-    logo: 'https://dominikrubroeder.dev/markdown.png',
-    href: '/technology/markdown',
-    description: 'A simplified markup language',
-    type: 'Markup Language',
-    priority: 'high',
-    projects: [],
-    experience: 'high'
+    group: 'Island-Based Framework',
+    children: [
+      {
+        title: 'Astro',
+        description: 'The web framework for content-driven websites',
+        website: 'https://astro.build/',
+        logo: '',
+        knowledge: 'Not started'
+      }
+    ]
   },
   {
-    title: 'Auth.js',
-    website: 'https://authjs.dev/',
-    logo: 'https://dominikrubroeder.dev/authjs.png',
-    href: '/technology/auth-js',
-    description: 'Authentication for the Web',
-    type: 'Authentication Library',
-    priority: 'normal',
-    projects: [],
-    experience: 'high'
+    group: 'Static Site Generator',
+    children: [
+      {
+        title: 'Gatsby',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Not started'
+      }
+    ]
+  },
+  {
+    group: 'Build Tool',
+    children: [
+      {
+        title: 'Vite',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Not started'
+      }
+    ]
+  },
+  {
+    group: 'Framework + Library',
+    children: [
+      {
+        title: 'Vue.js',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Experienced'
+      }
+    ]
+  },
+  {
+    group: 'Microframework',
+    children: [
+      {
+        title: 'Nue.js',
+        description: '',
+        website: 'https://nuejs.org/',
+        logo: '',
+        knowledge: 'Experienced'
+      }
+    ]
+  },
+  {
+    group: 'Compiler + Framework',
+    children: [
+      {
+        title: 'Svelte',
+        description: 'web development for the rest of us',
+        website: 'https://svelte.dev/',
+        logo: '',
+        knowledge: 'Experienced'
+      }
+    ]
+  },
+  {
+    group: 'UI Framework',
+    children: [
+      {
+        title: 'SwiftUI',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Experienced'
+      }
+    ]
+  },
+  {
+    group: 'Preprocessor',
+    children: [
+      {
+        title: 'Sass',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Experienced'
+      }
+    ]
   }
 ];

@@ -5,10 +5,8 @@ import React, {
   ReactNode,
   useCallback,
   useContext,
-  useEffect,
   useState
 } from 'react';
-import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 
 type Theme = 'dev' | 'design' | 'auto';
 
@@ -25,7 +23,6 @@ interface ThemeProviderProps {
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>('auto');
-  const { updateSearchParams, deleteSearchParam } = useUpdateSearchParams();
 
   const handleTheme = useCallback((theme: Theme) => {
     setTheme(theme);
@@ -42,15 +39,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
     htmlTag.dataset.theme = theme;
   }, []);
-
-  useEffect(() => {
-    theme === 'auto'
-      ? deleteSearchParam('theme')
-      : updateSearchParams({
-          withName: 'theme',
-          withValue: theme
-        });
-  }, [theme]);
 
   const value = {
     theme,

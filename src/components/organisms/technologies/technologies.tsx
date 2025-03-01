@@ -1,7 +1,7 @@
-import { Suspense } from 'react';
-import LoadingList from '@/components/atoms/loading-list';
-import TechnologyList from '@/components/organisms/technologies/technology-list';
 import Section from '@/components/organisms/section';
+import { technologies } from '@/components/organisms/technologies/data';
+import Technology from '@/components/organisms/technologies/technology';
+import MoreItems from '@/components/organisms/more-items';
 
 export default function Technologies() {
   return (
@@ -19,9 +19,26 @@ export default function Technologies() {
         </p>
       </header>
 
-      <Suspense fallback={<LoadingList />}>
-        <TechnologyList />
-      </Suspense>
+      <ul className="no-scrollbar space-x-8 overflow-hidden overflow-x-auto pb-2 whitespace-nowrap">
+        {technologies.map((item) =>
+          item.children.map((nestedItem) => {
+            return nestedItem.knowledge === 'Daily' ? (
+              <li
+                key={nestedItem.title}
+                className="inline-flex first-of-type:ml-4 xl:first-of-type:ml-16"
+              >
+                <Technology technology={nestedItem} group={item.group} />
+              </li>
+            ) : null;
+          })
+        )}
+      </ul>
+
+      <MoreItems
+        items={technologies}
+        openScrollToId="technology-list"
+        closedScrollToId="technology-list-trigger"
+      />
     </Section>
   );
 }

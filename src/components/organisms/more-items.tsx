@@ -48,7 +48,7 @@ export default function MoreItems({
   );
 
   return (
-    <div className="scroll-mt-28 space-y-8 px-4 xl:ml-12" id="tool-list">
+    <div className="scroll-mt-28 space-y-8 px-4 xl:ml-12" id={openScrollToId}>
       <div className="flex w-full flex-wrap justify-between gap-6 md:gap-8">
         <Button
           variant="primary"
@@ -58,7 +58,7 @@ export default function MoreItems({
               return { isVisible: !prevState.isVisible };
             });
           }}
-          id="tool-list-trigger"
+          id={closedScrollToId}
         >
           {state.isVisible && (
             <MinusIcon className="size-6 text-primary-foreground" />

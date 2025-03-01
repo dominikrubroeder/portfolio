@@ -1,7 +1,7 @@
 import Section from '@/components/organisms/section';
 import { highlightTools, tools } from '@/components/organisms/tools/data';
 import MoreItems from '@/components/organisms/more-items';
-import Tool from '@/components/organisms/tools/tool';
+import { Tool } from '@/components/organisms/tools';
 
 export default function Tools() {
   return (
@@ -23,7 +23,10 @@ export default function Tools() {
       <ul className="no-scrollbar space-x-8 overflow-hidden overflow-x-auto pb-2 whitespace-nowrap">
         {highlightTools.map((item) =>
           item.children.map((nestedItem) => (
-            <li className="inline-flex first-of-type:ml-4 xl:first-of-type:ml-16">
+            <li
+              key={nestedItem.title}
+              className="inline-flex first-of-type:ml-4 xl:first-of-type:ml-16"
+            >
               <Tool tool={nestedItem} group={item.group} />
             </li>
           ))
