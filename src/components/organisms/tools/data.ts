@@ -152,14 +152,21 @@ export const tools: { group: string; children: Tool[] }[] = [
     children: [
       {
         title: 'Axios',
-        website: '',
+        website: 'https://axios-http.com/',
         logo: '',
         description: 'Promise based HTTP client for the browser and node.js',
         knowledge: 'Used'
       },
       {
         title: 'Postman',
-        website: '',
+        website: 'https://www.postman.com/',
+        logo: '',
+        description: "The World's Leading API Platform",
+        knowledge: 'Used'
+      },
+      {
+        title: 'Bruno',
+        website: 'https://www.usebruno.com/',
         logo: '',
         description: "The World's Leading API Platform",
         knowledge: 'Used'
@@ -305,7 +312,7 @@ export const tools: { group: string; children: Tool[] }[] = [
         description: '',
         website: '',
         logo: '',
-        knowledge: 'Daily'
+        knowledge: 'Professional'
       }
     ]
   },
@@ -933,7 +940,14 @@ export const tools: { group: string; children: Tool[] }[] = [
       },
       {
         title: 'Elastic Search',
-        website: '',
+        website: 'https://www.elastic.co/elasticsearch',
+        logo: '',
+        description: '',
+        knowledge: 'Not started'
+      },
+      {
+        title: 'meilisearch',
+        website: 'https://www.meilisearch.com/',
         logo: '',
         description: '',
         knowledge: 'Not started'
@@ -941,7 +955,7 @@ export const tools: { group: string; children: Tool[] }[] = [
     ]
   },
   {
-    group: 'Shop System',
+    group: 'Shop System + Ecommerce',
     children: [
       {
         title: 'Shopify',

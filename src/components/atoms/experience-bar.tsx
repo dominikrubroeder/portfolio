@@ -12,7 +12,7 @@ export default function ExperienceBar({
   className?: string;
 }) {
   return (
-    <div className={cn('space-y-1', className)}>
+    <div className={cn('shrink-0 space-y-1', className)}>
       <div className="text-xs">{progress}</div>
       <div className="relative h-2 w-24 overflow-hidden rounded-full bg-muted">
         <span

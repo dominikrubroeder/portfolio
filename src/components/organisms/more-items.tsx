@@ -10,6 +10,8 @@ import { Tool } from '@/components/organisms/tools/types';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 import Expandable from '@/components/molecules/expandable';
 import { Technology } from '@/components/organisms/technologies/types';
+import Link from 'next/link';
+import Container from '@/components/organisms/container';
 
 export default function MoreItems({
   items,
@@ -48,7 +50,7 @@ export default function MoreItems({
   );
 
   return (
-    <div className="scroll-mt-28 space-y-8 px-4 xl:ml-12" id={openScrollToId}>
+    <Container htmlTag="div" className="space-y-8" id={openScrollToId}>
       <div className="flex w-full flex-wrap justify-between gap-6 md:gap-8">
         <Button
           variant="primary"
@@ -95,7 +97,7 @@ export default function MoreItems({
       </div>
 
       {state.isVisible && (
-        <div className="mx-auto w-full space-y-6" id="tool-list">
+        <div className="mx-auto w-full space-y-6 px-6">
           <ul className="grid animate-fade-up-1rem gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
             {items
               .sort((a, b) => {
@@ -117,30 +119,41 @@ export default function MoreItems({
                               <StarIcon className="absolute top-1/2 -left-12 -mt-1 size-5 -translate-y-1/2 text-primary" />
                             )}
 
-                            <Brand
-                              brand={item.title}
-                              className="size-10 shrink-0"
-                            />
+                            <Link
+                              href={item.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <Brand
+                                brand={item.title}
+                                className="size-10 shrink-0"
+                              />
+                            </Link>
 
-                            <div className="flex-1">
-                              <div className="flex flex-wrap items-center justify-between gap-2">
-                                <h3 className="flex-1 font-bold text-foreground">
+                            <div className="flex flex-1 flex-wrap items-center justify-between gap-2 sm:overflow-hidden sm:whitespace-nowrap">
+                              <Link
+                                href={item.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="sm:overflow-hidden"
+                              >
+                                <h3 className="font-bold text-foreground sm:overflow-hidden sm:text-ellipsis">
                                   {item.title}
                                 </h3>
+                              </Link>
 
-                                <div className="flex items-center justify-center gap-4">
-                                  <ExperienceBar progress={item.knowledge} />
+                              <div className="flex items-center justify-between gap-4">
+                                <ExperienceBar progress={item.knowledge} />
 
-                                  <Button
-                                    variant="secondary"
-                                    href={item.website}
-                                    title={`Go to external ${item.title} website`}
-                                    aria-label={`Go to external ${item.title} website`}
-                                    asLink
-                                  >
-                                    <ArrowTopRightOnSquareIcon className="size-5 shrink-0" />
-                                  </Button>
-                                </div>
+                                <Button
+                                  variant="secondary"
+                                  href={item.website}
+                                  title={`Go to external ${item.title} website`}
+                                  aria-label={`Go to external ${item.title} website`}
+                                  asLink
+                                >
+                                  <ArrowTopRightOnSquareIcon className="size-5" />
+                                </Button>
                               </div>
                             </div>
                           </li>
@@ -170,6 +183,6 @@ export default function MoreItems({
           </Button>
         </div>
       )}
-    </div>
+    </Container>
   );
 }

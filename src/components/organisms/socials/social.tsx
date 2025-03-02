@@ -19,6 +19,7 @@ export default function Social({
           target="_blank"
           title={`Go to ${social.title} page`}
           aria-label={`Go to ${social.title} page`}
+          rel="noopener noreferrer"
         >
           <Brand
             brand={social.title}
@@ -30,8 +31,9 @@ export default function Social({
 
       <Link
         href={social.website}
-        className="group mx-auto flex items-center gap-2 font-bold text-foreground"
+        className="font-bold text-foreground"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <h2>{social.title}</h2>
       </Link>

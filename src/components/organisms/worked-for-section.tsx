@@ -1,12 +1,16 @@
-import Section from '@/components/organisms/section';
 import Link from 'next/link';
 import SegmuellerLogo from '@/components/atoms/svg/segmueller-logo';
 import AllesautoLogo from '@/components/atoms/svg/allesauto-logo';
 import HdplusLogo from '@/components/atoms/svg/hdplus-logo';
+import Container from '@/components/organisms/container';
 
 export default function WorkedForSection() {
   return (
-    <Section id="worked-for" className="flex-row justify-start">
+    <Container
+      htmlTag="section"
+      id="worked-for"
+      className="flex-row justify-start space-y-8"
+    >
       <div className="mx-auto">
         <ul className="mx-auto flex items-center gap-12">
           <li>
@@ -66,6 +70,6 @@ export default function WorkedForSection() {
           </li>
         </ul>
       </div>
-    </Section>
+    </Container>
   );
 }

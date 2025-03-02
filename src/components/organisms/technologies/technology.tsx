@@ -38,16 +38,17 @@ export default function Technology({
 
       <Link
         href={technology.website}
-        className="relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
+        className="group relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
         target="_blank"
         title={`Go to ${technology.title} website`}
         aria-label={`Go to ${technology.title} website`}
+        rel="noopener noreferrer"
       >
         <DevModeLabel className="z-10">div | slider-item.tsx</DevModeLabel>
 
         <Brand
           brand={technology.title}
-          className="h-32 w-auto"
+          className="h-32 w-auto transition group-hover:scale-105"
           aria-label={`${technology.title} logo`}
         />
 
@@ -68,6 +69,7 @@ export default function Technology({
           target="_blank"
           title={`Go to external ${technology.title} website`}
           aria-label={`Go to external ${technology.title} website`}
+          rel="noopener noreferrer"
         >
           <h2>{technology.title}</h2>
         </Link>

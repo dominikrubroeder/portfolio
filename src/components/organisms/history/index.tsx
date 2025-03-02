@@ -2,11 +2,12 @@ import HistoryEntry from '@/components/organisms/history/history-entry';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
-import Section from '@/components/organisms/section';
+import Container from '@/components/organisms/container';
 
 export default function Index() {
   return (
-    <Section
+    <Container
+      htmlTag="section"
       id="history"
       className="mx-auto grid max-w-(--breakpoint-sm) grid-cols-[auto_1fr] gap-4 px-4 md:pl-28"
     >
@@ -143,6 +144,6 @@ export default function Index() {
           Kickoff
         </HistoryEntry>
       </div>
-    </Section>
+    </Container>
   );
 }

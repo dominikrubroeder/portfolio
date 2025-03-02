@@ -15,6 +15,7 @@
     --radius: 6px;
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
+    --container: 96rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -115,7 +116,7 @@
     }
 
     a {
-        @apply transition hover:text-foreground hover:underline;
+        @apply transition cursor-pointer hover:text-foreground hover:underline;
     }
 
     button {

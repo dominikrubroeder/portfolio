@@ -32,16 +32,17 @@ export default function Tool({ tool, group }: { tool: Tool; group: string }) {
 
       <Link
         href={tool.website}
-        className="relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
+        className="group relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
         target="_blank"
         title={`Go to ${tool.title} website`}
         aria-label={`Go to ${tool.title} website`}
+        rel="noopener noreferrer"
       >
         <DevModeLabel className="z-10">div | slider-item.tsx</DevModeLabel>
 
         <Brand
           brand={tool.title}
-          className="h-32 w-auto"
+          className="h-32 w-auto transition group-hover:scale-105"
           aria-label={`${tool.title} logo`}
         />
 
@@ -59,9 +60,10 @@ export default function Tool({ tool, group }: { tool: Tool; group: string }) {
         <Link
           href={tool.website}
           className="mx-auto inline-flex items-center justify-center gap-1 font-bold text-foreground"
-          target="_blank"
           title={`Go to external ${tool.title} website`}
           aria-label={`Go to external ${tool.title} website`}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>{tool.title}</h2>
         </Link>

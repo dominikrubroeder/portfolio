@@ -10,7 +10,6 @@ import WhatIsAUxEngineer from '@/components/atoms/what-is-a-ux-engineer';
 import UxDesigner from '@/components/atoms/ux-designer';
 import UxEngineer from '@/components/atoms/ux-engineer';
 import DesignEngineerVsUxEngineer from '@/components/atoms/design-engineer-vs-ux-engineer';
-import Section from '@/components/organisms/section';
 import DesignModeBackground from '@/components/atoms/design-mode-background';
 import {
   ArrowRightCircleIcon,
@@ -20,6 +19,7 @@ import {
   HomeIcon,
   PaintBrushIcon
 } from '@heroicons/react/24/outline';
+import Container from '@/components/organisms/container';
 
 const sections: ControlBarSections = [
   {
@@ -69,6 +69,8 @@ const sections: ControlBarSections = [
 export default function HomePage() {
   return (
     <div className="animate-fade-up-1rem">
+      <Container htmlTag="section">Hello</Container>
+
       <DesignModeBackground />
 
       <HomeHero />
@@ -86,7 +88,7 @@ export default function HomePage() {
 
         <Socials />
 
-        <Section>
+        <Container htmlTag="section">
           <div
             className="mx-auto w-full px-4 sm:max-w-(--breakpoint-sm)"
             id="accordion-group"
@@ -96,7 +98,7 @@ export default function HomePage() {
             <UxEngineer />
             <DesignEngineerVsUxEngineer />
           </div>
-        </Section>
+        </Container>
       </div>
     </div>
   );
