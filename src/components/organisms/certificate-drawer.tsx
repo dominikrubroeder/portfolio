@@ -45,6 +45,8 @@ export function CertificateDrawer({
           <DrawerHeader className="text-foreground">
             <DrawerTitle>Certificate for {title}</DrawerTitle>
 
+            <p>{certificate}</p>
+
             <DrawerDescription>
               <Link
                 className="group flex items-center gap-2 transition"

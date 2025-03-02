@@ -16,7 +16,7 @@ export default function Toggle({
 }) {
   const handleOnClick = useCallback(() => {
     onClick ? onClick() : null;
-  }, []);
+  }, [onClick]);
 
   return (
     <div

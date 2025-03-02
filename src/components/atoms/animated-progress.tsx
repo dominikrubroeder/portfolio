@@ -62,6 +62,7 @@ export default function AnimatedProgress({
         window.requestAnimationFrame(step);
       }
     }
+    // eslint-disable-next-line
   }, [
     controls,
     inView,

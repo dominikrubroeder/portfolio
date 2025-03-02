@@ -1,6 +1,6 @@
 import Section from '@/components/organisms/section';
 import { socials } from '@/components/organisms/socials/data';
-import Social from '@/components/organisms/socials/social';
+import { Social } from '@/components/organisms/socials';
 
 export default function Socials() {
   return (

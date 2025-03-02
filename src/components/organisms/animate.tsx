@@ -22,15 +22,6 @@ export default function Animate({
     amount: 0.04 // Trigger when 4% of the element is in view
   });
   const { theme } = useTheme();
-  const Comp = 'div';
-
-  useEffect(() => {
-    console.log('isInView', isInView, 'theme', theme);
-
-    if (isInView && theme === 'design') {
-      animate(scope.current, isInView ? variants.visible : variants.hidden);
-    }
-  }, [isInView, theme]);
 
   // Define animation variants based on direction
   const variants = {
@@ -50,6 +41,14 @@ export default function Animate({
       }
     }
   };
+
+  useEffect(() => {
+    console.log('isInView', isInView, 'theme', theme);
+
+    if (isInView && theme === 'design') {
+      animate(scope.current, isInView ? variants.visible : variants.hidden);
+    }
+  }, [animate, isInView, scope, theme, variants.visible, variants.hidden]);
 
   return (
     <div ref={scope}>

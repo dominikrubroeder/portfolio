@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { Technology } from '@/interfaces';
 import Button from '@/components/atoms/button';
 import Brand from '@/components/atoms/brand';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
@@ -10,6 +9,7 @@ import ExperienceBar from '@/components/atoms/experience-bar';
 import { Tool } from '@/components/organisms/tools/types';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 import Expandable from '@/components/molecules/expandable';
+import { Technology } from '@/components/organisms/technologies/types';
 
 export default function MoreItems({
   items,
@@ -34,7 +34,7 @@ export default function MoreItems({
 
         return acc;
       }, 0),
-    []
+    [items]
   );
 
   useEffect(
@@ -44,7 +44,7 @@ export default function MoreItems({
         : state.isVisible === false
           ? scrollIntoView({ id: closedScrollToId })
           : undefined,
-    [state.isVisible]
+    [closedScrollToId, openScrollToId, scrollIntoView, state.isVisible]
   );
 
   return (

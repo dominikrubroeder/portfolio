@@ -1,16 +1,15 @@
-import Introduction from '../components/organisms/introduction/introduction';
+import { Introduction } from '@/components/organisms/introduction';
 import HomeHero from '@/components/organisms/home-hero';
 import Projects from '@/components/organisms/projects';
-import Tools from '@/components/organisms/tools/tools';
-import Technologies from '../components/organisms/technologies/technologies';
-import Socials from '../components/organisms/socials/socials';
-import React from 'react';
+import { Tools } from '@/components/organisms/tools';
+import { Technologies } from '@/components/organisms/technologies';
+import { Socials } from '@/components/organisms/socials';
 import ControlBar from '@/components/molecules/control-bar/control-bar';
 import { ControlBarSections } from '@/components/molecules/control-bar/types';
-import WhatIsAUxEngineer from '@/components/organisms/introduction/what-is-a-ux-engineer';
-import UxDesigner from '@/components/organisms/introduction/ux-designer';
-import UxEngineer from '@/components/organisms/introduction/ux-engineer';
-import DesignEngineerVsUxEngineer from '@/components/organisms/introduction/design-engineer-vs-ux-engineer';
+import WhatIsAUxEngineer from '@/components/atoms/what-is-a-ux-engineer';
+import UxDesigner from '@/components/atoms/ux-designer';
+import UxEngineer from '@/components/atoms/ux-engineer';
+import DesignEngineerVsUxEngineer from '@/components/atoms/design-engineer-vs-ux-engineer';
 import Section from '@/components/organisms/section';
 import DesignModeBackground from '@/components/atoms/design-mode-background';
 import {

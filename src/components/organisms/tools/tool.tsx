@@ -1,20 +1,14 @@
+import React from 'react';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Brand from '@/components/atoms/brand';
 import Button from '@/components/atoms/button';
 import ExperienceBar from '@/components/atoms/experience-bar';
-import { Tool as ToolType } from '@/components/organisms/tools/types';
-import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import DevModeLabel from '@/components/atoms/dev-mode-label';
+import type { Tool } from '@/components/organisms/tools/types';
 
-export default function Tool({
-  tool,
-  group
-}: {
-  tool: ToolType;
-  group: string;
-}) {
+export default function Tool({ tool, group }: { tool: Tool; group: string }) {
   return (
     <div className="group relative w-80 space-y-6 text-center whitespace-normal">
       <div

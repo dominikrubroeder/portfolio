@@ -2,10 +2,16 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  return NextResponse.next();
+  const requestHeaders = new Headers(request.headers);
+
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders
+    }
+  });
 }
 
-// Optional: Configure middleware to run only for specific paths
+// Optional: Configure middleware to run on specific paths
 export const config = {
   matcher: [
     /*

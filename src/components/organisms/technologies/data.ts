@@ -1,6 +1,60 @@
-import { Technology } from '@/interfaces';
+import { Technology } from '@/components/organisms/technologies/types';
 
 export const technologies: { group: string; children: Technology[] }[] = [
+  {
+    group: 'Framework + Library',
+    children: [
+      {
+        title: 'React',
+        website: 'https://react.dev/',
+        logo: 'https://dominikrubroeder.dev/react.png',
+        description: 'The library for web and native user interfaces',
+        knowledge: 'Daily'
+      },
+      {
+        title: 'Vue.js',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Experienced'
+      },
+      {
+        title: 'Nue.js',
+        description: '',
+        website: 'https://nuejs.org/',
+        logo: '',
+        knowledge: 'Not started'
+      },
+      {
+        title: 'Svelte',
+        description: 'web development for the rest of us',
+        website: 'https://svelte.dev/',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
+        title: 'SwiftUI',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Experienced'
+      },
+      {
+        title: 'Astro',
+        description: 'The web framework for content-driven websites',
+        website: 'https://astro.build/',
+        logo: '',
+        knowledge: 'Not started'
+      },
+      {
+        title: 'Gatsby',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Not started'
+      }
+    ]
+  },
   {
     group: 'Full-Stack Framework',
     children: [
@@ -23,6 +77,13 @@ export const technologies: { group: string; children: Technology[] }[] = [
         title: 'Nuxt.js',
         description: '',
         website: '',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
+        title: 'React Router (v7, framework mode)',
+        description: '',
+        website: 'https://reactrouter.com/start/framework/installation',
         logo: '',
         knowledge: 'Used'
       }
@@ -143,60 +204,6 @@ export const technologies: { group: string; children: Technology[] }[] = [
         title: 'Vite',
         description: '',
         website: 'https://vite.dev/',
-        logo: '',
-        knowledge: 'Not started'
-      }
-    ]
-  },
-  {
-    group: 'Framework + Library',
-    children: [
-      {
-        title: 'React',
-        website: 'https://react.dev/',
-        logo: 'https://dominikrubroeder.dev/react.png',
-        description: 'The library for web and native user interfaces',
-        knowledge: 'Daily'
-      },
-      {
-        title: 'Vue.js',
-        description: '',
-        website: '',
-        logo: '',
-        knowledge: 'Experienced'
-      },
-      {
-        title: 'Nue.js',
-        description: '',
-        website: 'https://nuejs.org/',
-        logo: '',
-        knowledge: 'Not started'
-      },
-      {
-        title: 'Svelte',
-        description: 'web development for the rest of us',
-        website: 'https://svelte.dev/',
-        logo: '',
-        knowledge: 'Used'
-      },
-      {
-        title: 'SwiftUI',
-        description: '',
-        website: '',
-        logo: '',
-        knowledge: 'Experienced'
-      },
-      {
-        title: 'Astro',
-        description: 'The web framework for content-driven websites',
-        website: 'https://astro.build/',
-        logo: '',
-        knowledge: 'Not started'
-      },
-      {
-        title: 'Gatsby',
-        description: '',
-        website: '',
         logo: '',
         knowledge: 'Not started'
       }

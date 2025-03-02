@@ -6,7 +6,6 @@ import ControlBarMobileTrigger from '@/components/molecules/control-bar/control-
 import ControlBarActionLeft from '@/components/molecules/control-bar/control-bar-action-left';
 import ControlBarActionRight from '@/components/molecules/control-bar/control-bar-action-right';
 import { useControlBar } from '@/components/molecules/control-bar/control-bar-context';
-import { useTheme } from '@/components/organisms/app-context';
 import { ControlBar as IControlBar } from '@/components/molecules/control-bar/types';
 
 export default function ControlBar({
@@ -17,7 +16,6 @@ export default function ControlBar({
 }: IControlBar) {
   const { state, toggleMobileMenu, activeSection, setActiveSection } =
     useControlBar(collapse);
-  const { theme } = useTheme();
 
   return (
     <nav className="no-scrollbar fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:-mt-6 md:w-max">

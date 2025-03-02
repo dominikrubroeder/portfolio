@@ -2,11 +2,9 @@ import { cn } from '@/lib/utils';
 
 export default function HdplusLogo({
   className,
-  colored,
   ...restProps
 }: {
   className: string;
-  colored?: boolean;
 }) {
   return (
     <svg

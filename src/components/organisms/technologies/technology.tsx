@@ -3,16 +3,16 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Brand from '@/components/atoms/brand';
 import Button from '@/components/atoms/button';
 import ExperienceBar from '@/components/atoms/experience-bar';
-import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
+import DevModeLabel from '@/components/atoms/dev-mode-label';
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Technology as TechnologyType } from '@/interfaces';
+import type { Technology } from '@/components/organisms/technologies/types';
 
 export default function Technology({
   technology,
   group
 }: {
-  technology: TechnologyType;
+  technology: Technology;
   group: string;
 }) {
   return (

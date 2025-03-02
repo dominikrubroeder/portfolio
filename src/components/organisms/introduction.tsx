@@ -1,14 +1,13 @@
-import React from 'react';
 import AccordionClean from '@/components/atoms/accordion-clean';
-import Vision from '@/components/organisms/introduction/vision';
-import Mindset from '@/components/organisms/introduction/mindset';
+import Vision from '@/components/atoms/vision';
+import Mindset from '@/components/atoms/mindset';
 import Books from '@/components/molecules/books';
 import ImageSlideIn from '@/components/atoms/image-slide-in';
-import TechStack from '@/components/organisms/introduction/tech-stack';
-import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
+import TechStack from '@/components/atoms/tech-stack';
+import DevModeLabel from '@/components/atoms/dev-mode-label';
 import Animate from '@/components/organisms/animate';
 
-export default function Introduction() {
+export function Introduction() {
   return (
     <Animate direction="up">
       <section

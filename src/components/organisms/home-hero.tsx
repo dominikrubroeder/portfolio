@@ -31,9 +31,9 @@ export default function HomeHero() {
             <p>
               When doing my work, i like to use code, design and psychology
               principles. Plus, i love interfaces that just work and feel
-              seamless, where it fit's the use case and it fulfills the purpose
-              of the task. Together with a little bit of psychology, we build
-              and design a better user experience!
+              seamless, where it fit&apos;s the use case and it fulfills the
+              purpose of the task. Together with a little bit of psychology, we
+              build and design a better user experience!
             </p>
           </div>
 

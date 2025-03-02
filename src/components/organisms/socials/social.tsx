@@ -1,13 +1,13 @@
-import { Social as SocialInterface } from '@/interfaces';
-import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 import Brand from '@/components/atoms/brand';
+import type { Social } from '@/components/organisms/socials/types';
 
 export default function Social({
   social,
   className
 }: {
-  social: SocialInterface;
+  social: Social;
   className?: string;
 }) {
   return (

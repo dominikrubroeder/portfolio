@@ -1,4 +1,4 @@
-import DevModeLabel from '@/components/organisms/introduction/dev-mode-label';
+import DevModeLabel from '@/components/atoms/dev-mode-label';
 import React from 'react';
 
 export default function Projects() {

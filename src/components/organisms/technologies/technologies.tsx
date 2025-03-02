@@ -1,6 +1,6 @@
 import Section from '@/components/organisms/section';
 import { technologies } from '@/components/organisms/technologies/data';
-import Technology from '@/components/organisms/technologies/technology';
+import { Technology } from '@/components/organisms/technologies';
 import MoreItems from '@/components/organisms/more-items';
 
 export default function Technologies() {
