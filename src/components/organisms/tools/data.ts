@@ -711,11 +711,26 @@ export const tools: { group: string; children: Tool[] }[] = [
         knowledge: 'Daily'
       },
       {
+        title: '@meilisearch/instant-meilisearch',
+        description: '',
+        website:
+          'https://www.npmjs.com/package/@meilisearch/instant-meilisearch',
+        logo: '',
+        knowledge: 'Daily'
+      },
+      {
         title: '@shopware/api-client',
         description: '',
         website: '',
         logo: '',
         knowledge: 'Daily'
+      },
+      {
+        title: '@shopware/api-gen',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Experienced'
       },
       {
         title: '@storyblok/react',
@@ -767,9 +782,16 @@ export const tools: { group: string; children: Tool[] }[] = [
         knowledge: 'Experienced'
       },
       {
+        title: 'react-instantsearch',
+        description: '',
+        website: 'https://www.npmjs.com/package/react-instantsearch',
+        logo: '',
+        knowledge: 'Experienced'
+      },
+      {
         title: 'react-instantsearch-nextjs',
         description: '',
-        website: '',
+        website: 'https://www.npmjs.com/package/react-instantsearch-nextjs',
         logo: '',
         knowledge: 'Experienced'
       },
@@ -950,7 +972,7 @@ export const tools: { group: string; children: Tool[] }[] = [
         website: 'https://www.meilisearch.com/',
         logo: '',
         description: '',
-        knowledge: 'Not started'
+        knowledge: 'Used'
       }
     ]
   },
@@ -1028,6 +1050,13 @@ export const tools: { group: string; children: Tool[] }[] = [
         title: 'Tailwind UI',
         description: '',
         website: '',
+        logo: '',
+        knowledge: 'Experienced'
+      },
+      {
+        title: 'Refactoring UI',
+        description: '',
+        website: 'https://www.refactoringui.com',
         logo: '',
         knowledge: 'Daily'
       }

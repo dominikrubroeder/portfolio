@@ -13,7 +13,7 @@ export default function Mindset({ className }: { className?: string }) {
       </li>
       <li>
         <b className="text-foreground">Coding</b> and
-        <b className="text-foreground"> Building</b> – for production
+        <b className="text-foreground"> building</b> – for production
       </li>
       <li>
         <b className="text-foreground">Using Psychology </b>

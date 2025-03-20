@@ -17,7 +17,7 @@ export default function Container({
   return (
     <Comp
       className={cn(
-        'mx-auto max-w-(--container) scroll-mt-24 px-4 md:scroll-mt-28',
+        'mx-auto max-w-(--container) scroll-mt-24 px-6 md:scroll-mt-28',
         className
       )}
       {...rest}

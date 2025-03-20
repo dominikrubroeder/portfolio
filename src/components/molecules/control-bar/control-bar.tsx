@@ -18,7 +18,7 @@ export default function ControlBar({
     useControlBar(collapse);
 
   return (
-    <nav className="no-scrollbar fixed bottom-4 z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:-mt-6 md:w-max">
+    <nav className="no-scrollbar z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:-mt-6 md:w-max">
       {leftControlAction && (
         <ControlBarActionLeft
           controlBar={state.controlBarVisibility}

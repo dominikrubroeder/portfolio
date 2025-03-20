@@ -81,8 +81,8 @@ export const technologies: { group: string; children: Technology[] }[] = [
         knowledge: 'Used'
       },
       {
-        title: 'React Router (v7, framework mode)',
-        description: '',
+        title: 'React Router',
+        description: '(v7, framework mode)',
         website: 'https://reactrouter.com/start/framework/installation',
         logo: '',
         knowledge: 'Used'

@@ -7,7 +7,7 @@ export default function ControlBarMobileTrigger({
   toggleMobileMenu: () => void;
 }) {
   return (
-    <div className="flex items-center gap-2 rounded-full bg-muted pl-0 transition md:hidden">
+    <div className="sticky top-48 flex w-full items-center gap-2 rounded-full bg-muted pl-0 transition md:hidden">
       <button
         aria-label="Open mobile menu"
         className="z-50 flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full bg-muted transition hover:bg-muted-hover"

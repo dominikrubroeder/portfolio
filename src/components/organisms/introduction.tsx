@@ -22,14 +22,18 @@ export function Introduction() {
             <ImageSlideIn />
           </div>
 
-          <h2 className="text-wrap">
+          <div className="text-wrap">
             <b className="mr-1.5 text-foreground">
               My work is committed to the frontend. I like to create and build
               dynamic interfaces that are designed to be for a joyful and
               interactive web
             </b>
-            – later on, native mobile apps might join that paradigm.
-          </h2>
+            <p>
+              – later on, native mobile apps might join that paradigm. I am a
+              designer and like to code to make the design available to everyone
+              production ready.
+            </p>
+          </div>
 
           <ul className="space-y-6">
             <li>

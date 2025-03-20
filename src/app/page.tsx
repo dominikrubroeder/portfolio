@@ -69,8 +69,6 @@ const sections: ControlBarSections = [
 export default function HomePage() {
   return (
     <div className="animate-fade-up-1rem">
-      <Container htmlTag="section">Hello</Container>
-
       <DesignModeBackground />
 
       <HomeHero />

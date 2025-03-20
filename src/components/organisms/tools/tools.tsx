@@ -5,7 +5,7 @@ import Container from '@/components/organisms/container';
 
 export default function Tools() {
   return (
-    <Container htmlTag="section" id="tools" className="space-y-8 px-0">
+    <Container htmlTag="section" id="tools" className="space-y-8">
       <header className="space-y-6 px-4">
         <div className="space-y-4 lg:inline-flex lg:flex-wrap lg:items-end lg:gap-4 lg:space-y-0">
           <h2 className="text-3xl font-bold text-foreground">Tools:</h2>
