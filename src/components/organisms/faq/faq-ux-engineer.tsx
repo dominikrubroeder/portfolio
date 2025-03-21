@@ -2,7 +2,7 @@ import { AccordionContained } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
-export default function UxEngineer() {
+export function FaqUxEngineer() {
   return (
     <AccordionContained
       title="On which predicates should a UX Engineer focus on?"

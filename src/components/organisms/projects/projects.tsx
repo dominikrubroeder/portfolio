@@ -1,7 +1,7 @@
 import DevModeLabel from '@/components/atoms/dev-mode-label';
 import React from 'react';
 
-export default function Projects() {
+export function Projects() {
   return (
     <section
       className="relative mx-auto flex min-h-64 max-w-(--breakpoint-sm) scroll-mt-24 flex-col items-center justify-center gap-4 border-y md:scroll-mt-64"

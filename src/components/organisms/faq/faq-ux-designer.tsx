@@ -2,7 +2,7 @@ import { AccordionContained } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
-export default function UxDesigner() {
+export function FaqUxDesigner() {
   return (
     <AccordionContained
       title="On which predicates should a UX Designer focus on?"

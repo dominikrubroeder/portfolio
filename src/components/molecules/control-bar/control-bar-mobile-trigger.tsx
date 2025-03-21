@@ -1,7 +1,6 @@
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import React from 'react';
 
-export default function ControlBarMobileTrigger({
+export function ControlBarMobileTrigger({
   toggleMobileMenu
 }: {
   toggleMobileMenu: () => void;

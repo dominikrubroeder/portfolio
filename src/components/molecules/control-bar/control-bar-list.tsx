@@ -6,13 +6,13 @@ import type {
   ControlBarActiveSection,
   ControlBarMobileMenuVisibility,
   ControlBarSections
-} from '@/components/molecules/control-bar/types';
+} from '@/components/molecules/control-bar/types/types';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/atoms/button';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
 
-export default function ControlBarList({
+export function ControlBarList({
   sections,
   activeSection,
   setActiveSection,

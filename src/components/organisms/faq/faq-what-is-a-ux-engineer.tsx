@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Blockquote } from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
-export default function WhatIsAUxEngineer() {
+export function FaqWhatIsAUxEngineer() {
   return (
     <AccordionContained title="What is an UX Engineer?">
       <Blockquote className="mt-4" quotes>

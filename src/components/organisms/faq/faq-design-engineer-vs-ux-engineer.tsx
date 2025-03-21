@@ -2,7 +2,7 @@ import { AccordionContained } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
-export default function DesignEngineerVsUxEngineer() {
+export function FaqDesignEngineerVsUxEngineer() {
   return (
     <AccordionContained
       title="Design Engineer vs UX Engineer"

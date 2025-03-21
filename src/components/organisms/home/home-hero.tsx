@@ -10,7 +10,7 @@ import {
 import { DocumentTextIcon } from '@heroicons/react/24/outline';
 import { ArrowDownIcon } from '@heroicons/react/24/solid';
 
-export default function HomeHero() {
+export function HomeHero() {
   return (
     <section
       id="hero"

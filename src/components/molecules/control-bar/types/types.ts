@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type ControlBarAction = 'Avatar' | 'Back' | 'Up';
+export type ControlBarActionType = 'Avatar' | 'Back' | 'Up';
 
 export type ControlBarSections = {
   id: string;
@@ -19,8 +19,8 @@ export type ControlBarActiveSection = number | null;
 export interface ControlBar {
   sections: ControlBarSections;
   collapse: boolean;
-  leftControlAction?: ControlBarAction;
-  rightControlAction?: ControlBarAction;
+  leftControlAction?: ControlBarActionType;
+  rightControlAction?: ControlBarActionType;
 }
 
 export interface ControlBarState {

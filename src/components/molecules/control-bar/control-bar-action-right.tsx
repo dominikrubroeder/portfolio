@@ -1,11 +1,10 @@
-import React from 'react';
 import type {
-  ControlBarAction as ControlBarActionType,
+  ControlBarActionType,
   ControlBarVisibility
-} from '@/components/molecules/control-bar/types';
-import ControlBarAction from '@/components/molecules/control-bar/control-bar-action';
+} from '@/components/molecules/control-bar';
+import { ControlBarAction } from '@/components/molecules/control-bar';
 
-export default function ControlBarActionRight({
+export function ControlBarActionRight({
   controlBar,
   rightControlAction = 'Up'
 }: {

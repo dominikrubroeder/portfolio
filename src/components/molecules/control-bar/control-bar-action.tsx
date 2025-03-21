@@ -1,13 +1,13 @@
 'use client';
 
-import type { ControlBarAction } from '@/components/molecules/control-bar/types';
-import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 import Image from 'next/image';
-import React from 'react';
+
+import type { ControlBarActionType } from '@/components/molecules/control-bar/types/types';
+import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
 
-export default function ControlBarAction({ type }: { type: ControlBarAction }) {
+export function ControlBarAction({ type }: { type: ControlBarActionType }) {
   const { router, deleteSearchParam } = useUpdateSearchParams();
 
   function scrollToTop() {

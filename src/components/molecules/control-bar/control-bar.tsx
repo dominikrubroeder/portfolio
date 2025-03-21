@@ -1,19 +1,21 @@
 'use client';
 
-import React from 'react';
-import ControlBarList from '@/components/molecules/control-bar/control-bar-list';
-import ControlBarMobileTrigger from '@/components/molecules/control-bar/control-bar-mobile-trigger';
-import ControlBarActionLeft from '@/components/molecules/control-bar/control-bar-action-left';
-import ControlBarActionRight from '@/components/molecules/control-bar/control-bar-action-right';
-import { useControlBar } from '@/components/molecules/control-bar/control-bar-context';
-import { ControlBar as IControlBar } from '@/components/molecules/control-bar/types';
+import {
+  ControlBarActionLeft,
+  ControlBarActionRight,
+  ControlBarList,
+  ControlBarMobileTrigger,
+  useControlBar
+} from '@/components/molecules/control-bar';
 
-export default function ControlBar({
+import { ControlBar as ControlBarType } from '@/components/molecules/control-bar/types/types';
+
+export function ControlBar({
   sections,
   collapse,
   leftControlAction,
   rightControlAction
-}: IControlBar) {
+}: ControlBarType) {
   const { state, toggleMobileMenu, activeSection, setActiveSection } =
     useControlBar(collapse);
 
