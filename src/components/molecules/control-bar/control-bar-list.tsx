@@ -35,8 +35,9 @@ export function ControlBarList({
       )}
     >
       {sections.map((section, index) => (
-        <button
+        <Button
           key={section.id}
+          variant="naked"
           className={cn(
             'group relative block interactive rounded-full transition select-none hover:text-foreground md:inline-block',
             activeSection === index ? '' : 'hover:bg-muted'
@@ -76,7 +77,7 @@ export function ControlBarList({
               <span className={cn(section.className)}>{section.label}</span>
             ) : null}
           </div>
-        </button>
+        </Button>
       ))}
 
       <div className="sticky bottom-0 z-10 flex justify-end overflow-x-auto border-t bg-muted p-4 pb-3.5 md:hidden">
