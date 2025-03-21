@@ -1,10 +1,10 @@
-import Accordion from '@/components/atoms/accordion';
+import { AccordionContained } from '@/components/atoms/accordion';
 import Blockquote from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
 export default function DesignEngineerVsUxEngineer() {
   return (
-    <Accordion
+    <AccordionContained
       title="Design Engineer vs UX Engineer"
       aria-label="View 'Design Engineer vs UX Engineer' on ChatGPT"
       restrictHeight
@@ -130,6 +130,6 @@ export default function DesignEngineerVsUxEngineer() {
           </Link>
         </p>
       </div>
-    </Accordion>
+    </AccordionContained>
   );
 }

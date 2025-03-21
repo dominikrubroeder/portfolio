@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type Knowledge =
   | 'Not started'
   | 'Used'
@@ -9,6 +11,6 @@ export interface Tool {
   title: string;
   description: string;
   website: string;
-  logo: string;
+  logo: ReactNode;
   knowledge: Knowledge;
 }

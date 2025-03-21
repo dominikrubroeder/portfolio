@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from '@/components/atoms/avatar';
 import Link from '@/components/atoms/link';
-import Button from '@/components/atoms/button';
+import { Button } from '@/components/atoms/button';
 import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
 
 export default function Header() {

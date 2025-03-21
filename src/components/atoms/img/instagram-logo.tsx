@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function InstagramLogo({ className }: { className?: string }) {
+export function InstagramLogo({ className }: { className?: string }) {
   return (
     <Image
       src="/instagram.png"

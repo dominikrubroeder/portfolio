@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { ReactNode, useState } from 'react';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
-export default function AccordionClean({
+export function Accordion({
   title,
   open,
   children,

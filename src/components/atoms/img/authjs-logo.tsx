@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function AuthJsLogo({ className }: { className?: string }) {
+export function AuthjsLogo({ className }: { className?: string }) {
   return (
     <Image
       src="/auth-js.png"

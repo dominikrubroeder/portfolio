@@ -1,6 +1,6 @@
 import { Introduction } from '@/components/organisms/introduction';
-import HomeHero from '@/components/organisms/home-hero';
-import Projects from '@/components/organisms/projects';
+import HomeHero from '@/components/organisms/home/home-hero';
+import Projects from '@/components/organisms/projects/projects';
 import { Tools } from '@/components/organisms/tools';
 import { Technologies } from '@/components/organisms/technologies';
 import { Socials } from '@/components/organisms/socials';

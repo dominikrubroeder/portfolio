@@ -1,3 +1,4 @@
+import { FigmaLogo } from '@/components/atoms/logo';
 import { Tool } from './types';
 
 export const highlightTools: { group: string; children: Tool[] }[] = [
@@ -7,7 +8,7 @@ export const highlightTools: { group: string; children: Tool[] }[] = [
       {
         title: 'Figma',
         website: 'https://www.figma.com',
-        logo: '/figma.png',
+        logo: <FigmaLogo />,
         description:
           'How you design, align, and build  matters. Do it together with Figma',
         knowledge: 'Daily'

@@ -8,7 +8,7 @@ import type {
   ControlBarSections
 } from '@/components/molecules/control-bar/types';
 import { cn } from '@/lib/utils';
-import Button from '@/components/atoms/button';
+import { Button } from '@/components/atoms/button';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
 

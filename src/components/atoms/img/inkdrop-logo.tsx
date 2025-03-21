@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { defaultIconSize } from '@/components/atoms/logo/config';
 
-export default function InkdropLogo({ className }: { className?: string }) {
+export function InkdropLogo({ className }: { className?: string }) {
   return (
     <Image
       src="/tools/inkdrop.png"

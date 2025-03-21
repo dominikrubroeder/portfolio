@@ -1,8 +1,14 @@
-import React from 'react';
-import ButtonScrollToIntroduction from '@/components/atoms/button-scroll-to-introduction';
-import ButtonContactMe from '@/components/atoms/button-contact-me';
-import { DesignModeToggle, DevModeToggle } from '@/components/atoms/toggle';
-import AutoModeToggle from '@/components/atoms/toggle/auto-mode-toggle';
+import {
+  ButtonContactMe,
+  ScrollIntoViewButton
+} from '@/components/atoms/button';
+import {
+  AutoModeToggle,
+  DesignModeToggle,
+  DevModeToggle
+} from '@/components/atoms/toggle';
+import { DocumentTextIcon } from '@heroicons/react/24/outline';
+import { ArrowDownIcon } from '@heroicons/react/24/solid';
 
 export default function HomeHero() {
   return (
@@ -38,7 +44,11 @@ export default function HomeHero() {
           </div>
 
           <div className="space-x-3">
-            <ButtonScrollToIntroduction />
+            <ScrollIntoViewButton id="introduction">
+              <DocumentTextIcon className="size-5 shrink-0" /> Read more
+              <ArrowDownIcon className="size-4 shrink-0" />
+            </ScrollIntoViewButton>
+
             <ButtonContactMe />
           </div>
         </div>

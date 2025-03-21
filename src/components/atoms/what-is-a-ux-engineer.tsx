@@ -1,11 +1,11 @@
-import Accordion from '@/components/atoms/accordion';
+import { AccordionContained } from '@/components/atoms/accordion';
 import Image from 'next/image';
 import Blockquote from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
 export default function WhatIsAUxEngineer() {
   return (
-    <Accordion title="What is an UX Engineer?">
+    <AccordionContained title="What is an UX Engineer?">
       <Blockquote className="mt-4" quotes>
         <b className="text-foreground">Bring all your skills into one role</b>.
         As a UX Engineer at Google, you’ll combine your design, engineering, and
@@ -39,6 +39,6 @@ export default function WhatIsAUxEngineer() {
           </Link>
         </figcaption>
       </figure>
-    </Accordion>
+    </AccordionContained>
   );
 }

@@ -25,5 +25,6 @@ export { SlackLogo } from './slack-logo';
 export { TeamsLogo } from './teams-logo';
 export { VercelLogo } from './vercel-logo';
 export { FrontendMentorLogo } from './frontend-mentor-logo';
+export { Heroicons } from './heroicons';
 
 export * from './config';

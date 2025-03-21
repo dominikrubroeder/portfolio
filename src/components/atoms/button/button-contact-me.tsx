@@ -1,8 +1,8 @@
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
-import Button from '@/components/atoms/button';
+import { Button } from '@/components/atoms/button';
 import React from 'react';
 
-export default function ButtonContactMe() {
+export function ButtonContactMe() {
   return (
     <Button
       variant="secondary"

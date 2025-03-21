@@ -30,7 +30,7 @@ import {
   XingLogo
 } from '@/components/atoms/logo';
 
-import { AuthJsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
+import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 
 export default function Brand({
   brand,
@@ -92,7 +92,7 @@ export default function Brand({
       return <MotionLogo className={className} />;
 
     case 'Auth.js':
-      return <AuthJsLogo className={className} />;
+      return <AuthjsLogo className={className} />;
 
     case 'LinkedIn':
       return <LinkedinLogo className={className} />;

@@ -1,5 +1,5 @@
 import { ArrowDownTrayIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
-import Button from '@/components/atoms/button';
+import Button from '@/components/atoms/button/button';
 
 export default function ContactRow() {
   return (

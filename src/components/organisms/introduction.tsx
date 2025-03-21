@@ -1,11 +1,11 @@
-import AccordionClean from '@/components/atoms/accordion-clean';
+import { Accordion } from '@/components/atoms/accordion';
 import Vision from '@/components/atoms/vision';
 import Mindset from '@/components/atoms/mindset';
 import Books from '@/components/molecules/books';
 import ImageSlideIn from '@/components/atoms/image-slide-in';
 import TechStack from '@/components/atoms/tech-stack';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
-import Animate from '@/components/organisms/animate';
+import Animate from '@/components/molecules/animate';
 
 export function Introduction() {
   return (
@@ -37,27 +37,27 @@ export function Introduction() {
 
           <ul className="space-y-6">
             <li>
-              <AccordionClean title="More about my vision" open>
+              <Accordion title="More about my vision" open>
                 <Vision />
-              </AccordionClean>
+              </Accordion>
             </li>
 
             <li>
-              <AccordionClean title="Things i like">
+              <Accordion title="Things i like">
                 <Mindset />
-              </AccordionClean>
+              </Accordion>
             </li>
 
             <li>
-              <AccordionClean title="Books">
+              <Accordion title="Books">
                 <Books />
-              </AccordionClean>
+              </Accordion>
             </li>
 
             <li>
-              <AccordionClean title="My tech stack">
+              <Accordion title="My tech stack">
                 <TechStack />
-              </AccordionClean>
+              </Accordion>
             </li>
           </ul>
         </div>

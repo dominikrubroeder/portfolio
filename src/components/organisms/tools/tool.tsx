@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Brand from '@/components/atoms/brand';
-import Button from '@/components/atoms/button';
+import { Button } from '@/components/atoms/button';
 import ExperienceBar from '@/components/atoms/experience-bar';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
 import type { Tool } from '@/components/organisms/tools/types';

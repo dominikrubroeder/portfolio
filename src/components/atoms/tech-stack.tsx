@@ -1,4 +1,4 @@
-import Button from '@/components/atoms/button';
+import { Button } from '@/components/atoms/button';
 import React from 'react';
 import { cn } from '@/lib/utils';
 import {

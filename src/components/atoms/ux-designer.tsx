@@ -1,10 +1,10 @@
-import Accordion from '@/components/atoms/accordion';
+import { AccordionContained } from '@/components/atoms/accordion';
 import Blockquote from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
 export default function UxDesigner() {
   return (
-    <Accordion
+    <AccordionContained
       title="On which predicates should a UX Designer focus on?"
       restrictHeight
     >
@@ -135,6 +135,6 @@ export default function UxDesigner() {
           Source
         </Link>
       </p>
-    </Accordion>
+    </AccordionContained>
   );
 }

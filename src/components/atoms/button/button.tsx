@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
 import Link from 'next/link';
 
-export default function Button({
+export function Button({
   variant,
   children,
   className,
