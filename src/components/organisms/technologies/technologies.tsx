@@ -1,7 +1,7 @@
 import { technologies } from '@/components/organisms/technologies/data';
 import { Technology } from '@/components/organisms/technologies';
 import MoreItems from '@/components/organisms/more-items';
-import Container from '@/components/organisms/container';
+import { Container } from '@/components/atoms/container';
 
 export default function Technologies() {
   return (

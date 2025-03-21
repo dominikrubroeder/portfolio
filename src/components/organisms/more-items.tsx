@@ -11,7 +11,7 @@ import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 import Expandable from '@/components/molecules/expandable';
 import { Technology } from '@/components/organisms/technologies/types';
 import Link from 'next/link';
-import Container from '@/components/organisms/container';
+import { Container } from '@/components/atoms/container';
 
 export default function MoreItems({
   items,

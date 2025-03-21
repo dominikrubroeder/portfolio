@@ -26,5 +26,8 @@ export { TeamsLogo } from './teams-logo';
 export { VercelLogo } from './vercel-logo';
 export { FrontendMentorLogo } from './frontend-mentor-logo';
 export { Heroicons } from './heroicons';
+export { HdPlusLogo } from './hd-plus-logo';
+export { SegmuellerLogo } from './segmueller-logo';
+export { AllesautoLogo } from './allesauto-logo';
 
 export * from './config';

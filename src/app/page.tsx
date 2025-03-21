@@ -19,7 +19,7 @@ import {
   HomeIcon,
   PaintBrushIcon
 } from '@heroicons/react/24/outline';
-import Container from '@/components/organisms/container';
+import { Container } from '@/components/atoms/container';
 
 const sections: ControlBarSections = [
   {

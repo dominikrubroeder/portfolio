@@ -1,6 +1,6 @@
 import { socials } from '@/components/organisms/socials/data';
 import { Social } from '@/components/organisms/socials';
-import Container from '@/components/organisms/container';
+import { Container } from '@/components/atoms/container';
 
 export default function Socials() {
   return (

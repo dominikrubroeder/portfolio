@@ -2,7 +2,7 @@ import HistoryEntry from '@/components/organisms/history/history-entry';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
-import Container from '@/components/organisms/container';
+import { Container } from '@/components/atoms/container';
 
 export default function Index() {
   return (

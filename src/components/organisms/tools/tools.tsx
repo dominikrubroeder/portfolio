@@ -1,7 +1,7 @@
 import { highlightTools, tools } from '@/components/organisms/tools/data';
 import MoreItems from '@/components/organisms/more-items';
 import { Tool } from '@/components/organisms/tools';
-import Container from '@/components/organisms/container';
+import { Container } from '@/components/atoms/container';
 
 export default function Tools() {
   return (

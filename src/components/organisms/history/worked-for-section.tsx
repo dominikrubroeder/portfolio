@@ -1,8 +1,10 @@
 import Link from 'next/link';
-import SegmuellerLogo from '@/components/atoms/logo/segmueller-logo';
-import AllesautoLogo from '@/components/atoms/logo/allesauto-logo';
-import HdplusLogo from '@/components/atoms/logo/hdplus-logo';
-import Container from '@/components/organisms/container';
+import { Container } from '@/components/atoms/container';
+import {
+  AllesautoLogo,
+  HdPlusLogo,
+  SegmuellerLogo
+} from '@/components/atoms/logo';
 
 export default function WorkedForSection() {
   return (
@@ -26,7 +28,7 @@ export default function WorkedForSection() {
                 target="_blank"
                 className="cursor-pointer"
               >
-                <HdplusLogo className="h-14 w-auto" />
+                <HdPlusLogo className="h-14 w-auto" />
               </Link>
             </div>
           </li>
