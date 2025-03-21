@@ -4,7 +4,7 @@ import Link from '@/components/atoms/link';
 import { Button } from '@/components/atoms/button';
 import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
 
-export default function Header() {
+export function Header() {
   return (
     <header
       id="header"

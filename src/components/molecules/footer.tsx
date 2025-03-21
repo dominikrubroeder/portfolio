@@ -1,4 +1,4 @@
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="mt-16 space-y-3 border-t p-4 pb-24 text-center text-xs md:pb-4">
       <p>Build your vision. Do it with style.</p>

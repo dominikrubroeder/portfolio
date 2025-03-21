@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
-import './globals.css';
-import Header from '@/components/molecules/header';
-import Footer from '@/components/molecules/footer';
 import { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import './globals.css';
+import { Header } from '@/components/molecules/header';
+import { Footer } from '@/components/molecules/footer';
 import { ThemeProvider } from '@/components/organisms/app-context';
 
 export const metadata: Metadata = {
