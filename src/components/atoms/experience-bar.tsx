@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 import { Knowledge } from '@/components/organisms/tools/types';
 
-export default function ExperienceBar({
+export function ExperienceBar({
   progress,
   className
 }: {

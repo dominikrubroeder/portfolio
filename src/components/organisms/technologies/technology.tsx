@@ -1,11 +1,11 @@
+import React from 'react';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Brand from '@/components/atoms/brand';
 import { Button } from '@/components/atoms/button';
-import ExperienceBar from '@/components/atoms/experience-bar';
+import { ExperienceBar } from '@/components/atoms/experience-bar';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
-import React from 'react';
-import { cn } from '@/lib/utils';
 import type { Technology } from '@/components/organisms/technologies/types';
 
 export default function Technology({

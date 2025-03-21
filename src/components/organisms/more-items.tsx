@@ -1,16 +1,16 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/atoms/button';
 import Brand from '@/components/atoms/brand';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
-import ExperienceBar from '@/components/atoms/experience-bar';
+import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { Tool } from '@/components/organisms/tools/types';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 import Expandable from '@/components/molecules/expandable';
 import { Technology } from '@/components/organisms/technologies/types';
-import Link from 'next/link';
 import { Container } from '@/components/atoms/container';
 
 export default function MoreItems({
