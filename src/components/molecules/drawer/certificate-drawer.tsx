@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import parse from 'html-react-parser';
 
 import {
