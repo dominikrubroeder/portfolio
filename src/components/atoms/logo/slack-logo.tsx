@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg/index';
 
-export default function SlackLogo({ className }: { className?: string }) {
+import { defaultIconSize } from '@/components/atoms/logo/config';
+
+export function SlackLogo({ className }: { className?: string }) {
   return (
     <svg
       width="128"

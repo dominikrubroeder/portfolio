@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import SegmuellerLogo from '@/components/atoms/svg/segmueller-logo';
-import AllesautoLogo from '@/components/atoms/svg/allesauto-logo';
-import HdplusLogo from '@/components/atoms/svg/hdplus-logo';
+import SegmuellerLogo from '@/components/atoms/logo/segmueller-logo';
+import AllesautoLogo from '@/components/atoms/logo/allesauto-logo';
+import HdplusLogo from '@/components/atoms/logo/hdplus-logo';
 import Container from '@/components/organisms/container';
 
 export default function WorkedForSection() {

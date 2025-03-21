@@ -1,7 +1,7 @@
-import { defaultIconSize } from '@/components/atoms/svg/index';
 import { cn } from '@/lib/utils';
+import { defaultIconSize } from '@/components/atoms/logo/config';
 
-export default function JavascriptIcon({ className }: { className?: string }) {
+export function JavascriptLogo({ className }: { className?: string }) {
   return (
     <svg
       width="128"

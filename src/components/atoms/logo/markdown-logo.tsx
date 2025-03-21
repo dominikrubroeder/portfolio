@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg/index';
 
-export default function MarkdownIcon({ className }: { className?: string }) {
+import { defaultIconSize } from '@/components/atoms/logo/config';
+
+export function MarkdownLogo({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 208 128"

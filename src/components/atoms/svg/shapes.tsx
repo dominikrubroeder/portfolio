@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export default function Shapes({ className }: { className?: string }) {
+export function Shapes({ className }: { className?: string }) {
   return (
     <svg
       width="1678"

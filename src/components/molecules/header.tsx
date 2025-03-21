@@ -2,8 +2,7 @@ import React from 'react';
 import Avatar from '@/components/atoms/avatar';
 import Link from '@/components/atoms/link';
 import Button from '@/components/atoms/button';
-import LinkedinIcon from '@/components/atoms/svg/linkedin-icon';
-import GithubIcon from '@/components/atoms/svg/github-icon';
+import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
 
 export default function Header() {
   return (
@@ -46,7 +45,7 @@ export default function Header() {
             aria-label="Go to GitHub profile of Dominik Rubröder"
             asLink
           >
-            <GithubIcon />
+            <GithubLogo />
           </Button>
 
           <Button
@@ -57,7 +56,7 @@ export default function Header() {
             aria-label="Go to LinkedIn profile of Dominik Rubröder"
             asLink
           >
-            <LinkedinIcon />
+            <LinkedinLogo />
           </Button>
         </div>
       </div>

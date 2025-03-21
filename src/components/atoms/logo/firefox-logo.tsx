@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg/index';
 
-export default function FirefoxLogo({ className }: { className?: string }) {
+import { defaultIconSize } from '@/components/atoms/logo/config';
+
+export function FirefoxLogo({ className }: { className?: string }) {
   return (
     <svg
       width="128"

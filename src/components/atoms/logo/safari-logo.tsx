@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg/index';
 
-export default function SafariLogo({ className }: { className?: string }) {
+import { defaultIconSize } from '@/components/atoms/logo/config';
+
+export function SafariLogo({ className }: { className?: string }) {
   return (
     <svg
       width="141"

@@ -1,7 +1,7 @@
-import { defaultIconSize } from '@/components/atoms/svg';
 import { cn } from '@/lib/utils';
+import { defaultIconSize } from '@/components/atoms/logo/config';
 
-export default function CssIcon({ className }: { className?: string }) {
+export function CssLogo({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"

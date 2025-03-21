@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/svg/index';
+import { defaultIconSize } from '@/components/atoms/logo/config';
 
-export default function TailwindCssIcon({ className }: { className?: string }) {
+export function TailwindCssLogo({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 79"

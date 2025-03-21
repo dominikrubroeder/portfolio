@@ -1,11 +1,8 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg/index';
 
-export default function FrontendMentorLogo({
-  className
-}: {
-  className?: string;
-}) {
+import { defaultIconSize } from '@/components/atoms/logo/config';
+
+export function FrontendMentorLogo({ className }: { className?: string }) {
   return (
     <svg
       width="50"

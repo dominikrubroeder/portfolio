@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg/index';
 
-export default function TypescriptIcon({ className }: { className?: string }) {
+import { defaultIconSize } from '@/components/atoms/logo/config';
+
+export function TypescriptLogo({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"

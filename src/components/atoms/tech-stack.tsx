@@ -1,40 +1,42 @@
 import Button from '@/components/atoms/button';
-import ReactIcon from '@/components/atoms/svg/react-icon';
-import NextJsLogo from '@/components/atoms/svg/next-js-logo';
-import TypescriptIcon from '@/components/atoms/svg/typescript-icon';
-import TailwindCssIcon from '@/components/atoms/svg/tailwind-css-icon';
-import MotionIcon from '@/components/atoms/svg/motion-icon';
 import React from 'react';
 import { cn } from '@/lib/utils';
+import {
+  MotionLogo,
+  NextjsLogo,
+  ReactLogo,
+  TailwindCssLogo,
+  TypescriptLogo
+} from '@/components/atoms/logo';
 
 export const techStack = [
   {
     href: 'https://react.dev',
-    icon: <ReactIcon />,
+    icon: <ReactLogo />,
     title: 'Open React landingpage',
     ariaLabel: 'Open React landingpage'
   },
   {
     href: 'https://nextjs.org',
-    icon: <NextJsLogo />,
+    icon: <NextjsLogo />,
     title: 'Open Next.js landingpage',
     ariaLabel: 'Open Next.js landingpage'
   },
   {
     href: 'https://www.typescriptlang.org',
-    icon: <TypescriptIcon />,
+    icon: <TypescriptLogo />,
     title: 'Open TypeScript landingpage',
     ariaLabel: 'Open TypeScript landingpage'
   },
   {
     href: 'https://www.tailwindcss.com',
-    icon: <TailwindCssIcon />,
+    icon: <TailwindCssLogo />,
     title: 'Open Tailwind CSS landingpage',
     ariaLabel: 'Open Tailwind CSS landingpage'
   },
   {
     href: 'https://motion.dev',
-    icon: <MotionIcon />,
+    icon: <MotionLogo />,
     title: 'Open motion landingpage',
     ariaLabel: 'Open motion landingpage'
   }

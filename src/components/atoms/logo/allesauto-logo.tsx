@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export default function AllesautoLogo({
+export function AllesautoLogo({
   className,
   colored,
   ...restProps

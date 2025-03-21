@@ -2,35 +2,35 @@ import { cn } from '@/lib/utils';
 
 import {
   ChromeLogo,
-  CraftIcon,
-  CSSIcon,
-  FigmaIcon,
+  CraftLogo,
+  CssLogo,
+  FigmaLogo,
   FirefoxLogo,
-  GithubIcon,
-  GitlabIcon,
-  HTMLIcon,
-  JavaScriptIcon,
-  LinkedinIcon,
-  MarkdownIcon,
-  MiroIcon,
-  MotionIcon,
-  NextJsLogo,
-  NotesIcon,
-  ReactIcon,
+  FrontendMentorLogo,
+  GithubLogo,
+  GitlabLogo,
+  HtmlLogo,
+  JavascriptLogo,
+  LinkedinLogo,
+  MarkdownLogo,
+  MiroLogo,
+  MotionLogo,
+  NextjsLogo,
+  NotesLogo,
+  ReactLogo,
   SafariLogo,
-  ShopwareIcon,
+  ShopwareLogo,
   SlackLogo,
-  StoryblokIcon,
-  TailwindCssIcon,
+  StoryblokLogo,
+  TailwindCssLogo,
   TeamsLogo,
-  TypescriptIcon,
+  TypescriptLogo,
   VercelLogo,
-  WebstormIcon,
-  XingIcon
-} from '@/components/atoms/svg';
+  WebstormLogo,
+  XingLogo
+} from '@/components/atoms/logo';
 
 import { AuthJsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
-import FrontendMentorLogo from '@/components/atoms/svg/frontend-mentor-logo';
 
 export default function Brand({
   brand,
@@ -41,70 +41,70 @@ export default function Brand({
 }) {
   switch (brand) {
     case 'Figma':
-      return <FigmaIcon className={className} />;
+      return <FigmaLogo className={className} />;
 
     case 'WebStorm':
-      return <WebstormIcon className={className} />;
+      return <WebstormLogo className={className} />;
 
     case 'Notes':
-      return <NotesIcon className={className} />;
+      return <NotesLogo className={className} />;
 
     case 'GitHub':
-      return <GithubIcon className={className} />;
+      return <GithubLogo className={className} />;
 
     case 'GitLab':
-      return <GitlabIcon className={className} />;
+      return <GitlabLogo className={className} />;
 
     case 'Shopware':
-      return <ShopwareIcon className={className} />;
+      return <ShopwareLogo className={className} />;
 
     case 'Storyblok':
-      return <StoryblokIcon className={className} />;
+      return <StoryblokLogo className={className} />;
 
     case 'Miro':
-      return <MiroIcon className={className} />;
+      return <MiroLogo className={className} />;
 
     case 'React':
-      return <ReactIcon className={className} />;
+      return <ReactLogo className={className} />;
 
     case 'Next.js':
-      return <NextJsLogo className={className} />;
+      return <NextjsLogo className={className} />;
 
     case 'TypeScript':
-      return <TypescriptIcon className={className} />;
+      return <TypescriptLogo className={className} />;
 
     case 'JavaScript':
-      return <JavaScriptIcon className={className} />;
+      return <JavascriptLogo className={className} />;
 
     case 'Markdown':
-      return <MarkdownIcon className={className} />;
+      return <MarkdownLogo className={className} />;
 
     case 'HTML':
-      return <HTMLIcon className={className} />;
+      return <HtmlLogo className={className} />;
 
     case 'CSS':
-      return <CSSIcon className={className} />;
+      return <CssLogo className={className} />;
 
     case 'Tailwind CSS':
-      return <TailwindCssIcon className={className} />;
+      return <TailwindCssLogo className={className} />;
 
     case 'motion (formerly framer-motion)':
-      return <MotionIcon className={className} />;
+      return <MotionLogo className={className} />;
 
     case 'Auth.js':
       return <AuthJsLogo className={className} />;
 
     case 'LinkedIn':
-      return <LinkedinIcon className={className} />;
+      return <LinkedinLogo className={className} />;
 
     case 'Xing':
-      return <XingIcon className={className} />;
+      return <XingLogo className={className} />;
 
     case 'Instagram':
       return <InstagramLogo className={className} />;
 
     case 'Craft':
-      return <CraftIcon className={className} />;
+      return <CraftLogo className={className} />;
 
     case 'Inkdrop':
       return <InkdropLogo className={className} />;
@@ -131,7 +131,7 @@ export default function Brand({
       return <FrontendMentorLogo className={className} />;
 
     case 'Learn Next.js':
-      return <NextJsLogo className={className} />;
+      return <NextjsLogo className={className} />;
 
     default:
       return <div className={cn('rounded bg-muted', className)} />;

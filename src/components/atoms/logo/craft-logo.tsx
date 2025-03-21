@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg';
 
-export default function CraftIcon({ className }: { className?: string }) {
+import { defaultIconSize } from '@/components/atoms/logo/config';
+
+export function CraftLogo({ className }: { className?: string }) {
   return (
     <svg
       width="129"

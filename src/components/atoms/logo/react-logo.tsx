@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/svg/index';
 
-export default function ReactIcon({ className }: { className?: string }) {
+import { defaultIconSize } from '@/components/atoms/logo/config';
+
+export function ReactLogo({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 128 128"

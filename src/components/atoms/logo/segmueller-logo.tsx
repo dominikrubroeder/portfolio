@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export default function SegmuellerLogo({
+export function SegmuellerLogo({
   className,
   colored,
   ...restProps

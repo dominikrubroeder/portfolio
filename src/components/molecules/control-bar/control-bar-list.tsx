@@ -9,9 +9,8 @@ import type {
 } from '@/components/molecules/control-bar/types';
 import { cn } from '@/lib/utils';
 import Button from '@/components/atoms/button';
-import GithubIcon from '@/components/atoms/svg/github-icon';
-import LinkedinIcon from '@/components/atoms/svg/linkedin-icon';
 import { useScrollIntoView } from '@/hooks/useScrollIntoView';
+import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
 
 export default function ControlBarList({
   sections,
@@ -90,7 +89,7 @@ export default function ControlBarList({
           asLink
           className="hover:after:bg-muted-hover"
         >
-          <GithubIcon />
+          <GithubLogo />
         </Button>
 
         <Button
@@ -102,7 +101,7 @@ export default function ControlBarList({
           asLink
           className="hover:after:bg-muted-hover"
         >
-          <LinkedinIcon />
+          <LinkedinLogo />
         </Button>
       </div>
     </div>

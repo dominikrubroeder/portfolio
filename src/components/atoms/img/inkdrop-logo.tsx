@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { defaultIconSize } from '@/components/atoms/svg';
+
+import { defaultIconSize } from '@/components/atoms/logo/config';
 
 export default function InkdropLogo({ className }: { className?: string }) {
   return (

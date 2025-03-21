@@ -1,11 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export default function HdplusLogo({
-  className,
-  ...restProps
-}: {
-  className: string;
-}) {
+export function HdplusLogo({ className, ...restProps }: { className: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
