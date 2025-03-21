@@ -150,7 +150,6 @@ export default function MoreItems({
                                   href={item.website}
                                   title={`Go to external ${item.title} website`}
                                   aria-label={`Go to external ${item.title} website`}
-                                  asLink
                                 >
                                   <ArrowTopRightOnSquareIcon className="size-5" />
                                 </Button>

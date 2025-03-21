@@ -4,29 +4,18 @@ import Link from 'next/link';
 
 export function Button({
   variant,
-  children,
-  className,
-  asLink,
   href,
-  title,
-  ariaLabel,
   target,
-  disabled,
-  id,
-  onClick
+  className,
+  children,
+  ...rest
 }: {
   variant: 'primary' | 'secondary' | 'outline';
-  children: ReactNode;
   className?: string;
-  asLink?: boolean;
   href?: string;
-  title?: string;
-  ariaLabel?: string;
   target?: HTMLAttributeAnchorTarget;
-  disabled?: boolean;
-  id?: string;
-  onClick?: () => void;
-}) {
+  children: ReactNode;
+} & React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>) {
   const classNames = cn(
     'interactive group relative inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center gap-2 p-3 transition',
     variant === 'primary' &&
@@ -40,40 +29,31 @@ export function Button({
   if (href && (href.includes('mailto') || href.includes('tel'))) {
     return (
       <a
+        {...rest}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         className={classNames}
-        id={id}
       >
         {children}
       </a>
     );
   }
 
-  if (asLink && href)
+  if (href)
     return (
       <Link
+        {...rest}
         href={href}
-        className={classNames}
         target={href.includes('https') ? '_blank' : target}
-        title={title}
-        aria-label={ariaLabel}
-        id={id}
+        className={classNames}
       >
         {children}
       </Link>
     );
 
   return (
-    <button
-      className={classNames}
-      title={title}
-      aria-label={ariaLabel}
-      disabled={disabled}
-      onClick={onClick}
-      id={id}
-    >
+    <button {...rest} className={classNames}>
       {children}
     </button>
   );

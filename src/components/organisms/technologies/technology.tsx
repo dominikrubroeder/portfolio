@@ -29,7 +29,6 @@ export default function Technology({
           title={`Go to external ${technology.title} website`}
           aria-label={`Go to external ${technology.title} website`}
           className="mx-auto min-h-11 min-w-11 shrink-0"
-          asLink
         >
           <span className="sr-only">Open</span>
           <ArrowTopRightOnSquareIcon className="size-5 transition group-hover:text-foreground" />

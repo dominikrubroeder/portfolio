@@ -4,7 +4,7 @@ import { Toggle } from '@/components/atoms/toggle';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/organisms/app-context';
 
-export default function AutoModeToggle({ className }: { className?: string }) {
+export function AutoModeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
 
   return (

@@ -4,11 +4,7 @@ import React from 'react';
 
 export function ButtonContactMe() {
   return (
-    <Button
-      variant="secondary"
-      href="mailto:dominik.rubroeder@icloud.com"
-      asLink
-    >
+    <Button variant="secondary" href="mailto:dominik.rubroeder@icloud.com">
       <EnvelopeIcon className="size-5 shrink-0" /> Contact me
     </Button>
   );

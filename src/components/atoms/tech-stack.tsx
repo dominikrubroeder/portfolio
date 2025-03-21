@@ -57,8 +57,7 @@ export default function TechStack({ className }: { className?: string }) {
             href={item.href}
             className="[&>svg]:size-14"
             target="_blank"
-            asLink
-            ariaLabel={item.ariaLabel}
+            aria-label={item.ariaLabel}
             title={item.title}
           >
             {item.icon}

@@ -4,11 +4,7 @@ import { Toggle } from '@/components/atoms/toggle';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/organisms/app-context';
 
-export default function DesignModeToggle({
-  className
-}: {
-  className?: string;
-}) {
+export function DesignModeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
 
   return (

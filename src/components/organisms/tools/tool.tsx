@@ -23,7 +23,6 @@ export default function Tool({ tool, group }: { tool: Tool; group: string }) {
           title={`Go to external ${tool.title} website`}
           aria-label={`Go to external ${tool.title} website`}
           className="mx-auto min-h-11 min-w-11 shrink-0"
-          asLink
         >
           <span className="sr-only">Open</span>
           <ArrowTopRightOnSquareIcon className="size-5 transition group-hover:text-foreground" />

@@ -43,7 +43,6 @@ export default function Header() {
             target="_blank"
             title="Go to GitHub profile of Dominik Rubröder"
             aria-label="Go to GitHub profile of Dominik Rubröder"
-            asLink
           >
             <GithubLogo />
           </Button>
@@ -54,7 +53,6 @@ export default function Header() {
             target="_blank"
             title="Go to LinkedIn profile of Dominik Rubröder"
             aria-label="Go to LinkedIn profile of Dominik Rubröder"
-            asLink
           >
             <LinkedinLogo />
           </Button>

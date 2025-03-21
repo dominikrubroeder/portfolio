@@ -86,7 +86,6 @@ export default function ControlBarList({
           target="_blank"
           title="Go to GitHub profile of Dominik Rubröder"
           aria-label="Go to GitHub profile of Dominik Rubröder"
-          asLink
           className="hover:after:bg-muted-hover"
         >
           <GithubLogo />
@@ -98,7 +97,6 @@ export default function ControlBarList({
           target="_blank"
           title="Go to LinkedIn profile of Dominik Rubröder"
           aria-label="Go to LinkedIn profile of Dominik Rubröder"
-          asLink
           className="hover:after:bg-muted-hover"
         >
           <LinkedinLogo />

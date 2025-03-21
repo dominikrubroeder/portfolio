@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import React, { ReactNode } from 'react';
 
-export default function Blockquote({
+export function Blockquote({
   indent,
   quoteBar = true,
   centered = true,
@@ -9,7 +9,8 @@ export default function Blockquote({
   children,
   quotes,
   author,
-  horizontalOffset = true
+  horizontalOffset = true,
+  ...rest
 }: {
   indent?: boolean;
   quoteBar?: boolean;
@@ -19,9 +20,10 @@ export default function Blockquote({
   quotes?: boolean;
   author?: ReactNode;
   horizontalOffset?: boolean;
-}) {
+} & React.HTMLAttributes<HTMLElement>) {
   return (
     <blockquote
+      {...rest}
       className={cn(
         horizontalOffset && 'my-8',
         indent && 'ml-4 md:ml-8',

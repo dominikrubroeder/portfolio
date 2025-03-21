@@ -3,7 +3,7 @@
 import { useCallback } from 'react';
 import { cn } from '@/lib/utils';
 
-export default function Toggle({
+export function Toggle({
   label,
   className,
   enabled,

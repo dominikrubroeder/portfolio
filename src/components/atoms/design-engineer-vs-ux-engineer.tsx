@@ -1,5 +1,5 @@
 import { AccordionContained } from '@/components/atoms/accordion';
-import Blockquote from '@/components/atoms/blockquote';
+import { Blockquote } from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
 export default function DesignEngineerVsUxEngineer() {

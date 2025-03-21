@@ -1,4 +1,4 @@
-export { default as Toggle } from './toggle';
-export { default as DesignModeToggle } from './design-mode-toggle';
-export { default as DevModeToggle } from './dev-mode-toggle';
-export { default as AutoModeToggle } from './auto-mode-toggle';
+export { Toggle } from './toggle';
+export { DesignModeToggle } from './design-mode-toggle';
+export { DevModeToggle } from './dev-mode-toggle';
+export { AutoModeToggle } from './auto-mode-toggle';
