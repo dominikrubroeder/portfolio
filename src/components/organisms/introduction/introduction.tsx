@@ -1,11 +1,13 @@
 import { Accordion } from '@/components/atoms/accordion';
-import Vision from '@/components/atoms/vision';
-import Mindset from '@/components/atoms/mindset';
-import Books from '@/components/molecules/books';
 import ImageSlideIn from '@/components/atoms/image-slide-in';
-import TechStack from '@/components/atoms/tech-stack';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
 import Animate from '@/components/molecules/animate';
+import {
+  Books,
+  Mindset,
+  TechStack,
+  Vision
+} from '@/components/organisms/introduction';
 
 export function Introduction() {
   return (

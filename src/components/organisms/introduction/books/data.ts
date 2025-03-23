@@ -1,4 +1,4 @@
-import type { Book } from '@/components/molecules/books/types';
+import type { Book } from '@/components/organisms/introduction/books/types';
 
 export const books: Book[] = [
   {

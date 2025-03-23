@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export default function Mindset({ className }: { className?: string }) {
+export function Mindset({ className }: { className?: string }) {
   return (
     <ul
       className={cn(

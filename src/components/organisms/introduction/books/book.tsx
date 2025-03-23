@@ -1,7 +1,7 @@
-import type { Book } from '@/components/molecules/books/types';
+import type { Book } from '@/components/organisms/introduction/books/types';
 import AnimatedProgress from '@/components/atoms/animated-progress';
 
-export default function Book({ book }: { book: Book }) {
+export function Book({ book }: { book: Book }) {
   return (
     <div className="flex gap-4 py-1">
       <AnimatedProgress size={32} strokeWidth={5} progress={book.progress} />

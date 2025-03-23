@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { cn } from '@/lib/utils';
-import { books } from '@/components/molecules/books/data';
-import { Book } from '@/components/molecules/books';
+import { Book, books } from '@/components/organisms/introduction/books';
 
-export default function Books({ className }: { className?: string }) {
+export function Books({ className }: { className?: string }) {
   return (
     <ul
       className={cn(

@@ -1,7 +1,7 @@
 import Link from '@/components/atoms/link';
 import React from 'react';
 
-export default function Vision() {
+export function Vision() {
   return (
     <div className="mb-8 space-y-4">
       <p>

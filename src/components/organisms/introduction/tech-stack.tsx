@@ -42,7 +42,7 @@ export const techStack = [
   }
 ];
 
-export default function TechStack({ className }: { className?: string }) {
+export function TechStack({ className }: { className?: string }) {
   return (
     <ul
       className={cn(
