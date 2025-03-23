@@ -1,9 +1,28 @@
-import { highlightTools, tools } from '@/components/organisms/tools/data';
-import MoreItems from '@/components/organisms/more-items';
 import { Tool } from '@/components/organisms/tools';
+import type { Tools } from '@/components/organisms/tools/types';
 import { Container } from '@/components/atoms/container';
+import MoreItems from '@/components/organisms/more-items';
+import { getApiUrl } from '@/lib/api';
 
-export default function Tools() {
+async function getTools() {
+  const res = await fetch(`${getApiUrl()}/api/tools`, {
+    next: { revalidate: 60 }
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch tools data');
+  }
+
+  return res.json();
+}
+
+export default async function Tools() {
+  const data = await getTools();
+  const highlightTools: Tools = data.highlightTools;
+  const tools: Tools = data.tools;
+
+  if (highlightTools.length === 0 || tools.length === 0) return null;
+
   return (
     <Container htmlTag="section" id="tools" className="space-y-8">
       <header className="space-y-6 px-4">

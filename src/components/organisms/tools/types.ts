@@ -14,3 +14,5 @@ export interface Tool {
   logo: ReactNode;
   knowledge: Knowledge;
 }
+
+export type Tools = { group: string; children: Tool[] }[];

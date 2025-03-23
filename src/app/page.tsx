@@ -24,6 +24,7 @@ import {
   HomeIcon,
   PaintBrushIcon
 } from '@heroicons/react/24/outline';
+import { Suspense } from 'react';
 
 const sections: ControlBarSections = [
   {
@@ -84,7 +85,9 @@ export default function HomePage() {
 
         <Projects />
 
-        <Tools />
+        <Suspense>
+          <Tools />
+        </Suspense>
 
         <Technologies />
 
