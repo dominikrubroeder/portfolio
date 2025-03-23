@@ -8,7 +8,7 @@ import React, {
   useState
 } from 'react';
 
-type Theme = 'dev' | 'design' | 'auto';
+export type Theme = 'dev' | 'design' | 'auto';
 
 interface ThemeContextType {
   theme: Theme;

@@ -3,7 +3,7 @@
 import { ReactNode, useEffect } from 'react';
 import { motion, useAnimate, useInView } from 'motion/react';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/components/organisms/app-context';
+import { useTheme } from '@/components/organisms/context/theme-context';
 
 export default function Animate({
   direction = 'up',

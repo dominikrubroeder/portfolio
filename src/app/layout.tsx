@@ -5,7 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { Header } from '@/components/molecules/header';
 import { Footer } from '@/components/molecules/footer';
-import { ThemeProvider } from '@/components/organisms/app-context';
+import { ThemeProvider } from '@/components/organisms/context/theme-context';
 
 export const metadata: Metadata = {
   title: 'UX Design Engineer | Dominik Rubröder',

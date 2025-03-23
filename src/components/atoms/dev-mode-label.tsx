@@ -1,6 +1,6 @@
 'use client';
 
-import { useTheme } from '@/components/organisms/app-context';
+import { useTheme } from '@/components/organisms/context/theme-context';
 import { motion } from 'motion/react';
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';

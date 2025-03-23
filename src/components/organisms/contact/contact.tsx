@@ -1,7 +1,7 @@
 import { ArrowDownTrayIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/atoms/button';
 
-export default function ContactRow() {
+export function Contact() {
   return (
     <div className="mx-auto mt-4 flex w-full max-w-(--breakpoint-sm) items-center justify-center gap-4 py-4 text-center md:mt-8 md:py-8">
       <Button

@@ -2,7 +2,7 @@
 
 import { Toggle } from '@/components/atoms/toggle';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/components/organisms/app-context';
+import { useTheme } from '@/components/organisms/context/theme-context';
 
 export function DevModeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
