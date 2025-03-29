@@ -32,7 +32,7 @@ import {
 
 import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 
-export default function Brand({
+export function Brand({
   brand,
   className = 'size-32'
 }: {

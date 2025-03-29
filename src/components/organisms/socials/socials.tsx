@@ -1,6 +1,6 @@
 import { socials } from '@/components/organisms/socials/data';
 import { Container } from '@/components/atoms/container';
-import Brand from '@/components/atoms/brand';
+import { Brand } from '@/components/atoms/brand';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import { Button } from '@/components/atoms/button';
 

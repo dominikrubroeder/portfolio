@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 
 import { Knowledge } from '@/components/organisms/tools/types';
+import { StarIcon } from '@heroicons/react/24/solid';
 
 export function ExperienceBar({
   progress,
@@ -12,8 +13,14 @@ export function ExperienceBar({
   className?: string;
 }) {
   return (
-    <div className={cn('shrink-0 space-y-1', className)}>
-      <div className="text-xs">{progress}</div>
+    <div className={cn('relative shrink-0 space-y-1', className)}>
+      <div className="relative flex gap-1 text-xs">
+        {progress === 'Daily' && (
+          <StarIcon className="absolute top-0 -left-10 size-5 text-primary" />
+        )}
+        {progress}
+      </div>
+
       <div className="relative h-2 w-24 overflow-hidden rounded-full bg-muted">
         <span
           className={cn(

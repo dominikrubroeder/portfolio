@@ -3,17 +3,21 @@
 import { ReactNode, useState } from 'react';
 import { Button } from '@/components/atoms/button';
 import { MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
+import { cn } from '@/lib/utils';
 
 export function ToggleContent({
   label,
+  className,
   children
 }: {
   label?: ReactNode;
+  className?: string;
   children: ReactNode;
 }) {
   const [show, setShow] = useState<boolean>(false);
+
   return (
-    <div className="space-y-8">
+    <div className={cn('space-y-8', className)}>
       <div className="flex items-center gap-2">
         <Button
           variant="primary"

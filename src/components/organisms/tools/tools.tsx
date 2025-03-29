@@ -1,14 +1,15 @@
+import Link from 'next/link';
 import type { Tools } from '@/components/organisms/tools/types';
 import { Container } from '@/components/atoms/container';
 import { getApiUrl } from '@/lib/api';
 import { Marker } from '@/components/atoms/marker';
 import { ToggleContent } from '@/components/organisms/toggle-content';
-import Brand from '@/components/atoms/brand';
+import { Brand } from '@/components/atoms/brand';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
-import Link from 'next/link';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { Button } from '@/components/atoms/button';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
+import Expandable from '@/components/molecules/expandable';
 
 async function getTools() {
   const res = await fetch(`${getApiUrl()}/api/tools`, {
@@ -31,7 +32,7 @@ export default async function Tools() {
 
   return (
     <Container tag="section" id="tools" className="space-y-8">
-      <ul className="no-scrollbar space-x-8 overflow-hidden overflow-x-auto whitespace-nowrap sm:overflow-visible">
+      <ul className="flex flex-wrap gap-8">
         {highlightTools.map((item) =>
           item.children.map((nestedItem) => (
             <li key={nestedItem.title} className="inline-flex">
@@ -41,19 +42,19 @@ export default async function Tools() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ArrowRightIcon className="absolute -top-[5.25rem] -right-1.5 z-20 size-6 -rotate-45 rounded bg-primary p-1 text-primary-foreground opacity-0 group-hover:opacity-100" />
+                <ArrowRightIcon className="absolute -top-[5.25rem] -right-1.5 z-20 hidden size-6 -rotate-45 rounded bg-primary p-1 text-primary-foreground opacity-0 group-hover:opacity-100 md:block" />
 
-                <span className="absolute -top-10 left-1/2 z-20 -translate-x-1/2 rounded border-primary bg-primary px-1 py-0.5 text-xs text-primary-foreground opacity-0 group-hover:opacity-100">
+                <span className="absolute -top-10 left-1/2 z-20 hidden w-max -translate-x-1/2 rounded border-primary bg-primary px-1 py-0.5 text-xs text-primary-foreground opacity-0 group-hover:opacity-100 md:block">
                   New tab
                 </span>
 
-                <div className="absolute -top-[4.75rem] left-1/2 z-10 -translate-x-1/2 rounded border bg-muted px-3.5 py-2 opacity-0 select-none group-hover:opacity-100">
+                <div className="absolute -top-[4.75rem] left-1/2 z-10 hidden w-max -translate-x-1/2 rounded border bg-muted px-3.5 py-2 opacity-0 select-none group-hover:opacity-100 md:block">
                   {nestedItem.title}
                 </div>
 
                 <Brand
                   brand={nestedItem.title}
-                  className="h-20 w-auto interactive transition group-hover:scale-105"
+                  className="h-16 w-auto interactive transition group-hover:scale-105"
                   aria-label={`${nestedItem.title} logo`}
                 />
               </Link>
@@ -82,6 +83,28 @@ export default async function Tools() {
       </header>
 
       <ToggleContent label="All tools">
+        <div className="animate-fade-up-1rem justify-end space-y-4 md:flex md:items-start md:gap-8 md:space-y-0">
+          <div className="flex items-center gap-4">
+            <div className="rounded border p-4">
+              <StarIcon className="size-5 text-primary" />
+            </div>
+            <span>Favorites (= daily usage)</span>
+          </div>
+
+          <div className="flex gap-4">
+            <Expandable
+              className="space-y-2"
+              alwaysVisible={<ExperienceBar progress="Daily" />}
+            >
+              <ExperienceBar progress="Professional" />
+              <ExperienceBar progress="Experienced" />
+              <ExperienceBar progress="Used" />
+              <ExperienceBar progress="Not started" />
+            </Expandable>
+            <span className="pt-4">Level of experience</span>
+          </div>
+        </div>
+
         <ul className="grid animate-fade-up-1rem gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
           {tools
             .sort((a, b) => {
@@ -99,10 +122,6 @@ export default async function Tools() {
                       .sort((a, b) => a.title.localeCompare(b.title))
                       .map((item, index) => (
                         <li key={index} className="relative flex gap-4">
-                          {item.knowledge === 'Daily' && (
-                            <StarIcon className="absolute top-1/2 -left-12 -mt-1 size-5 -translate-y-1/2 text-primary" />
-                          )}
-
                           <Link
                             href={item.website}
                             target="_blank"

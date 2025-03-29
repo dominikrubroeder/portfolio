@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import Brand from '@/components/atoms/brand';
+import { Brand } from '@/components/atoms/brand';
 import type { Social } from '@/components/organisms/socials/types';
 
 export default function Social({
