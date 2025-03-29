@@ -26,7 +26,7 @@ export const books: Book[] = [
     progress: 100
   },
   {
-    title: 'React Key Concepts, 2nd edition',
+    title: 'React Key Concepts, 2nd Edition',
     author: 'Maximilian Schwarzmüller',
     href: undefined,
     progress: 20
@@ -44,10 +44,10 @@ export const books: Book[] = [
     progress: 30
   },
   {
-    title: 'Laws of UX',
+    title: 'Laws of UX, 2nd Edition',
     author: 'Jon Yablonski',
     href: undefined,
-    progress: 20
+    progress: 30
   },
   {
     title: 'User Friendly',

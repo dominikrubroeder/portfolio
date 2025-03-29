@@ -51,7 +51,7 @@ export function Marker({
     }
 
     return (
-      <Comp className={cn('relative py-1 pr-2', className)}>
+      <Comp className={cn('relative inline-flex', className)}>
         <motion.span
           animate={{ width: ['0%', '100%'], opacity: [0, 1] }}
           transition={{
@@ -61,12 +61,13 @@ export function Marker({
             duration: 0.72
           }}
           className={cn(
-            'absolute -top-1 -left-2 z-10 m-1 h-full opacity-0',
+            'absolute -top-1 -left-2 -z-10 m-1 h-full opacity-0',
+
+            color === 'primary' && 'bg-primary',
             color === 'yellow' && 'bg-signal-yellow',
             color === 'red' && 'bg-red-200',
             color === 'green' && 'bg-green-200',
-            color === 'purple' && 'bg-purple-200',
-            color === 'primary' && 'bg-primary'
+            color === 'purple' && 'bg-purple-200'
           )}
         />
         {children}

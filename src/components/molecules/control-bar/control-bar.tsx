@@ -28,6 +28,11 @@ export function ControlBar({
         />
       )}
 
+      <ControlBarActionLeft
+        controlBar={state.controlBarVisibility}
+        leftControlAction="Mail"
+      />
+
       <ControlBarList
         sections={sections}
         setActiveSection={setActiveSection}
@@ -36,6 +41,11 @@ export function ControlBar({
       />
 
       <ControlBarMobileTrigger toggleMobileMenu={toggleMobileMenu} />
+
+      <ControlBarActionRight
+        controlBar={state.controlBarVisibility}
+        rightControlAction={rightControlAction}
+      />
 
       {rightControlAction && (
         <ControlBarActionRight

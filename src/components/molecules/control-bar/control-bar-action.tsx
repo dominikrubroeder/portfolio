@@ -6,6 +6,7 @@ import Image from 'next/image';
 import type { ControlBarActionType } from '@/components/molecules/control-bar/types/types';
 import { ArrowLeftIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
 export function ControlBarAction({ type }: { type: ControlBarActionType }) {
   const { router, deleteSearchParam } = useUpdateSearchParams();
@@ -34,6 +35,17 @@ export function ControlBarAction({ type }: { type: ControlBarActionType }) {
         onClick={() => router.back()}
       >
         <ArrowLeftIcon className="size-4 transition group-hover:text-foreground" />
+      </button>
+    );
+
+  if (type === 'Mail')
+    return (
+      <button
+        className="hover: group flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full border-2 bg-muted transition hover:bg-muted-hover"
+        aria-label="Navigate back"
+        onClick={() => router.back()}
+      >
+        <EnvelopeIcon className="size-4 transition group-hover:text-foreground" />
       </button>
     );
 

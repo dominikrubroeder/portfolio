@@ -80,24 +80,30 @@ export function Vision() {
 
         <ul className="ml-4 list-disc space-y-4">
           <li>
-            <Link
-              href="https://lawsofux.com"
-              title="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
-              aria-label="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
-              className="ml-0"
-            >
-              Psychology and design principles, by Jon Yablonski
-            </Link>
+            <div className="space-x-1">
+              <span>See</span>
+              <Link
+                href="https://lawsofux.com"
+                title="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
+                aria-label="Open Laws of UX from Jon Yablonski about psychological principles for UX and Design"
+                className="ml-0"
+              >
+                Psychology and design principles, by Jon Yablonski
+              </Link>
+            </div>
           </li>
           <li>
-            <Link
-              href="https://nextjs.org/docs/app/building-your-application/deploying/production-checklist"
-              title="Open production checklist on the Next.js documenation"
-              aria-label="Open production checklist on the Next.js documenation"
-              className="ml-0"
-            >
-              Production checklist on Next.js
-            </Link>
+            <div className="space-x-1">
+              <span>See</span>
+              <Link
+                href="https://nextjs.org/docs/app/building-your-application/deploying/production-checklist"
+                title="Open production checklist on the Next.js documenation"
+                aria-label="Open production checklist on the Next.js documenation"
+                className="ml-0"
+              >
+                Production checklist on Next.js
+              </Link>
+            </div>
           </li>
         </ul>
       </div>

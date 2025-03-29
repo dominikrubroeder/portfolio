@@ -9,7 +9,7 @@ import {
 export default function WorkedForSection() {
   return (
     <Container
-      htmlTag="section"
+      tag="section"
       id="worked-for"
       className="flex-row justify-start space-y-8"
     >

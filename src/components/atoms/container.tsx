@@ -3,16 +3,16 @@ import { cn } from '@/lib/utils';
 import { HTMLTag } from '@/lib/types';
 
 export function Container({
-  htmlTag = 'div',
+  tag = 'div',
   className,
   children,
   ...rest
 }: {
-  htmlTag: HTMLTag;
+  tag: HTMLTag;
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLElement>) {
-  const Comp = htmlTag;
+  const Comp = tag;
 
   return (
     <Comp

@@ -1,14 +1,8 @@
 import {
-  ButtonContactMe,
-  ScrollIntoViewButton
-} from '@/components/atoms/button';
-import {
   AutoModeToggle,
   DesignModeToggle,
   DevModeToggle
 } from '@/components/atoms/toggle';
-import { DocumentTextIcon } from '@heroicons/react/24/outline';
-import { ArrowDownIcon } from '@heroicons/react/24/solid';
 
 export function HomeHero() {
   return (
@@ -41,15 +35,6 @@ export function HomeHero() {
               purpose of the overall goal. Together with a little bit of
               psychology, we build and design a better user experience!
             </p>
-          </div>
-
-          <div className="space-x-3">
-            <ScrollIntoViewButton id="introduction">
-              <DocumentTextIcon className="size-5 shrink-0" /> Read more
-              <ArrowDownIcon className="size-4 shrink-0" />
-            </ScrollIntoViewButton>
-
-            <ButtonContactMe />
           </div>
         </div>
       </div>

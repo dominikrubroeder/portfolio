@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export type ControlBarActionType = 'Avatar' | 'Back' | 'Up';
+export type ControlBarActionType = 'Avatar' | 'Back' | 'Up' | 'Mail';
 
 export type ControlBarSections = {
   id: string;

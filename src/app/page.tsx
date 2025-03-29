@@ -85,15 +85,21 @@ export default function HomePage() {
 
         <Projects />
 
-        <Suspense>
-          <Tools />
-        </Suspense>
+        <div className="space-y-12">
+          <Suspense>
+            <Tools />
+          </Suspense>
 
-        <Technologies />
+          <hr />
 
-        <Socials />
+          <Technologies />
 
-        <Container htmlTag="section">
+          <hr />
+
+          <Socials />
+        </div>
+
+        <Container tag="section">
           <div
             className="mx-auto w-full px-4 sm:max-w-(--breakpoint-sm)"
             id="accordion-group"
