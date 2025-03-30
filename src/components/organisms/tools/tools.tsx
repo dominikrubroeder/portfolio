@@ -10,6 +10,20 @@ import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { Button } from '@/components/atoms/button';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 import Expandable from '@/components/molecules/expandable';
+import { SwipeOnHover } from '@/components/atoms/swipe-on-hover';
+import {
+  CraftLogo,
+  FigmaLogo,
+  GithubLogo,
+  GitlabLogo,
+  WebstormLogo
+} from '@/components/atoms/logo';
+import {
+  AlignEndVerticalIcon,
+  CodeIcon,
+  PenLineIcon,
+  SquareTerminalIcon
+} from 'lucide-react';
 
 async function getTools() {
   const res = await fetch(`${getApiUrl()}/api/tools`, {
@@ -63,24 +77,112 @@ export default async function Tools() {
         )}
       </ul>
 
-      <header className="space-y-6">
-        <div className="space-y-4 lg:inline-flex lg:flex-wrap lg:items-end lg:gap-4 lg:space-y-0">
-          <h2 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
-            <span>Tools</span>
-            <span className="text-muted-foreground">
-              help me
-              <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
-                visualizing
-              </Marker>
-              and
-              <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
-                capturing
-              </Marker>
-              the things we are about to build. I use
-            </span>
-          </h2>
-        </div>
-      </header>
+      <div className="space-y-6">
+        <h2 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+          <span>Tools</span>
+          <span className="text-muted-foreground">
+            help me
+            <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
+              visualizing
+            </Marker>
+            and
+            <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
+              capturing
+            </Marker>
+            the things we are about to build. I use
+          </span>
+        </h2>
+
+        <ul className="space-y-3.5">
+          <li>
+            <div className="group relative inline-block cursor-pointer">
+              <SwipeOnHover
+                initial={
+                  <AlignEndVerticalIcon className="absolute -left-24 size-16" />
+                }
+                onHover={<FigmaLogo className="absolute -left-24 size-16" />}
+              />
+              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+                <span>Figma</span>
+                <span className="text-muted-foreground">
+                  for user interface design and prototyping
+                </span>
+              </h3>
+            </div>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <div className="group relative inline-block cursor-pointer">
+              <SwipeOnHover
+                initial={
+                  <SquareTerminalIcon className="absolute -left-24 size-16" />
+                }
+                onHover={<WebstormLogo className="absolute -left-24 size-16" />}
+              />
+
+              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+                <span>WebStorm</span>
+                <span className="text-muted-foreground">as coding editor</span>
+              </h3>
+            </div>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <div className="group relative inline-block cursor-pointer">
+              <SwipeOnHover
+                initial={<PenLineIcon className="absolute -left-24 size-16" />}
+                onHover={<CraftLogo className="absolute -left-24 size-16" />}
+              />
+
+              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+                <span>Craft</span>
+                <span className="text-muted-foreground">
+                  as my main noting and docs tool
+                </span>
+              </h3>
+            </div>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <div className="group relative inline-block cursor-pointer">
+              <SwipeOnHover
+                initial={<CodeIcon className="absolute -left-24 size-16" />}
+                onHover={<GithubLogo className="absolute -left-24 size-16" />}
+              />
+
+              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+                <span>GitHub</span>
+                <span className="text-muted-foreground">
+                  to store my private codebase
+                </span>
+              </h3>
+            </div>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <div className="group relative inline-block cursor-pointer">
+              <SwipeOnHover
+                initial={<CodeIcon className="absolute -left-24 size-16" />}
+                onHover={<GitlabLogo className="absolute -left-24 size-16" />}
+              />
+              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+                <span>GitLab</span>
+                <span className="text-muted-foreground">
+                  is mainly used at workspace
+                </span>
+              </h3>
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <ToggleContent label="All tools">
         <div className="animate-fade-up-1rem justify-end space-y-4 md:flex md:items-start md:gap-8 md:space-y-0">
@@ -94,7 +196,9 @@ export default async function Tools() {
           <div className="flex gap-4">
             <Expandable
               className="space-y-2"
-              alwaysVisible={<ExperienceBar progress="Daily" />}
+              alwaysVisible={
+                <ExperienceBar hideFavoriteMarker={true} progress="Daily" />
+              }
             >
               <ExperienceBar progress="Professional" />
               <ExperienceBar progress="Experienced" />
@@ -133,19 +237,19 @@ export default async function Tools() {
                             />
                           </Link>
 
-                          <div className="flex flex-1 flex-wrap items-center justify-between gap-2 sm:overflow-hidden sm:whitespace-nowrap">
+                          <div className="flex flex-1 items-center justify-between gap-2 sm:overflow-hidden sm:whitespace-nowrap">
                             <Link
                               href={item.website}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="sm:overflow-hidden"
+                              className="overflow-hidden"
                             >
                               <h3 className="font-bold text-foreground sm:overflow-hidden sm:text-ellipsis">
                                 {item.title}
                               </h3>
                             </Link>
 
-                            <div className="flex items-center justify-between gap-4">
+                            <div className="flex items-center justify-between gap-4 bg-background">
                               <ExperienceBar progress={item.knowledge} />
 
                               <Button

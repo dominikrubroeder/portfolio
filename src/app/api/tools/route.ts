@@ -335,6 +335,13 @@ export async function GET() {
           knowledge: 'Daily'
         },
         {
+          title: 'Framer',
+          description: '',
+          website: '',
+          logo: '',
+          knowledge: 'Used'
+        },
+        {
           title: 'InVision Studio',
           description: '',
           website: '',
@@ -845,6 +852,13 @@ export async function GET() {
           knowledge: 'Experienced'
         },
         {
+          title: 'PayPal',
+          description: '',
+          website: '',
+          logo: '',
+          knowledge: 'Not started'
+        },
+        {
           title: 'Stripe',
           description: '',
           website: '',
@@ -993,6 +1007,14 @@ export async function GET() {
           logo: '/shopware.png',
           description:
             'Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.',
+          knowledge: 'Daily'
+        },
+        {
+          title: 'Adobe commerce (Magento)',
+          website:
+            'https://business.adobe.com/de/products/magento/magento-commerce.html',
+          logo: '',
+          description: '',
           knowledge: 'Daily'
         }
       ]

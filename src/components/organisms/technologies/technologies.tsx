@@ -8,6 +8,18 @@ import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { Button } from '@/components/atoms/button';
+import { SquareTerminalIcon } from 'lucide-react';
+import {
+  CssLogo,
+  HtmlLogo,
+  JavascriptLogo,
+  MotionLogo,
+  NextjsLogo,
+  ReactLogo,
+  TailwindCssLogo,
+  TypescriptLogo
+} from '@/components/atoms/logo';
+import { SwipeOnHover } from '@/components/atoms/swipe-on-hover';
 
 export default function Technologies() {
   return (
@@ -47,24 +59,180 @@ export default function Technologies() {
         )}
       </ul>
 
-      <header className="space-y-6">
-        <div className="space-y-4 lg:inline-flex lg:flex-wrap lg:items-end lg:gap-4 lg:space-y-0">
-          <h2 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
-            <span>Technologies</span>
-            <span className="text-muted-foreground">
-              are the foundation or writing
-              <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
-                production-ready
-              </Marker>
-              code.
-              <span className="mx-2 text-foreground">
-                In other words, that&#39;s how we build our application!
+      <h2 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+        <span>Technologies</span>
+        <span className="text-muted-foreground">
+          are the foundation or writing
+          <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
+            production-ready
+          </Marker>
+          code.
+          <span className="mx-2 text-foreground">
+            In other words, that&#39;s how we build our application!
+          </span>
+          I use
+        </span>
+      </h2>
+
+      <ul className="space-y-3.5">
+        <li>
+          <div className="group relative inline-block cursor-pointer">
+            <SwipeOnHover
+              initial={
+                <SquareTerminalIcon className="absolute -left-24 size-16" />
+              }
+              onHover={<ReactLogo className="absolute -left-24 size-16" />}
+            />
+
+            <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <span>React</span>
+              <span className="text-muted-foreground">
+                as frontend web library
               </span>
-              I use
-            </span>
-          </h2>
-        </div>
-      </header>
+            </h3>
+          </div>
+        </li>
+        <li>
+          <hr />
+        </li>
+        <li>
+          <div className="group relative inline-block cursor-pointer">
+            <SwipeOnHover
+              initial={
+                <SquareTerminalIcon className="absolute -left-24 size-16" />
+              }
+              onHover={<NextjsLogo className="absolute -left-24 size-16" />}
+            />
+
+            <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <span>Next.js</span>
+              <span className="text-muted-foreground">
+                as fullstack web application system
+              </span>
+            </h3>
+          </div>
+        </li>
+        <li>
+          <hr />
+        </li>
+        <li>
+          <div className="group relative inline-block cursor-pointer">
+            <SwipeOnHover
+              initial={
+                <SquareTerminalIcon className="absolute -left-24 size-16" />
+              }
+              onHover={<TypescriptLogo className="absolute -left-24 size-16" />}
+            />
+
+            <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <span>TypeScript</span>
+              <span className="text-muted-foreground">
+                as superset to JavaScript
+              </span>
+            </h3>
+          </div>
+        </li>
+        <li>
+          <hr />
+        </li>
+        <li>
+          <div className="group relative inline-block cursor-pointer">
+            <SwipeOnHover
+              initial={
+                <SquareTerminalIcon className="absolute -left-24 size-16" />
+              }
+              onHover={<JavascriptLogo className="absolute -left-24 size-16" />}
+            />
+
+            <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <span>JavaScript</span>
+              <span className="text-muted-foreground">
+                only when required vanilla JavaScript
+              </span>
+            </h3>
+          </div>
+        </li>
+        <li>
+          <hr />
+        </li>
+        <li>
+          <div className="group relative inline-block cursor-pointer">
+            <SwipeOnHover
+              initial={
+                <SquareTerminalIcon className="absolute -left-24 size-16" />
+              }
+              onHover={<HtmlLogo className="absolute -left-24 size-16" />}
+            />
+
+            <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <span>HTML</span>
+              <span className="text-muted-foreground">
+                the default web markup language
+              </span>
+            </h3>
+          </div>
+        </li>
+        <li>
+          <hr />
+        </li>
+        <li>
+          <div className="group relative inline-block cursor-pointer">
+            <SwipeOnHover
+              initial={
+                <SquareTerminalIcon className="absolute -left-24 size-16" />
+              }
+              onHover={<CssLogo className="absolute -left-24 size-16" />}
+            />
+
+            <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <span>CSS</span>
+              <span className="text-muted-foreground">
+                the default styling language
+              </span>
+            </h3>
+          </div>
+        </li>
+        <li>
+          <hr />
+        </li>
+        <li>
+          <div className="group relative inline-block cursor-pointer">
+            <SwipeOnHover
+              initial={
+                <SquareTerminalIcon className="absolute -left-24 size-16" />
+              }
+              onHover={
+                <TailwindCssLogo className="absolute -left-24 size-16" />
+              }
+            />
+
+            <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <span>Tailwind CSS</span>
+              <span className="text-muted-foreground">as superset to CSS</span>
+            </h3>
+          </div>
+        </li>
+        <li>
+          <hr />
+        </li>
+        <li>
+          <div className="group relative inline-block cursor-pointer">
+            <SwipeOnHover
+              initial={
+                <SquareTerminalIcon className="absolute -left-24 size-16" />
+              }
+              onHover={<MotionLogo className="absolute -left-24 size-16" />}
+            />
+
+            <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <span>Motion</span>
+              <span className="text-muted-foreground">
+                as animation library
+              </span>
+            </h3>
+          </div>
+        </li>
+      </ul>
 
       <ToggleContent label="All technologies">
         <ul className="grid animate-fade-up-1rem gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
