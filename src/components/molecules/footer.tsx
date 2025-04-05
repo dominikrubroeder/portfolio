@@ -19,7 +19,7 @@ export function Footer() {
         </a>
         <span>|</span>
         <a href="https://tailwindcss.com/docs/installation/using-vite">
-          Tailwind CSS 4.0.17
+          Tailwind CSS 4.1.3
         </a>
       </p>
       <p>
