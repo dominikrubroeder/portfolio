@@ -5,7 +5,7 @@ export function Footer() {
       <p>Live your balance.</p>
       <p className="space-x-2">
         <a href="https://nextjs.org" target="_blank" rel="nofollow">
-          Next.js 15.2.4
+          Next.js 15.3.0
         </a>
         <span>|</span>
         <a
