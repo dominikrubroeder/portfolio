@@ -5,7 +5,7 @@ export function Footer() {
       <p>Live your balance.</p>
       <p className="space-x-2">
         <a href="https://nextjs.org" target="_blank" rel="nofollow">
-          Next.js 15.3.0
+          Next.js 15.3.1
         </a>
         <span>|</span>
         <a
@@ -19,7 +19,7 @@ export function Footer() {
         </a>
         <span>|</span>
         <a href="https://tailwindcss.com/docs/installation/using-vite">
-          Tailwind CSS 4.1.3
+          Tailwind CSS 4.1.4
         </a>
       </p>
       <p>
