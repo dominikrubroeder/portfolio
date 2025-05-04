@@ -21,19 +21,12 @@ import {
   CheckBadgeIcon,
   Cog6ToothIcon,
   DocumentDuplicateIcon,
-  HomeIcon,
   PaintBrushIcon
 } from '@heroicons/react/24/outline';
 import { Suspense } from 'react';
+import { FrontendVision } from '@/components/organisms/faq/frontend-vision';
 
 const sections: ControlBarSections = [
-  {
-    id: 'header',
-    label: 'Start',
-    icon: <HomeIcon className="size-5" />,
-    className: 'md:hidden',
-    defaultActive: true
-  },
   {
     id: 'introduction',
     label: 'Introduction',
@@ -79,7 +72,7 @@ export default function HomePage() {
       <HomeHero />
 
       <div className="space-y-32">
-        <ControlBar sections={sections} collapse={false} />
+        <ControlBar sections={sections} />
 
         <Introduction />
 
@@ -104,6 +97,7 @@ export default function HomePage() {
             className="mx-auto w-full px-4 sm:max-w-(--breakpoint-sm)"
             id="accordion-group"
           >
+            <FrontendVision />
             <FaqWhatIsAUxEngineer />
             <FaqUxDesigner />
             <FaqUxEngineer />

@@ -2,10 +2,10 @@
 
 import { Toggle } from '@/components/atoms/toggle';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/components/organisms/context/theme-context';
+import { useApp } from '@/components/organisms/context/app-context';
 
 export function DevModeToggle({ className }: { className?: string }) {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useApp();
 
   return (
     <div className={cn('inline-grid gap-4 rounded border p-4', className)}>

@@ -5,7 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { Header } from '@/components/molecules/header';
 import { Footer } from '@/components/molecules/footer';
-import { ThemeProvider } from '@/components/organisms/context/theme-context';
+import { AppProvider } from '@/components/organisms/context/app-context';
 
 export const metadata: Metadata = {
   title: 'UX Design Engineer | Dominik Rubröder',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider>
+    <AppProvider>
       <html
         lang="en"
         className="scroll-smooth bg-background leading-[1.8]"
@@ -29,6 +29,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <SpeedInsights />
         </body>
       </html>
-    </ThemeProvider>
+    </AppProvider>
   );
 }

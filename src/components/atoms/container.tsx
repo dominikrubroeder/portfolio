@@ -8,7 +8,7 @@ export function Container({
   children,
   ...rest
 }: {
-  tag: HTMLTag;
+  tag?: HTMLTag;
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLElement>) {

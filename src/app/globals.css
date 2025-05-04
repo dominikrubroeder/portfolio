@@ -126,6 +126,10 @@
     li::marker {
         @apply text-primary;
     }
+
+    hr {
+        @apply my-8;
+    }
 }
 
 @layer base {

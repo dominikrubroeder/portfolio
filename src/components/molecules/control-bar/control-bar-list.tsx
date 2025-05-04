@@ -1,108 +1,95 @@
-'use client';
-
 import { motion } from 'motion/react';
 import React from 'react';
 import type {
   ControlBarActiveSection,
-  ControlBarMobileMenuVisibility,
   ControlBarSections
 } from '@/components/molecules/control-bar/types/types';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/atoms/button';
-import { useScrollIntoView } from '@/hooks/useScrollIntoView';
-import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
+import { ScrollToElementButton } from '@/components/atoms/button';
+import {
+  ChevronRightIcon,
+  EllipsisHorizontalIcon
+} from '@heroicons/react/20/solid';
 
-export function ControlBarList({
+export function ControlBarNavigation({
   sections,
   activeSection,
   setActiveSection,
-  mobileMenu
+  isUnfolded,
+  toggleIsUnfolded
 }: {
   sections: ControlBarSections;
   activeSection: ControlBarActiveSection;
   setActiveSection: (index: number) => void;
-  mobileMenu: ControlBarMobileMenuVisibility;
+  isUnfolded: boolean;
+  toggleIsUnfolded: () => void;
 }) {
-  const { scrollIntoView } = useScrollIntoView();
-
   return (
-    <div
-      className={cn(
-        'no-scrollbar absolute bottom-20 z-50 w-[95vw] max-w-(--breakpoint-sm) items-center space-y-4 rounded-2xl border bg-muted p-3 px-4 transition md:visible md:relative md:top-4 md:flex md:w-max md:max-w-[85svw] md:gap-2 md:space-y-0 md:overflow-x-auto md:rounded-full lg:max-w-none',
-        mobileMenu === 'invisible'
-          ? 'invisible -translate-y-4'
-          : 'visible translate-y-0'
-      )}
+    <motion.ul
+      animate={{ width: isUnfolded ? '100%' : '64px' }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+      className="flex origin-center items-center gap-2 rounded-full bg-muted px-2.5 py-2"
     >
-      {sections.map((section, index) => (
-        <Button
-          key={section.id}
-          variant="naked"
-          className={cn(
-            'group relative block interactive rounded-full transition select-none hover:text-foreground md:inline-block',
-            activeSection === index ? '' : 'hover:bg-muted'
-          )}
-          title={`Scroll to ${section.label} section`}
-          aria-label={`Scroll to ${section.label} section`}
-          onClick={() => {
-            setActiveSection(index);
-            scrollIntoView({ id: section.id });
-          }}
+      <li className="-mr-2">
+        <button
+          onClick={toggleIsUnfolded}
+          className="group flex size-11 cursor-pointer items-center justify-center rounded-full border bg-muted transition hover:bg-muted-hover"
         >
-          {activeSection !== index && (
-            <div className="invisible absolute inset-0 z-10 scale-50 rounded-full bg-muted opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
+          {isUnfolded ? (
+            <ChevronRightIcon className="size-5 transition group-hover:text-foreground" />
+          ) : (
+            <EllipsisHorizontalIcon className="size-5 transition group-hover:text-foreground" />
           )}
+        </button>
+      </li>
 
-          {(activeSection === index ||
-            (section.defaultActive && activeSection === null)) && (
-            <motion.span
-              layoutId="page-navigation"
-              className="absolute inset-0 z-10 bg-primary"
-              style={{ borderRadius: 9999 }}
-              transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
-            />
-          )}
+      {isUnfolded &&
+        sections.map((section, index) => (
+          <li key={section.id}>
+            <ScrollToElementButton
+              id={section.id}
+              variant="naked"
+              className={cn(
+                'group relative block interactive rounded-full transition select-none hover:text-foreground md:inline-block',
+                activeSection === index ? '' : 'hover:bg-muted'
+              )}
+              title={`Scroll to ${section.label} section`}
+              aria-label={`Scroll to ${section.label} section`}
+              onClick={() => {
+                setActiveSection(index);
+              }}
+            >
+              {activeSection !== index && (
+                <div className="invisible absolute inset-0 z-10 scale-50 rounded-full bg-muted opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
+              )}
 
-          <div
-            className={cn(
-              'relative z-20 flex w-auto cursor-pointer items-center gap-4 rounded-full px-3 py-2 hover:bg-black/6 md:gap-2',
-              (activeSection === index ||
-                (section.defaultActive && activeSection === null)) &&
-                'text-white hover:bg-transparent'
-            )}
-          >
-            {section.icon}
+              {(activeSection === index ||
+                (section.defaultActive && activeSection === null)) && (
+                <motion.span
+                  layoutId="page-navigation"
+                  className="absolute inset-0 z-10 bg-primary"
+                  style={{ borderRadius: 9999 }}
+                  transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+                />
+              )}
 
-            {section.label && section.label !== '' ? (
-              <span className={cn(section.className)}>{section.label}</span>
-            ) : null}
-          </div>
-        </Button>
-      ))}
+              <div
+                className={cn(
+                  'relative z-20 flex w-auto cursor-pointer items-center gap-4 rounded-full px-3 py-2 hover:bg-black/6 md:gap-2',
+                  (activeSection === index ||
+                    (section.defaultActive && activeSection === null)) &&
+                    'text-white hover:bg-transparent'
+                )}
+              >
+                {section.icon}
 
-      <div className="sticky bottom-0 z-10 flex justify-end overflow-x-auto border-t bg-muted p-4 pb-3.5 md:hidden">
-        <Button
-          variant="secondary"
-          href="https://github.com/dominikrubroeder"
-          target="_blank"
-          title="Go to GitHub profile of Dominik Rubröder"
-          aria-label="Go to GitHub profile of Dominik Rubröder"
-          className="hover:after:bg-muted-hover"
-        >
-          <GithubLogo />
-        </Button>
-
-        <Button
-          variant="secondary"
-          href="https://www.linkedin.com/in/dominik-rubröder-49a63817b"
-          target="_blank"
-          title="Go to LinkedIn profile of Dominik Rubröder"
-          aria-label="Go to LinkedIn profile of Dominik Rubröder"
-          className="hover:after:bg-muted-hover"
-        >
-          <LinkedinLogo />
-        </Button>
-      </div>
-    </div>
+                {section.label && section.label !== '' ? (
+                  <span className={cn(section.className)}>{section.label}</span>
+                ) : null}
+              </div>
+            </ScrollToElementButton>
+          </li>
+        ))}
+    </motion.ul>
   );
 }

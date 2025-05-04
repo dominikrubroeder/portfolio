@@ -1,58 +1,56 @@
 'use client';
 
 import {
-  ControlBarActionLeft,
-  ControlBarActionRight,
-  ControlBarList,
-  ControlBarMobileTrigger,
+  ControlBarActionType,
+  ControlBarNavigation,
+  ControlBarSections,
   useControlBar
 } from '@/components/molecules/control-bar';
-
-import { ControlBar as ControlBarType } from '@/components/molecules/control-bar/types/types';
+import { Container } from '@/components/atoms/container';
+import React from 'react';
+import { EnvelopeIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { cn } from '@/lib/utils';
 
 export function ControlBar({
   sections,
-  collapse,
-  leftControlAction,
-  rightControlAction
-}: ControlBarType) {
-  const { state, toggleMobileMenu, activeSection, setActiveSection } =
-    useControlBar(collapse);
+  leftActions,
+  rightActions
+}: {
+  sections: ControlBarSections;
+  leftActions?: ControlBarActionType;
+  rightActions?: ControlBarActionType;
+}) {
+  const { activeSection, isUnfolded, toggleIsUnfolded } = useControlBar();
 
   return (
-    <nav className="no-scrollbar z-50 mx-auto flex w-full items-center justify-center gap-3 text-center md:sticky md:top-4 md:-mt-6 md:w-max">
-      {leftControlAction && (
-        <ControlBarActionLeft
-          controlBar={state.controlBarVisibility}
-          leftControlAction={leftControlAction}
+    <Container className="sticky top-4">
+      <nav className="relative z-max mx-auto flex w-max items-center gap-2">
+        <div>
+          <button className="group flex h-11 min-w-11 cursor-pointer items-center justify-center gap-2 rounded-full border bg-muted px-3 transition hover:bg-muted-hover">
+            <EnvelopeIcon className="size-5 transition group-hover:text-foreground" />
+            <span className={cn(isUnfolded ? 'hidden' : 'sm:inline-block')}>
+              Contact
+            </span>
+          </button>
+        </div>
+
+        <ControlBarNavigation
+          sections={sections}
+          setActiveSection={() => {}}
+          activeSection={activeSection}
+          isUnfolded={isUnfolded}
+          toggleIsUnfolded={toggleIsUnfolded}
         />
-      )}
 
-      <ControlBarActionLeft
-        controlBar={state.controlBarVisibility}
-        leftControlAction="Mail"
-      />
-
-      <ControlBarList
-        sections={sections}
-        setActiveSection={setActiveSection}
-        activeSection={activeSection}
-        mobileMenu={state.mobileMenuVisibility}
-      />
-
-      <ControlBarMobileTrigger toggleMobileMenu={toggleMobileMenu} />
-
-      <ControlBarActionRight
-        controlBar={state.controlBarVisibility}
-        rightControlAction={rightControlAction}
-      />
-
-      {rightControlAction && (
-        <ControlBarActionRight
-          controlBar={state.controlBarVisibility}
-          rightControlAction={rightControlAction}
-        />
-      )}
-    </nav>
+        <div>
+          <button className="group flex h-11 min-w-11 cursor-pointer items-center justify-center gap-2 rounded-full border bg-muted px-3 transition hover:bg-muted-hover">
+            <SparklesIcon className="size-5 transition group-hover:text-foreground" />
+            <span className={cn(isUnfolded ? 'hidden' : 'sm:inline-block')}>
+              Theme
+            </span>
+          </button>
+        </div>
+      </nav>
+    </Container>
   );
 }

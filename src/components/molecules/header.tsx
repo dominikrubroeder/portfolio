@@ -3,14 +3,12 @@ import Avatar from '@/components/atoms/avatar';
 import Link from '@/components/atoms/link';
 import { Button } from '@/components/atoms/button';
 import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
+import { Container } from '@/components/atoms/container';
 
 export function Header() {
   return (
-    <header
-      id="header"
-      className="sticky top-0 z-max border-b bg-muted py-1 md:relative md:py-4 xl:px-0"
-    >
-      <div className="mx-auto flex max-w-(--breakpoint-xl) items-center justify-between gap-4 p-4 sm:py-2">
+    <header id="header">
+      <Container className="flex items-center justify-between gap-4 py-4">
         <div className="flex items-center gap-4">
           <Avatar
             className="size-11 sm:size-14"
@@ -36,7 +34,7 @@ export function Header() {
           </h1>
         </div>
 
-        <div className="hidden md:flex md:-space-x-1">
+        <div>
           <Button
             variant="secondary"
             href="https://github.com/dominikrubroeder"
@@ -44,7 +42,7 @@ export function Header() {
             title="Go to GitHub profile of Dominik Rubröder"
             aria-label="Go to GitHub profile of Dominik Rubröder"
           >
-            <GithubLogo />
+            <GithubLogo className="size-6" />
           </Button>
 
           <Button
@@ -54,10 +52,10 @@ export function Header() {
             title="Go to LinkedIn profile of Dominik Rubröder"
             aria-label="Go to LinkedIn profile of Dominik Rubröder"
           >
-            <LinkedinLogo />
+            <LinkedinLogo className="size-6" />
           </Button>
         </div>
-      </div>
+      </Container>
     </header>
   );
 }

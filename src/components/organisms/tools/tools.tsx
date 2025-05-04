@@ -102,6 +102,7 @@ export default async function Tools() {
                 }
                 onHover={<FigmaLogo className="absolute -left-24 size-16" />}
               />
+
               <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
                 <span>Figma</span>
                 <span className="text-muted-foreground">
@@ -124,7 +125,7 @@ export default async function Tools() {
 
               <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
                 <span>WebStorm</span>
-                <span className="text-muted-foreground">as coding editor</span>
+                <span className="text-muted-foreground">as IDE</span>
               </h3>
             </div>
           </li>
@@ -141,7 +142,7 @@ export default async function Tools() {
               <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
                 <span>Craft</span>
                 <span className="text-muted-foreground">
-                  as my main noting and docs tool
+                  as my main note and docs tool
                 </span>
               </h3>
             </div>

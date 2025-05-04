@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
-import Link from 'next/link';
+import { ButtonVariant } from '@/components/atoms/button/types';
 
 export function Button({
   variant,
@@ -10,7 +11,7 @@ export function Button({
   children,
   ...rest
 }: {
-  variant: 'primary' | 'secondary' | 'outline' | 'naked';
+  variant: ButtonVariant;
   className?: string;
   href?: string;
   target?: HTMLAttributeAnchorTarget;

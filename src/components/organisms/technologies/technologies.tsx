@@ -62,16 +62,17 @@ export default function Technologies() {
       <h2 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
         <span>Technologies</span>
         <span className="text-muted-foreground">
-          are the foundation or writing
+          are the foundation of writing
           <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
             production-ready
           </Marker>
           code.
           <span className="mx-2 text-foreground">
-            In other words, that&#39;s how we build our application!
+            In other words, that&#39;s how we build our applications!
           </span>
-          I use
         </span>
+        <div className="text-6xl font-bold">-</div>
+        <span className="text-muted-foreground">I use</span>
       </h2>
 
       <ul className="space-y-3.5">

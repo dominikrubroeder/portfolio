@@ -32,9 +32,11 @@ export function Introduction() {
             </b>
             <p>
               – later on, native mobile apps might join that paradigm. I am a
-              designer and like to code to make the design available to everyone
-              production ready.
+              designer that like&#39;s to code to make the design available to
+              everyone.
             </p>
+
+            <p>Design, code or psychological principles helps to</p>
           </div>
 
           <ul className="space-y-6">

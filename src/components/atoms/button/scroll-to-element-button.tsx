@@ -1,17 +1,19 @@
 'use client';
 
-import { Button } from '@/components/atoms/button';
-import { useScrollIntoView } from '@/hooks/useScrollIntoView';
 import { ReactNode } from 'react';
-import { cn } from '@/lib/utils';
+import { Button } from '@/components/atoms/button';
+import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
+import { ButtonVariant } from '@/components/atoms/button/types';
 
-export function ScrollIntoViewButton({
+export function ScrollToElementButton({
+  variant,
   id,
   options,
   className,
   children,
   ...rest
 }: {
+  variant: ButtonVariant;
   id: string;
   options?: ScrollIntoViewOptions;
   className?: string;
@@ -22,8 +24,8 @@ export function ScrollIntoViewButton({
   return (
     <Button
       {...rest}
-      variant="primary"
-      className={cn(className)}
+      variant={variant}
+      className={className}
       onClick={() => scrollIntoView({ id, options })}
     >
       {children}

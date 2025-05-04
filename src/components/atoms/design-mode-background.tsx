@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { useTheme } from '@/components/organisms/context/theme-context';
+import { useApp } from '@/components/organisms/context/app-context';
 import { Shapes } from '@/components/atoms/svg';
 
 export default function DesignModeBackground() {
-  const { theme } = useTheme();
+  const { theme } = useApp();
 
   if (theme !== 'design') return null;
 

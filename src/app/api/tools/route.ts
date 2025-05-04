@@ -16,7 +16,7 @@ export async function GET() {
       ]
     },
     {
-      group: 'IDE + Editor',
+      group: 'IDE + Code Editor',
       children: [
         {
           title: 'WebStorm',
@@ -787,7 +787,7 @@ export async function GET() {
           description: '',
           website: '',
           logo: '',
-          knowledge: 'Experienced'
+          knowledge: 'Professional'
         },
         {
           title: 'react-instantsearch',
@@ -1010,7 +1010,7 @@ export async function GET() {
           knowledge: 'Daily'
         },
         {
-          title: 'Adobe commerce (Magento)',
+          title: 'Adobe Commerce (Magento)',
           website:
             'https://business.adobe.com/de/products/magento/magento-commerce.html',
           logo: '',

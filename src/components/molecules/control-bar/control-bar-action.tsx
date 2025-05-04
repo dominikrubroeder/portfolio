@@ -19,7 +19,7 @@ export function ControlBarAction({ type }: { type: ControlBarActionType }) {
   if (type === 'Up')
     return (
       <button
-        className="hover: group flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full border-2 bg-muted transition hover:bg-muted-hover"
+        className="hover: group flex size-11 cursor-pointer items-center justify-center gap-4 rounded-full border bg-muted transition hover:bg-muted-hover"
         aria-label="Scroll to top"
         onClick={() => scrollToTop()}
       >
@@ -30,7 +30,7 @@ export function ControlBarAction({ type }: { type: ControlBarActionType }) {
   if (type === 'Back')
     return (
       <button
-        className="hover: group flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full border-2 bg-muted transition hover:bg-muted-hover"
+        className="hover: group flex size-11 cursor-pointer items-center justify-center gap-4 rounded-full border bg-muted transition hover:bg-muted-hover"
         aria-label="Navigate back"
         onClick={() => router.back()}
       >
@@ -41,7 +41,7 @@ export function ControlBarAction({ type }: { type: ControlBarActionType }) {
   if (type === 'Mail')
     return (
       <button
-        className="hover: group flex size-14 cursor-pointer items-center justify-center gap-4 rounded-full border-2 bg-muted transition hover:bg-muted-hover"
+        className="group flex size-11 cursor-pointer items-center justify-center gap-4 rounded-full border bg-muted transition hover:bg-muted-hover"
         aria-label="Navigate back"
         onClick={() => router.back()}
       >

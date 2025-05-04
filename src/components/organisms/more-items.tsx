@@ -8,7 +8,7 @@ import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { Tool } from '@/components/organisms/tools/types';
-import { useScrollIntoView } from '@/hooks/useScrollIntoView';
+import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
 import Expandable from '@/components/molecules/expandable';
 import { Technology } from '@/components/organisms/technologies/types';
 import { Container } from '@/components/atoms/container';

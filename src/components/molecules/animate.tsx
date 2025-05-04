@@ -3,7 +3,7 @@
 import { ReactNode, useEffect } from 'react';
 import { motion, useAnimate, useInView } from 'motion/react';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/components/organisms/context/theme-context';
+import { useApp } from '@/components/organisms/context/app-context';
 
 export default function Animate({
   direction = 'up',
@@ -21,7 +21,7 @@ export default function Animate({
     once: true,
     amount: 0.04 // Trigger when 4% of the element is in view
   });
-  const { theme } = useTheme();
+  const { theme } = useApp();
 
   // Define animation variants based on direction
   const variants = {

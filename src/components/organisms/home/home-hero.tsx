@@ -1,43 +1,51 @@
-import {
-  AutoModeToggle,
-  DesignModeToggle,
-  DevModeToggle
-} from '@/components/atoms/toggle';
+import { Button, ScrollToElementButton } from '@/components/atoms/button';
+import { Container } from '@/components/atoms/container';
+import { DocumentTextIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon } from '@heroicons/react/20/solid';
+import { DesignShowcase } from '@/components/design-showcase';
 
 export function HomeHero() {
   return (
-    <section
+    <Container
+      className="flex min-h-[80vh] flex-col items-center justify-center py-8"
       id="hero"
-      className="mx-auto flex items-center justify-center space-y-4 border bg-background px-4 pt-8 pb-14 lg:min-h-[78svh] lg:px-0"
     >
-      <div className="space-y-6 sm:max-w-(--breakpoint-sm)">
-        <div className="space-y-3 space-x-4">
-          <AutoModeToggle className="inline-flex" />
-          <DesignModeToggle />
-          <DevModeToggle />
+      <div className="space-y-8 sm:max-w-(--breakpoint-lg)">
+        <div className="space-y-6">
+          <h2 className="text-7xl font-bold text-foreground select-none">
+            <code className="group relative mr-4 overflow-hidden">
+              Coding
+              <span className="absolute -top-1 right-0 z-10 rounded border bg-primary px-1 py-0.5 text-xs text-primary-foreground transition group-hover:-translate-y-1.5">
+                .tsx
+              </span>
+              <span className="invisible absolute inset-0 translate-y-4 border opacity-0 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100" />
+              <span className="invisible absolute -top-6 left-2 translate-y-2 rounded-tl rounded-tr bg-primary px-1 py-1 text-xs font-light text-primary-foreground opacity-0 transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                span | home-hero.tsx
+              </span>
+            </code>
+            and
+            <DesignShowcase />
+            ,
+            <br className="hidden sm:block" />
+            rooted in the frontend team.
+          </h2>
+
+          <h3 className="space-y-8 text-4xl leading-[1.325] font-semibold text-foreground sm:max-w-(--breakpoint-md)">
+            As a UX Design Engineer, i am working for a good user interface with
+            specialty in UI components and design systems.
+          </h3>
         </div>
 
-        <h2 className="text-7xl font-bold text-foreground">Team Frontend.</h2>
+        <div className="flex flex-wrap items-center gap-2">
+          <ScrollToElementButton variant="primary" id="introduction">
+            <DocumentTextIcon className="size-5" /> More about my vision
+          </ScrollToElementButton>
 
-        <div className="space-y-8">
-          <div className="mx-1 space-y-2 text-xl leading-relaxed font-bold text-primary">
-            <p>
-              Passionate about designing and building applications for the web.
-            </p>
-            <p>
-              Connecting several systems together into one user interface is
-              something crucial and centric for me as a Design Engineer.
-            </p>
-            <p>
-              When doing my work, i like to use code, design and psychology
-              principles. Plus, i love interfaces that just work and feel
-              seamless, where it fit&apos;s the use case and it fulfills the
-              purpose of the overall goal. Together with a little bit of
-              psychology, we build and design a better user experience!
-            </p>
-          </div>
+          <Button variant="secondary">
+            Component showcase <ArrowRightIcon className="size-5" />
+          </Button>
         </div>
       </div>
-    </section>
+    </Container>
   );
 }

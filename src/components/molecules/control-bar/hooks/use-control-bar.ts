@@ -1,47 +1,33 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
-import { ControlBarState } from '@/components/molecules/control-bar/types/types';
-
-export const useControlBar = (collapse: boolean) => {
-  const [state, setState] = useState<ControlBarState>({
-    activeSection: 0,
-    controlBarVisibility: 'collapsed',
-    mobileMenuVisibility: 'invisible'
+export const useControlBar = () => {
+  const [state, setState] = useState<{
+    activeSection: number | undefined;
+    isUnfolded: boolean;
+  }>({
+    activeSection: undefined,
+    isUnfolded: false
   });
 
-  const setActiveSection = useCallback((index: number) => {
-    setState((prevState) => {
-      return { ...prevState, activeSection: index };
+  const setActiveSection = useCallback(
+    ({ activeSection }: { activeSection: number }) => {
+      setState((previousState) => {
+        return { ...previousState, activeSection: activeSection };
+      });
+    },
+    []
+  );
+
+  const toggleIsUnfolded = useCallback(() => {
+    setState((previousState) => {
+      return { ...previousState, isUnfolded: !previousState.isUnfolded };
     });
   }, []);
 
-  const toggleMobileMenu = () => {
-    setState((prevState) => {
-      return {
-        ...prevState,
-        controlBarVisibility: prevState.controlBarVisibility,
-        mobileMenuVisibility:
-          prevState.mobileMenuVisibility === 'invisible'
-            ? 'visible'
-            : 'invisible'
-      };
-    });
-  };
-
-  useEffect(
-    () =>
-      setState({
-        activeSection: 0,
-        controlBarVisibility: collapse ? 'collapsed' : 'expanded',
-        mobileMenuVisibility: 'invisible'
-      }),
-    [collapse]
-  );
-
   return {
-    state,
-    toggleMobileMenu,
     activeSection: state.activeSection,
-    setActiveSection
+    setActiveSection: setActiveSection,
+    isUnfolded: state.isUnfolded,
+    toggleIsUnfolded: toggleIsUnfolded
   };
 };

@@ -15,13 +15,9 @@ interface ThemeContextType {
   setTheme: (theme: Theme) => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | null>(null);
+const AppContext = createContext<ThemeContextType | null>(null);
 
-interface ThemeProviderProps {
-  children: ReactNode;
-}
-
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('auto');
 
   const handleTheme = useCallback((theme: Theme) => {
@@ -45,16 +41,14 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     setTheme: handleTheme
   };
 
-  return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-  );
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
-export const useTheme = (): ThemeContextType => {
-  const context = useContext(ThemeContext);
+export const useApp = (): ThemeContextType => {
+  const context = useContext(AppContext);
 
   if (context === null) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error('useApp must be used within a ThemeProvider');
   }
 
   return context;
