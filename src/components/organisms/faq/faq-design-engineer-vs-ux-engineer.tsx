@@ -1,6 +1,6 @@
 import { AccordionContained } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
-import Link from '@/components/atoms/link';
+import { ExternalLink } from '@/components/atoms/external-link';
 
 export function FaqDesignEngineerVsUxEngineer() {
   return (
@@ -121,13 +121,13 @@ export function FaqDesignEngineerVsUxEngineer() {
 
         <p>
           <span>Frontend Design vs. UX on ChatGPT:</span>
-          <Link
+          <ExternalLink
             href="https://chat.openai.com/share/955dcf23-a3d1-4381-bf7d-d1078c5a89fa"
             title="Design Engineer vs UX Engineer for frontend work on ChatGPT"
             aria-label="Open Design Engineer vs UX Engineer for frontend work on ChatGPT"
           >
             Source
-          </Link>
+          </ExternalLink>
         </p>
       </div>
     </AccordionContained>

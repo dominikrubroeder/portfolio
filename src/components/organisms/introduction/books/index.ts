@@ -1,3 +1,3 @@
 export { Book } from './book';
-export { Books } from './books';
+export { BooksAccordion } from './books-accordion';
 export { books } from './data';

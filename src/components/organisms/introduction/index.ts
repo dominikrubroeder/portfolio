@@ -1,5 +1,6 @@
 export * from './books';
 export { Introduction } from './introduction';
-export { Vision } from './vision';
-export { TechStack } from './tech-stack';
-export { Mindset } from './mindset';
+export { VisionAccordion } from './vision-accordion';
+export { TechStackAccordion } from './tech-stack-accordion';
+export { HowIWorkAccordion } from './how-i-work-accordion';
+export { MyBackgroundAccordion } from './my-background-accordion';

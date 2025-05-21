@@ -41,8 +41,9 @@ export function Header() {
             target="_blank"
             title="Go to GitHub profile of Dominik Rubröder"
             aria-label="Go to GitHub profile of Dominik Rubröder"
+            size="large"
           >
-            <GithubLogo className="size-6" />
+            <GithubLogo />
           </Button>
 
           <Button
@@ -51,8 +52,9 @@ export function Header() {
             target="_blank"
             title="Go to LinkedIn profile of Dominik Rubröder"
             aria-label="Go to LinkedIn profile of Dominik Rubröder"
+            size="large"
           >
-            <LinkedinLogo className="size-6" />
+            <LinkedinLogo />
           </Button>
         </div>
       </Container>

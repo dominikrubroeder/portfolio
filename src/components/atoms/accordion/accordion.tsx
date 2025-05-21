@@ -18,12 +18,7 @@ export function Accordion({
   const [isOpen, setIsOpen] = useState(open);
 
   return (
-    <div
-      className={cn(
-        'space-y-4 sm:mx-auto sm:max-w-(--breakpoint-sm)',
-        className
-      )}
-    >
+    <div className={cn('space-y-4', className)}>
       <button
         className="flex items-center gap-4"
         onClick={() => setIsOpen((previousState) => !previousState)}
@@ -37,7 +32,7 @@ export function Accordion({
         <p>{title}</p>
       </button>
 
-      {isOpen && <div className="animate-fade-up">{children}</div>}
+      {isOpen && <div className="animate-fade-up-1rem">{children}</div>}
     </div>
   );
 }

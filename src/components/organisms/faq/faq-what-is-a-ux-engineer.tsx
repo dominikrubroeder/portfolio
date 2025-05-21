@@ -1,7 +1,7 @@
 import { AccordionContained } from '@/components/atoms/accordion';
 import Image from 'next/image';
 import { Blockquote } from '@/components/atoms/blockquote';
-import Link from '@/components/atoms/link';
+import { ExternalLink } from '@/components/atoms/external-link';
 
 export function FaqWhatIsAUxEngineer() {
   return (
@@ -30,13 +30,9 @@ export function FaqWhatIsAUxEngineer() {
 
         <figcaption>
           Reference to UXE user experience engineering work areas at
-          <Link
-            href="https://uxe.withgoogle.com"
-            title="Open external uxe.google.com website describing the role as an UX Engineer while working for Google"
-            aria-label="Open external uxe.google.com website describing the role as an UX Engineer while working for Google"
-          >
+          <ExternalLink href="https://uxe.withgoogle.com">
             uxe.google.com
-          </Link>
+          </ExternalLink>
         </figcaption>
       </figure>
     </AccordionContained>

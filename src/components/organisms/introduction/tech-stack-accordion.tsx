@@ -8,8 +8,10 @@ import {
   TailwindCssLogo,
   TypescriptLogo
 } from '@/components/atoms/logo';
+import { Ul } from '@/components/atoms/ul';
+import { Accordion } from '@/components/atoms/accordion';
 
-export const techStack = [
+export const techStackAccordion = [
   {
     href: 'https://react.dev',
     icon: <ReactLogo />,
@@ -42,28 +44,27 @@ export const techStack = [
   }
 ];
 
-export function TechStack({ className }: { className?: string }) {
+export function TechStackAccordion({ className }: { className?: string }) {
   return (
-    <ul
-      className={cn(
-        'mx-auto flex w-full max-w-(--breakpoint-sm) flex-wrap items-center gap-6',
-        className
-      )}
-    >
-      {techStack.map((item) => (
-        <li key={item.title}>
-          <Button
-            variant="secondary"
-            href={item.href}
-            className="[&>svg]:size-14"
-            target="_blank"
-            aria-label={item.ariaLabel}
-            title={item.title}
-          >
-            {item.icon}
-          </Button>
-        </li>
-      ))}
-    </ul>
+    <Accordion title="My Tech Stack">
+      <Ul
+        className={cn('flex list-none flex-wrap items-center gap-6', className)}
+      >
+        {techStackAccordion.map((item) => (
+          <li key={item.title}>
+            <Button
+              variant="secondary"
+              href={item.href}
+              className="[&>svg]:size-14"
+              target="_blank"
+              aria-label={item.ariaLabel}
+              title={item.title}
+            >
+              {item.icon}
+            </Button>
+          </li>
+        ))}
+      </Ul>
+    </Accordion>
   );
 }

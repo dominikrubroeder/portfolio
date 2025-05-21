@@ -1,8 +1,3 @@
-import { Container } from '@/components/atoms/container';
-
-import { ControlBar } from '@/components/molecules/control-bar/control-bar';
-import { ControlBarSections } from '@/components/molecules/control-bar/types/types';
-
 import { HomeHero } from '@/components/organisms/home';
 import { Introduction } from '@/components/organisms/introduction';
 import { Projects } from '@/components/organisms/projects';
@@ -16,53 +11,8 @@ import {
   FaqWhatIsAUxEngineer
 } from '@/components/organisms/faq';
 import DesignModeBackground from '@/components/atoms/design-mode-background';
-import {
-  ArrowRightCircleIcon,
-  CheckBadgeIcon,
-  Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  PaintBrushIcon
-} from '@heroicons/react/24/outline';
 import { Suspense } from 'react';
 import { FrontendVision } from '@/components/organisms/faq/frontend-vision';
-
-const sections: ControlBarSections = [
-  {
-    id: 'introduction',
-    label: 'Introduction',
-    icon: <ArrowRightCircleIcon className="size-5" />,
-    className: '',
-    defaultActive: false
-  },
-  {
-    id: 'projects',
-    label: 'Projects',
-    icon: <DocumentDuplicateIcon className="size-5" />,
-    className: '',
-    defaultActive: false
-  },
-  {
-    id: 'tools',
-    label: 'Tools',
-    icon: <PaintBrushIcon className="size-5" />,
-    className: '',
-    defaultActive: false
-  },
-  {
-    id: 'technologies',
-    label: 'Technologies',
-    icon: <Cog6ToothIcon className="size-5" />,
-    className: '',
-    defaultActive: false
-  },
-  {
-    id: 'socials',
-    label: 'Socials',
-    icon: <CheckBadgeIcon className="size-5" />,
-    className: '',
-    defaultActive: false
-  }
-];
 
 export default function HomePage() {
   return (
@@ -71,14 +21,14 @@ export default function HomePage() {
 
       <HomeHero />
 
-      <div className="space-y-32">
-        <ControlBar sections={sections} />
-
+      <div className="mx-auto space-y-32 sm:max-w-(--breakpoint-md)">
         <Introduction />
 
-        <Projects />
-
         <div className="space-y-12">
+          <Projects />
+
+          <hr />
+
           <Suspense>
             <Tools />
           </Suspense>
@@ -90,20 +40,28 @@ export default function HomePage() {
           <hr />
 
           <Socials />
-        </div>
 
-        <Container tag="section">
-          <div
-            className="mx-auto w-full px-4 sm:max-w-(--breakpoint-sm)"
-            id="accordion-group"
-          >
-            <FrontendVision />
-            <FaqWhatIsAUxEngineer />
-            <FaqUxDesigner />
-            <FaqUxEngineer />
-            <FaqDesignEngineerVsUxEngineer />
+          <hr />
+
+          <div className="space-y-8">
+            <header className="space-y-6">
+              <h2 className="space-x-2 text-5xl font-bold text-foreground">
+                <span>QA</span>
+                <span className="text-muted-foreground">
+                  Some questions and answers about UX design engineering
+                </span>
+              </h2>
+            </header>
+
+            <div id="accordion-group">
+              <FrontendVision />
+              <FaqWhatIsAUxEngineer />
+              <FaqUxDesigner />
+              <FaqUxEngineer />
+              <FaqDesignEngineerVsUxEngineer />
+            </div>
           </div>
-        </Container>
+        </div>
       </div>
     </div>
   );

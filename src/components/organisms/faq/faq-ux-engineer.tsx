@@ -1,6 +1,6 @@
 import { AccordionContained } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
-import Link from '@/components/atoms/link';
+import { ExternalLink } from '@/components/atoms/external-link';
 
 export function FaqUxEngineer() {
   return (
@@ -177,13 +177,13 @@ export function FaqUxEngineer() {
 
       <p>
         <span>UX Engineer Focus Areas on ChatGPT:</span>
-        <Link
+        <ExternalLink
           href="https://chat.openai.com/share/c8344fb3-ea8b-4d0e-830c-185d3aab2a27"
           title="Open UX Engineer: Focus Areas on ChatGPT"
           aria-label="Open UX Engineer: Focus Areas on ChatGPT"
         >
           Source
-        </Link>
+        </ExternalLink>
       </p>
     </AccordionContained>
   );

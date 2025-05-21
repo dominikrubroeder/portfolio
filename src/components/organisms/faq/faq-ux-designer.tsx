@@ -1,6 +1,6 @@
 import { AccordionContained } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
-import Link from '@/components/atoms/link';
+import { ExternalLink } from '@/components/atoms/external-link';
 
 export function FaqUxDesigner() {
   return (
@@ -127,13 +127,13 @@ export function FaqUxDesigner() {
 
       <p>
         <span>UX Design: Key Predicates on ChatGPT:</span>
-        <Link
+        <ExternalLink
           href="https://chat.openai.com/share/ca8c7c7e-95da-46bb-bd06-fbb81ac53dea"
           title="Open UX Design: Key Predicates on ChatGPT"
           aria-label="Open UX Design: Key Predicates on ChatGPT"
         >
           Source
-        </Link>
+        </ExternalLink>
       </p>
     </AccordionContained>
   );

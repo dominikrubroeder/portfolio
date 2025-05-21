@@ -47,7 +47,7 @@ export const books: Book[] = [
     title: 'Laws of UX, 2nd Edition',
     author: 'Jon Yablonski',
     href: undefined,
-    progress: 30
+    progress: 100
   },
   {
     title: 'User Friendly',

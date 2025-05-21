@@ -1,16 +1,12 @@
 import Link from 'next/link';
 import type { Tools } from '@/components/organisms/tools/types';
-import { Container } from '@/components/atoms/container';
 import { getApiUrl } from '@/lib/api';
-import { Marker } from '@/components/atoms/marker';
 import { ToggleContent } from '@/components/organisms/toggle-content';
 import { Brand } from '@/components/atoms/brand';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { Button } from '@/components/atoms/button';
-import { ArrowRightIcon } from '@heroicons/react/16/solid';
 import Expandable from '@/components/molecules/expandable';
-import { SwipeOnHover } from '@/components/atoms/swipe-on-hover';
 import {
   CraftLogo,
   FigmaLogo,
@@ -18,12 +14,6 @@ import {
   GitlabLogo,
   WebstormLogo
 } from '@/components/atoms/logo';
-import {
-  AlignEndVerticalIcon,
-  CodeIcon,
-  PenLineIcon,
-  SquareTerminalIcon
-} from 'lucide-react';
 
 async function getTools() {
   const res = await fetch(`${getApiUrl()}/api/tools`, {
@@ -45,65 +35,23 @@ export default async function Tools() {
   if (highlightTools.length === 0 || tools.length === 0) return null;
 
   return (
-    <Container tag="section" id="tools" className="space-y-8">
-      <ul className="flex flex-wrap gap-8">
-        {highlightTools.map((item) =>
-          item.children.map((nestedItem) => (
-            <li key={nestedItem.title} className="inline-flex">
-              <Link
-                href={nestedItem.website}
-                className="group relative inline-flex text-muted-foreground"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ArrowRightIcon className="absolute -top-[5.25rem] -right-1.5 z-20 hidden size-6 -rotate-45 rounded bg-primary p-1 text-primary-foreground opacity-0 group-hover:opacity-100 md:block" />
-
-                <span className="absolute -top-10 left-1/2 z-20 hidden w-max -translate-x-1/2 rounded border-primary bg-primary px-1 py-0.5 text-xs text-primary-foreground opacity-0 group-hover:opacity-100 md:block">
-                  New tab
-                </span>
-
-                <div className="absolute -top-[4.75rem] left-1/2 z-10 hidden w-max -translate-x-1/2 rounded border bg-muted px-3.5 py-2 opacity-0 select-none group-hover:opacity-100 md:block">
-                  {nestedItem.title}
-                </div>
-
-                <Brand
-                  brand={nestedItem.title}
-                  className="h-16 w-auto interactive transition group-hover:scale-105"
-                  aria-label={`${nestedItem.title} logo`}
-                />
-              </Link>
-            </li>
-          ))
-        )}
-      </ul>
-
+    <div className="space-y-8">
       <div className="space-y-6">
-        <h2 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+        <h2 className="space-x-1 text-5xl leading-[1.2] font-bold text-foreground">
           <span>Tools</span>
           <span className="text-muted-foreground">
-            help me
-            <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
-              visualizing
-            </Marker>
-            and
-            <Marker animate className="mx-2 pr-3 pl-1 text-black/90">
-              capturing
-            </Marker>
+            help me <span className="text-black/90">visualizing</span> and
+            <span className="mx-2 text-black/90">capturing</span>
             the things we are about to build. I use
           </span>
         </h2>
 
-        <ul className="space-y-3.5">
+        <ul className="space-y-5">
           <li>
-            <div className="group relative inline-block cursor-pointer">
-              <SwipeOnHover
-                initial={
-                  <AlignEndVerticalIcon className="absolute -left-24 size-16" />
-                }
-                onHover={<FigmaLogo className="absolute -left-24 size-16" />}
-              />
+            <div className="group relative inline-flex cursor-pointer items-center gap-4">
+              <FigmaLogo className="size-12" />
 
-              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+              <h3 className="space-x-1 font-bold text-foreground">
                 <span>Figma</span>
                 <span className="text-muted-foreground">
                   for user interface design and prototyping
@@ -111,35 +59,23 @@ export default async function Tools() {
               </h3>
             </div>
           </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <div className="group relative inline-block cursor-pointer">
-              <SwipeOnHover
-                initial={
-                  <SquareTerminalIcon className="absolute -left-24 size-16" />
-                }
-                onHover={<WebstormLogo className="absolute -left-24 size-16" />}
-              />
 
-              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+          <li>
+            <div className="group relative inline-flex cursor-pointer items-center gap-4">
+              <WebstormLogo className="size-12" />
+
+              <h3 className="space-x-1 font-bold text-foreground">
                 <span>WebStorm</span>
                 <span className="text-muted-foreground">as IDE</span>
               </h3>
             </div>
           </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <div className="group relative inline-block cursor-pointer">
-              <SwipeOnHover
-                initial={<PenLineIcon className="absolute -left-24 size-16" />}
-                onHover={<CraftLogo className="absolute -left-24 size-16" />}
-              />
 
-              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+          <li>
+            <div className="group relative inline-flex cursor-pointer items-center gap-4">
+              <CraftLogo className="size-12" />
+
+              <h3 className="space-x-1 font-bold text-foreground">
                 <span>Craft</span>
                 <span className="text-muted-foreground">
                   as my main note and docs tool
@@ -147,17 +83,12 @@ export default async function Tools() {
               </h3>
             </div>
           </li>
-          <li>
-            <hr />
-          </li>
-          <li>
-            <div className="group relative inline-block cursor-pointer">
-              <SwipeOnHover
-                initial={<CodeIcon className="absolute -left-24 size-16" />}
-                onHover={<GithubLogo className="absolute -left-24 size-16" />}
-              />
 
-              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+          <li>
+            <div className="group relative inline-flex cursor-pointer items-center gap-4">
+              <GithubLogo className="size-12" />
+
+              <h3 className="space-x-1 font-bold text-foreground">
                 <span>GitHub</span>
                 <span className="text-muted-foreground">
                   to store my private codebase
@@ -165,16 +96,12 @@ export default async function Tools() {
               </h3>
             </div>
           </li>
+
           <li>
-            <hr />
-          </li>
-          <li>
-            <div className="group relative inline-block cursor-pointer">
-              <SwipeOnHover
-                initial={<CodeIcon className="absolute -left-24 size-16" />}
-                onHover={<GitlabLogo className="absolute -left-24 size-16" />}
-              />
-              <h3 className="max-w-[70rem] space-x-2 text-5xl leading-[1.2] font-bold text-foreground">
+            <div className="group relative inline-flex cursor-pointer items-center gap-4">
+              <GitlabLogo className="size-12" />
+
+              <h3 className="space-x-1 font-bold text-foreground">
                 <span>GitLab</span>
                 <span className="text-muted-foreground">
                   is mainly used at workspace
@@ -210,7 +137,7 @@ export default async function Tools() {
           </div>
         </div>
 
-        <ul className="grid animate-fade-up-1rem gap-8 md:grid-cols-2 md:gap-10 xl:grid-cols-3">
+        <ul className="grid animate-fade-up-1rem gap-10">
           {tools
             .sort((a, b) => {
               return a.group.localeCompare(b.group);
@@ -271,6 +198,6 @@ export default async function Tools() {
             ))}
         </ul>
       </ToggleContent>
-    </Container>
+    </div>
   );
 }
