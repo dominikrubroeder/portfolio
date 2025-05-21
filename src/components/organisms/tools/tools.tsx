@@ -37,12 +37,12 @@ export default async function Tools() {
   return (
     <div className="space-y-8">
       <div className="space-y-6">
-        <h2 className="space-x-1 text-5xl leading-[1.2] font-bold text-foreground">
+        <h2>
           <span>Tools</span>
           <span className="text-muted-foreground">
             help me <span className="text-black/90">visualizing</span> and
             <span className="mx-2 text-black/90">capturing</span>
-            the things we are about to build. I use
+            the things we build. I use
           </span>
         </h2>
 

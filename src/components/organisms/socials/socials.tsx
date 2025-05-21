@@ -5,10 +5,10 @@ export default function Socials() {
   return (
     <div className="space-y-8">
       <header>
-        <h2 className="space-x-1 text-5xl font-bold text-foreground">
+        <h2>
           <span>Social accounts</span>
           <span className="text-muted-foreground">
-            You can see my code or my social presence on
+            You can see my code and social presence on
           </span>
         </h2>
       </header>

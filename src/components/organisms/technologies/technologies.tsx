@@ -19,7 +19,7 @@ import {
 export default function Technologies() {
   return (
     <div className="space-y-8">
-      <h2 className="space-x-1 text-5xl leading-[1.2] font-bold text-foreground">
+      <h2>
         <span>Technologies</span>
         <span className="text-muted-foreground">
           are the foundation of writing

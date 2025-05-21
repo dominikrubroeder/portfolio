@@ -8,7 +8,7 @@ import { Accordion } from '@/components/atoms/accordion';
 export function BooksAccordion({ className }: { className?: string }) {
   return (
     <Accordion title="Books">
-      <Ul className={cn('list-none space-y-4 leading-relaxed', className)}>
+      <Ul className={cn('list-none space-y-4 pl-0 leading-relaxed', className)}>
         {books
           .sort((a, b) => b.progress - a.progress)
           .map((book) => (

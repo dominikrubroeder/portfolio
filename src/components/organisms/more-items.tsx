@@ -50,7 +50,7 @@ export default function MoreItems({
   );
 
   return (
-    <Container tag="div" className="space-y-8 lg:px-0" id={openScrollToId}>
+    <Container as="div" className="space-y-8 lg:px-0" id={openScrollToId}>
       <div className="flex w-full flex-wrap justify-between gap-6 md:gap-8">
         <Button
           variant="primary"

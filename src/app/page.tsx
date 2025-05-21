@@ -16,50 +16,50 @@ import { FrontendVision } from '@/components/organisms/faq/frontend-vision';
 
 export default function HomePage() {
   return (
-    <div className="animate-fade-up-1rem">
+    <div className="animate-fade-up-1rem space-y-6">
       <DesignModeBackground />
 
       <HomeHero />
 
-      <div className="mx-auto space-y-32 sm:max-w-(--breakpoint-md)">
+      <div className="mx-auto space-y-12 px-4 sm:max-w-(--readable-container) lg:px-0">
         <Introduction />
 
-        <div className="space-y-12">
-          <Projects />
+        <hr />
 
-          <hr />
+        <Projects />
 
-          <Suspense>
-            <Tools />
-          </Suspense>
+        <hr />
 
-          <hr />
+        <Suspense>
+          <Tools />
+        </Suspense>
 
-          <Technologies />
+        <hr />
 
-          <hr />
+        <Technologies />
 
-          <Socials />
+        <hr />
 
-          <hr />
+        <Socials />
 
-          <div className="space-y-8">
-            <header className="space-y-6">
-              <h2 className="space-x-2 text-5xl font-bold text-foreground">
-                <span>QA</span>
-                <span className="text-muted-foreground">
-                  Some questions and answers about UX design engineering
-                </span>
-              </h2>
-            </header>
+        <hr />
 
-            <div id="accordion-group">
-              <FrontendVision />
-              <FaqWhatIsAUxEngineer />
-              <FaqUxDesigner />
-              <FaqUxEngineer />
-              <FaqDesignEngineerVsUxEngineer />
-            </div>
+        <div className="space-y-8">
+          <header className="space-y-6">
+            <h2>
+              <span>QA</span>
+              <span className="text-muted-foreground">
+                Some questions and answers about UX design engineering
+              </span>
+            </h2>
+          </header>
+
+          <div id="accordion-group">
+            <FrontendVision />
+            <FaqWhatIsAUxEngineer />
+            <FaqUxDesigner />
+            <FaqUxEngineer />
+            <FaqDesignEngineerVsUxEngineer />
           </div>
         </div>
       </div>

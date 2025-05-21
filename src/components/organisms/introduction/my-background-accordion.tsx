@@ -108,7 +108,7 @@ export function MyBackgroundAccordion() {
 
         <p>
           Also, with React i felt more in the real JavaScript environment than
-          with Vue (which can be a pro or a con, depending on how you look at
+          with Vue (which can be a pro, or a con, depending on how you look at
           it).
         </p>
 

@@ -20,7 +20,7 @@ export function Button({
   children: ReactNode;
 } & React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>) {
   const classNames = cn(
-    'interactive group relative inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center transition',
+    'interactive group [&>svg]:shrink-0 decoration-none relative inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center transition-all',
     variant === 'primary' &&
       'rounded-2xl bg-primary text-white hover:rounded-xl hover:bg-violet-500',
     variant === 'outline' && 'rounded border hover:bg-muted',

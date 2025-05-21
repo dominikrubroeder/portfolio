@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
+import { HTMLTag } from '@/lib/types';
 
 export function Markup({
   color = 'neutral',
@@ -12,7 +13,7 @@ export function Markup({
 }: {
   color?: 'primary' | 'neutral' | 'muted';
   size?: 'small' | 'medium' | 'large';
-  as?: 'div' | 'p' | 'span';
+  as?: HTMLTag;
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) {

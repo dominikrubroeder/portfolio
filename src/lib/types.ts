@@ -1,1 +1,1 @@
-export type HTMLTag = 'div' | 'section' | 'p' | 'span';
+export type HTMLTag = 'div' | 'section' | 'p' | 'header' | 'span';

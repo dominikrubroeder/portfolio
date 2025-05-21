@@ -7,8 +7,7 @@ import {
   BooksAccordion,
   HowIWorkAccordion,
   MyBackgroundAccordion,
-  TechStackAccordion,
-  VisionAccordion
+  TechStackAccordion
 } from '@/components/organisms/introduction';
 
 export function Introduction() {
@@ -57,10 +56,6 @@ export function Introduction() {
         <ul className="space-y-6">
           <li>
             <MyBackgroundAccordion />
-          </li>
-
-          <li>
-            <VisionAccordion />
           </li>
 
           <li>

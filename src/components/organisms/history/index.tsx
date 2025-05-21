@@ -7,7 +7,7 @@ import { Container } from '@/components/atoms/container';
 export default function Index() {
   return (
     <Container
-      tag="section"
+      as="section"
       id="history"
       className="mx-auto grid max-w-(--breakpoint-sm) grid-cols-[auto_1fr] gap-4 px-4 md:pl-28"
     >

@@ -33,17 +33,15 @@ export function AccordionContained({
   }, [open, handleScroll]);
 
   return (
-    <div
-      ref={ref}
-      className={cn('scroll-mt-24 pt-4 md:scroll-mt-24', className)}
-    >
+    <div ref={ref} className={cn('scroll-mt-3 pt-4', className)}>
       <div
-        className="group sticky top-24 z-10 mx-auto flex cursor-pointer items-center justify-between gap-4 overflow-hidden rounded-2xl bg-muted px-4 py-3 leading-[1.6] text-primary transition-all select-none md:relative md:top-0"
+        className="group sticky top-3 z-10 mx-auto flex cursor-pointer items-center justify-between gap-4 overflow-hidden rounded-2xl bg-muted px-4 py-3 leading-[1.6] text-primary transition-all select-none md:relative md:top-0"
         title="Open accordion to see more content"
         aria-label="Open accordion to see more content"
         onClick={() => setOpen((prevState) => !prevState)}
       >
-        <h2 className="font-bold">{title}</h2>
+        <h3 className="mb-0">{title}</h3>
+
         <div className="flex items-center gap-2">
           {open && <MinusIcon className="size-4 text-muted-foreground" />}
           {!open && <PlusIcon className="size-4 text-muted-foreground" />}
