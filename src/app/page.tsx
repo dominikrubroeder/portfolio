@@ -11,10 +11,9 @@ import {
   FaqWhatIsAUxEngineer
 } from '@/components/organisms/faq';
 import DesignModeBackground from '@/components/atoms/design-mode-background';
-import { Suspense } from 'react';
 import { FrontendVision } from '@/components/organisms/faq/frontend-vision';
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div className="animate-fade-up-1rem space-y-6">
       <DesignModeBackground />
@@ -30,9 +29,7 @@ export default function HomePage() {
 
         <hr />
 
-        <Suspense>
-          <Tools />
-        </Suspense>
+        <Tools />
 
         <hr />
 

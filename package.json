@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "dev-https": "next dev --experimental-https",
-    "build": "next build --turbopack",
-    "start": "next start --turbopack",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
     "upgrade-next@latest": "npm i next@latest react@latest react-dom@latest eslint-config-next@latest @types/react@latest @types/react-dom@latest"
