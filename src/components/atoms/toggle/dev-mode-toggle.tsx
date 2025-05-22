@@ -2,7 +2,7 @@
 
 import { Toggle } from '@/components/atoms/toggle';
 import { cn } from '@/lib/utils';
-import { useApp } from '@/components/organisms/context/app-context';
+import { useApp } from '@/components/organisms/app';
 
 export function DevModeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useApp();

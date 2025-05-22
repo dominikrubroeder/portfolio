@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { useApp } from '@/components/organisms/context/app-context';
+import { useApp } from '@/components/organisms/app';
 import { Shapes } from '@/components/atoms/svg';
 
 export default function DesignModeBackground() {

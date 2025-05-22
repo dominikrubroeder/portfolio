@@ -1,11 +1,13 @@
+import './globals.css';
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
+
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import './globals.css';
+
 import { Header } from '@/components/molecules/header';
 import { Footer } from '@/components/molecules/footer';
-import { AppProvider } from '@/components/organisms/context/app-context';
+import { AppProvider } from '@/components/organisms/app';
 
 export const metadata: Metadata = {
   title: 'UX Design Engineer | Dominik Rubröder',

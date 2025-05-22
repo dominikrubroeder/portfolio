@@ -11,7 +11,6 @@ import {
   FaqWhatIsAUxEngineer
 } from '@/components/organisms/faq';
 import DesignModeBackground from '@/components/atoms/design-mode-background';
-import { FrontendVision } from '@/components/organisms/faq/frontend-vision';
 
 export default async function HomePage() {
   return (
@@ -52,7 +51,6 @@ export default async function HomePage() {
           </header>
 
           <div id="accordion-group">
-            <FrontendVision />
             <FaqWhatIsAUxEngineer />
             <FaqUxDesigner />
             <FaqUxEngineer />

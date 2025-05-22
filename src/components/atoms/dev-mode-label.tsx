@@ -1,9 +1,11 @@
 'use client';
 
-import { useApp } from '@/components/organisms/context/app-context';
-import { motion } from 'motion/react';
 import { ReactNode } from 'react';
+import { motion } from 'motion/react';
+
 import { cn } from '@/lib/utils';
+
+import { useApp } from '@/components/organisms/app';
 
 export default function DevModeLabel({
   className,

@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
 import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
-import { ButtonVariant } from '@/components/atoms/button/types';
+import Link from 'next/link';
+
+import { cn } from '@/lib/utils';
 
 export function Button({
   variant,
@@ -12,7 +12,7 @@ export function Button({
   children,
   ...rest
 }: {
-  variant: ButtonVariant;
+  variant: 'primary' | 'secondary' | 'outline' | 'naked';
   size?: 'tiny' | 'small' | 'medium' | 'large';
   className?: string;
   href?: string;
