@@ -10,11 +10,11 @@ export function HowIWorkAccordion({ className }: { className?: string }) {
 
       <Ul className={cn('mx-auto mb-5 leading-8', className)}>
         <li>
-          <b className="text-foreground">Design</b> – with care, joy, curiosity
+          Care on <b className="text-foreground">designing</b>
         </li>
         <li>
           <b className="text-foreground">Code</b> and
-          <b className="text-foreground"> build</b> – for production
+          <b className="text-foreground"> build</b> for production
         </li>
         <li>
           <b className="text-foreground">Using Psychology </b>
