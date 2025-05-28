@@ -1,4 +1,3 @@
-import Avatar from '@/components/atoms/avatar';
 import { Button } from '@/components/atoms/button';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
@@ -16,10 +15,7 @@ export function Introduction() {
       <div className="relative mx-auto w-full space-y-6 rounded border bg-background px-4 py-4">
         <DevModeLabel>div | introduction.tsx</DevModeLabel>
 
-        <div className="flex items-center gap-2.5">
-          Hey there!
-          <Avatar width={44} height={44} className="size-11" as="Image" />
-        </div>
+        <p>Hey there! 👋</p>
 
         <div className="space-y-3 text-wrap">
           <p>

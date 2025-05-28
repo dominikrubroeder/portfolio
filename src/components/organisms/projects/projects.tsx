@@ -32,7 +32,7 @@ export function Projects() {
       <h2>
         <span>Projects</span>
         <span className="text-muted-foreground">
-          show you, on which projects i participated or build with
+          show you, on which teams i participated or build with
         </span>
       </h2>
 

@@ -14,9 +14,8 @@ export function Tools() {
         <h2>
           <span>Tools</span>
           <span className="text-muted-foreground">
-            help me <span className="text-black/90">visualizing</span> and
-            <span className="mx-2 text-black/90">capturing</span>
-            the things we build. I use
+            help me <span className="mr-2 text-black/90">visualizing</span>
+            the application we build. I use
           </span>
         </h2>
 
@@ -52,7 +51,7 @@ export function Tools() {
               <h3 className="space-x-1 font-bold text-foreground">
                 <span>Craft</span>
                 <span className="text-muted-foreground">
-                  as my main note and docs tool
+                  as my main note and documentation tool
                 </span>
               </h3>
             </div>

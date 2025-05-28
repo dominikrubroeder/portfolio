@@ -20,18 +20,18 @@ export function HowIWorkAccordion({ className }: { className?: string }) {
           <b className="text-foreground">Using Psychology </b>
           to design and build better user interfaces
         </li>
-        <li>Being mindful</li>
+        <li>Be mindful</li>
         <li>Writing documentation</li>
         <li>Working for good Brands, Products or Services</li>
         <li>Bring an idea from paper to production</li>
         <li>
-          Work with pen and paper; Fast sketching and scribbling improves
-          visualizing ideas faster. I can also turn back to them later, when
+          Work with pen and paper; fast sketching and scribbling improves
+          visualizing my ideas faster. I can also turn back to them later, when
           something else blocks the opportunity working on it immediately
         </li>
         <li>
-          Writing notes on a regular basis; similar to pen and paper work, it
-          will help organizing my thoughts and the current work on a task and
+          Write notes on a regular basis; Similar to pen and paper work, it will
+          help organizing my thoughts and the current work on a task and
           summarize the outcome of it – while being in the process. I often find
           myself with more clarity and a feeling of structure if i get stuck in
           a concept for too long.
