@@ -115,10 +115,17 @@ export const tools: Tools = [
     ]
   },
   {
-    group: 'Analyse',
+    group: 'Analytics',
     children: [
       {
         title: 'Google Analytics',
+        website: '',
+        logo: '',
+        description: '',
+        knowledge: 'Used'
+      },
+      {
+        title: 'Google Tag Manager',
         website: '',
         logo: '',
         description: '',
@@ -237,11 +244,44 @@ export const tools: Tools = [
     group: 'CMS',
     children: [
       {
+        title: 'Contentserv',
+        website: '',
+        logo: '',
+        description: '',
+        knowledge: 'Not started'
+      },
+      {
         title: 'Storyblok',
         website: 'https://www.storyblok.com',
         logo: '/storyblok.png',
         description: 'The Way to Modern Content',
         knowledge: 'Daily'
+      },
+      {
+        title: 'Typo3',
+        website: '',
+        logo: '',
+        description: '',
+        knowledge: 'Not started'
+      }
+    ]
+  },
+  {
+    group: 'Cookie Consent',
+    children: [
+      {
+        title: 'CookieHub',
+        website: '',
+        logo: '',
+        description: '',
+        knowledge: 'Not started'
+      },
+      {
+        title: 'Usercentrics',
+        website: '',
+        logo: '',
+        description: '',
+        knowledge: 'Used'
       }
     ]
   },
@@ -643,6 +683,13 @@ export const tools: Tools = [
         website: '',
         logo: '',
         knowledge: 'Used'
+      },
+      {
+        title: 'X',
+        description: '',
+        website: '',
+        logo: '',
+        knowledge: 'Experienced'
       }
     ]
   },
@@ -1021,6 +1068,13 @@ export const tools: Tools = [
   {
     group: 'Testing',
     children: [
+      {
+        title: 'Ghost Inspector',
+        website: '',
+        logo: '',
+        description: '',
+        knowledge: 'Used'
+      },
       {
         title: 'Jest',
         website: '',
