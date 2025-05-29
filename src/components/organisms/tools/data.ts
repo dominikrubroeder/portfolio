@@ -1,4 +1,4 @@
-import { Tools } from '@/components/organisms/tools/types';
+import type { Tools } from '@/components/organisms/tools/types';
 
 export const highlightTools: Tools = [
   {
@@ -45,7 +45,7 @@ export const highlightTools: Tools = [
         title: 'GitHub',
         website: 'https://github.com/dominikrubroeder',
         logo: 'github',
-        description: 'The world’s leading AI-powered developer platform.',
+        description: "The world's leading AI-powered developer platform.",
         knowledge: 'Daily'
       },
       {
@@ -73,8 +73,9 @@ export const tools: Tools = [
       },
       {
         title: 'Lighthouse',
-        description: '',
-        website: '',
+        description:
+          'An open-source, automated tool for improving the quality of web pages',
+        website: 'https://developers.google.com/web/tools/lighthouse',
         logo: '',
         knowledge: 'Professional'
       }
@@ -100,16 +101,17 @@ export const tools: Tools = [
       },
       {
         title: 'Cursor AI',
-        website: '',
+        website: 'https://cursor.sh',
         logo: '',
-        description: '',
+        description: 'The AI-first code editor',
         knowledge: 'Not started'
       },
       {
         title: 'v0.dev',
-        website: '',
+        website: 'https://v0.dev',
         logo: '',
-        description: '',
+        description:
+          'Generate UI with shadcn/ui from simple text prompts and images',
         knowledge: 'Professional'
       }
     ]
@@ -119,37 +121,41 @@ export const tools: Tools = [
     children: [
       {
         title: 'Google Analytics',
-        website: '',
+        website: 'https://analytics.google.com',
         logo: '',
-        description: '',
+        description:
+          'Measure your advertising ROI as well as track your Flash, video, and social networking sites and applications',
         knowledge: 'Used'
       },
       {
         title: 'Google Tag Manager',
-        website: '',
+        website: 'https://tagmanager.google.com',
         logo: '',
-        description: '',
+        description:
+          'Google Tag Manager helps make tag management simple, easy and reliable',
         knowledge: 'Used'
       },
       {
         title: 'Hotjar',
-        website: '',
+        website: 'https://www.hotjar.com',
         logo: '',
-        description: '',
+        description:
+          'See how visitors are really using your website, collect user feedback and turn more visitors into customers',
         knowledge: 'Used'
       },
       {
         title: 'Vercel Speedinsights',
-        website: '',
+        website: 'https://vercel.com/docs/speed-insights',
         logo: '',
-        description: '',
+        description:
+          'Real-time performance insights for your Vercel deployments',
         knowledge: 'Experienced'
       },
       {
         title: 'Vercel Web Analytics',
-        website: '',
+        website: 'https://vercel.com/docs/analytics',
         logo: '',
-        description: '',
+        description: 'Privacy-friendly analytics for your Vercel projects',
         knowledge: 'Experienced'
       }
     ]
@@ -175,7 +181,7 @@ export const tools: Tools = [
         title: 'Bruno',
         website: 'https://www.usebruno.com/',
         logo: '',
-        description: "The World's Leading API Platform",
+        description: 'Opensource IDE for exploring and testing APIs',
         knowledge: 'Used'
       }
     ]
@@ -205,37 +211,38 @@ export const tools: Tools = [
     children: [
       {
         title: 'Arc',
-        website: '',
+        website: 'https://arc.net',
         logo: '',
-        description: '',
+        description: 'A better way to browse',
         knowledge: 'Used'
       },
       {
         title: 'Brave',
-        website: '',
+        website: 'https://brave.com',
         logo: '',
-        description: '',
+        description: 'Secure, fast & private web browser with adblocker',
         knowledge: 'Not started'
       },
       {
         title: 'Chrome',
-        website: '',
+        website: 'https://www.google.com/chrome',
         logo: '',
-        description: '',
+        description:
+          'A fast, secure, and free web browser built for the modern web',
         knowledge: 'Daily'
       },
       {
         title: 'Firefox',
-        website: '',
+        website: 'https://www.mozilla.org/firefox',
         logo: '',
-        description: '',
+        description: 'Firefox is more than a browser',
         knowledge: 'Experienced'
       },
       {
         title: 'Safari',
-        website: '',
+        website: 'https://www.apple.com/safari',
         logo: '',
-        description: '',
+        description: 'A faster, smarter way to browse the web',
         knowledge: 'Daily'
       }
     ]
@@ -245,9 +252,10 @@ export const tools: Tools = [
     children: [
       {
         title: 'Contentserv',
-        website: '',
+        website: 'https://www.contentserv.com',
         logo: '',
-        description: '',
+        description:
+          'Product Information Management and Marketing Experience Management',
         knowledge: 'Not started'
       },
       {
@@ -259,9 +267,9 @@ export const tools: Tools = [
       },
       {
         title: 'Typo3',
-        website: '',
+        website: 'https://typo3.org',
         logo: '',
-        description: '',
+        description: 'The Professional, Flexible Content Management System',
         knowledge: 'Not started'
       }
     ]
@@ -271,16 +279,17 @@ export const tools: Tools = [
     children: [
       {
         title: 'CookieHub',
-        website: '',
+        website: 'https://www.cookiehub.com',
         logo: '',
-        description: '',
+        description: 'Cookie consent management platform',
         knowledge: 'Not started'
       },
       {
         title: 'Usercentrics',
-        website: '',
+        website: 'https://usercentrics.com',
         logo: '',
-        description: '',
+        description:
+          'Consent Management Platform for GDPR, CCPA & ePrivacy compliance',
         knowledge: 'Used'
       }
     ]
@@ -290,15 +299,15 @@ export const tools: Tools = [
     children: [
       {
         title: 'Slack',
-        description: '',
-        website: '',
+        description: 'Where work happens',
+        website: 'https://slack.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'Teams',
-        description: '',
-        website: '',
+        description: 'Meet, chat, call, and collaborate in just one place',
+        website: 'https://www.microsoft.com/microsoft-teams',
         logo: '',
         knowledge: 'Daily'
       }
@@ -309,14 +318,14 @@ export const tools: Tools = [
     children: [
       {
         title: 'Color Designer',
-        description: '',
-        website: '',
+        description: 'Simple color palette generator',
+        website: 'https://colordesigner.io',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'uicolors',
-        description: '',
+        description: 'Tailwind CSS color generator',
         website: 'https://uicolors.app',
         logo: '',
         knowledge: 'Used'
@@ -328,29 +337,31 @@ export const tools: Tools = [
     children: [
       {
         title: 'AWS Amplify',
-        description: '',
-        website: '',
+        description: 'Build full-stack web and mobile apps in hours',
+        website: 'https://aws.amazon.com/amplify',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'Netlify',
-        description: '',
-        website: '',
+        description:
+          'The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web',
+        website: 'https://www.netlify.com',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'platform.sh',
-        description: '',
-        website: '',
+        description:
+          'The end-to-end cloud platform for building, running and scaling web applications',
+        website: 'https://platform.sh',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'Vercel',
-        description: '',
-        website: '',
+        description: 'Develop. Preview. Ship. For the best frontend teams',
+        website: 'https://vercel.com',
         logo: '',
         knowledge: 'Professional'
       }
@@ -361,36 +372,36 @@ export const tools: Tools = [
     children: [
       {
         title: 'Adobe XD (deprecated)',
-        description: '',
-        website: '',
+        description: 'Design, prototype, and share user experiences',
+        website: 'https://www.adobe.com/products/xd.html',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'Figma',
-        description: '',
-        website: '',
+        description: 'The collaborative interface design tool',
+        website: 'https://www.figma.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'Framer',
-        description: '',
-        website: '',
+        description: 'Design and publish stunning sites',
+        website: 'https://www.framer.com',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'InVision Studio',
-        description: '',
-        website: '',
+        description: "The world's most powerful screen design tool",
+        website: 'https://www.invisionapp.com/studio',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'Sketch',
-        description: '',
-        website: '',
+        description: 'Design, prototype, collaborate and handoff',
+        website: 'https://www.sketch.com',
         logo: '',
         knowledge: 'Experienced'
       }
@@ -401,8 +412,8 @@ export const tools: Tools = [
     children: [
       {
         title: 'Procreate',
-        description: '',
-        website: '',
+        description: 'Made for artists, by artists',
+        website: 'https://procreate.art',
         logo: '',
         knowledge: 'Used'
       }
@@ -413,15 +424,15 @@ export const tools: Tools = [
     children: [
       {
         title: 'Craft',
-        description: '',
-        website: '',
+        description: 'A fresh take on documents',
+        website: 'https://www.craft.do',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'Inkdrop',
-        description: '',
-        website: '',
+        description: 'Organizing your Markdown notes made simple',
+        website: 'https://inkdrop.app',
         logo: '/tools/inkdrop.png',
         knowledge: 'Daily'
       }
@@ -432,22 +443,24 @@ export const tools: Tools = [
     children: [
       {
         title: 'heroicons',
-        description: '',
-        website: '',
+        description:
+          'Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS',
+        website: 'https://heroicons.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'luicide-react',
-        description: '',
-        website: '',
+        description:
+          'Beautiful & consistent icon toolkit made by the community',
+        website: 'https://lucide.dev',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'Material Icons',
-        description: '',
-        website: '',
+        description: 'Material Design icons by Google',
+        website: 'https://fonts.google.com/icons',
         logo: '',
         knowledge: 'Used'
       }
@@ -458,28 +471,28 @@ export const tools: Tools = [
     children: [
       {
         title: 'VS Code',
-        description: '',
-        website: '',
+        description: 'Code editing. Redefined.',
+        website: 'https://code.visualstudio.com',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'WebStorm',
-        description: '',
-        website: '',
+        description: 'The smartest JavaScript IDE',
+        website: 'https://www.jetbrains.com/webstorm',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'zed',
-        description: '',
-        website: '',
+        description: 'A high-performance, multiplayer code editor',
+        website: 'https://zed.dev',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'Sublime Text',
-        description: '',
+        description: 'A sophisticated text editor for code, markup and prose',
         website: 'https://www.sublimetext.com',
         logo: '',
         knowledge: 'Used'
@@ -491,22 +504,23 @@ export const tools: Tools = [
     children: [
       {
         title: 'Dall-E',
-        description: '',
-        website: '',
+        description: 'Creating images from text',
+        website: 'https://openai.com/dall-e-2',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'Midjourney',
-        description: '',
-        website: '',
+        description:
+          'An independent research lab exploring new mediums of thought',
+        website: 'https://www.midjourney.com',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'Unplash',
-        description: '',
-        website: '',
+        description: "The internet's source for visuals",
+        website: 'https://unsplash.com',
         logo: '',
         knowledge: 'Experienced'
       }
@@ -517,29 +531,31 @@ export const tools: Tools = [
     children: [
       {
         title: 'Dribbble',
-        description: '',
-        website: '',
+        description: "Discover the world's top designers & creatives",
+        website: 'https://dribbble.com',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'Mobbin',
-        description: '',
-        website: '',
+        description: 'Latest mobile design patterns',
+        website: 'https://mobbin.com',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'Pinterest',
-        description: '',
-        website: '',
+        description:
+          'Discover recipes, home ideas, style inspiration and other ideas to try',
+        website: 'https://www.pinterest.com',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'Toolfolio',
-        description: '',
-        website: '',
+        description:
+          'Discover new tools and resources for designers and developers',
+        website: 'https://www.toolfolio.io',
         logo: '',
         knowledge: 'Not started'
       }
@@ -550,78 +566,82 @@ export const tools: Tools = [
     children: [
       {
         title: 'animations.dev',
-        description: '',
-        website: '',
+        description: 'CSS and JavaScript animations',
+        website: 'https://animations.dev',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'Build UI',
-        description: '',
-        website: '',
+        description: 'Advanced React component patterns and techniques',
+        website: 'https://buildui.com',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'Builder.io',
-        description: '',
-        website: '',
+        description: 'Drag and drop page builder and CMS',
+        website: 'https://www.builder.io',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'Design+Code',
-        description: '',
-        website: '',
+        description: 'Learn to design and code React and Swift apps',
+        website: 'https://designcode.io',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'dev.to',
-        description: '',
-        website: '',
+        description:
+          'A constructive and inclusive social network for software developers',
+        website: 'https://dev.to',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'Fireship',
-        description: '',
-        website: '',
+        description: 'High-intensity code tutorials and tech news',
+        website: 'https://fireship.io',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'FrontendMasters',
-        description: '',
-        website: '',
+        description:
+          'Advance your skills with in-depth, modern front-end engineering courses',
+        website: 'https://frontendmasters.com',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'frontendmentor.io',
-        description: '',
-        website: '',
+        description:
+          'Improve your front-end coding skills by building real projects',
+        website: 'https://www.frontendmentor.io',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'Learn Next.js',
-        description: '',
-        website: '',
+        description: 'The React Framework for Production',
+        website: 'https://nextjs.org/learn',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'Refactoring UI',
-        description: '',
-        website: '',
+        description:
+          "Learn how to design awesome UIs by yourself using specific tactics explained from a developer's point-of-view",
+        website: 'https://www.refactoringui.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'Udemy',
-        description: '',
-        website: '',
+        description: 'Online learning and teaching marketplace',
+        website: 'https://www.udemy.com',
         logo: '',
         knowledge: 'Professional'
       }
@@ -632,22 +652,23 @@ export const tools: Tools = [
     children: [
       {
         title: 'jitter.video',
-        description: '',
-        website: '',
+        description: 'Simple motion design tool',
+        website: 'https://jitter.video',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'LottieFiles',
-        description: '',
-        website: '',
+        description:
+          'Lightweight, scalable animations for your website and apps',
+        website: 'https://lottiefiles.com',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'LottieFiles for Developers',
-        description: '',
-        website: '',
+        description: 'Ship Lottie animations to any platform',
+        website: 'https://lottiefiles.com/developers',
         logo: '',
         knowledge: 'Not started'
       },
@@ -660,8 +681,8 @@ export const tools: Tools = [
       },
       {
         title: 'Procreate Dreams',
-        description: '',
-        website: '',
+        description: 'Animation made easy',
+        website: 'https://procreate.art/dreams',
         logo: '',
         knowledge: 'Not started'
       }
@@ -672,22 +693,22 @@ export const tools: Tools = [
     children: [
       {
         title: 'daily.dev',
-        description: '',
-        website: '',
+        description: 'Where developers grow together',
+        website: 'https://daily.dev',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'The Verge',
-        description: '',
-        website: '',
+        description: 'Technology, science, art, and culture',
+        website: 'https://www.theverge.com',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'X',
-        description: '',
-        website: '',
+        description: "What's happening?!",
+        website: 'https://x.com',
         logo: '',
         knowledge: 'Experienced'
       }
@@ -698,29 +719,30 @@ export const tools: Tools = [
     children: [
       {
         title: 'bun',
-        description: '',
-        website: '',
+        description:
+          'Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one',
+        website: 'https://bun.sh',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'npm',
-        description: '',
-        website: '',
+        description: 'Build amazing things',
+        website: 'https://www.npmjs.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'pnpM',
-        description: '',
-        website: '',
+        description: 'Fast, disk space efficient package manager',
+        website: 'https://pnpm.io',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'yarn',
-        description: '',
-        website: '',
+        description: 'Safe, stable, reproducible projects',
+        website: 'https://yarnpkg.com',
         logo: '',
         knowledge: 'Used'
       }
@@ -731,42 +753,43 @@ export const tools: Tools = [
     children: [
       {
         title: '@vercel/analytics',
-        description: '',
-        website: '',
+        description: 'Privacy-friendly analytics for Vercel deployments',
+        website: 'https://vercel.com/docs/analytics',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: '@vercel/speed-insights',
-        description: '',
-        website: '',
+        description: 'Real-time performance insights for Vercel deployments',
+        website: 'https://vercel.com/docs/speed-insights',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'class-variance-authority',
-        description: '',
-        website: '',
+        description: 'Creating variants with the "cva" function',
+        website: 'https://cva.style',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'clsx',
-        description: '',
-        website: '',
+        description:
+          'A tiny utility for constructing className strings conditionally',
+        website: 'https://github.com/lukeed/clsx',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: '@heroicons/react',
-        description: '',
-        website: '',
+        description: 'Beautiful hand-crafted SVG icons for React',
+        website: 'https://heroicons.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: '@meilisearch/instant-meilisearch',
-        description: '',
+        description: 'The search client to use Meilisearch with InstantSearch',
         website:
           'https://www.npmjs.com/package/@meilisearch/instant-meilisearch',
         logo: '',
@@ -774,99 +797,102 @@ export const tools: Tools = [
       },
       {
         title: '@shopware/api-client',
-        description: '',
-        website: '',
+        description: 'Shopware API client for JavaScript/TypeScript',
+        website: 'https://www.npmjs.com/package/@shopware/api-client',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: '@shopware/api-gen',
-        description: '',
-        website: '',
+        description: 'Generate TypeScript types from Shopware API',
+        website: 'https://www.npmjs.com/package/@shopware/api-gen',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: '@storyblok/react',
-        description: '',
-        website: '',
+        description: 'React SDK for Storyblok',
+        website: 'https://www.npmjs.com/package/@storyblok/react',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'ESLint',
-        description: '',
-        website: '',
+        description: 'Find and fix problems in your JavaScript code',
+        website: 'https://eslint.org',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'eslint-plugin-tailwindcss',
-        description: '',
-        website: '',
+        description: 'ESLint plugin for Tailwind CSS usage',
+        website: 'https://www.npmjs.com/package/eslint-plugin-tailwindcss',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'html-react-parser',
-        description: '',
-        website: '',
+        description: 'HTML to React parser',
+        website: 'https://www.npmjs.com/package/html-react-parser',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'lucide-react',
-        description: '',
-        website: '',
+        description:
+          'Beautiful & consistent icon toolkit made by the community',
+        website: 'https://lucide.dev',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'next-view-transitions',
-        description: '',
-        website: '',
+        description: 'Use CSS View Transitions API in Next.js App Router',
+        website: 'https://www.npmjs.com/package/next-view-transitions',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'react-hook-form',
-        description: '',
-        website: '',
+        description:
+          'Performant, flexible and extensible forms with easy validation',
+        website: 'https://react-hook-form.com',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'react-instantsearch',
-        description: '',
+        description:
+          'Lightning-fast search for React and React Native applications',
         website: 'https://www.npmjs.com/package/react-instantsearch',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'react-instantsearch-nextjs',
-        description: '',
+        description: 'React InstantSearch for Next.js',
         website: 'https://www.npmjs.com/package/react-instantsearch-nextjs',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'react-syntax-highlighter',
-        description: '',
-        website: '',
+        description: 'Syntax highlighting component for React',
+        website: 'https://www.npmjs.com/package/react-syntax-highlighter',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'use-debounce',
-        description: '',
+        description: 'Debounce hook for React',
         website: 'https://www.npmjs.com/package/use-debounce',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'prettier',
-        description: '',
-        website: '',
+        description: 'Opinionated code formatter',
+        website: 'https://prettier.io',
         logo: '',
         knowledge: 'Daily'
       },
@@ -885,29 +911,29 @@ export const tools: Tools = [
     children: [
       {
         title: 'Klarna',
-        description: '',
-        website: '',
+        description: 'Smooth payments',
+        website: 'https://www.klarna.com',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'PayOne',
-        description: '',
-        website: '',
+        description: 'Payment service provider',
+        website: 'https://www.payone.com',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'PayPal',
-        description: '',
-        website: '',
+        description: 'The safer, easier way to pay online',
+        website: 'https://www.paypal.com',
         logo: '',
         knowledge: 'Not started'
       },
       {
         title: 'Stripe',
-        description: '',
-        website: '',
+        description: 'Online payment processing for internet businesses',
+        website: 'https://stripe.com',
         logo: '',
         knowledge: 'Not started'
       }
@@ -918,8 +944,9 @@ export const tools: Tools = [
     children: [
       {
         title: 'Lighthouse',
-        description: '',
-        website: '',
+        description:
+          'Automated auditing, performance metrics, and best practices for the web',
+        website: 'https://developers.google.com/web/tools/lighthouse',
         logo: '',
         knowledge: 'Professional'
       }
@@ -930,22 +957,23 @@ export const tools: Tools = [
     children: [
       {
         title: 'Illustrator',
-        description: '',
-        website: '',
+        description:
+          'Create logos, icons, drawings, typography, and illustrations',
+        website: 'https://www.adobe.com/products/illustrator.html',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'InDesign',
-        description: '',
-        website: '',
+        description: 'Design and publish great projects',
+        website: 'https://www.adobe.com/products/indesign.html',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'Photoshop',
-        description: '',
-        website: '',
+        description: 'Imaging and graphic design software',
+        website: 'https://www.adobe.com/products/photoshop.html',
         logo: '',
         knowledge: 'Experienced'
       }
@@ -956,9 +984,9 @@ export const tools: Tools = [
     children: [
       {
         title: 'Jira',
-        website: '',
+        website: 'https://www.atlassian.com/software/jira',
         logo: '',
-        description: '',
+        description: 'Issue & project tracking software',
         knowledge: 'Daily'
       },
       {
@@ -971,9 +999,9 @@ export const tools: Tools = [
       },
       {
         title: 'TeamGrid',
-        website: '',
+        website: 'https://www.teamgrid.com',
         logo: '',
-        description: '',
+        description: 'Project management and team collaboration',
         knowledge: 'Professional'
       }
     ]
@@ -983,29 +1011,30 @@ export const tools: Tools = [
     children: [
       {
         title: 'Baymard Institute',
-        description: '',
-        website: '',
+        description: 'UX research for e-commerce',
+        website: 'https://baymard.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'Human Interface Guidelines (Apple)',
-        description: '',
-        website: '',
+        description: 'Design principles and guidelines for Apple platforms',
+        website:
+          'https://developer.apple.com/design/human-interface-guidelines',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'nn/g Group',
-        description: '',
-        website: '',
+        description: 'Nielsen Norman Group - UX research and consulting',
+        website: 'https://www.nngroup.com',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'Statista',
-        description: '',
-        website: '',
+        description: 'Market and consumer data',
+        website: 'https://www.statista.com',
         logo: '',
         knowledge: 'Experienced'
       }
@@ -1025,14 +1054,15 @@ export const tools: Tools = [
         title: 'Elastic Search',
         website: 'https://www.elastic.co/elasticsearch',
         logo: '',
-        description: '',
+        description: 'Distributed, RESTful search and analytics engine',
         knowledge: 'Not started'
       },
       {
         title: 'meilisearch',
         website: 'https://www.meilisearch.com/',
         logo: '',
-        description: '',
+        description:
+          'Lightning Fast, Ultra Relevant, and Typo-Tolerant Search Engine',
         knowledge: 'Used'
       }
     ]
@@ -1042,9 +1072,9 @@ export const tools: Tools = [
     children: [
       {
         title: 'Shopify',
-        website: '',
+        website: 'https://www.shopify.com',
         logo: '',
-        description: '',
+        description: 'Commerce platform for everyone',
         knowledge: 'Not started'
       },
       {
@@ -1060,7 +1090,7 @@ export const tools: Tools = [
         website:
           'https://business.adobe.com/de/products/magento/magento-commerce.html',
         logo: '',
-        description: '',
+        description: 'Flexible, scalable eCommerce solutions',
         knowledge: 'Daily'
       }
     ]
@@ -1070,16 +1100,16 @@ export const tools: Tools = [
     children: [
       {
         title: 'Ghost Inspector',
-        website: '',
+        website: 'https://ghostinspector.com',
         logo: '',
-        description: '',
+        description: 'Automated browser testing',
         knowledge: 'Used'
       },
       {
         title: 'Jest',
-        website: '',
+        website: 'https://jestjs.io',
         logo: '',
-        description: '',
+        description: 'Delightful JavaScript Testing',
         knowledge: 'Used'
       }
     ]
@@ -1089,49 +1119,52 @@ export const tools: Tools = [
     children: [
       {
         title: 'Headless UI',
-        description: '',
-        website: '',
+        description: 'Completely unstyled, fully accessible UI components',
+        website: 'https://headlessui.com',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'Material UI',
-        description: '',
-        website: '',
+        description: 'React components for faster and easier web development',
+        website: 'https://mui.com',
         logo: '',
         knowledge: 'Used'
       },
       {
         title: 'Practical UI',
-        description: '',
-        website: '',
+        description: 'Practical UI components and patterns',
+        website: 'https://practicalui.dev',
         logo: '',
         knowledge: 'Professional'
       },
       {
         title: 'Radix UI',
-        description: '',
-        website: '',
+        description: 'Low-level UI primitives with a focus on accessibility',
+        website: 'https://www.radix-ui.com',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'shadcn/ui',
-        description: '',
-        website: '',
+        description:
+          'Beautifully designed components built with Radix UI and Tailwind CSS',
+        website: 'https://ui.shadcn.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'Tailwind UI',
-        description: '',
-        website: '',
+        description:
+          'Beautiful UI components, crafted by the creators of Tailwind CSS',
+        website: 'https://tailwindui.com',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         title: 'Refactoring UI',
-        description: '',
+        description:
+          "Learn how to design awesome UIs by yourself using specific tactics explained from a developer's point-of-view",
         website: 'https://www.refactoringui.com',
         logo: '',
         knowledge: 'Daily'
@@ -1143,15 +1176,15 @@ export const tools: Tools = [
     children: [
       {
         title: 'GitHub',
-        description: '',
-        website: '',
+        description: "The world's leading AI-powered developer platform",
+        website: 'https://github.com',
         logo: '',
         knowledge: 'Daily'
       },
       {
         title: 'GitLab',
-        description: '',
-        website: '',
+        description: 'The most comprehensive AI-powered DevSecOps Platform',
+        website: 'https://about.gitlab.com',
         logo: '',
         knowledge: 'Daily'
       }

@@ -144,7 +144,11 @@
         @apply text-foreground font-bold;
     }
 
-    h2 {
+    h1 {
+        @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground;
+    }
+
+    h2:not(.h2) {
         @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground;
     }
 

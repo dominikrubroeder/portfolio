@@ -14,7 +14,7 @@ export function Tools() {
         <h2>
           <span>Tools</span>
           <span className="text-muted-foreground">
-            help me <span className="mr-2 text-black/90">visualizing</span>
+            help me to <span className="mr-2 text-black/90">visualize</span>
             the application we build. I use
           </span>
         </h2>

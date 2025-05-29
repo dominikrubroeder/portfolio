@@ -19,7 +19,7 @@ export function Header() {
           as="Link"
         />
 
-        <h1 className="leading-6">
+        <h2 className="h2 leading-6">
           Dominik Rubröder
           <span className="block space-x-0.5 font-normal text-muted-foreground">
             <span>UX Design Engineer @</span>
@@ -32,7 +32,7 @@ export function Header() {
               mediawave
             </ExternalLink>
           </span>
-        </h1>
+        </h2>
       </div>
 
       <div>
