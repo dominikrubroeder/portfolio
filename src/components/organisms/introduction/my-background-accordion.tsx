@@ -108,18 +108,17 @@ export function MyBackgroundAccordion() {
 
         <p>
           Also, with React i felt more in the real JavaScript environment than
-          with Vue (which can be a pro, or a con, depending on how you look at
+          with Vue (which can be a pro, or a con; depending on how you look at
           it).
         </p>
 
         <p>
-          TypeScript came as last piece to the puzzle, which in the
-          retrospective was a wise decision, as most of today&#39;s web
-          applications or frameworks require
-          <ExternalLink href="https://www.typescriptlang.org">
+          <ExternalLink className="ml-0" href="https://www.typescriptlang.org">
             TypeScript
           </ExternalLink>
-          as the base.
+          came as last piece to the puzzle, which in the retrospective was a
+          wise decision, as most of today&#39;s web applications or frameworks
+          require TypeScript as the base.
         </p>
 
         <p>Of course, there are much more frameworks out there, like:</p>
