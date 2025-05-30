@@ -8,21 +8,24 @@ const projects = [
     category: 'DIY workers',
     url: 'https://www.sautershop.de',
     readableTitle: 'Home wood-working tools',
-    status: 'Active'
+    status: 'Active',
+    href: 'https://www.sautershop.de'
   },
   {
     title: 'Segmüller',
     category: 'Furniture',
     url: 'https://www.segmueller.de',
     readableTitle: 'Home furniture from Germany',
-    status: '2021 - 2023'
+    status: '2021 - 2023',
+    href: 'https://www.sautershop.de'
   },
   {
     title: 'alles auto',
     category: 'Car dealer',
     url: 'https://www.alles.auto',
     readableTitle: '',
-    status: '2021'
+    status: '2021',
+    href: 'https://www.sautershop.de'
   }
 ];
 
@@ -32,7 +35,7 @@ export function Projects() {
       <h2>
         <span>Projects</span>
         <span className="text-muted-foreground">
-          show you, in which teams i have participated and build
+          show you, in which teams i have participated
         </span>
       </h2>
 
@@ -43,6 +46,7 @@ export function Projects() {
             className="absolute top-1/2 left-2 -translate-y-1/2"
           >
             <ChevronLeftIcon />
+            <span className="sr-only">Previous project</span>
           </Button>
 
           <Button
@@ -50,6 +54,7 @@ export function Projects() {
             className="absolute top-1/2 right-2 -translate-y-1/2"
           >
             <ChevronRightIcon />
+            <span className="sr-only">Next project</span>
           </Button>
         </div>
 
