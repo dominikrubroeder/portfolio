@@ -23,7 +23,7 @@ export default function Technologies() {
         <span>Technologies</span>
         <span className="text-muted-foreground">
           are the foundation of writing
-          <span className="mx-2 text-black/90">production-ready</span>
+          <span className="mx-2 text-foreground">production-ready</span>
           code.
         </span>
         <span className="text-muted-foreground">I use</span>

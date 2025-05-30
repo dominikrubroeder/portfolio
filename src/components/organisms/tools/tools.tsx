@@ -14,7 +14,7 @@ export function Tools() {
         <h2>
           <span>Tools</span>
           <span className="text-muted-foreground">
-            help me to <span className="mr-2 text-black/90">visualize</span>
+            help me to <span className="mr-2 text-foreground">visualize</span>
             the application we build. I use
           </span>
         </h2>
@@ -24,9 +24,9 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <FigmaLogo className="size-12" />
 
-              <h3 className="space-x-1 font-bold text-foreground">
+              <h3 className="space-x-1">
                 <span>Figma</span>
-                <span className="text-muted-foreground">
+                <span className="font-medium text-muted-foreground">
                   for user interface design and prototyping
                 </span>
               </h3>
@@ -37,9 +37,11 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <WebstormLogo className="size-12" />
 
-              <h3 className="space-x-1 font-bold text-foreground">
+              <h3 className="space-x-1">
                 <span>WebStorm</span>
-                <span className="text-muted-foreground">as IDE</span>
+                <span className="font-medium text-muted-foreground">
+                  as IDE
+                </span>
               </h3>
             </div>
           </li>
@@ -48,9 +50,9 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <CraftLogo className="size-12" />
 
-              <h3 className="space-x-1 font-bold text-foreground">
+              <h3 className="space-x-1">
                 <span>Craft</span>
-                <span className="text-muted-foreground">
+                <span className="font-medium text-muted-foreground">
                   as my main note and documentation tool
                 </span>
               </h3>
@@ -61,9 +63,9 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <GithubLogo className="size-12" />
 
-              <h3 className="space-x-1 font-bold text-foreground">
+              <h3 className="space-x-1">
                 <span>GitHub</span>
-                <span className="text-muted-foreground">
+                <span className="font-medium text-muted-foreground">
                   to store my private codebase
                 </span>
               </h3>
@@ -74,9 +76,9 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <GitlabLogo className="size-12" />
 
-              <h3 className="space-x-1 font-bold text-foreground">
+              <h3 className="space-x-1">
                 <span>GitLab</span>
-                <span className="text-muted-foreground">
+                <span className="font-medium text-muted-foreground">
                   is mainly used at workspace
                 </span>
               </h3>
