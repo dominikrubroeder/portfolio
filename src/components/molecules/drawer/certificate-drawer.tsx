@@ -33,7 +33,7 @@ export function CertificateDrawer({
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="secondary">
+        <Button variant="ghost">
           <span className="sr-only text-xs">Certified</span>
           <CheckBadgeIcon className="size-5 shrink-0 text-primary" />
         </Button>
@@ -71,10 +71,10 @@ export function CertificateDrawer({
 
           <DrawerFooter>
             <DrawerClose className="order-1" asChild>
-              <Button variant="primary">Got it</Button>
+              <Button>Got it</Button>
             </DrawerClose>
 
-            <Button variant="secondary" className="order-1">
+            <Button variant="ghost" className="order-1">
               Download Certificate
             </Button>
           </DrawerFooter>

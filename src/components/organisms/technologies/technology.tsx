@@ -23,7 +23,7 @@ export default function Technology({
         )}
       >
         <Button
-          variant="secondary"
+          variant="ghost"
           href={technology.website}
           target="_blank"
           title={`Go to external ${technology.title} website`}

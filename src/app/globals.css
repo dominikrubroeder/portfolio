@@ -7,6 +7,7 @@
     --foreground: hsl(0 0% 18.8%);
     --primary: hsl(255 92% 68%);
     --primary-foreground: hsl(0 0% 100%);
+    --primary-hover: hsl(255 92% 69%);
     --muted: hsl(240 23.8% 95.9%);
     --muted-foreground: hsl(240 2.3% 44%);
     --muted-hover: hsl(240, 7%, 83%);
@@ -48,6 +49,7 @@
 
     --color-primary: var(--primary);
     --color-primary-foreground: var(--primary-foreground);
+    --color-primary-hover: var(--primary-hover);
 
     --color-muted: var(--muted);
     --color-muted-foreground: var(--muted-foreground);

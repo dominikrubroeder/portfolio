@@ -53,7 +53,7 @@ export function TechStackAccordion({ className }: { className?: string }) {
         {techStackAccordion.map((item) => (
           <li key={item.title}>
             <Button
-              variant="secondary"
+              variant="ghost"
               href={item.href}
               className="[&>svg]:size-14"
               target="_blank"

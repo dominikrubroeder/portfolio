@@ -37,7 +37,7 @@ export function Header() {
 
       <div>
         <Button
-          variant="secondary"
+          variant="ghost"
           href="https://github.com/dominikrubroeder"
           target="_blank"
           title="Go to GitHub profile of Dominik Rubröder"
@@ -48,7 +48,7 @@ export function Header() {
         </Button>
 
         <Button
-          variant="secondary"
+          variant="ghost"
           href="https://www.linkedin.com/in/dominik-rubröder-49a63817b"
           target="_blank"
           title="Go to LinkedIn profile of Dominik Rubröder"

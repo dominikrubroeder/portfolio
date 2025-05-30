@@ -42,7 +42,7 @@ export function Projects() {
       <div className="space-y-4">
         <div className="relative h-[50svh] rounded border">
           <Button
-            variant="secondary"
+            variant="ghost"
             className="absolute top-1/2 left-2 -translate-y-1/2"
           >
             <ChevronLeftIcon />
@@ -50,7 +50,7 @@ export function Projects() {
           </Button>
 
           <Button
-            variant="secondary"
+            variant="ghost"
             className="absolute top-1/2 right-2 -translate-y-1/2"
           >
             <ChevronRightIcon />

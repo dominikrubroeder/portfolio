@@ -61,7 +61,7 @@ export function ToolsOverview() {
                             <ExperienceBar progress={item.knowledge} />
 
                             <Button
-                              variant="secondary"
+                              variant="ghost"
                               href={item.website}
                               title={`Go to external ${item.title} website`}
                               aria-label={`Go to external ${item.title} website`}

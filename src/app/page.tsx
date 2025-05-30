@@ -10,13 +10,10 @@ import {
   FaqUxEngineer,
   FaqWhatIsAUxEngineer
 } from '@/components/organisms/faq';
-import DesignModeBackground from '@/components/atoms/design-mode-background';
 
 export default async function HomePage() {
   return (
     <div className="animate-fade-up-1rem space-y-6">
-      <DesignModeBackground />
-
       <HomeHero />
 
       <div className="mx-auto space-y-12 px-4 sm:max-w-(--readable-container) lg:px-0">

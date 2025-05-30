@@ -19,10 +19,7 @@ export function ToggleContent({
   return (
     <div className={cn('space-y-8', className)}>
       <div className="flex items-center gap-2">
-        <Button
-          variant="primary"
-          onClick={() => setShow((prevState) => !prevState)}
-        >
+        <Button onClick={() => setShow((prevState) => !prevState)}>
           <span className="sr-only">{show ? 'Hide' : 'Close'}</span>
 
           <div>
@@ -36,7 +33,7 @@ export function ToggleContent({
 
         {label && (
           <Button
-            variant="secondary"
+            variant="ghost"
             onClick={() => setShow((prevState) => !prevState)}
           >
             {label}

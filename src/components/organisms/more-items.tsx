@@ -53,7 +53,6 @@ export default function MoreItems({
     <Container as="div" className="space-y-8 lg:px-0" id={openScrollToId}>
       <div className="flex w-full flex-wrap justify-between gap-6 md:gap-8">
         <Button
-          variant="primary"
           className="inline-flex scroll-mt-28 self-start"
           onClick={() => {
             setState((prevState) => {
@@ -146,7 +145,7 @@ export default function MoreItems({
                                 <ExperienceBar progress={item.knowledge} />
 
                                 <Button
-                                  variant="secondary"
+                                  variant="ghost"
                                   href={item.website}
                                   title={`Go to external ${item.title} website`}
                                   aria-label={`Go to external ${item.title} website`}
@@ -164,7 +163,6 @@ export default function MoreItems({
           </ul>
 
           <Button
-            variant="primary"
             className="mx-auto inline-flex"
             onClick={() => {
               setState((prevState) => {

@@ -41,10 +41,10 @@ export function Introduction() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <Button variant="primary" href="/components">
+          <Button href="/components">
             Component Showcase <ArrowRightIcon />
           </Button>
-          <Button variant="secondary">
+          <Button variant="ghost">
             Modify Theme <SparklesIcon />
           </Button>
         </div>
