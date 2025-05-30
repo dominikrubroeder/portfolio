@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "upgrade-next@latest": "npm i next@latest react@latest react-dom@latest eslint-config-next@latest @types/react@latest @types/react-dom@latest --legacy-peer-deps --save-exact"
+    "upgrade-next@latest": "npm i next@latest eslint-config-next@latest --legacy-peer-deps --save-exact",
+    "upgrade-react@latest": "npm i react@latest react-dom@latest @types/react@latest @types/react-dom@latest --legacy-peer-deps --save-exact"
   },
   "dependencies": {
     "@heroicons/react": "2.2.0",
@@ -23,7 +24,7 @@
     "html-react-parser": "^5.2.2",
     "lucide-react": "0.511.0",
     "motion": "12.11.3",
-    "next": "15.3.2",
+    "next": "15.3.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "sharp": "0.34.2",
@@ -36,11 +37,11 @@
     "@eslint/eslintrc": "^3.3.0",
     "@tailwindcss/postcss": "4.1.6",
     "@types/node": "^20",
-    "@types/react": "19.1.4",
+    "@types/react": "19.1.6",
     "@types/react-dom": "19.1.5",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.21.0",
-    "eslint-config-next": "15.3.2",
+    "eslint-config-next": "15.3.3",
     "postcss": "8.5.3",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
