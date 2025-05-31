@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="mt-16 space-y-3 border-t p-4 pb-24 text-center text-xs md:pb-4">
+    <footer className="mt-16 space-y-3 border-t p-4 text-center text-xs md:pb-4">
       <p>Build your vision. Do it with style.</p>
       <p>Live your balance.</p>
       <p className="space-x-2">

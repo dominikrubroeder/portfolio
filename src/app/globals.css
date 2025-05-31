@@ -69,6 +69,7 @@
     --animate-scale: scale 0.16s ease-out forwards;
     --animate-fade-up: fade-up 0.3s ease-out forwards;
     --animate-fade-up-1rem: fade-up-1rem 0.3s ease-out forwards;
+    --animate-fade-down-1rem: fade-down-1rem 0.3s ease-out forwards;
 
     --z-index-100: 100;
     --z-index-max: 250;
@@ -101,6 +102,16 @@
     @keyframes fade-up-1rem {
         0% {
             transform: translateY(1rem);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-down-1rem {
+        0% {
+            transform: translateY(-1rem);
         }
 
         100% {

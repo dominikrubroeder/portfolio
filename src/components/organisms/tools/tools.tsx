@@ -12,10 +12,9 @@ export function Tools() {
     <div className="space-y-8">
       <div className="space-y-6">
         <h2>
-          <span>Tools</span>
-          <span className="text-muted-foreground">
-            help me to <span className="mr-2 text-foreground">visualize</span>
-            the application we build. I use
+          Tools
+          <span className="ml-2 font-medium text-muted-foreground">
+            help me to visualize the application we build. I use
           </span>
         </h2>
 

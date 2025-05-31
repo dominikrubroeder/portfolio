@@ -18,13 +18,10 @@ export default function Technologies() {
   return (
     <div className="space-y-8">
       <h2>
-        <span>Technologies</span>
-        <span className="text-muted-foreground">
-          are the foundation of writing
-          <span className="mx-2 text-foreground">production-ready</span>
-          code.
+        Technologies
+        <span className="ml-2 font-medium text-muted-foreground">
+          are the foundation of writing production-ready code. I use
         </span>
-        <span className="text-muted-foreground">I use</span>
       </h2>
 
       <ul className="space-y-5">

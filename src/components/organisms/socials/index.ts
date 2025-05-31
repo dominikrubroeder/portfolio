@@ -1,3 +1,2 @@
-export { default as Socials } from './socials';
-export { default as Social } from './social';
+export { Socials } from './socials';
 export * from './types';

@@ -21,7 +21,7 @@ export function HowIWorkAccordion({ className }: { className?: string }) {
           to design and build better user interfaces
         </li>
         <li>Be mindful</li>
-        <li>Writing documentation</li>
+        <li>Write documentation</li>
         <li>Work for good brands, products or services</li>
         <li>Bring an idea from paper to production</li>
         <li>

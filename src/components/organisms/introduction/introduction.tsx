@@ -1,13 +1,14 @@
 import { Button } from '@/components/atoms/button';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
-import { ArrowRightIcon } from '@heroicons/react/16/solid';
-import { SparklesIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import {
   BooksAccordion,
   HowIWorkAccordion,
   MyBackgroundAccordion,
   TechStackAccordion
 } from '@/components/organisms/introduction';
+import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
+import React from 'react';
 
 export function Introduction() {
   return (
@@ -41,12 +42,34 @@ export function Introduction() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <Button href="/components">
-            Component Showcase <ArrowRightIcon />
+          <Button href="mailto:dominik.rubroeder@icloud.com?subject=I want to wright you about...">
+            <EnvelopeIcon />
+            Contact
           </Button>
-          <Button variant="ghost">
-            Modify Theme <SparklesIcon />
-          </Button>
+
+          <div className="sm:hidden">
+            <Button
+              variant="ghost"
+              href="https://github.com/dominikrubroeder"
+              target="_blank"
+              title="Go to GitHub profile of Dominik Rubröder"
+              aria-label="Go to GitHub profile of Dominik Rubröder"
+              size="large"
+            >
+              <GithubLogo />
+            </Button>
+
+            <Button
+              variant="ghost"
+              href="https://www.linkedin.com/in/dominik-rubröder-49a63817b"
+              target="_blank"
+              title="Go to LinkedIn profile of Dominik Rubröder"
+              aria-label="Go to LinkedIn profile of Dominik Rubröder"
+              size="large"
+            >
+              <LinkedinLogo />
+            </Button>
+          </div>
         </div>
 
         <ul className="space-y-6">
