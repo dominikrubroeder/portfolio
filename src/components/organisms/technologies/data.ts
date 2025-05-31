@@ -122,7 +122,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
         title: 'HTML',
         website: 'https://www.w3schools.com/html/',
         logo: 'https://dominikrubroeder.dev/html.png',
-        description: 'The standard markup language for Web pages',
+        description: 'The default markup language for the web',
         knowledge: 'Daily'
       },
       {
@@ -141,7 +141,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
         title: 'CSS',
         website: 'https://www.w3schools.com/css/',
         logo: 'https://dominikrubroeder.dev/css.png',
-        description: 'The language we use to style an HTML document.',
+        description: 'The default styling markup for the web',
         knowledge: 'Daily'
       },
       {
@@ -155,7 +155,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
     ]
   },
   {
-    group: 'Animation Library',
+    group: 'Animation',
     children: [
       {
         title: 'motion (formerly framer-motion)',

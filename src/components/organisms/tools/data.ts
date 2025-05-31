@@ -1,65 +1,5 @@
 import type { Tools } from '@/components/organisms/tools/types';
 
-export const highlightTools: Tools = [
-  {
-    group: 'Interface',
-    children: [
-      {
-        title: 'Figma',
-        website: 'https://www.figma.com',
-        logo: 'Figma',
-        description:
-          'How you design, align, and build  matters. Do it together with Figma',
-        knowledge: 'Daily'
-      }
-    ]
-  },
-  {
-    group: 'IDE + Code Editor',
-    children: [
-      {
-        title: 'WebStorm',
-        website: 'https://www.jetbrains.com/de-de/webstorm/',
-        logo: '/webstorm.png',
-        description: 'The smartest JavaScript IDE',
-        knowledge: 'Daily'
-      }
-    ]
-  },
-  {
-    group: 'Notes + Docs',
-    children: [
-      {
-        title: 'Craft',
-        website: 'https://www.craft.do',
-        logo: 'craft',
-        description: 'Craft the best docs in the world',
-        knowledge: 'Daily'
-      }
-    ]
-  },
-  {
-    group: 'Version Control',
-    children: [
-      {
-        title: 'GitHub',
-        website: 'https://github.com/dominikrubroeder',
-        logo: 'github',
-        description: "The world's leading AI-powered developer platform.",
-        knowledge: 'Daily'
-      },
-      {
-        title: 'GitLab',
-        website: 'https://about.gitlab.com',
-        logo: 'gitlab',
-        description:
-          'Software. Faster. GitLab is the most comprehensive AI-powered DevSecOps Platform.',
-        knowledge: 'Daily'
-      }
-    ]
-  }
-];
-
 export const tools: Tools = [
   {
     group: 'Accessibility',
@@ -376,6 +316,14 @@ export const tools: Tools = [
         website: 'https://www.adobe.com/products/xd.html',
         logo: '',
         knowledge: 'Professional'
+      },
+      {
+        title: 'Canva',
+        description:
+          'Create stunning visuals, from social media posts to presentations',
+        website: 'https://www.figma.com',
+        logo: '',
+        knowledge: 'Used'
       },
       {
         title: 'Figma',

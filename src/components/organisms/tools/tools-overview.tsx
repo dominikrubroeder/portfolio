@@ -19,9 +19,8 @@ export function ToolsOverview() {
             <li key={item.group} className="space-y-6">
               <div className="space-y-6">
                 <div className="relative flex justify-between gap-4">
-                  <h3 className="font-semibold text-foreground">
-                    {item.group}
-                  </h3>
+                  <h3 className="text-base">{item.group}</h3>
+
                   {index === 0 && (
                     <span className="absolute top-2 right-20 text-xs">
                       Experience level
@@ -52,9 +51,7 @@ export function ToolsOverview() {
                             rel="noopener noreferrer"
                             className="group"
                           >
-                            <h3 className="mb-0 font-bold text-foreground">
-                              {item.title}
-                            </h3>
+                            <h3 className="mb-0 text-base">{item.title}</h3>
                           </Link>
 
                           <div className="flex items-center justify-between gap-4 bg-background">

@@ -24,7 +24,7 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <FigmaLogo className="size-12" />
 
-              <h3 className="space-x-1">
+              <h3 className="mb-0 space-x-1">
                 <span>Figma</span>
                 <span className="font-medium text-muted-foreground">
                   for user interface design and prototyping
@@ -37,7 +37,7 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <WebstormLogo className="size-12" />
 
-              <h3 className="space-x-1">
+              <h3 className="mb-0 space-x-1">
                 <span>WebStorm</span>
                 <span className="font-medium text-muted-foreground">
                   as IDE
@@ -50,7 +50,7 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <CraftLogo className="size-12" />
 
-              <h3 className="space-x-1">
+              <h3 className="mb-0 space-x-1">
                 <span>Craft</span>
                 <span className="font-medium text-muted-foreground">
                   as my main note and documentation tool
@@ -63,7 +63,7 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <GithubLogo className="size-12" />
 
-              <h3 className="space-x-1">
+              <h3 className="mb-0 space-x-1">
                 <span>GitHub</span>
                 <span className="font-medium text-muted-foreground">
                   to store my private codebase
@@ -76,7 +76,7 @@ export function Tools() {
             <div className="group relative inline-flex cursor-pointer items-center gap-4">
               <GitlabLogo className="size-12" />
 
-              <h3 className="space-x-1">
+              <h3 className="mb-0 space-x-1">
                 <span>GitLab</span>
                 <span className="font-medium text-muted-foreground">
                   is mainly used at workspace
