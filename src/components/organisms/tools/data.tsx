@@ -1,4 +1,44 @@
 import type { Tools } from '@/components/organisms/tools/types';
+import {
+  CraftLogo,
+  FigmaLogo,
+  GithubLogo,
+  GitlabLogo,
+  WebstormLogo
+} from '@/components/atoms/logo';
+
+export const mainTools = [
+  {
+    name: 'Figma',
+    description: 'for user interface design and prototyping',
+    logo: <FigmaLogo className="size-12" />,
+    href: 'https://www.figma.com'
+  },
+  {
+    name: 'WebStorm',
+    description: 'as IDE',
+    logo: <WebstormLogo className="size-12" />,
+    href: 'https://www.jetbrains.com/webstorm'
+  },
+  {
+    name: 'Craft',
+    description: 'as my main note and documentation tool',
+    logo: <CraftLogo className="size-12" />,
+    href: 'https://www.craft.do'
+  },
+  {
+    name: 'GitHub',
+    description: 'to store my private codebase',
+    logo: <GithubLogo className="size-12" />,
+    href: 'https://github.com/dominikrubroeder'
+  },
+  {
+    name: 'GitLab',
+    description: 'is mostly used at workspace',
+    logo: <GitlabLogo className="size-12" />,
+    href: 'https://gitlab.com'
+  }
+];
 
 export const tools: Tools = [
   {

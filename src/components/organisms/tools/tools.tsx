@@ -1,11 +1,6 @@
-import {
-  CraftLogo,
-  FigmaLogo,
-  GithubLogo,
-  GitlabLogo,
-  WebstormLogo
-} from '@/components/atoms/logo';
-import { ToolsOverview } from '@/components/organisms/tools';
+import Link from 'next/link';
+
+import { AllTools, mainTools } from '@/components/organisms/tools';
 
 export function Tools() {
   return (
@@ -19,74 +14,32 @@ export function Tools() {
         </h2>
 
         <ul className="space-y-5">
-          <li>
-            <div className="group relative inline-flex cursor-pointer items-center gap-4">
-              <FigmaLogo className="size-12" />
+          {mainTools.map((tool) => (
+            <li key={tool.name}>
+              <div className="inline-flex items-center gap-4">
+                <Link
+                  href={tool.href}
+                  target="_blank"
+                  title={`Open ${tool.name} website`}
+                  rel="noopener noreferrer"
+                >
+                  {tool.logo}
+                  <span className="sr-only">Open {tool.name}</span>
+                </Link>
 
-              <h3 className="mb-0 space-x-1">
-                <span>Figma</span>
-                <span className="font-medium text-muted-foreground">
-                  for user interface design and prototyping
-                </span>
-              </h3>
-            </div>
-          </li>
-
-          <li>
-            <div className="group relative inline-flex cursor-pointer items-center gap-4">
-              <WebstormLogo className="size-12" />
-
-              <h3 className="mb-0 space-x-1">
-                <span>WebStorm</span>
-                <span className="font-medium text-muted-foreground">
-                  as IDE
-                </span>
-              </h3>
-            </div>
-          </li>
-
-          <li>
-            <div className="group relative inline-flex cursor-pointer items-center gap-4">
-              <CraftLogo className="size-12" />
-
-              <h3 className="mb-0 space-x-1">
-                <span>Craft</span>
-                <span className="font-medium text-muted-foreground">
-                  as my main note and documentation tool
-                </span>
-              </h3>
-            </div>
-          </li>
-
-          <li>
-            <div className="group relative inline-flex cursor-pointer items-center gap-4">
-              <GithubLogo className="size-12" />
-
-              <h3 className="mb-0 space-x-1">
-                <span>GitHub</span>
-                <span className="font-medium text-muted-foreground">
-                  to store my private codebase
-                </span>
-              </h3>
-            </div>
-          </li>
-
-          <li>
-            <div className="group relative inline-flex cursor-pointer items-center gap-4">
-              <GitlabLogo className="size-12" />
-
-              <h3 className="mb-0 space-x-1">
-                <span>GitLab</span>
-                <span className="font-medium text-muted-foreground">
-                  is mainly used at workspace
-                </span>
-              </h3>
-            </div>
-          </li>
+                <h3 className="mb-0 space-x-1">
+                  <span>{tool.name}</span>
+                  <span className="font-medium text-muted-foreground">
+                    {tool.description}
+                  </span>
+                </h3>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
 
-      <ToolsOverview />
+      <AllTools />
     </div>
   );
 }

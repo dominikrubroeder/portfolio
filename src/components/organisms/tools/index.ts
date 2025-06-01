@@ -1,4 +1,4 @@
 export { Tools } from './tools';
-export { ToolsOverview } from './tools-overview';
+export { AllTools } from './all-tools';
 export * from './types';
 export * from './data';

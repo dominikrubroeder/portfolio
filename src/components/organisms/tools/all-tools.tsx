@@ -7,7 +7,7 @@ import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { ToggleContent } from '@/components/organisms/toggle-content';
 import { tools } from '@/components/organisms/tools';
 
-export function ToolsOverview() {
+export function AllTools() {
   return (
     <ToggleContent label="All tools">
       <ul className="grid animate-fade-up-1rem gap-10">
