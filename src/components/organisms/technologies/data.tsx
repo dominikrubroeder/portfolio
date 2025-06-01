@@ -12,27 +12,32 @@ export const mainTechnologies = [
   {
     name: 'React',
     description: 'as frontend web library',
-    logo: <ReactLogo className="size-12" />
+    logo: <ReactLogo className="size-12" />,
+    href: 'https://react.dev/'
   },
   {
     name: 'Next.js',
     description: 'as fullstack web application framework',
-    logo: <NextjsLogo className="size-12" />
+    logo: <NextjsLogo className="size-12" />,
+    href: 'https://nextjs.org/'
   },
   {
     name: 'TypeScript',
     description: 'as superset to JavaScript',
-    logo: <TypeScriptLogo className="size-12" />
+    logo: <TypeScriptLogo className="size-12" />,
+    href: 'https://www.typescriptlang.org/'
   },
   {
     name: 'Tailwind CSS',
     description: 'as superset to CSS',
-    logo: <TailwindCssLogo className="size-12" />
+    logo: <TailwindCssLogo className="size-12" />,
+    href: 'https://tailwindcss.com/'
   },
   {
     name: 'Motion',
     description: 'as animation library',
-    logo: <MotionLogo className="size-12" />
+    logo: <MotionLogo className="size-12" />,
+    href: 'https://motion.dev/'
   }
 ];
 

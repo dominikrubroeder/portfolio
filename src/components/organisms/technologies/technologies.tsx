@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import {
   AllTechnologies,
   mainTechnologies
@@ -17,7 +19,15 @@ export default function Technologies() {
         {mainTechnologies.map((technology) => (
           <li key={technology.name}>
             <div className="group relative inline-flex items-center gap-4">
-              {technology.logo}
+              <Link
+                href={technology.href}
+                target="_blank"
+                title={`Open ${technology.name} website`}
+                rel="noopener noreferrer"
+              >
+                {technology.logo}
+                <span className="sr-only">Open {technology.name}</span>
+              </Link>
 
               <h3 className="mb-0 space-x-1 text-base">
                 <span>{technology.name}</span>
