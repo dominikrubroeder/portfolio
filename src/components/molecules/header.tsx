@@ -1,7 +1,6 @@
 import React from 'react';
 import Avatar from '@/components/atoms/avatar';
-import { Button } from '@/components/atoms/button';
-import { GithubLogo, LinkedinLogo } from '@/components/atoms/logo';
+import { GitHubButton, LinkedInButton } from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/molecules/header-menu';
@@ -20,7 +19,7 @@ export function Header() {
           as="Link"
         />
 
-        <h2 className="h2 leading-6">
+        <h2 className="text-base leading-6">
           Dominik Rubröder
           <span className="block space-x-0.5 font-normal text-muted-foreground">
             <span>UX Design Engineer @</span>
@@ -39,25 +38,8 @@ export function Header() {
       <HeaderMenu />
 
       <div className="hidden sm:block">
-        <Button
-          variant="ghost"
-          href="https://github.com/dominikrubroeder"
-          title="Go to GitHub profile of Dominik Rubröder"
-          aria-label="Go to GitHub profile of Dominik Rubröder"
-          size="large"
-        >
-          <GithubLogo />
-        </Button>
-
-        <Button
-          variant="ghost"
-          href="https://www.linkedin.com/in/dominik-rubröder-49a63817b"
-          title="Go to LinkedIn profile of Dominik Rubröder"
-          aria-label="Go to LinkedIn profile of Dominik Rubröder"
-          size="large"
-        >
-          <LinkedinLogo />
-        </Button>
+        <GitHubButton />
+        <LinkedInButton />
       </div>
     </Container>
   );
