@@ -158,7 +158,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Animation',
     children: [
       {
-        title: 'motion (formerly framer-motion)',
+        title: 'Motion',
         description: 'A modern animation library for JavaScript and React',
         website: 'https://motion.dev/',
         logo: '',
@@ -205,7 +205,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
         description: '',
         website: 'https://vite.dev/',
         logo: '',
-        knowledge: 'Not started'
+        knowledge: 'Used'
       }
     ]
   },

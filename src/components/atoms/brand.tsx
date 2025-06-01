@@ -88,7 +88,7 @@ export function Brand({
     case 'Tailwind CSS':
       return <TailwindCssLogo className={className} />;
 
-    case 'motion (formerly framer-motion)':
+    case 'Motion':
       return <MotionLogo className={className} />;
 
     case 'Auth.js':
