@@ -1,27 +1,43 @@
+import { ExternalLink } from '@/components/atoms/external-link';
+
 export function Footer() {
   return (
     <footer className="mt-16 space-y-3 border-t p-4 text-center text-xs md:pb-4">
       <p>Build your vision. Do it with style.</p>
       <p>Live your balance.</p>
       <p className="space-x-2">
-        <a href="https://nextjs.org" target="_blank" rel="nofollow">
+        <ExternalLink
+          href="https://nextjs.org"
+          variant="unstyled"
+          title="Open Next.js website"
+          aria-label="Open Next.js documentation"
+        >
           Next.js 15.3.3
-        </a>
+        </ExternalLink>
+
         <span>|</span>
-        <a
-          href="https://react.dev/versions"
-          target="_blank"
-          title="Open React version docs"
-          aria-label="Open React version docs"
-          rel="nofollow"
+
+        <ExternalLink
+          href="https://react.dev"
+          variant="unstyled"
+          title="Open React website"
+          aria-label="Open React website"
         >
           React 19.1.0
-        </a>
+        </ExternalLink>
+
         <span>|</span>
-        <a href="https://tailwindcss.com/docs/installation/using-vite">
+
+        <ExternalLink
+          href="https://tailwindcss.com/docs"
+          variant="unstyled"
+          title="Open Tailwind CSS documentation"
+          aria-label="Open Tailwind CSS documentation"
+        >
           Tailwind CSS 4.1.7
-        </a>
+        </ExternalLink>
       </p>
+
       <p>
         <a
           href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."

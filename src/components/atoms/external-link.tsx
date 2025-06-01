@@ -11,7 +11,7 @@ export function ExternalLink({
   ...rest
 }: {
   href: string;
-  variant?: 'inline' | 'prominent';
+  variant?: 'inline' | 'prominent' | 'unstyled';
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLAnchorElement>) {
@@ -19,7 +19,7 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'transition',
+        'inline-flex transition',
         variant === 'inline' &&
           'mr-1.5 ml-1 underline transition hover:decoration-primary',
         variant === 'prominent' &&
@@ -32,15 +32,17 @@ export function ExternalLink({
     >
       {children}
 
-      <span className="relative">
-        <ArrowUpRightIcon
-          className={cn(
-            variant === 'inline' &&
-              'absolute -top-2 -right-3 size-3.5 text-current',
-            variant === 'prominent' && 'size-4 text-primary'
-          )}
-        />
-      </span>
+      {variant !== 'unstyled' && (
+        <span className="relative">
+          <ArrowUpRightIcon
+            className={cn(
+              variant === 'inline' &&
+                'absolute -top-1 -right-3 size-3.5 text-current',
+              variant === 'prominent' && 'size-4 text-primary'
+            )}
+          />
+        </span>
+      )}
 
       {variant === 'prominent' && (
         <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary" />
