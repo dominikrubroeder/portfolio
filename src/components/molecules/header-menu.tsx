@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 import {
   Button,
+  ContactButton,
   GitHubButton,
   LinkedInButton
 } from '@/components/atoms/button';
@@ -27,7 +28,8 @@ export function HeaderMenu() {
       </Button>
 
       {isOpen && (
-        <div className="fixed top-20 right-0 left-0 z-50 w-full animate-fade-down-1rem border-b bg-background px-4 pt-0 pb-3">
+        <div className="fixed top-20 right-0 left-0 z-50 flex w-full animate-fade-down-1rem flex-wrap gap-2 border-b bg-background px-4 pt-0 pb-3">
+          <ContactButton />
           <GitHubButton />
           <LinkedInButton />
         </div>

@@ -1,4 +1,40 @@
-import { Technology } from '@/components/organisms/technologies/types';
+import type { Technology } from '@/components/organisms/technologies/types';
+
+import {
+  MotionLogo,
+  NextjsLogo,
+  ReactLogo,
+  TailwindCssLogo,
+  TypeScriptLogo
+} from '@/components/atoms/logo';
+
+export const mainTechnologies = [
+  {
+    name: 'React',
+    description: 'as frontend web library',
+    logo: <ReactLogo className="size-12" />
+  },
+  {
+    name: 'Next.js',
+    description: 'as fullstack web application framework',
+    logo: <NextjsLogo className="size-12" />
+  },
+  {
+    name: 'TypeScript',
+    description: 'as superset to JavaScript',
+    logo: <TypeScriptLogo className="size-12" />
+  },
+  {
+    name: 'Tailwind CSS',
+    description: 'as superset to CSS',
+    logo: <TailwindCssLogo className="size-12" />
+  },
+  {
+    name: 'Motion',
+    description: 'as animation library',
+    logo: <MotionLogo className="size-12" />
+  }
+];
 
 export const technologies: { group: string; children: Technology[] }[] = [
   {

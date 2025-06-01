@@ -14,7 +14,7 @@ export { TailwindCssLogo } from './tailwind-css-logo';
 export { MotionLogo } from './motion-logo';
 export { XingLogo } from './xing-logo';
 export { LinkedinLogo } from './linkedin-logo';
-export { TypescriptLogo } from './typescript-logo';
+export { TypeScriptLogo } from './typescript-logo';
 export { JavascriptLogo } from './javascript-logo';
 export { NotesLogo } from './notes-logo';
 export { CraftLogo } from './craft-logo';

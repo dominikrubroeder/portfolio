@@ -24,7 +24,7 @@ import {
   StoryblokLogo,
   TailwindCssLogo,
   TeamsLogo,
-  TypescriptLogo,
+  TypeScriptLogo,
   VercelLogo,
   WebstormLogo,
   XingLogo
@@ -71,7 +71,7 @@ export function Brand({
       return <NextjsLogo className={className} />;
 
     case 'TypeScript':
-      return <TypescriptLogo className={className} />;
+      return <TypeScriptLogo className={className} />;
 
     case 'JavaScript':
       return <JavascriptLogo className={className} />;

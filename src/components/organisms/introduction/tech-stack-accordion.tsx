@@ -6,7 +6,7 @@ import {
   NextjsLogo,
   ReactLogo,
   TailwindCssLogo,
-  TypescriptLogo
+  TypeScriptLogo
 } from '@/components/atoms/logo';
 import { Ul } from '@/components/atoms/ul';
 import { Accordion } from '@/components/atoms/accordion';
@@ -26,7 +26,7 @@ export const techStackAccordion = [
   },
   {
     href: 'https://www.typescriptlang.org',
-    icon: <TypescriptLogo />,
+    icon: <TypeScriptLogo />,
     title: 'Open TypeScript landingpage',
     ariaLabel: 'Open TypeScript landingpage'
   },
