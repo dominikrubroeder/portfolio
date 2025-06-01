@@ -80,13 +80,6 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        title: 'Cursor AI',
-        website: 'https://cursor.sh',
-        logo: '',
-        description: 'The AI-first code editor',
-        knowledge: 'Not started'
-      },
-      {
         title: 'v0.dev',
         website: 'https://v0.dev',
         logo: '',
@@ -458,6 +451,20 @@ export const tools: Tools = [
     group: 'IDE + Editor',
     children: [
       {
+        title: 'Cursor AI',
+        website: 'https://cursor.sh',
+        logo: '',
+        description: 'The AI-first code editor',
+        knowledge: 'Not started'
+      },
+      {
+        title: 'Sublime Text',
+        description: 'A sophisticated text editor for code, markup and prose',
+        website: 'https://www.sublimetext.com',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
         title: 'VS Code',
         description: 'Code editing. Redefined.',
         website: 'https://code.visualstudio.com',
@@ -475,13 +482,6 @@ export const tools: Tools = [
         title: 'zed',
         description: 'A high-performance, multiplayer code editor',
         website: 'https://zed.dev',
-        logo: '',
-        knowledge: 'Used'
-      },
-      {
-        title: 'Sublime Text',
-        description: 'A sophisticated text editor for code, markup and prose',
-        website: 'https://www.sublimetext.com',
         logo: '',
         knowledge: 'Used'
       }
@@ -661,7 +661,7 @@ export const tools: Tools = [
         knowledge: 'Not started'
       },
       {
-        title: 'motion (formerly framer-motion)',
+        title: 'Motion',
         description: 'A modern animation library for JavaScript and React',
         website: 'https://motion.dev/',
         logo: '',
@@ -795,7 +795,7 @@ export const tools: Tools = [
         description: 'Generate TypeScript types from Shopware API',
         website: 'https://www.npmjs.com/package/@shopware/api-gen',
         logo: '',
-        knowledge: 'Experienced'
+        knowledge: 'Professional'
       },
       {
         title: '@storyblok/react',
@@ -805,7 +805,7 @@ export const tools: Tools = [
         knowledge: 'Daily'
       },
       {
-        title: 'ESLint',
+        title: '@eslint/config',
         description: 'Find and fix problems in your JavaScript code',
         website: 'https://eslint.org',
         logo: '',
@@ -831,7 +831,7 @@ export const tools: Tools = [
           'Beautiful & consistent icon toolkit made by the community',
         website: 'https://lucide.dev',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Professional'
       },
       {
         title: 'next-view-transitions',
@@ -909,7 +909,7 @@ export const tools: Tools = [
         description: 'Payment service provider',
         website: 'https://www.payone.com',
         logo: '',
-        knowledge: 'Experienced'
+        knowledge: 'Not started'
       },
       {
         title: 'PayPal',
@@ -991,6 +991,13 @@ export const tools: Tools = [
         logo: '',
         description: 'Project management and team collaboration',
         knowledge: 'Professional'
+      },
+      {
+        title: 'Trello',
+        website: 'https://www.trello.com/',
+        logo: '',
+        description: '',
+        knowledge: 'Not started'
       }
     ]
   },
@@ -1079,7 +1086,7 @@ export const tools: Tools = [
           'https://business.adobe.com/de/products/magento/magento-commerce.html',
         logo: '',
         description: 'Flexible, scalable eCommerce solutions',
-        knowledge: 'Daily'
+        knowledge: 'Not started'
       }
     ]
   },

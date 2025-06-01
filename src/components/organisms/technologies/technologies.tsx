@@ -18,7 +18,7 @@ export default function Technologies() {
       <ul className="space-y-5">
         {mainTechnologies.map((technology) => (
           <li key={technology.name}>
-            <div className="group relative inline-flex items-center gap-4">
+            <div className="inline-flex items-center gap-4">
               <Link
                 href={technology.href}
                 target="_blank"
