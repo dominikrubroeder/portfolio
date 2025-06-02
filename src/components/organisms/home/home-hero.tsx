@@ -6,10 +6,10 @@ export function HomeHero() {
       className="flex flex-col items-center justify-center pt-4 pb-1 lg:pb-2"
       id="hero"
     >
-      <h1 className="space-y-8 sm:max-w-(--readable-container)">
+      <h2 className="space-y-8 sm:max-w-(--readable-container)">
         Building user interfaces for the web. A craft, about UI components and
         design systems.
-      </h1>
+      </h2>
     </Container>
   );
 }

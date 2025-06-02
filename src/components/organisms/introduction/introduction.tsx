@@ -3,30 +3,24 @@ import {
   GitHubButton,
   LinkedInButton
 } from '@/components/atoms/button';
-import DevModeLabel from '@/components/atoms/dev-mode-label';
 import {
   BooksAccordion,
   HowIWorkAccordion,
   MyBackgroundAccordion,
   TechStackAccordion
 } from '@/components/organisms/introduction';
-import React from 'react';
 
 export function Introduction() {
   return (
     <div className="animate-fade-up-1rem">
       <div className="relative mx-auto w-full space-y-6 rounded border bg-background px-4 py-4">
-        <DevModeLabel>div | introduction.tsx</DevModeLabel>
-
         <p>Hey there! 👋</p>
 
         <div className="space-y-3 text-wrap">
-          <p>
-            <b className="mr-1.5 text-foreground">
-              My work is committed to the frontend. I like to create and build
-              dynamic interfaces that are designed to be for an interactive web.
-            </b>
-          </p>
+          <h3 className="text-base font-bold">
+            My work is committed to the frontend. I like to create and build
+            dynamic interfaces that are designed to be for an interactive web.
+          </h3>
 
           <p>
             Building user interfaces is something i follow for almost 10 years
