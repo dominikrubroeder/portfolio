@@ -82,13 +82,13 @@ export function MyBackgroundAccordion() {
 
         <p>
           Being able to translate a design idea, into real world applications
-          was the most motivation thought which drives my mentality to keep on
-          learning.
+          was and is as of today the most motivation thought which drives my
+          mentality to keep on learning.
         </p>
 
         <p>
           With that, building large applications in the modern JavaScript
-          ecosystem inevitabilty leads to the big players
+          ecosystem inevitability leads to the big players
           <ExternalLink href="https://react.dev">React</ExternalLink> and
           <ExternalLink href="https://nextjs.org" className="mr-0">
             Next.js
@@ -103,7 +103,7 @@ export function MyBackgroundAccordion() {
           </ExternalLink>
           , and enjoyed the elegant and more &#39;premium&#39; syntax of it, i
           stuck and get more into React because of it&#39;s larger community,
-          the wide spread adaptions and job opportunities.
+          the wide spread package options and the job opportunities.
         </p>
 
         <p>
@@ -124,18 +124,65 @@ export function MyBackgroundAccordion() {
         <p>Of course, there are much more frameworks out there, like:</p>
 
         <Ul>
-          <li>Astro</li>
-          <li>Gatsby</li>
-          <li>Nuxt (Fullstack Vue.js framework)</li>
-          <li>Remix</li>
-          <li>Svelte</li>
+          <li>
+            <ExternalLink
+              href="https://astro.build/"
+              title="Visit Astrob website"
+              aria-label="Visit Astrob website"
+              className="ml-0"
+            >
+              Astro
+            </ExternalLink>
+          </li>
+          <li>
+            <ExternalLink
+              href="https://gatsbyjs.com/"
+              title="Visit Gatsby website"
+              aria-label="Visit Gatsby website"
+              className="ml-0"
+            >
+              Gatsby
+            </ExternalLink>
+          </li>
+          <li>
+            <ExternalLink
+              href="https://nuxtjs.org/"
+              title="Visit Nuxt website"
+              aria-label="Visit Nuxt website"
+              className="ml-0"
+            >
+              Nuxt
+            </ExternalLink>
+            (Fullstack Vue.js framework)
+          </li>
+          <li>
+            <ExternalLink
+              href="https://remix.run/"
+              title="Visit Remix website"
+              aria-label="Visit Remix website"
+              className="ml-0"
+            >
+              Remix
+            </ExternalLink>
+          </li>
+          <li>
+            <ExternalLink
+              href="https://svelte.dev/"
+              title="Visit Svelte website"
+              aria-label="Visit Svelte website"
+              className="ml-0"
+            >
+              Svelte
+            </ExternalLink>
+          </li>
           <li>and several more</li>
         </Ul>
 
         <p>
-          but in the end, i stick to a tech stack because once i was able to
-          create my ideas into real applications, the framework is the main
-          building tool making this thought a reality.
+          But in the end, the tech stack is the framework bringing the
+          application to life, not <i>the</i> only key-factor of the project.
+          Together with other tools and technologies, they are the setup making
+          the thought a reality.
         </p>
 
         <hr />
