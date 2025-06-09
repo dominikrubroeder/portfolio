@@ -32,17 +32,15 @@ export function ExternalLink({
     >
       {children}
 
-      {variant !== 'unstyled' && (
-        <span className="relative">
-          <ArrowUpRightIcon
-            className={cn(
-              variant === 'inline' &&
-                'absolute -top-1 -right-3 size-3.5 text-current',
-              variant === 'prominent' && 'size-4 text-primary'
-            )}
-          />
-        </span>
-      )}
+      <span className="relative">
+        <ArrowUpRightIcon
+          className={cn(
+            variant === 'inline' &&
+              'absolute -top-1 -right-3 size-3.5 text-current',
+            variant === 'prominent' && 'size-4 text-primary'
+          )}
+        />
+      </span>
 
       {variant === 'prominent' && (
         <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary" />

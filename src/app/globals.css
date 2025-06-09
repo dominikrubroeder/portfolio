@@ -5,7 +5,7 @@
 :root {
     --background: hsl(0 0% 100%);
     --foreground: hsl(0 0% 18.8%);
-    --primary: hsl(255 92% 68%);
+    --primary: hsl(255 92% 65%);
     --primary-foreground: hsl(0 0% 100%);
     --primary-hover: hsl(255 92% 69%);
     --muted: hsl(240 23.8% 95.9%);

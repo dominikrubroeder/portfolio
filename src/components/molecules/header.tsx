@@ -21,11 +21,11 @@ export function Header() {
 
         <h1 className="text-base leading-6">
           Dominik Rubröder
-          <span className="block space-x-0.5 font-normal text-muted-foreground">
+          <span className="block font-normal text-muted-foreground">
             <span>UX Design Engineer @</span>
             <ExternalLink
-              href="https://www.mediawave.de"
               variant="prominent"
+              href="https://www.mediawave.de"
               title="Open mediawave commerce GmbH website"
               aria-label="Open mediawave commerce GmbH website"
             >

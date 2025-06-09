@@ -35,6 +35,13 @@ export function HowIWorkAccordion({ className }: { className?: string }) {
           while being in the process. I often find myself with more clarity and
           a feeling of structure if i get stuck in a concept for too long.
         </li>
+        <li>
+          Have a regular look on latest trends and news in the tech space area
+        </li>
+        <li>
+          Bring the latest trends together with core design principles and
+          psychological patterns
+        </li>
       </Ul>
     </Accordion>
   );

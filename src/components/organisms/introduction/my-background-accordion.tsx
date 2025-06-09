@@ -179,23 +179,18 @@ export function MyBackgroundAccordion() {
         </Ul>
 
         <p>
-          But in the end, the tech stack is the framework bringing the
+          But in the end, the tech stack is the <i>framework</i> bringing the
           application to life, not <i>the</i> only key-factor of the project.
-          Together with other tools and technologies, they are the setup making
-          the thought a reality.
+          Together with other tools and technologies, they build up the setup
+          making this initial thought a reality.
         </p>
 
         <hr />
 
         <Blockquote>
-          Today i can say: <b>I enjoy what i do</b>. While i&#39;m not saying
-          the learning path was, and is not causing headaches or feeling like
-          you always have to be on the latest state to keep up with the
-          ecosystem changes; it&#39;s worth it. It&#39;s worth it to me as a UX
-          Design Engineer to challenge, exchange, confront and enhance my
-          knowledge on a almost day to day basis, because i&#39;m enjoying what
-          i do with it, so i know, it&#39;s worth to put the energy into it that
-          it requires.
+          Today i can say: <b>I enjoy what i do</b>. With all the requirements,
+          and all the people working on it, it really feels fantastic once you
+          see the application up and running and in action.
         </Blockquote>
       </div>
     </Accordion>

@@ -55,7 +55,7 @@ export function TechStackAccordion({ className }: { className?: string }) {
             <Button
               variant="ghost"
               href={item.href}
-              className="[&>svg]:size-14"
+              className="py-3 [&>svg]:size-12"
               target="_blank"
               aria-label={item.ariaLabel}
               title={item.title}

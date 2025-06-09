@@ -5,13 +5,13 @@ export function Book({ book }: { book: Book }) {
   return (
     <div className="flex gap-4 py-1">
       <AnimatedProgress size={32} strokeWidth={5} progress={book.progress} />
-      <div className="space-x-2">
+      <h3 className="space-x-2 text-base font-normal">
         <b className="text-foreground">{book.title}</b>
         <span>–</span>
-        <span>
+        <span className="text-muted-foreground">
           <i>by {book.author}</i>
         </span>
-      </div>
+      </h3>
     </div>
   );
 }
