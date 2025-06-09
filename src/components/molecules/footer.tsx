@@ -1,7 +1,44 @@
-export default function Footer() {
+import { ExternalLink } from '@/components/atoms/external-link';
+
+export function Footer() {
   return (
-    <footer className="mx-16 mt-16 border-t  p-4 pb-24 text-center text-xs md:pb-4">
-      <p className="mb-1.5">
+    <footer className="mt-16 space-y-3 border-t p-4 text-center text-xs md:pb-4">
+      <p>Build your vision. Do it with style.</p>
+      <p>Live your balance.</p>
+      <p className="space-x-2">
+        <ExternalLink
+          href="https://nextjs.org"
+          variant="unstyled"
+          title="Open Next.js website"
+          aria-label="Open Next.js documentation"
+        >
+          Next.js 15.3.3
+        </ExternalLink>
+
+        <span>|</span>
+
+        <ExternalLink
+          href="https://react.dev"
+          variant="unstyled"
+          title="Open React website"
+          aria-label="Open React website"
+        >
+          React 19.1.0
+        </ExternalLink>
+
+        <span>|</span>
+
+        <ExternalLink
+          href="https://tailwindcss.com/docs"
+          variant="unstyled"
+          title="Open Tailwind CSS documentation"
+          aria-label="Open Tailwind CSS documentation"
+        >
+          Tailwind CSS 4.1.7
+        </ExternalLink>
+      </p>
+
+      <p>
         <a
           href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
           title="Send mail to dominik.rubroeder@icloud.com"

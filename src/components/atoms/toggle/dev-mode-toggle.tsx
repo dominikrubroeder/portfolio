@@ -1,21 +1,21 @@
-import Toggle from '@/components/atoms/toggle/toggle';
-import { useUpdateSearchParams } from '@/hooks/useUpdateSearchParams';
+'use client';
 
-export default function DevModeToggle() {
-  const { updateSearchParams, searchParams } = useUpdateSearchParams();
-  const devMode = searchParams.get('devMode');
+import { Toggle } from '@/components/atoms/toggle';
+import { cn } from '@/lib/utils';
+import { useApp } from '@/components/organisms/app';
+
+export function DevModeToggle({ className }: { className?: string }) {
+  const { theme, setTheme } = useApp();
 
   return (
-    <Toggle
-      label="Dev mode"
-      onClick={() =>
-        updateSearchParams({
-          withName: 'devMode',
-          withValue: devMode ? 'false' : 'true'
-        })
-      }
-      className="absolute right-4 top-[3.75rem]"
-      enabled={devMode === 'true'}
-    />
+    <div className={cn('inline-grid gap-4 rounded border p-4', className)}>
+      <Toggle
+        label="Dev mode"
+        onClick={() => {
+          setTheme('dev');
+        }}
+        enabled={theme === 'dev'}
+      />
+    </div>
   );
 }

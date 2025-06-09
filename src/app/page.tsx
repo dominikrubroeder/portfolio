@@ -1,24 +1,34 @@
-import IntroductionSection from '@/components/organisms/introduction-section';
-import HomeHeroSection from '@/components/organisms/home-hero-section';
-import ProjectSection from '@/components/organisms/project-section';
-import ToolSection from '@/components/organisms/tool-section';
-import TechnologySection from '@/components/organisms/technology-section';
-import SocialSection from '@/components/organisms/social-section';
+import { HomeHero } from '@/components/organisms/home';
+import { Introduction } from '@/components/organisms/introduction';
+import { Tools } from '@/components/organisms/tools';
+import { Technologies } from '@/components/organisms/technologies';
+import { Socials } from '@/components/organisms/socials';
+import { FAQ } from '@/components/organisms/faq';
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
-    <div className="md:space-y-24">
-      <HomeHeroSection />
+    <div className="animate-fade-up-1rem space-y-6">
+      <HomeHero />
 
-      <IntroductionSection />
+      <div className="mx-auto space-y-12 px-4 sm:max-w-(--readable-container) lg:px-0">
+        <Introduction />
 
-      <ProjectSection />
+        <hr />
 
-      <ToolSection />
+        <Tools />
 
-      <TechnologySection />
+        <hr />
 
-      <SocialSection />
+        <Technologies />
+
+        <hr />
+
+        <Socials />
+
+        <hr />
+
+        <FAQ />
+      </div>
     </div>
   );
 }

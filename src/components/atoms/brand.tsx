@@ -1,103 +1,139 @@
-import type { Brand as BrandType } from '@/types';
-import {
-  CraftIcon,
-  CSSIcon,
-  FigmaIcon,
-  GithubIcon,
-  GitlabIcon,
-  HTMLIcon,
-  JavaScriptIcon,
-  LinkedinIcon,
-  MarkdownIcon,
-  MiroIcon,
-  MotionIcon,
-  NextJsIcon,
-  NotesIcon,
-  ReactIcon,
-  ShopwareIcon,
-  StoryblokIcon,
-  TailwindCssIcon,
-  TypescriptIcon,
-  WebstormIcon,
-  XingIcon
-} from '@/components/atoms/svg';
-import AuthJsIcon from '@/components/atoms/img/auth-js-icon';
-import InstagramIcon from '@/components/atoms/img/instagram-icon';
+import { cn } from '@/lib/utils';
 
-export default function Brand({
+import {
+  ChromeLogo,
+  CraftLogo,
+  CssLogo,
+  FigmaLogo,
+  FirefoxLogo,
+  FrontendMentorLogo,
+  GithubLogo,
+  GitlabLogo,
+  HtmlLogo,
+  JavascriptLogo,
+  LinkedinLogo,
+  MarkdownLogo,
+  MiroLogo,
+  MotionLogo,
+  NextjsLogo,
+  NotesLogo,
+  ReactLogo,
+  SafariLogo,
+  ShopwareLogo,
+  SlackLogo,
+  StoryblokLogo,
+  TailwindCssLogo,
+  TeamsLogo,
+  TypeScriptLogo,
+  VercelLogo,
+  WebstormLogo,
+  XingLogo
+} from '@/components/atoms/logo';
+
+import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
+
+export function Brand({
   brand,
   className = 'size-32'
 }: {
-  brand: BrandType;
+  brand: string;
   className?: string;
 }) {
-  if (!(brand satisfies BrandType)) return null;
-
   switch (brand) {
     case 'Figma':
-      return <FigmaIcon className={className} />;
+      return <FigmaLogo className={className} />;
 
     case 'WebStorm':
-      return <WebstormIcon className={className} />;
+      return <WebstormLogo className={className} />;
 
     case 'Notes':
-      return <NotesIcon className={className} />;
+      return <NotesLogo className={className} />;
 
     case 'GitHub':
-      return <GithubIcon className={className} />;
+      return <GithubLogo className={className} />;
 
     case 'GitLab':
-      return <GitlabIcon className={className} />;
+      return <GitlabLogo className={className} />;
 
     case 'Shopware':
-      return <ShopwareIcon className={className} />;
+      return <ShopwareLogo className={className} />;
 
     case 'Storyblok':
-      return <StoryblokIcon className={className} />;
+      return <StoryblokLogo className={className} />;
 
     case 'Miro':
-      return <MiroIcon className={className} />;
+      return <MiroLogo className={className} />;
 
     case 'React':
-      return <ReactIcon className={className} />;
+      return <ReactLogo className={className} />;
 
     case 'Next.js':
-      return <NextJsIcon className={className} />;
+      return <NextjsLogo className={className} />;
 
     case 'TypeScript':
-      return <TypescriptIcon className={className} />;
+      return <TypeScriptLogo className={className} />;
 
     case 'JavaScript':
-      return <JavaScriptIcon className={className} />;
+      return <JavascriptLogo className={className} />;
 
     case 'Markdown':
-      return <MarkdownIcon className={className} />;
+      return <MarkdownLogo className={className} />;
 
     case 'HTML':
-      return <HTMLIcon className={className} />;
+      return <HtmlLogo className={className} />;
 
     case 'CSS':
-      return <CSSIcon className={className} />;
+      return <CssLogo className={className} />;
 
     case 'Tailwind CSS':
-      return <TailwindCssIcon className={className} />;
+      return <TailwindCssLogo className={className} />;
 
-    case 'Motion (formerly Framer Motion)':
-      return <MotionIcon className={className} />;
+    case 'Motion':
+      return <MotionLogo className={className} />;
 
     case 'Auth.js':
-      return <AuthJsIcon className={className} />;
+      return <AuthjsLogo className={className} />;
 
     case 'LinkedIn':
-      return <LinkedinIcon className={className} />;
+      return <LinkedinLogo className={className} />;
 
     case 'Xing':
-      return <XingIcon className={className} />;
+      return <XingLogo className={className} />;
 
     case 'Instagram':
-      return <InstagramIcon className={className} />;
+      return <InstagramLogo className={className} />;
 
     case 'Craft':
-      return <CraftIcon className={className} />;
+      return <CraftLogo className={className} />;
+
+    case 'Inkdrop':
+      return <InkdropLogo className={className} />;
+
+    case 'Chrome':
+      return <ChromeLogo className={className} />;
+
+    case 'Firefox':
+      return <FirefoxLogo className={className} />;
+
+    case 'Safari':
+      return <SafariLogo className={className} />;
+
+    case 'Slack':
+      return <SlackLogo className={className} />;
+
+    case 'Teams':
+      return <TeamsLogo className={className} />;
+
+    case 'Vercel':
+      return <VercelLogo className={className} />;
+
+    case 'frontendmentor.io':
+      return <FrontendMentorLogo className={className} />;
+
+    case 'Learn Next.js':
+      return <NextjsLogo className={className} />;
+
+    default:
+      return <div className={cn('rounded bg-muted', className)} />;
   }
 }

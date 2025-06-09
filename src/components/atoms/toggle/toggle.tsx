@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback } from 'react';
+import { cn } from '@/lib/utils';
 
-export default function Toggle({
+export function Toggle({
   label,
   className,
   enabled,
@@ -13,29 +14,31 @@ export default function Toggle({
   enabled?: boolean;
   onClick?: () => void;
 }) {
-  const [isEnabled, setIsEnabled] = useState(enabled);
-  const classes = className
-    ? `flex items-center gap-2 cursor-pointer select-none ${className}`
-    : 'flex items-center gap-2 cursor-pointer select-none';
-
-  const handleOnClick = () => {
-    setIsEnabled((prevState) => !prevState);
+  const handleOnClick = useCallback(() => {
     onClick ? onClick() : null;
-  };
+  }, [onClick]);
 
   return (
-    <div className={classes} onClick={handleOnClick}>
+    <div
+      className={cn(
+        'flex cursor-pointer items-center gap-2 select-none',
+        className
+      )}
+      onClick={handleOnClick}
+    >
       {label && <span>{label}</span>}
 
       <div
-        className={`relative flex h-8 w-14 items-center rounded-full px-1 transition ${
-          isEnabled ? 'bg-accent' : 'bg-muted'
-        }`}
+        className={cn(
+          'relative flex h-8 w-14 items-center rounded-full px-1 transition',
+          enabled ? 'bg-primary' : 'bg-muted-hover'
+        )}
       >
         <span
-          className={`absolute size-6 rounded-full bg-white transition ${
-            isEnabled ? 'translate-x-full' : 'translate-x-0'
-          }`}
+          className={cn(
+            'absolute size-6 rounded-full bg-primary-foreground transition',
+            enabled ? 'translate-x-full' : 'translate-x-0'
+          )}
         ></span>
       </div>
     </div>
