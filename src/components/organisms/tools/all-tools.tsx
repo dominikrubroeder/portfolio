@@ -10,19 +10,19 @@ import { tools } from '@/components/organisms/tools';
 export function AllTools() {
   return (
     <ToggleContent label="All tools">
-      <ul className="grid animate-fade-up-1rem gap-10">
+      <ul className="grid animate-fade-up-1rem gap-6 sm:gap-10">
         {tools
           .sort((a, b) => {
             return a.group.localeCompare(b.group);
           })
           .map((item, index) => (
-            <li key={item.group} className="space-y-6">
-              <div className="space-y-6">
+            <li key={item.group}>
+              <div className="space-y-3 sm:space-y-6">
                 <div className="relative flex justify-between gap-4">
-                  <h3 className="text-base">{item.group}</h3>
+                  <h3 className="mb-0 text-base">{item.group}</h3>
 
                   {index === 0 && (
-                    <span className="absolute top-2 right-20 text-xs">
+                    <span className="absolute top-1 right-4 text-xs xs:right-18 sm:right-21">
                       Experience level
                     </span>
                   )}
@@ -32,7 +32,7 @@ export function AllTools() {
                   {item.children
                     .sort((a, b) => a.title.localeCompare(b.title))
                     .map((item, index) => (
-                      <li key={index} className="relative flex gap-4">
+                      <li key={index} className="relative flex gap-3 xs:gap-4">
                         <Link
                           href={item.website}
                           target="_blank"
@@ -44,17 +44,19 @@ export function AllTools() {
                           />
                         </Link>
 
-                        <div className="flex flex-1 items-center justify-between gap-2">
+                        <div className="flex flex-1 items-center justify-between gap-2 overflow-hidden">
                           <Link
                             href={item.website}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group"
                           >
-                            <h3 className="mb-0 text-base">{item.title}</h3>
+                            <h3 className="mb-0 max-w-24 overflow-hidden text-base text-ellipsis whitespace-nowrap xs:max-w-30 sm:max-w-none">
+                              {item.title}
+                            </h3>
                           </Link>
 
-                          <div className="flex items-center justify-between gap-4 bg-background">
+                          <div className="flex items-center justify-between gap-2 bg-background sm:gap-4">
                             <ExperienceBar progress={item.knowledge} />
 
                             <Button
@@ -62,6 +64,7 @@ export function AllTools() {
                               href={item.website}
                               title={`Go to external ${item.title} website`}
                               aria-label={`Go to external ${item.title} website`}
+                              className="hidden xs:flex"
                             >
                               <ArrowTopRightOnSquareIcon className="size-5" />
                             </Button>
