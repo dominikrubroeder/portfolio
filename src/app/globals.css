@@ -24,7 +24,8 @@
     :root {
         --background: hsl(0 0% 8%);
         --foreground: hsl(0 0% 100%);
-        --muted: hsl(0 0% 0%);
+        --muted: hsl(0 0% 16%);
+        --muted-foreground: hsl(240 2.3% 56%);
         --border: hsl(0 0% 12%);
     }
 }
@@ -203,21 +204,21 @@
 }
 
 /* Hide scrollbars for all browsers */
-.no-scrollbar {
+.scrollbar-none {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
 
 /* Hide scrollbars for WebKit browsers (Chrome, Safari, Edge) */
-.no-scrollbar::-webkit-scrollbar {
+.scrollbar-none::-webkit-scrollbar {
     display: none;
     width: 0; /* Adjust the width as needed */
 }
 
-.no-scrollbar::-webkit-scrollbar-thumb {
+.scrollbar-none::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
-.no-scrollbar::-webkit-scrollbar-track {
+.scrollbar-none::-webkit-scrollbar-track {
     background-color: transparent;
 }

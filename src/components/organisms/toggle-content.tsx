@@ -41,7 +41,14 @@ export function ToggleContent({
         )}
       </div>
 
-      {show && <div className="animate-fade-up-1rem">{children}</div>}
+      <div
+        className={cn(
+          'invisible h-0 opacity-0',
+          show && 'visible h-auto animate-fade-up-1rem opacity-100'
+        )}
+      >
+        {children}
+      </div>
     </div>
   );
 }

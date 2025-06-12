@@ -55,7 +55,7 @@ export function AccordionContained({
           className={cn(
             'mb-5 animate-fade-up p-4 pt-20 sm:pt-0',
             restrictHeight &&
-              'no-scrollbar pt-22 sm:pt-4 md:max-h-[60svh] md:overflow-y-auto md:border-b'
+              'scrollbar-none pt-22 sm:pt-4 md:max-h-[60svh] md:overflow-y-auto md:border-b'
           )}
         >
           {children}

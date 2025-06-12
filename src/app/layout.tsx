@@ -33,12 +33,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="en"
-      className="scroll-smooth bg-background leading-[1.8]"
-      data-theme="auto"
-    >
-      <body className="overflow-x-hidden font-normal text-muted-foreground">
+    <html lang="en" className="scroll-smooth bg-background" data-theme="auto">
+      <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
         <Header />
         <main>{children}</main>
         <Footer />
