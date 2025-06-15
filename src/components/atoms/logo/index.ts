@@ -29,5 +29,6 @@ export { Heroicons } from './heroicons';
 export { HdPlusLogo } from './hd-plus-logo';
 export { SegmuellerLogo } from './segmueller-logo';
 export { AllesautoLogo } from './allesauto-logo';
+export { MediawaveLogo } from './mediawave-logo';
 
 export * from './config';

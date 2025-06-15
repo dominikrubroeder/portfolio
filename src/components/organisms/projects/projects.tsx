@@ -1,80 +1,129 @@
-import { Button } from '@/components/atoms/button';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/16/solid';
-import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
-const projects = [
-  {
-    title: 'sautershop',
-    category: 'DIY workers',
-    url: 'https://www.sautershop.de',
-    readableTitle: 'Home wood-working tools',
-    status: 'Active',
-    href: 'https://www.sautershop.de'
-  },
-  {
-    title: 'Segmüller',
-    category: 'Furniture',
-    url: 'https://www.segmueller.de',
-    readableTitle: 'Home furniture from Germany',
-    status: '2021 - 2023',
-    href: 'https://www.sautershop.de'
-  },
-  {
-    title: 'alles auto',
-    category: 'Car dealer',
-    url: 'https://www.alles.auto',
-    readableTitle: '',
-    status: '2021',
-    href: 'https://www.sautershop.de'
-  }
-];
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { Badge } from '@/components/atoms/badge';
+import { Button } from '@/components/atoms/button';
+import { Ul } from '@/components/atoms/ul';
+import { Brand } from '@/components/atoms/brand';
+import { projects } from '@/components/organisms/projects/data';
 
 export function Projects() {
+  const project = projects[0];
+
   return (
     <div className="space-y-6">
       <h2>
-        <span>Projects</span>
-        <span className="text-muted-foreground">
-          show you, in which teams i have participated
+        Projects
+        <span className="ml-2 font-medium text-muted-foreground">
+          show you, in which teams i participated
         </span>
       </h2>
 
       <div className="space-y-4">
-        <div className="relative h-[50svh] rounded border">
-          <Button
-            variant="ghost"
-            className="absolute top-1/2 left-2 -translate-y-1/2"
+        <div className="relative flex h-[50svh] items-center justify-center rounded border">
+          <Link
+            href={project.url}
+            title={`Go to external ${project.title} website`}
+            aria-label={`Go to external ${project.title} website`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0 flex size-full items-center justify-center"
           >
-            <ChevronLeftIcon />
-            <span className="sr-only">Previous project</span>
-          </Button>
+            <span className="sr-only">Go to {project.title} website</span>
+            {project.logo}
+          </Link>
 
           <Button
             variant="ghost"
-            className="absolute top-1/2 right-2 -translate-y-1/2"
+            href={project.url}
+            title={`Go to external ${project.title} website`}
+            aria-label={`Go to external ${project.title} website`}
+            className="absolute right-3.5 bottom-3"
           >
-            <ChevronRightIcon />
-            <span className="sr-only">Next project</span>
+            <ArrowTopRightOnSquareIcon />
           </Button>
         </div>
 
-        <ul className="mx-auto flex items-center justify-center gap-3">
-          {projects.map((_, index) => (
-            <li key={index}>
-              <span
-                className={cn(
-                  'block size-3 rounded-full',
-                  index === 0 ? 'bg-primary' : 'bg-muted'
-                )}
-              />
-            </li>
-          ))}
-        </ul>
-
         <div>
-          <div>
-            <h3 className="mb-0">{projects[0].title}</h3>
-            <div>{projects[0].readableTitle}</div>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center gap-2">
+              <span className="relative flex size-4 items-center justify-center rounded-full bg-primary/10">
+                <span className="size-2 animate-pulse rounded-full bg-primary" />
+                <span className="sr-only">{project.status}</span>
+              </span>
+              <h3 className="mb-0">{project.title}</h3>
+            </div>
+
+            <Badge size="small">{project.status}</Badge>
+          </div>
+          <h4 className="text-base font-normal text-muted-foreground">
+            {project.readableTitle}
+          </h4>
+
+          <div className="space-y-4">
+            <div>
+              <b>Role</b>
+              <div>{project.role?.join(', ')}</div>
+            </div>
+
+            <div>
+              <b>Category</b>
+              <div>{project.category?.join(', ')}</div>
+            </div>
+
+            <Ul headline="Aspects" className="mt-0">
+              {project.aspects?.map((aspect, index) => (
+                <li key={index}>{aspect}</li>
+              ))}
+            </Ul>
+
+            <div className="space-y-4">
+              <b className="block">Tools</b>
+              <ul className="flex flex-wrap gap-6">
+                {project.tools?.map((tool, index) => {
+                  if (tool && tool.title) {
+                    return (
+                      <li key={index}>
+                        <Link
+                          href={tool.website}
+                          title={tool.title}
+                          aria-label={`Open ${tool.title} website`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="sr-only">{tool.title}</span>
+                          <Brand brand={tool.title} className="size-12" />
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <b className="block">Technologies</b>
+              <ul className="flex flex-wrap gap-6">
+                {project.technologies?.map((technology, index) => {
+                  if (technology && technology.title) {
+                    return (
+                      <li key={index}>
+                        <Link
+                          href={technology.website}
+                          title={technology.title}
+                          aria-label={`Open ${technology.title} website`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="sr-only">{technology.title}</span>
+                          <Brand brand={technology.title} className="size-12" />
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
