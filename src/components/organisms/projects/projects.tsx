@@ -9,7 +9,7 @@ import { projects } from '@/components/organisms/projects/data';
 
 export function Projects() {
   const project = projects[0];
-  
+
   return (
     <div className="space-y-6">
       <h2>
