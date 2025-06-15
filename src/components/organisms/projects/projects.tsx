@@ -40,6 +40,34 @@ const projects = [
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
+            (technology) => technology.title === 'Shopware'
+          )
+        )
+        ?.children.find((technology) => technology.title === 'Shopware'),
+      tools
+        .find((technologyGroup) =>
+          technologyGroup.children.find(
+            (technology) => technology.title === 'Storyblok'
+          )
+        )
+        ?.children.find((technology) => technology.title === 'Storyblok'),
+      tools
+        .find((technologyGroup) =>
+          technologyGroup.children.find(
+            (technology) => technology.title === 'Algolia'
+          )
+        )
+        ?.children.find((technology) => technology.title === 'Algolia'),
+      tools
+        .find((technologyGroup) =>
+          technologyGroup.children.find(
+            (technology) => technology.title === 'Auth.js'
+          )
+        )
+        ?.children.find((technology) => technology.title === 'Auth.js'),
+      tools
+        .find((technologyGroup) =>
+          technologyGroup.children.find(
             (technology) => technology.title === 'Jira'
           )
         )
@@ -201,28 +229,42 @@ export function Projects() {
 
             <div className="space-y-4">
               <b className="block">Tools</b>
-              <div className="flex flex-wrap gap-6">
-                {project.tools?.map((technology, index) => (
-                  <Brand
-                    key={index}
-                    brand={technology?.title ?? 'Next.js'}
-                    className="size-12"
-                  />
+              <ul className="flex flex-wrap gap-6">
+                {project.tools?.map((tool, index) => (
+                  <li key={index}>
+                    <Link
+                      href={tool.website}
+                      title={tool.title}
+                      aria-label={`Open ${tool.title} website`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="sr-only">{tool.title}</span>
+                      <Brand brand={tool.title} className="size-12" />
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <div className="space-y-4">
               <b className="block">Technologies</b>
-              <div className="flex flex-wrap gap-6">
+              <ul className="flex flex-wrap gap-6">
                 {project.technologies?.map((technology, index) => (
-                  <Brand
-                    key={index}
-                    brand={technology?.title ?? 'Next.js'}
-                    className="size-12"
-                  />
+                  <li key={index}>
+                    <Link
+                      href={technology.website}
+                      title={technology.title}
+                      aria-label={`Open ${technology.title} website`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="sr-only">{technology.title}</span>
+                      <Brand brand={technology.title} className="size-12" />
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
