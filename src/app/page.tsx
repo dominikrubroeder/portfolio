@@ -4,6 +4,7 @@ import { Tools } from '@/components/organisms/tools';
 import { Technologies } from '@/components/organisms/technologies';
 import { Socials } from '@/components/organisms/socials';
 import { FAQ } from '@/components/organisms/faq';
+import { Projects } from '@/components/organisms/projects';
 
 export default async function HomePage() {
   return (
@@ -12,6 +13,8 @@ export default async function HomePage() {
 
       <div className="mx-auto space-y-12 px-4 sm:max-w-(--readable-container) lg:px-0">
         <Introduction />
+
+        <Projects />
 
         <hr />
 

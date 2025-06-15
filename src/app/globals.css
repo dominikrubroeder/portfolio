@@ -177,6 +177,10 @@
     ul {
         @apply my-4;
     }
+
+    b, strong {
+        @apply text-foreground
+    }
 }
 
 @layer base {
