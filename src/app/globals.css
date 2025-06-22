@@ -26,6 +26,7 @@
         --foreground: hsl(0 0% 100%);
         --muted: hsl(0 0% 16%);
         --muted-foreground: hsl(240 2.3% 56%);
+        --muted-hover: hsl(0, 0%, 22%);
         --border: hsl(0 0% 12%);
     }
 }
