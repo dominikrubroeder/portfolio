@@ -9,7 +9,7 @@ export function Tools() {
         <h2>
           Tools
           <span className="ml-2 font-medium text-muted-foreground">
-            help to visualize, communicate and support to build the application
+            help to visualize, communicate and support building the application
             we create. I use
           </span>
         </h2>
