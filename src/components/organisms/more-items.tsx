@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '@/components/atoms/button';
-import { Brand } from '@/components/atoms/brand';
+import { BrandLogo } from '@/components/atoms/brand-logo';
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
@@ -123,7 +123,7 @@ export default function MoreItems({
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              <Brand
+                              <BrandLogo
                                 brand={item.title}
                                 className="size-10 shrink-0"
                               />

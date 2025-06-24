@@ -1,16 +1,20 @@
 import { cn } from '@/lib/utils';
 
 import {
+  AlgoliaLogo,
   ChromeLogo,
   CraftLogo,
   CssLogo,
+  DailyDevLogo,
   FigmaLogo,
   FirefoxLogo,
   FrontendMentorLogo,
   GithubLogo,
   GitlabLogo,
+  HeroiconsLogo,
   HtmlLogo,
   JavascriptLogo,
+  JiraLogo,
   LinkedinLogo,
   MarkdownLogo,
   MiroLogo,
@@ -32,7 +36,7 @@ import {
 
 import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 
-export function Brand({
+export function BrandLogo({
   brand,
   className = 'size-32'
 }: {
@@ -132,6 +136,18 @@ export function Brand({
 
     case 'Learn Next.js':
       return <NextjsLogo className={className} />;
+
+    case 'Algolia':
+      return <AlgoliaLogo className={className} />;
+
+    case 'Jira':
+      return <JiraLogo className={className} />;
+
+    case 'heroicons':
+      return <HeroiconsLogo className={className} />;
+
+    case 'daily.dev':
+      return <DailyDevLogo className={className} />;
 
     default:
       return <div className={cn('rounded bg-muted', className)} />;
