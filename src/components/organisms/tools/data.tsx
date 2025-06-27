@@ -1009,7 +1009,7 @@ export const tools: Tools = [
         description: 'UX research for e-commerce',
         website: 'https://baymard.com',
         logo: '',
-        knowledge: 'Daily'
+        knowledge: 'Professional'
       },
       {
         title: 'Human Interface Guidelines (Apple)',

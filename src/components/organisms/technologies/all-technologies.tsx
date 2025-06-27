@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { Button } from '@/components/atoms/button';
-import { Brand } from '@/components/atoms/brand';
+import { BrandLogo } from '@/components/atoms/brand-logo';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { technologies } from '@/components/organisms/technologies';
 import { ToggleContent } from '@/components/organisms/toggle-content';
@@ -38,7 +38,7 @@ export function AllTechnologies() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Brand
+                          <BrandLogo
                             brand={item.title}
                             className="size-10 shrink-0"
                           />
@@ -64,7 +64,7 @@ export function AllTechnologies() {
                               href={item.website}
                               title={`Go to external ${item.title} website`}
                               aria-label={`Go to external ${item.title} website`}
-                              className="hidden xs:flex"
+                              className="hidden sm:flex"
                             >
                               <ArrowTopRightOnSquareIcon className="size-5" />
                             </Button>

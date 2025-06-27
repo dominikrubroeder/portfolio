@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
-import { Brand } from '@/components/atoms/brand';
+import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
@@ -45,7 +45,7 @@ export default function Technology({
       >
         <DevModeLabel className="z-10">div | slider-item.tsx</DevModeLabel>
 
-        <Brand
+        <BrandLogo
           brand={technology.title}
           className="h-32 w-auto transition group-hover:scale-105"
           aria-label={`${technology.title} logo`}

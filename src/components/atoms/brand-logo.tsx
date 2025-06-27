@@ -1,24 +1,31 @@
 import { cn } from '@/lib/utils';
 
 import {
+  AlgoliaLogo,
   ChromeLogo,
   CraftLogo,
   CssLogo,
+  DailyDevLogo,
   FigmaLogo,
   FirefoxLogo,
   FrontendMentorLogo,
   GithubLogo,
   GitlabLogo,
+  HeroiconsLogo,
   HtmlLogo,
   JavascriptLogo,
+  JiraLogo,
   LinkedinLogo,
+  type LogoProps,
   MarkdownLogo,
   MiroLogo,
   MotionLogo,
   NextjsLogo,
   NotesLogo,
+  NpmLogo,
   ReactLogo,
   SafariLogo,
+  ShadcnUiLogo,
   ShopwareLogo,
   SlackLogo,
   StoryblokLogo,
@@ -32,13 +39,55 @@ import {
 
 import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 
-export function Brand({
-  brand,
-  className = 'size-32'
-}: {
+interface BrandLogoProps extends LogoProps {
   brand: string;
-  className?: string;
-}) {
+}
+
+export function BrandLogo({ brand, className = 'size-32' }: BrandLogoProps) {
+  const lowerCaseBrand = brand.toLowerCase();
+
+  if (lowerCaseBrand.includes('storyblok')) {
+    return <StoryblokLogo className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('shopware')) {
+    return <ShopwareLogo className={className} />;
+  }
+
+  if (
+    lowerCaseBrand.includes('tailwind') ||
+    lowerCaseBrand.includes('refactoring')
+  ) {
+    return <TailwindCssLogo className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('heroicons')) {
+    return <HeroiconsLogo className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('vercel')) {
+    return <VercelLogo className={className} />;
+  }
+
+  if (
+    lowerCaseBrand.includes('algolia') ||
+    lowerCaseBrand.includes('instant')
+  ) {
+    return <AlgoliaLogo className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('next')) {
+    return <NextjsLogo className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('react')) {
+    return <ReactLogo className={className} />;
+  }
+
+  if (brand.startsWith('@')) {
+    return <NpmLogo className={className} />;
+  }
+
   switch (brand) {
     case 'Figma':
       return <FigmaLogo className={className} />;
@@ -55,20 +104,8 @@ export function Brand({
     case 'GitLab':
       return <GitlabLogo className={className} />;
 
-    case 'Shopware':
-      return <ShopwareLogo className={className} />;
-
-    case 'Storyblok':
-      return <StoryblokLogo className={className} />;
-
     case 'Miro':
       return <MiroLogo className={className} />;
-
-    case 'React':
-      return <ReactLogo className={className} />;
-
-    case 'Next.js':
-      return <NextjsLogo className={className} />;
 
     case 'TypeScript':
       return <TypeScriptLogo className={className} />;
@@ -84,9 +121,6 @@ export function Brand({
 
     case 'CSS':
       return <CssLogo className={className} />;
-
-    case 'Tailwind CSS':
-      return <TailwindCssLogo className={className} />;
 
     case 'Motion':
       return <MotionLogo className={className} />;
@@ -124,14 +158,23 @@ export function Brand({
     case 'Teams':
       return <TeamsLogo className={className} />;
 
-    case 'Vercel':
-      return <VercelLogo className={className} />;
-
     case 'frontendmentor.io':
       return <FrontendMentorLogo className={className} />;
 
-    case 'Learn Next.js':
-      return <NextjsLogo className={className} />;
+    case 'Jira':
+      return <JiraLogo className={className} />;
+
+    case 'heroicons':
+      return <HeroiconsLogo className={className} />;
+
+    case 'daily.dev':
+      return <DailyDevLogo className={className} />;
+
+    case 'npm':
+      return <NpmLogo className={className} />;
+
+    case 'shadcn/ui':
+      return <ShadcnUiLogo className={className} />;
 
     default:
       return <div className={cn('rounded bg-muted', className)} />;

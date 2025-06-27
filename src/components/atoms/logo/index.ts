@@ -25,10 +25,16 @@ export { SlackLogo } from './slack-logo';
 export { TeamsLogo } from './teams-logo';
 export { VercelLogo } from './vercel-logo';
 export { FrontendMentorLogo } from './frontend-mentor-logo';
-export { Heroicons } from './heroicons';
 export { HdPlusLogo } from './hd-plus-logo';
 export { SegmuellerLogo } from './segmueller-logo';
 export { AllesautoLogo } from './allesauto-logo';
 export { MediawaveLogo } from './mediawave-logo';
+export { AlgoliaLogo } from './algolia-logo';
+export { JiraLogo } from './jira-logo';
+export { HeroiconsLogo } from './heroicons-logo';
+export { DailyDevLogo } from './dailydev-logo';
+export { NpmLogo } from './npm-logo';
+export { ShadcnUiLogo } from './shadcn-ui-logo';
 
 export * from './config';
+export * from './types';

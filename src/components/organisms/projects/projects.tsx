@@ -4,7 +4,7 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { Badge } from '@/components/atoms/badge';
 import { Button } from '@/components/atoms/button';
 import { Ul } from '@/components/atoms/ul';
-import { Brand } from '@/components/atoms/brand';
+import { BrandLogo } from '@/components/atoms/brand-logo';
 import { projects } from '@/components/organisms/projects/data';
 
 export function Projects() {
@@ -92,7 +92,7 @@ export function Projects() {
                           rel="noopener noreferrer"
                         >
                           <span className="sr-only">{tool.title}</span>
-                          <Brand brand={tool.title} className="size-12" />
+                          <BrandLogo brand={tool.title} className="size-12" />
                         </Link>
                       </li>
                     );
@@ -116,7 +116,10 @@ export function Projects() {
                           rel="noopener noreferrer"
                         >
                           <span className="sr-only">{technology.title}</span>
-                          <Brand brand={technology.title} className="size-12" />
+                          <BrandLogo
+                            brand={technology.title}
+                            className="size-12"
+                          />
                         </Link>
                       </li>
                     );
