@@ -19,14 +19,15 @@ export function Introduction() {
         <div className="space-y-3 text-wrap">
           <h3 className="text-base font-bold">
             My work is committed to the frontend. I like to create and build
-            dynamic interfaces that are designed to be for an interactive web.
+            dynamic interfaces that are designed to be for a scalable and
+            interactive web.
           </h3>
 
           <p>
             Building user interfaces is something i follow for almost 10 years
             now. In that area, i found myself enjoying building components and
-            setting up the design system for it as the most fitting and
-            fulfilling thing for me.
+            setting up the design system for them as the most fitting and the
+            most fulfilling thing for me.
           </p>
 
           <p>

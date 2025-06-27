@@ -182,7 +182,7 @@ export function MyBackgroundAccordion() {
           But in the end, the tech stack is the <i>framework</i> bringing the
           application to life, not <i>the</i> only key-factor of the project.
           Together with other tools and technologies, they build up the setup
-          making this initial thought a reality.
+          that makes this initial thought a reality.
         </p>
 
         <hr />

@@ -33,5 +33,8 @@ export { AlgoliaLogo } from './algolia-logo';
 export { JiraLogo } from './jira-logo';
 export { HeroiconsLogo } from './heroicons-logo';
 export { DailyDevLogo } from './dailydev-logo';
+export { NpmLogo } from './npm-logo';
+export { ShadcnUiLogo } from './shadcn-ui-logo';
 
 export * from './config';
+export * from './types';

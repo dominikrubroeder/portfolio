@@ -64,7 +64,7 @@ export function AllTools() {
                               href={item.website}
                               title={`Go to external ${item.title} website`}
                               aria-label={`Go to external ${item.title} website`}
-                              className="hidden xs:flex"
+                              className="hidden sm:flex"
                             >
                               <ArrowTopRightOnSquareIcon className="size-5" />
                             </Button>
