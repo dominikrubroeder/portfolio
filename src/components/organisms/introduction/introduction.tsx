@@ -19,8 +19,8 @@ export function Introduction() {
         <div className="space-y-3 text-wrap">
           <h3 className="text-base font-bold">
             My work is committed to the frontend. I like to create and build
-            dynamic interfaces that are designed to be for a scalable and
-            interactive web.
+            dynamic interfaces that are designed to be for a interactive and
+            scalable web.
           </h3>
 
           <p>

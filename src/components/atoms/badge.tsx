@@ -22,7 +22,7 @@ export function Badge({
         color === 'neutral' && 'bg-muted text-foreground',
         size === 'small' && 'px-2.5 py-0.5 text-sm',
         size === 'medium' && 'px-3 py-1 text-base',
-        size === 'large' && 'px-4 py-2',
+        size === 'large' && 'px-4 py-2 font-bold',
         className
       )}
       {...rest}
