@@ -5,7 +5,7 @@ export function HomeHero() {
   return (
     <Container className="flex flex-col items-center justify-center pt-5 pb-1 lg:pb-2">
       <div className="space-y-2">
-        <Badge size="large" color="primary">
+        <Badge size="medium" color="primary">
           Team Frontend
         </Badge>
         <h2 className="space-y-8 sm:max-w-(--readable-container)">
