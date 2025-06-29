@@ -23,6 +23,7 @@ import {
   NextjsLogo,
   NotesLogo,
   NpmLogo,
+  RadixUILogo,
   ReactLogo,
   SafariLogo,
   ShadcnUiLogo,
@@ -41,9 +42,16 @@ import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 
 interface BrandLogoProps extends LogoProps {
   brand: string;
+  group?: string;
 }
 
-export function BrandLogo({ brand, className = 'size-32' }: BrandLogoProps) {
+export function BrandLogo({
+  brand,
+  group,
+  className = 'size-32'
+}: BrandLogoProps) {
+  const DefaultLogo = <div className={cn('rounded bg-muted', className)} />;
+
   const lowerCaseBrand = brand.toLowerCase();
 
   if (lowerCaseBrand.includes('storyblok')) {
@@ -86,6 +94,11 @@ export function BrandLogo({ brand, className = 'size-32' }: BrandLogoProps) {
 
   if (brand.startsWith('@')) {
     return <NpmLogo className={className} />;
+  }
+
+  switch (group) {
+    case 'Packages':
+      return <NpmLogo className={className} />;
   }
 
   switch (brand) {
@@ -176,7 +189,10 @@ export function BrandLogo({ brand, className = 'size-32' }: BrandLogoProps) {
     case 'shadcn/ui':
       return <ShadcnUiLogo className={className} />;
 
+    case 'Radix UI':
+      return <RadixUILogo className={className} />;
+
     default:
-      return <div className={cn('rounded bg-muted', className)} />;
+      return DefaultLogo;
   }
 }
