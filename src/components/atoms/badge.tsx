@@ -21,8 +21,8 @@ export function Badge({
         color === 'primary' && 'bg-primary/10 text-primary',
         color === 'neutral' && 'bg-muted text-foreground',
         size === 'small' && 'px-2.5 py-0.5 text-sm',
-        size === 'medium' && 'px-3 py-1 text-base font-bold',
-        size === 'large' && 'text-md px-3 py-2 font-bold',
+        size === 'medium' && 'px-3 py-1 text-base font-bold tracking-wide',
+        size === 'large' && 'text-md px-3 py-2 font-bold tracking-wider',
         className
       )}
       {...rest}
