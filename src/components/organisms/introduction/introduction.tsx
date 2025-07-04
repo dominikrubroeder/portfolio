@@ -1,4 +1,5 @@
 import {
+  Button,
   ContactButton,
   GitHubButton,
   LinkedInButton
@@ -9,6 +10,7 @@ import {
   MyBackgroundAccordion,
   TechStackAccordion
 } from '@/components/organisms/introduction';
+import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
 export function Introduction() {
   return (
@@ -39,7 +41,12 @@ export function Introduction() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <ContactButton withLabel />
+          <Button href="/frontend-vision">
+            <span>Explore Frontend Vision UI</span>
+            <ArrowRightIcon />
+          </Button>
+
+          <ContactButton />
 
           <div className="sm:hidden">
             <GitHubButton />
