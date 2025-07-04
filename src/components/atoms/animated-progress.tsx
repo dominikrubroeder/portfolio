@@ -17,7 +17,7 @@ interface AnimatedProgressProps {
   backgroundColor?: 'bg-muted' | string;
 }
 
-export default function AnimatedProgress({
+export function AnimatedProgress({
   size = 200,
   strokeWidth = 15,
   progress = 75,

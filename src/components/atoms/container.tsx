@@ -5,13 +5,13 @@ import { cn } from '@/lib/utils';
 
 export function Container({
   as = 'div',
-  maxWidth = 'container',
+  size = 'container',
   className,
   children,
   ...rest
 }: {
   as?: HTMLTag;
-  maxWidth?: 'container' | 'readable-container';
+  size?: 'container' | 'readable-container';
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLElement>) {
@@ -20,9 +20,9 @@ export function Container({
   return (
     <Comp
       className={cn(
-        'mx-auto scroll-mt-24 px-4 md:scroll-mt-28 lg:px-0',
-        maxWidth === 'container' && 'max-w-(--container)',
-        maxWidth === 'readable-container' && 'max-w-(--readable-container)',
+        'mx-auto scroll-mt-24 px-4 md:scroll-mt-28',
+        size === 'container' && 'max-w-(--container)',
+        size === 'readable-container' && 'max-w-(--readable-container)',
         className
       )}
       {...rest}

@@ -65,7 +65,7 @@ export function Marker({
           className={cn(
             'absolute -top-1 -left-2 -z-10 m-1 h-full opacity-0',
 
-            color === 'primary' && 'bg-primary',
+            color === 'primary' && 'bg-primary text-primary-foreground',
             color === 'yellow' && 'bg-signal-yellow',
             color === 'red' && 'bg-red-200',
             color === 'green' && 'bg-green-200',
@@ -104,7 +104,7 @@ export function Marker({
         color === 'red' && 'bg-red-200',
         color === 'green' && 'bg-green-200',
         color === 'purple' && 'bg-purple-200',
-        color === 'primary' && 'bg-primary',
+        color === 'primary' && 'bg-primary text-primary-foreground',
         className
       )}
     >
