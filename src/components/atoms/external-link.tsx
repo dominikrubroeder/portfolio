@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
+
+import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
-import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 
 export function ExternalLink({
   href,

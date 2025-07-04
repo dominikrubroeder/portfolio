@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 
+import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 import {
   AlgoliaLogo,
   ChromeLogo,
@@ -38,7 +39,6 @@ import {
   XingLogo
 } from '@/components/atoms/logo';
 
-import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 
 interface BrandLogoProps extends LogoProps {
   brand: string;

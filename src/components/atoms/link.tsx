@@ -1,7 +1,11 @@
-import NextLink, { LinkProps } from 'next/link';
-import { cn } from '@/lib/utils';
-import { AnchorHTMLAttributes, ReactNode } from 'react';
+import type { AnchorHTMLAttributes, ReactNode } from 'react';
+
+import type { LinkProps } from 'next/link';
+import NextLink from 'next/link';
+
 import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/react/16/solid';
+
+import { cn } from '@/lib/utils';
 
 export default function Link({
   variant = 'underline',

@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 
+import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
+
 import { cn } from '@/lib/utils';
 
-import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 import {
   Button,
   ContactButton,

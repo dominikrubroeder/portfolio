@@ -1,4 +1,3 @@
-import type { Tools } from '@/components/organisms/tools/types';
 import {
   CraftLogo,
   FigmaLogo,
@@ -6,6 +5,7 @@ import {
   GitlabLogo,
   WebstormLogo
 } from '@/components/atoms/logo';
+import type { Tools } from '@/components/organisms/tools/types';
 
 export const mainTools = [
   {

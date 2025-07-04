@@ -1,5 +1,6 @@
-import { mainSocials } from '@/components/organisms/socials';
 import Link from 'next/link';
+
+import { mainSocials } from '@/components/organisms/socials';
 
 export function Socials() {
   return (

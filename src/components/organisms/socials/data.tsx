@@ -1,5 +1,5 @@
-import { LinkedinLogo, XingLogo } from '@/components/atoms/logo';
 import { InstagramLogo } from '@/components/atoms/img';
+import { LinkedinLogo, XingLogo } from '@/components/atoms/logo';
 
 export const mainSocials = [
   {

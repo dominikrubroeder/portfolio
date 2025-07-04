@@ -1,6 +1,7 @@
-import { LogoProps } from '@/components/atoms/logo/types';
 import { cn } from '@/lib/utils';
+
 import { defaultIconSize } from '@/components/atoms/logo/config';
+import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function RadixUILogo({ className }: LogoProps) {
   return (

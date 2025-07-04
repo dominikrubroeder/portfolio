@@ -1,10 +1,11 @@
 import Link from 'next/link';
 
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+
 import { Badge } from '@/components/atoms/badge';
+import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import { Ul } from '@/components/atoms/ul';
-import { BrandLogo } from '@/components/atoms/brand-logo';
 import { projects } from '@/components/organisms/projects/data';
 
 export function Projects() {

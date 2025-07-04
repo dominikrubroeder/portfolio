@@ -1,8 +1,11 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-import { ReactNode, useState } from 'react';
+import type { ReactNode} from 'react';
+import { useState } from 'react';
+
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
+
+import { cn } from '@/lib/utils';
 
 export function Accordion({
   title,

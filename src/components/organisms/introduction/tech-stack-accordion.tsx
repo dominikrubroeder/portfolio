@@ -1,6 +1,9 @@
-import { Button } from '@/components/atoms/button';
 import React from 'react';
+
 import { cn } from '@/lib/utils';
+
+import { Accordion } from '@/components/atoms/accordion';
+import { Button } from '@/components/atoms/button';
 import {
   MotionLogo,
   NextjsLogo,
@@ -9,7 +12,6 @@ import {
   TypeScriptLogo
 } from '@/components/atoms/logo';
 import { Ul } from '@/components/atoms/ul';
-import { Accordion } from '@/components/atoms/accordion';
 
 export const techStackAccordion = [
   {

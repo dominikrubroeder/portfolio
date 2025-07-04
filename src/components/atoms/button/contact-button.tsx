@@ -1,6 +1,7 @@
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
+
 import { cn } from '@/lib/utils';
 
-import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/atoms/button';
 
 export function ContactButton({ withLabel }: { withLabel?: boolean }) {

@@ -1,5 +1,5 @@
-import type { Book } from '@/components/organisms/introduction/books/types';
 import AnimatedProgress from '@/components/atoms/animated-progress';
+import type { Book } from '@/components/organisms/introduction/books/types';
 
 export function Book({ book }: { book: Book }) {
   return (

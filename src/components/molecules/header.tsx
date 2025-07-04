@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Avatar from '@/components/atoms/avatar';
 import { GitHubButton, LinkedInButton } from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';

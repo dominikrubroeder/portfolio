@@ -1,7 +1,7 @@
-import { FaqWhatIsAUxEngineer } from '@/components/organisms/faq/faq-what-is-a-ux-engineer';
+import { FaqDesignEngineerVsUxEngineer } from '@/components/organisms/faq/faq-design-engineer-vs-ux-engineer';
 import { FaqUxDesigner } from '@/components/organisms/faq/faq-ux-designer';
 import { FaqUxEngineer } from '@/components/organisms/faq/faq-ux-engineer';
-import { FaqDesignEngineerVsUxEngineer } from '@/components/organisms/faq/faq-design-engineer-vs-ux-engineer';
+import { FaqWhatIsAUxEngineer } from '@/components/organisms/faq/faq-what-is-a-ux-engineer';
 
 export function FAQ() {
   return (

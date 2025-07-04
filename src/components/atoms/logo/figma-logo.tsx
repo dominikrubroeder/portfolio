@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+
 import { defaultIconSize } from '@/components/atoms/logo/config';
 
 export function FigmaLogo({ className }: { className?: string }) {

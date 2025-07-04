@@ -1,9 +1,12 @@
 import Link from 'next/link';
+
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
+
 import { cn } from '@/lib/utils';
-import { Book, books } from '@/components/organisms/introduction/books';
-import { Ul } from '@/components/atoms/ul';
+
 import { Accordion } from '@/components/atoms/accordion';
+import { Ul } from '@/components/atoms/ul';
+import { Book, books } from '@/components/organisms/introduction/books';
 
 export function BooksAccordion({ className }: { className?: string }) {
   return (

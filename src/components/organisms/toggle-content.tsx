@@ -1,9 +1,13 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
-import { Button } from '@/components/atoms/button';
+import type { ReactNode} from 'react';
+import { useState } from 'react';
+
 import { MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
+
 import { cn } from '@/lib/utils';
+
+import { Button } from '@/components/atoms/button';
 
 export function ToggleContent({
   label,

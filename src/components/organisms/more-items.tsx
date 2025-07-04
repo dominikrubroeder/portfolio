@@ -1,17 +1,22 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
-import { Button } from '@/components/atoms/button';
-import { BrandLogo } from '@/components/atoms/brand-logo';
+
+import Link from 'next/link';
+
+
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
-import { ExperienceBar } from '@/components/atoms/experience-bar';
-import { Tool } from '@/components/organisms/tools/types';
-import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
-import { Expandable } from '@/components/molecules/expandable';
-import { Technology } from '@/components/organisms/technologies/types';
+
+import { BrandLogo } from '@/components/atoms/brand-logo';
+import { Button } from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';
+import { ExperienceBar } from '@/components/atoms/experience-bar';
+import { Expandable } from '@/components/molecules/expandable';
+import type { Technology } from '@/components/organisms/technologies/types';
+import type { Tool } from '@/components/organisms/tools/types';
+
+import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
 
 export default function MoreItems({
   items,

@@ -2,8 +2,8 @@ import { Accordion } from '@/components/atoms/accordion';
 import { Badge } from '@/components/atoms/badge';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
-import { Ul } from '@/components/atoms/ul';
 import { Markup } from '@/components/atoms/markup';
+import { Ul } from '@/components/atoms/ul';
 
 export function MyBackgroundAccordion() {
   return (

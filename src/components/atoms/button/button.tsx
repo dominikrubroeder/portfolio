@@ -1,4 +1,5 @@
-import { HTMLAttributeAnchorTarget, ReactNode } from 'react';
+import type { HTMLAttributeAnchorTarget, ReactNode } from 'react';
+
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';

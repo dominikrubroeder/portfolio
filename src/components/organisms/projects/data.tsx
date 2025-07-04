@@ -1,6 +1,6 @@
 import { MediawaveLogo } from '@/components/atoms/logo';
-import { tools } from '@/components/organisms/tools';
 import { technologies } from '@/components/organisms/technologies';
+import { tools } from '@/components/organisms/tools';
 
 export const projects = [
   {

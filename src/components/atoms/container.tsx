@@ -1,6 +1,7 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
+
+import type { HTMLTag } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { HTMLTag } from '@/lib/types';
 
 export function Container({
   as = 'div',
@@ -10,7 +11,7 @@ export function Container({
   ...rest
 }: {
   as?: HTMLTag;
-  maxWidth: 'container' | 'readable-container';
+  maxWidth?: 'container' | 'readable-container';
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLElement>) {

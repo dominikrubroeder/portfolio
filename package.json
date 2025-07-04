@@ -8,6 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:check": "eslint . --ext .js,.jsx,.ts,.tsx --no-cache",
     "format": "prettier --write .",
     "upgrade-next@latest": "npm i next@latest eslint-config-next@latest --legacy-peer-deps --save-exact",
     "upgrade-react@latest": "npm i react@latest react-dom@latest @types/react@latest @types/react-dom@latest --legacy-peer-deps --save-exact",

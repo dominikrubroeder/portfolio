@@ -1,5 +1,6 @@
-import { defaultIconSize, type LogoProps } from '@/components/atoms/logo';
 import { cn } from '@/lib/utils';
+
+import { defaultIconSize, type LogoProps } from '@/components/atoms/logo';
 
 export function NpmLogo({ className }: LogoProps) {
   return (

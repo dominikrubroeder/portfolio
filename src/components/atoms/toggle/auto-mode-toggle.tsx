@@ -1,7 +1,8 @@
 'use client';
 
-import { Toggle } from '@/components/atoms/toggle';
 import { cn } from '@/lib/utils';
+
+import { Toggle } from '@/components/atoms/toggle';
 import { useApp } from '@/components/organisms/app';
 
 export function AutoModeToggle({ className }: { className?: string }) {

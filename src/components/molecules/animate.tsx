@@ -1,8 +1,12 @@
 'use client';
 
-import { ReactNode, useEffect } from 'react';
+import type { ReactNode} from 'react';
+import { useEffect } from 'react';
+
 import { motion, useAnimate, useInView } from 'motion/react';
+
 import { cn } from '@/lib/utils';
+
 import { useApp } from '@/components/organisms/app';
 
 export default function Animate({

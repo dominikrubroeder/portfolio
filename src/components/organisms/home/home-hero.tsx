@@ -1,5 +1,5 @@
-import { Container } from '@/components/atoms/container';
 import { Badge } from '@/components/atoms/badge';
+import { Container } from '@/components/atoms/container';
 
 export function HomeHero() {
   return (

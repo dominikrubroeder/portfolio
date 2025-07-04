@@ -1,5 +1,6 @@
-import { cn } from '@/lib/utils';
 import Image from 'next/image';
+
+import { cn } from '@/lib/utils';
 
 import { defaultIconSize } from '@/components/atoms/logo/config';
 
