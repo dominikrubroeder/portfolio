@@ -1,4 +1,8 @@
-import { ChevronDownIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import {
+  ChevronDownIcon,
+  SparklesIcon,
+  SunIcon
+} from '@heroicons/react/24/outline';
 
 import { Button } from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';
@@ -15,7 +19,8 @@ export default async function FrontendVisionPage() {
         <div className="mx-auto max-w-[60rem]">
           <div className="absolute -top-12 left-1/2 flex -translate-x-1/2 items-center justify-center gap-4">
             <Button variant="ghost">
-              Light <ChevronDownIcon className="size-4" />
+              <SunIcon className="size-5" /> Light
+              <ChevronDownIcon className="size-4" />
             </Button>
 
             <ColorShowcase />

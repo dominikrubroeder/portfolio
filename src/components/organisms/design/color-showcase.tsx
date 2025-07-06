@@ -21,11 +21,11 @@ export function ColorShowcase({ className }: { className?: string }) {
       </span>
 
       <span
-        className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border-primary bg-primary hover:scale-110 hover:border-primary active:scale-100"
+        className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border-[#7d54f8] bg-[#7d54f8] hover:scale-110 hover:border-[#7d54f8] active:scale-100"
         onClick={() => setTheme('primary')}
       >
         {theme === 'primary' && (
-          <CheckIcon className="size-4 shrink-0 text-primary-foreground" />
+          <CheckIcon className="size-4 shrink-0 text-white" />
         )}
       </span>
 
