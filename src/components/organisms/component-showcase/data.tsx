@@ -17,10 +17,15 @@ import { Markup } from '@/components/atoms/markup';
 import { Toggle } from '@/components/atoms/toggle';
 import { Tooltip } from '@/components/atoms/tooltip';
 import { Ul } from '@/components/atoms/ul';
+import Animate from '@/components/molecules/animate';
+import { DesignDrawer } from '@/components/organisms/design-drawer';
+import { Drawer } from '@/components/organisms/drawer';
+import { Introduction } from '@/components/organisms/introduction';
 
 export interface ComponentGroup {
   groupName: string;
   groupIcon: ReactNode;
+  layoutOption: '3-cols' | '2-cols' | 'rows';
   children: {
     animatable: boolean;
     componentName: string;
@@ -32,12 +37,13 @@ export const components: ComponentGroup[] = [
   {
     groupName: 'Atoms',
     groupIcon: <CircleIcon />,
+    layoutOption: '3-cols',
     children: [
       {
         animatable: false,
         componentName: 'Accordion',
         component: (
-          <Accordion title="Open me">
+          <Accordion title="You can open me">
             <p>Yes, i am a Accordion</p>
           </Accordion>
         )
@@ -135,21 +141,46 @@ export const components: ComponentGroup[] = [
   {
     groupName: 'Molecules',
     groupIcon: <CircleIcon />,
-    children: []
+    layoutOption: '2-cols',
+    children: [
+      {
+        animatable: true,
+        componentName: 'Animate',
+        component: (
+          <Animate direction="up">
+            <Button>Animate me in! 🚀</Button>
+          </Animate>
+        )
+      },
+      {
+        animatable: false,
+        componentName: 'Drawer',
+        component: <DesignDrawer />
+      }
+    ]
   },
   {
     groupName: 'Organisms',
     groupIcon: <CircleIcon />,
-    children: []
+    layoutOption: '2-cols',
+    children: [
+      {
+        animatable: false,
+        componentName: 'Introduction',
+        component: <Introduction />
+      }
+    ]
   },
   {
     groupName: 'Templates',
     groupIcon: <CircleIcon />,
+    layoutOption: 'rows',
     children: []
   },
   {
     groupName: 'Pages',
     groupIcon: <CircleIcon />,
+    layoutOption: 'rows',
     children: []
   }
 ];

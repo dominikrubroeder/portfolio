@@ -31,18 +31,12 @@
     }
 }
 
-[data-theme='design'] {
-    --foreground: hsl(0 0% 8%);
-    --background: hsl(0 0% 100%);
-    --muted: hsl(33 100% 50%);
-    --border: hsl(0 0% 8%);
+[data-theme='orange'] {
+    --primary: hsl(0 92% 65%);
 }
 
-[data-theme='dev'] {
-    --background: hsl(0 0% 8%);
-    --foreground: hsl(0 0% 100%);
-    --muted: hsl(0 0% 0%);
-    --border: hsl(0 0% 12%);
+[data-theme='blue'] {
+    --primary: hsl(209, 77%, 41%);
 }
 
 @theme inline {

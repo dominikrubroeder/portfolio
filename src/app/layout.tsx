@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Footer } from '@/components/molecules/footer';
 import { Header } from '@/components/molecules/header';
+import { AppProvider } from '@/components/organisms/app';
 
 import type { Metadata } from 'next';
 
@@ -34,14 +35,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth bg-background" data-theme="auto">
-      <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+    <AppProvider>
+      <html lang="en" className="scroll-smooth bg-background" data-theme="auto">
+        <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </AppProvider>
   );
 }

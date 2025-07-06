@@ -42,7 +42,7 @@ export function Introduction() {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <Button href="/frontend-vision">
+          <Button href="/frontend-vision-ui">
             <span>Explore Frontend Vision UI</span>
             <ArrowRightIcon />
           </Button>

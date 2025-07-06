@@ -1,15 +1,9 @@
 'use client';
 
-import type {
-  ReactNode} from 'react';
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useState
-} from 'react';
+import type { ReactNode } from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
 
-export type Theme = 'dev' | 'design' | 'auto';
+export type Theme = 'primary' | 'blue' | 'orange';
 
 interface ThemeContextType {
   theme: Theme;
@@ -19,7 +13,7 @@ interface ThemeContextType {
 const AppContext = createContext<ThemeContextType | null>(null);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>('auto');
+  const [theme, setTheme] = useState<Theme>('primary');
 
   const handleTheme = useCallback((theme: Theme) => {
     setTheme(theme);
