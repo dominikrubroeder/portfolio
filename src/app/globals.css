@@ -33,10 +33,12 @@
 
 [data-theme='orange'] {
     --primary: hsl(0 92% 65%);
+    --primary-hover: hsl(0 92% 69%);
 }
 
 [data-theme='blue'] {
-    --primary: hsl(209, 77%, 41%);
+    --primary: hsl(221.33 97.1% 53.5%);
+    --primary-hover: hsl(221.33 97.1% 57.5%);
 }
 
 @theme inline {

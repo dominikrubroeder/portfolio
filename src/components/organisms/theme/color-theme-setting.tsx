@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 import { useApp } from '@/components/organisms/app';
 
-export function ColorShowcase({ className }: { className?: string }) {
+export function ColorThemeSetting({ className }: { className?: string }) {
   const { setTheme, theme } = useApp();
 
   return (

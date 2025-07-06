@@ -36,7 +36,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <AppProvider>
-      <html lang="en" className="scroll-smooth bg-background" data-theme="auto">
+      <html
+        lang="en"
+        className="scroll-smooth bg-background"
+        data-appearance="dark"
+      >
         <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
           <Header />
           <main>{children}</main>

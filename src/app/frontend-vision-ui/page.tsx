@@ -7,11 +7,14 @@ import {
 import { Button } from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';
 import { ComponentShowcase } from '@/components/organisms/component-showcase';
-import { ColorShowcase } from '@/components/organisms/design/color-showcase';
+import {
+  ColorThemeSetting,
+  FontSizeThemeSetting
+} from '@/components/organisms/theme';
 
 export default async function FrontendVisionPage() {
   return (
-    <div className="space-y-12">
+    <div className="animate-fade-up-1rem space-y-12">
       <Container
         as="section"
         className="relative mt-18 space-y-4 md:text-center"
@@ -22,20 +25,8 @@ export default async function FrontendVisionPage() {
               <SunIcon className="size-5" /> Light
               <ChevronDownIcon className="size-4" />
             </Button>
-
-            <ColorShowcase />
-
-            <div>
-              <Button variant="ghost" className="text-sm">
-                Aa
-              </Button>
-              <Button variant="ghost" className="underline">
-                Aa
-              </Button>
-              <Button variant="ghost" className="text-lg">
-                Aa
-              </Button>
-            </div>
+            <ColorThemeSetting />
+            <FontSizeThemeSetting />
           </div>
           <h1>
             The joy of coding, with design. Envision your frontend like lego
