@@ -1,15 +1,13 @@
 'use client';
 
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 
 import { motion, useAnimate, useInView } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
-import { useApp } from '@/components/organisms/app';
-
-export default function Animate({
+export function Animate({
   direction = 'up',
   delay = 0.16,
   className,
@@ -25,9 +23,6 @@ export default function Animate({
     once: true,
     amount: 0.04 // Trigger when 4% of the element is in view
   });
-  const { theme } = useApp();
-
-  // Define animation variants based on direction
   const variants = {
     hidden: {
       opacity: 0,
@@ -41,23 +36,21 @@ export default function Animate({
       transition: {
         duration: 0.8,
         delay,
-        ease: [0.22, 1, 0.36, 1] // Custom ease curve
+        ease: [0.22, 1, 0.36, 1]
       }
     }
   };
 
   useEffect(() => {
-    console.log('isInView', isInView, 'theme', theme);
-
-    if (isInView && theme === 'design') {
+    if (isInView) {
       animate(scope.current, isInView ? variants.visible : variants.hidden);
     }
-  }, [animate, isInView, scope, theme, variants.visible, variants.hidden]);
+  }, [animate, isInView, scope, variants.visible, variants.hidden]);
 
   return (
     <div ref={scope}>
       <motion.div
-        initial={theme === 'design' ? 'hidden' : 'visible'}
+        initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
         variants={variants}
         className={cn(className)}
