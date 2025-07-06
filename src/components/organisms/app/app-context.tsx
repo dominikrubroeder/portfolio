@@ -1,7 +1,6 @@
 'use client';
 
-import type {
-  ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import React, {
   createContext,
   use,
@@ -29,11 +28,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('primary');
   const [fontSize, setFontSize] = useState<FontSize>('md');
   const [appearance, setAppearance] = useState<Appearance>('light');
-
-  useEffect(() => {
-    const localTheme = localStorage.getItem('dr-theme');
-    if (localTheme && localTheme !== theme) handleTheme(localTheme as Theme);
-  }, []);
 
   const handleTheme = useCallback((theme: Theme) => {
     setTheme(theme);
@@ -64,9 +58,20 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       }
     });
 
+    htmlTag.style.fontSize =
+      fontSize === 'sm'
+        ? '90%'
+        : fontSize === 'md'
+          ? '100%'
+          : fontSize === 'lg'
+            ? '110%'
+            : '100%';
+
     htmlTag.classList.add(`font-size-${fontSize}`);
 
     htmlTag.dataset.fontSize = fontSize;
+
+    localStorage['dr-font-size'] = fontSize;
   }, []);
 
   const handleAppearance = useCallback((appearance: Appearance) => {
@@ -84,6 +89,14 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
     htmlTag.dataset.appearance = appearance;
   }, []);
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem('dr-theme');
+    const localFontSize = localStorage.getItem('dr-font-size');
+    if (localTheme && localTheme !== theme) handleTheme(localTheme as Theme);
+    if (localFontSize && localFontSize !== fontSize)
+      handleFontSize(localFontSize as FontSize);
+  }, [fontSize, handleFontSize, handleTheme, theme]);
 
   const value = {
     theme,
