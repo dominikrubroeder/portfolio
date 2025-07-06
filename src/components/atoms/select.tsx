@@ -21,11 +21,14 @@ export function Select({
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string>(initialValue || '');
 
-  const handleSelection = useCallback((value: string) => {
-    setValue(value);
-    setIsOpen(false);
-    onValueChange ? onValueChange() : null;
-  }, []);
+  const handleSelection = useCallback(
+    (value: string) => {
+      setValue(value);
+      setIsOpen(false);
+      onValueChange ? onValueChange() : null;
+    },
+    [onValueChange]
+  );
 
   return (
     <div className="relative w-max">

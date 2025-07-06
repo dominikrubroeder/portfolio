@@ -6,16 +6,16 @@ import { Toggle } from '@/components/atoms/toggle';
 import { useApp } from '@/components/organisms/app';
 
 export function AutoModeToggle({ className }: { className?: string }) {
-  const { theme, setTheme } = useApp();
+  const { appearance, setAppearance } = useApp();
 
   return (
     <Toggle
       label="Auto mode"
       onClick={() => {
-        setTheme('auto');
+        setAppearance('auto');
       }}
       className={cn('shrink-0 rounded border p-4', className)}
-      enabled={theme === 'auto'}
+      enabled={appearance === 'auto'}
     />
   );
 }

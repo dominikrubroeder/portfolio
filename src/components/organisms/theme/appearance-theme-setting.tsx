@@ -13,7 +13,7 @@ const options = [
 ];
 
 export function AppearanceThemeSetting() {
-  const { appearance, setAppearance } = useApp();
+  const { appearance } = useApp();
 
   return <Select initialValue={appearance} options={options} />;
 }
