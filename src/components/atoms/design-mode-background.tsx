@@ -3,10 +3,10 @@
 import { motion } from 'motion/react';
 
 import { Shapes } from '@/components/atoms/svg';
-import { useApp } from '@/components/organisms/app';
+import { useTheme } from '@/components/organisms/theme';
 
 export default function DesignModeBackground() {
-  const { theme } = useApp();
+  const { theme } = useTheme();
 
   if (theme !== 'design') return null;
 

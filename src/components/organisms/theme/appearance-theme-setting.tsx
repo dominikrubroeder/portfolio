@@ -1,7 +1,7 @@
 'use client';
 
 import { Select } from '@/components/atoms/select';
-import { useApp } from '@/components/organisms/app';
+import { useTheme } from '@/components/organisms/theme';
 
 const options = [
   { value: 'light', label: 'Light' },
@@ -13,7 +13,7 @@ const options = [
 ];
 
 export function AppearanceThemeSetting() {
-  const { appearance } = useApp();
+  const { appearance } = useTheme();
 
   return <Select initialValue={appearance} options={options} />;
 }

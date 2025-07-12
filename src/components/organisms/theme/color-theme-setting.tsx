@@ -4,10 +4,10 @@ import { CheckIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
 
-import { useApp } from '@/components/organisms/app';
+import { useTheme } from '@/components/organisms/theme';
 
 export function ColorThemeSetting({ className }: { className?: string }) {
-  const { setTheme, theme } = useApp();
+  const { setTheme, theme } = useTheme();
 
   return (
     <div className={cn('flex gap-2', className)}>

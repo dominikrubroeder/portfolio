@@ -1,8 +1,26 @@
-import type { HTMLAttributeAnchorTarget, ReactNode } from 'react';
+import type {
+  HTMLAttributeAnchorTarget,
+  HTMLAttributes,
+  ReactNode
+} from 'react';
 
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
+
+export interface ButtonProps
+  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+  variant?: 'contained' | 'ghost' | 'link';
+  size?: 'tiny' | 'small' | 'medium' | 'large';
+  className?: string;
+  href?: string;
+  target?: HTMLAttributeAnchorTarget;
+  children: ReactNode;
+}
+
+export interface ReducedButtonProps extends Omit<ButtonProps, 'children'> {
+  children?: ReactNode;
+}
 
 export function Button({
   variant = 'contained',
@@ -12,14 +30,7 @@ export function Button({
   className,
   children,
   ...rest
-}: {
-  variant?: 'contained' | 'ghost' | 'link';
-  size?: 'tiny' | 'small' | 'medium' | 'large';
-  className?: string;
-  href?: string;
-  target?: HTMLAttributeAnchorTarget;
-  children: ReactNode;
-} & React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>) {
+}: ButtonProps) {
   const classNames = cn(
     'group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center transition-all',
     variant === 'contained' &&

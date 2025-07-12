@@ -15,18 +15,21 @@ export function ComponentShowcase() {
         {components.map((componentGroup) => (
           <li
             key={componentGroup.groupName}
-            className="mx-auto max-w-(--readable-container)"
+            className="mx-auto max-w-(--readable-container) space-y-5"
           >
-            <div>
+            <div className="space-y-1">
               <h2>{componentGroup.groupName}</h2>
+              <p>{componentGroup.groupDescription}</p>
             </div>
+
             <ul
               className={cn(
                 componentGroup.layoutOption === 'rows' && 'space-y-2',
                 componentGroup.layoutOption !== 'rows' &&
                   'grid gap-x-4 gap-y-2',
-                componentGroup.layoutOption === '2-cols' && 'grid-cols-2',
-                componentGroup.layoutOption === '3-cols' && 'grid-cols-3'
+                componentGroup.layoutOption === '2-cols' && 'md:grid-cols-2',
+                componentGroup.layoutOption === '3-cols' &&
+                  'sm:grid-cols-2 md:grid-cols-3'
               )}
             >
               {componentGroup.children.map((component, index) => (
@@ -42,7 +45,7 @@ export function ComponentShowcase() {
                       </Button>
                     )}
 
-                    <div className="flex min-h-[14rem] items-center justify-center overflow-hidden overflow-y-auto rounded border p-4 px-8">
+                    <div className="flex min-h-[14rem] items-center justify-center overflow-hidden overflow-y-auto rounded border p-4">
                       {component.component}
                     </div>
 

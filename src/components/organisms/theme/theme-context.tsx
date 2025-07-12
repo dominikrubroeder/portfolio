@@ -9,25 +9,25 @@ import React, {
   useState
 } from 'react';
 
-export type Theme = 'primary' | 'blue' | 'orange';
-export type FontSize = 'sm' | 'md' | 'lg';
-export type Appearance = 'light' | 'dark' | 'auto';
+export type Theme = 'primary' | 'blue' | 'orange' | 'design' | 'dev';
+export type ThemeFontSize = 'sm' | 'md' | 'lg';
+export type ThemeAppearance = 'light' | 'dark' | 'auto';
 
 interface ThemeContextType {
   theme: Theme;
-  fontSize: FontSize;
-  appearance: 'light' | 'dark' | 'auto';
+  fontSize: ThemeFontSize;
+  appearance: ThemeAppearance;
   setTheme: (theme: Theme) => void;
-  setFontSize: (fontSize: FontSize) => void;
-  setAppearance: (appearance: Appearance) => void;
+  setFontSize: (fontSize: ThemeFontSize) => void;
+  setAppearance: (appearance: ThemeAppearance) => void;
 }
 
-const AppContext = createContext<ThemeContextType | null>(null);
+const ThemeContext = createContext<ThemeContextType | null>(null);
 
-export const AppProvider = ({ children }: { children: ReactNode }) => {
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('primary');
-  const [fontSize, setFontSize] = useState<FontSize>('md');
-  const [appearance, setAppearance] = useState<Appearance>('light');
+  const [fontSize, setFontSize] = useState<ThemeFontSize>('md');
+  const [appearance, setAppearance] = useState<ThemeAppearance>('light');
 
   const handleTheme = useCallback((theme: Theme) => {
     setTheme(theme);
@@ -47,7 +47,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     localStorage['dr-theme'] = theme;
   }, []);
 
-  const handleFontSize = useCallback((fontSize: FontSize) => {
+  const handleFontSize = useCallback((fontSize: ThemeFontSize) => {
     setFontSize(fontSize);
 
     const htmlTag = document.documentElement;
@@ -74,7 +74,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     localStorage['dr-font-size'] = fontSize;
   }, []);
 
-  const handleAppearance = useCallback((appearance: Appearance) => {
+  const handleAppearance = useCallback((appearance: ThemeAppearance) => {
     setAppearance(appearance);
 
     const htmlTag = document.documentElement;
@@ -95,7 +95,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     const localFontSize = localStorage.getItem('dr-font-size');
     if (localTheme && localTheme !== theme) handleTheme(localTheme as Theme);
     if (localFontSize && localFontSize !== fontSize)
-      handleFontSize(localFontSize as FontSize);
+      handleFontSize(localFontSize as ThemeFontSize);
   }, [fontSize, handleFontSize, handleTheme, theme]);
 
   const value = {
@@ -107,14 +107,16 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     setAppearance: handleAppearance
   };
 
-  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+  return (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  );
 };
 
-export const useApp = (): ThemeContextType => {
-  const context = use(AppContext);
+export const useTheme = (): ThemeContextType => {
+  const context = use(ThemeContext);
 
   if (context === null) {
-    throw new Error('useApp must be used within a ThemeProvider');
+    throw new Error('useTheme: useTheme must be used within a ThemeProvider');
   }
 
   return context;

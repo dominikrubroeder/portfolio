@@ -3,10 +3,10 @@
 import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/atoms/button';
-import { useApp } from '@/components/organisms/app';
+import { useTheme } from '@/components/organisms/theme';
 
 export function FontSizeThemeSetting({ className }: { className?: string }) {
-  const { fontSize, setFontSize } = useApp();
+  const { fontSize, setFontSize } = useTheme();
 
   return (
     <div className={cn(className)}>

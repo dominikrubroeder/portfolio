@@ -6,6 +6,7 @@ import {
   GitHubButton,
   LinkedInButton
 } from '@/components/atoms/button';
+import { ButtonGroup } from '@/components/molecules/button-group';
 import {
   BooksAccordion,
   HowIWorkAccordion,
@@ -22,8 +23,8 @@ export function Introduction() {
         <div className="space-y-3 text-wrap">
           <h3 className="text-base font-bold">
             My work is committed to the frontend. I like to create and build
-            dynamic interfaces that are designed to be for a scalable and
-            interactive web.
+            dynamic interfaces that are designed to be for a interactive and
+            scalable web.
           </h3>
 
           <p>
@@ -35,13 +36,19 @@ export function Introduction() {
 
           <p>
             One component can connect to the next, and the next, and the next,
-            and all of a sudden we have a complete, streamlined and holistic
-            user interface, that can be adjusted in color, size, spacing,
-            typography and other theme-related settings from some root files.
+            and all of a sudden we have a complete, streamlined, holistic and
+            homogenous user interface, that can be adjusted in color, size,
+            spacing, typography and other theme-related settings from some root
+            files.
+          </p>
+
+          <p>
+            This is also, how <i>Frontend Vision UI</i> was created, and thought
+            about. It&#39;s my take on components, living in the design system:
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
+        <ButtonGroup>
           <Button href="/frontend-vision-ui">
             <span>Explore Frontend Vision UI</span>
             <ArrowRightIcon />
@@ -49,11 +56,10 @@ export function Introduction() {
 
           <ContactButton />
 
-          <div className="sm:hidden">
-            <GitHubButton />
-            <LinkedInButton />
-          </div>
-        </div>
+          <GitHubButton className="sm:hidden" />
+
+          <LinkedInButton className="sm:hidden" />
+        </ButtonGroup>
 
         <ul className="space-y-6">
           <li>

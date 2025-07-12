@@ -7,7 +7,7 @@ export function Markup({
   color = 'neutral',
   size = 'medium',
   as = 'div',
-  withBackticks = true,
+  backticks = true,
   className,
   children,
   ...rest
@@ -15,7 +15,7 @@ export function Markup({
   color?: 'primary' | 'neutral' | 'muted';
   size?: 'small' | 'medium' | 'large';
   as?: HTMLTag;
-  withBackticks?: boolean;
+  backticks?: boolean;
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) {
@@ -34,9 +34,9 @@ export function Markup({
       )}
       {...rest}
     >
-      {withBackticks && '`'}
+      {backticks && '`'}
       {children}
-      {withBackticks && '`'}
+      {backticks && '`'}
     </Comp>
   );
 }

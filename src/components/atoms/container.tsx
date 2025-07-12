@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 export function Container({
   as = 'div',
-  size = 'container',
+  size = 'readable-container',
   className,
   children,
   ...rest
@@ -22,7 +22,7 @@ export function Container({
       className={cn(
         'mx-auto scroll-mt-24 px-4 md:scroll-mt-28',
         size === 'container' && 'max-w-(--container)',
-        size === 'readable-container' && 'max-w-(--readable-container)',
+        size === 'readable-container' && 'max-w-(--readable-container) xl:px-0',
         className
       )}
       {...rest}

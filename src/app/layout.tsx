@@ -1,14 +1,22 @@
 import './globals.css';
 import type { ReactNode } from 'react';
 
+import { JetBrains_Mono } from 'next/font/google';
+
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Footer } from '@/components/molecules/footer';
 import { Header } from '@/components/molecules/header';
-import { AppProvider } from '@/components/organisms/app';
+import { ThemeProvider } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono'
+});
 
 export const metadata: Metadata = {
   title: 'Dominik Rubröder | UX Design Engineer',
@@ -35,10 +43,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <AppProvider>
+    <ThemeProvider>
       <html
         lang="en"
-        className="scroll-smooth bg-background"
+        className={`scroll-smooth bg-background ${jetbrainsMono.variable}`}
         data-appearance="dark"
       >
         <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
@@ -49,6 +57,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <SpeedInsights />
         </body>
       </html>
-    </AppProvider>
+    </ThemeProvider>
   );
 }

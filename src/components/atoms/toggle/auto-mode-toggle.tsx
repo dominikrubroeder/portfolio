@@ -3,10 +3,10 @@
 import { cn } from '@/lib/utils';
 
 import { Toggle } from '@/components/atoms/toggle';
-import { useApp } from '@/components/organisms/app';
+import { useTheme } from '@/components/organisms/theme';
 
 export function AutoModeToggle({ className }: { className?: string }) {
-  const { appearance, setAppearance } = useApp();
+  const { appearance, setAppearance } = useTheme();
 
   return (
     <Toggle

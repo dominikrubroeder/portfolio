@@ -1,62 +1,106 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import { useEffect } from 'react';
 
-import { motion, useAnimate, useInView } from 'motion/react';
+import { motion } from 'motion/react';
 
 import { cn } from '@/lib/utils';
+
+import type { Variants, ViewportOptions } from 'motion';
 
 export function Animate({
   direction = 'up',
   delay = 0.16,
+  viewport = { once: true, margin: '-50px' },
   className,
   children
 }: {
   direction: 'up' | 'left' | 'right' | 'down';
   delay?: number;
+  viewport?: ViewportOptions;
   className?: string;
   children: ReactNode;
 }) {
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(scope, {
-    once: true,
-    amount: 0.04 // Trigger when 4% of the element is in view
-  });
-  const variants = {
+  const fadeInUp: Variants = {
     hidden: {
       opacity: 0,
-      x: direction === 'left' ? -32 : direction === 'right' ? 32 : 0,
-      y: direction === 'up' ? 32 : direction === 'down' ? -32 : 0
+      y: 60
     },
     visible: {
       opacity: 1,
-      x: 0,
       y: 0,
       transition: {
-        duration: 0.8,
-        delay,
-        ease: [0.22, 1, 0.36, 1]
+        duration: 0.6,
+        ease: 'easeOut',
+        delay
       }
     }
   };
 
-  useEffect(() => {
-    if (isInView) {
-      animate(scope.current, isInView ? variants.visible : variants.hidden);
+  const fadeInDown: Variants = {
+    hidden: {
+      opacity: 0,
+      y: -60
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+        delay
+      }
     }
-  }, [animate, isInView, scope, variants.visible, variants.hidden]);
+  };
+
+  const fadeInLeft: Variants = {
+    hidden: {
+      opacity: 0,
+      x: -60
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+        delay
+      }
+    }
+  };
+
+  const fadeInRight: Variants = {
+    hidden: {
+      opacity: 0,
+      x: 60
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+        delay
+      }
+    }
+  };
+
+  const variants = {
+    up: fadeInUp,
+    down: fadeInDown,
+    left: fadeInLeft,
+    right: fadeInRight
+  };
 
   return (
-    <div ref={scope}>
-      <motion.div
-        initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
-        variants={variants}
-        className={cn(className)}
-      >
-        {children}
-      </motion.div>
-    </div>
+    <motion.div
+      variants={variants[direction]}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      className={cn(className)}
+    >
+      {children}
+    </motion.div>
   );
 }

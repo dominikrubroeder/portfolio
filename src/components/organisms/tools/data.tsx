@@ -1106,6 +1106,21 @@ export const tools: Tools = [
         logo: '',
         description: 'Delightful JavaScript Testing',
         knowledge: 'Used'
+      },
+      {
+        title: 'Playwright',
+        website: 'https://playwright.dev',
+        logo: '',
+        description: 'Reliable end-to-end testing for modern web apps',
+        knowledge: 'Not started'
+      },
+      {
+        title: 'cypress',
+        website: 'https://www.cypress.io',
+        logo: '',
+        description:
+          'Easily create tests for your modern web applications, debug them visually, and automatically run them in your continuous integration builds',
+        knowledge: 'Not started'
       }
     ]
   },
