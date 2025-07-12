@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/atoms/button';
 import { useTheme } from '@/components/organisms/theme';
 
-export function FontSizeThemeSetting({ className }: { className?: string }) {
+export function ThemeFontSizeSetting({ className }: { className?: string }) {
   const { fontSize, setFontSize } = useTheme();
 
   return (

@@ -11,7 +11,7 @@ export function Header() {
     <Container
       as="header"
       size="container"
-      className="sticky top-0 z-max flex items-center justify-between gap-4 border-b bg-background py-4 sm:relative sm:border-none lg:px-4"
+      className="sticky top-0 z-100 flex items-center justify-between gap-4 border-b bg-background py-4 sm:relative sm:border-none lg:px-4"
     >
       <div className="flex items-center gap-4">
         <Avatar

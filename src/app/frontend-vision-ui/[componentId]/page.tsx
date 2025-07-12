@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation';
 import { Breadcrumb } from '@/components/atoms/breadcrumb';
 import { Container } from '@/components/atoms/container';
 import { getComponent } from '@/components/organisms/component-showcase/helper';
-import { ModifyThemeDrawer } from '@/components/organisms/theme';
+import { ThemeModifyDrawer } from '@/components/organisms/theme';
 
 export default async function FVComponentPage({
   params
@@ -47,7 +47,7 @@ export default async function FVComponentPage({
       <Container as="section" size="readable-container">
         <div className="flex flex-wrap justify-between gap-4">
           <h1>{data.componentName}</h1>
-          <ModifyThemeDrawer buttonProps={{ size: 'small' }} buttonIconOnly />
+          <ThemeModifyDrawer buttonProps={{ size: 'small' }} buttonIconOnly />
         </div>
       </Container>
     </div>

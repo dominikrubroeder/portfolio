@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 import { useTheme } from '@/components/organisms/theme';
 
-export function ColorThemeSetting({ className }: { className?: string }) {
+export function ThemeColorSetting({ className }: { className?: string }) {
   const { setTheme, theme } = useTheme();
 
   return (

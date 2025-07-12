@@ -28,7 +28,7 @@ import {
 
 import { useMediaQuery } from '@/hooks/use-media-query';
 
-export function ModifyThemeDrawer({
+export function ThemeModifyDrawer({
   trigger,
   buttonProps,
   buttonIconOnly

@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
+import { useTheme } from '@/components/organisms/theme';
 
 import { useClipboard } from '@/hooks/use-clipboard';
 
@@ -29,6 +30,7 @@ export function CodeBlock({
   className?: string;
 }) {
   const { isCopied, copyToClipboard } = useClipboard({ timeout: 2000 });
+  const { appearance } = useTheme();
 
   const handleCopyToClipboard = useCallback(async () => {
     await copyToClipboard(code);
@@ -43,7 +45,11 @@ export function CodeBlock({
       )}
     >
       <span className="max-h-[65svh] overflow-auto">
-        <Highlight theme={themes.vsLight} code={code} language={language}>
+        <Highlight
+          theme={appearance === 'light' ? themes.vsLight : themes.vsDark}
+          code={code}
+          language={language}
+        >
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
             <pre
               className={cn('rounded p-4 font-mono', className)}

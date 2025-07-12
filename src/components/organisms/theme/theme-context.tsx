@@ -11,7 +11,7 @@ import React, {
 
 export type Theme = 'primary' | 'blue' | 'orange' | 'design' | 'dev';
 export type ThemeFontSize = 'sm' | 'md' | 'lg';
-export type ThemeAppearance = 'light' | 'dark' | 'auto';
+export type ThemeAppearance = 'light' | 'dark' | 'system';
 
 interface ThemeContextType {
   theme: Theme;
@@ -77,26 +77,65 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const handleAppearance = useCallback((appearance: ThemeAppearance) => {
     setAppearance(appearance);
 
-    const htmlTag = document.documentElement;
+    const htmlElement = document.documentElement;
 
-    htmlTag.classList.forEach((className) => {
+    htmlElement.classList.forEach((className) => {
       if (className.startsWith('appearance-')) {
-        htmlTag.classList.remove(className);
+        htmlElement.classList.remove(className);
       }
     });
 
-    htmlTag.classList.add(`appearance-${appearance}`);
+    htmlElement.classList.add(`appearance-${appearance}`);
 
-    htmlTag.dataset.appearance = appearance;
+    htmlElement.dataset.appearance = appearance;
+
+    localStorage['dr-appearance'] = appearance;
   }, []);
 
-  useEffect(() => {
+  const initTheme = useCallback(() => {
     const localTheme = localStorage.getItem('dr-theme');
+    if (
+      localTheme &&
+      (localTheme === 'primary' ||
+        localTheme === 'blue' ||
+        localTheme === 'orange' ||
+        localTheme === 'design' ||
+        localTheme === 'dev') &&
+      localTheme !== theme
+    )
+      handleTheme(localTheme as Theme);
+  }, [handleTheme, theme]);
+
+  const initAppearance = useCallback(() => {
+    const localAppearance = localStorage.getItem('dr-appearance');
+
+    if (
+      localAppearance &&
+      (localAppearance === 'dark' ||
+        localAppearance === 'light' ||
+        localAppearance === 'system') &&
+      localAppearance !== appearance
+    )
+      handleAppearance(localAppearance);
+  }, [appearance, handleAppearance]);
+
+  const initFontSize = useCallback(() => {
     const localFontSize = localStorage.getItem('dr-font-size');
-    if (localTheme && localTheme !== theme) handleTheme(localTheme as Theme);
-    if (localFontSize && localFontSize !== fontSize)
+    if (
+      localFontSize &&
+      (localFontSize === 'sm' ||
+        localFontSize === 'md' ||
+        localFontSize === 'lg') &&
+      localFontSize !== fontSize
+    )
       handleFontSize(localFontSize as ThemeFontSize);
-  }, [fontSize, handleFontSize, handleTheme, theme]);
+  }, [fontSize, handleFontSize]);
+
+  useEffect(() => {
+    initAppearance();
+    initTheme();
+    initFontSize();
+  }, [initAppearance, initFontSize, initTheme]);
 
   const value = {
     theme,

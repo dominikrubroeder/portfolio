@@ -1,5 +1,5 @@
-export { ColorThemeSetting } from './color-theme-setting';
-export { FontSizeThemeSetting } from './font-size-theme-setting';
-export { AppearanceThemeSetting } from './appearance-theme-setting';
-export { ModifyThemeDrawer } from './modify-theme-drawer';
+export { ThemeColorSetting } from './theme-color-setting';
+export { ThemeFontSizeSetting } from './theme-font-size-setting';
+export { ThemeAppearanceSetting } from './theme-appearance-setting';
+export { ThemeModifyDrawer } from './theme-modify-drawer';
 export * from './theme-context';

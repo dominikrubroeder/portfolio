@@ -1,7 +1,4 @@
-import { ChevronDownIcon, SunIcon } from '@heroicons/react/24/outline';
-
 import { AccordionContained } from '@/components/atoms/accordion';
-import { Button } from '@/components/atoms/button';
 import { ScrollToButton } from '@/components/atoms/button/scroll-to-button';
 import { CodeBlock } from '@/components/atoms/codeblock';
 import { Container } from '@/components/atoms/container';
@@ -9,9 +6,10 @@ import { Marker } from '@/components/atoms/marker';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { ComponentShowcase } from '@/components/organisms/component-showcase';
 import {
-  ColorThemeSetting,
-  FontSizeThemeSetting,
-  ModifyThemeDrawer
+  ThemeAppearanceSetting,
+  ThemeColorSetting,
+  ThemeFontSizeSetting,
+  ThemeModifyDrawer
 } from '@/components/organisms/theme';
 
 export default async function FrontendVisionPage() {
@@ -24,12 +22,9 @@ export default async function FrontendVisionPage() {
       >
         <div className="mx-auto max-w-[60rem] space-y-3">
           <div className="flex items-center gap-4 sm:absolute sm:-top-16 sm:left-1/2 sm:-translate-x-1/2 sm:justify-center">
-            <Button variant="ghost">
-              <SunIcon className="size-5" /> Light
-              <ChevronDownIcon className="size-4" />
-            </Button>
-            <ColorThemeSetting />
-            <FontSizeThemeSetting />
+            <ThemeAppearanceSetting />
+            <ThemeColorSetting />
+            <ThemeFontSizeSetting />
           </div>
 
           <h1>
@@ -49,7 +44,7 @@ export default async function FrontendVisionPage() {
         </div>
 
         <ButtonGroup className="justify-center">
-          <ModifyThemeDrawer />
+          <ThemeModifyDrawer />
           <ScrollToButton
             scrollIntoViewProps={{ id: 'frontend-vision-faqs' }}
             buttonProps={{ variant: 'ghost' }}
