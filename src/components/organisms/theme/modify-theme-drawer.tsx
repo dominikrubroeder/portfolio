@@ -14,7 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from '@/components/organisms/dialog';
+} from '@/components/molecules/dialog';
 import {
   Drawer,
   DrawerClose,
@@ -24,7 +24,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from '@/components/organisms/drawer';
+} from '@/components/molecules/drawer';
 
 import { useMediaQuery } from '@/hooks/use-media-query';
 

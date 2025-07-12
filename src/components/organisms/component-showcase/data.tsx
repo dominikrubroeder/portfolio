@@ -20,7 +20,7 @@ import { Toggle } from '@/components/atoms/toggle';
 import { Tooltip } from '@/components/atoms/tooltip';
 import { Ul } from '@/components/atoms/ul';
 import { Animate } from '@/components/molecules/animate';
-import { DesignDrawer } from '@/components/organisms/design-drawer';
+import { DesignDrawer } from '@/components/molecules/drawer';
 import { Introduction } from '@/components/organisms/introduction';
 
 export interface ComponentGroup {

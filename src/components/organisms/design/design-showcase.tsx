@@ -6,7 +6,7 @@ import { CheckIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
 
-import { DesignDrawer } from '@/components/organisms/design-drawer';
+import { DesignDrawer } from '@/components/molecules/drawer/design-drawer';
 
 export function DesignShowcase() {
   const [state, setState] = useState<{

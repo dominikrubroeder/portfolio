@@ -7,7 +7,6 @@ import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import parse from 'html-react-parser';
 
 import { Button } from '@/components/atoms/button';
-
 import {
   Drawer,
   DrawerClose,
@@ -17,9 +16,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from './drawer';
-
-
+} from '@/components/molecules/drawer';
 
 export function CertificateDrawer({
   title,

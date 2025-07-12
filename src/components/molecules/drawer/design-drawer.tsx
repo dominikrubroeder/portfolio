@@ -14,8 +14,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger
-} from '@/components/organisms/dialog';
-
+} from '@/components/molecules/dialog';
 import {
   Drawer,
   DrawerClose,
@@ -25,7 +24,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from './drawer';
+} from '@/components/molecules/drawer';
 
 export function DesignDrawer({ className }: { className?: string }) {
   const [open, setOpen] = useState(false);
