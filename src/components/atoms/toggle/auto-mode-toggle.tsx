@@ -12,10 +12,10 @@ export function AutoModeToggle({ className }: { className?: string }) {
     <Toggle
       label="Auto mode"
       onClick={() => {
-        setAppearance('auto');
+        setAppearance('system');
       }}
       className={cn('shrink-0 rounded border p-4', className)}
-      enabled={appearance === 'auto'}
+      enabled={appearance === 'system'}
     />
   );
 }
