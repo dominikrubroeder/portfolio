@@ -16,7 +16,7 @@ export function Projects() {
       <h2>
         Projects
         <span className="ml-2 font-medium text-muted-foreground">
-          show you, in which teams i participated
+          show you, in which teams i participated yet
         </span>
       </h2>
 

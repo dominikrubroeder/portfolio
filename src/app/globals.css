@@ -130,6 +130,8 @@
     --animate-fade-up: fade-up 0.3s ease-out forwards;
     --animate-fade-up-1rem: fade-up-1rem 0.3s ease-out forwards;
     --animate-fade-down-1rem: fade-down-1rem 0.3s ease-out forwards;
+    --animate-drive-up: drive-up 1s ease-out forwards;
+    --animate-badge-up: badge-up .3s ease-out forwards;
 
     --z-index-100: 100;
     --z-index-max: 250;
@@ -176,6 +178,30 @@
 
         100% {
             transform: translateY(0);
+        }
+    }
+
+    @keyframes drive-up {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-300%);
+        }
+    }
+
+    @keyframes badge-up {
+        0% {
+            transform: scale(1.2);
+        }
+
+        80% {
+            transform: scale(1.4);
+        }
+
+        100% {
+            transform: scale(1);
         }
     }
 }

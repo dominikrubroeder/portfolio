@@ -1,7 +1,5 @@
 import type { ReactNode } from 'react';
 
-import { CircleIcon } from 'lucide-react';
-
 import { Accordion } from '@/components/atoms/accordion';
 import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { Avatar } from '@/components/atoms/avatar';
@@ -15,6 +13,9 @@ import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Marker } from '@/components/atoms/marker';
 import { Markup } from '@/components/atoms/markup';
+import { AtomIcon, MoleculeIcon, TemplateIcon } from '@/components/atoms/svg';
+import { OrganismnIcon } from '@/components/atoms/svg/organism-icon';
+import { PageIcon } from '@/components/atoms/svg/page-icon';
 import { TextDecoration } from '@/components/atoms/text-decoration';
 import { Toggle } from '@/components/atoms/toggle';
 import { Tooltip } from '@/components/atoms/tooltip';
@@ -26,7 +27,7 @@ import { Introduction } from '@/components/organisms/introduction';
 export interface ComponentGroup {
   groupName: string;
   groupIcon: ReactNode;
-  groupDescription: string;
+  groupDescription: ReactNode;
   layoutOption: '3-cols' | '2-cols' | 'rows';
   children: {
     componentId: string;
@@ -41,8 +42,8 @@ export const components: ComponentGroup[] = [
   {
     groupName: 'Atoms',
     groupDescription:
-      'Here are the actual elements starting. Atoms are like Socks, T-Shirts or a Basecaps, which can be standalone components that can be added together to build a bigger group.',
-    groupIcon: <CircleIcon />,
+      'This is where the actual elements are starting. Getting on the metaphor from before, those are the elements in your closet like your T-Shirts, your caps, the accessories, or hair ties – all standalone things, which can be added together to build a bigger outfit. And they can vary in different color, sizes and other variations and properties.',
+    groupIcon: <AtomIcon />,
     layoutOption: '3-cols',
     children: [
       {
@@ -198,8 +199,8 @@ export const components: ComponentGroup[] = [
   {
     groupName: 'Molecules',
     groupDescription:
-      'Molecules are one step up from Atoms, they slowly show how the _outfit_ is worn together. Combine a T-Shirt with a Hoodie, and you have your upper body styled up.',
-    groupIcon: <CircleIcon />,
+      'Molecules are one step up from Atoms, they slowly show how the outfit is being worn together. Combine your blue T-Shirt with a black Hoodie, and you have your upper body styled up. So Molecules use Atoms to build bigger groups of user interface elements – the good thing is, adjust one Atom, and it is being adjusted in all places where it is getting used as well.',
+    groupIcon: <MoleculeIcon />,
     layoutOption: '2-cols',
     children: [
       {
@@ -223,8 +224,8 @@ export const components: ComponentGroup[] = [
   {
     groupName: 'Organisms',
     groupDescription:
-      'There we go, organisms build a complete outfit. The hoodie, combined with a T-Shirt, jeans and a cap. A complete outfit – see this analogy for organisms as a complete, standalone fully-functioning feature or section integration.',
-    groupIcon: <CircleIcon />,
+      'Organisms – like you may can imagine from now on – are again one step above Atoms and Molecules. Here we have a complete outfit together – a full, standalone feature or text section like a Newsletter section, or a Hero banner on your Home page. They are reusable building blocks, which can be inserted in as many places as desired – with one single source of truth for applying changes to this exact element.',
+    groupIcon: <OrganismnIcon />,
     layoutOption: '2-cols',
     children: [
       {
@@ -237,16 +238,35 @@ export const components: ComponentGroup[] = [
   },
   {
     groupName: 'Templates',
-    groupDescription:
-      'But what is then? Well, templates, define the _structure_ of a complete outfit, for example, in the winter you want to wear a big coat, together with a red scarf, and a cozy pullover to keep you warm. But in the summer on the other hand, you want to wear a simple T-Shirt, shorts some sunglasses, and some cool drink in your hand. Templates prepare the whole outfit from being actually worn.',
-    groupIcon: <CircleIcon />,
+    groupDescription: (
+      <>
+        <p>
+          But, what are Template then? Well, templates define the structure of
+          your page. They are not the page itself, they just tell about the
+          order and the layout of the content. Hero banner at the top, big image
+          of your product in second row... especially for pages where things are
+          being duplicated, and only the content changes accordingly to dynamic
+          data, this is a golden thing to have. A proper use case are for
+          example Product Listing pages (PLPs) or Category pages – where the
+          structure is always the same, but the text, images and products are
+          changing based on the current category.
+        </p>
+        <p>
+          Templates prepare the page from being rendered with the real content.
+          But of course you don&#39;t have to overdo this, if your page is only
+          present once, and it is not getting reused somewhere else, you
+          don&#39;t have to create a template for it.
+        </p>
+      </>
+    ),
+    groupIcon: <TemplateIcon />,
     layoutOption: 'rows',
     children: []
   },
   {
     groupName: 'Pages',
     groupDescription: '',
-    groupIcon: <CircleIcon />,
+    groupIcon: <PageIcon />,
     layoutOption: 'rows',
     children: []
   }

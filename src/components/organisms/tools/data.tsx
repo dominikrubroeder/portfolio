@@ -885,6 +885,13 @@ export const tools: Tools = [
         knowledge: 'Daily'
       },
       {
+        title: 'prism-react-renderer',
+        description: 'Lightweight and flexible syntax highlighter for React',
+        website: 'https://github.com/FormidableLabs/prism-react-renderer',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
         title: 'zod',
         description:
           'TypeScript-first schema validation with static type inference',

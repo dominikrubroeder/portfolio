@@ -4,13 +4,59 @@ import { ArrowRightIcon, ArrowUturnLeftIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
 
+import { Badge } from '@/components/atoms/badge';
 import { Button } from '@/components/atoms/button';
+import { CodeBlock } from '@/components/atoms/codeblock';
 import { Container } from '@/components/atoms/container';
+import { DesignTokenIcon } from '@/components/atoms/svg/design-token-icon';
 import { components } from '@/components/organisms/component-showcase';
 
 export function ComponentShowcase() {
   return (
-    <Container as="section">
+    <Container as="section" className="relative">
+      <div className="absolute top-4.5 bottom-4.5 -left-[1.7325rem] block h-full w-[2px] bg-primary/10" />
+
+      <div className="space-y-1">
+        <div className="relative flex items-center gap-4">
+          <DesignTokenIcon className="absolute top-1/2 -left-8 -translate-y-1/2" />
+          <h2>Design Tokens</h2>
+        </div>
+
+        <p>
+          The smallest pieces of the design system. Try think about your closet
+          for a second. Design Tokens are like the
+          <i>red</i> Socks, the <i>blue</i> Socks, and the <i>white</i> Socks –
+          or your
+          <i>long</i> trousers and your <i>short</i> swimming trunks. They are
+          the actual tokens (variables) themselves, which are getting consumed
+          by the rest of the group elements: Atoms, Molecules, Organisms,
+          Templates and Pages. They define the overall style and the visual
+          appearance of the elements.
+        </p>
+      </div>
+
+      <CodeBlock
+        fileName="globals.css"
+        code={`:root {
+    --background: hsl(0 0% 100%);
+    --foreground: hsl(0 0% 18.8%);
+    --primary: hsl(255 92% 65%);
+    --primary-foreground: hsl(0 0% 100%);
+    --primary-hover: hsl(255 92% 69%);
+    --muted: hsl(240 23.8% 95.9%);
+    --muted-foreground: hsl(240 2.3% 44%);
+    --muted-hover: hsl(240, 7%, 83%);
+    --border: hsl(0 0% 92%);
+    --hover: hsl(240 23.8% 95.9%);
+    --radius: 6px;
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+    --container: 96rem;
+    --readable-container: 48rem;
+}`}
+        borderless
+      />
+
       <ul className="space-y-16">
         {components.map((componentGroup) => (
           <li
@@ -18,7 +64,19 @@ export function ComponentShowcase() {
             className="mx-auto max-w-(--readable-container) space-y-5"
           >
             <div className="space-y-1">
-              <h2>{componentGroup.groupName}</h2>
+              <div className="relative flex items-center justify-between gap-4">
+                <div>
+                  <div className="absolute top-1/2 -left-12 -translate-y-1/2">
+                    {componentGroup.groupIcon}
+                  </div>
+                  <h2>{componentGroup.groupName}</h2>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span>Currently</span>
+                  <Badge>{componentGroup.children.length}</Badge>
+                </div>
+              </div>
+
               <p>{componentGroup.groupDescription}</p>
             </div>
 

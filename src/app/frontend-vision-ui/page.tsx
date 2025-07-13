@@ -1,6 +1,5 @@
 import { AccordionContained } from '@/components/atoms/accordion';
 import { ScrollToButton } from '@/components/atoms/button/scroll-to-button';
-import { CodeBlock } from '@/components/atoms/codeblock';
 import { Container } from '@/components/atoms/container';
 import { Marker } from '@/components/atoms/marker';
 import { ButtonGroup } from '@/components/molecules/button-group';
@@ -52,40 +51,6 @@ export default async function FrontendVisionPage() {
             Read more
           </ScrollToButton>
         </ButtonGroup>
-      </Container>
-
-      <Container>
-        <div className="space-y-1">
-          <h2>Design Tokens</h2>
-          <p>
-            The smallest pieces of the design system. They <i>are</i> the actual
-            tokens (variables) themselves, which are getting consumed by the
-            rest of the group elements: Atoms, Molecules, Organisms, Templates
-            and Pages. They define the style and overall visual appearance.
-          </p>
-        </div>
-
-        <CodeBlock
-          fileName="globals.css"
-          code={`:root {
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(0 0% 18.8%);
-    --primary: hsl(255 92% 65%);
-    --primary-foreground: hsl(0 0% 100%);
-    --primary-hover: hsl(255 92% 69%);
-    --muted: hsl(240 23.8% 95.9%);
-    --muted-foreground: hsl(240 2.3% 44%);
-    --muted-hover: hsl(240, 7%, 83%);
-    --border: hsl(0 0% 92%);
-    --hover: hsl(240 23.8% 95.9%);
-    --radius: 6px;
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-sm: calc(var(--radius) - 4px);
-    --container: 96rem;
-    --readable-container: 48rem;
-}`}
-          borderless
-        />
       </Container>
 
       <ComponentShowcase />
