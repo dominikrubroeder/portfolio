@@ -15,6 +15,10 @@ export default async function FVComponentPage({
 
   if (!data) redirect('/');
 
+  // TODO: Create a template for the component page?
+  // TODO: Full line for separating the component element preview from lower description
+  // TODO: Add Atomic Design icon classification the this element view here
+
   return (
     <div className="space-y-8">
       <Container

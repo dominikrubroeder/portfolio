@@ -1,6 +1,7 @@
 import { AccordionContained } from '@/components/atoms/accordion';
 import { ScrollToButton } from '@/components/atoms/button/scroll-to-button';
 import { Container } from '@/components/atoms/container';
+import { ExternalLink } from '@/components/atoms/external-link';
 import { Marker } from '@/components/atoms/marker';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { ComponentShowcase } from '@/components/organisms/component-showcase';
@@ -66,20 +67,52 @@ export default async function FrontendVisionPage() {
         </h2>
 
         <div>
-          <AccordionContained title="Someting here">
+          <AccordionContained title="Design Principles of Frontend Vision">
             And here
           </AccordionContained>
-          <AccordionContained title="Someting here">
+          <AccordionContained title="Microinteractions">
             And here
           </AccordionContained>
-          <AccordionContained title="Someting here">
+          <AccordionContained title="Interaction Design">
             And here
           </AccordionContained>
-          <AccordionContained title="Architecture, what?">
+          <AccordionContained title="Animations and Transitions">
+            And here
+          </AccordionContained>
+          <AccordionContained title="Atomic Design, ... Architecture, what?">
+            <p>
+              In my description above i used a metaphor for this architecture
+              approach like your personal closet, where all the things within it
+              build the complete outfit you wear day to day, made up from
+              smaller things. But there are more metaphors available, you can
+              also say this approach is like Lego, small blocks stacked together
+              are bigger blocks, and and some point buildings or other replicas.
+            </p>
+            <p>
+              The original concept comes from
+              <ExternalLink href="https://bradfrost.com">
+                Brad Frost
+              </ExternalLink>
+              with his famous book
+              <ExternalLink
+                href="https://brad-frost.myshopify.com"
+                className="mr-0"
+              >
+                Atomic Design
+              </ExternalLink>
+              . He also brought a new concept in 2025:
+              <ExternalLink href="https://designtokenscourse.com">
+                Subatomic
+              </ExternalLink>
+            </p>
+          </AccordionContained>
+          <AccordionContained title="Where are you coming from?">
             And here
           </AccordionContained>
         </div>
       </Container>
+
+      {/* TODO: Analytics rendering here? */}
     </div>
   );
 }
