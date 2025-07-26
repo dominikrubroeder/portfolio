@@ -636,7 +636,7 @@ export const tools: Tools = [
     ]
   },
   {
-    group: 'Motion',
+    group: 'Motion + Animation',
     children: [
       {
         title: 'jitter.video',
@@ -1065,7 +1065,7 @@ export const tools: Tools = [
         logo: '',
         description:
           'Lightning Fast, Ultra Relevant, and Typo-Tolerant Search Engine',
-        knowledge: 'Used'
+        knowledge: 'Experienced'
       }
     ]
   },

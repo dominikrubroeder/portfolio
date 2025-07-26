@@ -36,6 +36,7 @@ export { DailyDevLogo } from './dailydev-logo';
 export { NpmLogo } from './npm-logo';
 export { ShadcnUiLogo } from './shadcn-ui-logo';
 export { RadixUILogo } from './radixui-logo';
+export { MeilisearchLogo } from './meilisearch-logo';
 
 export * from './config';
 export * from './types';

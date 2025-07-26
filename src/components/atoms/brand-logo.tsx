@@ -19,6 +19,7 @@ import {
   LinkedinLogo,
   type LogoProps,
   MarkdownLogo,
+  MeilisearchLogo,
   MiroLogo,
   MotionLogo,
   NextjsLogo,
@@ -38,7 +39,6 @@ import {
   WebstormLogo,
   XingLogo
 } from '@/components/atoms/logo';
-
 
 interface BrandLogoProps extends LogoProps {
   brand: string;
@@ -77,6 +77,10 @@ export function BrandLogo({
     return <VercelLogo className={className} />;
   }
 
+  if (lowerCaseBrand.includes('meilisearch')) {
+    return <MeilisearchLogo className={className} />;
+  }
+
   if (
     lowerCaseBrand.includes('algolia') ||
     lowerCaseBrand.includes('instant')
@@ -94,6 +98,10 @@ export function BrandLogo({
 
   if (brand.startsWith('@')) {
     return <NpmLogo className={className} />;
+  }
+
+  if (brand === 'Motion' || brand === 'Framer') {
+    return <MotionLogo className={className} />;
   }
 
   switch (group) {
@@ -134,9 +142,6 @@ export function BrandLogo({
 
     case 'CSS':
       return <CssLogo className={className} />;
-
-    case 'Motion':
-      return <MotionLogo className={className} />;
 
     case 'Auth.js':
       return <AuthjsLogo className={className} />;
