@@ -9,6 +9,7 @@ export const projects = [
     url: 'https://www.mediawave.de/value-booster',
     readableTitle: 'Kick start in your headless ecommerce project',
     status: 'Currently developing',
+    timeframe: 'Today – 2024',
     logo: <MediawaveLogo className="h-14 w-auto" />,
     role: ['Frontend Development', 'Design Consulting'],
     aspects: [
@@ -130,28 +131,49 @@ export const projects = [
     title: 'sautershop',
     category: ['DIY workers'],
     url: 'https://www.sautershop.de',
+    status: 'In Progress',
     readableTitle: 'Home wood-working tools',
-    status: '2024 – Today'
+    timeframe: 'Today – 2024'
   },
   {
     title: 'HD+',
     category: ['TV'],
     url: 'https://www.hd-plus.de',
     readableTitle: 'Everything you need for good television',
-    status: '2021 - 2023'
+    status: 'Terminated',
+    timeframe: '2023 - 2021'
   },
   {
     title: 'Segmüller',
     category: ['Furniture'],
     url: 'https://www.segmueller.de',
     readableTitle: 'Home furniture from Germany',
-    status: '2021 - 2023'
+    status: 'Published',
+    timeframe: '2023 - 2021'
   },
   {
     title: 'alles auto',
     category: ['Car dealer'],
     url: 'https://www.alles.auto',
     readableTitle: '',
-    status: '2021'
+    status: 'Published',
+    timeframe: '2021'
+  },
+  {
+    title: 'Loy GmbH',
+    category: ['Trainee', 'Dual Study', 'Full-Time'],
+    url: 'https://www.loy.info',
+    readableTitle: '',
+    status: 'Published',
+    timeframe: '2021 – 2016'
+  },
+  {
+    title: 'GitHub',
+    category: ['Private projects and experimenting'],
+    url: 'https://github.com/dominikrubroeder?tab=repositories',
+    readableTitle:
+      'In my repository i just include all the projects i did over the last years. Not in specific order or priority.',
+    status: 'Published',
+    timeframe: 'Today – 2020'
   }
 ];

@@ -16,7 +16,7 @@ export function Projects() {
       <h2>
         Projects
         <span className="ml-2 font-medium text-muted-foreground">
-          show you, in which teams i participated yet
+          show you, in which teams i have participated yet
         </span>
       </h2>
 
@@ -57,6 +57,7 @@ export function Projects() {
 
             <Badge size="small">{project.status}</Badge>
           </div>
+
           <h4 className="text-base font-normal text-muted-foreground">
             {project.readableTitle}
           </h4>
@@ -80,21 +81,23 @@ export function Projects() {
 
             <div className="space-y-4">
               <b className="block">Tools</b>
-              <ul className="flex flex-wrap gap-6">
+              <ul className="-ml-4 flex flex-wrap gap-2">
                 {project.tools?.map((tool, index) => {
                   if (tool && tool.title) {
                     return (
                       <li key={index}>
-                        <Link
+                        <Button
+                          variant="ghost"
                           href={tool.website}
                           title={tool.title}
                           aria-label={`Open ${tool.title} website`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="p-4 [&>svg]:size-12"
                         >
                           <span className="sr-only">{tool.title}</span>
                           <BrandLogo brand={tool.title} className="size-12" />
-                        </Link>
+                        </Button>
                       </li>
                     );
                   }
@@ -104,24 +107,26 @@ export function Projects() {
 
             <div className="space-y-4">
               <b className="block">Technologies</b>
-              <ul className="flex flex-wrap gap-6">
+              <ul className="-ml-4 flex flex-wrap gap-2">
                 {project.technologies?.map((technology, index) => {
                   if (technology && technology.title) {
                     return (
                       <li key={index}>
-                        <Link
+                        <Button
+                          variant="ghost"
                           href={technology.website}
                           title={technology.title}
                           aria-label={`Open ${technology.title} website`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="p-4 [&>svg]:size-12"
                         >
                           <span className="sr-only">{technology.title}</span>
                           <BrandLogo
                             brand={technology.title}
                             className="size-12"
                           />
-                        </Link>
+                        </Button>
                       </li>
                     );
                   }
