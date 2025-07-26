@@ -1,13 +1,13 @@
 'use client';
 
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
 
-import { Button } from '@/components/atoms/button';
+import { ButtonTextGroup } from '@/components/atoms/button';
 
 export function ToggleContent({
   label,
@@ -22,28 +22,28 @@ export function ToggleContent({
 
   return (
     <div className={cn('space-y-8', className)}>
-      <div className="flex items-center gap-2">
-        <Button onClick={() => setShow((prevState) => !prevState)}>
-          <span className="sr-only">{show ? 'Hide' : 'Close'}</span>
-
-          <div>
-            {show ? (
-              <MinusIcon className="size-5" />
-            ) : (
-              <PlusIcon className="size-5" />
-            )}
-          </div>
-        </Button>
-
-        {label && (
-          <Button
-            variant="ghost"
-            onClick={() => setShow((prevState) => !prevState)}
-          >
-            {label}
-          </Button>
-        )}
-      </div>
+      <ButtonTextGroup
+        buttonPropsFirst={{
+          children: (
+            <>
+              <span className="sr-only">{show ? 'Hide' : 'Close'}</span>
+              <div>
+                {show ? (
+                  <MinusIcon className="size-5" />
+                ) : (
+                  <PlusIcon className="size-5" />
+                )}
+              </div>
+            </>
+          ),
+          onClick: () => setShow((prevState) => !prevState)
+        }}
+        buttonPropsSecond={{
+          variant: 'ghost',
+          children: label,
+          onClick: () => setShow((prevState) => !prevState)
+        }}
+      />
 
       <div
         className={cn(
