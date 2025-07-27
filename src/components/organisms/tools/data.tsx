@@ -45,10 +45,10 @@ export const tools: Tools = [
     group: 'Accessibility',
     children: [
       {
-        title: 'pa11ty',
+        title: 'Pa11y',
         website: 'https://pa11y.org',
         logo: '',
-        description: 'p11ty is your automated accessibility testing pal.',
+        description: 'Pa11y is your automated accessibility testing pal.',
         knowledge: 'Not started'
       },
       {
@@ -80,7 +80,7 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        title: 'v0.dev',
+        title: 'v0',
         website: 'https://v0.dev',
         logo: '',
         description:

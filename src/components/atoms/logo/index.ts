@@ -37,6 +37,11 @@ export { NpmLogo } from './npm-logo';
 export { ShadcnUiLogo } from './shadcn-ui-logo';
 export { RadixUILogo } from './radixui-logo';
 export { MeilisearchLogo } from './meilisearch-logo';
+export { LighthouseLogo } from './lighthouse-logo';
+export { Pa11yLogo } from './pa11y-logo';
+export { ChatGptLogo } from './chatgpt-logo';
+export { ClaudeAiLogo } from './claudeai-logo';
+export { V0Logo } from './v0-logo';
 
 export * from './config';
 export * from './types';

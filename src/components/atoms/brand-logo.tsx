@@ -3,7 +3,9 @@ import { cn } from '@/lib/utils';
 import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 import {
   AlgoliaLogo,
+  ChatGptLogo,
   ChromeLogo,
+  ClaudeAiLogo,
   CraftLogo,
   CssLogo,
   DailyDevLogo,
@@ -16,6 +18,7 @@ import {
   HtmlLogo,
   JavascriptLogo,
   JiraLogo,
+  LighthouseLogo,
   LinkedinLogo,
   type LogoProps,
   MarkdownLogo,
@@ -25,6 +28,7 @@ import {
   NextjsLogo,
   NotesLogo,
   NpmLogo,
+  Pa11yLogo,
   RadixUILogo,
   ReactLogo,
   SafariLogo,
@@ -35,6 +39,7 @@ import {
   TailwindCssLogo,
   TeamsLogo,
   TypeScriptLogo,
+  V0Logo,
   VercelLogo,
   WebstormLogo,
   XingLogo
@@ -196,6 +201,21 @@ export function BrandLogo({
 
     case 'Radix UI':
       return <RadixUILogo className={className} />;
+
+    case 'Lighthouse':
+      return <LighthouseLogo className={className} />;
+
+    case 'Pa11y':
+      return <Pa11yLogo className={className} />;
+
+    case 'ChatGPT':
+      return <ChatGptLogo className={className} />;
+
+    case 'Claude AI':
+      return <ClaudeAiLogo className={className} />;
+
+    case 'v0':
+      return <V0Logo className={className} />;
 
     default:
       return DefaultLogo;
