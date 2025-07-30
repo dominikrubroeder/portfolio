@@ -42,6 +42,11 @@ export { Pa11yLogo } from './pa11y-logo';
 export { ChatGptLogo } from './chatgpt-logo';
 export { ClaudeAiLogo } from './claudeai-logo';
 export { V0Logo } from './v0-logo';
+export { GoogleAnalyticsLogo } from './google-analytics-logo';
+export { HotjarLogo } from './hotjar-logo';
+export { GoogleTagManagerLogo } from './google-tag-manager-logo';
+export { AxiosLogo } from './axios-logo';
+export { BrunoLogo } from './bruno-logo';
 
 export * from './config';
 export * from './types';

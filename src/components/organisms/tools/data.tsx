@@ -98,7 +98,7 @@ export const tools: Tools = [
         logo: '',
         description:
           'Measure your advertising ROI as well as track your Flash, video, and social networking sites and applications',
-        knowledge: 'Used'
+        knowledge: 'Experienced'
       },
       {
         title: 'Google Tag Manager',

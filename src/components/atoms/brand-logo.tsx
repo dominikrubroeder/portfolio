@@ -1,8 +1,15 @@
 import { cn } from '@/lib/utils';
 
-import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
+import {
+  AuthjsLogo,
+  InkdropLogo,
+  InstagramLogo,
+  PostmanLogo
+} from '@/components/atoms/img';
 import {
   AlgoliaLogo,
+  AxiosLogo,
+  BrunoLogo,
   ChatGptLogo,
   ChromeLogo,
   ClaudeAiLogo,
@@ -14,7 +21,10 @@ import {
   FrontendMentorLogo,
   GithubLogo,
   GitlabLogo,
+  GoogleAnalyticsLogo,
+  GoogleTagManagerLogo,
   HeroiconsLogo,
+  HotjarLogo,
   HtmlLogo,
   JavascriptLogo,
   JiraLogo,
@@ -216,6 +226,24 @@ export function BrandLogo({
 
     case 'v0':
       return <V0Logo className={className} />;
+
+    case 'Google Analytics':
+      return <GoogleAnalyticsLogo className={className} />;
+
+    case 'Hotjar':
+      return <HotjarLogo className={className} />;
+
+    case 'Google Tag Manager':
+      return <GoogleTagManagerLogo className={className} />;
+
+    case 'Axios':
+      return <AxiosLogo className={className} />;
+
+    case 'Bruno':
+      return <BrunoLogo className={className} />;
+
+    case 'Postman':
+      return <PostmanLogo className={className} />;
 
     default:
       return DefaultLogo;

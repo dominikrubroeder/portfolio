@@ -11,9 +11,10 @@ export function LighthouseLogo({ className }: LogoProps) {
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       className={cn(defaultIconSize, className)}
     >
-      <g clip-path="url(#clip0_1018_1253)">
+      <g clipPath="url(#clip0_1018_1253)">
         <path
           d="M64 128.78C99.3462 128.78 128 100.127 128 64.7803C128 29.434 99.3462 0.780273 64 0.780273C28.6538 0.780273 0 29.434 0 64.7803C0 100.127 28.6538 128.78 64 128.78Z"
           fill="#0535C1"
@@ -216,7 +217,10 @@ export function LighthouseLogo({ className }: LogoProps) {
           width="1"
           height="1"
         >
-          <use transform="scale(0.047619 0.03125)" />
+          <use
+            xlinkHref="#image0_1018_1253"
+            transform="scale(0.047619 0.03125)"
+          />
         </pattern>
         <pattern
           id="pattern1_1018_1253"
@@ -224,7 +228,10 @@ export function LighthouseLogo({ className }: LogoProps) {
           width="1"
           height="1"
         >
-          <use transform="scale(0.047619 0.03125)" />
+          <use
+            xlinkHref="#image0_1018_1253"
+            transform="scale(0.047619 0.03125)"
+          />
         </pattern>
         <linearGradient
           id="paint0_linear_1018_1253"
@@ -234,8 +241,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           y2="1617.1"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#212121" stop-opacity="0.04" />
-          <stop offset="0.66" stop-color="#212121" stop-opacity="0" />
+          <stop stopColor="#212121" stopOpacity="0.04" />
+          <stop offset="0.66" stopColor="#212121" stopOpacity="0" />
         </linearGradient>
         <radialGradient
           id="paint1_radial_1018_1253"
@@ -245,8 +252,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(318.819 375.02) scale(3417.03 3417.05)"
         >
-          <stop stop-color="white" stop-opacity="0.1" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0.1" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint2_linear_1018_1253"
@@ -256,8 +263,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           y2="9695.36"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0.1" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0.1" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_1018_1253"
@@ -267,8 +274,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           y2="1938.93"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#262626" stop-opacity="0.1" />
-          <stop offset="1" stop-color="#262626" stop-opacity="0" />
+          <stop stopColor="#262626" stopOpacity="0.1" />
+          <stop offset="1" stopColor="#262626" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_1018_1253"
@@ -278,8 +285,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           y2="4688.79"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#262626" stop-opacity="0.1" />
-          <stop offset="1" stop-color="#262626" stop-opacity="0" />
+          <stop stopColor="#262626" stopOpacity="0.1" />
+          <stop offset="1" stopColor="#262626" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_1018_1253"
@@ -289,8 +296,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           y2="635.704"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#262626" stop-opacity="0.1" />
-          <stop offset="1" stop-color="#262626" stop-opacity="0" />
+          <stop stopColor="#262626" stopOpacity="0.1" />
+          <stop offset="1" stopColor="#262626" stopOpacity="0" />
         </linearGradient>
         <radialGradient
           id="paint6_radial_1018_1253"
@@ -300,8 +307,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(1854.59 1867.53) scale(12796.5)"
         >
-          <stop stop-color="white" stop-opacity="0.1" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0.1" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <linearGradient
           id="paint7_linear_1018_1253"
@@ -311,8 +318,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           y2="1873.62"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#212121" stop-opacity="0.04" />
-          <stop offset="0.66" stop-color="#212121" stop-opacity="0" />
+          <stop stopColor="#212121" stopOpacity="0.04" />
+          <stop offset="0.66" stopColor="#212121" stopOpacity="0" />
         </linearGradient>
         <radialGradient
           id="paint8_radial_1018_1253"
@@ -322,8 +329,8 @@ export function LighthouseLogo({ className }: LogoProps) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(291.89 440.477) scale(3942.73 3942.69)"
         >
-          <stop stop-color="white" stop-opacity="0.1" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0.1" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <clipPath id="clip0_1018_1253">
           <rect
@@ -338,6 +345,7 @@ export function LighthouseLogo({ className }: LogoProps) {
           width="21"
           height="32"
           preserveAspectRatio="none"
+          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAgCAYAAAD9oDOIAAAABGdBTUEAALGN5fIAKQAAA7ZJREFUSA2dlttvEkEYxdnlWqhQoEWrlRq1xqQv+qLP9f82fdamvmhjVBJbSnrjUtoCheWy/s6ERagsBSc5+WZnvzl75sxtrcDfYg2rXvTeuMOKF7123+gR2Nvb26FOpxNrt9uheDxuq0ez2XSXlpa6VDuFQqFHHIB7yUVqQRhuNBpZy7LyrutmiBHaA7Zt93i+5vksEonUer1eA3J9ROS+JcgbK5VKJej8EpIdCD4Q3xHf0rbN+01icjAYhLvdbn9jY8Mpl8t9X0ZeiNReX1+PO46zBdEOz+/BK7AJngq0PyZmg8GgjVpnbW2tl06n+7VaTVb8Y4dRmsvlYpDmUfgGVVvEVZITQzwQIVBbkvcRIPJeLBZz8F2qJ4hFGmD4YUIaPENVnpgEIaAJU04MLAP5nQNpMED5FapbKJ7w2ChNJpPkWB6xhi1VmiwzkUSR6yNSn0HpCqNxQQXiy2q12qF9pNYordfrLh7ZTEaaxOckyMM4MEuLqKIPBPl4lCgMIL8ElVAo1Gi1WlpyhtiQ8mBlMhl1kH+anCdAdTMSolc85VIdIt8FN1KLDU3PBo9UvgZIULK8vWuBR6ooYptc2SPFXUgvwuFwrVKpGBtGpHNaAIcpxgpqEqENUsa602w2eyO1455pKG08LZN0QnIdaPeMJoD6eFFfrYg8/V7T5xF1KZ+YCJevSf45+DWME7NK23iR2jBkWn4P6ZtkwrSCrAmlh4eHUlYn4YSvl6m3gZ9SXmkarDCIKtJPH5pQqudFLQig1Cimb5QJM0pHEyVGlQVWgclHodan/C/2+/3SysrKzfjwleT+hwVaWtq6LxTxNXKX1BCTMO8qINXSaLX7UlgR51APTiVdYBXA4+qUakJeB63b29v+VNIFLND+b0J6DH5AekbsTCOlfa5VoKXWhagKcUHQlaO7zJfUs0DJdL4ADhgvOkMb4Ihd+BXyIy5NqZ7YpuMdzCrgZL+mUTvsCvLxLSvCFjgF38FPVFaHtrk6EPwKPK6DiiZRChzUyEMN+xaUeN4nfuJm+U2eVJsbYCYpyV04rkg+h+Caeoq6ZrsE9njeBV+Y8YtisTgaiZ+n9OFM4+YkyE/5egqxTnrN9B74iO97iUSixJUt5aN7SgvXt4ydsSkI10mUym/Ud0W4vLx8fHBwIEK1j8pMUrKs1dVVG3UxPNMxp4n5DPYhLE0jFPMsT/XejUajbf5MdFjo2giisMyQK36E6mTOP1VmFPPzxvsIHluQO/f9T81Dqu/dzZt1cAf+AMymEnybyIybAAAAAElFTkSuQmCC"
         />
       </defs>
     </svg>
