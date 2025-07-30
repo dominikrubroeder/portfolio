@@ -2,8 +2,21 @@ import { redirect } from 'next/navigation';
 
 import { Breadcrumb } from '@/components/atoms/breadcrumb';
 import { Container } from '@/components/atoms/container';
-import { getComponent } from '@/components/organisms/component-showcase/helper';
+import { components } from '@/components/organisms/component-showcase';
+import {
+  formatComponentName,
+  getComponent
+} from '@/components/organisms/component-showcase/helper';
 import { ThemeModifyDrawer } from '@/components/organisms/theme';
+
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+  const componentNames = components.map((group) => group.children).flat();
+
+  return componentNames.map((component) => ({
+    componentId: formatComponentName({ name: component.componentName })
+  }));
+}
 
 export default async function FVComponentPage({
   params

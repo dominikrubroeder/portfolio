@@ -9,3 +9,7 @@ export function getComponent({ componentId }: { componentId: string }) {
     (component) => component.componentId === componentId
   );
 }
+
+export function formatComponentName({ name }: { name: string }) {
+  return name.toLowerCase().replaceAll(' ', '-');
+}
