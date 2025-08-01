@@ -8,11 +8,14 @@ import {
 } from '@/components/atoms/img';
 import {
   AlgoliaLogo,
+  ArcLogo,
   AxiosLogo,
+  BraveLogo,
   BrunoLogo,
   ChatGptLogo,
   ChromeLogo,
   ClaudeAiLogo,
+  ClerkLogo,
   CraftLogo,
   CssLogo,
   DailyDevLogo,
@@ -244,6 +247,15 @@ export function BrandLogo({
 
     case 'Postman':
       return <PostmanLogo className={className} />;
+
+    case 'Clerk':
+      return <ClerkLogo className={className} />;
+
+    case 'Arc':
+      return <ArcLogo className={className} />;
+
+    case 'Brave':
+      return <BraveLogo className={className} />;
 
     default:
       return DefaultLogo;

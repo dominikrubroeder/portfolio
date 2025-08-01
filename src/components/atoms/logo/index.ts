@@ -47,6 +47,9 @@ export { HotjarLogo } from './hotjar-logo';
 export { GoogleTagManagerLogo } from './google-tag-manager-logo';
 export { AxiosLogo } from './axios-logo';
 export { BrunoLogo } from './bruno-logo';
+export { ClerkLogo } from './clerk-logo';
+export { ArcLogo } from './arc-logo';
+export { BraveLogo } from './brave-logo';
 
 export * from './config';
 export * from './types';
