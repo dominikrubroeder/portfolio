@@ -50,6 +50,8 @@ export { BrunoLogo } from './bruno-logo';
 export { ClerkLogo } from './clerk-logo';
 export { ArcLogo } from './arc-logo';
 export { BraveLogo } from './brave-logo';
+export { ContentservLogo } from './contentserv-logo';
+export { Typo3Logo } from './typo3-logo';
 
 export * from './config';
 export * from './types';

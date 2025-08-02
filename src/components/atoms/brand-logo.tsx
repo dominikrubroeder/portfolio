@@ -16,6 +16,7 @@ import {
   ChromeLogo,
   ClaudeAiLogo,
   ClerkLogo,
+  ContentservLogo,
   CraftLogo,
   CssLogo,
   DailyDevLogo,
@@ -52,6 +53,7 @@ import {
   TailwindCssLogo,
   TeamsLogo,
   TypeScriptLogo,
+  Typo3Logo,
   V0Logo,
   VercelLogo,
   WebstormLogo,
@@ -68,7 +70,9 @@ export function BrandLogo({
   group,
   className = 'size-32'
 }: BrandLogoProps) {
-  const DefaultLogo = <div className={cn('rounded bg-muted', className)} />;
+  const DefaultLogo = (
+    <div className={cn('shrink-0 rounded bg-muted', className)} />
+  );
 
   const lowerCaseBrand = brand.toLowerCase();
 
@@ -256,6 +260,12 @@ export function BrandLogo({
 
     case 'Brave':
       return <BraveLogo className={className} />;
+
+    case 'Contentserv':
+      return <ContentservLogo className={className} />;
+
+    case 'Typo3':
+      return <Typo3Logo className={className} />;
 
     default:
       return DefaultLogo;

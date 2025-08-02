@@ -12,7 +12,7 @@ export function PostmanLogo({ className }: LogoProps) {
       height={128}
       src="/postman-logo.png"
       alt="Postman Logo"
-      className={cn(defaultIconSize, className)}
+      className={cn('object-contain', defaultIconSize, className)}
     />
   );
 }
