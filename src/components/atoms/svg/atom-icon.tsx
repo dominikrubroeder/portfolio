@@ -10,7 +10,7 @@ export function AtomIcon({ className }: { className?: string }) {
         className
       )}
     >
-      <DesignTokenIcon className="absolute -top-[3px] -right-[2px]" />
+      <DesignTokenIcon className="absolute -top-[6px] -right-[2px]" />
     </div>
   );
 }
