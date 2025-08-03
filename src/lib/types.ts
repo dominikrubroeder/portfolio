@@ -1,5 +1,5 @@
 export type HTMLTag = 'span' | 'p' | 'div' | 'section' | 'header' | 'footer';
 
-export interface ComponentProps {
+export interface ComponentBaseProps {
   className?: string;
 }

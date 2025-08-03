@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { ComponentProps } from '@/lib/types';
+import type { ComponentBaseProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 export function TextDecoration({
@@ -13,7 +13,7 @@ export function TextDecoration({
   size?: 'xs' | 'sm' | 'md' | 'lg';
   className?: string;
   children: ReactNode;
-} & ComponentProps) {
+} & ComponentBaseProps) {
   return (
     <div className={cn('mx-1 inline-grid', className)}>
       {children}

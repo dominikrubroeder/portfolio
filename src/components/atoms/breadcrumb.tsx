@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
-import type { ComponentProps } from '@/lib/types';
+import type { ComponentBaseProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 export function Breadcrumb({
@@ -12,7 +12,7 @@ export function Breadcrumb({
   className
 }: {
   breadcrumb: { label: string; href: string }[];
-} & ComponentProps) {
+} & ComponentBaseProps) {
   return (
     <ul className={cn('flex flex-wrap items-center gap-3', className)}>
       {breadcrumb.map(({ label, href }, index, array) => (
