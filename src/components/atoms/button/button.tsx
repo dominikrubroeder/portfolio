@@ -65,6 +65,7 @@ export function Button({
         {...rest}
         href={href}
         target={href.includes('https') ? '_blank' : target}
+        rel={href.includes('https') ? 'noopener noreferrer' : undefined}
         className={classNames}
       >
         {children}
