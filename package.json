@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "upgrade-next@latest": "npm i next@latest eslint-config-next@latest --legacy-peer-deps --save-exact",
     "upgrade-react@latest": "npm i react@latest react-dom@latest @types/react@latest @types/react-dom@latest --legacy-peer-deps --save-exact",
-    "upgrade-tailwindcss@latest": "npm i tailwindcss@latest prettier-plugin-tailwindcss@latest @tailwindcss/postcss@latest --save-dev --legacy-peer-deps --save-exact && npm i tailwind-merge@latest tw-animate-css@latest --legacy-peer-deps --save-exact"
+    "upgrade-tailwindcss@latest": "npm i tailwindcss@latest prettier-plugin-tailwindcss@latest @tailwindcss/postcss@latest --save-dev --legacy-peer-deps --save-exact && npm i tailwind-merge@latest tw-animate-css@latest --legacy-peer-deps --save-exact",
+    "upgrade-analytics@latest": "npm i @vercel/analytics @vercel/speed-insights --save-exact --legacy-peer-deps"
   },
   "dependencies": {
     "@heroicons/react": "2.2.0",
