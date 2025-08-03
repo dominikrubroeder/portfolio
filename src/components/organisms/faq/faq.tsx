@@ -5,7 +5,7 @@ import { FaqWhatIsAUxEngineer } from '@/components/organisms/faq/faq-what-is-a-u
 
 export function FAQ() {
   return (
-    <div className="space-y-8">
+    <div className="scroll-mt-24 space-y-8" id="faq">
       <header className="space-y-6">
         <h2>
           QA

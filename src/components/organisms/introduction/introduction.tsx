@@ -16,7 +16,7 @@ import {
 
 export function Introduction() {
   return (
-    <div className="animate-fade-up-1rem">
+    <div className="animate-fade-up-1rem scroll-mt-24" id="introduction">
       <div className="relative mx-auto w-full space-y-6 rounded border bg-background px-4 py-4">
         <p>Hey there! 👋</p>
 

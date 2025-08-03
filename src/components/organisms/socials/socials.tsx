@@ -4,7 +4,7 @@ import { mainSocials } from '@/components/organisms/socials';
 
 export function Socials() {
   return (
-    <div className="space-y-8">
+    <div className="scroll-mt-24 space-y-8" id="socials">
       <header>
         <h2>
           Social accounts

@@ -5,17 +5,18 @@ import { GitHubButton, LinkedInButton } from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/molecules/header-menu';
+import { ThemeQuickSettings } from '@/components/organisms/theme';
 
 export function Header() {
   return (
     <Container
       as="header"
       size="container"
-      className="sticky top-0 z-100 flex items-center justify-between gap-4 border-b bg-background py-4 sm:relative sm:border-none lg:px-4"
+      className="sticky top-0 z-100 flex items-center justify-between gap-4 border-b bg-background py-4 lg:relative lg:border-none lg:px-4"
     >
       <div className="flex items-center gap-4">
         <Avatar
-          className="size-11 sm:size-14"
+          className="size-11 lg:size-14"
           width={56}
           height={56}
           as="Link"
@@ -39,9 +40,12 @@ export function Header() {
 
       <HeaderMenu />
 
-      <div className="hidden sm:block">
-        <GitHubButton />
-        <LinkedInButton />
+      <div className="hidden lg:flex lg:items-center lg:gap-4">
+        <ThemeQuickSettings animateOut={true} />
+        <div>
+          <GitHubButton />
+          <LinkedInButton />
+        </div>
       </div>
     </Container>
   );

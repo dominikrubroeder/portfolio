@@ -7,7 +7,7 @@ import {
 
 export default function Technologies() {
   return (
-    <div className="space-y-8">
+    <div className="scroll-mt-24 space-y-8" id="technologies">
       <h2>
         Technologies
         <span className="ml-2 font-medium text-muted-foreground">

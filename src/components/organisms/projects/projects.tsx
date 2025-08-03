@@ -12,7 +12,7 @@ export function Projects() {
   const project = projects[0];
 
   return (
-    <div className="space-y-6">
+    <div className="scroll-mt-24 space-y-6" id="projects">
       <h2>
         Projects
         <span className="ml-2 font-medium text-muted-foreground">

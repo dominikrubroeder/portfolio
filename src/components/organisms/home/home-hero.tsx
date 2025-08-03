@@ -3,7 +3,10 @@ import { Container } from '@/components/atoms/container';
 
 export function HomeHero() {
   return (
-    <Container className="flex flex-col items-center justify-center pt-5 pb-1 lg:pb-2">
+    <Container
+      className="flex flex-col items-center justify-center pt-5 pb-1 lg:pb-2"
+      id="hero"
+    >
       <div className="space-y-2">
         <Badge size="medium" color="primary">
           Team Frontend
