@@ -92,7 +92,7 @@ export function ComponentShowcase() {
             >
               {componentGroup.children.map((component, index) => (
                 <li key={index}>
-                  <div className="group relative space-y-2">
+                  <div className="group relative space-y-2 overflow-hidden">
                     {component.animatable && (
                       <Button
                         variant="ghost"
@@ -103,7 +103,7 @@ export function ComponentShowcase() {
                       </Button>
                     )}
 
-                    <div className="flex min-h-[14rem] items-center justify-center overflow-hidden overflow-y-auto rounded border p-4">
+                    <div className="flex h-[14rem] items-center justify-center overflow-hidden overflow-y-auto rounded border p-4">
                       {component.component}
                     </div>
 
