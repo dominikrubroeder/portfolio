@@ -2,12 +2,13 @@
 
 import { useCallback, useState } from 'react';
 
+import { MoonIcon, SparklesIcon, SunIcon } from '@heroicons/react/24/outline';
 import {
   ChevronDownIcon,
-  MoonIcon,
-  SunIcon
-} from '@heroicons/react/24/outline';
-import { AppWindowMacIcon } from 'lucide-react';
+  MoonIcon as MoonIconSolid,
+  SparklesIcon as SparklesIconSolid,
+  SunIcon as SunIconSolid
+} from '@heroicons/react/24/solid';
 
 import { cn } from '@/lib/utils';
 
@@ -36,7 +37,7 @@ const options = [
     value: 'system',
     label: (
       <div className="flex items-center gap-2">
-        <SunIcon className="size-5" /> <span>Auto</span>
+        <SparklesIcon className="size-5" /> <span>Auto</span>
       </div>
     )
   }
@@ -63,26 +64,26 @@ export function ThemeAppearanceSetting() {
       >
         {appearance === 'light' && (
           <>
-            <SunIcon className="size-5" /> Light
+            <SunIconSolid className="size-5" /> Light
           </>
         )}
 
         {appearance === 'dark' && (
           <>
-            <MoonIcon className="size-5" /> Dark
+            <MoonIconSolid className="size-5" /> Dark
           </>
         )}
 
         {appearance === 'system' && (
           <>
-            <AppWindowMacIcon className="size-5" /> Auto
+            <SparklesIconSolid className="size-5" /> Auto
           </>
         )}
         <ChevronDownIcon className="size-4" />
       </Button>
 
       {isOpen && (
-        <div className="absolute top-full left-1/2 z-max mt-2 min-w-[8rem] -translate-x-1/2 animate-fade-up-1rem rounded border bg-background px-3 shadow-xl">
+        <div className="absolute top-full left-1/2 z-max mt-2 -translate-x-1/2 animate-fade-up-1rem rounded border bg-background px-3 shadow-xl">
           <ul>
             {options.map(({ value, label }) => (
               <li key={value}>
