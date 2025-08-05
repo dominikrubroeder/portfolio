@@ -1,4 +1,10 @@
-import { MotionLogo, NextjsLogo, ReactLogo, TailwindCssLogo, TypeScriptLogo } from '@/components/atoms/logo';
+import {
+  MotionLogo,
+  NextjsLogo,
+  ReactLogo,
+  TailwindCssLogo,
+  TypeScriptLogo
+} from '@/components/atoms/logo';
 import type { Technology } from '@/components/organisms/technologies/types';
 
 export const mainTechnologies = [

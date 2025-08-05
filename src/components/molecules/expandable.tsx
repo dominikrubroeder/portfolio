@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { motion } from 'motion/react';

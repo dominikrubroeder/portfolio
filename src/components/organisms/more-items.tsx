@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react';
 
 import Link from 'next/link';
 
-
 import { MinusIcon, PlusIcon } from '@heroicons/react/20/solid';
 import { ArrowTopRightOnSquareIcon, StarIcon } from '@heroicons/react/24/solid';
 
