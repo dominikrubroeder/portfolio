@@ -1,5 +1,4 @@
-import Link from 'next/link';
-
+import { Button } from '@/components/atoms/button';
 import {
   AllTechnologies,
   mainTechnologies
@@ -15,19 +14,19 @@ export default function Technologies() {
         </span>
       </h2>
 
-      <ul className="space-y-5">
+      <ul className="-ml-4 space-y-1">
         {mainTechnologies.map((technology) => (
           <li key={technology.name}>
             <div className="inline-flex items-center gap-4">
-              <Link
+              <Button
+                variant="ghost"
                 href={technology.href}
-                target="_blank"
                 title={`Open ${technology.name} website`}
-                rel="noopener noreferrer"
+                className="p-4 [&>svg]:size-12"
               >
                 {technology.logo}
                 <span className="sr-only">Open {technology.name}</span>
-              </Link>
+              </Button>
 
               <h3 className="mb-0 space-x-1 text-base">
                 <span>{technology.name}</span>

@@ -20,9 +20,7 @@ export function Tools() {
                 <Button
                   variant="ghost"
                   href={tool.href}
-                  target="_blank"
                   title={`Open ${tool.name} website`}
-                  rel="noopener noreferrer"
                   className="p-4 [&>svg]:size-12"
                 >
                   {tool.logo}

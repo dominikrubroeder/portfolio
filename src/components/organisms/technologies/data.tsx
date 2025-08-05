@@ -1,12 +1,5 @@
-import {
-  MotionLogo,
-  NextjsLogo,
-  ReactLogo,
-  TailwindCssLogo,
-  TypeScriptLogo
-} from '@/components/atoms/logo';
+import { MotionLogo, NextjsLogo, ReactLogo, TailwindCssLogo, TypeScriptLogo } from '@/components/atoms/logo';
 import type { Technology } from '@/components/organisms/technologies/types';
-
 
 export const mainTechnologies = [
   {
@@ -57,7 +50,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
         description: '',
         website: '',
         logo: '',
-        knowledge: 'Experienced'
+        knowledge: 'Used'
       },
       {
         title: 'Nue.js',
@@ -78,7 +71,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
         description: '',
         website: '',
         logo: '',
-        knowledge: 'Experienced'
+        knowledge: 'Used'
       },
       {
         title: 'Astro',
@@ -171,7 +164,7 @@ export const technologies: { group: string; children: Technology[] }[] = [
         website: 'https://markdown.de/',
         logo: 'https://dominikrubroeder.dev/markdown.png',
         description: 'A simplified markup language',
-        knowledge: 'Used'
+        knowledge: 'Daily'
       }
     ]
   },
