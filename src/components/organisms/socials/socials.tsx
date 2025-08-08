@@ -1,5 +1,4 @@
-import Link from 'next/link';
-
+import { Button } from '@/components/atoms/button';
 import { mainSocials } from '@/components/organisms/socials';
 
 export function Socials() {
@@ -14,19 +13,21 @@ export function Socials() {
         </h2>
       </header>
 
-      <ul className="space-y-5">
+      <ul className="-ml-4 space-y-1">
         {mainSocials.map((social) => (
           <li key={social.name}>
             <div className="inline-flex items-center gap-4">
-              <Link
+              <Button
+                variant="ghost"
                 href={social.href}
                 target="_blank"
                 title={`Open ${social.name} website`}
+                className="p-4 [&>svg]:size-12"
                 rel="noopener noreferrer"
               >
                 {social.logo}
                 <span className="sr-only">Open {social.name}</span>
-              </Link>
+              </Button>
 
               <h3 className="mb-0 space-x-1">
                 <span>{social.name}</span>
