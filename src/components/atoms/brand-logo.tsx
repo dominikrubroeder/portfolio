@@ -1,6 +1,11 @@
 import { cn } from '@/lib/utils';
 
-import { AuthjsLogo, InkdropLogo, InstagramLogo, PostmanLogo } from '@/components/atoms/img';
+import {
+  AuthjsLogo,
+  InkdropLogo,
+  InstagramLogo,
+  PostmanLogo
+} from '@/components/atoms/img';
 import {
   AlgoliaLogo,
   ArcLogo,
