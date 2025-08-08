@@ -52,6 +52,10 @@ export { ArcLogo } from './arc-logo';
 export { BraveLogo } from './brave-logo';
 export { ContentservLogo } from './contentserv-logo';
 export { Typo3Logo } from './typo3-logo';
+export { ColorDesignerLogo } from './color-designer-logo';
+export { CookiehubLogo } from './cookiehub-logo';
+export { UsercentricsLogo } from './usercentrics-logo';
+export { UicolorsLogo } from './uicolors-logo';
 
 export * from './config';
 export * from './types';

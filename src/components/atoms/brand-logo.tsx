@@ -1,11 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import {
-  AuthjsLogo,
-  InkdropLogo,
-  InstagramLogo,
-  PostmanLogo
-} from '@/components/atoms/img';
+import { AuthjsLogo, InkdropLogo, InstagramLogo, PostmanLogo } from '@/components/atoms/img';
 import {
   AlgoliaLogo,
   ArcLogo,
@@ -16,7 +11,9 @@ import {
   ChromeLogo,
   ClaudeAiLogo,
   ClerkLogo,
+  ColorDesignerLogo,
   ContentservLogo,
+  CookiehubLogo,
   CraftLogo,
   CssLogo,
   DailyDevLogo,
@@ -54,6 +51,8 @@ import {
   TeamsLogo,
   TypeScriptLogo,
   Typo3Logo,
+  UicolorsLogo,
+  UsercentricsLogo,
   V0Logo,
   VercelLogo,
   WebstormLogo,
@@ -266,6 +265,18 @@ export function BrandLogo({
 
     case 'Typo3':
       return <Typo3Logo className={className} />;
+
+    case 'Color Designer':
+      return <ColorDesignerLogo className={className} />;
+
+    case 'uicolors':
+      return <UicolorsLogo className={className} />;
+
+    case 'CookieHub':
+      return <CookiehubLogo className={className} />;
+
+    case 'Usercentrics':
+      return <UsercentricsLogo className={className} />;
 
     default:
       return DefaultLogo;
