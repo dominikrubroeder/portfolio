@@ -83,20 +83,20 @@ export function Projects() {
               <b className="block">Tools</b>
               <ul className="-ml-4 flex flex-wrap gap-2">
                 {project.tools?.map((tool, index) => {
-                  if (tool && tool.title) {
+                  if (tool && tool.name) {
                     return (
                       <li key={index}>
                         <Button
                           variant="ghost"
-                          href={tool.website}
-                          title={tool.title}
-                          aria-label={`Open ${tool.title} website`}
+                          href={tool.href}
+                          title={tool.name}
+                          aria-label={`Open ${tool.name} website`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-4 [&>svg]:size-12"
                         >
-                          <span className="sr-only">{tool.title}</span>
-                          <BrandLogo brand={tool.title} className="size-12" />
+                          <span className="sr-only">{tool.name}</span>
+                          <BrandLogo brand={tool.name} className="size-12" />
                         </Button>
                       </li>
                     );
@@ -109,21 +109,21 @@ export function Projects() {
               <b className="block">Technologies</b>
               <ul className="-ml-4 flex flex-wrap gap-2">
                 {project.technologies?.map((technology, index) => {
-                  if (technology && technology.title) {
+                  if (technology && technology.name) {
                     return (
                       <li key={index}>
                         <Button
                           variant="ghost"
-                          href={technology.website}
-                          title={technology.title}
-                          aria-label={`Open ${technology.title} website`}
+                          href={technology.href}
+                          title={technology.name}
+                          aria-label={`Open ${technology.name} website`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-4 [&>svg]:size-12"
                         >
-                          <span className="sr-only">{technology.title}</span>
+                          <span className="sr-only">{technology.name}</span>
                           <BrandLogo
-                            brand={technology.title}
+                            brand={technology.name}
                             className="size-12"
                           />
                         </Button>
