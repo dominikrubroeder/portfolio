@@ -1,4 +1,4 @@
-import { Button } from '@/components/atoms/button';
+import { BrandList } from '@/components/molecules/brand-list';
 import { AllTools, mainTools } from '@/components/organisms/tools';
 
 export function Tools() {
@@ -13,30 +13,7 @@ export function Tools() {
           </span>
         </h2>
 
-        <ul className="-ml-4 space-y-1">
-          {mainTools.map((tool) => (
-            <li key={tool.name}>
-              <div className="inline-flex items-center gap-4">
-                <Button
-                  variant="ghost"
-                  href={tool.href}
-                  title={`Open ${tool.name} website`}
-                  className="p-4 [&>svg]:size-12"
-                >
-                  {tool.logo}
-                  <span className="sr-only">Open {tool.name}</span>
-                </Button>
-
-                <h3 className="mb-0 space-x-1">
-                  <span>{tool.name}</span>
-                  <span className="font-medium text-muted-foreground">
-                    {tool.description}
-                  </span>
-                </h3>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <BrandList brands={mainTools} />
       </div>
 
       <AllTools />

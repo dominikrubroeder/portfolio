@@ -10,9 +10,9 @@ import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
-import type { Tool } from '@/components/organisms/tools/types';
+import type { Brand } from '@/components/organisms/brand';
 
-export default function Tool({ tool, group }: { tool: Tool; group: string }) {
+export default function Tool({ tool, group }: { tool: Brand; group: string }) {
   return (
     <div className="group relative w-80 space-y-6 text-center whitespace-normal">
       <div
@@ -22,10 +22,10 @@ export default function Tool({ tool, group }: { tool: Tool; group: string }) {
       >
         <Button
           variant="ghost"
-          href={tool.website}
+          href={tool.href}
           target="_blank"
-          title={`Go to external ${tool.title} website`}
-          aria-label={`Go to external ${tool.title} website`}
+          title={`Go to external ${tool.name} website`}
+          aria-label={`Go to external ${tool.name} website`}
           className="mx-auto min-h-11 min-w-11 shrink-0"
         >
           <span className="sr-only">Open</span>
@@ -34,19 +34,19 @@ export default function Tool({ tool, group }: { tool: Tool; group: string }) {
       </div>
 
       <Link
-        href={tool.website}
+        href={tool.href}
         className="group relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
         target="_blank"
-        title={`Go to ${tool.title} website`}
-        aria-label={`Go to ${tool.title} website`}
+        title={`Go to ${tool.name} website`}
+        aria-label={`Go to ${tool.name} website`}
         rel="noopener noreferrer"
       >
         <DevModeLabel className="z-10">div | slider-item.tsx</DevModeLabel>
 
         <BrandLogo
-          brand={tool.title}
+          brand={tool.name}
           className="h-32 w-auto transition group-hover:scale-105"
-          aria-label={`${tool.title} logo`}
+          aria-label={`${tool.name} logo`}
         />
 
         <ExperienceBar
@@ -61,14 +61,14 @@ export default function Tool({ tool, group }: { tool: Tool; group: string }) {
 
       <div>
         <Link
-          href={tool.website}
+          href={tool.href}
           className="mx-auto inline-flex items-center justify-center gap-1 font-bold text-foreground"
-          title={`Go to external ${tool.title} website`}
-          aria-label={`Go to external ${tool.title} website`}
+          title={`Go to external ${tool.name} website`}
+          aria-label={`Go to external ${tool.name} website`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>{tool.title}</h2>
+          <h2>{tool.name}</h2>
         </Link>
 
         <p className="text-center italic">{tool.description}</p>

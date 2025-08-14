@@ -21,110 +21,110 @@ export const projects = [
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Figma'
+            (technology) => technology.name === 'Figma'
           )
         )
-        ?.children.find((technology) => technology.title === 'Figma'),
+        ?.children.find((technology) => technology.name === 'Figma'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'WebStorm'
+            (technology) => technology.name === 'WebStorm'
           )
         )
-        ?.children.find((technology) => technology.title === 'WebStorm'),
+        ?.children.find((technology) => technology.name === 'WebStorm'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Shopware'
+            (technology) => technology.name === 'Shopware'
           )
         )
-        ?.children.find((technology) => technology.title === 'Shopware'),
+        ?.children.find((technology) => technology.name === 'Shopware'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Storyblok'
+            (technology) => technology.name === 'Storyblok'
           )
         )
-        ?.children.find((technology) => technology.title === 'Storyblok'),
+        ?.children.find((technology) => technology.name === 'Storyblok'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Algolia'
+            (technology) => technology.name === 'Algolia'
           )
         )
-        ?.children.find((technology) => technology.title === 'Algolia'),
+        ?.children.find((technology) => technology.name === 'Algolia'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Auth.js'
+            (technology) => technology.name === 'Auth.js'
           )
         )
-        ?.children.find((technology) => technology.title === 'Auth.js'),
+        ?.children.find((technology) => technology.name === 'Auth.js'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Jira'
+            (technology) => technology.name === 'Jira'
           )
         )
-        ?.children.find((technology) => technology.title === 'Jira'),
+        ?.children.find((technology) => technology.name === 'Jira'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Slack'
+            (technology) => technology.name === 'Slack'
           )
         )
-        ?.children.find((technology) => technology.title === 'Slack'),
+        ?.children.find((technology) => technology.name === 'Slack'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Teams'
+            (technology) => technology.name === 'Teams'
           )
         )
-        ?.children.find((technology) => technology.title === 'Teams'),
+        ?.children.find((technology) => technology.name === 'Teams'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'GitLab'
+            (technology) => technology.name === 'GitLab'
           )
         )
-        ?.children.find((technology) => technology.title === 'GitLab'),
+        ?.children.find((technology) => technology.name === 'GitLab'),
       tools
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Craft'
+            (technology) => technology.name === 'Craft'
           )
         )
-        ?.children.find((technology) => technology.title === 'Craft')
+        ?.children.find((technology) => technology.name === 'Craft')
     ],
     technologies: [
       technologies
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Next.js'
+            (technology) => technology.name === 'Next.js'
           )
         )
-        ?.children.find((technology) => technology.title === 'Next.js'),
+        ?.children.find((technology) => technology.name === 'Next.js'),
       technologies
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'React'
+            (technology) => technology.name === 'React'
           )
         )
-        ?.children.find((technology) => technology.title === 'React'),
+        ?.children.find((technology) => technology.name === 'React'),
       technologies
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'TypeScript'
+            (technology) => technology.name === 'TypeScript'
           )
         )
-        ?.children.find((technology) => technology.title === 'TypeScript'),
+        ?.children.find((technology) => technology.name === 'TypeScript'),
       technologies
         .find((technologyGroup) =>
           technologyGroup.children.find(
-            (technology) => technology.title === 'Tailwind CSS'
+            (technology) => technology.name === 'Tailwind CSS'
           )
         )
-        ?.children.find((technology) => technology.title === 'Tailwind CSS')
+        ?.children.find((technology) => technology.name === 'Tailwind CSS')
     ]
   },
   {

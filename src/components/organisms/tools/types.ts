@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { Brand } from '@/components/organisms/brand';
 
 export type Knowledge =
   | 'Not started'
@@ -7,12 +7,4 @@ export type Knowledge =
   | 'Professional'
   | 'Daily';
 
-export interface Tool {
-  title: string;
-  description: string;
-  website: string;
-  logo: ReactNode;
-  knowledge: Knowledge;
-}
-
-export type Tools = { group: string; children: Tool[] }[];
+export type Tools = { group: string; children: Brand[] }[];

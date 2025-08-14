@@ -12,8 +12,7 @@ import { Button } from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { Expandable } from '@/components/molecules/expandable';
-import type { Technology } from '@/components/organisms/technologies/types';
-import type { Tool } from '@/components/organisms/tools/types';
+import type { Brand } from '@/components/organisms/brand';
 
 import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
 
@@ -22,7 +21,7 @@ export default function MoreItems({
   openScrollToId,
   closedScrollToId
 }: {
-  items: { group: string; children: (Tool | Technology)[] }[];
+  items: { group: string; children: Brand[] }[];
   openScrollToId: string;
   closedScrollToId: string;
 }) {
@@ -115,7 +114,7 @@ export default function MoreItems({
 
                     <ul className="space-y-5 rounded border p-4">
                       {item.children
-                        .sort((a, b) => a.title.localeCompare(b.title))
+                        .sort((a, b) => a.name.localeCompare(b.name))
                         .map((item, index) => (
                           <li key={index} className="relative flex gap-4">
                             {item.knowledge === 'Daily' && (
@@ -123,25 +122,25 @@ export default function MoreItems({
                             )}
 
                             <Link
-                              href={item.website}
+                              href={item.href}
                               target="_blank"
                               rel="noopener noreferrer"
                             >
                               <BrandLogo
-                                brand={item.title}
+                                brand={item.name}
                                 className="size-10 shrink-0"
                               />
                             </Link>
 
                             <div className="flex flex-1 flex-wrap items-center justify-between gap-2 sm:overflow-hidden sm:whitespace-nowrap">
                               <Link
-                                href={item.website}
+                                href={item.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="sm:overflow-hidden"
                               >
                                 <h3 className="font-bold text-foreground sm:overflow-hidden sm:text-ellipsis">
-                                  {item.title}
+                                  {item.name}
                                 </h3>
                               </Link>
 
@@ -150,9 +149,9 @@ export default function MoreItems({
 
                                 <Button
                                   variant="ghost"
-                                  href={item.website}
-                                  title={`Go to external ${item.title} website`}
-                                  aria-label={`Go to external ${item.title} website`}
+                                  href={item.href}
+                                  title={`Go to external ${item.name} website`}
+                                  aria-label={`Go to external ${item.name} website`}
                                 >
                                   <ArrowTopRightOnSquareIcon className="size-5" />
                                 </Button>

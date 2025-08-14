@@ -31,14 +31,14 @@ export function AllTools() {
 
                 <ul className="space-y-4 rounded border p-4">
                   {item.children
-                    .sort((a, b) => a.title.localeCompare(b.title))
+                    .sort((a, b) => a.name.localeCompare(b.name))
                     .map((child, index) => (
                       <li
                         key={index}
                         className="relative flex justify-between gap-3 pr-2 xs:gap-4"
                       >
                         <Link
-                          href={child.website}
+                          href={child.href}
                           target="_blank"
                           className="group flex items-center gap-3 xs:gap-4"
                         >
@@ -47,14 +47,14 @@ export function AllTools() {
                             className="size-14 [&>svg]:size-10"
                           >
                             <BrandLogo
-                              brand={child.title}
+                              brand={child.name}
                               group={item.group}
                               className="size-10"
                             />
                           </Button>
 
                           <h3 className="mb-0 max-w-24 self-center overflow-hidden text-base text-ellipsis whitespace-nowrap xs:max-w-30 sm:max-w-none">
-                            {child.title}
+                            {child.name}
                           </h3>
                         </Link>
 
@@ -63,9 +63,9 @@ export function AllTools() {
 
                           <Button
                             variant="ghost"
-                            href={child.website}
-                            title={`Go to external ${child.title} website`}
-                            aria-label={`Go to external ${child.title} website`}
+                            href={child.href}
+                            title={`Go to external ${child.name} website`}
+                            aria-label={`Go to external ${child.name} website`}
                             className="hidden group-hover:after:hidden sm:flex"
                           >
                             <ArrowTopRightOnSquareIcon className="size-5" />

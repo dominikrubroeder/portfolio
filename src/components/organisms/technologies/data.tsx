@@ -5,91 +5,96 @@ import {
   TailwindCssLogo,
   TypeScriptLogo
 } from '@/components/atoms/logo';
-import type { Technology } from '@/components/organisms/technologies/types';
+import type { Brand } from '@/components/organisms/brand';
 
-export const mainTechnologies = [
+export const mainTechnologies: Brand[] = [
   {
     name: 'React',
     description: 'as frontend web library',
     logo: <ReactLogo className="size-12" />,
-    href: 'https://react.dev/'
+    href: 'https://react.dev/',
+    knowledge: 'Daily'
   },
   {
     name: 'Next.js',
     description: 'as fullstack web application framework',
     logo: <NextjsLogo className="size-12" />,
-    href: 'https://nextjs.org/'
+    href: 'https://nextjs.org/',
+    knowledge: 'Daily'
   },
   {
     name: 'TypeScript',
     description: 'as superset to JavaScript',
     logo: <TypeScriptLogo className="size-12" />,
-    href: 'https://www.typescriptlang.org/'
+    href: 'https://www.typescriptlang.org/',
+    knowledge: 'Daily'
   },
   {
     name: 'Tailwind CSS',
     description: 'as superset to CSS',
     logo: <TailwindCssLogo className="size-12" />,
-    href: 'https://tailwindcss.com/'
+    href: 'https://tailwindcss.com/',
+    knowledge: 'Daily'
   },
   {
     name: 'Motion',
     description: 'as animation library',
     logo: <MotionLogo className="size-12" />,
-    href: 'https://motion.dev/'
+    href: 'https://motion.dev/',
+    knowledge: 'Daily'
   }
 ];
 
-export const technologies: { group: string; children: Technology[] }[] = [
+export const technologies: { group: string; children: Brand[] }[] = [
   {
     group: 'Framework + Library',
     children: [
       {
-        title: 'React',
-        website: 'https://react.dev/',
+        name: 'React',
+        href: 'https://react.dev/',
         logo: 'https://dominikrubroeder.dev/react.png',
         description: 'The library for web and native user interfaces',
         knowledge: 'Daily'
       },
       {
-        title: 'Vue.js',
+        name: 'Vue.js',
         description: '',
-        website: '',
+        href: '',
         logo: '',
         knowledge: 'Used'
       },
       {
-        title: 'Nue.js',
+        name: 'Nue.js',
         description: '',
-        website: 'https://nuejs.org/',
+        href: 'https://nuejs.org/',
         logo: '',
         knowledge: 'Not started'
       },
       {
-        title: 'Svelte',
+        name: 'Svelte',
         description: 'web development for the rest of us',
-        website: 'https://svelte.dev/',
+        href: 'https://svelte.dev/',
         logo: '',
         knowledge: 'Used'
       },
       {
-        title: 'SwiftUI',
+        name: 'SwiftUI',
         description: '',
-        website: '',
+        href: '',
         logo: '',
         knowledge: 'Used'
       },
       {
-        title: 'Astro',
+        name: 'Astro',
         description: 'The web framework for content-driven websites',
-        website: 'https://astro.build/',
+        href: 'https://astro.build/',
         logo: '',
         knowledge: 'Not started'
       },
       {
-        title: 'Gatsby',
+        name: 'Gatsby',
         description: '',
-        website: '',
+        href: '',
         logo: '',
         knowledge: 'Not started'
       }
@@ -99,31 +104,31 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Full-Stack Framework',
     children: [
       {
-        title: 'Next.js',
+        name: 'Next.js',
         description: 'The React Framework for the Web',
-        website: 'https://nextjs.org/',
+        href: 'https://nextjs.org/',
         logo: 'https://dominikrubroeder.dev/nextjs.png',
         knowledge: 'Daily'
       },
       {
-        title: 'Remix',
+        name: 'Remix',
         description:
           'Focused on web standards and modern web app UX, you’re simply going to build better websites',
-        website: 'https://remix.run/',
+        href: 'https://remix.run/',
         logo: '',
         knowledge: 'Used'
       },
       {
-        title: 'Nuxt.js',
+        name: 'Nuxt.js',
         description: '',
-        website: '',
+        href: '',
         logo: '',
         knowledge: 'Used'
       },
       {
-        title: 'React Router',
+        name: 'React Router',
         description: '(v7, framework mode)',
-        website: 'https://reactrouter.com/start/framework/installation',
+        href: 'https://reactrouter.com/start/framework/installation',
         logo: '',
         knowledge: 'Used'
       }
@@ -133,22 +138,22 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Programming Language',
     children: [
       {
-        title: 'TypeScript',
-        website: 'https://www.typescriptlang.org',
+        name: 'TypeScript',
+        href: 'https://www.typescriptlang.org',
         logo: 'https://dominikrubroeder.dev/typescript.png',
         description: 'TypeScript is JavaScript with syntax for types.',
         knowledge: 'Daily'
       },
       {
-        title: 'JavaScript',
-        website: 'https://www.w3schools.com/js/',
+        name: 'JavaScript',
+        href: 'https://www.w3schools.com/js/',
         logo: 'https://dominikrubroeder.dev/javascript.png',
         description: 'JavaScript is the programming language of the Web.',
         knowledge: 'Daily'
       },
       {
-        title: 'Swift',
-        website: '',
+        name: 'Swift',
+        href: '',
         logo: '',
         description: '',
         knowledge: 'Used'
@@ -159,15 +164,15 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Markup Language',
     children: [
       {
-        title: 'HTML',
-        website: 'https://www.w3schools.com/html/',
+        name: 'HTML',
+        href: 'https://www.w3schools.com/html/',
         logo: 'https://dominikrubroeder.dev/html.png',
         description: 'The default markup language for the web',
         knowledge: 'Daily'
       },
       {
-        title: 'Markdown',
-        website: 'https://markdown.de/',
+        name: 'Markdown',
+        href: 'https://markdown.de/',
         logo: 'https://dominikrubroeder.dev/markdown.png',
         description: 'A simplified markup language',
         knowledge: 'Daily'
@@ -178,15 +183,15 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Style Sheet Language + Framework',
     children: [
       {
-        title: 'CSS',
-        website: 'https://www.w3schools.com/css/',
+        name: 'CSS',
+        href: 'https://www.w3schools.com/css/',
         logo: 'https://dominikrubroeder.dev/css.png',
         description: 'The default styling markup for the web',
         knowledge: 'Daily'
       },
       {
-        title: 'Tailwind CSS',
-        website: 'https://tailwindcss.com/',
+        name: 'Tailwind CSS',
+        href: 'https://tailwindcss.com/',
         logo: 'https://dominikrubroeder.dev/tailwind.png',
         description:
           'Rapidly build modern websites without ever leaving your HTML.',
@@ -198,9 +203,9 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Animation',
     children: [
       {
-        title: 'Motion',
+        name: 'Motion',
         description: 'A modern animation library for JavaScript and React',
-        website: 'https://motion.dev/',
+        href: 'https://motion.dev/',
         logo: '',
         knowledge: 'Daily'
       }
@@ -210,16 +215,16 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Runtime Environment',
     children: [
       {
-        title: 'Node.js',
+        name: 'Node.js',
         description: '',
-        website: '',
+        href: '',
         logo: '',
         knowledge: 'Used'
       },
       {
-        title: 'Deno',
+        name: 'Deno',
         description: '',
-        website: '',
+        href: '',
         logo: '',
         knowledge: 'Not started'
       }
@@ -229,9 +234,9 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Query Language',
     children: [
       {
-        title: 'GraphQL',
+        name: 'GraphQL',
         description: '',
-        website: '',
+        href: '',
         logo: '',
         knowledge: 'Not started'
       }
@@ -241,9 +246,9 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Build Tool',
     children: [
       {
-        title: 'Vite',
+        name: 'Vite',
         description: '',
-        website: 'https://vite.dev/',
+        href: 'https://vite.dev/',
         logo: '',
         knowledge: 'Used'
       }
@@ -253,9 +258,9 @@ export const technologies: { group: string; children: Technology[] }[] = [
     group: 'Preprocessor',
     children: [
       {
-        title: 'Sass',
+        name: 'Sass',
         description: '',
-        website: '',
+        href: '',
         logo: '',
         knowledge: 'Experienced'
       }
