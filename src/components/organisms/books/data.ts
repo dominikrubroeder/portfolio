@@ -1,4 +1,4 @@
-import type { Book } from '@/components/organisms/introduction/books/types';
+import type { Book } from '@/components/organisms/books/types';
 
 export const books: Book[] = [
   {
@@ -71,6 +71,12 @@ export const books: Book[] = [
     title: 'Living with Complexity',
     author: 'Don Norman',
     href: undefined,
-    progress: 0
+    progress: 50
+  },
+  {
+    title: 'Subatomic (The Complete Guide to Design Tokens)',
+    author: 'Brad Frost',
+    href: 'https://designtokenscourse.com',
+    progress: 10
   }
 ];

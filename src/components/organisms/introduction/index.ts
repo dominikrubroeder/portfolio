@@ -1,4 +1,3 @@
-export * from './books';
 export { Introduction } from './introduction';
 export { VisionAccordion } from './vision-accordion';
 export { TechStackAccordion } from './tech-stack-accordion';

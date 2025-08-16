@@ -7,8 +7,8 @@ import {
   LinkedInButton
 } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
+import { BooksAccordion } from '@/components/organisms/books';
 import {
-  BooksAccordion,
   HowIWorkAccordion,
   MyBackgroundAccordion,
   TechStackAccordion
@@ -31,7 +31,8 @@ export function Introduction() {
             Building user interfaces is something i follow for almost 10 years
             now. In that area, i found myself enjoying building components and
             setting up the design system for them as the most fitting and the
-            most fulfilling thing for me.
+            most fulfilling thing for me. Of course also using, expanding it
+            once it&#39;s in place.
           </p>
 
           <p>
