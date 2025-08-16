@@ -1,6 +1,6 @@
 export interface Book {
   title: string;
   author: string;
-  href: string | undefined;
+  href: string;
   progress: number;
 }

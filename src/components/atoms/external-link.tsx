@@ -38,7 +38,8 @@ export function ExternalLink({
           className={cn(
             variant === 'inline' &&
               'absolute -top-1 -right-3 size-3.5 text-current',
-            variant === 'prominent' && 'size-4 text-primary'
+            variant === 'prominent' && 'size-4 text-primary',
+            variant === 'unstyled' && 'ml-0.5'
           )}
         />
       </span>

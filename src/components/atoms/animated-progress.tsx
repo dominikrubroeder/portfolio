@@ -15,6 +15,7 @@ interface AnimatedProgressProps {
   color?: 'text-primary' | string;
   strokeColor?: 'stroke-primary' | string;
   backgroundColor?: 'bg-muted' | string;
+  className?: string;
 }
 
 export function AnimatedProgress({
@@ -25,7 +26,8 @@ export function AnimatedProgress({
   animateProgress = true,
   color = 'text-primary',
   strokeColor = 'stroke-primary',
-  backgroundColor = 'bg-transparent'
+  backgroundColor = 'bg-transparent',
+  className
 }: AnimatedProgressProps) {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -78,7 +80,8 @@ export function AnimatedProgress({
     <div
       className={cn(
         'relative flex items-center justify-center rounded-full',
-        backgroundColor
+        backgroundColor,
+        className
       )}
       style={{ width: size, height: size }}
       ref={ref}
@@ -98,7 +101,7 @@ export function AnimatedProgress({
             fill="none"
             strokeWidth={strokeWidth}
             strokeLinecap="round"
-            className="stroke-muted"
+            className="stroke-muted group-hover:stroke-primary/15"
           />
           <motion.circle
             cx={center}
