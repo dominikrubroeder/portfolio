@@ -1,8 +1,11 @@
 import {
+  AlgoliaLogo,
   CraftLogo,
   FigmaLogo,
   GithubLogo,
   GitlabLogo,
+  ShopwareLogo,
+  StoryblokLogo,
   WebstormLogo
 } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';
@@ -240,7 +243,7 @@ export const tools: Tools = [
       {
         name: 'Storyblok',
         href: 'https://www.storyblok.com',
-        logo: '/storyblok.png',
+        logo: <StoryblokLogo className="size-12" />,
         description: 'The Way to Modern Content',
         knowledge: 'Daily'
       },
@@ -1052,7 +1055,7 @@ export const tools: Tools = [
       {
         name: 'Algolia',
         href: 'https://www.algolia.com',
-        logo: '/algolia.png',
+        logo: <AlgoliaLogo className="size-12" />,
         description: 'AI-Search, that understands',
         knowledge: 'Experienced'
       },
@@ -1086,7 +1089,7 @@ export const tools: Tools = [
       {
         name: 'Shopware',
         href: 'https://www.shopware.com',
-        logo: '/shopware.png',
+        logo: <ShopwareLogo />,
         description:
           'Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.',
         knowledge: 'Daily'
