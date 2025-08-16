@@ -25,11 +25,9 @@ export function HowIWorkAccordion({ className }: { className?: string }) {
         <li>Work for good brands, products or services</li>
         <li>Bring an idea from paper to production</li>
         <li>
-          Work with pen and paper; digital interfaces, anything that can hold an
-          idea fast and reliable and from hand to surface. Also, quick sketching
-          and scribbling not only improves visualizing my ideas faster, I can
-          also turn back to them later when something else blocks the
-          opportunity working on it immediately
+          Work with pen and paper; fast sketching and scribbling improves
+          visualizing my ideas faster. Plus, I can also turn back to them later
+          when something else blocks the opportunity working on it immediately
         </li>
         <li>
           Write notes on a regular basis; similar to work with pen and paper, it
