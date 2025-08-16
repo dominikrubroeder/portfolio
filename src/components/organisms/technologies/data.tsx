@@ -1,4 +1,8 @@
 import {
+  CssLogo,
+  HtmlLogo,
+  JavascriptLogo,
+  MarkdownLogo,
   MotionLogo,
   NextjsLogo,
   ReactLogo,
@@ -52,7 +56,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'React',
         href: 'https://react.dev/',
-        logo: 'https://dominikrubroeder.dev/react.png',
+        logo: <ReactLogo className="size-12" />,
         description: 'The library for web and native user interfaces',
         knowledge: 'Daily'
       },
@@ -107,7 +111,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Next.js',
         description: 'The React Framework for the Web',
         href: 'https://nextjs.org/',
-        logo: 'https://dominikrubroeder.dev/nextjs.png',
+        logo: <NextjsLogo className="size-12" />,
         knowledge: 'Daily'
       },
       {
@@ -140,14 +144,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'TypeScript',
         href: 'https://www.typescriptlang.org',
-        logo: 'https://dominikrubroeder.dev/typescript.png',
+        logo: <TypeScriptLogo className="size-12" />,
         description: 'TypeScript is JavaScript with syntax for types.',
         knowledge: 'Daily'
       },
       {
         name: 'JavaScript',
         href: 'https://www.w3schools.com/js/',
-        logo: 'https://dominikrubroeder.dev/javascript.png',
+        logo: <JavascriptLogo className="size-12" />,
         description: 'JavaScript is the programming language of the Web.',
         knowledge: 'Daily'
       },
@@ -166,14 +170,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'HTML',
         href: 'https://www.w3schools.com/html/',
-        logo: 'https://dominikrubroeder.dev/html.png',
+        logo: <HtmlLogo className="size-12" />,
         description: 'The default markup language for the web',
         knowledge: 'Daily'
       },
       {
         name: 'Markdown',
         href: 'https://markdown.de/',
-        logo: 'https://dominikrubroeder.dev/markdown.png',
+        logo: <MarkdownLogo className="size-12" />,
         description: 'A simplified markup language',
         knowledge: 'Daily'
       }
@@ -185,14 +189,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'CSS',
         href: 'https://www.w3schools.com/css/',
-        logo: 'https://dominikrubroeder.dev/css.png',
+        logo: <CssLogo className="size-12" />,
         description: 'The default styling markup for the web',
         knowledge: 'Daily'
       },
       {
         name: 'Tailwind CSS',
         href: 'https://tailwindcss.com/',
-        logo: 'https://dominikrubroeder.dev/tailwind.png',
+        logo: <TailwindCssLogo className="size-12" />,
         description:
           'Rapidly build modern websites without ever leaving your HTML.',
         knowledge: 'Daily'
