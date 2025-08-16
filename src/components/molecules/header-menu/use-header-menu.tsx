@@ -4,6 +4,15 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 
+import {
+  ChatBubbleOvalLeftEllipsisIcon,
+  CodeBracketIcon,
+  DocumentTextIcon,
+  ListBulletIcon,
+  PaintBrushIcon,
+  Square2StackIcon
+} from '@heroicons/react/24/outline';
+
 import type { UseScrollInViewProps } from '@/hooks/use-scroll-into-view';
 import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
 
@@ -23,28 +32,34 @@ export const useHeaderMenu = () => {
     if (pathname === '/') {
       return [
         {
-          href: 'introduction',
-          label: 'Introduction'
+          href: 'hero',
+          label: 'Introduction',
+          icon: <DocumentTextIcon className="size-5" />
         },
         {
           href: 'projects',
-          label: 'Projects'
+          label: 'Projects',
+          icon: <Square2StackIcon className="size-5" />
         },
         {
           href: 'tools',
-          label: 'Tools'
+          label: 'Tools',
+          icon: <PaintBrushIcon className="size-5" />
         },
         {
           href: 'technologies',
-          label: 'Technologies'
+          label: 'Technologies',
+          icon: <CodeBracketIcon className="size-5" />
         },
         {
           href: 'socials',
-          label: 'Socials'
+          label: 'Socials',
+          icon: <ChatBubbleOvalLeftEllipsisIcon className="size-5" />
         },
         {
           href: 'faq',
-          label: 'QA Questions and Answers'
+          label: 'QA Questions and Answers',
+          icon: <ListBulletIcon className="size-5" />
         }
       ];
     }
@@ -53,23 +68,41 @@ export const useHeaderMenu = () => {
       return [
         {
           href: 'hero',
-          label: 'Introduction'
+          label: 'Introduction',
+          icon: <DocumentTextIcon className="size-5" />
         },
         {
           href: 'components',
-          label: 'Components'
+          label: 'Components',
+          icon: <DocumentTextIcon className="size-5" />
         },
         {
           href: 'about-frontend-vision-ui',
-          label: 'About Frontend Vision UI'
+          label: 'About Frontend Vision UI',
+          icon: <DocumentTextIcon className="size-5" />
         },
         {
           href: 'analytics',
-          label: 'Analytics'
+          label: 'Analytics',
+          icon: <DocumentTextIcon className="size-5" />
         }
       ];
     }
   }, [pathname]);
+
+  const pages = useMemo(
+    () => [
+      {
+        href: '/',
+        label: 'Home'
+      },
+      {
+        href: '/frontend-vision-ui',
+        label: 'Frontend Vision UI'
+      }
+    ],
+    []
+  );
 
   const handleScrollToSection = useCallback(
     ({
@@ -96,6 +129,7 @@ export const useHeaderMenu = () => {
     handleScrollToSection,
     handleNavigation,
     currentNavigation,
+    pages,
     scrollIntoView,
     pathname,
     router
