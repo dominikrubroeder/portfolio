@@ -1,6 +1,6 @@
 import { MediawaveLogo } from '@/components/atoms/logo';
-import { technologies } from '@/components/organisms/technologies';
-import { tools } from '@/components/organisms/tools';
+import { getTechnologies } from '@/components/organisms/technologies';
+import { getTools } from '@/components/organisms/tools';
 
 export const projects = [
   {
@@ -18,113 +18,27 @@ export const projects = [
       'Maintaining and building up the design system to ensure flexibility and reusability'
     ],
     tools: [
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Figma'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Figma'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'WebStorm'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'WebStorm'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Shopware'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Shopware'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Storyblok'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Storyblok'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Algolia'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Algolia'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Auth.js'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Auth.js'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Jira'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Jira'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Slack'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Slack'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Teams'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Teams'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'GitLab'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'GitLab'),
-      tools
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Craft'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Craft')
+      ...getTools({
+        toolNames: [
+          'Figma',
+          'WebStorm',
+          'Shopware',
+          'Storyblok',
+          'Algolia',
+          'Auth.js',
+          'Jira',
+          'Slack',
+          'Teams',
+          'GitLab',
+          'Craft'
+        ],
+        sortBy: 'like-input'
+      })
     ],
     technologies: [
-      technologies
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Next.js'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Next.js'),
-      technologies
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'React'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'React'),
-      technologies
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'TypeScript'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'TypeScript'),
-      technologies
-        .find((technologyGroup) =>
-          technologyGroup.children.find(
-            (technology) => technology.name === 'Tailwind CSS'
-          )
-        )
-        ?.children.find((technology) => technology.name === 'Tailwind CSS')
+      ...getTechnologies({
+        technologyNames: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
+      })
     ]
   },
   {
@@ -133,7 +47,12 @@ export const projects = [
     url: 'https://www.sautershop.de',
     status: 'In Progress',
     readableTitle: 'Home wood-working tools',
-    timeframe: 'Today – 2024'
+    timeframe: 'Today – 2024',
+    logo: undefined,
+    role: undefined,
+    aspects: undefined,
+    tools: undefined,
+    technologies: undefined
   },
   {
     title: 'HD+',
@@ -141,7 +60,12 @@ export const projects = [
     url: 'https://www.hd-plus.de',
     readableTitle: 'Everything you need for good television',
     status: 'Terminated',
-    timeframe: '2023 - 2021'
+    timeframe: '2023 - 2021',
+    logo: undefined,
+    role: undefined,
+    aspects: undefined,
+    tools: undefined,
+    technologies: undefined
   },
   {
     title: 'Segmüller',
@@ -149,7 +73,12 @@ export const projects = [
     url: 'https://www.segmueller.de',
     readableTitle: 'Home furniture from Germany',
     status: 'Published',
-    timeframe: '2023 - 2021'
+    timeframe: '2023 - 2021',
+    logo: undefined,
+    role: undefined,
+    aspects: undefined,
+    tools: undefined,
+    technologies: undefined
   },
   {
     title: 'alles auto',
@@ -157,7 +86,12 @@ export const projects = [
     url: 'https://www.alles.auto',
     readableTitle: '',
     status: 'Published',
-    timeframe: '2021'
+    timeframe: '2021',
+    logo: undefined,
+    role: undefined,
+    aspects: undefined,
+    tools: undefined,
+    technologies: undefined
   },
   {
     title: 'Loy GmbH',
@@ -165,7 +99,12 @@ export const projects = [
     url: 'https://www.loy.info',
     readableTitle: '',
     status: 'Published',
-    timeframe: '2021 – 2016'
+    timeframe: '2021 – 2016',
+    logo: undefined,
+    role: undefined,
+    aspects: undefined,
+    tools: undefined,
+    technologies: undefined
   },
   {
     title: 'GitHub',
@@ -174,6 +113,11 @@ export const projects = [
     readableTitle:
       'In my repository i just include all the projects i did over the last years. Not in specific order or priority.',
     status: 'Published',
-    timeframe: 'Today – 2020'
+    timeframe: 'Today – 2020',
+    logo: undefined,
+    role: undefined,
+    aspects: undefined,
+    tools: undefined,
+    technologies: undefined
   }
 ];
