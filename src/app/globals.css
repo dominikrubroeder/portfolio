@@ -53,7 +53,7 @@
   }
 
   button {
-    @apply cursor-pointer;
+    @apply cursor-pointer active:scale-[0.98];
   }
 
   li::marker {
