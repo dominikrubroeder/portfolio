@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 import { Badge } from '@/components/atoms/badge';
-import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import { Ul } from '@/components/atoms/ul';
+import { BrandLink } from '@/components/organisms/brand';
 import { projects } from '@/components/organisms/projects/data';
 
 export function Projects() {
@@ -86,18 +86,7 @@ export function Projects() {
                   if (tool && tool.name) {
                     return (
                       <li key={index}>
-                        <Button
-                          variant="ghost"
-                          href={tool.href}
-                          title={tool.name}
-                          aria-label={`Open ${tool.name} website`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-4 [&>svg]:size-12"
-                        >
-                          <span className="sr-only">{tool.name}</span>
-                          <BrandLogo brand={tool.name} className="size-12" />
-                        </Button>
+                        <BrandLink brand={tool} />
                       </li>
                     );
                   }
@@ -112,21 +101,7 @@ export function Projects() {
                   if (technology && technology.name) {
                     return (
                       <li key={index}>
-                        <Button
-                          variant="ghost"
-                          href={technology.href}
-                          title={technology.name}
-                          aria-label={`Open ${technology.name} website`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-4 [&>svg]:size-12"
-                        >
-                          <span className="sr-only">{technology.name}</span>
-                          <BrandLogo
-                            brand={technology.name}
-                            className="size-12"
-                          />
-                        </Button>
+                        <BrandLink brand={technology} />
                       </li>
                     );
                   }

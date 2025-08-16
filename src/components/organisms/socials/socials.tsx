@@ -1,4 +1,4 @@
-import { BrandList } from '@/components/molecules/brand-list';
+import { BrandList } from '@/components/organisms/brand';
 import { mainSocials } from '@/components/organisms/socials';
 
 export function Socials() {

@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
-import { Button } from '@/components/atoms/button';
 import type { Brand } from '@/components/organisms/brand';
+import { BrandLink } from '@/components/organisms/brand';
 
 export function BrandList({
   brands,
@@ -15,15 +15,7 @@ export function BrandList({
       {brands.map((brand) => (
         <li key={brand.name}>
           <div className="inline-flex items-center gap-4">
-            <Button
-              variant="ghost"
-              href={brand.href}
-              title={`Open ${brand.name} website`}
-              className="p-4 [&>svg]:size-12"
-            >
-              {brand.logo}
-              <span className="sr-only">Open {brand.name}</span>
-            </Button>
+            <BrandLink brand={brand} />
 
             <h3 className="mb-0 space-x-1">
               <span>{brand.name}</span>
