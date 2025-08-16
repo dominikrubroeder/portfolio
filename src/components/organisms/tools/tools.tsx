@@ -1,4 +1,4 @@
-import { BrandList } from '@/components/molecules/brand-list';
+import { BrandList } from '@/components/organisms/brand';
 import { AllTools, mainTools } from '@/components/organisms/tools';
 
 export function Tools() {

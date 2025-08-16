@@ -1,4 +1,4 @@
-import { BrandList } from '@/components/molecules/brand-list';
+import { BrandList } from '@/components/organisms/brand';
 import {
   AllTechnologies,
   mainTechnologies
