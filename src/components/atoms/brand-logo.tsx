@@ -24,6 +24,7 @@ import {
   DailyDevLogo,
   FigmaLogo,
   FirefoxLogo,
+  FramerLogo,
   FrontendMentorLogo,
   GithubLogo,
   GitlabLogo,
@@ -124,10 +125,6 @@ export function BrandLogo({
 
   if (brand.startsWith('@')) {
     return <NpmLogo className={className} />;
-  }
-
-  if (brand === 'Motion' || brand === 'Framer') {
-    return <MotionLogo className={className} />;
   }
 
   switch (group) {
@@ -282,6 +279,12 @@ export function BrandLogo({
 
     case 'Usercentrics':
       return <UsercentricsLogo className={className} />;
+
+    case 'Motion':
+      return <MotionLogo className={className} />;
+
+    case 'Framer':
+      return <FramerLogo className={className} />;
 
     default:
       return DefaultLogo;

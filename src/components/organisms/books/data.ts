@@ -71,12 +71,6 @@ export const books: Book[] = [
     title: 'Living with Complexity',
     author: 'Don Norman',
     href: 'https://www.nngroup.com/books/living-with-complexity/',
-    progress: 50
-  },
-  {
-    title: 'Subatomic (The Complete Guide to Design Tokens)',
-    author: 'Brad Frost',
-    href: 'https://designtokenscourse.com',
-    progress: 10
+    progress: 100
   }
 ];

@@ -81,9 +81,9 @@ export function MyBackgroundAccordion() {
         </h4>
 
         <p>
-          Being able to translate a design idea, into real world applications
-          was and is as of today the most motivation thought which drives my
-          mentality to keep on learning.
+          Bringing an design idea from the mind, to paper, into real world
+          applications was and is as of today the most motivation thought which
+          drives my mentality to keep on learning.
         </p>
 
         <p>
@@ -123,7 +123,7 @@ export function MyBackgroundAccordion() {
 
         <p>Of course, there are much more frameworks out there, like:</p>
 
-        <Ul>
+        <Ul className="list-disc pl-5">
           <li>
             <ExternalLink
               href="https://astro.build/"
@@ -181,7 +181,7 @@ export function MyBackgroundAccordion() {
         <p>
           But in the end, the tech stack is the <i>framework</i> bringing the
           application to life, not <i>the</i> only key-factor of the project.
-          Together with other tools and technologies, they build up the setup
+          Together with other tools and technologies, they build up the system
           that makes this initial thought a reality.
         </p>
 
@@ -189,8 +189,8 @@ export function MyBackgroundAccordion() {
 
         <Blockquote>
           Today i can say: <b>I enjoy what i do</b>. With all the requirements,
-          and all the people working on it, it really feels fantastic once you
-          see the application up and running and in action.
+          all the people working on it, it really feels fantastic once you see
+          the application up and running, and in action.
         </Blockquote>
       </div>
     </Accordion>

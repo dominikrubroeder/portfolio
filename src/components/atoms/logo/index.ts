@@ -56,6 +56,7 @@ export { ColorDesignerLogo } from './color-designer-logo';
 export { CookiehubLogo } from './cookiehub-logo';
 export { UsercentricsLogo } from './usercentrics-logo';
 export { UicolorsLogo } from './uicolors-logo';
+export { FramerLogo } from './framer-logo';
 
 export * from './config';
 export * from './types';

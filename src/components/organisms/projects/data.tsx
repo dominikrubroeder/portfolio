@@ -30,7 +30,7 @@ export const projects = [
           'Slack',
           'Teams',
           'GitLab',
-          'Craft'
+          'Motion'
         ],
         sortBy: 'like-input'
       })
@@ -39,7 +39,8 @@ export const projects = [
       ...getTechnologies({
         technologyNames: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
       })
-    ]
+    ],
+    company: 'mediawave commerce GmbH'
   },
   {
     title: 'sautershop',

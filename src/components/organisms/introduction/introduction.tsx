@@ -7,12 +7,12 @@ import {
   LinkedInButton
 } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
-import { BooksAccordion } from '@/components/organisms/books';
 import {
   HowIWorkAccordion,
   MyBackgroundAccordion,
   TechStackAccordion
 } from '@/components/organisms/introduction';
+import { TrainingAccordion } from '@/components/organisms/training';
 
 export function Introduction() {
   return (
@@ -30,9 +30,8 @@ export function Introduction() {
           <p>
             Building user interfaces is something i follow for almost 10 years
             now. In that area, i found myself enjoying building components and
-            setting up the design system for them as the most fitting and the
-            most fulfilling thing for me. Of course also using, expanding it
-            once it&#39;s in place.
+            setting up the design system for them as the most fitting thing for
+            me.
           </p>
 
           <p>
@@ -44,23 +43,39 @@ export function Introduction() {
           </p>
 
           <p>
-            This is also, how <i>Frontend Vision UI</i> was created, and thought
-            about. It&#39;s my take on components, living in the design system:
+            And of course, once it&#39;s in place, it&#39;s ready to be used and
+            expanded, endlessly matching the needs and goals of the current
+            project.
+          </p>
+
+          <p>
+            This is also how <i>Frontend Vision UI</i> was created and thought
+            of. It’s a combination of well-known best practises, put together in
+            one system: It&#39;s my take on components living in the design
+            system world.
           </p>
         </div>
 
-        <ButtonGroup>
-          <Button href="/frontend-vision-ui">
-            <span>Explore Frontend Vision UI</span>
-            <ArrowRightIcon />
-          </Button>
+        <div className="space-y-3">
+          <ButtonGroup>
+            <Button href="/frontend-vision-ui">
+              <span>Explore Frontend Vision UI</span>
+              <ArrowRightIcon />
+            </Button>
 
-          <ContactButton />
+            <ContactButton />
 
-          <GitHubButton className="sm:hidden" />
+            <GitHubButton className="sm:hidden" />
 
-          <LinkedInButton className="sm:hidden" />
-        </ButtonGroup>
+            <LinkedInButton className="sm:hidden" />
+          </ButtonGroup>
+
+          <small className="block">
+            Note: This is non-commercial. I don&#39;t distribute this
+            vision-sharing in a commercial manner. It&#39;s about sharing
+            knowledge and perspective about frontend UI engineering and design.
+          </small>
+        </div>
 
         <ul className="space-y-6">
           <li>
@@ -72,7 +87,7 @@ export function Introduction() {
           </li>
 
           <li>
-            <BooksAccordion />
+            <TrainingAccordion />
           </li>
 
           <li>

@@ -8,6 +8,7 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
   CodeBracketIcon,
   DocumentTextIcon,
+  EnvelopeIcon,
   ListBulletIcon,
   PaintBrushIcon,
   Square2StackIcon
@@ -60,6 +61,11 @@ export const useHeaderMenu = () => {
           href: 'faq',
           label: 'QA Questions and Answers',
           icon: <ListBulletIcon className="size-5" />
+        },
+        {
+          href: 'contact',
+          label: 'Contact',
+          icon: <EnvelopeIcon className="size-5" />
         }
       ];
     }

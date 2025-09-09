@@ -2,7 +2,7 @@ import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { ExternalLink } from '@/components/atoms/external-link';
 import type { Book } from '@/components/organisms/books/types';
 
-export function Book({ book }: { book: Book }) {
+export function AnimatedProgressListItem({ book }: { book: Book }) {
   return (
     <div className="group flex gap-3 rounded py-2 transition-all hover:bg-muted hover:px-2.5 sm:items-center">
       <AnimatedProgress size={32} strokeWidth={5} progress={book.progress} />

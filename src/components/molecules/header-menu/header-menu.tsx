@@ -1,6 +1,5 @@
 'use client';
 
-import { ArrowRightIcon } from '@heroicons/react/16/solid';
 import { ArrowDownIcon, EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 
 import { cn } from '@/lib/utils';
@@ -11,6 +10,7 @@ import {
   GitHubButton,
   LinkedInButton
 } from '@/components/atoms/button';
+import { Hr } from '@/components/atoms/hr';
 import { Overlay } from '@/components/atoms/overlay';
 import { useHeaderMenu } from '@/components/molecules/header-menu';
 import { ThemeQuickSettings } from '@/components/organisms/theme';
@@ -21,9 +21,7 @@ export function HeaderMenu() {
     setIsOpen,
     activeSection,
     handleScrollToSection,
-    handleNavigation,
     currentNavigation,
-    pages,
     pathname
   } = useHeaderMenu();
 
@@ -51,10 +49,10 @@ export function HeaderMenu() {
                   <li key={item.href}>
                     <button
                       className={cn(
-                        'flex w-full items-center justify-between gap-4 transition hover:text-primary',
+                        'flex w-full items-center justify-between gap-4 pb-2 transition hover:text-foreground',
                         pathname.replace('/', '') === item.href &&
-                          'text-primary',
-                        item.href === activeSection && 'text-primary'
+                          'text-foreground',
+                        item.href === activeSection && 'text-foreground'
                       )}
                       onClick={() =>
                         handleScrollToSection({
@@ -69,7 +67,7 @@ export function HeaderMenu() {
                         })
                       }
                     >
-                      <div className="flex items-center gap-2 transition hover:text-primary">
+                      <div className="flex items-center gap-2 transition hover:text-foreground">
                         {item.icon}
                         <span>{item.label}</span>
                       </div>
@@ -82,33 +80,8 @@ export function HeaderMenu() {
                         <ArrowDownIcon className="size-5" />
                       )}
                     </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            <div>
-              <b>More</b>
-              <ul>
-                {pages.map((item) => (
-                  <li key={item.href}>
-                    <button
-                      className={cn(
-                        'flex w-full items-center justify-between gap-4 hover:text-primary',
-                        item.href === pathname && 'text-primary'
-                      )}
-                      onClick={() => handleNavigation({ href: item.href })}
-                    >
-                      <span>{item.label}</span>
-
-                      {item.href === pathname ? (
-                        <div className="flex size-4 items-center justify-center rounded-full border-2 border-primary">
-                          <div className="block size-2 shrink-0 rounded-full bg-primary" />
-                        </div>
-                      ) : (
-                        <ArrowRightIcon className="size-4" />
-                      )}
-                    </button>
+                    <Hr className="my-0 ml-7" />
                   </li>
                 ))}
               </ul>
@@ -118,6 +91,7 @@ export function HeaderMenu() {
               <b>Quick theme settings</b>
               <ThemeQuickSettings animateOut={false} />
             </div>
+
             <div>
               <b>Contact</b>
               <div>

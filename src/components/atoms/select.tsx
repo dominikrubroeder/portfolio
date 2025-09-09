@@ -34,7 +34,6 @@ export function Select({
     <div className="relative w-max">
       <Button
         variant="ghost"
-        className=""
         onClick={() => setIsOpen((prevState) => !prevState)}
       >
         <span>{value}</span> <ChevronDownIcon className="size-4" />

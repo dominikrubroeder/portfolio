@@ -5,12 +5,13 @@ import { Ul } from '@/components/atoms/ul';
 
 export function HowIWorkAccordion({ className }: { className?: string }) {
   return (
-    <Accordion title="How i work">
-      <p>I like to</p>
-
-      <Ul className={cn('mx-auto mb-5 leading-8', className)}>
+    <Accordion title="Work ethic, how i work">
+      <Ul
+        headline="I like to"
+        className={cn('list-disc pl-5 leading-8', className)}
+      >
         <li>
-          Care on <b className="text-foreground">designing</b>
+          <b className="text-foreground">Care</b> on designing
         </li>
         <li>
           <b className="text-foreground">Code</b> and
@@ -36,8 +37,8 @@ export function HowIWorkAccordion({ className }: { className?: string }) {
           a feeling of structure if i get stuck in a concept for too long
         </li>
         <li>
-          Have a regular look on latest trends and news in the tech space,
-          design area
+          Have a look on the latest trends and news in the tech space, design
+          area on a regular basis
         </li>
         <li>
           Bring the latest trends together with core design principles and

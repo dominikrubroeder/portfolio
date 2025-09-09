@@ -1,5 +1,5 @@
-export { Book } from './book';
-export { BooksAccordion } from './books-accordion';
+export { AnimatedProgressListItem } from './AnimatedProgressListItem';
+export { BooksList } from './books-list';
 
 export * from './data';
 export * from './helper';

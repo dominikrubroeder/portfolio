@@ -42,7 +42,7 @@ export const mainTools: Brand[] = [
   },
   {
     name: 'GitLab',
-    description: 'is mostly used at workspace',
+    description: 'is mostly used at workspace to store the project’s codebase',
     logo: <GitlabLogo className="size-12" />,
     href: 'https://gitlab.com',
     knowledge: 'Daily'
@@ -1034,7 +1034,7 @@ export const tools: Tools = [
         knowledge: 'Experienced'
       },
       {
-        name: 'nn/g Group',
+        name: 'NN/g Group',
         description: 'Nielsen Norman Group - UX research and consulting',
         href: 'https://www.nngroup.com',
         logo: '',

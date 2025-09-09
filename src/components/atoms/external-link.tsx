@@ -7,12 +7,14 @@ import { cn } from '@/lib/utils';
 export function ExternalLink({
   href,
   variant = 'inline',
+  color = 'foreground',
   className,
   children,
   ...rest
 }: {
   href: string;
   variant?: 'inline' | 'prominent' | 'unstyled';
+  color?: 'primary' | 'muted' | 'foreground';
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLAnchorElement>) {
@@ -25,6 +27,9 @@ export function ExternalLink({
           'mr-1.5 ml-1 underline transition hover:decoration-primary',
         variant === 'prominent' &&
           'relative mx-1 inline-flex items-center gap-1 text-foreground transition',
+        color === 'primary' && 'text-primary hover:text-primary-hover',
+        color === 'muted' && 'text-muted-foreground hover:text-muted-hover',
+        color === 'foreground' && 'hover:text-foreground-hover text-foreground',
         className
       )}
       target="_blank"

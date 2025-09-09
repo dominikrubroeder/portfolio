@@ -4,6 +4,7 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 import { Badge } from '@/components/atoms/badge';
 import { Button } from '@/components/atoms/button';
+import { ExternalLink } from '@/components/atoms/external-link';
 import { Ul } from '@/components/atoms/ul';
 import { BrandLink } from '@/components/organisms/brand';
 import { projects } from '@/components/organisms/projects/data';
@@ -37,10 +38,13 @@ export function Projects() {
           <Button
             variant="ghost"
             href={project.url}
-            title={`Go to external ${project.title} website`}
-            aria-label={`Go to external ${project.title} website`}
+            title={`Go to external ${project.title} project website`}
+            aria-label={`Go to external ${project.title} project website`}
             className="absolute right-3.5 bottom-3"
           >
+            <span className="sr-only">
+              Open {project.url} external project website
+            </span>
             <ArrowTopRightOnSquareIcon />
           </Button>
         </div>
@@ -58,8 +62,11 @@ export function Projects() {
             <Badge size="small">{project.status}</Badge>
           </div>
 
-          <h4 className="text-base font-normal text-muted-foreground">
-            {project.readableTitle}
+          <h4 className="space-x-1.5 text-base font-normal text-muted-foreground">
+            <span>{project.readableTitle}</span>
+            <ExternalLink href={project.url} variant="unstyled" color="primary">
+              Show more
+            </ExternalLink>
           </h4>
 
           <div className="space-y-4">
