@@ -1,14 +1,14 @@
 import { Accordion } from '@/components/atoms/accordion';
-import { BooksList } from '@/components/organisms/books';
-import { CoursesList } from '@/components/organisms/courses';
-import { DegreesList } from '@/components/organisms/introduction';
+import { IntroductionDegreesList } from '@/components/organisms/introduction';
+import { AllResources } from '@/components/organisms/training';
+import { BooksList } from '@/components/organisms/training/books';
 
 export function TrainingAccordion() {
   return (
     <Accordion title="Training">
-      <DegreesList />
+      <IntroductionDegreesList />
       <BooksList />
-      <CoursesList />
+      <AllResources />
     </Accordion>
   );
 }
