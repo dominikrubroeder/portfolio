@@ -6,8 +6,8 @@ import { JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import { Footer } from '@/components/molecules/footer';
-import { Header } from '@/components/molecules/header';
+import { Footer } from '@/components/organisms/footer';
+import { Header } from '@/components/organisms/header';
 import { ThemeProvider } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
