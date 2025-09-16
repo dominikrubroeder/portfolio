@@ -1,4 +1,4 @@
-import { Contact } from '@/components/organisms/contact';
+import { ContactSection } from '@/components/organisms/contact';
 import { FAQ } from '@/components/organisms/faq';
 import { HomeHero } from '@/components/organisms/home';
 import { Introduction } from '@/components/organisms/introduction';
@@ -35,7 +35,7 @@ export default async function HomePage() {
 
         <hr />
 
-        <Contact />
+        <ContactSection />
       </div>
     </div>
   );
