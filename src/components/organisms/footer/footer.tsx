@@ -12,7 +12,7 @@ export function Footer() {
           title="Open Next.js website"
           aria-label="Open Next.js documentation"
         >
-          Next.js 15.5.2
+          Next.js 15.5.3
         </ExternalLink>
 
         <span>|</span>
@@ -34,7 +34,7 @@ export function Footer() {
           title="Open Tailwind CSS documentation"
           aria-label="Open Tailwind CSS documentation"
         >
-          Tailwind CSS 4.1.12
+          Tailwind CSS 4.1.13
         </ExternalLink>
       </p>
 
