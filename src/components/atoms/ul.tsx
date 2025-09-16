@@ -5,12 +5,14 @@ import { cn } from '@/lib/utils';
 export function Ul({
   headline,
   offsetLeft,
+  listStyle = 'none',
   className,
   children,
   ...rest
 }: {
   headline?: string;
   offsetLeft?: boolean;
+  listStyle?: 'disc' | 'none';
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLUListElement>) {
@@ -19,7 +21,12 @@ export function Ul({
       {headline && <b className="block">{headline}</b>}
 
       <ul
-        className={cn('space-y-2', offsetLeft && 'pl-4', className)}
+        className={cn(
+          'space-y-2',
+          offsetLeft && 'pl-4',
+          listStyle === 'disc' && 'list-disc pl-5 leading-7',
+          className
+        )}
         {...rest}
       >
         {children}

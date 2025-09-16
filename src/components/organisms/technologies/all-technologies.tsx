@@ -5,8 +5,8 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
+import { ToggleContent } from '@/components/molecules/toggle-content';
 import { technologies } from '@/components/organisms/technologies';
-import { ToggleContent } from '@/components/organisms/toggle-content';
 
 export function AllTechnologies() {
   return (

@@ -12,7 +12,7 @@ import {
 } from '@/components/atoms/button';
 import { Hr } from '@/components/atoms/hr';
 import { Overlay } from '@/components/atoms/overlay';
-import { useHeaderMenu } from '@/components/molecules/header-menu';
+import { useHeaderMenu } from '@/components/organisms/header/header-menu/index';
 import { ThemeQuickSettings } from '@/components/organisms/theme';
 
 export function HeaderMenu() {

@@ -1,6 +1,6 @@
-import type { Book } from '@/components/organisms/books/types';
+import type { LearningResource } from '@/components/organisms/training';
 
-export const books: Book[] = [
+export const books: LearningResource[] = [
   {
     title: 'The Design of Everyday Things',
     author: 'Don Norman',

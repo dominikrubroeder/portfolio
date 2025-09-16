@@ -1,17 +1,15 @@
 import { cn } from '@/lib/utils';
 
+import { AnimatedProgressListItem } from '@/components/atoms/animated-progress-list-item';
 import { Ul } from '@/components/atoms/ul';
-import {
-  AnimatedProgressListItem,
-  getBooks
-} from '@/components/organisms/books';
+import { getBooks } from '@/components/organisms/training/books/index';
 
 export function BooksList({ className }: { className?: string }) {
   return (
     <Ul headline="Books" className={cn('leading-relaxed', className)}>
       {[...getBooks({ sortBy: 'progress-100-0' })]?.map((book) => (
         <li key={book.title}>
-          <AnimatedProgressListItem book={book} />
+          <AnimatedProgressListItem item={book} />
         </li>
       ))}
     </Ul>

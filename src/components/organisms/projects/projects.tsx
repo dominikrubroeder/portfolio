@@ -80,7 +80,11 @@ export function Projects() {
               <div>{project.category?.join(', ')}</div>
             </div>
 
-            <Ul headline="Aspects" className="mt-0">
+            <Ul
+              headline="Aspects"
+              listStyle="disc"
+              className="mt-0 leading-normal"
+            >
               {project.aspects?.map((aspect, index) => (
                 <li key={index}>{aspect}</li>
               ))}

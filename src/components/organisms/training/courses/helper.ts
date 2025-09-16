@@ -1,4 +1,4 @@
-import { courses } from '@/components/organisms/courses/data';
+import { courses } from '@/components/organisms/training/courses/data';
 
 export function getCourses({
   sortBy

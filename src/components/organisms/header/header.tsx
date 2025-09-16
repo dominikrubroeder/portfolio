@@ -4,7 +4,7 @@ import { Avatar } from '@/components/atoms/avatar';
 import { GitHubButton, LinkedInButton } from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';
 import { ExternalLink } from '@/components/atoms/external-link';
-import { HeaderMenu } from '@/components/molecules/header-menu';
+import { HeaderMenu } from '@/components/organisms/header/header-menu';
 import { ThemeQuickSettings } from '@/components/organisms/theme';
 
 export function Header() {

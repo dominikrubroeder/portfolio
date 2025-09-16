@@ -1,4 +1,4 @@
-import { books } from '@/components/organisms/books';
+import { books } from '@/components/organisms/training/books/index';
 
 /** TODO: Make global `sortBy` type definition */
 export function getBooks({
