@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { useCallback, useState } from 'react';
 
 import { CheckIcon } from '@heroicons/react/16/solid';
@@ -10,10 +11,12 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/atoms/button';
 
 export function Select({
+  trigger,
   options,
   initialValue,
   onValueChange
 }: {
+  trigger: ReactNode;
   options: { label: string; value: string }[];
   initialValue?: string;
   onValueChange?: () => void;
@@ -30,14 +33,20 @@ export function Select({
     [onValueChange]
   );
 
+  const toggleOpen = useCallback(
+    () => setIsOpen((prevState) => !prevState),
+    []
+  );
+
   return (
     <div className="relative w-max">
-      <Button
-        variant="ghost"
-        onClick={() => setIsOpen((prevState) => !prevState)}
-      >
-        <span>{value}</span> <ChevronDownIcon className="size-4" />
-      </Button>
+      {trigger ? (
+        <div onClick={toggleOpen}>{trigger}</div>
+      ) : (
+        <Button variant="ghost" onClick={toggleOpen}>
+          <span>{value}</span> <ChevronDownIcon className="size-4" />
+        </Button>
+      )}
 
       {isOpen && (
         <div className="absolute top-12 left-1/2 z-max -translate-x-1/2 animate-fade-up-1rem rounded bg-background px-4 py-2 pr-3">

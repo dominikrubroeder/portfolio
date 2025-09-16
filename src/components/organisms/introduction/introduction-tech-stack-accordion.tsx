@@ -26,7 +26,7 @@ export function IntroductionTechStackAccordion({
 }) {
   return (
     <Accordion title="My Tech Stack">
-      <Ul className={cn('flex list-none flex-wrap gap-2', className)}>
+      <Ul className={cn('-ml-2 flex list-none flex-wrap gap-2', className)}>
         {introductionTechStackAccordion.map((technology) => (
           <li key={technology.name}>
             <BrandLink brand={technology} />
