@@ -1,6 +1,11 @@
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
-import { Button, ContactButton, GitHubButton, LinkedInButton } from '@/components/atoms/button';
+import {
+  Button,
+  ContactButton,
+  GitHubButton,
+  LinkedInButton
+} from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import {
   IntroductionHowIWorkAccordion,
