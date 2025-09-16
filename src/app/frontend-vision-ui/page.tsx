@@ -26,12 +26,24 @@ export default async function FrontendVisionPage() {
 
           <h1>
             The joy of{' '}
-            <Marker color="primary" className="mr-0.5">
-              design
-            </Marker>
-            , with <Marker color="primary">coding</Marker>. Envision your
-            frontend like lego bricks. Stack, stack, stack... frontend complete.
+            <div className="group relative inline-block">
+              <span className="absolute -top-1 -left-1 block size-2 animate-rotate-and-scale bg-primary-hover group-hover:animate-spin" />
+              <span className="absolute -top-1 -right-0.5 block size-2 animate-rotate-and-scale bg-primary-hover group-hover:animate-spin" />
+              <span className="absolute -bottom-1 -left-1 block size-2 animate-rotate-and-scale bg-primary-hover group-hover:animate-spin" />
+              <span className="absolute -right-0.5 -bottom-1 block size-2 animate-rotate-and-scale bg-primary-hover group-hover:animate-spin" />
+
+              <Marker color="primary" className="mr-0.5">
+                design
+              </Marker>
+            </div>
+            , with <Marker color="primary">coding</Marker>. <br />
+            And vice versa.
           </h1>
+
+          <h2>
+            Envision your frontend like lego bricks. Stack, stack, stack...
+            frontend complete.
+          </h2>
 
           <p className="mx-auto max-w-(--readable-container)">
             Frontend Vision UI brings variable UI elements to the table, which
@@ -65,17 +77,17 @@ export default async function FrontendVisionPage() {
 
         <div>
           <Blockquote withBackground>
-            This is not a library, it&#39;s a collection of building blocks used
-            to showcase the idea, and the vision about dynamic frontend UI
-            components, and how they relate to the underlying design system.
-            Enjoy!
+            This is not a commercial library, it&#39;s a collection of patterns,
+            building blocks and system usage used to showcase the idea, and the
+            vision about dynamic frontend UI components, and how they relate to
+            the underlying design system. Enjoy!
           </Blockquote>
 
           <div>
-            <AccordionContained title="Design Principles of Frontend Vision">
+            <AccordionContained title="Design Principles">
               And here
             </AccordionContained>
-            <AccordionContained title="Microinteractions">
+            <AccordionContained title="Micro-Interactions">
               And here
             </AccordionContained>
             <AccordionContained title="Interaction Design">
@@ -84,7 +96,7 @@ export default async function FrontendVisionPage() {
             <AccordionContained title="Animations and Transitions">
               And here
             </AccordionContained>
-            <AccordionContained title="Atomic Design, ... Architecture, what?">
+            <AccordionContained title="Atomic Design, Tokens, ... Architecture, what?">
               <p>
                 In my description above i used a metaphor for this architecture
                 approach like your personal closet, where all the things within
@@ -111,9 +123,6 @@ export default async function FrontendVisionPage() {
                   Subatomic
                 </ExternalLink>
               </p>
-            </AccordionContained>
-            <AccordionContained title="Where are you coming from?">
-              And here
             </AccordionContained>
           </div>
         </div>

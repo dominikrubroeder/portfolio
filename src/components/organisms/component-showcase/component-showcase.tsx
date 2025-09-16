@@ -23,15 +23,14 @@ export function ComponentShowcase() {
         </div>
 
         <p>
-          The smallest pieces of the design system. Try think about your closet
-          for a second. Design Tokens are like the
-          <i>red</i> Socks, the <i>blue</i> Socks, and the <i>white</i> Socks –
-          or your
-          <i>long</i> trousers and your <i>short</i> swimming trunks. They are
-          the actual tokens (variables) themselves, which are getting consumed
-          by the rest of the group elements: Atoms, Molecules, Organisms,
-          Templates and Pages. They define the overall style and the visual
-          appearance of the elements.
+          Design tokens are the smallest pieces of the design system. Try to
+          think about your closet for a second. Design Tokens are like
+          <i> red</i> Socks, <i>blue</i> Socks, or <i>white</i> Socks – your
+          <i> long</i> trousers and <i>short</i> swimming trunks. They are
+          properties, defining the actual tokens (variables) themselves, which
+          are getting consumed by the rest of the group elements: Atoms,
+          Molecules, Organisms, Templates and Pages. They define the overall
+          style and the visual appearance of the elements.
         </p>
       </div>
 
