@@ -1,15 +1,10 @@
-import { cn } from '@/lib/utils';
-
 import { Accordion } from '@/components/atoms/accordion';
 import { Ul } from '@/components/atoms/ul';
 
-export function HowIWorkAccordion({ className }: { className?: string }) {
+export function IntroductionHowIWorkAccordion() {
   return (
     <Accordion title="Work ethic, how i work">
-      <Ul
-        headline="I like to"
-        className={cn('list-disc pl-5 leading-8', className)}
-      >
+      <Ul headline="I like to" listStyle="disc">
         <li>
           <b className="text-foreground">Care</b> on designing
         </li>

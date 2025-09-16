@@ -5,7 +5,7 @@ import { ExternalLink } from '@/components/atoms/external-link';
 import { Markup } from '@/components/atoms/markup';
 import { Ul } from '@/components/atoms/ul';
 
-export function MyBackgroundAccordion() {
+export function IntroductionMyBackgroundAccordion() {
   return (
     <Accordion title="My Background">
       <div>
@@ -123,7 +123,7 @@ export function MyBackgroundAccordion() {
 
         <p>Of course, there are much more frameworks out there, like:</p>
 
-        <Ul className="list-disc pl-5">
+        <Ul listStyle="disc">
           <li>
             <ExternalLink
               href="https://astro.build/"

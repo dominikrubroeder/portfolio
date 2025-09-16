@@ -7,7 +7,7 @@ import { Ul } from '@/components/atoms/ul';
 import { BrandLink } from '@/components/organisms/brand';
 import { getTechnologies } from '@/components/organisms/technologies';
 
-export const techStackAccordion = [
+export const introductionTechStackAccordion = [
   ...getTechnologies({
     technologyNames: [
       'React',
@@ -19,11 +19,15 @@ export const techStackAccordion = [
   })
 ];
 
-export function TechStackAccordion({ className }: { className?: string }) {
+export function IntroductionTechStackAccordion({
+  className
+}: {
+  className?: string;
+}) {
   return (
     <Accordion title="My Tech Stack">
       <Ul className={cn('flex list-none flex-wrap gap-2', className)}>
-        {techStackAccordion.map((technology) => (
+        {introductionTechStackAccordion.map((technology) => (
           <li key={technology.name}>
             <BrandLink brand={technology} />
           </li>

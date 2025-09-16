@@ -4,7 +4,7 @@ import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import { Button } from '@/components/atoms/button';
 import { Ul } from '@/components/atoms/ul';
 
-export function DegreesList() {
+export function IntroductionDegreesList() {
   return (
     <Ul headline="Degrees">
       <li>

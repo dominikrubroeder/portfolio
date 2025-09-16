@@ -2,7 +2,7 @@ import { Accordion } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
-export function VisionAccordion() {
+export function IntroductionVisionAccordion() {
   return (
     <Accordion title="More about my vision">
       <div className="mb-8 space-y-4">

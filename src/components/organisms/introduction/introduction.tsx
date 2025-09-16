@@ -1,16 +1,11 @@
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
-import {
-  Button,
-  ContactButton,
-  GitHubButton,
-  LinkedInButton
-} from '@/components/atoms/button';
+import { Button, ContactButton, GitHubButton, LinkedInButton } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import {
-  HowIWorkAccordion,
-  MyBackgroundAccordion,
-  TechStackAccordion
+  IntroductionHowIWorkAccordion,
+  IntroductionMyBackgroundAccordion,
+  IntroductionTechStackAccordion
 } from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
 
@@ -43,15 +38,9 @@ export function Introduction() {
           </p>
 
           <p>
-            And of course, once it&#39;s in place, it&#39;s ready to be used and
-            expanded, endlessly matching the needs and goals of the current
-            project.
-          </p>
-
-          <p>
-            This is also how <i>Frontend Vision UI</i> was created and thought
+            This is also how <i>Frontend Vision UI</i> was created, and thought
             of. It’s a combination of well-known best practises, put together in
-            one system: It&#39;s my take on components living in the design
+            one system. It&#39;s my take on components living in the design
             system world.
           </p>
         </div>
@@ -79,11 +68,11 @@ export function Introduction() {
 
         <ul className="space-y-6">
           <li>
-            <MyBackgroundAccordion />
+            <IntroductionMyBackgroundAccordion />
           </li>
 
           <li>
-            <HowIWorkAccordion />
+            <IntroductionHowIWorkAccordion />
           </li>
 
           <li>
@@ -91,7 +80,7 @@ export function Introduction() {
           </li>
 
           <li>
-            <TechStackAccordion />
+            <IntroductionTechStackAccordion />
           </li>
         </ul>
       </div>
