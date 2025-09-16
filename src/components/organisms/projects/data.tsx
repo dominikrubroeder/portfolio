@@ -13,7 +13,7 @@ export const projects = [
     logo: <MediawaveLogo className="h-14 w-auto" />,
     role: ['Frontend Development', 'Design Consulting'],
     aspects: [
-      'Building user interface based on design files',
+      'Building the user interface with/without design files',
       'Connecting several headless systems into one centric user interface',
       'Maintaining and building up the design system to ensure flexibility and reusability'
     ],
