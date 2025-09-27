@@ -1,8 +1,16 @@
-import { MediawaveLogo } from '@/components/atoms/logo';
+import {
+  FrontendMentorLogo,
+  GithubLogo,
+  HdPlusLogo,
+  MediawaveLogo,
+  SautershopLogo,
+  SegmuellerLogo
+} from '@/components/atoms/logo';
+import type { Project } from '@/components/organisms/projects/types';
 import { getTechnologies } from '@/components/organisms/technologies';
 import { getTools } from '@/components/organisms/tools';
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: 'Value Booster',
     category: ['Headless', 'Ecommerce'],
@@ -10,12 +18,12 @@ export const projects = [
     readableTitle: 'Kick start in your headless ecommerce project',
     status: 'Currently developing',
     timeframe: 'Today – 2024',
-    logo: <MediawaveLogo className="h-14 w-auto" />,
+    logo: <MediawaveLogo className="h-12 w-auto" />,
     role: ['Frontend Development', 'Design Consulting'],
     aspects: [
       'Building the user interface with/without design files',
       'Connecting several headless systems into one centric user interface',
-      'Maintaining and building up the design system to ensure flexibility and reusability'
+      'Maintaining and building up the design system to ensure consistency, flexibility and reusability'
     ],
     tools: [
       ...getTools({
@@ -46,27 +54,29 @@ export const projects = [
     title: 'sautershop',
     category: ['DIY workers'],
     url: 'https://www.sautershop.de',
-    status: 'In Progress',
+    status: undefined,
     readableTitle: 'Home wood-working tools',
     timeframe: 'Today – 2024',
-    logo: undefined,
+    logo: <SautershopLogo className="h-12 w-auto" />,
     role: undefined,
     aspects: undefined,
     tools: undefined,
-    technologies: undefined
+    technologies: undefined,
+    company: 'mediawave commerce GmbH'
   },
   {
     title: 'HD+',
     category: ['TV'],
     url: 'https://www.hd-plus.de',
     readableTitle: 'Everything you need for good television',
-    status: 'Terminated',
+    status: undefined,
     timeframe: '2023 - 2021',
-    logo: undefined,
+    logo: <HdPlusLogo className="h-12 w-auto" />,
     role: undefined,
     aspects: undefined,
     tools: undefined,
-    technologies: undefined
+    technologies: undefined,
+    company: 'mediawave commerce GmbH'
   },
   {
     title: 'Segmüller',
@@ -75,11 +85,12 @@ export const projects = [
     readableTitle: 'Home furniture from Germany',
     status: 'Published',
     timeframe: '2023 - 2021',
-    logo: undefined,
+    logo: <SegmuellerLogo className="h-12 w-auto" />,
     role: undefined,
     aspects: undefined,
     tools: undefined,
-    technologies: undefined
+    technologies: undefined,
+    company: 'mediawave commerce GmbH'
   },
   {
     title: 'alles auto',
@@ -92,7 +103,22 @@ export const projects = [
     role: undefined,
     aspects: undefined,
     tools: undefined,
-    technologies: undefined
+    technologies: undefined,
+    company: 'mediawave commerce GmbH'
+  },
+  {
+    title: 'Frontend Mentor',
+    category: ['Training'],
+    url: 'https://www.frontendmentor.io',
+    readableTitle: '',
+    status: 'Published',
+    timeframe: '2021',
+    logo: <FrontendMentorLogo className="h-12 w-auto" />,
+    role: undefined,
+    aspects: undefined,
+    tools: undefined,
+    technologies: undefined,
+    company: 'Frontend Mentor'
   },
   {
     title: 'Loy GmbH',
@@ -105,20 +131,22 @@ export const projects = [
     role: undefined,
     aspects: undefined,
     tools: undefined,
-    technologies: undefined
+    technologies: undefined,
+    company: 'Loy GmbH'
   },
   {
     title: 'GitHub',
     category: ['Private projects and experimenting'],
     url: 'https://github.com/dominikrubroeder?tab=repositories',
     readableTitle:
-      'In my repository i just include all the projects i did over the last years. Not in specific order or priority.',
+      'All the projects i did over the last years. Not in specific order or priority.',
     status: 'Published',
     timeframe: 'Today – 2020',
-    logo: undefined,
+    logo: <GithubLogo className="h-12 w-auto" />,
     role: undefined,
     aspects: undefined,
     tools: undefined,
-    technologies: undefined
+    technologies: undefined,
+    company: undefined
   }
 ];

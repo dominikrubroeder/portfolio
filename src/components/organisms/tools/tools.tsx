@@ -3,7 +3,7 @@ import { AllTools, mainTools } from '@/components/organisms/tools';
 
 export function Tools() {
   return (
-    <div className="scroll-mt-24 space-y-8" id="tools">
+    <section className="scroll-mt-24 space-y-8" id="tools">
       <div className="space-y-6">
         <h2>
           Tools
@@ -16,6 +16,6 @@ export function Tools() {
       </div>
 
       <AllTools />
-    </div>
+    </section>
   );
 }

@@ -4,9 +4,9 @@ import {
   mainTechnologies
 } from '@/components/organisms/technologies';
 
-export default function Technologies() {
+export function Technologies() {
   return (
-    <div className="scroll-mt-24 space-y-8" id="technologies">
+    <section className="scroll-mt-24 space-y-8" id="technologies">
       <h2>
         Technologies
         <span className="ml-2 font-medium text-muted-foreground">
@@ -17,6 +17,6 @@ export default function Technologies() {
       <BrandList brands={mainTechnologies} />
 
       <AllTechnologies />
-    </div>
+    </section>
   );
 }

@@ -1,3 +1,4 @@
+import { Hr } from '@/components/atoms/hr';
 import { ContactSection } from '@/components/organisms/contact';
 import { FAQ } from '@/components/organisms/faq';
 import { HomeHero } from '@/components/organisms/home';
@@ -17,23 +18,23 @@ export default async function HomePage() {
 
         <Projects />
 
-        <hr />
+        <Hr />
 
         <Tools />
 
-        <hr />
+        <Hr />
 
         <Technologies />
 
-        <hr />
+        <Hr />
 
         <Socials />
 
-        <hr />
+        <Hr />
 
         <FAQ />
 
-        <hr />
+        <Hr />
 
         <ContactSection />
       </div>

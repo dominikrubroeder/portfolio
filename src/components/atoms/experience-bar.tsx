@@ -4,14 +4,14 @@ import { StarIcon } from '@heroicons/react/24/solid';
 
 import { cn } from '@/lib/utils';
 
-import type { Knowledge } from '@/components/organisms/tools/types';
+import type { KnowledgeLevel } from '@/components/organisms/tools/types';
 
 export function ExperienceBar({
   progress,
   hideFavoriteMarker = false,
   className
 }: {
-  progress: Knowledge;
+  progress: KnowledgeLevel;
   hideFavoriteMarker?: boolean;
   className?: string;
 }) {

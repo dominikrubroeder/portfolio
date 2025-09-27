@@ -188,9 +188,17 @@ export function IntroductionMyBackgroundAccordion() {
         <hr />
 
         <Blockquote>
-          Today i can say: <b>I enjoy what i do</b>. With all the requirements,
-          all the people working on it, it really feels fantastic once you see
-          the application up and running, and in action.
+          <p>
+            To bring an idea from the mind to production was and is as of today
+            the part that let&#39;s me get excited. It means creativity flows,
+            it means freedom on an artboard, canvas, ready to be used. And it
+            means, good products come to life.
+          </p>
+          <p>
+            Today i can say: I enjoy what i do. With all the requirements, all
+            the people working on it, it really feels fantastic once you see the
+            application up and running, and in action.
+          </p>
         </Blockquote>
       </div>
     </Accordion>

@@ -57,6 +57,7 @@ export { CookiehubLogo } from './cookiehub-logo';
 export { UsercentricsLogo } from './usercentrics-logo';
 export { UicolorsLogo } from './uicolors-logo';
 export { FramerLogo } from './framer-logo';
+export { SautershopLogo } from './sautershop-logo';
 
 export * from './config';
 export * from './types';

@@ -1,6 +1,6 @@
 import type { Brand } from '@/components/organisms/brand';
 
-export type Knowledge =
+export type KnowledgeLevel =
   | 'Not started'
   | 'Used'
   | 'Experienced'

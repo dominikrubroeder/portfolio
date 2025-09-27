@@ -16,8 +16,8 @@ import { TrainingAccordion } from '@/components/organisms/training';
 
 export function Introduction() {
   return (
-    <div className="animate-fade-up-1rem scroll-mt-24" id="introduction">
-      <div className="relative mx-auto w-full space-y-6 rounded border bg-background px-4 py-4">
+    <section className="animate-fade-up-1rem scroll-mt-24" id="introduction">
+      <div className="relative w-full space-y-6 rounded border bg-background px-4 py-4">
         <p>Hey there! 👋</p>
 
         <div className="space-y-3 text-wrap">
@@ -89,6 +89,6 @@ export function Introduction() {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 }

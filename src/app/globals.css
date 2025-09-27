@@ -32,7 +32,7 @@
   }
 
   * {
-    @apply border-border transition disabled:cursor-not-allowed;
+    @apply border-border disabled:cursor-not-allowed;
   }
 
   .appearance-dark {
