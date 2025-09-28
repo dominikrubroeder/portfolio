@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function ArcLogo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function ArcLogo({ className }: LogoProps) {
       viewBox="0 0 142 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         fillRule="evenodd"

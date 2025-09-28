@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function ClerkLogo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function ClerkLogo({ className }: LogoProps) {
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M77 84.7803C88.0457 84.7803 97 75.826 97 64.7803C97 53.7346 88.0457 44.7803 77 44.7803C65.9543 44.7803 57 53.7346 57 64.7803C57 75.826 65.9543 84.7803 77 84.7803Z"

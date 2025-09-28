@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function ReactLogo({ className }: { className?: string }) {
   return (
@@ -8,7 +8,7 @@ export function ReactLogo({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M64.5525 75.2842C70.7849 75.2842 75.8372 70.2319 75.8372 63.9995C75.8372 57.7671 70.7849 52.7147 64.5525 52.7147C58.3201 52.7147 53.2677 57.7671 53.2677 63.9995C53.2677 70.2319 58.3201 75.2842 64.5525 75.2842Z"

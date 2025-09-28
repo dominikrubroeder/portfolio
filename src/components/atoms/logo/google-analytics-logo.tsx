@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function GoogleAnalyticsLogo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function GoogleAnalyticsLogo({ className }: LogoProps) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M89 15.053V111.053C89 121.803 96.4091 127.78 104.273 127.78C111.545 127.78 119.545 122.689 119.545 111.053V15.7802C119.545 5.93935 112.273 -0.219727 104.273 -0.219727C96.2727 -0.219727 89 6.57572 89 15.053Z"

@@ -9,7 +9,7 @@
     --foreground: hsl(0 0% 18.8%);
     --primary: hsl(255 92% 65%);
     --primary-foreground: hsl(0 0% 100%);
-    --primary-hover: hsl(255 92% 69%);
+    --primary-hover: hsl(255 92% 57%);
     --muted: hsl(240 23.8% 95.9%);
     --muted-foreground: hsl(240 2.3% 44%);
     --muted-hover: hsl(240, 7%, 83%);
@@ -23,6 +23,15 @@
     --font-jetbrains-mono: 'JetBrains Mono';
   }
 
+  .appearance-dark {
+    --background: hsl(0 0% 8%);
+    --foreground: hsl(0 0% 100%);
+    --muted: hsl(0 0% 16%);
+    --muted-foreground: hsl(240 2.3% 56%);
+    --muted-hover: hsl(0, 0%, 22%);
+    --border: hsl(0 0% 12%);
+  }
+
   *,
   ::after,
   ::before,
@@ -33,15 +42,6 @@
 
   * {
     @apply border-border disabled:cursor-not-allowed;
-  }
-
-  .appearance-dark {
-    --background: hsl(0 0% 8%);
-    --foreground: hsl(0 0% 100%);
-    --muted: hsl(0 0% 16%);
-    --muted-foreground: hsl(240 2.3% 56%);
-    --muted-hover: hsl(0, 0%, 22%);
-    --border: hsl(0 0% 12%);
   }
 
   svg {

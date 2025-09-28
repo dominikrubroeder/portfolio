@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function BrunoLogo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function BrunoLogo({ className }: LogoProps) {
       viewBox="0 0 133 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M38.6119 15.6521L28.4733 19.595L12.1387 38.7458L2 62.966L6.50609 74.7945C9.33456 83.336 14.4438 90.9785 22.8406 97.3249L28.4733 89.8149C28.4733 89.8149 37.0839 107.185 52.6673 110.002C52.6673 110.002 75.7872 114.364 87.8033 108.027C95.5094 103.963 97.7543 98.0759 97.7543 98.0759L105.452 90.3779L109.02 95.6349L113.713 95.4472L125.917 79.1127L129.86 66.9088L129.485 56.7702L124.228 44.3784L113.338 27.6683C113.338 27.6683 107.33 16.5907 94.938 18.8438C94.938 18.8438 80.2932 7.95416 68.2771 9.64394C56.2609 11.3337 57.9505 6.82763 38.6119 15.6521Z"

@@ -1,3 +1,4 @@
+import { Container } from '@/components/atoms/container';
 import { BrandList } from '@/components/organisms/brand';
 import {
   AllTechnologies,
@@ -6,7 +7,7 @@ import {
 
 export function Technologies() {
   return (
-    <section className="scroll-mt-24 space-y-8" id="technologies">
+    <Container className="space-y-8" id="technologies">
       <h2>
         Technologies
         <span className="ml-2 font-medium text-muted-foreground">
@@ -17,6 +18,6 @@ export function Technologies() {
       <BrandList brands={mainTechnologies} />
 
       <AllTechnologies />
-    </section>
+    </Container>
   );
 }

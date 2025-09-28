@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
-import type { LogoProps } from '@/components/atoms/logo/types';
+import type { LogoProps } from '@/components/atoms/logo';
+import { defaultLogoSize } from '@/components/atoms/logo';
 
 export function SautershopLogo({ className }: LogoProps) {
   return (
@@ -9,7 +9,7 @@ export function SautershopLogo({ className }: LogoProps) {
       viewBox="0 0 128 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSize, className)}
     >
       <g clipPath="url(#clip0_1114_3774)">
         <path

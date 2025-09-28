@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function TailwindCssLogo({ className }: { className?: string }) {
   return (
@@ -8,7 +8,7 @@ export function TailwindCssLogo({ className }: { className?: string }) {
       viewBox="0 0 128 79"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         fillRule="evenodd"

@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function LighthouseLogo({ className }: LogoProps) {
@@ -12,7 +12,7 @@ export function LighthouseLogo({ className }: LogoProps) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <g clipPath="url(#clip0_1018_1253)">
         <path

@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function V0Logo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function V0Logo({ className }: LogoProps) {
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M48.7619 77.7142V46.1904H60.9524V86.3809C60.9524 91.1148 57.1148 94.9523 52.3809 94.9523C50.1207 94.9523 47.8896 94.0809 46.2857 92.4771L0 46.1904H17.2381L48.7619 77.7142Z"

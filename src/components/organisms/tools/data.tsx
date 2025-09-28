@@ -1,3 +1,4 @@
+import { InkdropLogo } from '@/components/atoms/img';
 import {
   AlgoliaLogo,
   CraftLogo,
@@ -423,7 +424,7 @@ export const tools: Tools = [
         name: 'Inkdrop',
         description: 'Organizing your Markdown notes made simple',
         href: 'https://inkdrop.app',
-        logo: '/tools/inkdrop.png',
+        logo: <InkdropLogo />,
         knowledge: 'Daily'
       }
     ]
@@ -524,7 +525,7 @@ export const tools: Tools = [
     ]
   },
   {
-    group: 'Inspiration',
+    group: 'Design Inspiration',
     children: [
       {
         name: 'Dribbble',
@@ -931,7 +932,7 @@ export const tools: Tools = [
         description: 'The safer, easier way to pay online',
         href: 'https://www.paypal.com',
         logo: '',
-        knowledge: 'Not started'
+        knowledge: 'Used'
       },
       {
         name: 'Stripe',
@@ -959,7 +960,7 @@ export const tools: Tools = [
     group: 'Photo + Graphics',
     children: [
       {
-        name: 'Illustrator',
+        name: 'Adobe Illustrator',
         description:
           'Create logos, icons, drawings, typography, and illustrations',
         href: 'https://www.adobe.com/products/illustrator.html',
@@ -967,14 +968,14 @@ export const tools: Tools = [
         knowledge: 'Professional'
       },
       {
-        name: 'InDesign',
+        name: 'Adobe InDesign',
         description: 'Design and publish great projects',
         href: 'https://www.adobe.com/products/indesign.html',
         logo: '',
         knowledge: 'Professional'
       },
       {
-        name: 'Photoshop',
+        name: 'Adobe Photoshop',
         description: 'Imaging and graphic design software',
         href: 'https://www.adobe.com/products/photoshop.html',
         logo: '',
@@ -1002,7 +1003,7 @@ export const tools: Tools = [
       },
       {
         name: 'TeamGrid',
-        href: 'https://www.teamgrid.com',
+        href: 'https://teamgrid.app',
         logo: '',
         description: 'Project management and team collaboration',
         knowledge: 'Professional'

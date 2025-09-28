@@ -1,7 +1,11 @@
 import React from 'react';
 
 import { Avatar } from '@/components/atoms/avatar';
-import { GitHubButton, LinkedInButton } from '@/components/atoms/button';
+import {
+  ContactButton,
+  GitHubButton,
+  LinkedInButton
+} from '@/components/atoms/button';
 import { Container } from '@/components/atoms/container';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header/header-menu';
@@ -12,7 +16,8 @@ export function Header() {
     <Container
       as="header"
       size="container"
-      className="sticky top-0 z-100 flex items-center justify-between gap-4 border-b bg-background py-4 lg:relative lg:border-none lg:px-4"
+      horizontalPadding
+      className="sticky top-0 z-100 flex items-center justify-between gap-4 border-b bg-background py-4 lg:relative lg:border-none"
     >
       <div className="flex items-center gap-4">
         <Avatar
@@ -42,10 +47,16 @@ export function Header() {
 
       <div className="hidden lg:flex lg:items-center lg:gap-4">
         <ThemeQuickSettings animateOut={true} />
+
         <div>
           <GitHubButton />
           <LinkedInButton />
         </div>
+
+        <ContactButton
+          iconPosition="right"
+          buttonProps={{ variant: 'contained' }}
+        />
       </div>
     </Container>
   );

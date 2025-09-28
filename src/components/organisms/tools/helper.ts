@@ -8,6 +8,7 @@ export function getTools({
   sortBy?: 'A-Z' | 'Z-A' | 'like-input';
 }) {
   const allTools = tools.map((group) => group.children).flat();
+
   const filteredTools = allTools.filter((tool) =>
     toolNames.includes(tool.name)
   );

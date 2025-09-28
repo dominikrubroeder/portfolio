@@ -4,9 +4,13 @@ import {
   AuthjsLogo,
   InkdropLogo,
   InstagramLogo,
-  PostmanLogo
+  PostmanLogo,
+  TwigLogo
 } from '@/components/atoms/img';
 import {
+  AdobeIllustratorLogo,
+  AdobePhotoshopLogo,
+  AdobeXdLogo,
   AlgoliaLogo,
   ArcLogo,
   AxiosLogo,
@@ -49,6 +53,7 @@ import {
   RadixUILogo,
   ReactLogo,
   SafariLogo,
+  SassLogo,
   ShadcnUiLogo,
   ShopwareLogo,
   SlackLogo,
@@ -61,6 +66,7 @@ import {
   UsercentricsLogo,
   V0Logo,
   VercelLogo,
+  VisualStudioCodeLogo,
   WebstormLogo,
   XingLogo
 } from '@/components/atoms/logo';
@@ -73,7 +79,7 @@ interface BrandLogoProps extends LogoProps {
 export function BrandLogo({
   brand,
   group,
-  className = 'size-32'
+  className = 'size-12'
 }: BrandLogoProps) {
   const DefaultLogo = (
     <div className={cn('shrink-0 rounded bg-muted', className)} />
@@ -125,6 +131,18 @@ export function BrandLogo({
 
   if (brand.startsWith('@')) {
     return <NpmLogo className={className} />;
+  }
+
+  if (brand.startsWith('VS') || brand.startsWith('Visual Studio')) {
+    return <VisualStudioCodeLogo className={className} />;
+  }
+
+  if (brand.includes('Photoshop')) {
+    return <AdobePhotoshopLogo className={className} />;
+  }
+
+  if (brand.includes('Illustrator')) {
+    return <AdobeIllustratorLogo className={className} />;
   }
 
   switch (group) {
@@ -285,6 +303,15 @@ export function BrandLogo({
 
     case 'Framer':
       return <FramerLogo className={className} />;
+
+    case 'Twig':
+      return <TwigLogo className={className} />;
+
+    case 'Sass':
+      return <SassLogo className={className} />;
+
+    case 'Adobe XD':
+      return <AdobeXdLogo className={className} />;
 
     default:
       return DefaultLogo;

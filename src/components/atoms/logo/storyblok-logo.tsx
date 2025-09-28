@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function StoryblokLogo({ className }: { className?: string }) {
   return (
@@ -8,7 +8,7 @@ export function StoryblokLogo({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M15.613 -0.219971C12.4947 -0.219971 10 2.27516 10 5.26931V103.328C10 106.322 12.4947 108.193 15.4882 108.193H29.9573V127.78L47.9188 108.318H113.528C116.522 108.318 118.393 106.447 118.393 103.328V5.39406C118.393 2.39991 116.647 -0.219971 113.528 -0.219971H15.613Z"

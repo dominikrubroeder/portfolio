@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function HotjarLogo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function HotjarLogo({ className }: LogoProps) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M53.5831 52.7797C68.4163 44.5531 88.748 33.2578 88.748 0.437012H64.1538C64.1538 18.8081 55.2028 23.7951 41.6483 31.2969C26.8151 39.5235 6.4834 50.819 6.4834 83.6397H31.0776C31.0776 65.2685 40.0286 60.2816 53.5831 52.7797Z"

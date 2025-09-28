@@ -10,9 +10,9 @@ export function Footer() {
           href="https://nextjs.org"
           variant="unstyled"
           title="Open Next.js website"
-          aria-label="Open Next.js documentation"
+          aria-label="Open Next.js website"
         >
-          Next.js 15.5.3
+          Next.js 15.5.4
         </ExternalLink>
 
         <span>|</span>

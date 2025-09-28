@@ -5,7 +5,7 @@ import { Container } from '@/components/atoms/container';
 
 export function ContactSection() {
   return (
-    <Container className="flex items-center" as="section" id="contact">
+    <Container className="flex items-center" id="contact">
       <Button
         href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
         className="mx-auto"

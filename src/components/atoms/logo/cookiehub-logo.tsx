@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function CookiehubLogo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function CookiehubLogo({ className }: LogoProps) {
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M104.626 86.2435C116.65 74.3897 116.65 55.1706 104.626 43.3168C92.6015 31.4627 73.1066 31.4627 61.0824 43.3168C49.0586 55.1706 49.0583 74.3897 61.0824 86.2435C73.1066 98.0976 92.6015 98.0976 104.626 86.2435Z"

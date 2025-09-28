@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function Typo3Logo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function Typo3Logo({ className }: LogoProps) {
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M96.5962 88.9913C94.696 89.5514 93.1817 89.7445 91.2008 89.7445C74.9479 89.7445 51.075 32.9481 51.075 14.045C51.075 7.08153 52.7284 4.76037 55.0527 2.77148C35.1576 5.09106 11.2814 12.3884 3.65185 21.673C1.99524 23.9957 1 27.6428 1 32.2836C1 61.7988 32.5026 128.78 54.7221 128.78C65.0003 128.78 82.337 111.869 96.5962 88.9913Z"

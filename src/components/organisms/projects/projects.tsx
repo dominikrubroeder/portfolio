@@ -1,8 +1,9 @@
+import { Container } from '@/components/atoms/container';
 import { ProjectCarousel } from '@/components/organisms/projects';
 
 export function Projects() {
   return (
-    <section className="scroll-mt-24 space-y-6" id="projects">
+    <Container className="space-y-6 px-0" id="projects">
       <h2>
         Projects
         <span className="ml-2 font-medium text-muted-foreground">
@@ -11,6 +12,6 @@ export function Projects() {
       </h2>
 
       <ProjectCarousel />
-    </section>
+    </Container>
   );
 }

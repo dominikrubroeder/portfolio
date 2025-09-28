@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
 export function GoogleTagManagerLogo({ className }: LogoProps) {
@@ -11,7 +11,7 @@ export function GoogleTagManagerLogo({ className }: LogoProps) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M75.129 122.536L52.9111 100.871L100.627 52.1445L123.63 74.6897L75.129 122.536Z"

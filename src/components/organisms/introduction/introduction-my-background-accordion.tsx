@@ -187,7 +187,7 @@ export function IntroductionMyBackgroundAccordion() {
 
         <hr />
 
-        <Blockquote>
+        <Blockquote className="text-foreground">
           <p>
             To bring an idea from the mind to production was and is as of today
             the part that let&#39;s me get excited. It means creativity flows,

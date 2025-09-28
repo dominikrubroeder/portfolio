@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function NotesLogo({ className }: { className?: string }) {
   return (
@@ -10,7 +10,7 @@ export function NotesLogo({ className }: { className?: string }) {
       width="120"
       height="120"
       viewBox="0 0 120 120"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <defs>
         <linearGradient id="e" x1="50%" x2="50%" y1="0%" y2="100%">

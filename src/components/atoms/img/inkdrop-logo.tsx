@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function InkdropLogo({ className }: { className?: string }) {
   return (
@@ -11,7 +11,7 @@ export function InkdropLogo({ className }: { className?: string }) {
       width={128}
       height={128}
       alt="Inkdrop logo"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, 'object-contain', className)}
     />
   );
 }

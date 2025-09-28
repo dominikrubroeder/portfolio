@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function MotionLogo({ className }: { className?: string }) {
   return (
@@ -10,7 +10,7 @@ export function MotionLogo({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <g clipPath="url(#clip0_657_558)">
         <rect width="128" height="128" fill="#FFF312" />

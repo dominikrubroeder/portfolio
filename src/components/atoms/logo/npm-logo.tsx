@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize, type LogoProps } from '@/components/atoms/logo';
+import { defaultLogoSquareSize, type LogoProps } from '@/components/atoms/logo';
 
 export function NpmLogo({ className }: LogoProps) {
   return (
@@ -10,7 +10,7 @@ export function NpmLogo({ className }: LogoProps) {
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, 'mt-1.5', className)}
+      className={cn(defaultLogoSquareSize, 'mt-1.5', className)}
     >
       <g clipPath="url(#clip0_979_992)">
         <path

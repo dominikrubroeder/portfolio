@@ -13,7 +13,7 @@ export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
         variant="unstyled"
         className="w-full justify-between"
       >
-        <h3 className="mb-0.5 flex-1 space-x-2 text-base font-normal md:mb-1">
+        <h3 className="mb-0.5 flex-1 space-x-1.5 text-base font-normal md:mb-1">
           {item.isCurrent && <Badge size="small">Currently</Badge>}
           <b className="text-foreground">{item.title}</b>
           <span className="relative block text-muted-foreground">

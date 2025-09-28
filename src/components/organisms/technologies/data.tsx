@@ -1,3 +1,4 @@
+import { TwigLogo } from '@/components/atoms/img';
 import {
   CssLogo,
   HtmlLogo,
@@ -6,6 +7,7 @@ import {
   MotionLogo,
   NextjsLogo,
   ReactLogo,
+  SassLogo,
   TailwindCssLogo,
   TypeScriptLogo
 } from '@/components/atoms/logo';
@@ -263,9 +265,21 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'Sass',
-        description: '',
-        href: '',
-        logo: '',
+        description: 'Syntactically Awesome Style Sheets',
+        href: 'https://sass-lang.com',
+        logo: <SassLogo />,
+        knowledge: 'Experienced'
+      }
+    ]
+  },
+  {
+    group: 'Template Engine',
+    children: [
+      {
+        name: 'Twig',
+        description: 'The flexible, fast, and secure PHP template engine',
+        href: 'https://twig.symfony.com',
+        logo: <TwigLogo />,
         knowledge: 'Experienced'
       }
     ]

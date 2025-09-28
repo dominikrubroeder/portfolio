@@ -40,7 +40,7 @@ export function AllTechnologies() {
                         <Link
                           href={child.href}
                           target="_blank"
-                          className="group flex items-center gap-3 xs:gap-4"
+                          className="flex items-center gap-3 xs:gap-4"
                         >
                           <Button
                             variant="ghost"

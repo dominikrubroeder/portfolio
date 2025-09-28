@@ -22,14 +22,14 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'inline-flex transition',
+        'inline-flex transition hover:text-primary',
         variant === 'inline' &&
           'mr-1.5 ml-1 underline transition hover:decoration-primary',
         variant === 'prominent' &&
           'relative mx-1 inline-flex items-center gap-1 text-foreground transition',
         color === 'primary' && 'text-primary hover:text-primary-hover',
         color === 'muted' && 'text-muted-foreground hover:text-muted-hover',
-        color === 'foreground' && 'hover:text-foreground-hover text-foreground',
+        color === 'foreground' && 'text-foreground hover:text-primary-hover',
         className
       )}
       target="_blank"

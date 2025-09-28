@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 import type { LogoProps } from '@/components/atoms/logo';
-import { defaultIconSize } from '@/components/atoms/logo';
+import { defaultLogoSquareSize } from '@/components/atoms/logo';
 
 export function PostmanLogo({ className }: LogoProps) {
   return (
@@ -12,7 +12,7 @@ export function PostmanLogo({ className }: LogoProps) {
       height={128}
       src="/postman-logo.png"
       alt="Postman Logo"
-      className={cn('object-contain', defaultIconSize, className)}
+      className={cn('object-contain', defaultLogoSquareSize, className)}
     />
   );
 }

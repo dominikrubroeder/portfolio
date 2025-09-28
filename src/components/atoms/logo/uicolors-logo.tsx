@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
 import type { LogoProps } from '@/components/atoms/logo';
-import { defaultIconSize } from '@/components/atoms/logo';
+import { defaultLogoSquareSize } from '@/components/atoms/logo';
 
 export function UicolorsLogo({ className }: LogoProps) {
   return (
@@ -11,7 +11,7 @@ export function UicolorsLogo({ className }: LogoProps) {
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <rect y="0.780273" width="128" height="128" rx="28.4444" fill="black" />
       <path

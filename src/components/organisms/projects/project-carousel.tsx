@@ -1,7 +1,5 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
-
 import Link from 'next/link';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -14,28 +12,12 @@ import { Button } from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Ul } from '@/components/atoms/ul';
 import { BrandLink } from '@/components/organisms/brand';
+import { useProjectCarousel } from '@/components/organisms/projects';
 import { projects } from '@/components/organisms/projects/data';
 
 export function ProjectCarousel() {
-  const [activeProject, setActiveProject] = useState(0);
-
-  const project = useMemo(() => projects[activeProject], [activeProject]);
-
-  const goNext = useCallback(
-    () =>
-      setActiveProject((previousState) =>
-        previousState + 1 > projects.length - 1 ? 0 : previousState + 1
-      ),
-    []
-  );
-
-  const goPrevious = useCallback(
-    () =>
-      setActiveProject((previousState) =>
-        previousState - 1 < 0 ? projects.length - 1 : previousState - 1
-      ),
-    []
-  );
+  const { project, goNext, goPrevious, setActiveProject, activeProject } =
+    useProjectCarousel();
 
   // TODO: Implement swipe functionality here
   return (
@@ -63,7 +45,14 @@ export function ProjectCarousel() {
           <ChevronRight className="h-4 w-4" />
         </Button>
 
-        {project.logo && (
+        <Link
+          href={project.url}
+          title={`Go to external ${project.title} website`}
+          aria-label={`Go to external ${project.title} website`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex interactive items-center justify-center"
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={project.title}
@@ -71,22 +60,12 @@ export function ProjectCarousel() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -10, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="mx-auto sm:max-w-(--readable-container)"
+              layout
             >
-              <Link
-                href={project.url}
-                title={`Go to external ${project.title} website`}
-                aria-label={`Go to external ${project.title} website`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 flex size-full items-center justify-center"
-              >
-                <span className="sr-only">Go to {project.title} website</span>
-                <span>{project.logo}</span>
-              </Link>
+              <span>{project.logo}</span>
             </motion.div>
           </AnimatePresence>
-        )}
+        </Link>
       </div>
 
       <div className="space-y-7">
@@ -155,24 +134,69 @@ export function ProjectCarousel() {
                 <div>{project.category?.join(', ')}</div>
               </div>
 
-              <Ul
-                headline="Aspects"
-                listStyle="disc"
-                className="mt-0 leading-normal"
-              >
-                {project.aspects?.map((aspect, index) => (
-                  <li key={index}>{aspect}</li>
-                ))}
-              </Ul>
+              {project.aspects?.length && (
+                <Ul
+                  headline="Aspects"
+                  listStyle="disc"
+                  className="mt-0 leading-normal"
+                >
+                  {project.aspects?.map((aspect, index) => (
+                    <li key={index}>{aspect}</li>
+                  ))}
+                </Ul>
+              )}
+
+              {project.caseStudyUrls?.length && (
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <b className="block">Case Study</b>
+                    <Badge color="neutral" size="small" className="self-center">
+                      {project.demoUrls?.length}
+                    </Badge>
+                  </div>
+
+                  <Ul listStyle="disc">
+                    {project.caseStudyUrls?.map((url) => (
+                      <li key={url}>
+                        <ExternalLink href={url} variant="unstyled">
+                          {url}
+                        </ExternalLink>
+                      </li>
+                    ))}
+                  </Ul>
+                </div>
+              )}
+
+              {project.demoUrls?.length && (
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <b className="block">Demos</b>
+                    <Badge color="neutral" size="small" className="self-center">
+                      {project.demoUrls?.length}
+                    </Badge>
+                  </div>
+
+                  <Ul listStyle="disc">
+                    {project.demoUrls?.map((url) => (
+                      <li key={url}>
+                        <ExternalLink href={url} variant="unstyled">
+                          {url}
+                        </ExternalLink>
+                      </li>
+                    ))}
+                  </Ul>
+                </div>
+              )}
 
               <div className="space-y-4">
                 <b className="block">Tools</b>
+
                 <ul className="-ml-4 flex flex-wrap gap-2">
                   {project.tools?.map((tool, index) => {
                     if (tool && tool.name) {
                       return (
                         <li key={index}>
-                          <BrandLink brand={tool} />
+                          <BrandLink brand={tool} showLabel />
                         </li>
                       );
                     }
@@ -187,7 +211,11 @@ export function ProjectCarousel() {
                     if (technology && technology.name) {
                       return (
                         <li key={index}>
-                          <BrandLink brand={technology} />
+                          <BrandLink
+                            brand={technology}
+                            showLabel
+                            labelPosition="bottom"
+                          />
                         </li>
                       );
                     }
