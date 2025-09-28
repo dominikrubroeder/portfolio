@@ -150,6 +150,9 @@
   --transition-duration-*: initial;
   --transition-duration: 300ms;
 
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.8rem;
+
   @keyframes scale {
     0% {
       transform: scale(0.82);

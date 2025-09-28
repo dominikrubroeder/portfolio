@@ -14,7 +14,7 @@ export default async function HomePage() {
     <div className="animate-fade-up-1rem space-y-6">
       <HomeHero />
 
-      <Container as="div" className="space-y-12">
+      <Container as="div" horizontalPadding className="space-y-12">
         <Introduction />
 
         <Projects />
