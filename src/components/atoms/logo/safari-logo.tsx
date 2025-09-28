@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function SafariLogo({ className }: { className?: string }) {
   return (
@@ -10,7 +10,7 @@ export function SafariLogo({ className }: { className?: string }) {
       viewBox="0 0 141 138"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <g opacity="0.53" filter="url(#filter0_f_875_1095)">
         <path

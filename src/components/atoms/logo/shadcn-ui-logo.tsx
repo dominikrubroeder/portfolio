@@ -1,5 +1,6 @@
-import { defaultIconSize, type LogoProps } from '@/components/atoms/logo';
 import { cn } from '@/lib/utils';
+
+import { defaultLogoSquareSize, type LogoProps } from '@/components/atoms/logo';
 
 export function ShadcnUiLogo({ className }: LogoProps) {
   return (
@@ -9,7 +10,7 @@ export function ShadcnUiLogo({ className }: LogoProps) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M117 66.3037L66.5239 116.78"

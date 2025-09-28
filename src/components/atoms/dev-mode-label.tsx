@@ -1,11 +1,12 @@
 'use client';
 
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
+
 import { motion } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
-import { useApp } from '@/components/organisms/app';
+import { useTheme } from '@/components/organisms/theme';
 
 export default function DevModeLabel({
   className,
@@ -16,7 +17,7 @@ export default function DevModeLabel({
   classNameLabel?: string;
   children: ReactNode;
 }) {
-  const { theme } = useApp();
+  const { theme } = useTheme();
 
   if (theme !== 'dev') return null;
 

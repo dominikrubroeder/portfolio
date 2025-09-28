@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function VercelLogo({ className }: { className?: string }) {
   return (
@@ -10,7 +10,7 @@ export function VercelLogo({ className }: { className?: string }) {
       viewBox="0 0 128 111"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn('fill-foreground', defaultIconSize, className)}
+      className={cn('fill-foreground', defaultLogoSquareSize, className)}
     >
       <g clipPath="url(#clip0_878_981)">
         <path

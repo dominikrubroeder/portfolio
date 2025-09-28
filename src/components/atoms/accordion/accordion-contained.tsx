@@ -1,7 +1,10 @@
 'use client';
 
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
+
 import { cn } from '@/lib/utils';
 
 export function AccordionContained({
@@ -33,7 +36,7 @@ export function AccordionContained({
   }, [open, handleScroll]);
 
   return (
-    <div ref={ref} className={cn('scroll-mt-3 pt-4', className)}>
+    <div ref={ref} className={cn('scroll-mt-3 space-y-3 pt-4', className)}>
       <div
         className="group sticky top-24 z-10 mx-auto flex cursor-pointer items-center justify-between gap-4 overflow-hidden rounded-2xl bg-muted px-4 py-3 leading-[1.6] text-primary transition-all select-none md:relative md:top-0"
         title="Open accordion to see more content"

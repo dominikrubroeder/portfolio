@@ -1,31 +1,59 @@
 import { cn } from '@/lib/utils';
 
 import {
+  AuthjsLogo,
+  InkdropLogo,
+  InstagramLogo,
+  PostmanLogo,
+  TwigLogo
+} from '@/components/atoms/img';
+import {
+  AdobeIllustratorLogo,
+  AdobePhotoshopLogo,
+  AdobeXdLogo,
   AlgoliaLogo,
+  ArcLogo,
+  AxiosLogo,
+  BraveLogo,
+  BrunoLogo,
+  ChatGptLogo,
   ChromeLogo,
+  ClaudeAiLogo,
+  ClerkLogo,
+  ColorDesignerLogo,
+  ContentservLogo,
+  CookiehubLogo,
   CraftLogo,
   CssLogo,
   DailyDevLogo,
   FigmaLogo,
   FirefoxLogo,
+  FramerLogo,
   FrontendMentorLogo,
   GithubLogo,
   GitlabLogo,
+  GoogleAnalyticsLogo,
+  GoogleTagManagerLogo,
   HeroiconsLogo,
+  HotjarLogo,
   HtmlLogo,
   JavascriptLogo,
   JiraLogo,
+  LighthouseLogo,
   LinkedinLogo,
   type LogoProps,
   MarkdownLogo,
+  MeilisearchLogo,
   MiroLogo,
   MotionLogo,
   NextjsLogo,
   NotesLogo,
   NpmLogo,
+  Pa11yLogo,
   RadixUILogo,
   ReactLogo,
   SafariLogo,
+  SassLogo,
   ShadcnUiLogo,
   ShopwareLogo,
   SlackLogo,
@@ -33,12 +61,15 @@ import {
   TailwindCssLogo,
   TeamsLogo,
   TypeScriptLogo,
+  Typo3Logo,
+  UicolorsLogo,
+  UsercentricsLogo,
+  V0Logo,
   VercelLogo,
+  VisualStudioCodeLogo,
   WebstormLogo,
   XingLogo
 } from '@/components/atoms/logo';
-
-import { AuthjsLogo, InkdropLogo, InstagramLogo } from '@/components/atoms/img';
 
 interface BrandLogoProps extends LogoProps {
   brand: string;
@@ -48,9 +79,11 @@ interface BrandLogoProps extends LogoProps {
 export function BrandLogo({
   brand,
   group,
-  className = 'size-32'
+  className = 'size-12'
 }: BrandLogoProps) {
-  const DefaultLogo = <div className={cn('rounded bg-muted', className)} />;
+  const DefaultLogo = (
+    <div className={cn('shrink-0 rounded bg-muted', className)} />
+  );
 
   const lowerCaseBrand = brand.toLowerCase();
 
@@ -77,6 +110,10 @@ export function BrandLogo({
     return <VercelLogo className={className} />;
   }
 
+  if (lowerCaseBrand.includes('meilisearch')) {
+    return <MeilisearchLogo className={className} />;
+  }
+
   if (
     lowerCaseBrand.includes('algolia') ||
     lowerCaseBrand.includes('instant')
@@ -94,6 +131,18 @@ export function BrandLogo({
 
   if (brand.startsWith('@')) {
     return <NpmLogo className={className} />;
+  }
+
+  if (brand.startsWith('VS') || brand.startsWith('Visual Studio')) {
+    return <VisualStudioCodeLogo className={className} />;
+  }
+
+  if (brand.includes('Photoshop')) {
+    return <AdobePhotoshopLogo className={className} />;
+  }
+
+  if (brand.includes('Illustrator')) {
+    return <AdobeIllustratorLogo className={className} />;
   }
 
   switch (group) {
@@ -134,9 +183,6 @@ export function BrandLogo({
 
     case 'CSS':
       return <CssLogo className={className} />;
-
-    case 'Motion':
-      return <MotionLogo className={className} />;
 
     case 'Auth.js':
       return <AuthjsLogo className={className} />;
@@ -191,6 +237,81 @@ export function BrandLogo({
 
     case 'Radix UI':
       return <RadixUILogo className={className} />;
+
+    case 'Lighthouse':
+      return <LighthouseLogo className={className} />;
+
+    case 'Pa11y':
+      return <Pa11yLogo className={className} />;
+
+    case 'ChatGPT':
+      return <ChatGptLogo className={className} />;
+
+    case 'Claude AI':
+      return <ClaudeAiLogo className={className} />;
+
+    case 'v0':
+      return <V0Logo className={className} />;
+
+    case 'Google Analytics':
+      return <GoogleAnalyticsLogo className={className} />;
+
+    case 'Hotjar':
+      return <HotjarLogo className={className} />;
+
+    case 'Google Tag Manager':
+      return <GoogleTagManagerLogo className={className} />;
+
+    case 'Axios':
+      return <AxiosLogo className={className} />;
+
+    case 'Bruno':
+      return <BrunoLogo className={className} />;
+
+    case 'Postman':
+      return <PostmanLogo className={className} />;
+
+    case 'Clerk':
+      return <ClerkLogo className={className} />;
+
+    case 'Arc':
+      return <ArcLogo className={className} />;
+
+    case 'Brave':
+      return <BraveLogo className={className} />;
+
+    case 'Contentserv':
+      return <ContentservLogo className={className} />;
+
+    case 'Typo3':
+      return <Typo3Logo className={className} />;
+
+    case 'Color Designer':
+      return <ColorDesignerLogo className={className} />;
+
+    case 'uicolors':
+      return <UicolorsLogo className={className} />;
+
+    case 'CookieHub':
+      return <CookiehubLogo className={className} />;
+
+    case 'Usercentrics':
+      return <UsercentricsLogo className={className} />;
+
+    case 'Motion':
+      return <MotionLogo className={className} />;
+
+    case 'Framer':
+      return <FramerLogo className={className} />;
+
+    case 'Twig':
+      return <TwigLogo className={className} />;
+
+    case 'Sass':
+      return <SassLogo className={className} />;
+
+    case 'Adobe XD':
+      return <AdobeXdLogo className={className} />;
 
     default:
       return DefaultLogo;

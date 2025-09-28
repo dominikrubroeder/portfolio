@@ -1,5 +1,9 @@
 import Image from 'next/image';
 
+import { cn } from '@/lib/utils';
+
+import { defaultLogoSquareSize } from '@/components/atoms/logo';
+
 export function AuthjsLogo({ className }: { className?: string }) {
   return (
     <Image
@@ -8,7 +12,11 @@ export function AuthjsLogo({ className }: { className?: string }) {
       height={128}
       alt="Auth.js logo"
       draggable={false}
-      className={className}
+      className={cn(
+        'shrink-0 object-contain',
+        defaultLogoSquareSize,
+        className
+      )}
     />
   );
 }

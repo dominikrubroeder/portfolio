@@ -1,19 +1,20 @@
-import { FaqWhatIsAUxEngineer } from '@/components/organisms/faq/faq-what-is-a-ux-engineer';
-import { FaqUxDesigner } from '@/components/organisms/faq/faq-ux-designer';
-import { FaqUxEngineer } from '@/components/organisms/faq/faq-ux-engineer';
-import { FaqDesignEngineerVsUxEngineer } from '@/components/organisms/faq/faq-design-engineer-vs-ux-engineer';
+import { Container } from '@/components/atoms/container';
+import {
+  FaqDesignEngineerVsUxEngineer,
+  FaqUxDesigner,
+  FaqUxEngineer,
+  FaqWhatIsAUxEngineer
+} from '@/components/organisms/faq';
 
 export function FAQ() {
   return (
-    <div className="space-y-8">
-      <header className="space-y-6">
-        <h2>
-          QA
-          <span className="ml-2 font-medium text-muted-foreground">
-            Some questions and answers about UX design engineering
-          </span>
-        </h2>
-      </header>
+    <Container className="space-y-8" id="faq">
+      <h2>
+        QA
+        <span className="ml-2 font-medium text-muted-foreground">
+          Some questions and answers about UX design engineering
+        </span>
+      </h2>
 
       <div id="accordion-group">
         <FaqWhatIsAUxEngineer />
@@ -21,6 +22,6 @@ export function FAQ() {
         <FaqUxEngineer />
         <FaqDesignEngineerVsUxEngineer />
       </div>
-    </div>
+    </Container>
   );
 }

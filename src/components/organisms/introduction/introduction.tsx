@@ -1,70 +1,58 @@
+import { Container } from '@/components/atoms/container';
 import {
-  ContactButton,
-  GitHubButton,
-  LinkedInButton
-} from '@/components/atoms/button';
-import {
-  BooksAccordion,
-  HowIWorkAccordion,
-  MyBackgroundAccordion,
-  TechStackAccordion
+  IntroductionHowIWorkAccordion,
+  IntroductionMyBackgroundAccordion,
+  IntroductionTechStackAccordion
 } from '@/components/organisms/introduction';
+import { TrainingAccordion } from '@/components/organisms/training';
 
 export function Introduction() {
   return (
-    <div className="animate-fade-up-1rem">
-      <div className="relative mx-auto w-full space-y-6 rounded border bg-background px-4 py-4">
+    <Container animateIn id="introduction">
+      <div className="space-y-6 rounded border p-4">
         <p>Hey there! 👋</p>
 
         <div className="space-y-3 text-wrap">
           <h3 className="text-base font-bold">
             My work is committed to the frontend. I like to create and build
-            dynamic interfaces that are designed to be for a scalable and
-            interactive web.
+            dynamic interfaces that are designed to be for a interactive and
+            scalable web.
           </h3>
 
           <p>
             Building user interfaces is something i follow for almost 10 years
             now. In that area, i found myself enjoying building components and
-            setting up the design system for them as the most fitting and the
-            most fulfilling thing for me.
+            setting up the design system for them as the most fitting thing for
+            me.
           </p>
 
           <p>
             One component can connect to the next, and the next, and the next,
-            and all of a sudden we have a complete, streamlined and holistic
-            user interface, that can be adjusted in color, size, spacing,
-            typography and other theme-related settings from some root files.
+            and all of a sudden we have a complete, streamlined, holistic and
+            homogenous user interface, that can be adjusted in color, size,
+            spacing, typography and other theme-related settings from some root
+            files.
           </p>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2">
-          <ContactButton withLabel />
-
-          <div className="sm:hidden">
-            <GitHubButton />
-            <LinkedInButton />
-          </div>
         </div>
 
         <ul className="space-y-6">
           <li>
-            <MyBackgroundAccordion />
+            <IntroductionMyBackgroundAccordion />
           </li>
 
           <li>
-            <HowIWorkAccordion />
+            <IntroductionHowIWorkAccordion />
           </li>
 
           <li>
-            <BooksAccordion />
+            <TrainingAccordion />
           </li>
 
           <li>
-            <TechStackAccordion />
+            <IntroductionTechStackAccordion />
           </li>
         </ul>
       </div>
-    </div>
+    </Container>
   );
 }

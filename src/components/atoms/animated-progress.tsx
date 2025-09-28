@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+
 import { motion, useAnimation, useInView } from 'motion/react';
+
 import { cn } from '@/lib/utils';
 
 interface AnimatedProgressProps {
@@ -13,9 +15,10 @@ interface AnimatedProgressProps {
   color?: 'text-primary' | string;
   strokeColor?: 'stroke-primary' | string;
   backgroundColor?: 'bg-muted' | string;
+  className?: string;
 }
 
-export default function AnimatedProgress({
+export function AnimatedProgress({
   size = 200,
   strokeWidth = 15,
   progress = 75,
@@ -23,7 +26,8 @@ export default function AnimatedProgress({
   animateProgress = true,
   color = 'text-primary',
   strokeColor = 'stroke-primary',
-  backgroundColor = 'bg-transparent'
+  backgroundColor = 'bg-transparent',
+  className
 }: AnimatedProgressProps) {
   const controls = useAnimation();
   const ref = useRef(null);
@@ -76,7 +80,8 @@ export default function AnimatedProgress({
     <div
       className={cn(
         'relative flex items-center justify-center rounded-full',
-        backgroundColor
+        backgroundColor,
+        className
       )}
       style={{ width: size, height: size }}
       ref={ref}
@@ -96,7 +101,7 @@ export default function AnimatedProgress({
             fill="none"
             strokeWidth={strokeWidth}
             strokeLinecap="round"
-            className="stroke-muted"
+            className="stroke-muted group-hover:stroke-primary/15"
           />
           <motion.circle
             cx={center}

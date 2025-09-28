@@ -1,7 +1,7 @@
 import { Button } from '@/components/atoms/button';
 import { LinkedinLogo } from '@/components/atoms/logo';
 
-export function LinkedInButton() {
+export function LinkedInButton({ className }: { className?: string }) {
   return (
     <Button
       variant="ghost"
@@ -9,6 +9,7 @@ export function LinkedInButton() {
       title="Go to LinkedIn profile of Dominik Rubröder"
       aria-label="Go to LinkedIn profile of Dominik Rubröder"
       size="large"
+      className={className}
     >
       <LinkedinLogo />
     </Button>

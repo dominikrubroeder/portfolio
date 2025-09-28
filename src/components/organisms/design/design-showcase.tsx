@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { cn } from '@/lib/utils';
 
 import { CheckIcon } from '@heroicons/react/16/solid';
-import { DesignDrawer } from '@/components/organisms/design-drawer';
+
+import { cn } from '@/lib/utils';
+
+import { DesignDrawer } from '@/components/molecules/drawer/design-drawer';
 
 export function DesignShowcase() {
   const [state, setState] = useState<{
