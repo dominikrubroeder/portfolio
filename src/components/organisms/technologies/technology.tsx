@@ -1,18 +1,22 @@
 import React from 'react';
+
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
+
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+
+import { cn } from '@/lib/utils';
+
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
-import { ExperienceBar } from '@/components/atoms/experience-bar';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
-import type { Technology } from '@/components/organisms/technologies/types';
+import { ExperienceBar } from '@/components/atoms/experience-bar';
+import type { Brand } from '@/components/organisms/brand';
 
 export default function Technology({
   technology,
   group
 }: {
-  technology: Technology;
+  technology: Brand;
   group: string;
 }) {
   return (
@@ -24,10 +28,10 @@ export default function Technology({
       >
         <Button
           variant="ghost"
-          href={technology.website}
+          href={technology.href}
           target="_blank"
-          title={`Go to external ${technology.title} website`}
-          aria-label={`Go to external ${technology.title} website`}
+          title={`Go to external ${technology.name} website`}
+          aria-label={`Go to external ${technology.name} website`}
           className="mx-auto min-h-11 min-w-11 shrink-0"
         >
           <span className="sr-only">Open</span>
@@ -36,19 +40,19 @@ export default function Technology({
       </div>
 
       <Link
-        href={technology.website}
+        href={technology.href}
         className="group relative mx-auto flex size-80 interactive cursor-pointer items-center justify-center rounded-xl border transition hover:bg-muted"
         target="_blank"
-        title={`Go to ${technology.title} website`}
-        aria-label={`Go to ${technology.title} website`}
+        title={`Go to ${technology.name} website`}
+        aria-label={`Go to ${technology.name} website`}
         rel="noopener noreferrer"
       >
         <DevModeLabel className="z-10">div | slider-item.tsx</DevModeLabel>
 
         <BrandLogo
-          brand={technology.title}
+          brand={technology.name}
           className="h-32 w-auto transition group-hover:scale-105"
-          aria-label={`${technology.title} logo`}
+          aria-label={`${technology.name} logo`}
         />
 
         <ExperienceBar
@@ -63,14 +67,14 @@ export default function Technology({
 
       <div>
         <Link
-          href={technology.website}
+          href={technology.href}
           className="mx-auto inline-flex items-center justify-center gap-1 font-bold text-foreground"
           target="_blank"
-          title={`Go to external ${technology.title} website`}
-          aria-label={`Go to external ${technology.title} website`}
+          title={`Go to external ${technology.name} website`}
+          aria-label={`Go to external ${technology.name} website`}
           rel="noopener noreferrer"
         >
-          <h2>{technology.title}</h2>
+          <h2>{technology.name}</h2>
         </Link>
 
         <p className="text-center italic">{technology.description}</p>

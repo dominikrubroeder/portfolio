@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -17,7 +17,7 @@ export function Badge({
   return (
     <div
       className={cn(
-        'inline-flex rounded',
+        'inline-flex self-start rounded',
         color === 'primary' && 'bg-primary/10 text-primary',
         color === 'neutral' && 'bg-muted text-foreground',
         size === 'small' && 'px-2.5 py-0.5 text-sm',

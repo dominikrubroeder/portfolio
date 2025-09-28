@@ -1,17 +1,23 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-import { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import { useState } from 'react';
+
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
+
+import { cn } from '@/lib/utils';
 
 export function Accordion({
   title,
   open,
+  offsetInnerContent,
   children,
   className
 }: {
   title: ReactNode;
   open?: boolean;
+  /** Move inner content slightly to the right */
+  offsetInnerContent?: boolean;
   children: ReactNode;
   className?: string;
 }) {
@@ -32,7 +38,13 @@ export function Accordion({
         <p>{title}</p>
       </button>
 
-      {isOpen && <div className="animate-fade-up-1rem">{children}</div>}
+      {isOpen && (
+        <div
+          className={cn('animate-fade-up-1rem', offsetInnerContent && 'pl-9')}
+        >
+          {children}
+        </div>
+      )}
     </div>
   );
 }

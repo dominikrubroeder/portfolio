@@ -1,6 +1,6 @@
-export * from './books';
 export { Introduction } from './introduction';
-export { VisionAccordion } from './vision-accordion';
-export { TechStackAccordion } from './tech-stack-accordion';
-export { HowIWorkAccordion } from './how-i-work-accordion';
-export { MyBackgroundAccordion } from './my-background-accordion';
+export { IntroductionVisionAccordion } from './introduction-vision-accordion';
+export { IntroductionTechStackAccordion } from './introduction-tech-stack-accordion';
+export { IntroductionHowIWorkAccordion } from './introduction-how-i-work-accordion';
+export { IntroductionMyBackgroundAccordion } from './introduction-my-background-accordion';
+export { IntroductionDegreesList } from './introduction-degrees-list';

@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/logo/config';
+
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function MiroLogo({ className }: { className?: string }) {
   return (
@@ -7,7 +8,7 @@ export function MiroLogo({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <path
         d="M27.7333 0H100.267C115.467 0 128 12.5333 128 27.7333V100.267C128 115.467 115.467 128 100.267 128H27.7333C12.5333 128 0 115.467 0 100.267V27.7333C0 12.5333 12.5333 0 27.7333 0Z"

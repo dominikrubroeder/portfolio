@@ -1,7 +1,12 @@
 'use client';
 
+import Link from 'next/link';
+
+import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
+import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import parse from 'html-react-parser';
 
+import { Button } from '@/components/atoms/button';
 import {
   Drawer,
   DrawerClose,
@@ -11,11 +16,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger
-} from './drawer';
-import { CheckBadgeIcon } from '@heroicons/react/24/outline';
-import { Button } from '@/components/atoms/button';
-import Link from 'next/link';
-import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
+} from '@/components/molecules/drawer';
 
 export function CertificateDrawer({
   title,

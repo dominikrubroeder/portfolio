@@ -1,13 +1,13 @@
-import Link from 'next/link';
-
+import { Container } from '@/components/atoms/container';
+import { BrandList } from '@/components/organisms/brand';
 import {
   AllTechnologies,
   mainTechnologies
 } from '@/components/organisms/technologies';
 
-export default function Technologies() {
+export function Technologies() {
   return (
-    <div className="space-y-8">
+    <Container className="space-y-8" id="technologies">
       <h2>
         Technologies
         <span className="ml-2 font-medium text-muted-foreground">
@@ -15,32 +15,9 @@ export default function Technologies() {
         </span>
       </h2>
 
-      <ul className="space-y-5">
-        {mainTechnologies.map((technology) => (
-          <li key={technology.name}>
-            <div className="inline-flex items-center gap-4">
-              <Link
-                href={technology.href}
-                target="_blank"
-                title={`Open ${technology.name} website`}
-                rel="noopener noreferrer"
-              >
-                {technology.logo}
-                <span className="sr-only">Open {technology.name}</span>
-              </Link>
-
-              <h3 className="mb-0 space-x-1 text-base">
-                <span>{technology.name}</span>
-                <span className="font-medium text-muted-foreground">
-                  {technology.description}
-                </span>
-              </h3>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <BrandList brands={mainTechnologies} />
 
       <AllTechnologies />
-    </div>
+    </Container>
   );
 }

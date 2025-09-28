@@ -1,12 +1,13 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
+import type { HTMLTag } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { HTMLTag } from '@/lib/types';
 
 export function Markup({
   color = 'neutral',
   size = 'medium',
   as = 'div',
+  backticks = true,
   className,
   children,
   ...rest
@@ -14,6 +15,7 @@ export function Markup({
   color?: 'primary' | 'neutral' | 'muted';
   size?: 'small' | 'medium' | 'large';
   as?: HTMLTag;
+  backticks?: boolean;
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) {
@@ -32,7 +34,9 @@ export function Markup({
       )}
       {...rest}
     >
-      `{children}`
+      {backticks && '`'}
+      {children}
+      {backticks && '`'}
     </Comp>
   );
 }

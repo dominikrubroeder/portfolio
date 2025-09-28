@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { defaultIconSize } from '@/components/atoms/logo/config';
+import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
 export function SlackLogo({ className }: { className?: string }) {
   return (
@@ -10,7 +10,7 @@ export function SlackLogo({ className }: { className?: string }) {
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <g clipPath="url(#clip0_875_1138)">
         <path

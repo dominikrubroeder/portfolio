@@ -1,5 +1,6 @@
-import { AccordionContained } from '@/components/atoms/accordion';
 import Image from 'next/image';
+
+import { AccordionContained } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 

@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
-import { defaultIconSize } from '@/components/atoms/logo';
+
+import { defaultLogoSquareSize } from '@/components/atoms/logo';
 
 export function DailyDevLogo({ className }: { className?: string }) {
   return (
@@ -9,7 +10,7 @@ export function DailyDevLogo({ className }: { className?: string }) {
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn(defaultIconSize, className)}
+      className={cn(defaultLogoSquareSize, className)}
     >
       <g clipPath="url(#clip0_978_2566)">
         <g opacity="0.56">

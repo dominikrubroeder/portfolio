@@ -1,13 +1,15 @@
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
-@custom-variant dark (&:where(.theme-dev, .theme-dev *));
+@custom-variant dark (&:where(.appearance-dark, .appearance-dark *, [data-appearance=dark], [data-appearance=dark] *));
 
-:root {
+@layer base {
+  :root {
     --background: hsl(0 0% 100%);
     --foreground: hsl(0 0% 18.8%);
     --primary: hsl(255 92% 65%);
     --primary-foreground: hsl(0 0% 100%);
-    --primary-hover: hsl(255 92% 69%);
+    --primary-hover: hsl(255 92% 57%);
     --muted: hsl(240 23.8% 95.9%);
     --muted-foreground: hsl(240 2.3% 44%);
     --muted-hover: hsl(240, 7%, 83%);
@@ -18,212 +20,270 @@
     --radius-sm: calc(var(--radius) - 4px);
     --container: 96rem;
     --readable-container: 48rem;
-}
+    --font-jetbrains-mono: 'JetBrains Mono';
+  }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: hsl(0 0% 8%);
-        --foreground: hsl(0 0% 100%);
-        --muted: hsl(0 0% 16%);
-        --muted-foreground: hsl(240 2.3% 56%);
-        --muted-hover: hsl(0, 0%, 22%);
-        --border: hsl(0 0% 12%);
-    }
-}
-
-[data-theme='design'] {
-    --foreground: hsl(0 0% 8%);
-    --background: hsl(0 0% 100%);
-    --muted: hsl(33 100% 50%);
-    --border: hsl(0 0% 8%);
-}
-
-[data-theme='dev'] {
+  .appearance-dark {
     --background: hsl(0 0% 8%);
     --foreground: hsl(0 0% 100%);
-    --muted: hsl(0 0% 0%);
+    --muted: hsl(0 0% 16%);
+    --muted-foreground: hsl(240 2.3% 56%);
+    --muted-hover: hsl(0, 0%, 22%);
     --border: hsl(0 0% 12%);
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--border, currentColor);
+  }
+
+  * {
+    @apply border-border disabled:cursor-not-allowed;
+  }
+
+  svg {
+    @apply min-h-3 min-w-3 shrink-0;
+  }
+
+  a {
+    @apply cursor-pointer transition hover:text-foreground;
+  }
+
+  button {
+    @apply cursor-pointer active:scale-[0.98];
+  }
+
+  li::marker {
+    @apply text-foreground;
+  }
+
+  hr {
+    @apply my-8;
+  }
+
+  b {
+    @apply text-foreground;
+  }
+
+  p:not(:last-child) {
+    @apply mb-3;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-foreground;
+  }
+
+  h1 {
+    @apply space-x-2 text-6xl leading-[1.2] font-bold text-foreground;
+  }
+
+  h2:not(.h2) {
+    @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground;
+  }
+
+  h3,
+  h4 {
+    @apply mt-8 mb-3;
+  }
+
+  h3:first-of-type,
+  h4:first-of-type {
+    @apply mt-0;
+  }
+
+  ul {
+    @apply my-4;
+  }
+
+  b,
+  strong {
+    @apply text-foreground;
+  }
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
+  --font-mono: var(--font-jetbrains-mono);
 
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary-hover: var(--primary-hover);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted-hover: var(--muted-hover);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
 
-    --color-signal-yellow: var(--color-yellow-300);
-    --color-signal-yellow-foreground: var(--background);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted-hover: var(--muted-hover);
 
-    --color-border: var(--border);
+  --color-signal-yellow: var(--color-yellow-300);
+  --color-signal-yellow-foreground: var(--background);
 
-    --color-hover: var(--hover);
+  --color-border: var(--border);
 
-    --radius: var(--radius);
-    --radius-md: var(--radius-md);
-    --radius-sm: var(--radius-sm);
+  --color-hover: var(--hover);
 
-    --animate-scale: scale 0.16s ease-out forwards;
-    --animate-fade-up: fade-up 0.3s ease-out forwards;
-    --animate-fade-up-1rem: fade-up-1rem 0.3s ease-out forwards;
-    --animate-fade-down-1rem: fade-down-1rem 0.3s ease-out forwards;
+  --radius: var(--radius);
+  --radius-md: var(--radius-md);
+  --radius-sm: var(--radius-sm);
 
-    --z-index-100: 100;
-    --z-index-max: 250;
+  --animate-scale: scale 0.16s ease-out forwards;
+  --animate-fade-up: fade-up 0.3s ease-out forwards;
+  --animate-fade-up-1rem: fade-up-1rem 0.3s ease-out forwards;
+  --animate-fade-down-1rem: fade-down-1rem 0.3s ease-out forwards;
+  --animate-drive-up: drive-up 1s ease-out forwards;
+  --animate-badge-up: badge-up 0.3s ease-out forwards;
+  --animate-rotate-and-scale: rotate-and-scale 1.4s ease-out infinite;
 
-    --breakpoint-xs: 375px;
+  --z-index-100: 100;
+  --z-index-max: 250;
 
-    --transition-duration-*: initial;
-    --transition-duration: 300ms;
+  --breakpoint-xs: 375px;
 
-    @keyframes scale {
-        0% {
-            transform: scale(0.82);
-        }
+  --transition-duration-*: initial;
+  --transition-duration: 300ms;
 
-        100% {
-            transform: scale(1);
-        }
+  @keyframes scale {
+    0% {
+      transform: scale(0.82);
     }
 
-    @keyframes fade-up {
-        0% {
-            transform: translateY(4%);
-        }
+    100% {
+      transform: scale(1);
+    }
+  }
 
-        100% {
-            transform: translateY(0%);
-        }
+  @keyframes fade-up {
+    0% {
+      transform: translateY(4%);
     }
 
-    @keyframes fade-up-1rem {
-        0% {
-            transform: translateY(1rem);
-        }
+    100% {
+      transform: translateY(0%);
+    }
+  }
 
-        100% {
-            transform: translateY(0);
-        }
+  @keyframes fade-up-1rem {
+    0% {
+      transform: translateY(1rem);
     }
 
-    @keyframes fade-down-1rem {
-        0% {
-            transform: translateY(-1rem);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
+    100% {
+      transform: translateY(0);
     }
+  }
+
+  @keyframes fade-down-1rem {
+    0% {
+      transform: translateY(-1rem);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes drive-up {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-300%);
+    }
+  }
+
+  @keyframes badge-up {
+    0% {
+      transform: scale(1.2);
+    }
+
+    80% {
+      transform: scale(1.4);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes rotate-and-scale {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+
+    40% {
+      transform: rotate(360deg) scale(1);
+    }
+
+    90% {
+      transform: rotate(360deg) scale(1.5);
+    }
+
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+  }
 }
 
-@layer base {
-    * {
-        @apply border-border disabled:cursor-not-allowed;
-    }
-
-    svg {
-        @apply min-h-3 min-w-3 shrink-0;
-    }
-
-    a {
-        @apply transition cursor-pointer hover:text-foreground;
-    }
-
-    button {
-        @apply cursor-pointer;
-    }
-
-    li::marker {
-        @apply text-foreground;
-    }
-
-    hr {
-        @apply my-8;
-    }
-
-    b {
-        @apply text-foreground;
-    }
-
-    p:not(:last-child) {
-        @apply mb-3;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        @apply text-foreground font-bold;
-    }
-
-    h1 {
-        @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground;
-    }
-
-    h2:not(.h2) {
-        @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground;
-    }
-
-    h3, h4 {
-        @apply mb-3 mt-8;
-    }
-
-    h3:first-of-type, h4:first-of-type {
-        @apply mt-0;
-    }
-
-    ul {
-        @apply my-4;
-    }
-
-    b, strong {
-        @apply text-foreground
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: hsl(0 0% 8%);
+    --foreground: hsl(0 0% 100%);
+    --muted: hsl(0 0% 16%);
+    --muted-foreground: hsl(240 2.3% 56%);
+    --muted-hover: hsl(0, 0%, 22%);
+    --border: hsl(0 0% 12%);
+  }
 }
 
-@layer base {
-    *,
-    ::after,
-    ::before,
-    ::backdrop,
-    ::file-selector-button {
-        border-color: var(--border, currentColor);
-    }
+[data-theme='orange'] {
+  --primary: hsl(0 92% 65%);
+  --primary-hover: hsl(0 92% 69%);
+}
+
+[data-theme='blue'] {
+  --primary: hsl(221.33 97.1% 53.5%);
+  --primary-hover: hsl(221.33 97.1% 57.5%);
 }
 
 @utility interactive {
-    @apply cursor-pointer transition active:scale-95;
+  @apply cursor-pointer transition active:scale-95;
 }
 
 @utility button {
-    &:not(:disabled) {
-        @apply interactive cursor-pointer;
-    }
+  &:not(:disabled) {
+    @apply interactive cursor-pointer;
+  }
 }
 
 @utility svg {
-    @apply min-h-4 min-w-4 shrink-0;
+  @apply min-h-4 min-w-4 shrink-0;
 }
 
 /* Hide scrollbars for all browsers */
 .scrollbar-none {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Hide scrollbars for WebKit browsers (Chrome, Safari, Edge) */
 .scrollbar-none::-webkit-scrollbar {
-    display: none;
-    width: 0; /* Adjust the width as needed */
+  display: none;
+  width: 0; /* Adjust the width as needed */
 }
 
 .scrollbar-none::-webkit-scrollbar-thumb {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .scrollbar-none::-webkit-scrollbar-track {
-    background-color: transparent;
+  background-color: transparent;
 }

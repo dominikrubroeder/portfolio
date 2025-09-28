@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { cn } from '@/lib/utils';
 
-export default function Avatar({
+export function Avatar({
   width,
   height,
   as,
@@ -38,7 +39,10 @@ export default function Avatar({
         alt="Image of Dominik Rubröder"
         width={width}
         height={height}
-        className={cn('shrink-0 rounded-full border-2', className)}
+        className={cn(
+          'shrink-0 rounded-full border-2 transition hover:scale-[1.06]',
+          className
+        )}
         draggable={false}
       />
     </Link>
