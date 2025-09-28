@@ -25,7 +25,7 @@ export default async function FrontendVisionPage() {
           </div>
 
           <h1>
-            The joy of{' '}
+            The joy of
             <div className="group relative inline-block">
               <span className="absolute -top-1 -left-1 block size-2 animate-rotate-and-scale bg-primary-hover group-hover:animate-spin" />
               <span className="absolute -top-1 -right-0.5 block size-2 animate-rotate-and-scale bg-primary-hover group-hover:animate-spin" />
@@ -41,7 +41,7 @@ export default async function FrontendVisionPage() {
           </h1>
 
           <h2>
-            Envision your frontend like lego bricks. Stack, stack, stack...
+            Envision your frontend like lego bricks ... Stack, stack, stack:
             frontend complete.
           </h2>
 

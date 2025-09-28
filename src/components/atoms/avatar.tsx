@@ -39,7 +39,10 @@ export function Avatar({
         alt="Image of Dominik Rubröder"
         width={width}
         height={height}
-        className={cn('shrink-0 rounded-full border-2', className)}
+        className={cn(
+          'shrink-0 rounded-full border-2 transition hover:scale-[1.06]',
+          className
+        )}
         draggable={false}
       />
     </Link>

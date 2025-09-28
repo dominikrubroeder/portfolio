@@ -1,3 +1,4 @@
+import { Container } from '@/components/atoms/container';
 import { Hr } from '@/components/atoms/hr';
 import { ContactSection } from '@/components/organisms/contact';
 import { FAQ } from '@/components/organisms/faq';
@@ -13,7 +14,7 @@ export default async function HomePage() {
     <div className="animate-fade-up-1rem space-y-6">
       <HomeHero />
 
-      <div className="mx-auto space-y-12 px-4 sm:max-w-(--readable-container) lg:px-0">
+      <Container as="div" className="space-y-12">
         <Introduction />
 
         <Projects />
@@ -37,7 +38,7 @@ export default async function HomePage() {
         <Hr />
 
         <ContactSection />
-      </div>
+      </Container>
     </div>
   );
 }

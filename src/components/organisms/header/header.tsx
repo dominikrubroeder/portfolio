@@ -51,12 +51,11 @@ export function Header() {
         <div>
           <GitHubButton />
           <LinkedInButton />
+          <ContactButton
+            iconPosition="right"
+            buttonProps={{ variant: 'contained', className: 'ml-2' }}
+          />
         </div>
-
-        <ContactButton
-          iconPosition="right"
-          buttonProps={{ variant: 'contained' }}
-        />
       </div>
     </Container>
   );

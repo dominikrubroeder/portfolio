@@ -4,7 +4,7 @@ import { Container } from '@/components/atoms/container';
 export function HomeHero() {
   return (
     <Container
-      className="flex items-center justify-center pt-5 pb-1 lg:pb-2"
+      className="pt-5 pb-1 lg:px-0 lg:pb-2"
       horizontalPadding
       id="hero"
     >

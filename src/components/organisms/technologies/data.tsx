@@ -16,7 +16,7 @@ import type { Brand } from '@/components/organisms/brand';
 export const mainTechnologies: Brand[] = [
   {
     name: 'React',
-    description: 'as frontend user interface (web) library',
+    description: 'as user interface web library',
     logo: <ReactLogo className="size-12" />,
     href: 'https://react.dev/',
     knowledge: 'Daily'

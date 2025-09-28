@@ -29,6 +29,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [fontSize, setFontSize] = useState<ThemeFontSize>('md');
   const [appearance, setAppearance] = useState<ThemeAppearance>('light');
 
+  // TODO: Check why in night times, explicit `light` appearance is not working
   const handleTheme = useCallback((theme: Theme) => {
     setTheme(theme);
 

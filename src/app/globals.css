@@ -82,11 +82,11 @@
   }
 
   h1 {
-    @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground;
+    @apply space-x-2 text-6xl leading-[1.2] font-bold text-foreground;
   }
 
   h2:not(.h2) {
-    @apply space-x-2 text-4xl leading-[1.2] font-bold text-foreground;
+    @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground;
   }
 
   h3,
