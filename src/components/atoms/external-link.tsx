@@ -22,7 +22,7 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'inline-flex transition hover:text-primary',
+        'group inline-flex interactive transition hover:text-primary',
         variant === 'inline' &&
           'mr-1.5 ml-1 underline transition hover:decoration-primary',
         variant === 'prominent' &&
@@ -43,14 +43,15 @@ export function ExternalLink({
           className={cn(
             variant === 'inline' &&
               'absolute -top-1 -right-3 size-3.5 text-current',
-            variant === 'prominent' && 'size-4 text-primary',
+            variant === 'prominent' &&
+              'size-4 text-primary group-hover:text-primary-hover',
             variant === 'unstyled' && 'ml-0.5'
           )}
         />
       </span>
 
       {variant === 'prominent' && (
-        <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary" />
+        <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary group-hover:bg-primary-hover" />
       )}
     </a>
   );

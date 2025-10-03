@@ -10,6 +10,7 @@ import {
   SunIcon as SunIconSolid
 } from '@heroicons/react/24/solid';
 
+import type { ComponentBaseProps, PositionProp } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/atoms/button';
@@ -43,7 +44,12 @@ const options = [
   }
 ];
 
-export function ThemeAppearanceSetting() {
+export function ThemeAppearanceSetting({
+  menuPosition = 'bottom',
+  className
+}: {
+  menuPosition?: PositionProp;
+} & ComponentBaseProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { appearance, setAppearance } = useTheme();
 
@@ -56,7 +62,7 @@ export function ThemeAppearanceSetting() {
   );
 
   return (
-    <div className="relative inline-flex">
+    <div className={cn('relative inline-flex', className)}>
       <Button
         variant="ghost"
         onClick={() => setIsOpen((prevState) => !prevState)}
@@ -83,7 +89,14 @@ export function ThemeAppearanceSetting() {
       </Button>
 
       {isOpen && (
-        <div className="absolute top-full left-1/2 z-max mt-2 -translate-x-1/2 animate-fade-up-1rem rounded border bg-background px-3 shadow-xl">
+        <div
+          className={cn(
+            'absolute z-max animate-fade-up-1rem rounded border bg-background px-3 shadow-xl',
+            menuPosition === 'bottom' &&
+              'top-full left-1/2 mt-2 -translate-x-1/2',
+            menuPosition === 'bottom-right' && 'top-full right-0 mt-2'
+          )}
+        >
           <ul>
             {options.map(({ value, label }) => (
               <li key={value}>

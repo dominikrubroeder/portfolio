@@ -32,7 +32,7 @@ export function IntroductionHowIWorkAccordion() {
           a feeling of structure if i get stuck in a concept for too long
         </li>
         <li>
-          Have a look on the latest trends and news in the tech space, design
+          Have a look on the latest trends and news in the tech space/design
           area on a regular basis
         </li>
         <li>

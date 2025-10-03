@@ -22,7 +22,7 @@ export const useHeaderMenu = () => {
   const pathname = usePathname();
   const router = useRouter();
   const { scrollIntoView } = useScrollIntoView();
-  const [activeSection, setActiveSection] = useState<string>('');
+  const [activeSection, setActiveSection] = useState<string>('hero');
 
   const handleNavigation = useCallback(
     ({ href }: { href: string }) => router.push(href),

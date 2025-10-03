@@ -9,3 +9,11 @@ export type TShirtSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 // TODO: Use `TShirtSize` or `SizeProp` across the app
 export type SizeProp = TShirtSize;
+
+export type PositionProp =
+  | 'left'
+  | 'top'
+  | 'bottom'
+  | 'right'
+  | 'bottom-right'
+  | 'bottom-left';

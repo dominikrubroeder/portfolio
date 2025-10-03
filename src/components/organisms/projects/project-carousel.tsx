@@ -19,7 +19,6 @@ export function ProjectCarousel() {
   const { project, goNext, goPrevious, setActiveProject, activeProject } =
     useProjectCarousel();
 
-  // TODO: Implement swipe functionality here
   return (
     <div className="mx-auto space-y-4">
       <div className="relative flex h-[30svh] items-center justify-center rounded border">
@@ -69,7 +68,7 @@ export function ProjectCarousel() {
       </div>
 
       <div className="space-y-7">
-        <ul className="flex h-3 items-center justify-center gap-2.5">
+        <ul className="flex h-3 items-center justify-center gap-3">
           {projects.map((_, index, array) => (
             <li key={index}>
               <button
@@ -112,8 +111,11 @@ export function ProjectCarousel() {
               )}
             </div>
 
-            <h4 className="space-x-1.5 text-base font-normal text-muted-foreground">
-              <span>{project.readableTitle}</span>
+            <div className="mb-3 space-x-1.5">
+              <div className="inline-block text-muted-foreground">
+                {project.readableTitle}
+              </div>
+
               <ExternalLink
                 href={project.url}
                 variant="unstyled"
@@ -121,9 +123,9 @@ export function ProjectCarousel() {
               >
                 Show more
               </ExternalLink>
-            </h4>
+            </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div>
                 <b>Role</b>
                 <div>{project.role?.join(', ')}</div>

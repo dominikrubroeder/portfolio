@@ -25,7 +25,7 @@ export function Container({
     <Comp
       className={cn(
         'mx-auto scroll-mt-24 md:scroll-mt-28',
-        horizontalPadding && 'px-4 2xl:px-0',
+        horizontalPadding && 'px-4 lg:px-0',
         animateIn && 'animate-fade-up-1rem',
         size === 'container' && 'max-w-(--container)',
         size === 'readable-container' && 'max-w-(--readable-container)',

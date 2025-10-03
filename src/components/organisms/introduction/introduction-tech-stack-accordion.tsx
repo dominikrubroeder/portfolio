@@ -25,7 +25,7 @@ export function IntroductionTechStackAccordion({
   className?: string;
 }) {
   return (
-    <Accordion title="My Tech Stack">
+    <Accordion title="My Tech Stack of choice">
       <Ul
         className={cn('-ml-2 flex list-none flex-wrap gap-2 pb-1', className)}
       >

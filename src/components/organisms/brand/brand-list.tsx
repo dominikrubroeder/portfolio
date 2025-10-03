@@ -11,10 +11,10 @@ export function BrandList({
   className?: string;
 }) {
   return (
-    <ul className={cn('-ml-4 space-y-1', className)}>
+    <ul className={cn('-ml-2.5 space-y-1 md:-ml-4', className)}>
       {brands.map((brand) => (
         <li key={brand.name}>
-          <div className="inline-flex items-center gap-4">
+          <div className="inline-flex items-center gap-2 lg:gap-4">
             <BrandLink brand={brand} />
 
             <h3 className="mb-0 space-x-1">

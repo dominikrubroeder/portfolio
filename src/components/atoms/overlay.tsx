@@ -9,7 +9,7 @@ export function Overlay({
 }) {
   return (
     <div
-      className={cn('fixed inset-0 top-20 z-40 bg-black/20', className)}
+      className={cn('fixed inset-0 top-20 z-40 bg-black/50', className)}
       onClick={onClick}
     />
   );
