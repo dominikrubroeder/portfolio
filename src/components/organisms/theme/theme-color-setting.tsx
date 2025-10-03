@@ -11,6 +11,7 @@ export function ThemeColorSetting({ className }: { className?: string }) {
 
   return (
     <div className={cn('flex gap-2', className)}>
+      {/** TODO: Replace fixed color values with color variables */}
       <span
         className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border border-blue-600 bg-blue-600 hover:scale-110 hover:border-blue-600 active:scale-100"
         onClick={() => setTheme('blue')}

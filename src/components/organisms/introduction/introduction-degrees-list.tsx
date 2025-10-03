@@ -1,8 +1,5 @@
-import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 
-import { Button } from '@/components/atoms/button';
-import { Select } from '@/components/atoms/select';
 import { Ul } from '@/components/atoms/ul';
 
 export function IntroductionDegreesList() {
@@ -17,16 +14,6 @@ export function IntroductionDegreesList() {
               B.A, Dual study at IU university in Munich
             </span>
           </div>
-
-          <Select
-            trigger={
-              <Button variant="ghost" className="-mr-3">
-                <span className="sr-only">Open actions</span>
-                <EllipsisVerticalIcon className="size-5" />
-              </Button>
-            }
-            options={[{ label: 'Download CV', value: 'download-cv' }]}
-          ></Select>
         </div>
       </li>
       <li>

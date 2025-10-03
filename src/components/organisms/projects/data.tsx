@@ -18,7 +18,7 @@ export const projects: Project[] = [
     title: 'Value Booster',
     category: ['Headless', 'Ecommerce', 'B2B', 'B2C'],
     url: 'https://www.mediawave.de/value-booster',
-    readableTitle: 'Kick start in your headless ecommerce project',
+    readableTitle: 'Kickstart in your headless ecommerce project',
     status: 'Currently developing',
     timeframe: 'Today – 2024',
     logo: <MediawaveLogo className="h-12 w-auto" />,

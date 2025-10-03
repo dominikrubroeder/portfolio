@@ -10,10 +10,14 @@ import {
   GitHubButton,
   LinkedInButton
 } from '@/components/atoms/button';
-import { Hr } from '@/components/atoms/hr';
 import { Overlay } from '@/components/atoms/overlay';
-import { useHeaderMenu } from '@/components/organisms/header/header-menu/index';
-import { ThemeQuickSettings } from '@/components/organisms/theme';
+import { ButtonGroup } from '@/components/molecules/button-group';
+import { useHeaderMenu } from '@/components/organisms/header';
+import {
+  ThemeAppearanceSetting,
+  ThemeColorSetting,
+  ThemeFontSizeSetting
+} from '@/components/organisms/theme';
 
 export function HeaderMenu() {
   const {
@@ -27,20 +31,26 @@ export function HeaderMenu() {
 
   return (
     <div className="relative lg:hidden">
-      <Button
-        variant="ghost"
-        className={cn(isOpen && 'bg-muted')}
-        onClick={() => setIsOpen((prevState) => !prevState)}
-      >
-        <EllipsisVerticalIcon
-          className={cn('transition', isOpen ? 'rotate-90' : 'rotate-0')}
-        />
-        <span className="sr-only">Open menu</span>
-      </Button>
+      <ButtonGroup>
+        <GitHubButton />
+
+        <ContactButton buttonProps={{ variant: 'contained' }} />
+
+        <Button
+          variant="ghost"
+          className={cn(isOpen && 'bg-muted')}
+          onClick={() => setIsOpen((prevState) => !prevState)}
+        >
+          <EllipsisVerticalIcon
+            className={cn('transition', isOpen ? 'rotate-90' : 'rotate-0')}
+          />
+          <span className="sr-only">Open menu</span>
+        </Button>
+      </ButtonGroup>
 
       {isOpen && (
         <>
-          <div className="fixed top-20 right-0 left-0 z-50 grid w-full animate-fade-down-1rem flex-wrap gap-2 border-b bg-background px-4 pt-0 pb-3 drop-shadow-xl">
+          <div className="fixed top-20 right-0 left-0 z-50 w-full animate-fade-down-1rem flex-wrap space-y-6 overflow-hidden overflow-y-auto border-b bg-background px-4 py-3 pb-6 drop-shadow-xl">
             <div>
               <b>On this page</b>
 
@@ -80,27 +90,54 @@ export function HeaderMenu() {
                         <ArrowDownIcon className="size-5" />
                       )}
                     </button>
-
-                    <Hr className="my-0 ml-7" />
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div>
-              <b>Quick theme settings</b>
-              <ThemeQuickSettings animateOut={false} />
-            </div>
+            <hr />
 
             <div>
-              <b>Contact</b>
+              <b>Quick theme settings</b>
+
+              <ul className="grid gap-3">
+                <li>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-foreground">Select appearance</span>
+                    <ThemeAppearanceSetting
+                      className="-mr-2"
+                      menuPosition="bottom-right"
+                    />
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-foreground">Select color</span>
+                    <ThemeColorSetting />
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-foreground">Select font</span>
+                    <ThemeFontSizeSetting />
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <hr />
+
+            <div className="space-y-3">
+              <b className="block">Contact</b>
+
               <div>
-                <ContactButton />
                 <GitHubButton />
                 <LinkedInButton />
+                <ContactButton />
               </div>
             </div>
           </div>
+
           <Overlay onClick={() => setIsOpen(false)} />
         </>
       )}

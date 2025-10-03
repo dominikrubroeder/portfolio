@@ -9,7 +9,7 @@
     --foreground: hsl(0 0% 18.8%);
     --primary: hsl(255 92% 65%);
     --primary-foreground: hsl(0 0% 100%);
-    --primary-hover: hsl(255 92% 57%);
+    --primary-hover: hsl(255 92% 59%);
     --muted: hsl(240 23.8% 95.9%);
     --muted-foreground: hsl(240 2.3% 44%);
     --muted-hover: hsl(240, 7%, 83%);
@@ -26,7 +26,7 @@
   .appearance-dark {
     --background: hsl(0 0% 8%);
     --foreground: hsl(0 0% 100%);
-    --muted: hsl(0 0% 16%);
+    --muted: hsl(0 0% 24%);
     --muted-foreground: hsl(240 2.3% 56%);
     --muted-hover: hsl(0, 0%, 22%);
     --border: hsl(0 0% 12%);
@@ -236,25 +236,35 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: hsl(0 0% 8%);
-    --foreground: hsl(0 0% 100%);
-    --muted: hsl(0 0% 16%);
-    --muted-foreground: hsl(240 2.3% 56%);
-    --muted-hover: hsl(0, 0%, 22%);
-    --border: hsl(0 0% 12%);
-  }
-}
-
 [data-theme='orange'] {
   --primary: hsl(0 92% 65%);
-  --primary-hover: hsl(0 92% 69%);
+  --primary-hover: hsl(0 92% 59%);
 }
 
 [data-theme='blue'] {
   --primary: hsl(221.33 97.1% 53.5%);
-  --primary-hover: hsl(221.33 97.1% 57.5%);
+  --primary-hover: hsl(221.33 97.1% 47.5%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: hsl(0 0% 8%);
+    --foreground: hsl(0 0% 100%);
+    --muted: hsl(0 0% 24%);
+    --muted-foreground: hsl(240 2.3% 56%);
+    --muted-hover: hsl(0, 0%, 22%);
+    --border: hsl(0 0% 12%);
+  }
+
+  [data-theme='orange'] {
+    --primary: hsl(0 92% 65%);
+    --primary-hover: hsl(0 92% 71%);
+  }
+
+  [data-theme='blue'] {
+    --primary: hsl(221.33 97.1% 64%);
+    --primary-hover: hsl(221.33 97.1% 68%);
+  }
 }
 
 @utility interactive {

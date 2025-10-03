@@ -38,7 +38,7 @@ export const mainTools: Brand[] = [
     name: 'GitHub',
     description: 'to store my private codebase',
     logo: <GithubLogo className="size-12" />,
-    href: 'https://github.com/dominikrubroeder',
+    href: 'https://github.com',
     knowledge: 'Daily'
   },
   {
