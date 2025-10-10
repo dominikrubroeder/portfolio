@@ -23,7 +23,7 @@ export function Footer() {
           title="Open React website"
           aria-label="Open React website"
         >
-          React 19.1.1
+          React 19.2
         </ExternalLink>
 
         <span>|</span>
@@ -34,7 +34,7 @@ export function Footer() {
           title="Open Tailwind CSS documentation"
           aria-label="Open Tailwind CSS documentation"
         >
-          Tailwind CSS 4.1.13
+          Tailwind CSS 4.1.14
         </ExternalLink>
       </p>
 
