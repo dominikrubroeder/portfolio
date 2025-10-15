@@ -326,7 +326,7 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        name: 'Netlify',
+        name: 'netlify',
         description:
           'The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web',
         href: 'https://www.netlify.com',
@@ -334,10 +334,10 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        name: 'platform.sh',
+        name: 'upsun (formerly Platform.sh)',
         description:
           'The end-to-end cloud platform for building, running and scaling web applications',
-        href: 'https://platform.sh',
+        href: 'https://upsun.com',
         logo: '',
         knowledge: 'Used'
       },
@@ -379,13 +379,6 @@ export const tools: Tools = [
         name: 'Framer',
         description: 'Design and publish stunning sites',
         href: 'https://www.framer.com',
-        logo: '',
-        knowledge: 'Used'
-      },
-      {
-        name: 'InVision Studio',
-        description: "The world's most powerful screen design tool",
-        href: 'https://www.invisionapp.com/studio',
         logo: '',
         knowledge: 'Used'
       },

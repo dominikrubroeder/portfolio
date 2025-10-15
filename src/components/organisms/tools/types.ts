@@ -5,6 +5,7 @@ export type KnowledgeLevel =
   | 'Used'
   | 'Experienced'
   | 'Professional'
+  | 'Regularly'
   | 'Daily';
 
 export type Tools = { group: string; children: Brand[] }[];

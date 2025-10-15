@@ -13,9 +13,11 @@ import {
   AdobeXdLogo,
   AlgoliaLogo,
   ArcLogo,
+  AwsLogo,
   AxiosLogo,
   BraveLogo,
   BrunoLogo,
+  CanvaLogo,
   ChatGptLogo,
   ChromeLogo,
   ClaudeAiLogo,
@@ -46,6 +48,7 @@ import {
   MeilisearchLogo,
   MiroLogo,
   MotionLogo,
+  NetlifyLogo,
   NextjsLogo,
   NotesLogo,
   NpmLogo,
@@ -56,6 +59,7 @@ import {
   SassLogo,
   ShadcnUiLogo,
   ShopwareLogo,
+  SketchLogo,
   SlackLogo,
   StoryblokLogo,
   TailwindCssLogo,
@@ -310,8 +314,20 @@ export function BrandLogo({
     case 'Sass':
       return <SassLogo className={className} />;
 
-    case 'Adobe XD':
+    case 'Adobe XD (deprecated)':
       return <AdobeXdLogo className={className} />;
+
+    case 'AWS Amplify':
+      return <AwsLogo className={className} />;
+
+    case 'netlify':
+      return <NetlifyLogo className={className} />;
+
+    case 'Sketch':
+      return <SketchLogo className={className} />;
+
+    case 'Canva':
+      return <CanvaLogo className={className} />;
 
     default:
       return DefaultLogo;

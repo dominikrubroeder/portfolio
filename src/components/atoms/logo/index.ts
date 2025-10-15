@@ -64,6 +64,10 @@ export { LoyGmbHLogo } from './loy-gmbh-logo';
 export { AdobePhotoshopLogo } from './adobe-photoshop-logo';
 export { AdobeIllustratorLogo } from './adobe-illustrator-logo';
 export { AdobeXdLogo } from './adobe-xd-logo';
+export { SketchLogo } from './sketch-logo';
+export { AwsLogo } from './aws-logo';
+export { NetlifyLogo } from './netlify-logo';
+export { CanvaLogo } from './canva-logo';
 
 export * from './config';
 export * from './types';
