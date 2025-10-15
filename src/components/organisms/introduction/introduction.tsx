@@ -22,8 +22,8 @@ export function Introduction() {
           <p>
             Building user interfaces is something i follow for almost 10 years
             now. In that area, i found myself enjoying building components and
-            setting up the design system for them as the most fitting thing for
-            me.
+            creating the design system for them as the most fitting thing for me
+            – some call this design system engineering.
           </p>
 
           <p>

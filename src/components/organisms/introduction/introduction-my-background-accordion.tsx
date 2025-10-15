@@ -187,17 +187,22 @@ export function IntroductionMyBackgroundAccordion() {
 
         <hr />
 
+        <h4 className="flex items-center gap-2">
+          <Badge>2025</Badge>
+          Create, build, learn, explore and review
+        </h4>
+
         <Blockquote className="text-foreground">
           <p>
             To bring an idea from the mind to production was and is as of today
             the part that let&#39;s me get excited. It means creativity flows,
-            it means freedom on an artboard, canvas, ready to be used. And it
-            means, good products come to life.
+            it means freedom on a canvas, ready to be used. And it means, good
+            products come to life.
           </p>
           <p>
-            Today i can say: I enjoy what i do. With all the requirements, all
-            the people working on it, it really feels fantastic once you see the
-            application up and running, and in action.
+            With all the requirements, all the people working on it, it really
+            feels fantastic once you see the application up and running, and in
+            action.
           </p>
         </Blockquote>
       </div>
