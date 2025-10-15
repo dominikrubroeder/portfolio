@@ -22,11 +22,11 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'group inline-flex interactive transition hover:text-primary',
+        'group inline-flex interactive transition',
         variant === 'inline' &&
-          'mr-1.5 ml-1 underline transition hover:decoration-primary',
+          'mr-1.5 ml-1 underline hover:text-primary hover:decoration-primary',
         variant === 'prominent' &&
-          'relative mx-1 inline-flex items-center gap-1 text-foreground transition',
+          'relative mx-1 inline-flex items-center gap-1 text-foreground hover:!text-foreground',
         color === 'primary' && 'text-primary hover:text-primary-hover',
         color === 'muted' && 'text-muted-foreground hover:text-muted-hover',
         color === 'foreground' && 'text-foreground hover:text-primary-hover',
@@ -43,15 +43,14 @@ export function ExternalLink({
           className={cn(
             variant === 'inline' &&
               'absolute -top-1 -right-3 size-3.5 text-current',
-            variant === 'prominent' &&
-              'size-4 text-primary group-hover:text-primary-hover',
+            variant === 'prominent' && 'size-4 text-primary',
             variant === 'unstyled' && 'ml-0.5'
           )}
         />
       </span>
 
       {variant === 'prominent' && (
-        <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary group-hover:bg-primary-hover" />
+        <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary group-hover:scale-x-[1.04] group-hover:bg-primary-hover" />
       )}
     </a>
   );
