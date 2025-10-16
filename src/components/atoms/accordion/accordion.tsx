@@ -7,6 +7,9 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 import { cn } from '@/lib/utils';
 
+import { Button } from '@/components/atoms/button';
+import { ButtonGroup } from '@/components/molecules/button-group';
+
 export function Accordion({
   title,
   open,
@@ -25,18 +28,26 @@ export function Accordion({
 
   return (
     <div className={cn('space-y-4', className)}>
-      <button
-        className="flex items-center gap-4"
-        onClick={() => setIsOpen((previousState) => !previousState)}
-      >
-        <ChevronRightIcon
-          className={cn(
-            'size-5 shrink-0 text-primary transition',
-            isOpen && 'rotate-90'
-          )}
-        />
-        <p>{title}</p>
-      </button>
+      <ButtonGroup className="-ml-2.5 gap-0">
+        <Button
+          variant="ghost"
+          className="text-foreground"
+          onClick={() => setIsOpen((previousState) => !previousState)}
+        >
+          <span className="sr-only">Toggle accordion</span>
+          <ChevronRightIcon
+            className={cn('text-primary transition', isOpen && 'rotate-90')}
+          />
+        </Button>
+
+        <Button
+          variant="ghost"
+          className="text-foreground"
+          onClick={() => setIsOpen((previousState) => !previousState)}
+        >
+          {title}
+        </Button>
+      </ButtonGroup>
 
       {isOpen && (
         <div

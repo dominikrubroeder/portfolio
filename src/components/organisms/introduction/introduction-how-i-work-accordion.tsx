@@ -16,6 +16,9 @@ export function IntroductionHowIWorkAccordion() {
           <b className="text-foreground">Using Psychology </b>
           to design and build better user interfaces
         </li>
+        <li>
+          <b className="text-foreground">Design</b> in system
+        </li>
         <li>Be mindful</li>
         <li>Write documentation</li>
         <li>Work for good brands, products or services</li>
