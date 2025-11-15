@@ -9,6 +9,7 @@ import {
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
 import { ThemeQuickSettings } from '@/components/organisms/theme';
+import { ButtonGroup } from '@/components/molecules/button-group';
 
 export function Header() {
   return (
@@ -42,16 +43,13 @@ export function Header() {
       <HeaderMenu />
 
       <div className="hidden lg:flex lg:items-center lg:gap-4">
-        <ThemeQuickSettings animateOut={true} />
+        <ThemeQuickSettings />
 
-        <div className="flex items-center">
+        <ButtonGroup className="gap-0">
+          <ContactButton iconPosition="right" buttonProps={{ size: 'large' }} />
           <GitHubButton />
           <LinkedInButton />
-          <ContactButton
-            iconPosition="right"
-            buttonProps={{ variant: 'contained', className: 'ml-2' }}
-          />
-        </div>
+        </ButtonGroup>
       </div>
     </header>
   );
