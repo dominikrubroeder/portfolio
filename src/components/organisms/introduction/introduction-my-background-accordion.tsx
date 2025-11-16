@@ -11,7 +11,7 @@ export function IntroductionMyBackgroundAccordion() {
       <div>
         <h4 className="flex items-center gap-2">
           <Badge>2016</Badge>
-          Started as designer
+          Started as a designer
         </h4>
 
         <p>
@@ -205,6 +205,32 @@ export function IntroductionMyBackgroundAccordion() {
             action.
           </p>
         </Blockquote>
+
+        <div>
+          <h4 className="flex items-center gap-2">
+            <Badge>2025</Badge>
+            Returned as a design system engineer, interface engineer and
+            interface designer
+          </h4>
+
+          <p>
+            My focus is on designing an interface, that can be stacked together.
+            Design systems help on that, so that all parts of this vision can be
+            brought into production applications.
+          </p>
+
+          <p>
+            Every design system contains of 2 main parts: A
+            <ExternalLink href="https://bradfrost.com/blog/post/design-tokens-atomic-design-❤%EF%B8%8F/">
+              design token system
+            </ExternalLink>
+            , and a
+            <ExternalLink href="https://bradfrost.com/blog/post/design-tokens-atomic-design-❤%EF%B8%8F/">
+              design component system
+            </ExternalLink>
+            .
+          </p>
+        </div>
       </div>
     </Accordion>
   );

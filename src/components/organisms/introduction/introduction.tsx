@@ -25,17 +25,16 @@ export function Introduction() {
               Building user interfaces is something i follow for almost 10 years
               now. In that area, i found myself enjoying building components and
               creating the design system for them as the most fitting thing for
-              me – some call this <i>design system engineering</i>. But you can
-              also call this building Lego bricks, that can be stacked together.
+              me – some call this <i>design system engineering</i>. An even
+              easier metaphor is building Lego bricks, that can be stacked
+              together.
             </p>
-
-            <p>Stack stack stack... frontend complete.</p>
 
             <p>
               One component can connect to the next, and the next, and the next,
               and all of a sudden we have a complete, streamlined, holistic and
               homogenous user interface, that can be adjusted in color, size,
-              spacing, typography and other theme-related settings from some
+              spacing, typography and other theme-related properties from some
               root files.
             </p>
           </div>

@@ -11,34 +11,32 @@ import { Tools } from '@/components/organisms/tools';
 
 export default async function HomePage() {
   return (
-    <div className="animate-fade-up-1rem space-y-6">
+    <Container as="div" horizontalPadding className="space-y-12">
       <HomeHero />
 
-      <Container as="div" horizontalPadding className="space-y-12">
-        <Introduction />
+      <Introduction />
 
-        <Projects />
+      <Projects />
 
-        <Hr />
+      <Hr />
 
-        <Tools />
+      <Tools />
 
-        <Hr />
+      <Hr />
 
-        <Technologies />
+      <Technologies />
 
-        <Hr />
+      <Hr />
 
-        <Socials />
+      <Socials />
 
-        <Hr />
+      <Hr />
 
-        <FAQ />
+      <FAQ />
 
-        <Hr />
+      <Hr />
 
-        <ContactSection />
-      </Container>
-    </div>
+      <ContactSection />
+    </Container>
   );
 }

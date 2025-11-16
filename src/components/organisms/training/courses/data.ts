@@ -5,7 +5,7 @@ export const courses: LearningResource[] = [
     title: 'Subatomic (The Complete Guide to Design Tokens)',
     author: 'Brad Frost',
     href: 'https://designtokenscourse.com',
-    progress: 30,
+    progress: 90,
     isCurrent: true
   },
   {
@@ -61,6 +61,13 @@ export const courses: LearningResource[] = [
     title: 'Understanding TypeScript',
     author: 'Maximilian Schwarzmüller',
     href: 'https://www.udemy.com/course/understanding-typescript',
+    progress: 20,
+    isCurrent: false
+  },
+  {
+    title: 'animations.dev',
+    author: 'Emil Kowalski',
+    href: 'https://animations.dev',
     progress: 20,
     isCurrent: false
   }

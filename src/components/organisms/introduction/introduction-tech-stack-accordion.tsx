@@ -6,18 +6,13 @@ import { Accordion } from '@/components/atoms/accordion';
 import { Ul } from '@/components/atoms/ul';
 import { BrandLink } from '@/components/organisms/brand';
 import { getTechnologies } from '@/components/organisms/technologies';
+import { getTools } from '@/components/organisms/tools';
+import { PlusIcon } from '@heroicons/react/24/outline';
 
-export const introductionTechStackAccordion = [
-  ...getTechnologies({
-    technologyNames: [
-      'React',
-      'Next.js',
-      'TypeScript',
-      'Tailwind CSS',
-      'Motion'
-    ]
-  })
-];
+const tools = getTools({ toolNames: ['Figma'] });
+const technologies = getTechnologies({
+  technologyNames: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Motion']
+});
 
 export function IntroductionTechStackAccordion({
   className
@@ -27,11 +22,24 @@ export function IntroductionTechStackAccordion({
   return (
     <Accordion title="My Tech Stack of choice">
       <Ul
-        className={cn('-ml-2 flex list-none flex-wrap gap-2 pb-1', className)}
+        className={cn(
+          '-ml-2 flex list-none flex-wrap items-center gap-2 pb-1',
+          className
+        )}
       >
-        {introductionTechStackAccordion.map((technology) => (
-          <li key={technology.name}>
-            <BrandLink brand={technology} showLabel labelPosition="bottom" />
+        {tools.map((item) => (
+          <li key={item.name}>
+            <BrandLink brand={item} showLabel labelPosition="bottom" />
+          </li>
+        ))}
+
+        <li>
+          <PlusIcon className="mr-2 ml-1 size-6" />
+        </li>
+
+        {technologies.map((item) => (
+          <li key={item.name}>
+            <BrandLink brand={item} showLabel labelPosition="bottom" />
           </li>
         ))}
       </Ul>

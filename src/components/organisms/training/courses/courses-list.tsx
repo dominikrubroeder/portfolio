@@ -3,7 +3,7 @@ import { Ul } from '@/components/atoms/ul';
 import { getCourses } from '@/components/organisms/training/courses/helper';
 
 export function CoursesList() {
-  const courses = getCourses({ sortBy: 'progress-100-0' });
+  const courses = getCourses({ sortBy: 'progress-100-0-A-Z' });
 
   return (
     <Ul headline="Courses">
