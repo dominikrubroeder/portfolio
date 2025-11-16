@@ -21,7 +21,7 @@ export default async function FrontendVisionPage() {
       >
         <div className="mx-auto max-w-[60rem] space-y-3">
           <div className="flex items-center gap-4 sm:absolute sm:-top-16 sm:left-1/2 sm:-translate-x-1/2 sm:justify-center">
-            <ThemeQuickSettings animateOut={false} />
+            <ThemeQuickSettings />
           </div>
 
           <h1>
