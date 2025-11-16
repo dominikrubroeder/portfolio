@@ -18,7 +18,6 @@ export function ContactButton({
     <Button
       href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
       variant="ghost"
-      className="[&>svg]:size-5"
       {...buttonProps}
     >
       {iconPosition === 'left' && <EnvelopeIcon className="size-5" />}
