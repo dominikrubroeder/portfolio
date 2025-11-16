@@ -12,7 +12,7 @@ export function Footer() {
           title="Open Next.js website"
           aria-label="Open Next.js website"
         >
-          Next.js 15.5.5
+          Next.js 16.0.3
         </ExternalLink>
 
         <span>|</span>
@@ -23,7 +23,7 @@ export function Footer() {
           title="Open React website"
           aria-label="Open React website"
         >
-          React 19.2
+          React 19.2.0
         </ExternalLink>
 
         <span>|</span>
@@ -34,7 +34,7 @@ export function Footer() {
           title="Open Tailwind CSS documentation"
           aria-label="Open Tailwind CSS documentation"
         >
-          Tailwind CSS 4.1.14
+          Tailwind CSS 4.1.17
         </ExternalLink>
       </p>
 
@@ -48,7 +48,7 @@ export function Footer() {
         </a>
       </p>
       <p>
-        &copy; {new Date().getFullYear()}
+        &copy; 2025
         <span className="ml-1.5">Dominik Rubröder</span>
       </p>
     </footer>
