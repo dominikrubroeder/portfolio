@@ -12,7 +12,7 @@ export function Introduction() {
     <Animate direction="scaleUp">
       <Container id="introduction">
         <div className="space-y-6 rounded border p-4">
-          <p>Hey there! 👋</p>
+          <p className="font-bold text-foreground">Hey there! 👋</p>
 
           <div className="space-y-3 text-wrap">
             <h3 className="text-base font-bold">
