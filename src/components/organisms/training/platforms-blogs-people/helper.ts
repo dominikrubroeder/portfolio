@@ -19,21 +19,18 @@ export function getPlatformsBlogsPeople({
         b.title.localeCompare(a.title)
       );
     case 'type-A-Z':
-      const grouped = Object.groupBy(
-        platformsBlogsPeople,
-        (item) => item.type ?? 'unknown'
-      );
-
-      const list: LearningResource[] = [];
-
-      for (const [, items] of Object.entries(grouped)) {
-        if (!items) continue;
-
-        items.sort((a, b) => a.title.localeCompare(b.title));
-        list.push(...items);
-      }
-
-      return list;
+      return Object.values(
+        platformsBlogsPeople.reduce(
+          (acc, item) => {
+            const key = item.type ?? 'unknown';
+            (acc[key] ||= []).push(item);
+            return acc;
+          },
+          {} as Record<string, LearningResource[]>
+        )
+      )
+        .map((group) => group.sort((a, b) => a.title.localeCompare(b.title)))
+        .flat();
     default:
       return defaultSorting;
   }
