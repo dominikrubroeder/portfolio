@@ -4,11 +4,20 @@ import { ArrowDownIcon, EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 
 import { cn } from '@/lib/utils';
 
-import { Button, ContactButton, GitHubButton, LinkedInButton } from '@/components/atoms/button';
+import {
+  Button,
+  ContactButton,
+  GitHubButton,
+  LinkedInButton
+} from '@/components/atoms/button';
 import { Overlay } from '@/components/atoms/overlay';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { useHeaderMenu } from '@/components/organisms/header';
-import { ThemeAppearanceSetting, ThemeColorSetting, ThemeFontSizeSetting } from '@/components/organisms/theme';
+import {
+  ThemeAppearanceSetting,
+  ThemeColorSetting,
+  ThemeFontSizeSetting
+} from '@/components/organisms/theme';
 
 export function HeaderMenu() {
   const {
