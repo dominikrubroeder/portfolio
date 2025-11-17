@@ -8,7 +8,10 @@ export function IntroductionDegreesList() {
       <li>
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <CheckBadgeIcon className="size-6 text-primary" />
+            <div className="size-8 shrink-0">
+              <CheckBadgeIcon className="size-6 text-primary" />
+            </div>
+
             <span>
               <b className="text-foreground">Bachelor of Arts</b> – Media Design
               B.A, Dual study at IU university in Munich
@@ -18,7 +21,10 @@ export function IntroductionDegreesList() {
       </li>
       <li>
         <div className="flex items-center gap-2">
-          <CheckBadgeIcon className="size-6 text-primary" />
+          <div className="size-8 shrink-0">
+            <CheckBadgeIcon className="size-6 text-primary" />
+          </div>
+
           <span>
             <b className="text-foreground">Trainee</b> as a media designer in
             design and technology

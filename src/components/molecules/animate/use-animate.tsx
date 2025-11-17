@@ -1,26 +1,16 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import type { AnimationGeneratorType, Variants } from 'motion';
 
-import { motion } from 'motion/react';
-
-import { cn } from '@/lib/utils';
-
-import type { Variants, ViewportOptions } from 'motion';
-
-export function Animate({
-  direction = 'up',
-  delay = 0.16,
-  viewport = { once: true, margin: '-50px' },
-  className,
-  children
+export const useAnimate = ({
+  duration,
+  delay,
+  type
 }: {
-  direction: 'up' | 'left' | 'right' | 'down';
-  delay?: number;
-  viewport?: ViewportOptions;
-  className?: string;
-  children: ReactNode;
-}) {
+  duration: number | undefined;
+  delay: number | undefined;
+  type?: AnimationGeneratorType;
+}) => {
   const fadeInUp: Variants = {
     hidden: {
       opacity: 0,
@@ -30,7 +20,7 @@ export function Animate({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration,
         ease: 'easeOut',
         delay
       }
@@ -46,7 +36,7 @@ export function Animate({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration,
         ease: 'easeOut',
         delay
       }
@@ -62,7 +52,7 @@ export function Animate({
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.6,
+        duration,
         ease: 'easeOut',
         delay
       }
@@ -78,9 +68,28 @@ export function Animate({
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.6,
+        duration,
         ease: 'easeOut',
         delay
+      }
+    }
+  };
+
+  const scaleUp: Variants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.94
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration,
+        ease: type === 'spring' ? undefined : 'easeOut',
+        delay,
+        type: 'spring',
+        stiffness: 400,
+        damping: 20
       }
     }
   };
@@ -89,18 +98,11 @@ export function Animate({
     up: fadeInUp,
     down: fadeInDown,
     left: fadeInLeft,
-    right: fadeInRight
+    right: fadeInRight,
+    scaleUp: scaleUp
   };
 
-  return (
-    <motion.div
-      variants={variants[direction]}
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewport}
-      className={cn(className)}
-    >
-      {children}
-    </motion.div>
-  );
-}
+  return {
+    variants
+  };
+};

@@ -11,7 +11,7 @@ export function IntroductionMyBackgroundAccordion() {
       <div>
         <h4 className="flex items-center gap-2">
           <Badge>2016</Badge>
-          Started as designer
+          Started as a designer
         </h4>
 
         <p>

@@ -62,12 +62,6 @@ export const books: LearningResource[] = [
     progress: 0
   },
   {
-    title: 'The Creative Act: A Way of Being',
-    author: 'Rick Rubin',
-    href: 'https://amzn.eu/d/104r0sM',
-    progress: 0
-  },
-  {
     title: 'Living with Complexity',
     author: 'Don Norman',
     href: 'https://www.nngroup.com/books/living-with-complexity/',

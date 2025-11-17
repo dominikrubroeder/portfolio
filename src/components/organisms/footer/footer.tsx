@@ -1,4 +1,5 @@
 import { ExternalLink } from '@/components/atoms/external-link';
+import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events/winter/constants';
 
 export function Footer() {
   return (
@@ -12,7 +13,7 @@ export function Footer() {
           title="Open Next.js website"
           aria-label="Open Next.js website"
         >
-          Next.js 15.5.5
+          Next.js 16.0.3
         </ExternalLink>
 
         <span>|</span>
@@ -23,7 +24,7 @@ export function Footer() {
           title="Open React website"
           aria-label="Open React website"
         >
-          React 19.2
+          React 19.2.0
         </ExternalLink>
 
         <span>|</span>
@@ -34,7 +35,7 @@ export function Footer() {
           title="Open Tailwind CSS documentation"
           aria-label="Open Tailwind CSS documentation"
         >
-          Tailwind CSS 4.1.14
+          Tailwind CSS 4.1.17
         </ExternalLink>
       </p>
 
@@ -48,9 +49,22 @@ export function Footer() {
         </a>
       </p>
       <p>
-        &copy; {new Date().getFullYear()}
+        &copy; 2025
         <span className="ml-1.5">Dominik Rubröder</span>
       </p>
+
+      {EVENTS_WINTER_SCENE_ENABLED && (
+        <p>
+          Santa Clause cap:
+          <ExternalLink
+            variant="unstyled"
+            href="https://www.svgrepo.com/svg/206754/winter-hat-santa-claus"
+            className="ml-1 text-muted-foreground hover:text-foreground"
+          >
+            https://www.svgrepo.com/svg/206754/winter-hat-santa-claus
+          </ExternalLink>
+        </p>
+      )}
     </footer>
   );
 }

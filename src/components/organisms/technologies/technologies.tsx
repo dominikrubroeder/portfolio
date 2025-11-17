@@ -1,4 +1,5 @@
 import { Container } from '@/components/atoms/container';
+import { Animate } from '@/components/molecules/animate/animate';
 import { BrandList } from '@/components/organisms/brand';
 import {
   AllTechnologies,
@@ -7,17 +8,19 @@ import {
 
 export function Technologies() {
   return (
-    <Container className="space-y-8" id="technologies">
-      <h2>
-        Technologies
-        <span className="ml-2 font-medium text-muted-foreground">
-          are the foundation of writing production-ready code. I use
-        </span>
-      </h2>
+    <Animate direction="up">
+      <Container className="space-y-8" id="technologies">
+        <h2>
+          Technologies
+          <span className="ml-2 font-medium text-muted-foreground">
+            are the foundation of writing production-ready code. I use
+          </span>
+        </h2>
 
-      <BrandList brands={mainTechnologies} />
+        <BrandList brands={mainTechnologies} />
 
-      <AllTechnologies />
-    </Container>
+        <AllTechnologies />
+      </Container>
+    </Animate>
   );
 }

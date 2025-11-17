@@ -17,3 +17,11 @@ export type PositionProp =
   | 'right'
   | 'bottom-right'
   | 'bottom-left';
+
+export type SortAlphabeticallyProp = 'A-Z' | 'Z-A';
+
+export type SortByProgressProp = 'progress-100-0' | 'progress-100-0-A-Z';
+
+export type SortByType = 'type-A-Z';
+
+export type SortProp = SortAlphabeticallyProp | SortByProgressProp;

@@ -23,7 +23,7 @@ export const mainTechnologies: Brand[] = [
   },
   {
     name: 'Next.js',
-    description: 'as fullstack web application framework',
+    description: 'as fullstack web framework',
     logo: <NextjsLogo className="size-12" />,
     href: 'https://nextjs.org/',
     knowledge: 'Daily'
