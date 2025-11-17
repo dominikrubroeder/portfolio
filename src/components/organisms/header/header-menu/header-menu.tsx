@@ -4,20 +4,11 @@ import { ArrowDownIcon, EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 
 import { cn } from '@/lib/utils';
 
-import {
-  Button,
-  ContactButton,
-  GitHubButton,
-  LinkedInButton
-} from '@/components/atoms/button';
+import { Button, ContactButton, GitHubButton, LinkedInButton } from '@/components/atoms/button';
 import { Overlay } from '@/components/atoms/overlay';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { useHeaderMenu } from '@/components/organisms/header';
-import {
-  ThemeAppearanceSetting,
-  ThemeColorSetting,
-  ThemeFontSizeSetting
-} from '@/components/organisms/theme';
+import { ThemeAppearanceSetting, ThemeColorSetting, ThemeFontSizeSetting } from '@/components/organisms/theme';
 
 export function HeaderMenu() {
   const {
@@ -31,10 +22,12 @@ export function HeaderMenu() {
 
   return (
     <div className="relative lg:hidden">
-      <ButtonGroup>
+      <ButtonGroup className="gap-0">
+        <ContactButton buttonProps={{ size: 'large' }} />
+
         <GitHubButton />
 
-        <ContactButton buttonProps={{ variant: 'contained' }} />
+        <LinkedInButton />
 
         <Button
           variant="ghost"
@@ -50,7 +43,7 @@ export function HeaderMenu() {
 
       {isOpen && (
         <>
-          <div className="fixed top-20 right-0 left-0 z-50 w-full animate-fade-down-1rem flex-wrap space-y-6 overflow-hidden overflow-y-auto border-b bg-background px-4 py-3 pb-6 drop-shadow-xl">
+          <div className="fixed top-20 right-0 left-0 z-50 w-full animate-fade-down-1rem flex-wrap space-y-6 overflow-hidden overflow-y-auto border-b bg-background px-4 py-3 drop-shadow-xl">
             <div>
               <b>On this page</b>
 
@@ -118,23 +111,11 @@ export function HeaderMenu() {
                 </li>
                 <li>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-foreground">Select font</span>
+                    <span className="text-foreground">Select font size</span>
                     <ThemeFontSizeSetting />
                   </div>
                 </li>
               </ul>
-            </div>
-
-            <hr />
-
-            <div className="space-y-3">
-              <b className="block">Contact</b>
-
-              <div>
-                <GitHubButton />
-                <LinkedInButton />
-                <ContactButton />
-              </div>
             </div>
           </div>
 
