@@ -3,18 +3,21 @@ import { Hr } from '@/components/atoms/hr';
 import { ContactSection } from '@/components/organisms/contact';
 import { FAQ } from '@/components/organisms/faq';
 import { HomeHero } from '@/components/organisms/home';
-import { Introduction } from '@/components/organisms/introduction';
 import { Projects } from '@/components/organisms/projects';
 import { Socials } from '@/components/organisms/socials';
 import { Technologies } from '@/components/organisms/technologies';
 import { Tools } from '@/components/organisms/tools';
+import {
+  EVENTS_WINTER_SCENE_ENABLED,
+  Snowfall
+} from '@/components/organisms/events';
 
 export default async function HomePage() {
   return (
     <Container as="div" horizontalPadding className="space-y-12">
-      <HomeHero />
+      {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
 
-      <Introduction />
+      <HomeHero />
 
       <Projects />
 

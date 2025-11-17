@@ -10,13 +10,18 @@ import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
 import { ThemeQuickSettings } from '@/components/organisms/theme';
 import { ButtonGroup } from '@/components/molecules/button-group';
+import { cn } from '@/lib/utils';
+import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events';
 
 export function Header() {
   return (
-    <header className="max-w-container sticky top-0 z-100 mx-auto flex h-20 items-center justify-between gap-4 border-b bg-background px-4 lg:relative lg:h-24 lg:border-none">
+    <header className="max-w-container sticky top-0 z-100 mx-auto flex h-24 items-center justify-between gap-4 border-b bg-background px-4 py-4 pt-6 lg:relative lg:h-24 lg:border-none">
       <div className="flex items-center gap-4">
         <Avatar
-          className="size-11 lg:size-14"
+          className={cn(
+            'size-11 lg:size-14',
+            EVENTS_WINTER_SCENE_ENABLED && 'size-10 lg:size-12'
+          )}
           width={56}
           height={56}
           as="Link"
