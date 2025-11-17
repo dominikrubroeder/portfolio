@@ -1,12 +1,11 @@
 import { Badge } from '@/components/atoms/badge';
-import { Button } from '@/components/atoms/button';
-import { ButtonGroup } from '@/components/molecules/button-group';
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
+import { Introduction } from '@/components/organisms/introduction';
 
 export function HomeHero() {
   return (
-    <Animate direction="scaleUp">
+    <Animate direction="scaleUp" className="space-y-6">
       <Container
         as="section"
         className="space-y-6 pt-5 pb-1 lg:px-0 lg:pb-2"
@@ -22,12 +21,9 @@ export function HomeHero() {
             and design systems.
           </h2>
         </div>
-
-        <ButtonGroup>
-          <Button>Modify theme</Button>
-          <Button variant="ghost">Open Storybook</Button>
-        </ButtonGroup>
       </Container>
+
+      <Introduction />
     </Animate>
   );
 }
