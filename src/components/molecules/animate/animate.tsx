@@ -11,8 +11,8 @@ import { useAnimate } from '@/components/molecules/animate';
 
 export function Animate({
   direction = 'up',
-  delay = 0.16,
-  duration = 0.24,
+  delay = 0.24,
+  duration = 0.4,
   type,
   viewport = { once: true, margin: '-50px' },
   className,
