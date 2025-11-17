@@ -1,5 +1,4 @@
 import { ExternalLink } from '@/components/atoms/external-link';
-import Link from 'next/link';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events/winter/constants';
 
 export function Footer() {
@@ -57,12 +56,13 @@ export function Footer() {
       {EVENTS_WINTER_SCENE_ENABLED && (
         <p>
           Santa Clause cap:
-          <Link
+          <ExternalLink
+            variant="unstyled"
             href="https://www.svgrepo.com/svg/206754/winter-hat-santa-claus"
-            className="ml-1"
+            className="ml-1 text-muted-foreground hover:text-foreground"
           >
             https://www.svgrepo.com/svg/206754/winter-hat-santa-claus
-          </Link>
+          </ExternalLink>
         </p>
       )}
     </footer>
