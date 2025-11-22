@@ -6,16 +6,16 @@ import { Toggle } from '@/components/atoms/toggle';
 import { useTheme } from '@/components/organisms/theme';
 
 export function DesignModeToggle({ className }: { className?: string }) {
-  const { theme, setTheme } = useTheme();
+  const { themeMode, setThemeMode } = useTheme();
 
   return (
     <div className={cn('inline-grid gap-4 rounded border p-4', className)}>
       <Toggle
         label="Design mode"
         onClick={() => {
-          setTheme('design');
+          setThemeMode('design');
         }}
-        enabled={theme === 'design'}
+        enabled={themeMode === 'design'}
       />
     </div>
   );

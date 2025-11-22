@@ -4,7 +4,6 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
-import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { tools } from '@/components/organisms/tools';
 
@@ -53,14 +52,15 @@ export function AllTools() {
                             />
                           </Button>
 
-                          <h3 className="mb-0 max-w-24 self-center overflow-hidden text-base text-ellipsis whitespace-nowrap xs:max-w-30 sm:max-w-none">
-                            {child.name}
-                          </h3>
+                          <div>
+                            <h3 className="mb-0 max-w-24 self-center overflow-hidden text-base text-ellipsis whitespace-nowrap xs:max-w-30 sm:max-w-none">
+                              {child.name}
+                            </h3>
+                            <p>Description here</p>
+                          </div>
                         </Link>
 
                         <div className="flex items-center justify-between gap-2 bg-background sm:gap-4">
-                          <ExperienceBar progress={child.knowledge} />
-
                           <Button
                             variant="ghost"
                             href={child.href}

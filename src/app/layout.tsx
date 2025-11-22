@@ -47,7 +47,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <html
         lang="en"
         className={`scroll-smooth bg-background ${jetbrainsMono.variable}`}
-        data-appearance="dark"
       >
         <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
           <Header />

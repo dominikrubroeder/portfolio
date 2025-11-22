@@ -18,6 +18,7 @@ import {
   ThemeColorSetting,
   ThemeFontSizeSetting
 } from '@/components/organisms/theme';
+import React from 'react';
 
 export function HeaderMenu() {
   const {
@@ -32,11 +33,7 @@ export function HeaderMenu() {
   return (
     <div className="relative lg:hidden">
       <ButtonGroup className="gap-0">
-        <ContactButton buttonProps={{ size: 'large' }} />
-
         <GitHubButton />
-
-        <LinkedInButton />
 
         <Button
           variant="ghost"
@@ -125,6 +122,23 @@ export function HeaderMenu() {
                   </div>
                 </li>
               </ul>
+            </div>
+
+            <hr />
+
+            <div className="space-y-2">
+              <div>
+                <b>Contact</b>
+              </div>
+
+              <ButtonGroup className="-ml-2 gap-0">
+                <ContactButton
+                  iconPosition="right"
+                  buttonProps={{ size: 'large' }}
+                />
+                <GitHubButton />
+                <LinkedInButton />
+              </ButtonGroup>
             </div>
           </div>
 

@@ -1,7 +1,14 @@
+'use client';
+
 import type { ComponentBaseProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/components/organisms/theme';
 
 export function SantasCap({ className }: ComponentBaseProps) {
+  const { isEventWinterEnabled } = useTheme();
+
+  if (!isEventWinterEnabled) return null;
+
   return (
     <svg
       viewBox="0 0 63 44"

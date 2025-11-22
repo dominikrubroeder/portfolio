@@ -51,14 +51,14 @@ export function ThemeAppearanceSetting({
   menuPosition?: PositionProp;
 } & ComponentBaseProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { appearance, setAppearance } = useTheme();
+  const { themeAppearance, setThemeAppearance } = useTheme();
 
   const handleThemeChange = useCallback(
     (value: ThemeAppearance) => {
-      setAppearance(value);
       setIsOpen(false);
+      setThemeAppearance(value);
     },
-    [setAppearance]
+    [setThemeAppearance]
   );
 
   return (
@@ -68,19 +68,19 @@ export function ThemeAppearanceSetting({
         onClick={() => setIsOpen((prevState) => !prevState)}
         className={cn(isOpen && 'bg-muted')}
       >
-        {appearance === 'light' && (
+        {themeAppearance === 'light' && (
           <>
             <SunIconSolid className="size-5" /> Light
           </>
         )}
 
-        {appearance === 'dark' && (
+        {themeAppearance === 'dark' && (
           <>
             <MoonIconSolid className="size-5" /> Dark
           </>
         )}
 
-        {appearance === 'system' && (
+        {themeAppearance === 'system' && (
           <>
             <SparklesIconSolid className="size-5" /> Auto
           </>

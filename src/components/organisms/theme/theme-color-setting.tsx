@@ -7,34 +7,34 @@ import { ButtonGroup } from '@/components/molecules/button-group';
 import { ComponentBaseProps } from '@/lib/types';
 
 export function ThemeColorSetting({ className }: ComponentBaseProps) {
-  const { setTheme, theme } = useTheme();
+  const { themeColor, setThemeColor } = useTheme();
 
   return (
     <ButtonGroup className={className}>
       {/** TODO: Replace fixed color values with color variables */}
       <button
         className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border border-blue-600 bg-blue-600 hover:scale-110 hover:border-blue-600 active:scale-100"
-        onClick={() => setTheme('blue')}
+        onClick={() => setThemeColor('blue')}
       >
-        {theme === 'blue' && (
+        {themeColor === 'blue' && (
           <CheckIcon className="size-4 shrink-0 text-white" />
         )}
       </button>
 
       <button
         className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border-[#7d54f8] bg-[#7d54f8] hover:scale-110 hover:border-[#7d54f8] active:scale-100"
-        onClick={() => setTheme('primary')}
+        onClick={() => setThemeColor('primary')}
       >
-        {theme === 'primary' && (
+        {themeColor === 'primary' && (
           <CheckIcon className="size-4 shrink-0 text-white" />
         )}
       </button>
 
       <button
         className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border border-orange-600 bg-orange-600 hover:scale-110 hover:border-orange-600 active:scale-100"
-        onClick={() => setTheme('orange')}
+        onClick={() => setThemeColor('orange')}
       >
-        {theme === 'orange' && (
+        {themeColor === 'orange' && (
           <CheckIcon className="size-4 shrink-0 text-white" />
         )}
       </button>

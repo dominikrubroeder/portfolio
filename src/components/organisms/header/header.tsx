@@ -15,8 +15,8 @@ import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events';
 
 export function Header() {
   return (
-    <header className="max-w-container sticky top-0 z-100 mx-auto flex h-24 items-center justify-between gap-4 border-b bg-background px-4 py-4 pt-6 lg:relative lg:h-24 lg:border-none">
-      <div className="flex items-center gap-4">
+    <header className="max-w-container sticky top-0 z-100 mx-auto flex h-24 items-center justify-between gap-2 border-b bg-background px-4 py-4 pt-6 xs:gap-4 lg:relative lg:h-24 lg:border-none">
+      <div className="flex items-center gap-2 xs:gap-3">
         <Avatar
           className={cn(
             'size-11 lg:size-14',
@@ -28,7 +28,9 @@ export function Header() {
         />
 
         <h1 className="w-max text-base leading-6">
-          <span className="block w-max">Dominik Rubröder</span>
+          <span className="block w-max text-sm xs:text-base">
+            Dominik Rubröder
+          </span>
           <span className="block text-sm font-normal text-muted-foreground lg:text-base">
             <span>UX Design Engineer</span>
             <span className="hidden pr-0.5 pl-1 sm:inline-block">@</span>

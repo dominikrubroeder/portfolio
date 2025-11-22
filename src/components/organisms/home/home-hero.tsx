@@ -2,6 +2,8 @@ import { Badge } from '@/components/atoms/badge';
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
 import { Introduction } from '@/components/organisms/introduction';
+import { ButtonGroup } from '@/components/molecules/button-group';
+import { ThemeDrawer } from '@/components/organisms/theme';
 
 export function HomeHero() {
   return (
@@ -21,6 +23,10 @@ export function HomeHero() {
             and design systems.
           </h2>
         </div>
+
+        <ButtonGroup>
+          <ThemeDrawer />
+        </ButtonGroup>
       </Container>
 
       <Introduction />
