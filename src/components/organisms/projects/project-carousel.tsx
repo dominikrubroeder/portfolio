@@ -14,14 +14,16 @@ import { Ul } from '@/components/atoms/ul';
 import { BrandLink } from '@/components/organisms/brand';
 import { useProjectCarousel } from '@/components/organisms/projects';
 import { projects } from '@/components/organisms/projects/data';
+import { useTheme } from '@/components/organisms/theme';
 
 export function ProjectCarousel() {
   const { project, goNext, goPrevious, setActiveProject, activeProject } =
     useProjectCarousel();
+  const { shouldAnimate } = useTheme();
 
   return (
     <div className="mx-auto space-y-4">
-      <div className="relative flex h-[30svh] items-center justify-center rounded border">
+      <div className="relative flex h-[30svh] items-center justify-center rounded border bg-background">
         <Button
           variant="ghost"
           className="absolute top-1/2 left-4 z-20 -translate-y-1/2 bg-background/80 backdrop-blur-sm hover:bg-background/90"
@@ -53,16 +55,20 @@ export function ProjectCarousel() {
           className="flex interactive items-center justify-center"
         >
           <AnimatePresence mode="wait">
-            <motion.div
-              key={project.title}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              layout
-            >
-              <span>{project.logo}</span>
-            </motion.div>
+            {shouldAnimate ? (
+              <motion.div
+                key={project.title}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                layout
+              >
+                <span>{project.logo}</span>
+              </motion.div>
+            ) : (
+              project.logo
+            )}
           </AnimatePresence>
         </Link>
       </div>
@@ -73,7 +79,8 @@ export function ProjectCarousel() {
             <li key={index}>
               <button
                 className={cn(
-                  'size-3 rounded-full bg-muted transition hover:scale-[1.4]',
+                  'size-3 rounded-full bg-muted hover:scale-[1.4]',
+                  shouldAnimate && 'transition',
                   activeProject === index && 'bg-primary'
                 )}
                 onClick={() => setActiveProject(index)}

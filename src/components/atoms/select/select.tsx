@@ -38,7 +38,7 @@ export function Select({
             <Button
               key={option.key}
               variant="ghost"
-              className={cn('w-full', value !== option.value && 'pl-6')}
+              className={cn('w-max', value !== option.value && 'pl-6')}
               onClick={() => handleSelection(option)}
             >
               {value === option.value && (

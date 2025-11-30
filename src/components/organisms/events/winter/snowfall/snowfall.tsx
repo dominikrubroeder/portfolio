@@ -4,9 +4,11 @@ import { Snowfall as ReactSnowfall } from 'react-snowfall';
 import { useTheme } from '@/components/organisms/theme';
 
 export function Snowfall() {
-  const { isEventWinterEnabled } = useTheme();
+  const { themeAppearance, isEventWinterEnabled } = useTheme();
 
   if (!isEventWinterEnabled) return null;
 
-  return <ReactSnowfall />;
+  return (
+    <ReactSnowfall color={themeAppearance === 'light' ? 'gray' : 'white'} />
+  );
 }

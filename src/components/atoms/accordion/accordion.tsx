@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
+import { useTheme } from '@/components/organisms/theme';
 
 export function Accordion({
   title,
@@ -25,10 +26,16 @@ export function Accordion({
   className?: string;
 }) {
   const [isOpen, setIsOpen] = useState(open);
+  const { theme, shouldAnimate } = useTheme();
 
   return (
     <div className={cn('space-y-4', className)}>
-      <ButtonGroup className="-ml-2.5 gap-0">
+      <ButtonGroup
+        className={cn(
+          '-ml-2.5 gap-0',
+          theme.key === 'wireframe' && 'ml-0 gap-2'
+        )}
+      >
         <Button
           variant="ghost"
           className="text-foreground"
@@ -36,7 +43,11 @@ export function Accordion({
         >
           <span className="sr-only">Toggle accordion</span>
           <ChevronRightIcon
-            className={cn('text-primary transition', isOpen && 'rotate-90')}
+            className={cn(
+              'text-primary',
+              shouldAnimate && 'transition',
+              isOpen && 'rotate-90'
+            )}
           />
         </Button>
 
@@ -51,7 +62,10 @@ export function Accordion({
 
       {isOpen && (
         <div
-          className={cn('animate-fade-up-1rem', offsetInnerContent && 'pl-9')}
+          className={cn(
+            shouldAnimate && 'animate-fade-up-1rem',
+            offsetInnerContent && 'pl-9'
+          )}
         >
           {children}
         </div>

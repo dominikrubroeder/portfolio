@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 import { motion } from 'motion/react';
 
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/components/organisms/theme';
 
 export function Marker({
   variant = 'background',
@@ -23,7 +24,10 @@ export function Marker({
   className?: string;
   children: ReactNode;
 }) {
+  const { theme } = useTheme();
   const Comp = as;
+
+  if (theme.key !== 'notes') return children;
 
   if (animate) {
     if (variant === 'underline') {
@@ -55,7 +59,7 @@ export function Marker({
     return (
       <Comp className={cn('relative inline-flex', className)}>
         <motion.span
-          animate={{ width: ['0%', '100%'], opacity: [0, 1] }}
+          animate={{ width: ['0%', '102%'], opacity: [0, 1] }}
           transition={{
             delay: 0.4,
             ease: 'easeOut',
@@ -64,7 +68,6 @@ export function Marker({
           }}
           className={cn(
             'absolute -top-1 -left-2 -z-10 m-1 h-full opacity-0',
-
             color === 'primary' && 'bg-primary text-primary-foreground',
             color === 'yellow' && 'bg-signal-yellow',
             color === 'red' && 'bg-red-200',
@@ -72,7 +75,7 @@ export function Marker({
             color === 'purple' && 'bg-purple-200'
           )}
         />
-        {children}
+        <span className="text-signal-yellow-foreground">{children}</span>
       </Comp>
     );
   }

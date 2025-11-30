@@ -1,14 +1,25 @@
 'use client';
 
-import type { ReactNode } from 'react';
-import { createContext, use, useCallback, useEffect, useState } from 'react';
+import {
+  createContext,
+  ReactNode,
+  use,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState
+} from 'react';
 import {
   Theme,
+  THEME_APPEARANCE_DEFAULT,
+  THEME_COLOR_DEFAULT,
   THEME_KEY,
   THEME_KEY_APPEARANCE,
   THEME_KEY_COLOR,
   THEME_KEY_FONT_SIZE,
+  THEME_OPTION_DEFAULT,
   THEME_OPTIONS,
+  ThemeAnimationSettings,
   ThemeAppearance,
   ThemeColor,
   ThemeContextType,
@@ -22,15 +33,23 @@ import { capitalizeWords } from '@/lib/utils';
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<ThemeOption>(THEME_OPTIONS[0]);
-  const [themeColor, setThemeColor] = useState<ThemeColor>('primary');
-  const [themeAppearance, setThemeAppearance] =
-    useState<ThemeAppearance>('light');
+  const [theme, setTheme] = useState<ThemeOption>(THEME_OPTION_DEFAULT);
+  const [themeColor, setThemeColor] = useState<ThemeColor>(THEME_COLOR_DEFAULT);
+  const [themeAppearance, setThemeAppearance] = useState<ThemeAppearance>(
+    THEME_APPEARANCE_DEFAULT
+  );
   const [themeFontSize, setThemeFontSize] = useState<ThemeFontSize>('md');
   const [themeMode, setThemeMode] = useState<ThemeMode | undefined>(undefined);
   const [themeEvents, setThemeEvents] = useState<ThemeEvents>({
     isEventWinterEnabled: true
   });
+  const [themeAnimationSettings, setThemeAnimationSettings] =
+    useState<ThemeAnimationSettings>({
+      disableAnimations: false,
+      delay: 0.24,
+      duration: 0.4,
+      type: 'spring'
+    });
 
   const handleTheme = useCallback((themeOption: ThemeOption) => {
     setTheme(themeOption);
@@ -96,11 +115,14 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       }
     });
 
-    htmlTag.classList.add(`theme-color-${themeColor}`);
-
     htmlTag.dataset.themeColor = themeColor;
 
-    localStorage.setItem(THEME_KEY_COLOR, themeColor);
+    if (themeColor) {
+      htmlTag.classList.add(`theme-color-${themeColor}`);
+      localStorage.setItem(THEME_KEY_COLOR, themeColor);
+    } else {
+      localStorage.removeItem(THEME_KEY_COLOR);
+    }
   }, []);
 
   const handleThemeFontSize = useCallback((themeFontSize: ThemeFontSize) => {
@@ -159,6 +181,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   const handleIsEventWinterEnabled = useCallback(
     (isEventWinterEnabled: boolean) => {
+      // TODO: Save this state to local storage
       setThemeEvents((prevState) => {
         return { ...prevState, isEventWinterEnabled };
       });
@@ -166,21 +189,59 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     []
   );
 
+  const shuffleTheme = useCallback(() => {
+    let randomIndex = Math.floor(Math.random() * THEME_OPTIONS.length);
+
+    const nextThemeIsCurrentTheme =
+      THEME_OPTIONS[randomIndex].key === theme.key;
+
+    if (nextThemeIsCurrentTheme) {
+      handleTheme(
+        THEME_OPTIONS[
+          randomIndex + 1 <= THEME_OPTIONS.length - 1
+            ? randomIndex + 1
+            : randomIndex - 1
+        ]
+      );
+    } else {
+      handleTheme(THEME_OPTIONS[randomIndex]);
+    }
+  }, [theme]);
+
+  const shouldAnimate = useMemo(
+    () => theme.key === 'animate' && themeAnimationSettings.disableAnimations,
+    [theme.key, themeAnimationSettings.disableAnimations]
+  );
+
+  useEffect(() => {
+    if (theme.key !== 'animate') {
+      handleIsEventWinterEnabled(false);
+    }
+
+    if (theme.key === 'animate' && !themeEvents.isEventWinterEnabled) {
+      handleIsEventWinterEnabled(true);
+    }
+  }, [theme.key]);
+
   useEffect(() => initTheme(), []);
 
   const value: ThemeContextType | null = {
     theme,
     setTheme: handleTheme,
+    shuffleTheme,
     themeColor,
     setThemeColor: handleThemeColor,
     themeFontSize: themeFontSize,
     setThemeFontSize: handleThemeFontSize,
     themeAppearance: themeAppearance,
     setThemeAppearance: handleThemeAppearance,
+    themeAnimationSettings,
+    setThemeAnimationSettings,
     themeMode,
     setThemeMode,
     ...themeEvents,
-    setIsEventWinterEnabled: handleIsEventWinterEnabled
+    setIsEventWinterEnabled: handleIsEventWinterEnabled,
+    shouldAnimate
   };
 
   return (

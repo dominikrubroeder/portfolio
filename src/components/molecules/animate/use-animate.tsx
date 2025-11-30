@@ -94,12 +94,18 @@ export const useAnimate = ({
     }
   };
 
+  const disabledAnimations: Variants = {
+    hidden: {},
+    visible: {}
+  };
+
   const variants = {
     up: fadeInUp,
     down: fadeInDown,
     left: fadeInLeft,
     right: fadeInRight,
-    scaleUp: scaleUp
+    scaleUp: scaleUp,
+    disabledAnimations
   };
 
   return {

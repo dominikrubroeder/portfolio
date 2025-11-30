@@ -196,8 +196,8 @@ export function IntroductionMyBackgroundAccordion() {
           <p>
             To bring an idea from the mind to production was and is as of today
             the part that let&#39;s me get excited. It means creativity flows,
-            it means freedom on a canvas, ready to be used. And it means, good
-            products come to life.
+            it means freedom on a canvas, ready to be used and get painted. And
+            it means, good products come to life.
           </p>
           <p>
             With all the requirements, all the people working on it, it really

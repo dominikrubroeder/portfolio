@@ -11,6 +11,7 @@ import { Header } from '@/components/organisms/header';
 import { ThemeProvider } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
+import { LiveEditProvider } from '@/components/organisms/live-edit';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -50,7 +51,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
           <Header />
-          <main>{children}</main>
+
+          <LiveEditProvider>
+            <main>{children}</main>
+          </LiveEditProvider>
+
           <Footer />
           <Analytics />
           <SpeedInsights />

@@ -3,8 +3,6 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
-import { SparklesIcon } from '@heroicons/react/24/outline';
-
 import type { ReducedButtonProps } from '@/components/atoms/button';
 import { Button } from '@/components/atoms/button';
 import {
@@ -28,10 +26,18 @@ import { ThemeWinterToggle } from '@/components/organisms/events';
 import { ThemeDrawerSection } from '@/components/organisms/theme/theme-drawer-section';
 import { ThemeDrawerOption } from '@/components/organisms/theme/theme-drawer-option';
 import { ThemeSelect } from '@/components/organisms/theme/theme-select';
-import { ThemeAppearanceSetting } from '@/components/organisms/theme/theme-appearance-setting';
+import { ThemeAppearanceSelect } from '@/components/organisms/theme/theme-appearance-select';
 import { ThemeColorSetting } from '@/components/organisms/theme/theme-color-setting';
 import { ThemeFontSizeSetting } from '@/components/organisms/theme/theme-font-size-setting';
 import { Toggle } from '@/components/atoms/toggle';
+import { ThemeSpacingContainerWidthSetting } from '@/components/organisms/theme/theme-spacing-container-width-setting';
+import { ThemeSpacingSectionBreakSetting } from '@/components/organisms/theme/theme-spacing-section-break-setting';
+import {
+  ArrowsRightLeftIcon,
+  ArrowUturnLeftIcon
+} from '@heroicons/react/16/solid';
+import { ThemeAnimationSetting } from '@/components/organisms/theme/theme-animation-setting';
+import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import { useTheme } from '@/components/organisms/theme/theme-context';
 
 export function ThemeDrawer({
@@ -43,16 +49,16 @@ export function ThemeDrawer({
   buttonProps?: ReducedButtonProps;
   buttonIconOnly?: boolean;
 }) {
-  const { theme } = useTheme();
   const [open, setOpen] = useState<boolean>(false);
+  const { theme } = useTheme();
   const isDesktop = useMediaQuery('(min-width: 768px)');
   const defaultTrigger = (
     <Button {...buttonProps}>
       {buttonIconOnly ? (
-        <SparklesIcon />
+        <ArrowsRightLeftIcon />
       ) : (
         <>
-          <SparklesIcon /> <span>Modify Theme: {theme.value}</span>
+          <ArrowsRightLeftIcon /> <span>Modify Theme: {theme.value}</span>
         </>
       )}
     </Button>
@@ -78,12 +84,12 @@ export function ThemeDrawer({
         </ThemeDrawerOption>
 
         <ThemeDrawerOption>
-          <div className="text-foreground">Theme Appearance</div>
-          <ThemeAppearanceSetting />
+          <div className="text-foreground">Appearance</div>
+          <ThemeAppearanceSelect />
         </ThemeDrawerOption>
 
         <ThemeDrawerOption>
-          <div className="text-foreground">Theme Color</div>
+          <div className="text-foreground">Color</div>
           <ThemeColorSetting />
         </ThemeDrawerOption>
       </ThemeDrawerSection>
@@ -98,36 +104,16 @@ export function ThemeDrawer({
       <ThemeDrawerSection title="Spacing">
         <ThemeDrawerOption>
           <div className="text-foreground">Container Width</div>
-          <ThemeFontSizeSetting />
+          <ThemeSpacingContainerWidthSetting />
         </ThemeDrawerOption>
 
         <ThemeDrawerOption>
           <div className="text-foreground">Section Break</div>
-          <ThemeFontSizeSetting />
+          <ThemeSpacingSectionBreakSetting />
         </ThemeDrawerOption>
       </ThemeDrawerSection>
 
-      <ThemeDrawerSection title="Animation">
-        <ThemeDrawerOption>
-          <div className="text-foreground">Disable Animations</div>
-          <Toggle />
-        </ThemeDrawerOption>
-
-        <ThemeDrawerOption>
-          <div className="text-foreground">Duration</div>
-          <ThemeFontSizeSetting />
-        </ThemeDrawerOption>
-
-        <ThemeDrawerOption>
-          <div className="text-foreground">Delay</div>
-          <ThemeFontSizeSetting />
-        </ThemeDrawerOption>
-
-        <ThemeDrawerOption>
-          <div className="text-foreground">Type</div>
-          <ThemeFontSizeSetting />
-        </ThemeDrawerOption>
-      </ThemeDrawerSection>
+      <ThemeAnimationSetting />
 
       <ThemeDrawerSection title="Border">
         <ThemeDrawerOption>
@@ -174,9 +160,22 @@ export function ThemeDrawer({
 
   const footer = (
     <DrawerFooter className="pt-2">
-      <DrawerClose asChild>
-        <Button variant="ghost">Close</Button>
-      </DrawerClose>
+      <p className="flex items-center justify-center gap-1 text-center text-xs text-muted-foreground">
+        <InformationCircleIcon className="size-4" />
+        Theme settings do auto-apply
+      </p>
+
+      <div className="grid gap-1">
+        <DrawerClose asChild>
+          <Button variant="ghost">
+            <ArrowUturnLeftIcon /> Reset to default
+          </Button>
+        </DrawerClose>
+
+        <DrawerClose asChild>
+          <Button variant="ghost">Close</Button>
+        </DrawerClose>
+      </div>
     </DrawerFooter>
   );
 

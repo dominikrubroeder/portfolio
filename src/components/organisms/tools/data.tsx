@@ -83,7 +83,7 @@ export const tools: Tools = [
         knowledge: 'Professional'
       },
       {
-        name: 'Claude AI',
+        name: 'Claude',
         href: 'https://claude.ai',
         logo: '',
         description: 'Talk with Claude, an AI assistant from Antrophic',

@@ -11,11 +11,19 @@ import {
   EVENTS_WINTER_SCENE_ENABLED,
   Snowfall
 } from '@/components/organisms/events';
+import {
+  ThemeNotesBackgroundCornellNotes,
+  ThemeWireframeBackground
+} from '@/components/organisms/theme';
 
 export default async function HomePage() {
   return (
     <Container as="div" horizontalPadding className="space-y-12">
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
+
+      <ThemeWireframeBackground />
+
+      <ThemeNotesBackgroundCornellNotes />
 
       <HomeHero />
 

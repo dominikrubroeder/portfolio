@@ -44,14 +44,14 @@ const options = [
   }
 ];
 
-export function ThemeAppearanceSetting({
+export function ThemeAppearanceSelect({
   menuPosition = 'bottom',
   className
 }: {
   menuPosition?: PositionProp;
 } & ComponentBaseProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { themeAppearance, setThemeAppearance } = useTheme();
+  const { theme, themeAppearance, setThemeAppearance } = useTheme();
 
   const handleThemeChange = useCallback(
     (value: ThemeAppearance) => {
@@ -97,12 +97,13 @@ export function ThemeAppearanceSetting({
             menuPosition === 'bottom-right' && 'top-full right-0 mt-2'
           )}
         >
-          <ul>
+          <ul className={cn(theme.key === 'wireframe' && 'space-y-2')}>
             {options.map(({ value, label }) => (
               <li key={value}>
                 <Button
-                  onClick={() => handleThemeChange(value as ThemeAppearance)}
                   variant="ghost"
+                  onClick={() => handleThemeChange(value as ThemeAppearance)}
+                  className="w-full"
                 >
                   {label}
                 </Button>

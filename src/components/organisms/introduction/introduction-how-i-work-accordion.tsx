@@ -13,7 +13,7 @@ export function IntroductionHowIWorkAccordion() {
           <b className="text-foreground"> build</b> for production applications
         </li>
         <li>
-          <b className="text-foreground">Using Psychology </b>
+          <b className="text-foreground">Using psychology </b>
           to design and build better user interfaces
         </li>
         <li>

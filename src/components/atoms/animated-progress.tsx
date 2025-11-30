@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView } from 'motion/react';
 
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/components/organisms/theme';
 
 interface AnimatedProgressProps {
   size?: number;
@@ -36,12 +37,14 @@ export function AnimatedProgress({
     animateNumber ? 0 : progress
   );
 
+  const { shouldAnimate } = useTheme();
+
   const center = size / 2;
   const radius = size / 2 - strokeWidth / 2;
   const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
-    if (inView) {
+    if (inView && shouldAnimate) {
       if (animateProgress) {
         controls.start({
           strokeDashoffset: circumference - (progress / 100) * circumference,
@@ -73,7 +76,8 @@ export function AnimatedProgress({
     circumference,
     progress,
     animateNumber,
-    animateProgress
+    animateProgress,
+    shouldAnimate
   ]);
 
   return (
@@ -103,26 +107,32 @@ export function AnimatedProgress({
             strokeLinecap="round"
             className="stroke-muted group-hover:stroke-primary/15"
           />
-          <motion.circle
-            cx={center}
-            cy={center}
-            r={radius}
-            fill="none"
-            strokeWidth={strokeWidth}
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            initial={
-              animateProgress
-                ? { strokeDashoffset: circumference }
-                : {
-                    strokeDashoffset:
-                      circumference - (progress / 100) * circumference
-                  }
-            }
-            animate={controls}
-            className={cn(strokeColor)}
-          />
+
+          {shouldAnimate ? (
+            <motion.circle
+              cx={center}
+              cy={center}
+              r={radius}
+              fill="none"
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+              strokeDasharray={circumference}
+              initial={
+                animateProgress
+                  ? { strokeDashoffset: circumference }
+                  : {
+                      strokeDashoffset:
+                        circumference - (progress / 100) * circumference
+                    }
+              }
+              animate={controls}
+              className={cn(strokeColor)}
+            />
+          ) : (
+            progress
+          )}
         </svg>
+
         <div className="absolute inset-0 flex items-center justify-center">
           <span
             className={cn('font-bold', color)}
@@ -131,7 +141,7 @@ export function AnimatedProgress({
             }}
             aria-hidden="true"
           >
-            {currentProgress}
+            {shouldAnimate ? currentProgress : progress}
             {size > 50 ? '%' : ''}
           </span>
         </div>

@@ -1,17 +1,16 @@
 import Link from 'next/link';
 
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
-
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import { ExperienceBar } from '@/components/atoms/experience-bar';
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { technologies } from '@/components/organisms/technologies';
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
 export function AllTechnologies() {
   return (
     <ToggleContent label="All technologies">
-      <ul className="grid animate-fade-up-1rem gap-10">
+      <ul className="grid gap-10">
         {technologies
           .sort((a, b) => {
             return a.group.localeCompare(b.group);
@@ -29,13 +28,13 @@ export function AllTechnologies() {
                   )}
                 </div>
 
-                <ul className="space-y-5 rounded border p-4">
+                <ul className="space-y-5 rounded border bg-background p-4">
                   {item.children
                     .sort((a, b) => a.name.localeCompare(b.name))
                     .map((child, index) => (
                       <li
                         key={index}
-                        className="relative flex justify-between gap-3 pr-2 xs:gap-4"
+                        className="relative flex justify-between gap-3 rounded pr-2 transition hover:bg-muted xs:gap-4"
                       >
                         <Link
                           href={child.href}
@@ -58,17 +57,18 @@ export function AllTechnologies() {
                           </h3>
                         </Link>
 
-                        <div className="flex items-center justify-between gap-2 bg-background sm:gap-4">
+                        <div className="flex items-center justify-between gap-2 sm:gap-4">
                           <ExperienceBar progress={child.knowledge} />
 
                           <Button
-                            variant="ghost"
+                            variant="ghost-muted"
                             href={child.href}
                             title={`Go to external ${child.name} website`}
                             aria-label={`Go to external ${child.name} website`}
                             className="hidden sm:flex"
                           >
-                            <ArrowTopRightOnSquareIcon className="size-5" />
+                            <ArrowUpRightIcon className="size-5" />
+                            <span className="sr-only">{`Go to external ${child.name} website`}</span>
                           </Button>
                         </div>
                       </li>

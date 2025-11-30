@@ -9,7 +9,7 @@ import { TrainingAccordion } from '@/components/organisms/training';
 export function Introduction() {
   return (
     <Container id="introduction">
-      <div className="space-y-6 rounded border p-4">
+      <div className="relative z-10 space-y-6 rounded border bg-background p-4">
         <p className="font-bold text-foreground">Hey there! 👋</p>
 
         <div className="space-y-3 text-wrap">

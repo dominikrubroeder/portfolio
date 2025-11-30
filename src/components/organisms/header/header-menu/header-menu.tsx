@@ -14,7 +14,7 @@ import { Overlay } from '@/components/atoms/overlay';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { useHeaderMenu } from '@/components/organisms/header';
 import {
-  ThemeAppearanceSetting,
+  ThemeAppearanceSelect,
   ThemeColorSetting,
   ThemeFontSizeSetting
 } from '@/components/organisms/theme';
@@ -103,7 +103,7 @@ export function HeaderMenu() {
                 <li>
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-foreground">Select appearance</span>
-                    <ThemeAppearanceSetting
+                    <ThemeAppearanceSelect
                       className="-mr-2"
                       menuPosition="bottom-right"
                     />
