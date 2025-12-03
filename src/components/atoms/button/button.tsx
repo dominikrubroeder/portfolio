@@ -13,7 +13,13 @@ import { useTheme } from '@/components/organisms/theme';
 
 export interface ButtonProps
   extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
-  variant?: 'contained' | 'contained-muted' | 'ghost' | 'ghost-muted' | 'link';
+  variant?:
+    | 'contained'
+    | 'contained-muted'
+    | 'ghost'
+    | 'ghost-muted'
+    | 'link'
+    | 'link-muted';
   size?: 'tiny' | 'small' | 'medium' | 'large';
   className?: string;
   href?: string;
@@ -49,6 +55,8 @@ export function Button({
     variant === 'ghost' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground',
     variant === 'link' && 'text-primary hover:text-primary-hover',
+    variant === 'link-muted' &&
+      'text-muted-foreground hover:text-foreground group-hover:text-foreground',
     size === 'tiny' && 'text-xs px-1 gap-2 [&>svg]:size-3',
     size === 'small' && 'text-sm px-2 gap-2 [&>svg]:size-3',
     size === 'medium' && 'text-base px-3 gap-2 [&>svg]:size-5',
