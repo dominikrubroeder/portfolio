@@ -454,7 +454,7 @@ export const tools: Tools = [
     group: 'IDE + Editor',
     children: [
       {
-        name: 'Cursor AI',
+        name: 'Cursor',
         href: 'https://cursor.sh',
         logo: '',
         description: 'The AI-first code editor',
@@ -468,7 +468,7 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        name: 'VS Code',
+        name: 'Visual Studio Code',
         description: 'Code editing. Redefined.',
         href: 'https://code.visualstudio.com',
         logo: '',
@@ -480,6 +480,14 @@ export const tools: Tools = [
         href: 'https://www.jetbrains.com/webstorm',
         logo: '',
         knowledge: 'Daily'
+      },
+      {
+        name: 'Windsurf',
+        description:
+          'Code at the speed of thought—where AI and developers flow as one.',
+        href: 'https://windsurf.com',
+        logo: '',
+        knowledge: 'Used'
       },
       {
         name: 'zed',
@@ -671,6 +679,14 @@ export const tools: Tools = [
         knowledge: 'Daily'
       },
       {
+        name: '@tanstack/*',
+        description:
+          'High-quality, headless utilities for modern web development',
+        href: 'https://tanstack.com',
+        logo: '',
+        knowledge: 'Not started'
+      },
+      {
         name: 'class-variance-authority',
         description: 'Creating variants with the "cva" function',
         href: 'https://cva.style',
@@ -785,6 +801,13 @@ export const tools: Tools = [
         href: 'https://www.npmjs.com/package/react-syntax-highlighter',
         logo: '',
         knowledge: 'Used'
+      },
+      {
+        name: 'storybook',
+        description: 'Frontend workshop for UI development',
+        href: 'https://storybook.js.org',
+        logo: '',
+        knowledge: 'Experienced'
       },
       {
         name: 'use-debounce',

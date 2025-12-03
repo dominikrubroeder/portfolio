@@ -27,7 +27,7 @@ export function AllTools() {
                     .map((child, index) => (
                       <li
                         key={index}
-                        className="relative flex justify-between gap-3 rounded py-2 pr-2 transition hover:bg-muted xs:gap-4"
+                        className="group relative flex justify-between gap-3 rounded py-2 pr-2 transition hover:bg-muted xs:gap-4"
                       >
                         <Link
                           href={child.href}
@@ -48,7 +48,7 @@ export function AllTools() {
                             />
                           </Button>
 
-                          <div>
+                          <div className="flex-1">
                             <h3 className="mb-0 self-center text-base">
                               {child.name}
                             </h3>
@@ -59,20 +59,15 @@ export function AllTools() {
                               </p>
                             )}
                           </div>
-                        </Link>
 
-                        <div className="flex items-center justify-between gap-2 bg-background sm:gap-4">
                           <Button
-                            variant="ghost-muted"
-                            href={child.href}
-                            title={`Go to external ${child.name} website`}
-                            aria-label={`Go to external ${child.name} website`}
+                            variant="link-muted"
                             className="hidden sm:flex"
                           >
                             <ArrowUpRightIcon className="size-5" />
                             <span className="sr-only">{`Go to external ${child.name} website`}</span>
                           </Button>
-                        </div>
+                        </Link>
                       </li>
                     ))}
                 </ul>

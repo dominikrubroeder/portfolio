@@ -34,7 +34,7 @@ export function AllTechnologies() {
                     .map((child, index) => (
                       <li
                         key={index}
-                        className="relative flex justify-between gap-3 rounded pr-2 transition hover:bg-muted xs:gap-4"
+                        className="group relative flex justify-between gap-3 rounded pr-2 transition hover:bg-muted xs:gap-4"
                       >
                         <Link
                           href={child.href}
@@ -61,7 +61,7 @@ export function AllTechnologies() {
                           <ExperienceBar progress={child.knowledge} />
 
                           <Button
-                            variant="ghost-muted"
+                            variant="link-muted"
                             href={child.href}
                             title={`Go to external ${child.name} website`}
                             aria-label={`Go to external ${child.name} website`}
