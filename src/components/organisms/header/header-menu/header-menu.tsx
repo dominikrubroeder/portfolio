@@ -8,7 +8,8 @@ import {
   Button,
   ContactButton,
   GitHubButton,
-  LinkedInButton
+  LinkedInButton,
+  StorybookButton
 } from '@/components/atoms/button';
 import { Overlay } from '@/components/atoms/overlay';
 import { ButtonGroup } from '@/components/molecules/button-group';
@@ -34,6 +35,7 @@ export function HeaderMenu() {
     <div className="relative lg:hidden">
       <ButtonGroup className="gap-0">
         <GitHubButton />
+        <StorybookButton />
 
         <Button
           variant="ghost"

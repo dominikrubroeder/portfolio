@@ -68,6 +68,7 @@ export { SketchLogo } from './sketch-logo';
 export { AwsLogo } from './aws-logo';
 export { NetlifyLogo } from './netlify-logo';
 export { CanvaLogo } from './canva-logo';
+export { StorybookLogo } from './storybook-logo';
 
 export * from './config';
 export * from './types';

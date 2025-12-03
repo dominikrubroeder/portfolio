@@ -62,6 +62,7 @@ import {
   SketchLogo,
   SlackLogo,
   StoryblokLogo,
+  StorybookLogo,
   TailwindCssLogo,
   TeamsLogo,
   TypeScriptLogo,
@@ -131,6 +132,10 @@ export function BrandLogo({
 
   if (lowerCaseBrand.includes('react')) {
     return <ReactLogo className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('storybook')) {
+    return <StorybookLogo className={className} />;
   }
 
   if (brand.startsWith('@')) {
