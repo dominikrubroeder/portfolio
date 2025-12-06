@@ -1,7 +1,6 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import { useState } from 'react';
 
 import type { ReducedButtonProps } from '@/components/atoms/button';
 import { Button } from '@/components/atoms/button';
@@ -29,6 +28,7 @@ import {
 } from '@heroicons/react/16/solid';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import { EllipsisVertical } from 'lucide-react';
+import { useLiveEdit } from '@/components/organisms/live-edit/live-edit-context';
 
 export function LiveEditDrawer({
   trigger,
@@ -41,8 +41,8 @@ export function LiveEditDrawer({
   buttonIconOnly?: boolean;
   componentName: string;
 }) {
-  const [open, setOpen] = useState<boolean>(false);
-  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const { isOpenDrawer, setIsOpenDrawer } = useLiveEdit();
+  const isDesktop = useMediaQuery('(min-width: 1280px)');
   const defaultTrigger = (
     <Button {...buttonProps}>
       {buttonIconOnly ? (
@@ -110,14 +110,14 @@ export function LiveEditDrawer({
 
   return (
     <Drawer
-      open={open}
-      onOpenChange={setOpen}
+      open={isOpenDrawer}
+      onOpenChange={setIsOpenDrawer}
       direction={isDesktop ? 'right' : undefined}
     >
       <DrawerTrigger asChild>{trigger ?? defaultTrigger}</DrawerTrigger>
 
       <DrawerContent>
-        <div className="space-y-6 overflow-y-auto">
+        <div className="space-y-6 overflow-y-auto p-4">
           {header}
 
           {content}

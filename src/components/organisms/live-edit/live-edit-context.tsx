@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import {
   LiveEditContextProviderProps,
   LiveEditContextType
@@ -12,9 +12,25 @@ const LiveEditContext = createContext<LiveEditContextType | undefined>(
 
 export function LiveEditProvider({ children }: LiveEditContextProviderProps) {
   const [liveEditEnabled, setLiveEditEnabled] = useState<boolean>(false);
+  const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+
+  useEffect(() => {
+    if (isOpenDrawer) {
+      document.body.style.paddingRight = '24rem';
+    } else {
+      document.body.style.paddingRight = '0';
+    }
+  }, [isOpenDrawer]);
 
   return (
-    <LiveEditContext.Provider value={{ liveEditEnabled, setLiveEditEnabled }}>
+    <LiveEditContext.Provider
+      value={{
+        liveEditEnabled,
+        setLiveEditEnabled,
+        isOpenDrawer,
+        setIsOpenDrawer
+      }}
+    >
       {children}
     </LiveEditContext.Provider>
   );

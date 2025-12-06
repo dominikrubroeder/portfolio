@@ -1,10 +1,9 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { useLiveEdit } from '@/components/organisms/live-edit/live-edit-context';
+import { LiveEditDrawer, useLiveEdit } from '@/components/organisms/live-edit';
 import { Badge } from '@/components/atoms/badge';
 import { cn } from '@/lib/utils';
-import { LiveEditDrawer } from '@/components/organisms/live-edit/live-edit-drawer';
 
 export function LiveEditContainer({
   componentName,
@@ -23,7 +22,7 @@ export function LiveEditContainer({
       )}
     >
       {liveEditEnabled && (
-        <Badge className="absolute -top-4 right-4">{componentName}</Badge>
+        <Badge className="absolute top-2 right-2">{componentName}</Badge>
       )}
 
       {liveEditEnabled && <LiveEditDrawer componentName={componentName} />}
