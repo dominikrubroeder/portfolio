@@ -61,7 +61,7 @@ export function AllTools() {
                           </div>
 
                           <Button
-                            variant="link-muted"
+                            variant="text-muted"
                             className="hidden sm:flex"
                           >
                             <ArrowUpRightIcon className="size-5" />

@@ -1,36 +1,10 @@
 'use client';
 
-import type {
-  HTMLAttributeAnchorTarget,
-  HTMLAttributes,
-  ReactNode
-} from 'react';
-
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/organisms/theme';
-
-export interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
-  variant?:
-    | 'contained'
-    | 'contained-muted'
-    | 'ghost'
-    | 'ghost-muted'
-    | 'link'
-    | 'link-muted';
-  size?: 'tiny' | 'small' | 'medium' | 'large';
-  className?: string;
-  href?: string;
-  target?: HTMLAttributeAnchorTarget;
-  rounded?: boolean;
-  children: ReactNode;
-}
-
-export interface ReducedButtonProps extends Omit<ButtonProps, 'children'> {
-  children?: ReactNode;
-}
+import { ButtonProps } from '@/components/atoms/button/types';
 
 export function Button({
   variant = 'contained',
@@ -54,8 +28,8 @@ export function Button({
       "min-h-11 min-w-11 text-foreground relative z-10 rounded-2xl hover:text-foreground group-hover:text-foreground after:absolute after:inset-0 after:-z-10 after:scale-75 after:rounded-lg after:bg-muted after:opacity-0 after:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 hover:after:rounded-xl active:after:rounded-xl active:after:opacity-100 hover:after:opacity-100 group-hover:text-foreground active:text-foreground group-hover:after:scale-100 group-hover:after:rounded-xl group-hover:after:opacity-100",
     variant === 'ghost' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground',
-    variant === 'link' && 'text-primary hover:text-primary-hover',
-    variant === 'link-muted' &&
+    variant === 'text' && 'text-primary hover:text-primary-hover',
+    variant === 'text-muted' &&
       'text-muted-foreground hover:text-foreground group-hover:text-foreground',
     size === 'tiny' && 'text-xs px-1 gap-2 [&>svg]:size-3',
     size === 'small' && 'text-sm px-2 gap-2 [&>svg]:size-3',

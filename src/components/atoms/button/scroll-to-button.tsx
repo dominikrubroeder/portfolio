@@ -2,11 +2,11 @@
 
 import type { ReactNode } from 'react';
 
-import type { ButtonProps } from '@/components/atoms/button/button';
 import { Button } from '@/components/atoms/button/button';
 
 import type { UseScrollInViewProps } from '@/hooks/use-scroll-into-view';
 import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
+import { ButtonProps } from '@/components/atoms/button/types';
 
 interface ScrollToButtonProps extends Omit<ButtonProps, 'children'> {
   children?: ReactNode;

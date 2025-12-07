@@ -61,7 +61,7 @@ export function AllTechnologies() {
                           <ExperienceBar progress={child.knowledge} />
 
                           <Button
-                            variant="link-muted"
+                            variant="text-muted"
                             href={child.href}
                             title={`Go to external ${child.name} website`}
                             aria-label={`Go to external ${child.name} website`}

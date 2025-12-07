@@ -50,16 +50,16 @@ export const GhostMuted: Story = {
   }
 };
 
-export const Link: Story = {
+export const Text: Story = {
   args: {
-    variant: 'link',
+    variant: 'text',
     children: 'Button'
   }
 };
 
-export const LinkMuted: Story = {
+export const TextMuted: Story = {
   args: {
-    variant: 'link-muted',
+    variant: 'text-muted',
     children: 'Button'
   }
 };
