@@ -796,6 +796,13 @@ export const tools: Tools = [
         knowledge: 'Experienced'
       },
       {
+        name: 'react-snowfall',
+        description: 'An awesome react component that creates snowfall',
+        href: 'https://www.npmjs.com/package/react-snowfall',
+        logo: '',
+        knowledge: 'Daily'
+      },
+      {
         name: 'react-syntax-highlighter',
         description: 'Syntax highlighting component for React',
         href: 'https://www.npmjs.com/package/react-syntax-highlighter',

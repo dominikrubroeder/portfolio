@@ -1,12 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import {
-  AuthjsLogo,
-  InkdropLogo,
-  InstagramLogo,
-  PostmanLogo,
-  TwigLogo
-} from '@/components/atoms/img';
+import { AuthjsLogo, InkdropLogo, InstagramLogo, PostmanLogo, TwigLogo } from '@/components/atoms/img';
 import {
   AdobeIllustratorLogo,
   AdobePhotoshopLogo,
@@ -256,7 +250,7 @@ export function BrandLogo({
     case 'ChatGPT':
       return <ChatGptLogo className={className} />;
 
-    case 'Claude AI':
+    case 'Claude':
       return <ClaudeAiLogo className={className} />;
 
     case 'v0':
