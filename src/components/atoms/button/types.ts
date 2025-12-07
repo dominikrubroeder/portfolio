@@ -1,4 +1,8 @@
-import type { HTMLAttributeAnchorTarget, HTMLAttributes, ReactNode } from 'react';
+import type {
+  HTMLAttributeAnchorTarget,
+  HTMLAttributes,
+  ReactNode
+} from 'react';
 
 export interface ButtonProps
   extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
