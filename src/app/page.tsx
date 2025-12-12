@@ -15,10 +15,16 @@ import {
   ThemeNotesBackgroundCornellNotes,
   ThemeWireframeBackground
 } from '@/components/organisms/theme';
+import { LiveEditToolbar } from '@/components/organisms/live-edit';
 
 export default async function HomePage() {
   return (
-    <Container as="div" horizontalPadding className="space-y-12">
+    <Container
+      as="div"
+      size="container"
+      horizontalPadding
+      className="space-y-12"
+    >
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
 
       <ThemeWireframeBackground />
@@ -48,6 +54,8 @@ export default async function HomePage() {
       <Hr />
 
       <ContactSection />
+
+      <LiveEditToolbar />
     </Container>
   );
 }
