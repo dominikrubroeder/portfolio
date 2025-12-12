@@ -6,7 +6,7 @@ import { LiveEditDrawer } from '@/components/organisms/live-edit/live-edit-drawe
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { Button } from '@/components/atoms/button';
 import { XMarkIcon } from '@heroicons/react/16/solid';
-import { VerticalLine } from '@/components/atoms/VerticalLine';
+import { VerticalLine } from '@/components/atoms/vertical-line';
 
 export function LiveEditToolbar() {
   const { liveEditEnabled, isOpenToolbar, setIsOpenToolbar, liveEditElement } =
