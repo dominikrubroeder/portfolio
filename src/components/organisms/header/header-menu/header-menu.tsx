@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowDownIcon, EllipsisVerticalIcon } from '@heroicons/react/20/solid';
+import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 
 import { cn } from '@/lib/utils';
 
@@ -8,8 +8,7 @@ import {
   Button,
   ContactButton,
   GitHubButton,
-  LinkedInButton,
-  StorybookButton
+  LinkedInButton
 } from '@/components/atoms/button';
 import { Overlay } from '@/components/atoms/overlay';
 import { ButtonGroup } from '@/components/molecules/button-group';
@@ -19,7 +18,6 @@ import {
   ThemeColorSetting,
   ThemeFontSizeSetting
 } from '@/components/organisms/theme';
-import React from 'react';
 
 export function HeaderMenu() {
   const {
@@ -34,8 +32,8 @@ export function HeaderMenu() {
   return (
     <div className="relative lg:hidden">
       <ButtonGroup className="gap-0">
+        <LinkedInButton />
         <GitHubButton />
-        <StorybookButton />
 
         <Button
           variant="ghost"
@@ -83,12 +81,10 @@ export function HeaderMenu() {
                         <span>{item.label}</span>
                       </div>
 
-                      {item.href === activeSection ? (
+                      {item.href === activeSection && (
                         <div className="mr-0.5 flex size-4 items-center justify-center rounded-full border-2 border-primary">
                           <div className="block size-2 shrink-0 rounded-full bg-primary" />
                         </div>
-                      ) : (
-                        <ArrowDownIcon className="size-5" />
                       )}
                     </button>
                   </li>
@@ -134,12 +130,12 @@ export function HeaderMenu() {
               </div>
 
               <ButtonGroup className="-ml-2 gap-0">
+                <LinkedInButton />
+                <GitHubButton />
                 <ContactButton
                   iconPosition="right"
                   buttonProps={{ size: 'large' }}
                 />
-                <GitHubButton />
-                <LinkedInButton />
               </ButtonGroup>
             </div>
           </div>
