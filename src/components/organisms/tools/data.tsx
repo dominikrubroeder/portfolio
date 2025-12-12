@@ -173,7 +173,7 @@ export const tools: Tools = [
     group: 'Authentication',
     children: [
       {
-        name: 'Auth.js',
+        name: 'Auth.js (now part of Better Auth)',
         href: 'https://authjs.dev',
         logo: '',
         description: 'Authentication for the Web. Free and open source.',
@@ -185,6 +185,14 @@ export const tools: Tools = [
         logo: '',
         description:
           'The easiest way to add authentication and user management to your application.',
+        knowledge: 'Not started'
+      },
+      {
+        name: 'Better Auth',
+        href: 'https://www.better-auth.com',
+        logo: '',
+        description:
+          'The most comprehensive authentication framework for TypeScript.',
         knowledge: 'Not started'
       }
     ]
