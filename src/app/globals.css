@@ -199,6 +199,7 @@
     --radius-sm: calc(var(--radius) - 4px);
 
     --container: 96rem;
+    --container-md: 72rem;
     --readable-container: 48rem;
 
     --font-jetbrains-mono: 'JetBrains Mono';
