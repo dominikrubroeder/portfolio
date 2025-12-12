@@ -13,7 +13,7 @@ export function Footer() {
           title="Open Next.js website"
           aria-label="Open Next.js website"
         >
-          Next.js 16.0.4
+          Next.js 16.0.10
         </ExternalLink>
 
         <span>|</span>
