@@ -3,8 +3,10 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import {
   LiveEditContextProviderProps,
-  LiveEditContextType
+  LiveEditContextType,
+  LiveEditElement
 } from '@/components/organisms/live-edit';
+import { useMediaQuery } from '@/hooks/use-media-query';
 
 const LiveEditContext = createContext<LiveEditContextType | undefined>(
   undefined
@@ -12,23 +14,30 @@ const LiveEditContext = createContext<LiveEditContextType | undefined>(
 
 export function LiveEditProvider({ children }: LiveEditContextProviderProps) {
   const [liveEditEnabled, setLiveEditEnabled] = useState<boolean>(false);
+  const [isOpenToolbar, setIsOpenToolbar] = useState(false);
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+  const [liveEditElement, setLiveEditElement] = useState<LiveEditElement>(null);
+  const isDesktop = useMediaQuery('(min-width: 1280px)');
 
   useEffect(() => {
-    if (isOpenDrawer) {
+    if (isDesktop && isOpenDrawer) {
       document.body.style.paddingRight = '24rem';
     } else {
       document.body.style.paddingRight = '0';
     }
-  }, [isOpenDrawer]);
+  }, [isDesktop, isOpenDrawer]);
 
   return (
     <LiveEditContext.Provider
       value={{
         liveEditEnabled,
         setLiveEditEnabled,
+        isOpenToolbar,
+        setIsOpenToolbar,
         isOpenDrawer,
-        setIsOpenDrawer
+        setIsOpenDrawer,
+        liveEditElement,
+        setLiveEditElement
       }}
     >
       {children}
