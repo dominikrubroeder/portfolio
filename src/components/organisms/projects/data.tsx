@@ -15,19 +15,15 @@ import { getTools } from '@/components/organisms/tools';
 // TODO: Complete tools and technologie logos
 export const projects: Project[] = [
   {
-    title: 'Value Booster',
-    category: ['Headless', 'Ecommerce', 'B2B', 'B2C'],
-    url: 'https://www.mediawave.de/value-booster',
-    readableTitle: 'Kickstart in your headless ecommerce project',
+    title: 'sautershop',
+    category: ['Headless', 'Ecommerce', 'B2C', 'DIY'],
+    url: 'https://www.sautershop.de',
     status: 'Currently developing',
+    readableTitle: 'Quality wood-working tools for DIY home projects',
     timeframe: 'Today – 2024',
-    logo: <MediawaveLogo className="h-12 w-auto" />,
-    role: ['Frontend Development', 'Design Consulting'],
-    aspects: [
-      'Building the user interface with/without design files',
-      'Connecting several headless systems into one centric user interface',
-      'Maintaining and building up the design system to ensure consistency, flexibility and reusability'
-    ],
+    logo: <SautershopLogo className="h-12 w-auto" />,
+    role: ['Frontend Development'],
+    aspects: undefined,
     tools: getTools({
       toolNames: [
         'Figma',
@@ -53,15 +49,19 @@ export const projects: Project[] = [
     demoUrls: undefined
   },
   {
-    title: 'sautershop',
-    category: ['Headless', 'Ecommerce', 'B2C', 'DIY'],
-    url: 'https://www.sautershop.de',
+    title: 'Value Booster',
+    category: ['Headless', 'Ecommerce', 'B2B', 'B2C'],
+    url: 'https://www.mediawave.de/value-booster',
+    readableTitle: 'Kickstart in your headless ecommerce project',
     status: 'Currently developing',
-    readableTitle: 'Quality home wood-working tools for DIY projects',
     timeframe: 'Today – 2024',
-    logo: <SautershopLogo className="h-12 w-auto" />,
-    role: ['Frontend Development'],
-    aspects: undefined,
+    logo: <MediawaveLogo className="h-12 w-auto" />,
+    role: ['Frontend Development', 'Design Consulting'],
+    aspects: [
+      'Building the user interface with/without design files',
+      'Connecting several headless systems into one centric user interface',
+      'Maintaining and building up the design system to ensure consistency, flexibility and reusability'
+    ],
     tools: getTools({
       toolNames: [
         'Figma',
