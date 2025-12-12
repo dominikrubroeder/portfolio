@@ -15,15 +15,28 @@ import { BrandLink } from '@/components/organisms/brand';
 import { useProjectCarousel } from '@/components/organisms/projects';
 import { projects } from '@/components/organisms/projects/data';
 import { useTheme } from '@/components/organisms/theme';
+import { ButtonGroup } from '@/components/molecules/button-group';
+import {
+  ArrowUpRightIcon,
+  MinusIcon,
+  PlusIcon
+} from '@heroicons/react/16/solid';
 
 export function ProjectCarousel() {
-  const { project, goNext, goPrevious, setActiveProject, activeProject } =
-    useProjectCarousel();
+  const {
+    project,
+    goNext,
+    goPrevious,
+    setActiveProject,
+    activeProject,
+    isReadMore,
+    setIsReadMore
+  } = useProjectCarousel();
   const { shouldAnimate } = useTheme();
 
   return (
     <div className="mx-auto space-y-4">
-      <div className="relative flex h-[30svh] items-center justify-center rounded border bg-background">
+      <div className="relative flex h-[30svh] items-center justify-center rounded border bg-background sm:h-[40svh]">
         <Button
           variant="ghost"
           className="absolute top-1/2 left-4 z-20 -translate-y-1/2 bg-background/80 backdrop-blur-sm hover:bg-background/90"
@@ -73,7 +86,7 @@ export function ProjectCarousel() {
         </Link>
       </div>
 
-      <div className="space-y-7">
+      <div className="mx-auto max-w-(--readable-container) space-y-7">
         <ul className="flex h-3 items-center justify-center gap-3">
           {projects.map((_, index, array) => (
             <li key={index}>
@@ -118,120 +131,137 @@ export function ProjectCarousel() {
               )}
             </div>
 
-            <div className="mb-3 space-x-1.5">
-              <div className="inline-block text-muted-foreground">
-                {project.readableTitle}
-              </div>
+            <div className="mb-3 inline-block text-muted-foreground">
+              {project.readableTitle}
+            </div>
 
-              <ExternalLink
-                href={project.url}
-                variant="unstyled"
-                color="primary"
+            <ButtonGroup className="w-full">
+              <Button href={project.url}>
+                Open <ArrowUpRightIcon />
+              </Button>
+
+              <Button
+                variant="ghost"
+                onClick={() => setIsReadMore((previousState) => !previousState)}
               >
-                Show more
-              </ExternalLink>
-            </div>
+                {isReadMore ? <MinusIcon /> : <PlusIcon />} Read more
+              </Button>
+            </ButtonGroup>
 
-            <div className="space-y-3">
-              <div>
-                <b>Role</b>
-                <div>{project.role?.join(', ')}</div>
-              </div>
+            {isReadMore && (
+              <div className="mt-4 animate-fade-up-1rem space-y-3">
+                <div>
+                  <b>Role</b>
+                  <div>{project.role?.join(', ')}</div>
+                </div>
 
-              <div>
-                <b>Category</b>
-                <div>{project.category?.join(', ')}</div>
-              </div>
+                <div>
+                  <b>Category</b>
+                  <div>{project.category?.join(', ')}</div>
+                </div>
 
-              {project.aspects?.length && (
-                <Ul
-                  headline="Aspects"
-                  listStyle="disc"
-                  className="mt-0 leading-normal"
-                >
-                  {project.aspects?.map((aspect, index) => (
-                    <li key={index}>{aspect}</li>
-                  ))}
-                </Ul>
-              )}
-
-              {project.caseStudyUrls?.length && (
-                <div className="space-y-4">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <b className="block">Case Study</b>
-                    <Badge color="neutral" size="small" className="self-center">
-                      {project.demoUrls?.length}
-                    </Badge>
-                  </div>
-
-                  <Ul listStyle="disc">
-                    {project.caseStudyUrls?.map((url) => (
-                      <li key={url}>
-                        <ExternalLink href={url} variant="unstyled">
-                          {url}
-                        </ExternalLink>
-                      </li>
+                {project.aspects?.length && (
+                  <Ul
+                    headline="Aspects"
+                    listStyle="disc"
+                    className="mt-0 leading-normal"
+                  >
+                    {project.aspects?.map((aspect, index) => (
+                      <li key={index}>{aspect}</li>
                     ))}
                   </Ul>
-                </div>
-              )}
+                )}
 
-              {project.demoUrls?.length && (
-                <div className="space-y-4">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <b className="block">Demos</b>
-                    <Badge color="neutral" size="small" className="self-center">
-                      {project.demoUrls?.length}
-                    </Badge>
+                {project.caseStudyUrls?.length && (
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <b className="block">Case Study</b>
+                      <Badge
+                        color="neutral"
+                        size="small"
+                        className="self-center"
+                      >
+                        {project.demoUrls?.length}
+                      </Badge>
+                    </div>
+
+                    <Ul listStyle="disc">
+                      {project.caseStudyUrls?.map((url) => (
+                        <li key={url}>
+                          <ExternalLink href={url} variant="unstyled">
+                            {url}
+                          </ExternalLink>
+                        </li>
+                      ))}
+                    </Ul>
                   </div>
+                )}
 
-                  <Ul listStyle="disc">
-                    {project.demoUrls?.map((url) => (
-                      <li key={url}>
-                        <ExternalLink href={url} variant="unstyled">
-                          {url}
-                        </ExternalLink>
-                      </li>
-                    ))}
-                  </Ul>
+                {project.demoUrls?.length && (
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <b className="block">Demos</b>
+                      <Badge
+                        color="neutral"
+                        size="small"
+                        className="self-center"
+                      >
+                        {project.demoUrls?.length}
+                      </Badge>
+                    </div>
+
+                    <Ul listStyle="disc">
+                      {project.demoUrls?.map((url) => (
+                        <li key={url}>
+                          <ExternalLink href={url} variant="unstyled">
+                            {url}
+                          </ExternalLink>
+                        </li>
+                      ))}
+                    </Ul>
+                  </div>
+                )}
+
+                <div className="space-y-4">
+                  <b className="block">Tools</b>
+
+                  <ul className="-ml-4 flex flex-wrap gap-2">
+                    {project.tools?.map((tool, index) => {
+                      if (tool && tool.name) {
+                        return (
+                          <li key={index}>
+                            <BrandLink
+                              brand={tool}
+                              showLabel
+                              labelPosition="right"
+                            />
+                          </li>
+                        );
+                      }
+                    })}
+                  </ul>
                 </div>
-              )}
 
-              <div className="space-y-4">
-                <b className="block">Tools</b>
-
-                <ul className="-ml-4 flex flex-wrap gap-2">
-                  {project.tools?.map((tool, index) => {
-                    if (tool && tool.name) {
-                      return (
-                        <li key={index}>
-                          <BrandLink brand={tool} showLabel />
-                        </li>
-                      );
-                    }
-                  })}
-                </ul>
+                <div className="space-y-4">
+                  <b className="block">Technologies</b>
+                  <ul className="-ml-4 flex flex-wrap gap-2">
+                    {project.technologies?.map((technology, index) => {
+                      if (technology && technology.name) {
+                        return (
+                          <li key={index}>
+                            <BrandLink
+                              brand={technology}
+                              showLabel
+                              labelPosition="bottom"
+                            />
+                          </li>
+                        );
+                      }
+                    })}
+                  </ul>
+                </div>
               </div>
-
-              <div className="space-y-4">
-                <b className="block">Technologies</b>
-                <ul className="-ml-4 flex flex-wrap gap-2">
-                  {project.technologies?.map((technology, index) => {
-                    if (technology && technology.name) {
-                      return (
-                        <li key={index}>
-                          <BrandLink
-                            brand={technology}
-                            showLabel
-                            labelPosition="bottom"
-                          />
-                        </li>
-                      );
-                    }
-                  })}
-                </ul>
-              </div>
-            </div>
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
