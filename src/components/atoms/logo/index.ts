@@ -69,6 +69,7 @@ export { AwsLogo } from './aws-logo';
 export { NetlifyLogo } from './netlify-logo';
 export { CanvaLogo } from './canva-logo';
 export { StorybookLogo } from './storybook-logo';
+export { ViteJsLogo } from './vitejs-logo';
 
 export * from './config';
 export * from './types';

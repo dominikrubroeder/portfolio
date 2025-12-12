@@ -72,6 +72,7 @@ import {
   V0Logo,
   VercelLogo,
   VisualStudioCodeLogo,
+  ViteJsLogo,
   WebstormLogo,
   XingLogo
 } from '@/components/atoms/logo';
@@ -138,6 +139,13 @@ export function BrandLogo({
     return <StorybookLogo className={className} />;
   }
 
+  if (
+    lowerCaseBrand.includes('auth.js') ||
+    lowerCaseBrand.includes('next-auth')
+  ) {
+    return <AuthjsLogo className={className} />;
+  }
+
   if (brand.startsWith('@')) {
     return <NpmLogo className={className} />;
   }
@@ -192,9 +200,6 @@ export function BrandLogo({
 
     case 'CSS':
       return <CssLogo className={className} />;
-
-    case 'Auth.js':
-      return <AuthjsLogo className={className} />;
 
     case 'LinkedIn':
       return <LinkedinLogo className={className} />;
@@ -333,6 +338,9 @@ export function BrandLogo({
 
     case 'Canva':
       return <CanvaLogo className={className} />;
+
+    case 'Vite':
+      return <ViteJsLogo className={className} />;
 
     default:
       return DefaultLogo;
