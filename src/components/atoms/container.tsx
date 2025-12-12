@@ -13,7 +13,7 @@ export function Container({
   ...rest
 }: {
   as?: HTMLTag;
-  size?: 'container' | 'readable-container';
+  size?: 'container' | 'md' | 'readable-container';
   horizontalPadding?: boolean;
   animateIn?: boolean;
   className?: string;
@@ -28,6 +28,7 @@ export function Container({
         horizontalPadding && 'px-4 lg:px-0',
         animateIn && 'animate-fade-up-1rem',
         size === 'container' && 'max-w-(--container)',
+        size === 'md' && 'max-w-(--container-md)',
         size === 'readable-container' && 'max-w-(--readable-container)',
         className
       )}
