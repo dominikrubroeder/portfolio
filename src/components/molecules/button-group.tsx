@@ -6,9 +6,11 @@ import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/organisms/theme';
 
 export function ButtonGroup({
+  stretchButtons,
   className,
   children
 }: {
+  stretchButtons?: boolean;
   className?: string;
   children: ReactNode;
 }) {
@@ -18,7 +20,9 @@ export function ButtonGroup({
     <div
       className={cn(
         'flex flex-wrap items-center gap-2',
-        theme.key === 'wireframe' && className?.includes('gap-0') && '!gap-2',
+        stretchButtons &&
+          '[&>a]:flex-1 sm:[&>a]:flex-none [&>button]:flex-1 sm:[&>button]:flex-none',
+        theme.key === 'wireframe' && className?.includes('gap-0') && 'gap-2!',
         className
       )}
     >
