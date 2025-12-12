@@ -5,22 +5,25 @@ import {
   AllTechnologies,
   mainTechnologies
 } from '@/components/organisms/technologies';
+import { LiveEditContainer } from '@/components/organisms/live-edit';
 
 export function Technologies() {
   return (
     <Animate direction="up">
-      <Container className="space-y-8" id="technologies">
-        <h2>
-          Technologies
-          <span className="ml-2 font-medium text-muted-foreground">
-            are the foundation of writing production-ready code. I use
-          </span>
-        </h2>
+      <LiveEditContainer componentName="technologies.tsx">
+        <Container className="space-y-8" id="technologies">
+          <h2>
+            Technologies
+            <span className="ml-2 font-medium text-muted-foreground">
+              are the foundation of writing production-ready code. I use
+            </span>
+          </h2>
 
-        <BrandList brands={mainTechnologies} />
+          <BrandList brands={mainTechnologies} />
 
-        <AllTechnologies />
-      </Container>
+          <AllTechnologies />
+        </Container>
+      </LiveEditContainer>
     </Animate>
   );
 }
