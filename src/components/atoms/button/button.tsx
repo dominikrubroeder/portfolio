@@ -43,11 +43,18 @@ export function Button({
     className
   );
 
-  if (href && (href.includes('mailto') || href.includes('tel'))) {
+  const isMail = href?.includes('mailto');
+  const isPhone = href?.includes('tel');
+
+  if (href && (isMail || isPhone)) {
     return (
       <a
         {...rest}
         href={href}
+        title={isMail ? 'Write email' : isPhone ? 'Call number' : undefined}
+        aria-label={
+          isMail ? 'Write email' : isPhone ? 'Call number' : undefined
+        }
         target="_blank"
         rel="noopener noreferrer"
         className={classNames}
@@ -62,6 +69,8 @@ export function Button({
       <Link
         {...rest}
         href={href}
+        title={`Go to ${href}`}
+        aria-label={`Go to ${href}`}
         target={href.includes('https') ? '_blank' : target}
         rel={href.includes('https') ? 'noopener noreferrer' : undefined}
         className={classNames}
