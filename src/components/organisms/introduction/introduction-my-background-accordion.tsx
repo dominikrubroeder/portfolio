@@ -98,12 +98,10 @@ export function IntroductionMyBackgroundAccordion() {
 
         <p>
           While i also took a close look at
-          <ExternalLink href="https://vuejs.org" className="mr-0">
-            Vue
-          </ExternalLink>
-          , and enjoyed the elegant and more &#39;premium&#39; syntax of it, i
-          stuck and get more into React because of it&#39;s larger community,
-          the wide spread package options and the job opportunities.
+          <ExternalLink href="https://vuejs.org">Vue</ExternalLink> and enjoyed
+          the elegant and more &#39;premium&#39; syntax of it, i stuck and get
+          more into React because of it&#39;s larger community, the wide spread
+          package options and the job opportunities.
         </p>
 
         <p>
@@ -115,7 +113,7 @@ export function IntroductionMyBackgroundAccordion() {
         <p>
           <ExternalLink className="ml-0" href="https://www.typescriptlang.org">
             TypeScript
-          </ExternalLink>
+          </ExternalLink>{' '}
           came as last piece to the puzzle, which in the retrospective was a
           wise decision, as most of today&#39;s web applications or frameworks
           require TypeScript as the base.
