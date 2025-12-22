@@ -4,11 +4,7 @@ import { ExternalLink } from '@/components/atoms/external-link';
 
 export function FaqDesignEngineerVsUxEngineer() {
   return (
-    <AccordionContained
-      title="Design Engineer vs UX Engineer"
-      aria-label="View 'Design Engineer vs UX Engineer' on ChatGPT"
-      restrictHeight
-    >
+    <AccordionContained title="Design Engineer vs UX Engineer">
       <div className="space-y-4">
         <Blockquote horizontalOffset={false}>
           <b className="text-foreground">

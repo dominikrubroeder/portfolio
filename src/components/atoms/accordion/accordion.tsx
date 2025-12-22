@@ -26,7 +26,7 @@ export function Accordion({
   className?: string;
 }) {
   const [isOpen, setIsOpen] = useState(open);
-  const { theme, shouldAnimate } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={cn('space-y-4', className)}>
@@ -43,11 +43,7 @@ export function Accordion({
         >
           <span className="sr-only">Toggle accordion</span>
           <ChevronRightIcon
-            className={cn(
-              'text-primary',
-              shouldAnimate && 'transition',
-              isOpen && 'rotate-90'
-            )}
+            className={cn('text-primary transition', isOpen && 'rotate-90')}
           />
         </Button>
 
@@ -63,7 +59,7 @@ export function Accordion({
       {isOpen && (
         <div
           className={cn(
-            shouldAnimate && 'animate-fade-up-1rem',
+            'motion-safe:animate-fade-up-1rem',
             offsetInnerContent && 'pl-9'
           )}
         >

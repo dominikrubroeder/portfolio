@@ -1,11 +1,13 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
+import { MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
+import { useAccordionContained } from '@/components/atoms/accordion';
+import { Button } from '@/components/atoms/button';
+import { ButtonGroup } from '@/components/molecules/button-group';
 
 export function AccordionContained({
   title,
@@ -19,51 +21,67 @@ export function AccordionContained({
   restrictHeight?: boolean;
   className?: string;
 }) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  const handleScroll = useCallback(
-    () =>
-      ref.current?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      }),
-    []
-  );
-
-  useEffect(() => {
-    open ? handleScroll() : null;
-  }, [open, handleScroll]);
+  const { isOpen, setIsOpen, ref } = useAccordionContained();
 
   return (
-    <div ref={ref} className={cn('scroll-mt-3 space-y-3 pt-4', className)}>
-      <div
-        className="group sticky top-24 z-10 mx-auto flex cursor-pointer items-center justify-between gap-4 overflow-hidden rounded-2xl bg-muted px-4 py-3 leading-[1.6] text-primary transition-all select-none md:relative md:top-0"
-        title="Open accordion to see more content"
-        aria-label="Open accordion to see more content"
-        onClick={() => setOpen((prevState) => !prevState)}
-      >
-        <h3 className="mb-0">{title}</h3>
+    <div
+      ref={ref}
+      className={cn('relative scroll-mt-3 space-y-3 pt-4', className)}
+    >
+      <ButtonGroup className="group sticky top-28 z-10 mx-auto flex items-center justify-between gap-4 md:top-16 lg:top-4">
+        {isOpen && (
+          <div className="absolute -top-4 right-0 left-0 h-8 w-full bg-background" />
+        )}
 
-        <div className="flex items-center gap-2">
-          {open && <MinusIcon className="size-4 text-muted-foreground" />}
-          {!open && <PlusIcon className="size-4 text-muted-foreground" />}
-        </div>
+        <Button
+          variant="contained-muted"
+          title={
+            isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
+          }
+          aria-label={
+            isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
+          }
+          onClick={() => setIsOpen((prevState) => !prevState)}
+          className="flex-1 justify-start text-left"
+        >
+          {title}
+        </Button>
 
-        <div className="invisible absolute inset-0 -z-10 scale-95 rounded-2xl bg-muted-hover opacity-0 transition group-hover:visible group-hover:scale-100 group-hover:opacity-100" />
-      </div>
+        <Button
+          title={
+            isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
+          }
+          aria-label={
+            isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
+          }
+          onClick={() => setIsOpen((prevState) => !prevState)}
+        >
+          {isOpen && (
+            <>
+              <MinusIcon />
+              <span className="sr-only">Close accordion</span>
+            </>
+          )}
 
-      {open ? (
+          {!isOpen && (
+            <>
+              <PlusIcon />
+              <span className="sr-only">Open accordion</span>
+            </>
+          )}
+        </Button>
+      </ButtonGroup>
+
+      {isOpen && (
         <div
           className={cn(
-            'mb-5 animate-fade-up p-4 pt-20 sm:pt-0',
-            restrictHeight &&
-              'scrollbar-none pt-22 sm:pt-4 md:max-h-[60svh] md:overflow-y-auto md:border-b'
+            'mb-5 p-4 pt-20 motion-safe:animate-fade-up sm:pt-0',
+            restrictHeight && 'scrollbar-none pt-22 sm:pt-4'
           )}
         >
           {children}
         </div>
-      ) : null}
+      )}
     </div>
   );
 }

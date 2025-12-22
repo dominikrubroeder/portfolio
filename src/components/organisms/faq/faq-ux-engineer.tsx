@@ -4,10 +4,7 @@ import { ExternalLink } from '@/components/atoms/external-link';
 
 export function FaqUxEngineer() {
   return (
-    <AccordionContained
-      title="On which predicates should a UX Engineer focus on?"
-      restrictHeight
-    >
+    <AccordionContained title="On which predicates should a UX Engineer focus on?">
       <Blockquote horizontalOffset={false}>
         <b className="text-foreground">
           You are a Chief Developer. On which predicates should a UX Engineer
@@ -18,8 +15,6 @@ export function FaqUxEngineer() {
       <br />
 
       <p>ChatGPT:</p>
-
-      <br />
 
       <ol className="mb-5 grid list-decimal gap-4 pl-8">
         <li>

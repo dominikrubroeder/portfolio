@@ -6,7 +6,7 @@ import { ExternalLink } from '@/components/atoms/external-link';
 
 export function FaqWhatIsAUxEngineer() {
   return (
-    <AccordionContained title="What is an UX Engineer?">
+    <AccordionContained title="What is a UX Engineer?">
       <Blockquote className="mt-4" quotes>
         <b className="text-foreground">Bring all your skills into one role</b>.
         As a UX Engineer at Google, you’ll combine your design, engineering, and
@@ -31,11 +31,23 @@ export function FaqWhatIsAUxEngineer() {
 
         <figcaption>
           Reference to UXE user experience engineering work areas at
-          <ExternalLink href="https://uxe.withgoogle.com">
+          <ExternalLink href="https://uxe.withgoogle.com" className="mr-0">
             uxe.google.com
           </ExternalLink>
+          .
         </figcaption>
       </figure>
+
+      <p className="mt-4">
+        A additional description can be found
+        <ExternalLink
+          href="https://www.coursera.org/articles/what-is-a-ux-engineer"
+          className="mr-0"
+        >
+          here
+        </ExternalLink>
+        .
+      </p>
     </AccordionContained>
   );
 }
