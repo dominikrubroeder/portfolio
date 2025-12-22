@@ -19,7 +19,7 @@ export function Button({
   const { theme } = useTheme();
 
   const classNames = cn(
-    'interactive group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center transition-all',
+    'interactive select-none group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center transition-all',
     variant === 'contained' &&
       'min-h-11 min-w-11 rounded-2xl bg-primary text-primary-foreground hover:rounded-xl hover:bg-primary-hover',
     variant === 'contained-muted' &&
@@ -31,10 +31,10 @@ export function Button({
     variant === 'text' && 'text-primary hover:text-primary-hover',
     variant === 'text-muted' &&
       'text-muted-foreground hover:text-foreground group-hover:text-foreground',
-    size === 'tiny' && 'text-xs px-1 gap-2 [&>svg]:size-3',
-    size === 'small' && 'text-sm px-2 gap-2 [&>svg]:size-3',
-    size === 'medium' && 'text-base px-3 gap-2 [&>svg]:size-5',
-    size === 'large' && 'text-lg px-3 gap-3 [&>svg]:size-6',
+    size === 'tiny' && 'text-xs py-1 px-1 gap-2 [&>svg]:size-3',
+    size === 'small' && 'text-sm py-1 px-2 gap-2 [&>svg]:size-3',
+    size === 'medium' && 'text-base py-2 px-3 gap-2 [&>svg]:size-5',
+    size === 'large' && 'text-lg py-2 px-3 gap-3 [&>svg]:size-6',
     rounded && 'rounded-full',
     theme.key !== 'animate' && 'transition-none',
     theme.key === 'wireframe' &&
