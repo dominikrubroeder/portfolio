@@ -16,42 +16,34 @@ export function AllTools() {
           })
           .map((item, index) => (
             <li key={item.group}>
-              <div className="space-y-3 sm:space-y-6">
-                <div className="relative flex justify-between gap-4">
-                  <h3 className="mb-0 text-base">{item.group}</h3>
-                </div>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="font-bold">{item.group}</div>
 
                 <ul className="space-y-3 rounded border bg-background p-4">
                   {item.children
                     .sort((a, b) => a.name.localeCompare(b.name))
                     .map((child, index) => (
-                      <li
-                        key={index}
-                        className="group relative flex justify-between gap-3 rounded py-2 pr-2 transition hover:bg-muted xs:gap-4"
-                      >
+                      <li key={index}>
                         <Link
                           href={child.href}
                           title={`Go to external ${child.name} website`}
                           aria-label={`Go to external ${child.name} website`}
                           target="_blank"
-                          className="flex w-full gap-3 xs:gap-4"
+                          className="group relative flex w-full justify-between gap-3 rounded p-2 transition hover:bg-muted xs:gap-4"
                         >
-                          <Button
-                            variant="ghost"
-                            className="size-14 [&>svg]:size-10"
-                          >
+                          <div className="flex size-14 items-center justify-center [&>svg]:size-10">
                             <span className="sr-only">{`Go to external ${child.name} website`}</span>
                             <BrandLogo
                               brand={child.name}
                               group={item.group}
                               className="size-10"
                             />
-                          </Button>
+                          </div>
 
                           <div className="flex-1">
-                            <h3 className="mb-0 self-center text-base">
+                            <div className="self-center font-bold">
                               {child.name}
-                            </h3>
+                            </div>
 
                             {child.description && (
                               <p className="leading-normal text-muted-foreground">

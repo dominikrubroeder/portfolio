@@ -362,6 +362,14 @@
   strong {
     @apply text-foreground;
   }
+
+  figcaption {
+    @apply text-center text-sm;
+  }
+
+  .font-bold {
+    @apply text-foreground;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

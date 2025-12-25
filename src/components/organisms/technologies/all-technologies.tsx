@@ -10,16 +10,16 @@ import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 export function AllTechnologies() {
   return (
     <ToggleContent label="All technologies">
-      <ul className="grid gap-10">
+      <ul className="grid gap-6 sm:gap-10">
         {technologies
           .sort((a, b) => {
             return a.group.localeCompare(b.group);
           })
           .map((item, index) => (
             <li key={item.group}>
-              <div className="space-y-3 sm:space-y-6">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="relative flex justify-between gap-4">
-                  <h3 className="mb-0 text-base">{item.group}</h3>
+                  <div className="font-bold">{item.group}</div>
 
                   {index === 0 && (
                     <span className="absolute top-1 right-4 text-xs xs:right-18 sm:right-21">
@@ -52,9 +52,9 @@ export function AllTechnologies() {
                             />
                           </Button>
 
-                          <h3 className="mb-0 max-w-24 self-center overflow-hidden text-base text-ellipsis whitespace-nowrap xs:max-w-30 sm:max-w-none">
+                          <div className="mb-0 max-w-24 self-center overflow-hidden text-base font-bold text-ellipsis whitespace-nowrap xs:max-w-30 sm:max-w-none">
                             {child.name}
-                          </h3>
+                          </div>
                         </Link>
 
                         <div className="flex items-center justify-between gap-2 sm:gap-4">
