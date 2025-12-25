@@ -3,6 +3,9 @@ import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
 import { Introduction } from '@/components/organisms/introduction';
 import { Marker } from '@/components/atoms/marker';
+import { ButtonGroup } from '@/components/molecules/button-group';
+import { ThemeDrawer, ThemeShuffleButton } from '@/components/organisms/theme';
+import { LiveEditToggle } from '@/components/organisms/live-edit';
 
 export function HomeHero() {
   return (
@@ -13,7 +16,7 @@ export function HomeHero() {
         id="hero"
       >
         <div className="space-y-2">
-          <Badge size="medium" color="primary">
+          <Badge size="md" variant="primary">
             Team Frontend
           </Badge>
 
@@ -21,6 +24,15 @@ export function HomeHero() {
             Building <Marker animate={true}>user interfaces</Marker> for the
             web. A craft, about UI components and design systems.
           </h2>
+        </div>
+
+        <div className="grid gap-4 sm:flex sm:items-center sm:justify-between">
+          <ButtonGroup className="grid sm:flex">
+            <ThemeDrawer />
+            <ThemeShuffleButton />
+          </ButtonGroup>
+
+          <LiveEditToggle />
         </div>
       </Container>
 

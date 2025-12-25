@@ -88,7 +88,7 @@ export const components: ComponentGroup[] = [
       {
         componentId: 'badge',
         componentName: 'Badge',
-        component: <Badge size="small">Badge</Badge>,
+        component: <Badge size="sm">Badge</Badge>,
         animatable: false
       },
       {
