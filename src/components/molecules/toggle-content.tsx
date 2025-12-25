@@ -8,7 +8,6 @@ import { MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
 import { cn } from '@/lib/utils';
 
 import { ButtonTextGroup } from '@/components/atoms/button';
-import { useTheme } from '@/components/organisms/theme';
 
 export function ToggleContent({
   label,
@@ -20,7 +19,6 @@ export function ToggleContent({
   children: ReactNode;
 }) {
   const [show, setShow] = useState<boolean>(false);
-  const { shouldAnimate } = useTheme();
 
   return (
     <div className={cn('space-y-8', className)}>
@@ -49,8 +47,7 @@ export function ToggleContent({
 
       <div
         className={cn(
-          'invisible hidden h-0 opacity-0',
-          shouldAnimate && 'animate-fade-up-1rem',
+          'invisible hidden h-0 opacity-0 motion-safe:animate-fade-up-1rem',
           show && 'visible block h-auto opacity-100'
         )}
       >
