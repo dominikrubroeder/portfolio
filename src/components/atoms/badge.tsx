@@ -1,16 +1,17 @@
 import type { ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
+import { ColorVariantProp, SizeVariantProp } from '@/lib/types';
 
 export function Badge({
-  color = 'primary',
-  size = 'medium',
+  variant = 'primary',
+  size = 'md',
   className,
   children,
   ...rest
 }: {
-  color?: 'primary' | 'neutral';
-  size?: 'small' | 'medium' | 'large';
+  variant?: ColorVariantProp;
+  size?: SizeVariantProp;
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) {
@@ -18,11 +19,12 @@ export function Badge({
     <div
       className={cn(
         'inline-flex self-start rounded',
-        color === 'primary' && 'bg-primary/10 text-primary',
-        color === 'neutral' && 'bg-muted text-foreground',
-        size === 'small' && 'px-2.5 py-0.5 text-sm',
-        size === 'medium' && 'px-3 py-1 text-base font-bold tracking-wide',
-        size === 'large' && 'text-md px-3 py-2 font-bold tracking-wider',
+        variant === 'primary' && 'bg-primary/10 text-primary',
+        variant === 'foreground' && 'bg-muted text-foreground',
+        variant === 'muted' && 'bg-muted text-muted-foreground',
+        size === 'sm' && 'px-2.5 py-0.5 text-sm',
+        size === 'md' && 'px-3 py-1 text-base font-bold tracking-wide',
+        size === 'lg' && 'text-md px-3 py-2 font-bold tracking-wider',
         className
       )}
       {...rest}
