@@ -587,13 +587,6 @@ export const tools: Tools = [
         knowledge: 'Not started'
       },
       {
-        name: 'LottieFiles for Developers',
-        description: 'Ship Lottie animations to any platform',
-        href: 'https://lottiefiles.com/developers',
-        logo: '',
-        knowledge: 'Not started'
-      },
-      {
         name: 'Motion',
         description: 'A modern animation library for JavaScript and React',
         href: 'https://motion.dev/',
@@ -654,7 +647,7 @@ export const tools: Tools = [
         knowledge: 'Daily'
       },
       {
-        name: 'pnpM',
+        name: 'pnpm',
         description: 'Fast, disk space efficient package manager',
         href: 'https://pnpm.io',
         logo: '',
