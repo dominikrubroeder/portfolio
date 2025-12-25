@@ -184,7 +184,7 @@ export const projects: Project[] = [
     category: ['Ecommerce', 'Website'],
     url: 'https://www.loy.info',
     readableTitle:
-      'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. Here i spend my 2.5 year training and 3 additional years during dual study and a full-time position, working on Frontend Developer and design.',
+      'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. Here i spend my 2.5 year training and 3 additional years during dual study and a full-time position, learning and working on frontend development and design.',
     isCurrentProject: false,
     timeframe: '2021 – 2016',
     logo: <LoyGmbHLogo className="h-12 w-auto" />,

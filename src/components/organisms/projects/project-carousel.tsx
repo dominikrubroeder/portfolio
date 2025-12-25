@@ -118,13 +118,13 @@ export function ProjectCarousel() {
               </div>
 
               {project.isCurrentProject && (
-                <Badge size="small" className="self-center">
+                <Badge size="sm" className="self-center">
                   Current
                 </Badge>
               )}
 
               {project.timeframe && (
-                <Badge variant="muted" size="small" className="self-center">
+                <Badge variant="muted" size="sm" className="self-center">
                   {project.timeframe}
                 </Badge>
               )}
@@ -136,21 +136,30 @@ export function ProjectCarousel() {
 
             <ButtonGroup className="w-full justify-between">
               <ButtonGroup className="inline-flex">
-                <Button href={project.url}>
-                  <ArrowUpRightIcon />
-                  <span className="sr-only">Open {project.readableTitle}</span>
+                <Button
+                  onClick={() =>
+                    setIsReadMore((previousState) => !previousState)
+                  }
+                >
+                  {isReadMore ? <MinusIcon /> : <PlusIcon />}
                 </Button>
 
-                <Button variant="ghost" href={project.url}>
-                  Open
+                <Button
+                  variant="ghost"
+                  title={`Read more on ${project.title}`}
+                  aria-label={`Read more on ${project.title}`}
+                  onClick={() =>
+                    setIsReadMore((previousState) => !previousState)
+                  }
+                >
+                  Read more
                 </Button>
               </ButtonGroup>
 
-              <Button
-                variant="ghost"
-                onClick={() => setIsReadMore((previousState) => !previousState)}
-              >
-                {isReadMore ? <MinusIcon /> : <PlusIcon />} Read more
+              <Button variant="ghost" href={project.url}>
+                <span className="sr-only">Open {project.readableTitle}</span>
+                Open
+                <ArrowUpRightIcon />
               </Button>
             </ButtonGroup>
 
@@ -184,7 +193,7 @@ export function ProjectCarousel() {
                       <b className="block">Case Study</b>
                       <Badge
                         variant="foreground"
-                        size="small"
+                        size="sm"
                         className="self-center"
                       >
                         {project.demoUrls?.length}
@@ -209,7 +218,7 @@ export function ProjectCarousel() {
                       <b className="block">Demos</b>
                       <Badge
                         variant="foreground"
-                        size="small"
+                        size="sm"
                         className="self-center"
                       >
                         {project.demoUrls?.length}
