@@ -1,71 +1,47 @@
-'use client';
-
-import type { ReactNode } from 'react';
-import { useState } from 'react';
-
-import { ChevronRightIcon } from '@heroicons/react/20/solid';
-
-import { cn } from '@/lib/utils';
-
-import { Button } from '@/components/atoms/button';
-import { ButtonGroup } from '@/components/molecules/button-group';
-import { useTheme } from '@/components/organisms/theme';
+import {
+  AccordionItem,
+  AccordionItemContained,
+  AccordionProps,
+  getDefaultOpen
+} from '@/components/atoms/accordion';
 
 export function Accordion({
-  title,
-  open,
-  offsetInnerContent,
-  children,
-  className
-}: {
-  title: ReactNode;
-  open?: boolean;
-  /** Move inner content slightly to the right */
-  offsetInnerContent?: boolean;
-  children: ReactNode;
-  className?: string;
-}) {
-  const [isOpen, setIsOpen] = useState(open);
-  const { theme } = useTheme();
+  variant,
+  items,
+  accordionGroupId,
+  defaultOpen,
+  focusView
+}: AccordionProps) {
+  if (variant === 'contained')
+    return (
+      <ul id={accordionGroupId}>
+        {items.map(({ title, children }, index) => (
+          <li key={index + accordionGroupId}>
+            <AccordionItemContained
+              title={title}
+              defaultOpen={getDefaultOpen({ defaultOpen, index })}
+              accordionGroupId={accordionGroupId}
+              focusView={focusView}
+            >
+              {children}
+            </AccordionItemContained>
+          </li>
+        ))}
+      </ul>
+    );
 
   return (
-    <div className={cn('space-y-4', className)}>
-      <ButtonGroup
-        className={cn(
-          '-ml-2.5 gap-0',
-          theme.key === 'wireframe' && 'ml-0 gap-2'
-        )}
-      >
-        <Button
-          variant="ghost"
-          className="text-foreground"
-          onClick={() => setIsOpen((previousState) => !previousState)}
-        >
-          <span className="sr-only">Toggle accordion</span>
-          <ChevronRightIcon
-            className={cn('text-primary transition', isOpen && 'rotate-90')}
-          />
-        </Button>
-
-        <Button
-          variant="ghost"
-          className="text-foreground"
-          onClick={() => setIsOpen((previousState) => !previousState)}
-        >
-          {title}
-        </Button>
-      </ButtonGroup>
-
-      {isOpen && (
-        <div
-          className={cn(
-            'motion-safe:animate-fade-up-1rem',
-            offsetInnerContent && 'pl-9'
-          )}
-        >
-          {children}
-        </div>
-      )}
-    </div>
+    <ul className="space-y-6" id={accordionGroupId}>
+      {items.map(({ title, children }, index) => (
+        <li key={index + accordionGroupId}>
+          <AccordionItem
+            title={title}
+            defaultOpen={getDefaultOpen({ defaultOpen, index })}
+          >
+            {children}
+          </AccordionItem>
+        </li>
+      ))}
+    </ul>
   );
 }

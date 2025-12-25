@@ -5,12 +5,8 @@ import {
   IntroductionTechStackAccordion
 } from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
-import { ButtonGroup } from '@/components/molecules/button-group';
-import { ThemeDrawer, ThemeShuffleButton } from '@/components/organisms/theme';
-import {
-  LiveEditContainer,
-  LiveEditToggle
-} from '@/components/organisms/live-edit';
+import { LiveEditContainer } from '@/components/organisms/live-edit';
+import { Accordion } from '@/components/atoms/accordion';
 
 export function Introduction() {
   return (
@@ -44,32 +40,28 @@ export function Introduction() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:flex sm:items-center sm:justify-between">
-            <ButtonGroup className="grid sm:flex">
-              <ThemeDrawer />
-              <ThemeShuffleButton />
-            </ButtonGroup>
-
-            <LiveEditToggle />
-          </div>
-
-          <ul className="space-y-6">
-            <li>
-              <IntroductionMyBackgroundAccordion />
-            </li>
-
-            <li>
-              <IntroductionHowIWorkAccordion />
-            </li>
-
-            <li>
-              <TrainingAccordion />
-            </li>
-
-            <li>
-              <IntroductionTechStackAccordion />
-            </li>
-          </ul>
+          <Accordion
+            variant="default"
+            items={[
+              {
+                title: 'My Background',
+                children: <IntroductionMyBackgroundAccordion />
+              },
+              {
+                title: 'Work ethic, how i work',
+                children: <IntroductionHowIWorkAccordion />
+              },
+              {
+                title: 'Training + Resources',
+                children: <TrainingAccordion />
+              },
+              {
+                title: 'My Tech Stack of choice',
+                children: <IntroductionTechStackAccordion />
+              }
+            ]}
+            accordionGroupId="accordion-group-introduction"
+          />
         </div>
       </Container>
     </LiveEditContainer>

@@ -50,9 +50,26 @@ export const components: ComponentGroup[] = [
         componentId: 'accordion',
         componentName: 'Accordion',
         component: (
-          <Accordion title="You can open me">
-            <p>Yes, i am a Accordion</p>
-          </Accordion>
+          <Accordion
+            variant="default"
+            items={[
+              {
+                title: 'You can open me',
+                children: <p>Yes, i am a Accordion</p>
+              },
+              {
+                title: 'Which component library are you using?',
+                children: (
+                  <p>Most probably, shadcn/ui or Base UI – good choices.</p>
+                )
+              },
+              {
+                title: 'Complete this group',
+                children: <p>Completed.</p>
+              }
+            ]}
+            accordionGroupId="accordion-group-component-showcase"
+          />
         ),
         animatable: false
       },

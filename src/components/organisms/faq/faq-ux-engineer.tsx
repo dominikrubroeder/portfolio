@@ -1,10 +1,9 @@
-import { AccordionContained } from '@/components/atoms/accordion';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 
 export function FaqUxEngineer() {
   return (
-    <AccordionContained title="On which predicates should a UX Engineer focus on?">
+    <>
       <Blockquote horizontalOffset={false}>
         <b className="text-foreground">
           You are a Chief Developer. On which predicates should a UX Engineer
@@ -180,6 +179,6 @@ export function FaqUxEngineer() {
           Source
         </ExternalLink>
       </p>
-    </AccordionContained>
+    </>
   );
 }
