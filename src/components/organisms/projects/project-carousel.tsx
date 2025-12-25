@@ -14,7 +14,6 @@ import { Ul } from '@/components/atoms/ul';
 import { BrandLink } from '@/components/organisms/brand';
 import { useProjectCarousel } from '@/components/organisms/projects';
 import { projects } from '@/components/organisms/projects/data';
-import { useTheme } from '@/components/organisms/theme';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import {
   ArrowUpRightIcon,
@@ -32,7 +31,6 @@ export function ProjectCarousel() {
     isReadMore,
     setIsReadMore
   } = useProjectCarousel();
-  const { shouldAnimate } = useTheme();
 
   return (
     <div className="mx-auto space-y-4">
@@ -68,20 +66,16 @@ export function ProjectCarousel() {
           className="flex interactive items-center justify-center"
         >
           <AnimatePresence mode="wait">
-            {shouldAnimate ? (
-              <motion.div
-                key={project.title}
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                layout
-              >
-                <span>{project.logo}</span>
-              </motion.div>
-            ) : (
-              project.logo
-            )}
+            <motion.div
+              key={project.title}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              layout
+            >
+              <span>{project.logo}</span>
+            </motion.div>
           </AnimatePresence>
         </Link>
       </div>
@@ -92,8 +86,7 @@ export function ProjectCarousel() {
             <li key={index}>
               <button
                 className={cn(
-                  'size-3 rounded-full bg-muted hover:scale-[1.4]',
-                  shouldAnimate && 'transition',
+                  'size-3 rounded-full bg-muted hover:scale-[1.4] motion-safe:transition',
                   activeProject === index && 'bg-primary'
                 )}
                 onClick={() => setActiveProject(index)}
@@ -117,16 +110,22 @@ export function ProjectCarousel() {
                 {activeProject === 0 && (
                   <span className="relative flex size-4 items-center justify-center rounded-full bg-primary/10">
                     <span className="size-2 animate-pulse rounded-full bg-primary" />
-                    <span className="sr-only">{project.status}</span>
+                    <span className="sr-only">Is current project</span>
                   </span>
                 )}
 
                 <h3 className="mb-0">{project.title}</h3>
               </div>
 
-              {project.status && (
+              {project.isCurrentProject && (
                 <Badge size="small" className="self-center">
-                  {project.status}
+                  Current
+                </Badge>
+              )}
+
+              {project.timeframe && (
+                <Badge variant="muted" size="small" className="self-center">
+                  {project.timeframe}
                 </Badge>
               )}
             </div>
@@ -135,10 +134,17 @@ export function ProjectCarousel() {
               {project.readableTitle}
             </div>
 
-            <ButtonGroup className="w-full">
-              <Button href={project.url}>
-                Open <ArrowUpRightIcon />
-              </Button>
+            <ButtonGroup className="w-full justify-between">
+              <ButtonGroup className="inline-flex">
+                <Button href={project.url}>
+                  <ArrowUpRightIcon />
+                  <span className="sr-only">Open {project.readableTitle}</span>
+                </Button>
+
+                <Button variant="ghost" href={project.url}>
+                  Open
+                </Button>
+              </ButtonGroup>
 
               <Button
                 variant="ghost"
@@ -177,7 +183,7 @@ export function ProjectCarousel() {
                     <div className="flex flex-wrap items-center gap-2">
                       <b className="block">Case Study</b>
                       <Badge
-                        color="neutral"
+                        variant="foreground"
                         size="small"
                         className="self-center"
                       >
@@ -202,7 +208,7 @@ export function ProjectCarousel() {
                     <div className="flex flex-wrap items-center gap-2">
                       <b className="block">Demos</b>
                       <Badge
-                        color="neutral"
+                        variant="foreground"
                         size="small"
                         className="self-center"
                       >
@@ -233,7 +239,7 @@ export function ProjectCarousel() {
                             <BrandLink
                               brand={tool}
                               showLabel
-                              labelPosition="right"
+                              labelPosition="bottom"
                             />
                           </li>
                         );
