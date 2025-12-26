@@ -1,8 +1,9 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import type { AccordionItemContainedProps } from '@/components/atoms/accordion';
+import { useEffectAfterMount } from '@/hooks/use-effect-after-mount';
 
 export const useAccordionItemContained = ({
   accordionGroupId,
@@ -31,7 +32,7 @@ export const useAccordionItemContained = ({
     });
   }, [accordionGroupId, focusView]);
 
-  useEffect(() => {
+  useEffectAfterMount(() => {
     isOpen ? handleScroll() : handleScrollToGroup();
   }, [isOpen, handleScroll]);
 
