@@ -16,6 +16,7 @@ import {
   ThemeWireframeBackground
 } from '@/components/organisms/theme';
 import { LiveEditToolbar } from '@/components/organisms/live-edit';
+import { Why } from '@/components/organisms/why';
 
 export default async function HomePage() {
   return (
@@ -32,6 +33,8 @@ export default async function HomePage() {
       <ThemeNotesBackgroundCornellNotes />
 
       <HomeHero />
+
+      <Why />
 
       <Projects />
 
