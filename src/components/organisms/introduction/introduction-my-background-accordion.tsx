@@ -37,7 +37,7 @@ export function IntroductionMyBackgroundAccordion() {
       <p>
         At first, i only handled HTML and CSS changes, primarily in Shopware 5
         at that time, which used
-        <Markup as="span" color="muted">
+        <Markup variant="muted" as="span">
           .twig
         </Markup>
         as their template engine.
