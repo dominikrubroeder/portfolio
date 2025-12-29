@@ -41,7 +41,7 @@ export function AllTools() {
                           </div>
 
                           <div className="flex-1">
-                            <div className="self-center font-bold">
+                            <div className="self-center leading-normal font-bold">
                               {child.name}
                             </div>
 
