@@ -1,6 +1,10 @@
 import type { ReactNode } from 'react';
 
-import type { ColorVariantReducedProp, HTMLTag, SizeVariantReducedProp } from '@/lib/types';
+import type {
+  ColorVariantReducedProp,
+  HTMLTag,
+  SizeVariantReducedProp
+} from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 export function Markup({
