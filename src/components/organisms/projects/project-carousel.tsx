@@ -119,7 +119,7 @@ export function ProjectCarousel() {
 
               {project.isCurrentProject && (
                 <Badge size="sm" className="self-center">
-                  Current
+                  Current Project
                 </Badge>
               )}
 
