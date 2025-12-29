@@ -18,8 +18,8 @@ export function Introduction() {
           <div className="space-y-3 text-wrap">
             <h3 className="text-base font-bold">
               My work is rooted in the frontend. I like to create and build
-              dynamic interfaces that are designed to be for an interactive and
-              scalable web.
+              dynamic user interfaces that are designed to be for an interactive
+              and scalable web.
             </h3>
 
             <p>
@@ -41,7 +41,7 @@ export function Introduction() {
           </div>
 
           <Accordion
-            variant="default"
+            variant="contained"
             items={[
               {
                 title: 'My Background',
@@ -61,6 +61,7 @@ export function Introduction() {
               }
             ]}
             accordionGroupId="accordion-group-introduction"
+            focusView="center"
           />
         </div>
       </Container>
