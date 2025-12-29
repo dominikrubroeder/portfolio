@@ -34,7 +34,7 @@ export function AccordionItemContained({
       ref={ref}
       className={cn('relative scroll-mt-3 space-y-3 pt-4', className)}
     >
-      <ButtonGroup className="group sticky top-28 z-10 mx-auto flex items-center justify-between gap-4 lg:top-4">
+      <ButtonGroup className="group sticky top-28 z-10 mx-auto flex items-center justify-between gap-2 sm:gap-4 lg:top-4">
         {isOpen && (
           <div className="absolute -top-4 right-0 left-0 h-8 w-full bg-background" />
         )}
@@ -83,7 +83,7 @@ export function AccordionItemContained({
       </ButtonGroup>
 
       {isOpen && (
-        <div className="mb-5 p-4 pt-20 motion-safe:animate-fade-up sm:pt-0">
+        <div className="mb-5 p-4 pt-0 motion-safe:animate-fade-up">
           {children}
         </div>
       )}
