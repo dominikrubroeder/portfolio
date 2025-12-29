@@ -4,8 +4,7 @@ import { Avatar } from '@/components/atoms/avatar';
 import {
   ContactButton,
   GitHubButton,
-  LinkedInButton,
-  StorybookButton
+  LinkedInButton
 } from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
@@ -55,7 +54,6 @@ export function Header() {
 
         <ButtonGroup className="gap-0">
           <ContactButton iconPosition="right" buttonProps={{ size: 'large' }} />
-          <StorybookButton />
           <GitHubButton />
           <LinkedInButton />
         </ButtonGroup>
