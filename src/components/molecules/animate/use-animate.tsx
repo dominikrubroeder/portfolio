@@ -21,8 +21,8 @@ export const useAnimate = ({
       y: 0,
       transition: {
         duration,
-        ease: 'easeOut',
-        delay
+        delay,
+        type: 'spring'
       }
     }
   };
