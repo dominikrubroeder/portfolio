@@ -24,7 +24,7 @@ export function Footer() {
           title="Open React website"
           aria-label="Open React website"
         >
-          React 19.2.0
+          React 19.2.3
         </ExternalLink>
 
         <span>|</span>
