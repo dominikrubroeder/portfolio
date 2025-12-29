@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { motion, useAnimation, useInView } from 'motion/react';
+import { AnimatePresence, motion, useAnimation, useInView } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/organisms/theme';
@@ -44,7 +44,7 @@ export function AnimatedProgress({
   const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
-    if (inView && shouldAnimate) {
+    if (inView) {
       if (animateProgress) {
         controls.start({
           strokeDashoffset: circumference - (progress / 100) * circumference,
@@ -108,7 +108,7 @@ export function AnimatedProgress({
             className="stroke-muted group-hover:stroke-primary/15"
           />
 
-          {shouldAnimate ? (
+          <AnimatePresence>
             <motion.circle
               cx={center}
               cy={center}
@@ -128,9 +128,7 @@ export function AnimatedProgress({
               animate={controls}
               className={cn(strokeColor)}
             />
-          ) : (
-            progress
-          )}
+          </AnimatePresence>
         </svg>
 
         <div className="absolute inset-0 flex items-center justify-center">
