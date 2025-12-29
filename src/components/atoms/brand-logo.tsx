@@ -88,7 +88,14 @@ export function BrandLogo({
   className = 'size-12'
 }: BrandLogoProps) {
   const DefaultLogo = (
-    <div className={cn('shrink-0 rounded bg-muted', className)} />
+    <div
+      className={cn(
+        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted transition group-hover:border-border',
+        className
+      )}
+    >
+      {brand.charAt(0)}
+    </div>
   );
 
   const lowerCaseBrand = brand.toLowerCase();
