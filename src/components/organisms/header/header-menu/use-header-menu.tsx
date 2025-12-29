@@ -38,6 +38,11 @@ export const useHeaderMenu = () => {
           icon: <DocumentTextIcon className="size-5" />
         },
         {
+          href: 'why',
+          label: 'Why?',
+          icon: <DocumentTextIcon className="size-5" />
+        },
+        {
           href: 'projects',
           label: 'Projects',
           icon: <Square2StackIcon className="size-5" />
