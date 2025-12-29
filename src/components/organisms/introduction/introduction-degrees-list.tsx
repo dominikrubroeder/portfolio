@@ -6,29 +6,24 @@ export function IntroductionDegreesList() {
   return (
     <Ul headline="Degrees">
       <li>
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="size-8 shrink-0">
-              <CheckBadgeIcon className="size-6 text-primary" />
-            </div>
+        <div className="flex gap-4 md:items-center">
+          <CheckBadgeIcon className="size-6 text-primary" />
 
-            <span>
-              <b className="text-foreground">Bachelor of Arts</b> – Media Design
-              B.A, Dual study at IU university in Munich
-            </span>
+          <div>
+            <b className="text-foreground">Bachelor of Arts</b> – Media Design
+            B.A, Dual study at IU university in Munich
           </div>
         </div>
       </li>
-      <li>
-        <div className="flex items-center gap-2">
-          <div className="size-8 shrink-0">
-            <CheckBadgeIcon className="size-6 text-primary" />
-          </div>
 
-          <span>
+      <li>
+        <div className="flex gap-4 md:items-center">
+          <CheckBadgeIcon className="size-6 text-primary" />
+
+          <div>
             <b className="text-foreground">Trainee</b> as a media designer in
             design and technology
-          </span>
+          </div>
         </div>
       </li>
     </Ul>
