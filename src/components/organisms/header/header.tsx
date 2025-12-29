@@ -27,15 +27,17 @@ export function Header() {
           as="Link"
         />
 
-        <h1 className="w-max text-base leading-6">
-          <span className="block w-max text-sm xs:text-base">
+        <h1 className="w-max">
+          <span className="block w-max text-sm leading-snug xs:text-base">
             Dominik Rubröder
           </span>
-          <span className="block text-sm font-normal text-muted-foreground lg:text-base">
+          <span className="block text-sm font-normal text-muted-foreground">
             <span>UX Design Engineer</span>
-            <span className="hidden pr-0.5 pl-1 sm:inline-block">@</span>
+            <span className="ml-1 hidden sm:inline-block">@</span>
             <ExternalLink
-              variant="prominent"
+              variant="inline"
+              size="sm"
+              color="muted"
               href="https://www.mediawave.de"
               title="Open mediawave commerce GmbH website"
               aria-label="Open mediawave commerce GmbH website"
