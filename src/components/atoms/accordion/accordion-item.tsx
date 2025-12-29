@@ -10,11 +10,13 @@ import { Button } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { useTheme } from '@/components/organisms/theme';
 import type { AccordionItemProps } from '@/components/atoms/accordion';
+import { ArrowRightIcon, MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
 
 export function AccordionItem({
   title,
   defaultOpen,
   offsetInnerContent,
+  accordionIcon,
   children,
   className
 }: AccordionItemProps) {
@@ -35,9 +37,21 @@ export function AccordionItem({
           onClick={() => setIsOpen((previousState) => !previousState)}
         >
           <span className="sr-only">Toggle accordion</span>
-          <ChevronRightIcon
-            className={cn('text-primary transition', isOpen && 'rotate-90')}
-          />
+          {accordionIcon === 'plus-minus' && isOpen ? (
+            <MinusIcon />
+          ) : (
+            <PlusIcon />
+          )}
+          {accordionIcon === 'chevron' && (
+            <ChevronRightIcon
+              className={cn('text-primary transition', isOpen && 'rotate-90')}
+            />
+          )}
+          {accordionIcon === 'arrow-right' && (
+            <ArrowRightIcon
+              className={cn('text-primary transition', isOpen && 'rotate-90')}
+            />
+          )}
         </Button>
 
         <Button

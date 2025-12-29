@@ -10,7 +10,8 @@ export function Accordion({
   items,
   accordionGroupId,
   defaultOpen,
-  focusView
+  focusView,
+  accordionIcon = 'plus-minus'
 }: AccordionProps) {
   if (variant === 'contained')
     return (
@@ -22,6 +23,7 @@ export function Accordion({
               defaultOpen={getDefaultOpen({ defaultOpen, index })}
               accordionGroupId={accordionGroupId}
               focusView={focusView}
+              accordionIcon={accordionIcon}
             >
               {children}
             </AccordionItemContained>
@@ -37,6 +39,7 @@ export function Accordion({
           <AccordionItem
             title={title}
             defaultOpen={getDefaultOpen({ defaultOpen, index })}
+            accordionIcon={accordionIcon}
           >
             {children}
           </AccordionItem>

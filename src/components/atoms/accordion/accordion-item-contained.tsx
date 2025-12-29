@@ -1,6 +1,11 @@
 'use client';
 
-import { MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
+import {
+  ArrowRightIcon,
+  ChevronDownIcon,
+  MinusIcon,
+  PlusIcon
+} from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
 import {
@@ -9,12 +14,14 @@ import {
 } from '@/components/atoms/accordion';
 import { Button } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 export function AccordionItemContained({
   title,
   children,
   accordionGroupId,
   focusView,
+  accordionIcon,
   className
 }: AccordionItemContainedProps) {
   const { isOpen, setIsOpen, ref } = useAccordionItemContained({
@@ -57,14 +64,18 @@ export function AccordionItemContained({
         >
           {isOpen && (
             <>
-              <MinusIcon />
+              {accordionIcon === 'plus-minus' && <MinusIcon />}
+              {accordionIcon === 'chevron' && <ChevronRightIcon />}
+              {accordionIcon === 'arrow-right' && <ArrowRightIcon />}
               <span className="sr-only">Close accordion</span>
             </>
           )}
 
           {!isOpen && (
             <>
-              <PlusIcon />
+              {accordionIcon === 'plus-minus' && <PlusIcon />}
+              {accordionIcon === 'chevron' && <ChevronDownIcon />}
+              {accordionIcon === 'arrow-right' && <ArrowRightIcon />}
               <span className="sr-only">Open accordion</span>
             </>
           )}
