@@ -1,19 +1,19 @@
 import type { ReactNode } from 'react';
 
-import type { HTMLTag } from '@/lib/types';
+import type { ColorVariantReducedProp, HTMLTag, SizeVariantReducedProp } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 export function Markup({
-  color = 'neutral',
-  size = 'medium',
+  variant = 'foreground',
+  size = 'md',
   as = 'div',
   backticks = true,
   className,
   children,
   ...rest
 }: {
-  color?: 'primary' | 'neutral' | 'muted';
-  size?: 'small' | 'medium' | 'large';
+  variant?: ColorVariantReducedProp;
+  size?: SizeVariantReducedProp;
   as?: HTMLTag;
   backticks?: boolean;
   className?: string;
@@ -24,12 +24,13 @@ export function Markup({
   return (
     <Comp
       className={cn(
-        'mx-1 inline-flex rounded border',
-        color === 'primary' && 'bg-primary/10 text-primary',
-        color === 'neutral' && 'bg-muted text-foreground',
-        size === 'small' && 'px-2.5 py-0.5 text-sm',
-        size === 'medium' && 'px-1 py-0.5 text-base',
-        size === 'large' && 'px-4 py-2',
+        'mx-1.5 inline-flex rounded border',
+        variant === 'primary' && 'text-primary',
+        variant === 'foreground' && 'text-foreground',
+        variant === 'muted' && 'text-muted-foreground',
+        size === 'sm' && 'px-0.5 text-sm',
+        size === 'md' && 'px-1 text-base',
+        size === 'lg' && 'px-4 py-2 text-lg',
         className
       )}
       {...rest}
