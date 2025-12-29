@@ -14,7 +14,8 @@ export function Tools() {
             <h2>
               Tools
               <span className="ml-2 font-medium text-muted-foreground">
-                help to <Marker animate={true}>visualize</Marker> and
+                help to <Marker animate={true}>visualize</Marker>
+                <span> and </span>
                 <Marker animate>communicate</Marker> the application we build. I
                 use
               </span>
