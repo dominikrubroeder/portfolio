@@ -12,17 +12,22 @@ export interface AccordionProps {
    * - `center` scrolls to the center of the `accordionGroupId`
    * */
   focusView?: 'start' | 'center';
+  accordionIcon?: 'plus-minus' | 'chevron' | 'arrow-right';
 }
 
 export interface AccordionItemProps
-  extends Pick<AccordionProps, 'defaultOpen'>,
+  extends Pick<AccordionProps, 'defaultOpen' | 'accordionIcon'>,
     ComponentBaseProps {
   title: string | ReactNode;
   children: ReactNode;
   /** `offsetInnerContent` moves inner content slightly to the right. */
   offsetInnerContent?: boolean;
+  href?: string;
 }
 
 export interface AccordionItemContainedProps
-  extends Pick<AccordionProps, 'accordionGroupId' | 'focusView'>,
+  extends Pick<
+      AccordionProps,
+      'accordionGroupId' | 'focusView' | 'accordionIcon'
+    >,
     AccordionItemProps {}
