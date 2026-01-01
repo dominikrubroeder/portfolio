@@ -299,12 +299,16 @@
     @apply border-border disabled:cursor-not-allowed;
   }
 
+  body {
+    @apply overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground;
+  }
+
   svg {
     @apply min-h-3 min-w-3 shrink-0;
   }
 
   a {
-    @apply cursor-pointer transition hover:text-foreground;
+    @apply interactive cursor-pointer transition hover:text-foreground;
   }
 
   button {
@@ -337,11 +341,11 @@
   }
 
   h1 {
-    @apply space-x-2 text-6xl leading-[1.2] font-bold text-foreground;
+    @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground sm:text-6xl;
   }
 
   h2:not(.h2) {
-    @apply space-x-2 text-5xl leading-[1.2] font-bold text-foreground;
+    @apply space-x-2 text-4xl leading-[1.2] font-bold text-foreground sm:text-5xl;
   }
 
   h3,
