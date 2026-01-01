@@ -176,7 +176,7 @@ export function IntroductionMyBackgroundAccordion() {
 
       <p>
         But in the end, the tech stack is the <i>framework</i> bringing the
-        application to life, not <i>the</i> only key-factor of the project.
+        application to life, not <i>the</i> only key factor of the project.
         Together with other tools and technologies, they build up the system
         that makes this initial thought a reality.
       </p>
@@ -188,7 +188,7 @@ export function IntroductionMyBackgroundAccordion() {
         Create, build, learn, explore and review
       </h4>
 
-      <Blockquote className="text-foreground">
+      <Blockquote className="mb-0 text-foreground">
         <p>
           To bring an idea from the mind to production was and is as of today
           the part that let&#39;s me get excited. It means creativity flows, it
