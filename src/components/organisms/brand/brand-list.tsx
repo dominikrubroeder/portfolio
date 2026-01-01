@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 
 import type { Brand } from '@/components/organisms/brand';
 import { BrandLink } from '@/components/organisms/brand';
+import { Ul } from '@/components/atoms/ul';
 
 export function BrandList({
   brands,
@@ -11,21 +12,19 @@ export function BrandList({
   className?: string;
 }) {
   return (
-    <ul className={cn('-ml-2.5 space-y-1 md:-ml-4', className)}>
+    <Ul className={cn('-ml-2.5 md:-ml-4', className)}>
       {brands.map((brand) => (
         <li key={brand.name}>
           <div className="inline-flex items-center gap-2 lg:gap-4">
             <BrandLink brand={brand} />
 
-            <h3 className="mb-0 space-x-1">
-              <span>{brand.name}</span>
-              <span className="font-medium text-muted-foreground">
-                {brand.description}
-              </span>
-            </h3>
+            <div className="space-x-1 leading-normal">
+              <b>{brand.name}</b>
+              <span className="font-medium">{brand.description}</span>
+            </div>
           </div>
         </li>
       ))}
-    </ul>
+    </Ul>
   );
 }
