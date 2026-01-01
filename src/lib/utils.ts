@@ -18,3 +18,13 @@ export function capitalizeWords(input: string): string {
       .replace(/\b\p{L}/gu, (c) => c.toUpperCase())
   );
 }
+
+export function formatDate({ date }: { date: Date }) {
+  return date.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
