@@ -1,4 +1,20 @@
-export type HTMLTag = 'span' | 'p' | 'div' | 'section' | 'header' | 'footer';
+export type PageParams = Promise<{ slug: string | null; id: string | null }>;
+export type PageSearchParams = Promise<{
+  [key: string]: string | string[] | undefined;
+}>;
+export type PageProps = {
+  params: PageParams;
+  searchParams: PageSearchParams;
+};
+
+export type HTMLTag =
+  | 'span'
+  | 'p'
+  | 'div'
+  | 'section'
+  | 'article'
+  | 'header'
+  | 'footer';
 
 // TODO: Use `ComponentBaseProps` in regular components
 export interface ComponentBaseProps {
