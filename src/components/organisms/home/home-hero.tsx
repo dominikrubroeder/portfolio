@@ -13,13 +13,13 @@ export function HomeHero() {
         id="hero"
       >
         <div className="space-y-2">
-          <Badge size="md" variant="primary">
+          <Badge variant="primary" size="md">
             Team Frontend
           </Badge>
 
           <h2 className="bg-background">
             Building <Marker animate={true}>user interfaces</Marker> for the
-            web. A craft, about UI components and design systems.
+            web: A craft, about UI components and design systems.
           </h2>
         </div>
       </Container>
