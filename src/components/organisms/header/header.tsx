@@ -1,5 +1,9 @@
 import { Avatar } from '@/components/atoms/avatar';
-import { ContactButton, GitHubButton, LinkedInButton } from '@/components/atoms/button';
+import {
+  ContactButton,
+  GitHubButton,
+  LinkedInButton
+} from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
 import { ThemeQuickSettings } from '@/components/organisms/theme';
