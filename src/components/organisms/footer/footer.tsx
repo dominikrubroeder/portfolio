@@ -13,7 +13,7 @@ export function Footer() {
           title="Open Next.js website"
           aria-label="Open Next.js website"
         >
-          Next.js 16.0.10
+          Next.js 16.1.11
         </ExternalLink>
 
         <span>|</span>
@@ -24,7 +24,7 @@ export function Footer() {
           title="Open React website"
           aria-label="Open React website"
         >
-          React 19.2.0
+          React 19.2.3
         </ExternalLink>
 
         <span>|</span>
@@ -49,7 +49,7 @@ export function Footer() {
         </a>
       </p>
       <p>
-        &copy; 2025
+        &copy; 2026
         <span className="ml-1.5">Dominik Rubröder</span>
       </p>
 
