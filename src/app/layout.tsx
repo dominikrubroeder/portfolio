@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         lang="en"
         className={`scroll-smooth bg-background ${jetbrainsMono.variable}`}
       >
-        <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
+        <body>
           <Header />
 
           <LiveEditProvider>
