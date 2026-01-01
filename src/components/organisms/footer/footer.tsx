@@ -12,6 +12,7 @@ export function Footer() {
           variant="unstyled"
           title="Open Next.js website"
           aria-label="Open Next.js website"
+          size="xs"
         >
           Next.js 16.1.1
         </ExternalLink>
@@ -23,6 +24,7 @@ export function Footer() {
           variant="unstyled"
           title="Open React website"
           aria-label="Open React website"
+          size="xs"
         >
           React 19.2.3
         </ExternalLink>
@@ -34,6 +36,7 @@ export function Footer() {
           variant="unstyled"
           title="Open Tailwind CSS documentation"
           aria-label="Open Tailwind CSS documentation"
+          size="xs"
         >
           Tailwind CSS 4.1.17
         </ExternalLink>
@@ -49,7 +52,7 @@ export function Footer() {
         </a>
       </p>
       <p>
-        &copy; 2025
+        &copy; 2026
         <span className="ml-1.5">Dominik Rubröder</span>
       </p>
 
@@ -58,8 +61,10 @@ export function Footer() {
           Santa Clause cap:
           <ExternalLink
             variant="unstyled"
+            color="muted"
+            size="xs"
             href="https://www.svgrepo.com/svg/206754/winter-hat-santa-claus"
-            className="ml-1 text-muted-foreground hover:text-foreground"
+            className="ml-1"
           >
             https://www.svgrepo.com/svg/206754/winter-hat-santa-claus
           </ExternalLink>
