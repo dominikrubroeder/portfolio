@@ -7,8 +7,14 @@ import { Projects } from '@/components/organisms/projects';
 import { Socials } from '@/components/organisms/socials';
 import { Technologies } from '@/components/organisms/technologies';
 import { Tools } from '@/components/organisms/tools';
-import { EVENTS_WINTER_SCENE_ENABLED, Snowfall } from '@/components/organisms/events';
-import { ThemeNotesBackgroundCornellNotes, ThemeWireframeBackground } from '@/components/organisms/theme';
+import {
+  EVENTS_WINTER_SCENE_ENABLED,
+  Snowfall
+} from '@/components/organisms/events';
+import {
+  ThemeNotesBackgroundCornellNotes,
+  ThemeWireframeBackground
+} from '@/components/organisms/theme';
 import { LiveEditToolbar } from '@/components/organisms/live-edit';
 import { Why } from '@/components/organisms/why';
 import { Blog } from '@/components/organisms/blog';
