@@ -1,11 +1,5 @@
-import React from 'react';
-
 import { Avatar } from '@/components/atoms/avatar';
-import {
-  ContactButton,
-  GitHubButton,
-  LinkedInButton
-} from '@/components/atoms/button';
+import { ContactButton, GitHubButton, LinkedInButton } from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
 import { ThemeQuickSettings } from '@/components/organisms/theme';
@@ -36,7 +30,6 @@ export function Header() {
             <span className="ml-1 hidden sm:inline-block">@</span>
             <ExternalLink
               variant="inline"
-              size="sm"
               color="muted"
               href="https://www.mediawave.de"
               title="Open mediawave commerce GmbH website"
