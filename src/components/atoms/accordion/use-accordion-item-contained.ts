@@ -12,16 +12,16 @@ export const useAccordionItemContained = ({
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
-  const handleScroll = useCallback(
+  const onOpen = useCallback(
     () =>
       ref.current?.scrollIntoView({
         behavior: 'smooth',
-        block: focusView
+        block: 'start'
       }),
-    [focusView]
+    []
   );
 
-  const handleScrollToGroup = useCallback(() => {
+  const onClose = useCallback(() => {
     const accordionGroupElement = document.getElementById(accordionGroupId);
 
     console.log(accordionGroupElement);
@@ -33,13 +33,12 @@ export const useAccordionItemContained = ({
   }, [accordionGroupId, focusView]);
 
   useEffectAfterMount(() => {
-    isOpen ? handleScroll() : handleScrollToGroup();
-  }, [isOpen, handleScroll]);
+    isOpen ? onOpen() : onClose();
+  }, [isOpen, onOpen]);
 
   return {
     isOpen,
     setIsOpen,
-    handleScroll,
     ref
   };
 };
