@@ -46,7 +46,9 @@ export const projects: Project[] = [
     }),
     company: 'mediawave commerce GmbH',
     caseStudyUrls: undefined,
-    demoUrls: undefined
+    demoUrls: undefined,
+    previewImage: '/projects/project-sautershop-preview-wallpaper.png',
+    previewImageTimestamp: '2026-01-06'
   },
   {
     title: 'Value Booster',
@@ -84,7 +86,9 @@ export const projects: Project[] = [
     }),
     company: 'mediawave commerce GmbH',
     caseStudyUrls: undefined,
-    demoUrls: undefined
+    demoUrls: undefined,
+    previewImage: '/projects/project-value-booster-preview-wallpaper.png',
+    previewImageTimestamp: '2026-01-06'
   },
   {
     title: 'HD+',
@@ -119,14 +123,16 @@ export const projects: Project[] = [
     }),
     company: 'mediawave commerce GmbH',
     caseStudyUrls: undefined,
-    demoUrls: ['https://www.hd-plus.de']
+    demoUrls: ['https://www.hd-plus.de'],
+    previewImage: '/projects/project-hd-plus-preview-wallpaper.png',
+    previewImageTimestamp: '2026-01-06'
   },
   {
     title: 'Segmüller',
     category: ['Ecommerce', 'Home Furniture', 'B2B'],
     url: 'https://www.segmueller.de',
     readableTitle:
-      'Well-known home furniture store in Bavaria, Augsburg (Germany)',
+      'Well-known home furniture store in Bavaria, Augsburg, Germany',
     isCurrentProject: false,
     timeframe: '2023 – 2021',
     logo: <SegmuellerLogo className="h-12 w-auto" />,
@@ -149,13 +155,15 @@ export const projects: Project[] = [
     }),
     company: 'mediawave commerce GmbH',
     caseStudyUrls: ['https://www.mediawave.de/case-study/segmuller'],
-    demoUrls: ['https://www.segmueller.de']
+    demoUrls: ['https://www.segmueller.de'],
+    previewImage: '/projects/project-segmueller-preview-wallpaper.png',
+    previewImageTimestamp: '2026-01-06'
   },
   {
     title: 'alles.auto',
     category: ['Platform', 'Car dealership'],
     url: 'https://www.alles.auto',
-    readableTitle: 'Online selling, re-selling and car service platform',
+    readableTitle: 'Online selling and re-selling and car service platform',
     isCurrentProject: false,
     timeframe: '2021',
     logo: <AllesAutoLogo className="h-6 w-auto sm:h-12" />,

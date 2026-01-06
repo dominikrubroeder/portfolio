@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 
-import { cn } from '@/lib/utils';
+import { cn, formatDate } from '@/lib/utils';
 
 import { Badge } from '@/components/atoms/badge';
 import { Button } from '@/components/atoms/button';
@@ -34,10 +35,10 @@ export function ProjectCarousel() {
 
   return (
     <div className="mx-auto space-y-4">
-      <div className="relative flex h-[30svh] items-center justify-center rounded border bg-background sm:h-[40svh]">
+      <div className="relative flex h-[32svh] items-center justify-center rounded bg-background sm:h-[45svh]">
         <Button
           variant="ghost"
-          className="absolute top-1/2 left-4 z-20 -translate-y-1/2 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+          className="absolute right-14 -bottom-12 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
           title="Go to previous project"
           aria-label="Go to previous project"
           onClick={goPrevious}
@@ -48,7 +49,7 @@ export function ProjectCarousel() {
 
         <Button
           variant="ghost"
-          className="absolute top-1/2 right-4 z-20 -translate-y-1/2 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+          className="absolute right-0 -bottom-12 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
           title="Go to next project"
           aria-label="Go to next project"
           onClick={goNext}
@@ -74,16 +75,39 @@ export function ProjectCarousel() {
               transition={{ duration: 0.2 }}
               layout
             >
-              <span>{project.logo}</span>
+              {project.previewImage ? (
+                <figure>
+                  <Image
+                    src={project.previewImage}
+                    width={800}
+                    height={500}
+                    alt={`Preview image of project ${project.title}`}
+                    draggable={false}
+                    className="w-full rounded object-contain"
+                  />
+
+                  {project.previewImageTimestamp && (
+                    <figcaption>
+                      Screenshot taken on{' '}
+                      {formatDate({
+                        dateString: project.previewImageTimestamp,
+                        format: 'Month Day, Year'
+                      })}
+                    </figcaption>
+                  )}
+                </figure>
+              ) : (
+                <span>{project.logo}</span>
+              )}
             </motion.div>
           </AnimatePresence>
         </Link>
       </div>
 
       <div className="mx-auto max-w-(--readable-container) space-y-7">
-        <ul className="flex h-3 items-center justify-center gap-3">
+        <ul className="flex h-4 items-center gap-3">
           {projects.map((_, index, array) => (
-            <li key={index}>
+            <li key={`project-dot-indicator-${index}`}>
               <button
                 className={cn(
                   'size-3 rounded-full bg-muted hover:scale-[1.4] motion-safe:transition',
@@ -215,7 +239,7 @@ export function ProjectCarousel() {
                 {project.demoUrls?.length && (
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center gap-2">
-                      <b className="block">Demos</b>
+                      <b className="block">Further links</b>
                       <Badge
                         variant="foreground"
                         size="sm"
@@ -244,8 +268,11 @@ export function ProjectCarousel() {
                     {project.tools?.map((tool, index) => {
                       if (tool && tool.name) {
                         return (
-                          <li key={index}>
+                          <li
+                            key={`list-item-project-tool-item-${index}-${tool.name}`}
+                          >
                             <BrandLink
+                              key={`brand-link-project-tool-item-${index}-${tool.name}`}
                               brand={tool}
                               showLabel
                               labelPosition="bottom"
@@ -263,8 +290,11 @@ export function ProjectCarousel() {
                     {project.technologies?.map((technology, index) => {
                       if (technology && technology.name) {
                         return (
-                          <li key={index}>
+                          <li
+                            key={`list-item-project-technology-item-${index}-${technology.name}`}
+                          >
                             <BrandLink
+                              key={`brand-link-project-technology-item-${index}-${technology.name}`}
                               brand={technology}
                               showLabel
                               labelPosition="bottom"

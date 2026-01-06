@@ -7,7 +7,7 @@ export function Projects() {
   return (
     <Animate direction="up">
       <LiveEditContainer componentName="projects.tsx">
-        <Container className="relative space-y-6 rounded px-0" id="projects">
+        <Container className="relative space-y-8 rounded px-0" id="projects">
           <h2 className="mx-auto max-w-(--readable-container) bg-background">
             Projects
             <span className="ml-2 font-medium text-muted-foreground">
