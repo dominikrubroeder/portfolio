@@ -13,10 +13,13 @@ export function BrandList({
 }) {
   return (
     <Ul className={cn('-ml-2.5 md:-ml-4', className)}>
-      {brands.map((brand) => (
+      {brands.map((brand, index) => (
         <li key={brand.name}>
           <div className="inline-flex items-center gap-2 lg:gap-4">
-            <BrandLink brand={brand} />
+            <BrandLink
+              key={`brand-link-list-item-${index}-${brand.name}`}
+              brand={brand}
+            />
 
             <div className="space-x-1 leading-normal">
               <b>{brand.name}</b>

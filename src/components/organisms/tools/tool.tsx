@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
-import { ExperienceBar } from '@/components/atoms/experience-bar';
+import { KnowledgeBar } from '@/components/atoms/knowledge-bar';
 import type { Brand } from '@/components/organisms/brand';
 
 export default function Tool({ tool, group }: { tool: Brand; group: string }) {
@@ -49,7 +49,7 @@ export default function Tool({ tool, group }: { tool: Brand; group: string }) {
           aria-label={`${tool.name} logo`}
         />
 
-        <ExperienceBar
+        <KnowledgeBar
           progress={tool.knowledge}
           className="absolute right-5 bottom-4 text-right"
         />

@@ -57,21 +57,21 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'React',
+        description: 'The library for web and native user interfaces',
         href: 'https://react.dev/',
         logo: <ReactLogo className="size-12" />,
-        description: 'The library for web and native user interfaces',
         knowledge: 'Daily'
       },
       {
         name: 'Vue.js',
-        description: '',
-        href: '',
+        description: undefined,
+        href: 'https://vuejs.org',
         logo: '',
         knowledge: 'Used'
       },
       {
         name: 'Nue.js',
-        description: '',
+        description: undefined,
         href: 'https://nuejs.org/',
         logo: '',
         knowledge: 'Not started'
@@ -85,7 +85,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
       },
       {
         name: 'SwiftUI',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Used'
@@ -99,7 +99,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
       },
       {
         name: 'Gatsby',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Not started'
@@ -126,7 +126,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
       },
       {
         name: 'Nuxt.js',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Used'
@@ -161,7 +161,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Swift',
         href: '',
         logo: '',
-        description: '',
+        description: undefined,
         knowledge: 'Used'
       }
     ]
@@ -222,14 +222,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'Node.js',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Used'
       },
       {
         name: 'Deno',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Not started'
@@ -241,7 +241,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'GraphQL',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Not started'
@@ -253,7 +253,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'Vite',
-        description: '',
+        description: undefined,
         href: 'https://vite.dev/',
         logo: '',
         knowledge: 'Used'

@@ -23,7 +23,7 @@ export function BrandLink({
       title={`Open ${brand.name} website`}
       aria-label={`Open ${brand.name} website`}
       className={cn(
-        'group relative',
+        'group relative [&>img]:block [&>svg]:block',
         size === 'small' && 'p-3 [&>img]:size-8 [&>svg]:size-8',
         size === 'medium' && 'p-4 [&>img]:size-12 [&>svg]:size-12',
         showLabel &&
@@ -38,7 +38,7 @@ export function BrandLink({
       {!!brand.logo ? (
         brand.logo
       ) : (
-        <BrandLogo brand={brand.name} className="mx-auto" />
+        <BrandLogo brand={brand.name} className="mx-auto flex" />
       )}
 
       <div className="absolute -top-1.5 -right-1.5 flex size-5 -rotate-45 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 group-hover:opacity-100">

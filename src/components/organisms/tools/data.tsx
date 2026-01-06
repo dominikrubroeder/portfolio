@@ -466,7 +466,7 @@ export const tools: Tools = [
         href: 'https://cursor.sh',
         logo: '',
         description: 'The AI-first code editor',
-        knowledge: 'Not started'
+        knowledge: 'Used'
       },
       {
         name: 'Sublime Text',
