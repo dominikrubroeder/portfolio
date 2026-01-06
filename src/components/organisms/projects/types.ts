@@ -17,4 +17,6 @@ export interface Project {
   company: string | undefined;
   caseStudyUrls: string[] | undefined;
   demoUrls: string[] | undefined;
+  previewImage?: string;
+  previewImageTimestamp?: string;
 }
