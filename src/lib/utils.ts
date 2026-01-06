@@ -19,12 +19,35 @@ export function capitalizeWords(input: string): string {
   );
 }
 
-export function formatDate({ date }: { date: Date }) {
-  return date.toLocaleString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
+export function formatDate({
+  dateString,
+  format = 'Month Day, Year at Time',
+  options
+}: {
+  dateString: string;
+  format?: 'Month Day, Year' | 'Month Day, Year at Time';
+  options?: Intl.DateTimeFormatOptions;
+}) {
+  const date = new Date(dateString);
+  let fallbackOptions: Intl.DateTimeFormatOptions;
+
+  switch (format) {
+    case 'Month Day, Year':
+      fallbackOptions = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      };
+      break;
+    default:
+      fallbackOptions = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+  }
+
+  return date.toLocaleString('en-US', options ?? fallbackOptions);
 }
