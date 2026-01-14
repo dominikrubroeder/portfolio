@@ -4,7 +4,6 @@ import {
   CraftLogo,
   FigmaLogo,
   GithubLogo,
-  GitlabLogo,
   ShopwareLogo,
   StoryblokLogo,
   WebstormLogo
@@ -39,13 +38,6 @@ export const mainTools: Brand[] = [
     description: 'to store my private codebase',
     logo: <GithubLogo className="size-12" />,
     href: 'https://github.com',
-    knowledge: 'Daily'
-  },
-  {
-    name: 'GitLab',
-    description: 'is mostly used at workspace to store the project’s codebase',
-    logo: <GitlabLogo className="size-12" />,
-    href: 'https://gitlab.com',
     knowledge: 'Daily'
   }
 ];
@@ -463,7 +455,7 @@ export const tools: Tools = [
     children: [
       {
         name: 'Cursor',
-        href: 'https://cursor.sh',
+        href: 'https://cursor.com',
         logo: '',
         description: 'The AI-first code editor',
         knowledge: 'Used'
@@ -477,29 +469,29 @@ export const tools: Tools = [
       },
       {
         name: 'Visual Studio Code',
-        description: 'Code editing. Redefined.',
+        description: 'The open source AI code editor',
         href: 'https://code.visualstudio.com',
         logo: '',
         knowledge: 'Professional'
       },
       {
         name: 'WebStorm',
-        description: 'The smartest JavaScript IDE',
+        description: 'The JavaScript and TypeScript IDE',
         href: 'https://www.jetbrains.com/webstorm',
         logo: '',
         knowledge: 'Daily'
       },
       {
         name: 'Windsurf',
-        description:
-          'Code at the speed of thought—where AI and developers flow as one.',
+        description: 'Where developers are doing their best work',
         href: 'https://windsurf.com',
         logo: '',
         knowledge: 'Used'
       },
       {
         name: 'zed',
-        description: 'A high-performance, multiplayer code editor',
+        description:
+          'Zed is a minimal code editor crafted for speed and collaboration with humans and AI.',
         href: 'https://zed.dev',
         logo: '',
         knowledge: 'Used'
@@ -935,8 +927,7 @@ export const tools: Tools = [
         name: 'Miro',
         href: 'https://miro.com',
         logo: '/miro.png',
-        description:
-          "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company. Don't Let Distances or Timezones Stop You from Building Beautiful Products for Your Users. Miro for UX & Design.",
+        description: 'Get from brainstorm to breakthrough with Miro',
         knowledge: 'Professional'
       },
       {
@@ -956,7 +947,7 @@ export const tools: Tools = [
     ]
   },
   {
-    group: 'Research + Study',
+    group: 'Research + Study + Data',
     children: [
       {
         name: 'Baymard Institute',
@@ -1030,7 +1021,7 @@ export const tools: Tools = [
         href: 'https://www.shopware.com',
         logo: <ShopwareLogo />,
         description:
-          'Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.',
+          'The leading edge of ecommerce. Your business faster, limitless.',
         knowledge: 'Daily'
       },
       {
@@ -1070,8 +1061,7 @@ export const tools: Tools = [
         name: 'cypress',
         href: 'https://www.cypress.io',
         logo: '',
-        description:
-          'Easily create tests for your modern web applications, debug them visually, and automatically run them in your continuous integration builds',
+        description: 'Browser testing for modern teams',
         knowledge: 'Not started'
       }
     ]
@@ -1079,6 +1069,14 @@ export const tools: Tools = [
   {
     group: 'UI',
     children: [
+      {
+        name: 'Base UI',
+        description:
+          'Unstyled UI components for building accessible user interfaces',
+        href: 'https://base-ui.com',
+        logo: '',
+        knowledge: 'Used'
+      },
       {
         name: 'Headless UI',
         description: 'Completely unstyled, fully accessible UI components',

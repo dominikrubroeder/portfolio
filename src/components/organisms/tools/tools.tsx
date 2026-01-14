@@ -9,17 +9,20 @@ export function Tools() {
   return (
     <Animate direction="up">
       <LiveEditContainer componentName="tools.tsx">
-        <Container className="scroll-mt-24 space-y-8" id="tools">
-          <div className="space-y-6">
-            <h2>
-              Tools
-              <span className="ml-2 font-medium text-muted-foreground">
-                help to <Marker animate={true}>visualize</Marker>
-                <span> and </span>
-                <Marker animate>communicate</Marker> the application we build. I
-                use
-              </span>
-            </h2>
+        <Container className="space-y-6" id="tools">
+          <div className="space-y-5">
+            <div className="space-y-3">
+              <h2>
+                Tools
+                <span className="ml-2 font-medium text-muted-foreground">
+                  help to <Marker animate={true}>visualize</Marker>
+                  <span> and </span>
+                  <Marker animate>communicate</Marker> the application we build
+                </span>
+              </h2>
+
+              <p>A selection of tools I use regularly:</p>
+            </div>
 
             <BrandList brands={mainTools} />
           </div>

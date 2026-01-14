@@ -9,3 +9,4 @@ export { StorybookButton } from './storybook-button';
 export { BackButton } from './back-button';
 
 export * from './types';
+export * from './helper';

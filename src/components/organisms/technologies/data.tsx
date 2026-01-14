@@ -78,7 +78,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
       },
       {
         name: 'Svelte',
-        description: 'web development for the rest of us',
+        description: 'Web development for the rest of us',
         href: 'https://svelte.dev/',
         logo: '',
         knowledge: 'Used'
@@ -89,13 +89,6 @@ export const technologies: { group: string; children: Brand[] }[] = [
         href: '',
         logo: '',
         knowledge: 'Used'
-      },
-      {
-        name: 'Astro',
-        description: 'The web framework for content-driven websites',
-        href: 'https://astro.build/',
-        logo: '',
-        knowledge: 'Not started'
       },
       {
         name: 'Gatsby',
@@ -109,6 +102,13 @@ export const technologies: { group: string; children: Brand[] }[] = [
   {
     group: 'Full-Stack Framework',
     children: [
+      {
+        name: 'Astro',
+        description: 'The web framework for content-driven websites',
+        href: 'https://astro.build/',
+        logo: '',
+        knowledge: 'Not started'
+      },
       {
         name: 'Next.js',
         description: 'The React Framework for the Web',
@@ -133,8 +133,9 @@ export const technologies: { group: string; children: Brand[] }[] = [
       },
       {
         name: 'React Router',
-        description: '(v7, framework mode)',
-        href: 'https://reactrouter.com/start/framework/installation',
+        description:
+          'A user-obsessed, standards-focused, multi-strategy router you can deploy anywhere.',
+        href: 'https://reactrouter.com',
         logo: '',
         knowledge: 'Used'
       }

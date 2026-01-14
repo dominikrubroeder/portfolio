@@ -208,10 +208,10 @@
   .theme-appearance-dark {
     --background: hsl(0 0% 8%);
     --foreground: var(--white);
-    --muted: hsl(0 0% 24%);
-    --muted-foreground: hsl(240 2.3% 56%);
+    --muted: hsl(0 0% 16%);
+    --muted-foreground: hsl(240 2.3% 64%);
     --muted-hover: hsl(0, 0%, 22%);
-    --border: hsl(0 0% 12%);
+    --border: hsl(0 0% 14%);
   }
 
   :root[data-theme-color='violett'] {
@@ -300,7 +300,7 @@
   }
 
   body {
-    @apply overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground;
+    @apply overflow-x-hidden bg-background text-base leading-[1.7] font-normal text-muted-foreground;
   }
 
   svg {
@@ -447,16 +447,23 @@
   @apply min-h-4 min-w-4 shrink-0;
 }
 
+@utility scroll-mt-responsive {
+  @apply scroll-mt-24 md:scroll-mt-28 lg:scroll-mt-0;
+}
+
 /* Hide scrollbars for all browsers */
 .scrollbar-none {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Hide scrollbars for WebKit browsers (Chrome, Safari, Edge) */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
-  width: 0; /* Adjust the width as needed */
+  width: 0;
+  /* Adjust the width as needed */
 }
 
 .scrollbar-none::-webkit-scrollbar-thumb {

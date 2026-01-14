@@ -9,7 +9,7 @@ import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import { CodeBlock } from '@/components/atoms/codeblock';
 import { Divider } from '@/components/atoms/divider';
-import { ExperienceBar } from '@/components/atoms/experience-bar';
+import { KnowledgeBar } from '@/components/atoms/knowledge-bar';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Marker } from '@/components/atoms/marker';
 import { Markup } from '@/components/atoms/markup';
@@ -146,7 +146,7 @@ export const components: ComponentGroup[] = [
       {
         componentId: 'experience-bar',
         componentName: 'Experience Bar',
-        component: <ExperienceBar progress="Professional" />,
+        component: <KnowledgeBar progress="Professional" />,
         animatable: true
       },
       {

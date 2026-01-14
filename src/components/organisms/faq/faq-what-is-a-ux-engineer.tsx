@@ -5,7 +5,7 @@ import { ExternalLink } from '@/components/atoms/external-link';
 export function FaqWhatIsAUxEngineer() {
   return (
     <>
-      <Blockquote className="mt-4" quotes>
+      <Blockquote className="mt-0" quotes>
         <b className="text-foreground">Bring all your skills into one role</b>.
         As a UX Engineer at Google, you’ll combine your design, engineering, and
         product intuition to help build experiences for everyone to enjoy.

@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     title: 'sautershop',
     category: ['Headless', 'Ecommerce', 'B2C', 'DIY'],
-    url: 'https://www.sautershop.de',
+    url: 'https://www.sautershop.com/en',
     isCurrentProject: true,
     readableTitle: 'Quality wood-working tools for DIY home projects',
     timeframe: 'Ongoing – 2024',

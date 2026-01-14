@@ -1,5 +1,7 @@
 import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
+import { ChatGptLogo } from '@/components/atoms/logo';
+import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
 
 export function FaqUxDesigner() {
   return (
@@ -13,7 +15,20 @@ export function FaqUxDesigner() {
 
       <br />
 
-      <p>ChatGPT:</p>
+      <p className="flex items-center gap-3">
+        <ChatGptLogo className="size-5" />
+        <span className="flex items-center gap-1.5">
+          <span>ChatGPT</span>
+          <ArrowTurnDownLeftIcon className="size-4" />
+        </span>
+      </p>
+
+      <p>
+        As a Chief Designer overseeing the work of UX designers, it's important
+        to emphasize several key predicates or principles that contribute to
+        creating successful and user-centric designs. Here are some crucial
+        areas for UX designers to focus on:
+      </p>
 
       <ol className="mb-5 grid list-decimal gap-4 pl-8">
         <li>

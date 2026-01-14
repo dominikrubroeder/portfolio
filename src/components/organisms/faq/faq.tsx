@@ -42,6 +42,7 @@ export function FAQ() {
               }
             ]}
             accordionGroupId="accordion-group-faq"
+            focusView="start"
           />
         </Container>
       </LiveEditContainer>

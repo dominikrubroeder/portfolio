@@ -24,9 +24,16 @@ export function IntroductionTechStackAccordion({
         className
       )}
     >
-      {tools.map((item) => (
-        <li key={item.name}>
-          <BrandLink brand={item} showLabel labelPosition="bottom" />
+      {tools.map((item, index) => (
+        <li
+          key={`list-item-introduction-tech-stack-accordion-tool-item-${index}-${item.name}`}
+        >
+          <BrandLink
+            key={`brand-link-introduction-tech-stack-accordion-item-${index}-${item.name}`}
+            brand={item}
+            showLabel
+            labelPosition="bottom"
+          />
         </li>
       ))}
 
@@ -34,9 +41,16 @@ export function IntroductionTechStackAccordion({
         <PlusIcon className="mr-2 ml-1 size-6" />
       </li>
 
-      {technologies.map((item) => (
-        <li key={item.name}>
-          <BrandLink brand={item} showLabel labelPosition="bottom" />
+      {technologies.map((item, index) => (
+        <li
+          key={`list-item-introduction-tech-stack-accordion-technology-item-${index}-${item.name}`}
+        >
+          <BrandLink
+            key={`brand-link-introduction-tech-stack-accordion-item-${index}-${item.name}`}
+            brand={item}
+            showLabel
+            labelPosition="bottom"
+          />
         </li>
       ))}
     </Ul>

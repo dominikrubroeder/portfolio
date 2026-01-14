@@ -12,6 +12,7 @@ import { ThemeProvider } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
 import { LiveEditProvider } from '@/components/organisms/live-edit';
+import { Suspense } from 'react';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -52,9 +53,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body>
           <Header />
 
-          <LiveEditProvider>
-            <main>{children}</main>
-          </LiveEditProvider>
+          <Suspense>
+            <LiveEditProvider>
+              <main>{children}</main>
+            </LiveEditProvider>
+          </Suspense>
 
           <Footer />
           <Analytics />

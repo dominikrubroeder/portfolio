@@ -15,7 +15,7 @@ export function Accordion({
 }: AccordionProps) {
   if (variant === 'contained')
     return (
-      <ul id={accordionGroupId}>
+      <ul className="scroll-mt-responsive" id={accordionGroupId}>
         {items.map(({ title, children }, index) => (
           <li key={index + accordionGroupId}>
             <AccordionItemContained
@@ -33,7 +33,7 @@ export function Accordion({
     );
 
   return (
-    <ul className="space-y-6" id={accordionGroupId}>
+    <ul className="scroll-mt-responsive space-y-6" id={accordionGroupId}>
       {items.map(({ title, children }, index) => (
         <li key={index + accordionGroupId}>
           <AccordionItem

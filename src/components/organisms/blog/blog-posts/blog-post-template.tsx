@@ -18,9 +18,9 @@ export function BlogPostTemplate({ id }: Pick<BlogPost, 'id'>) {
 
   if (!blogPost) notFound();
 
-  const dateReleased = formatDate({ date: new Date(blogPost.dateOfRelease) });
+  const dateReleased = formatDate({ dateString: blogPost.dateOfRelease });
   const dateEdited = blogPost.dateOfEdited
-    ? formatDate({ date: new Date(blogPost.dateOfEdited) })
+    ? formatDate({ dateString: blogPost.dateOfEdited })
     : undefined;
 
   const nextBlogPost = blogPost.nextBlogPostId

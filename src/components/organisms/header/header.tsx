@@ -51,7 +51,7 @@ export function Header() {
       <div className="hidden lg:flex lg:items-center lg:gap-4">
         <ThemeQuickSettings />
 
-        <ButtonGroup className="gap-0">
+        <ButtonGroup minimizeSpacing>
           <ContactButton iconPosition="right" buttonProps={{ size: 'large' }} />
           <GitHubButton />
           <LinkedInButton />

@@ -35,8 +35,6 @@ export default async function HomePage() {
 
       <HomeHero />
 
-      <Why />
-
       <Projects />
 
       <Hr />
@@ -50,10 +48,6 @@ export default async function HomePage() {
       <Hr />
 
       <Socials />
-
-      <Hr />
-
-      <Blog />
 
       <Hr />
 

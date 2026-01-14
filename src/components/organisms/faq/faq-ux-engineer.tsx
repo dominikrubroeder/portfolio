@@ -1,5 +1,7 @@
 import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
+import { ChatGptLogo } from '@/components/atoms/logo';
+import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
 
 export function FaqUxEngineer() {
   return (
@@ -13,7 +15,20 @@ export function FaqUxEngineer() {
 
       <br />
 
-      <p>ChatGPT:</p>
+      <p className="flex items-center gap-3">
+        <ChatGptLogo className="size-5" />
+        <span className="flex items-center gap-1.5">
+          <span>ChatGPT</span>
+          <ArrowTurnDownLeftIcon className="size-4" />
+        </span>
+      </p>
+
+      <p>
+        As a Chief Developer, a UX (User Experience) Engineer plays a crucial
+        role in ensuring that the software or application provides a positive
+        and effective experience for users. Here are key predicates or areas
+        that a UX Engineer should focus on:
+      </p>
 
       <ol className="mb-5 grid list-decimal gap-4 pl-8">
         <li>

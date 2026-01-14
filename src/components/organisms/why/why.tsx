@@ -19,9 +19,8 @@ export function Why() {
           <i className="ml-1">supporting the projects goals and intentions</i>.
         </p>
         <p>
-          This can be achieved by gathering knowledge and with practise! In
-          teams: with teamwork, tools, technologies and in my opinion with
-          system thinking.
+          This can be achieved by gathering knowledge and with practise, with
+          tools, with technologies and in my opinion with system thinking.
         </p>
       </div>
     </Container>

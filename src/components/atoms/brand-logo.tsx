@@ -90,7 +90,7 @@ export function BrandLogo({
   const DefaultLogo = (
     <div
       className={cn(
-        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted transition group-hover:border-border',
+        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted text-muted-foreground transition group-hover:border-border group-hover:text-foreground hover:text-foreground',
         className
       )}
     >

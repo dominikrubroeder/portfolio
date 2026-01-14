@@ -35,7 +35,7 @@ export function ProjectCarousel() {
 
   return (
     <div className="mx-auto space-y-4">
-      <div className="relative flex h-[32svh] items-center justify-center rounded bg-background sm:h-[45svh]">
+      <div className="relative flex min-h-56 items-center justify-center rounded bg-background sm:h-96">
         <Button
           variant="ghost"
           className="absolute right-14 -bottom-12 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
@@ -129,33 +129,39 @@ export function ProjectCarousel() {
             exit={{ y: -10, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="flex items-center gap-2">
-                {activeProject === 0 && (
-                  <span className="relative flex size-4 items-center justify-center rounded-full bg-primary/10">
-                    <span className="size-2 animate-pulse rounded-full bg-primary" />
-                    <span className="sr-only">Is current project</span>
-                  </span>
-                )}
+            <div className="space-y-2">
+              <div className="space-y-1 xs:flex xs:flex-wrap xs:items-center xs:gap-2">
+                <div className="flex items-center gap-2">
+                  {activeProject === 0 && (
+                    <span className="relative flex size-4 items-center justify-center rounded-full bg-primary/10">
+                      <span className="size-2 animate-pulse rounded-full bg-primary" />
+                      <span className="sr-only">Is current project</span>
+                    </span>
+                  )}
 
-                <h3 className="mb-0">{project.title}</h3>
+                  <div>
+                    <b>{project.title}</b>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  {project.isCurrentProject && (
+                    <Badge size="sm" className="self-center">
+                      Current Project
+                    </Badge>
+                  )}
+
+                  {project.timeframe && (
+                    <Badge variant="muted" size="sm" className="self-center">
+                      {project.timeframe}
+                    </Badge>
+                  )}
+                </div>
               </div>
 
-              {project.isCurrentProject && (
-                <Badge size="sm" className="self-center">
-                  Current Project
-                </Badge>
-              )}
-
-              {project.timeframe && (
-                <Badge variant="muted" size="sm" className="self-center">
-                  {project.timeframe}
-                </Badge>
-              )}
-            </div>
-
-            <div className="mb-3 inline-block text-muted-foreground">
-              {project.readableTitle}
+              <div className="mb-3 inline-block text-muted-foreground">
+                {project.readableTitle}
+              </div>
             </div>
 
             <ButtonGroup className="w-full justify-between">

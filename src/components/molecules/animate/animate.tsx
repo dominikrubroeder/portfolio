@@ -13,7 +13,7 @@ import { useTheme } from '@/components/organisms/theme';
 export function Animate({
   direction = 'up',
   delay = 0.24,
-  duration = 0.4,
+  duration = 0.6,
   type,
   viewport = { once: true, margin: '-50px' },
   className,

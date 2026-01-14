@@ -2,13 +2,13 @@ import { Ul } from '@/components/atoms/ul';
 
 export function IntroductionHowIWorkAccordion() {
   return (
-    <Ul headline="I like to" listStyle="disc">
+    <Ul listStyle="disc" className="my-0">
       <li>
         <b className="text-foreground">Care</b> on designing
       </li>
       <li>
         <b className="text-foreground">Code</b> and
-        <b className="text-foreground"> build</b> for production applications
+        <b className="text-foreground"> build</b> production-ready applications
       </li>
       <li>
         <b className="text-foreground">Using psychology </b>
@@ -17,28 +17,27 @@ export function IntroductionHowIWorkAccordion() {
       <li>
         <b className="text-foreground">Design</b> in system
       </li>
-      <li>Be mindful</li>
-      <li>Write documentation</li>
-      <li>Work for good brands, products or services</li>
-      <li>Bring an idea from paper to production</li>
+      <li>Mindful hands-on mentality</li>
+      <li>Documentation is my friend</li>
+      <li>See an idea through from paper to production</li>
       <li>
-        Work with pen and paper; fast sketching and scribbling improves
+        <b>Work with pen and paper</b> – fast sketching and scribbling improves
         visualizing my ideas faster. Plus, I can also turn back to them later
         when something else blocks the opportunity working on it immediately
       </li>
       <li>
-        Write notes on a regular basis; similar to work with pen and paper, it
-        will help organizing my thoughts, plus summarize the outcome of it while
-        being in the process. I often find myself with more clarity and a
-        feeling of structure if i get stuck in a concept for too long
+        <b>Write notes on a regular basis</b> – similar to working with pen and
+        paper, this helps me organize and summarize my thoughts. When I get
+        stuck on a concept for too long, writing often brings clarity and
+        structure
       </li>
       <li>
-        Have a look on the latest trends and news in the tech space/design area
-        on a regular basis
+        <b>Stay in the loop</b> – regularly reviewing the latest trends and news
+        in tech and design
       </li>
       <li>
-        Bring the latest trends together with core design principles and
-        psychological patterns
+        <b>Composing</b> – Bring the latest trends together with core design
+        principles and psychological user interface patterns
       </li>
     </Ul>
   );

@@ -1,10 +1,5 @@
-import Link from 'next/link';
-
-import { BrandLogo } from '@/components/atoms/brand-logo';
-import { Button } from '@/components/atoms/button';
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { tools } from '@/components/organisms/tools';
-import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import { BrandRow } from '../brand';
 import { Ul } from '@/components/atoms/ul';
 
@@ -22,13 +17,13 @@ export function AllTools() {
               <div className="space-y-3 sm:space-y-4">
                 <div className="font-bold">{item.group}</div>
 
-                <Ul className="space-y-3 rounded border bg-background p-4">
+                <Ul className="space-y-5 rounded border bg-background p-4 sm:space-y-3 sm:p-4">
                   {item.children
                     .slice()
                     .sort((a, b) => a.name.localeCompare(b.name))
                     .map((child) => (
                       <li key={`${item.group}-${child.name}`}>
-                        <BrandRow brand={child} />
+                        <BrandRow brand={child} showKnowledgeBar />
                       </li>
                     ))}
                 </Ul>

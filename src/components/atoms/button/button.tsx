@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/organisms/theme';
 import { ButtonProps } from '@/components/atoms/button/types';
+import { extractEmail, extractPhoneNumber } from './helper';
 
 export function Button({
   variant = 'contained',
@@ -47,18 +48,31 @@ export function Button({
   const isPhone = href?.includes('tel');
 
   if (href && (isMail || isPhone)) {
+    const email = extractEmail({ input: href });
+    const phoneNumber = extractPhoneNumber({ input: href });
+    const title = isMail
+      ? `Write email to ${email}`
+      : isPhone
+        ? `Call ${phoneNumber}`
+        : undefined;
+    const ariaLabel = isMail
+      ? `Write email to ${email}`
+      : isPhone
+        ? `Call ${phoneNumber}`
+        : undefined;
+
     return (
       <a
         {...rest}
         href={href}
-        title={isMail ? 'Write email' : isPhone ? 'Call number' : undefined}
-        aria-label={
-          isMail ? 'Write email' : isPhone ? 'Call number' : undefined
-        }
+        title={title}
+        aria-label={ariaLabel}
         target="_blank"
         rel="noopener noreferrer"
         className={classNames}
       >
+        {isMail && <span className="sr-only">Write email to {email}</span>}
+        {isPhone && <span className="sr-only">Call {phoneNumber}</span>}
         {children}
       </a>
     );
@@ -69,10 +83,13 @@ export function Button({
       <Link
         {...rest}
         href={href}
-        title={`Go to ${href}`}
-        aria-label={`Go to ${href}`}
+        title={rest.title ?? `Go to ${href}`}
+        aria-label={rest['aria-label'] ?? `Go to ${href}`}
         target={href.includes('https') ? '_blank' : target}
-        rel={href.includes('https') ? 'noopener noreferrer' : undefined}
+        rel={
+          rest.rel ??
+          (href.includes('https') ? 'noopener noreferrer' : undefined)
+        }
         className={classNames}
       >
         {children}

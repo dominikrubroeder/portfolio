@@ -10,7 +10,7 @@ export function ThemeFontSizeSetting({ className }: { className?: string }) {
   const { themeFontSize, setThemeFontSize } = useTheme();
 
   return (
-    <ButtonGroup className={cn('gap-0', className)}>
+    <ButtonGroup className={cn('gap-0', className)} minimizeSpacing>
       <Button
         variant="ghost"
         className={cn('text-sm', themeFontSize === 'sm' && 'underline')}

@@ -1,5 +1,4 @@
 import { Badge } from '@/components/atoms/badge';
-import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Markup } from '@/components/atoms/markup';
 import { Ul } from '@/components/atoms/ul';
@@ -70,8 +69,8 @@ export function IntroductionMyBackgroundAccordion() {
       </p>
 
       <p>
-        From there on, i focused on adapting my design changes into the real
-        user interfaces i designed for.
+        From there on i focused on adapting my design changes into the real user
+        interfaces i initially designed.
       </p>
 
       <h4>
@@ -79,9 +78,9 @@ export function IntroductionMyBackgroundAccordion() {
       </h4>
 
       <p>
-        Bringing an design idea from the mind, to paper, into real world
-        applications was and is as of today the most motivation thought which
-        drives my mentality to keep on learning.
+        Translating a design idea from the mind to paper and into real-world
+        applications has always been, and still is today, the most motivating
+        thought that drives my mentality to keep learning.
       </p>
 
       <p>
@@ -97,22 +96,21 @@ export function IntroductionMyBackgroundAccordion() {
       <p>
         While i also took a close look at
         <ExternalLink href="https://vuejs.org">Vue</ExternalLink> and enjoyed
-        the elegant and more &#39;premium&#39; syntax of it, i stuck and get
-        more into React because of it&#39;s larger community, the wide spread
-        package options and the job opportunities.
+        the elegant and more &#39;premium&#39; syntax of it, i stuck and got
+        more into React because of its larger community, the wide-spread package
+        options and the job opportunities.
       </p>
 
       <p>
         Also, with React i felt more in the real JavaScript environment than
-        with Vue (which can be a pro, or a con; depending on how you look at
-        it).
+        with Vue (which can be a pro or a con depending on how you look at it).
       </p>
 
       <p>
         <ExternalLink className="ml-0" href="https://www.typescriptlang.org">
           TypeScript
         </ExternalLink>{' '}
-        came as last piece to the puzzle, which in the retrospective was a wise
+        came as last piece to the puzzle which in the retrospective was a wise
         decision, as most of today&#39;s web applications or frameworks require
         TypeScript as the base.
       </p>
@@ -177,21 +175,25 @@ export function IntroductionMyBackgroundAccordion() {
       <p>
         But in the end, the tech stack is the <i>framework</i> bringing the
         application to life, not <i>the</i> only key factor of the project.
+      </p>
+
+      <p>
         Together with other tools and technologies, they build up the system
         that makes this initial thought a reality.
       </p>
 
-      <hr />
+      {/*
+      
+       <Hr />
 
       <h4 className="flex items-center gap-2">
         <Badge>2025</Badge>
-        Create, build, learn, explore and review
+        Create, build, learn, explore and reflect
       </h4>
 
       <Blockquote className="mb-0 text-foreground">
         <p>
-          To bring an idea from the mind to production was and is as of today
-          the part that let&#39;s me get excited. It means creativity flows, it
+          Translating an idea from the mind to production gets me excited. It means creativity flows, it
           means freedom on a canvas, ready to be used and get painted. And it
           means, good products come to life.
         </p>
@@ -200,7 +202,7 @@ export function IntroductionMyBackgroundAccordion() {
           feels fantastic once you see the application up and running, and in
           action.
         </p>
-      </Blockquote>
+      </Blockquote> */}
     </div>
   );
 }

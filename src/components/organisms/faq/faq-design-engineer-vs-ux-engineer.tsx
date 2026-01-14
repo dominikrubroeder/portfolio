@@ -1,5 +1,7 @@
 import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
+import { ChatGptLogo } from '@/components/atoms/logo';
+import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
 
 export function FaqDesignEngineerVsUxEngineer() {
   return (
@@ -11,7 +13,15 @@ export function FaqDesignEngineerVsUxEngineer() {
         </b>
       </Blockquote>
 
-      <p>ChatGPT:</p>
+      <br />
+
+      <p className="flex items-center gap-3">
+        <ChatGptLogo className="size-5" />
+        <span className="flex items-center gap-1.5">
+          <span>ChatGPT</span>
+          <ArrowTurnDownLeftIcon className="size-4" />
+        </span>
+      </p>
 
       <p>
         Certainly! Both Design Engineers and UX Engineers play crucial roles in

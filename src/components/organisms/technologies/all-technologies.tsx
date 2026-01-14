@@ -18,19 +18,19 @@ export function AllTechnologies() {
                   <div className="font-bold">{item.group}</div>
 
                   {index === 0 && (
-                    <span className="absolute top-1 right-4 text-xs xs:right-18 sm:right-21">
+                    <span className="absolute top-1 right-4 text-xs sm:right-21">
                       Experience level
                     </span>
                   )}
                 </div>
 
-                <ul className="space-y-5 rounded border bg-background p-4">
+                <ul className="space-y-5 rounded border bg-background p-2 sm:p-4">
                   {item.children
                     .slice()
                     .sort((a, b) => a.name.localeCompare(b.name))
                     .map((child) => (
                       <li key={`${item.group}-${child.name}`}>
-                        <BrandRow brand={child} showKnowledgeBar={true} />
+                        <BrandRow brand={child} showKnowledgeBar />
                       </li>
                     ))}
                 </ul>

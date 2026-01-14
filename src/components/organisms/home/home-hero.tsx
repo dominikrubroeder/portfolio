@@ -19,7 +19,7 @@ export function HomeHero() {
 
           <h2 className="bg-background">
             Building <Marker animate={true}>user interfaces</Marker> for the
-            web: A craft, about UI components and design systems.
+            web: A craft, about composing UI components and design systems.
           </h2>
         </div>
       </Container>

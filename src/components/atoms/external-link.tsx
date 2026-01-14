@@ -29,7 +29,7 @@ export function ExternalLink({
           'relative mx-1 inline-flex items-center gap-1 text-foreground hover:text-foreground!',
         color === 'primary' && 'text-primary hover:text-primary-hover',
         color === 'muted' && 'text-muted-foreground hover:text-muted-hover',
-        color === 'foreground' && 'text-foreground hover:text-primary-hover',
+        color === 'foreground' && 'text-foreground hover:text-primary',
         className
       )}
       target="_blank"
