@@ -11,7 +11,7 @@ export function IntroductionDegreesList() {
 
           <div>
             <b className="text-foreground">Bachelor of Arts</b> – Media Design
-            B.A, Dual study at IU university in Munich
+            B.A, Dual study at IU university in Munich graduating in 2023
           </div>
         </div>
       </li>
@@ -22,7 +22,7 @@ export function IntroductionDegreesList() {
 
           <div>
             <b className="text-foreground">Trainee</b> as a media designer in
-            design and technology
+            design and technology back in 2016
           </div>
         </div>
       </li>

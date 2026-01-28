@@ -11,8 +11,6 @@ import { Header } from '@/components/organisms/header';
 import { ThemeProvider } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
-import { LiveEditProvider } from '@/components/organisms/live-edit';
-import { Suspense } from 'react';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -21,13 +19,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Dominik Rubröder | UX Design Engineer',
+  title: 'Dominik Rubröder | UX Design Engineer Portfolio',
   description:
-    'Building user interfaces for the web. A craft, about UI components and design systems.',
+    'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
+  metadataBase: new URL('https://www.dominikrubroeder.dev'),
   openGraph: {
-    title: 'Dominik Rubröder | UX Design Engineer',
+    title: 'Dominik Rubröder | UX Design Engineer Portfolio',
     description:
-      'Building user interfaces for the web. A craft, about UI components and design systems.',
+      'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
     url: 'https://www.dominikrubroeder.dev',
     siteName: 'dominikrubroeder.dev',
     images: [
@@ -38,9 +37,22 @@ export const metadata: Metadata = {
         alt: 'Profile image Dominik Rubröder'
       }
     ],
-    locale: 'de_DE',
+    locale: 'en_US',
     type: 'website'
-  }
+  },
+  keywords: [
+    'Frontend',
+    'Design Engineer',
+    'User experience',
+    'UX',
+    'User interface',
+    'UI designer',
+    'UI engineer',
+    'UI components',
+    'Webdesign',
+    'Next.js',
+    'React'
+  ]
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -53,11 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <body>
           <Header />
 
-          <Suspense>
-            <LiveEditProvider>
-              <main>{children}</main>
-            </LiveEditProvider>
-          </Suspense>
+          <main>{children}</main>
 
           <Footer />
           <Analytics />

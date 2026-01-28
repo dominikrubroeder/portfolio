@@ -21,23 +21,23 @@ export function BrandRow({
       title={`Go to external ${brand.name} website`}
       aria-label={`Go to external ${brand.name} website`}
       target="_blank"
-      className="group relative flex w-full items-center justify-between gap-3 rounded p-2 transition hover:bg-muted xs:gap-4"
+      className="group relative flex items-center justify-between gap-3 rounded p-2 transition hover:bg-muted xs:gap-4"
     >
       <span className="sr-only">{`Go to external ${brand.name} website`}</span>
 
-      <div className="flex flex-1 items-center gap-4 sm:gap-8">
+      <div className="flex min-w-0 flex-1 basis-0 items-center gap-4 overflow-hidden sm:gap-8">
         <BrandLogo
           brand={brand.name}
-          className="size-8 min-h-0 min-w-0 sm:size-10 [&>svg]:size-8 sm:[&>svg]:size-10"
+          className="size-11 min-h-0 min-w-0 sm:size-12 [&>svg]:size-11 sm:[&>svg]:size-12"
         />
 
-        <div className="flex-1">
-          <div className="self-center text-sm leading-normal font-bold break-all sm:text-base">
+        <div className="max-w-full min-w-0">
+          <div className="max-w-full truncate text-sm font-bold sm:text-base">
             {brand.name}
           </div>
 
           {showDescription && brand.description && (
-            <p className="hidden w-0 leading-normal text-muted-foreground sm:block sm:w-auto">
+            <p className="hidden text-muted-foreground sm:block">
               {brand.description}
             </p>
           )}

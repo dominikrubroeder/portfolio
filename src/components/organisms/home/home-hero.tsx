@@ -2,7 +2,6 @@ import { Badge } from '@/components/atoms/badge';
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
 import { Introduction } from '@/components/organisms/introduction';
-import { Marker } from '@/components/atoms/marker';
 
 export function HomeHero() {
   return (
@@ -13,13 +12,14 @@ export function HomeHero() {
         id="hero"
       >
         <div className="space-y-2">
-          <Badge variant="primary" size="md">
-            Team Frontend
-          </Badge>
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="primary">Team Frontend</Badge>
+            <p className="text-primary">The art of composing</p>
+          </div>
 
           <h2 className="bg-background">
-            Building <Marker animate={true}>user interfaces</Marker> for the
-            web: A craft, about composing UI components and design systems.
+            Building user interfaces for the web: A craft about UI components,
+            design systems and thinking beyond visible parts.
           </h2>
         </div>
       </Container>

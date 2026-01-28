@@ -9,6 +9,7 @@ export interface ButtonProps
   variant?:
     | 'contained'
     | 'contained-muted'
+    | 'contained-primary'
     | 'ghost'
     | 'ghost-muted'
     | 'text'

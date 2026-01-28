@@ -4,40 +4,37 @@ export function IntroductionHowIWorkAccordion() {
   return (
     <Ul listStyle="disc" className="my-0">
       <li>
-        <b className="text-foreground">Care</b> on designing
+        <b>Design with code</b>
       </li>
       <li>
-        <b className="text-foreground">Code</b> and
-        <b className="text-foreground"> build</b> production-ready applications
+        <b>Code by design</b>
       </li>
       <li>
-        <b className="text-foreground">Using psychology </b>
-        to design and build better user interfaces
+        <b>Design in system</b>
       </li>
       <li>
-        <b className="text-foreground">Design</b> in system
-      </li>
-      <li>Mindful hands-on mentality</li>
-      <li>Documentation is my friend</li>
-      <li>See an idea through from paper to production</li>
-      <li>
-        <b>Work with pen and paper</b> – fast sketching and scribbling improves
-        visualizing my ideas faster. Plus, I can also turn back to them later
-        when something else blocks the opportunity working on it immediately
+        <b>System thinking to solutionize</b>
       </li>
       <li>
-        <b>Write notes on a regular basis</b> – similar to working with pen and
-        paper, this helps me organize and summarize my thoughts. When I get
-        stuck on a concept for too long, writing often brings clarity and
-        structure
+        <b>Design better user interfaces with psychology</b>
       </li>
       <li>
-        <b>Stay in the loop</b> – regularly reviewing the latest trends and news
-        in tech and design
+        <b>Mindful hands-on mentality</b>
       </li>
       <li>
-        <b>Composing</b> – Bring the latest trends together with core design
-        principles and psychological user interface patterns
+        <b>Documentation is good</b>
+      </li>
+      <li>
+        <b>Write notes on a regular basis</b> – Tools, technologies, learnings,
+        findings and helpful tips. It also helps me find clarity and structure
+        if i'm stuck in a concept for too long
+      </li>
+      <li>
+        <b>See global scope – think system through paper to production</b>
+      </li>
+      <li>
+        <b>Compose</b> latest trends together with core design principles and
+        user interface patterns
       </li>
     </Ul>
   );

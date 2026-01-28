@@ -20,13 +20,14 @@ export function IntroductionTechStackAccordion({
   return (
     <Ul
       className={cn(
-        '-ml-2 flex list-none flex-wrap items-center gap-2 pb-1',
+        '-ml-2 flex list-none flex-wrap items-center gap-4',
         className
       )}
     >
       {tools.map((item, index) => (
         <li
           key={`list-item-introduction-tech-stack-accordion-tool-item-${index}-${item.name}`}
+          className="flex items-center gap-3"
         >
           <BrandLink
             key={`brand-link-introduction-tech-stack-accordion-item-${index}-${item.name}`}
@@ -34,12 +35,10 @@ export function IntroductionTechStackAccordion({
             showLabel
             labelPosition="bottom"
           />
+
+          {index === 0 && <PlusIcon className="mr-1 block size-6" />}
         </li>
       ))}
-
-      <li>
-        <PlusIcon className="mr-2 ml-1 size-6" />
-      </li>
 
       {technologies.map((item, index) => (
         <li

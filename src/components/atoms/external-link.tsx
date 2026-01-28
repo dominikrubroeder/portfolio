@@ -28,7 +28,7 @@ export function ExternalLink({
         variant === 'prominent' &&
           'relative mx-1 inline-flex items-center gap-1 text-foreground hover:text-foreground!',
         color === 'primary' && 'text-primary hover:text-primary-hover',
-        color === 'muted' && 'text-muted-foreground hover:text-muted-hover',
+        color === 'muted' && 'text-muted-foreground hover:text-foreground',
         color === 'foreground' && 'text-foreground hover:text-primary',
         className
       )}

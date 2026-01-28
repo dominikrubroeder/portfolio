@@ -18,10 +18,11 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid';
 
 export function AccordionItemContained({
   title,
-  children,
   accordionGroupId,
   focusView,
   accordionIcon,
+  buttonVariant,
+  children,
   className
 }: AccordionItemContainedProps) {
   const { isOpen, setIsOpen, ref } = useAccordionItemContained({
@@ -34,7 +35,7 @@ export function AccordionItemContained({
       ref={ref}
       className={cn('relative scroll-mt-responsive space-y-3 pt-4', className)}
     >
-      <ButtonGroup className="group sticky top-28 z-10 mx-auto flex items-center justify-between gap-2 sm:gap-4 lg:top-4">
+      <ButtonGroup className="group sticky top-28 z-10 mx-auto flex items-center justify-between gap-4 lg:top-4">
         {isOpen && (
           <div className="absolute -top-4 right-0 left-0 h-8 w-full bg-background" />
         )}
@@ -61,6 +62,7 @@ export function AccordionItemContained({
             isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
           }
           onClick={() => setIsOpen((prevState) => !prevState)}
+          variant={buttonVariant?.variant || 'contained'}
         >
           {isOpen && (
             <>

@@ -7,6 +7,7 @@ import {
 
 export function Accordion({
   variant,
+  buttonVariant,
   items,
   accordionGroupId,
   defaultOpen,
@@ -24,6 +25,7 @@ export function Accordion({
               accordionGroupId={accordionGroupId}
               focusView={focusView}
               accordionIcon={accordionIcon}
+              buttonVariant={buttonVariant}
             >
               {children}
             </AccordionItemContained>

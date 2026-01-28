@@ -24,8 +24,8 @@ export function BrandLink({
       aria-label={`Open ${brand.name} website`}
       className={cn(
         'group relative [&>img]:block [&>svg]:block',
-        size === 'small' && 'p-3 [&>img]:size-8 [&>svg]:size-8',
-        size === 'medium' && 'p-4 [&>img]:size-12 [&>svg]:size-12',
+        size === 'small' && 'h-14 w-16 p-1 [&>img]:size-8 [&>svg]:size-8',
+        size === 'medium' && 'h-17 w-18 p-2 [&>img]:size-12 [&>svg]:size-12',
         showLabel &&
           (labelPosition === 'top' || labelPosition === 'bottom') &&
           'grid items-center justify-center text-center [&>img]:mx-auto [&>svg]:mx-auto',
@@ -45,7 +45,12 @@ export function BrandLink({
         <ArrowRightIcon className="size-3" />
       </div>
 
-      <span className={cn('text-sm', !showLabel && 'sr-only')}>
+      <span
+        className={cn(
+          'absolute -bottom-6 left-1/2 w-max max-w-18 -translate-x-1/2 truncate text-sm',
+          !showLabel && 'sr-only'
+        )}
+      >
         {brand.name}
       </span>
     </Button>

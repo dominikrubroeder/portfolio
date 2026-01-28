@@ -267,10 +267,10 @@ export function ProjectCarousel() {
                   </div>
                 )}
 
-                <div className="space-y-4">
+                <div className="space-y-4 pb-4">
                   <b className="block">Tools</b>
 
-                  <ul className="-ml-4 flex flex-wrap gap-2">
+                  <ul className="ml-1 flex flex-wrap gap-5">
                     {project.tools?.map((tool, index) => {
                       if (tool && tool.name) {
                         return (
@@ -292,7 +292,7 @@ export function ProjectCarousel() {
 
                 <div className="space-y-4">
                   <b className="block">Technologies</b>
-                  <ul className="-ml-4 flex flex-wrap gap-2">
+                  <ul className="flex flex-wrap gap-5">
                     {project.technologies?.map((technology, index) => {
                       if (technology && technology.name) {
                         return (

@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react';
 import { ComponentBaseProps } from '@/lib/types';
+import { ButtonProps } from '@/components/atoms/button';
 
 export interface AccordionProps {
   variant: 'default' | 'contained';
+  buttonVariant?: Pick<ButtonProps, 'variant'>;
   items: AccordionItemProps[];
   accordionGroupId: string;
   /** `defaultOpen` lets you open an `AccordionItem` by default. Pass a `boolean` to default open the first element, or pass a `number` to indicate which item should be default open based on the index. */
@@ -28,6 +30,6 @@ export interface AccordionItemProps
 export interface AccordionItemContainedProps
   extends Pick<
       AccordionProps,
-      'accordionGroupId' | 'focusView' | 'accordionIcon'
+      'accordionGroupId' | 'focusView' | 'accordionIcon' | 'buttonVariant'
     >,
     AccordionItemProps {}

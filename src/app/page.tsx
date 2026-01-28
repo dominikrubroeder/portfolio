@@ -15,9 +15,6 @@ import {
   ThemeNotesBackgroundCornellNotes,
   ThemeWireframeBackground
 } from '@/components/organisms/theme';
-import { LiveEditToolbar } from '@/components/organisms/live-edit';
-import { Why } from '@/components/organisms/why';
-import { Blog } from '@/components/organisms/blog';
 
 export default async function HomePage() {
   return (
@@ -56,8 +53,6 @@ export default async function HomePage() {
       <Hr />
 
       <ContactSection />
-
-      <LiveEditToolbar />
     </Container>
   );
 }
