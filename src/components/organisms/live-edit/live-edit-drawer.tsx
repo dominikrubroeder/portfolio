@@ -96,13 +96,13 @@ export function LiveEditDrawer({
 
       <div className="grid gap-1">
         <DrawerClose asChild>
-          <Button variant="ghost">
+          <Button variant="ghost-foreground">
             <ArrowUturnLeftIcon /> Reset to default
           </Button>
         </DrawerClose>
 
         <DrawerClose asChild>
-          <Button variant="ghost">Close</Button>
+          <Button variant="ghost-foreground">Close</Button>
         </DrawerClose>
       </div>
     </DrawerFooter>

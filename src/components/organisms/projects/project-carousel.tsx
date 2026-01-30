@@ -38,7 +38,7 @@ export function ProjectCarousel() {
     <div className="mx-auto space-y-4">
       <div className="relative flex items-center justify-center rounded bg-background">
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           className="absolute right-14 -bottom-14 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
           title="Go to previous project"
           aria-label="Go to previous project"
@@ -49,7 +49,7 @@ export function ProjectCarousel() {
         </Button>
 
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           className="absolute right-0 -bottom-14 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
           title="Go to next project"
           aria-label="Go to next project"
@@ -190,7 +190,7 @@ export function ProjectCarousel() {
                 </Button>
 
                 <Button
-                  variant="ghost"
+                  variant="ghost-foreground"
                   title={`Read more on ${project.title}`}
                   aria-label={`Read more on ${project.title}`}
                   onClick={() =>
@@ -201,7 +201,7 @@ export function ProjectCarousel() {
                 </Button>
               </ButtonGroup>
 
-              <Button variant="ghost" href={project.url}>
+              <Button variant="ghost-foreground" href={project.url}>
                 <span className="sr-only">Open {project.readableTitle}</span>
                 Open
                 <ArrowUpRightIcon />

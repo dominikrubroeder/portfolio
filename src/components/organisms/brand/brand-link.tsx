@@ -18,7 +18,7 @@ export function BrandLink({
 }) {
   return (
     <Button
-      variant="ghost"
+      variant="ghost-foreground"
       href={brand.href}
       title={`Open ${brand.name} website`}
       aria-label={`Open ${brand.name} website`}

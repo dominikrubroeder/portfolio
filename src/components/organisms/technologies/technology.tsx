@@ -27,7 +27,7 @@ export default function Technology({
         )}
       >
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           href={technology.href}
           target="_blank"
           title={`Go to external ${technology.name} website`}

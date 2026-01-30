@@ -73,7 +73,10 @@ export function CodeBlock({
         <span className="font-mono">{fileName}</span>
 
         <ButtonGroup>
-          <Button variant="ghost" onClick={() => handleCopyToClipboard()}>
+          <Button
+            variant="ghost-foreground"
+            onClick={() => handleCopyToClipboard()}
+          >
             <span className="sr-only">Copy {fileName} code snippet</span>
             {isCopied ? <CheckIcon /> : <ClipboardCopy />}
           </Button>

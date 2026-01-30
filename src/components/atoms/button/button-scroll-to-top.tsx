@@ -6,7 +6,7 @@ import { Button } from '@/components/atoms/button/button';
 
 import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
 
-export function ScrollToTopButton() {
+export function ButtonScrollToTop() {
   const { scrollIntoView } = useScrollIntoView();
 
   return (

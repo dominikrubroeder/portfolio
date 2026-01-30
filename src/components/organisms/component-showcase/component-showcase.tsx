@@ -94,7 +94,7 @@ export function ComponentShowcase() {
                   <div className="group relative space-y-2 overflow-hidden">
                     {component.animatable && (
                       <Button
-                        variant="ghost"
+                        variant="ghost-foreground"
                         className="invisible absolute top-4 right-4 translate-y-4 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
                       >
                         <span className="sr-only">Reanimate</span>

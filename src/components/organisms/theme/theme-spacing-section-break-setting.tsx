@@ -7,17 +7,17 @@ import { ThemeSpacingSectionBreakLgIcon } from '@/components/organisms/theme/the
 export function ThemeSpacingSectionBreakSetting() {
   return (
     <ButtonGroup className="gap-0">
-      <Button variant="ghost">
+      <Button variant="ghost-foreground">
         <span className="sr-only">Spacing section break – sm</span>
         <ThemeSpacingSectionBreakSmIcon />
       </Button>
 
-      <Button variant="ghost">
+      <Button variant="ghost-foreground">
         <span className="sr-only">Spacing section break – md</span>
         <ThemeSpacingSectionBreakMdIcon />
       </Button>
 
-      <Button variant="ghost">
+      <Button variant="ghost-foreground">
         <span className="sr-only">Spacing section break – lg</span>
         <ThemeSpacingSectionBreakLgIcon />
       </Button>

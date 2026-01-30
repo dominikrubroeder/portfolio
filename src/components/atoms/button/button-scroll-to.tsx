@@ -12,7 +12,7 @@ interface ScrollToButtonProps extends Omit<ButtonProps, 'children'> {
   children?: ReactNode;
 }
 
-export function ScrollToButton({
+export function ButtonScrollTo({
   scrollIntoViewProps,
   buttonProps,
   children

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/atoms/button';
 import { ArrowLeftIcon } from '@heroicons/react/16/solid';
 
-export function BackButton({
+export function ButtonBack({
   label,
   withBackIcon
 }: {

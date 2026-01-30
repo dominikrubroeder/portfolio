@@ -64,7 +64,7 @@ export function ThemeAppearanceSelect({
   return (
     <div className={cn('relative inline-flex', className)}>
       <Button
-        variant="ghost"
+        variant="ghost-foreground"
         onClick={() => setIsOpen((prevState) => !prevState)}
         className={cn(isOpen && 'bg-muted')}
       >
@@ -101,7 +101,7 @@ export function ThemeAppearanceSelect({
             {options.map(({ value, label }) => (
               <li key={value}>
                 <Button
-                  variant="ghost"
+                  variant="ghost-foreground"
                   onClick={() => handleThemeChange(value as ThemeAppearance)}
                   className="w-full"
                 >

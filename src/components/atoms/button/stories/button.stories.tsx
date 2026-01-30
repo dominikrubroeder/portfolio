@@ -43,9 +43,16 @@ export const ContainedMuted: Story = {
   }
 };
 
-export const Ghost: Story = {
+export const GhostPrimary: Story = {
   args: {
-    variant: 'ghost',
+    variant: 'ghost-primary',
+    children: 'Button'
+  }
+};
+
+export const GhostForeground: Story = {
+  args: {
+    variant: 'ghost-foreground',
     children: 'Button'
   }
 };
@@ -57,9 +64,16 @@ export const GhostMuted: Story = {
   }
 };
 
-export const Text: Story = {
+export const TextPrimary: Story = {
   args: {
-    variant: 'text',
+    variant: 'text-primary',
+    children: 'Button'
+  }
+};
+
+export const TextForeground: Story = {
+  args: {
+    variant: 'text-foreground',
     children: 'Button'
   }
 };

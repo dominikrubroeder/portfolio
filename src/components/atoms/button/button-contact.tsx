@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import type { ButtonProps } from '@/components/atoms/button';
 import { Button } from '@/components/atoms/button';
 
-export function ContactButton({
+export function ButtonContact({
   buttonProps,
   withLabel,
   iconPosition = 'left'
@@ -17,7 +17,7 @@ export function ContactButton({
   return (
     <Button
       href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-      variant="ghost"
+      variant="ghost-foreground"
       {...buttonProps}
     >
       {iconPosition === 'left' && <EnvelopeIcon className="size-5" />}

@@ -83,7 +83,7 @@ export function DesignDrawer({ className }: { className?: string }) {
         <ProfileForm className="px-4" />
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
-            <Button variant="ghost">Cancel</Button>
+            <Button variant="ghost-foreground">Cancel</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

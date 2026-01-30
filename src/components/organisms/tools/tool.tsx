@@ -21,7 +21,7 @@ export default function Tool({ tool, group }: { tool: Brand; group: string }) {
         )}
       >
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           href={tool.href}
           target="_blank"
           title={`Go to external ${tool.name} website`}

@@ -8,7 +8,7 @@ export function ThemeShuffleButton() {
   const { shuffleTheme } = useTheme();
 
   return (
-    <Button variant="ghost" onClick={shuffleTheme}>
+    <Button variant="ghost-foreground" onClick={shuffleTheme}>
       <ShuffleIcon /> Shuffle theme
     </Button>
   );

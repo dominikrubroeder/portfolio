@@ -43,7 +43,7 @@ export function ToggleContent({
         </Button>
 
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           onClick={() => setShow((prevState) => !prevState)}
           {...buttonPropsSecond}
         >

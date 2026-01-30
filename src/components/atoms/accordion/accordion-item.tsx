@@ -32,7 +32,7 @@ export function AccordionItem({
         )}
       >
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           className="text-foreground"
           onClick={() => setIsOpen((previousState) => !previousState)}
         >
@@ -55,7 +55,7 @@ export function AccordionItem({
         </Button>
 
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           className="text-foreground"
           onClick={() => setIsOpen((previousState) => !previousState)}
         >

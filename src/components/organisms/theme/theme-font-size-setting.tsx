@@ -12,7 +12,7 @@ export function ThemeFontSizeSetting({ className }: { className?: string }) {
   return (
     <ButtonGroup className={cn('gap-0', className)} minimizeSpacing>
       <Button
-        variant="ghost"
+        variant="ghost-foreground"
         className={cn('text-sm', themeFontSize === 'sm' && 'underline')}
         onClick={() => setThemeFontSize('sm')}
       >
@@ -20,7 +20,7 @@ export function ThemeFontSizeSetting({ className }: { className?: string }) {
       </Button>
 
       <Button
-        variant="ghost"
+        variant="ghost-foreground"
         className={cn('text-base', themeFontSize === 'md' && 'underline')}
         onClick={() => setThemeFontSize('md')}
       >
@@ -28,7 +28,7 @@ export function ThemeFontSizeSetting({ className }: { className?: string }) {
       </Button>
 
       <Button
-        variant="ghost"
+        variant="ghost-foreground"
         className={cn('text-lg', themeFontSize === 'lg' && 'underline')}
         onClick={() => setThemeFontSize('lg')}
       >

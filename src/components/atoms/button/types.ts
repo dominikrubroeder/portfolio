@@ -10,9 +10,11 @@ export interface ButtonProps
     | 'contained-primary'
     | 'contained-foreground'
     | 'contained-muted'
-    | 'ghost'
+    | 'ghost-primary'
+    | 'ghost-foreground'
     | 'ghost-muted'
-    | 'text'
+    | 'text-primary'
+    | 'text-foreground'
     | 'text-muted';
   size?: 'tiny' | 'small' | 'medium' | 'large';
   className?: string;

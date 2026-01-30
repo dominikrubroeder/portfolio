@@ -4,7 +4,7 @@ import { Blockquote } from '@/components/atoms/blockquote';
 import { Ul } from '@/components/atoms/ul';
 import { ExternalLink } from '@/components/atoms/external-link';
 import Link from 'next/link';
-import { BackButton } from '@/components/atoms/button';
+import { ButtonBack } from '@/components/atoms/button';
 import {
   BlogPost,
   getBlogPost,
@@ -88,7 +88,7 @@ export function BlogPostTemplate({ id }: Pick<BlogPost, 'id'>) {
       )}
 
       <footer className="flex flex-wrap items-center justify-between gap-4">
-        <BackButton />
+        <ButtonBack />
         {nextBlogPost && (
           <NextBlogPostButton
             title={nextBlogPost.title}

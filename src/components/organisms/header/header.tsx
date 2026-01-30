@@ -1,8 +1,8 @@
 import { Avatar } from '@/components/atoms/avatar';
 import {
-  ContactButton,
-  GitHubButton,
-  LinkedInButton
+  ButtonContact,
+  ButtonGithub,
+  ButtonLinkedin
 } from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
@@ -52,9 +52,9 @@ export function Header() {
         <ThemeQuickSettings />
 
         <ButtonGroup minimizeSpacing>
-          <ContactButton iconPosition="right" buttonProps={{ size: 'large' }} />
-          <GitHubButton />
-          <LinkedInButton />
+          <ButtonContact iconPosition="right" buttonProps={{ size: 'large' }} />
+          <ButtonGithub />
+          <ButtonLinkedin />
         </ButtonGroup>
       </div>
     </header>

@@ -23,7 +23,7 @@ export function ThemeSpacingContainerWidthSetting() {
 
   return (
     <Select
-      trigger={{ variant: 'ghost' }}
+      trigger={{ variant: 'ghost-foreground' }}
       initialValue={THEME_SPACING_CONTAINER_WIDTH_OPTIONS[0].value}
       placeholder="Select a width"
       options={THEME_SPACING_CONTAINER_WIDTH_OPTIONS}

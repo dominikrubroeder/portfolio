@@ -9,9 +9,9 @@ import { cn } from '@/lib/utils';
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid';
 import {
   Button,
-  ContactButton,
-  GitHubButton,
-  LinkedInButton
+  ButtonContact,
+  ButtonGithub,
+  ButtonLinkedin
 } from '@/components/atoms/button';
 import { useHeaderMenu } from '@/components/organisms/header';
 import {
@@ -36,7 +36,7 @@ export function HeaderMenuDrawer() {
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger asChild>
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           className={cn(isOpen && 'bg-muted')}
           onClick={() => setIsOpen((prevState) => !prevState)}
         >
@@ -134,14 +134,14 @@ export function HeaderMenuDrawer() {
               <li>
                 <div className="flex items-center justify-between gap-4">
                   <span className="text-foreground">LinkedIn</span>
-                  <LinkedInButton />
+                  <ButtonLinkedin />
                 </div>
               </li>
 
               <li>
                 <div className="flex items-center justify-between gap-4">
                   <span className="text-foreground">GitHub</span>
-                  <GitHubButton />
+                  <ButtonGithub />
                 </div>
               </li>
 
@@ -151,7 +151,7 @@ export function HeaderMenuDrawer() {
                   className="flex items-center justify-between gap-4"
                 >
                   <span className="text-foreground">Email</span>
-                  <ContactButton
+                  <ButtonContact
                     iconPosition="right"
                     buttonProps={{ size: 'large' }}
                   />

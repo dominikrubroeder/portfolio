@@ -37,7 +37,7 @@ export function Select({
           {options.map((option) => (
             <Button
               key={option.key}
-              variant="ghost"
+              variant="ghost-foreground"
               className={cn('w-max', value !== option.value && 'pl-6')}
               onClick={() => handleSelection(option)}
             >
