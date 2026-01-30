@@ -1,4 +1,4 @@
-import { InstagramLogo } from '@/components/atoms/img';
+import { LogoInstagram } from '@/components/atoms/img';
 import { LinkedinLogo, XingLogo } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';
 
@@ -21,7 +21,7 @@ export const mainSocials: Brand[] = [
     name: 'Instagram',
     description: 'for private posts',
     href: 'https://www.instagram.com/domirubroeder',
-    logo: <InstagramLogo className="size-12" />,
+    logo: <LogoInstagram className="size-12" />,
     knowledge: 'Daily'
   }
 ];

@@ -1,4 +1,4 @@
-import { InkdropLogo } from '@/components/atoms/img';
+import { LogoInkdrop } from '@/components/atoms/img';
 import {
   AlgoliaLogo,
   CraftLogo,
@@ -417,7 +417,7 @@ export const tools: Tools = [
         name: 'Inkdrop',
         description: 'Organizing your Markdown notes made simple',
         href: 'https://inkdrop.app',
-        logo: <InkdropLogo />,
+        logo: <LogoInkdrop />,
         knowledge: 'Daily'
       }
     ]

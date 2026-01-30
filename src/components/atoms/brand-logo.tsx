@@ -1,11 +1,11 @@
 import { cn } from '@/lib/utils';
 
 import {
-  AuthjsLogo,
-  InkdropLogo,
-  InstagramLogo,
-  PostmanLogo,
-  TwigLogo
+  LogoAuthjs,
+  LogoInkdrop,
+  LogoInstagram,
+  LogoPostman,
+  LogoTwig
 } from '@/components/atoms/img';
 import {
   AdobeIllustratorLogo,
@@ -150,7 +150,7 @@ export function BrandLogo({
     lowerCaseBrand.includes('auth.js') ||
     lowerCaseBrand.includes('next-auth')
   ) {
-    return <AuthjsLogo className={className} />;
+    return <LogoAuthjs className={className} />;
   }
 
   if (brand.startsWith('@')) {
@@ -215,13 +215,13 @@ export function BrandLogo({
       return <XingLogo className={className} />;
 
     case 'Instagram':
-      return <InstagramLogo className={className} />;
+      return <LogoInstagram className={className} />;
 
     case 'Craft':
       return <CraftLogo className={className} />;
 
     case 'Inkdrop':
-      return <InkdropLogo className={className} />;
+      return <LogoInkdrop className={className} />;
 
     case 'Chrome':
       return <ChromeLogo className={className} />;
@@ -290,7 +290,7 @@ export function BrandLogo({
       return <BrunoLogo className={className} />;
 
     case 'Postman':
-      return <PostmanLogo className={className} />;
+      return <LogoPostman className={className} />;
 
     case 'Clerk':
       return <ClerkLogo className={className} />;
@@ -326,7 +326,7 @@ export function BrandLogo({
       return <FramerLogo className={className} />;
 
     case 'Twig':
-      return <TwigLogo className={className} />;
+      return <LogoTwig className={className} />;
 
     case 'Sass':
       return <SassLogo className={className} />;

@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo';
 
-export function AuthjsLogo({ className }: { className?: string }) {
+export function LogoAuthjs({ className }: { className?: string }) {
   return (
     <Image
       src="/auth-js.png"

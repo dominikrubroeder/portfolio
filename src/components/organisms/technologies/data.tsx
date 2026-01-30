@@ -1,4 +1,4 @@
-import { TwigLogo } from '@/components/atoms/img';
+import { LogoTwig } from '@/components/atoms/img';
 import {
   CssLogo,
   HtmlLogo,
@@ -280,7 +280,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Twig',
         description: 'The flexible, fast, and secure PHP template engine',
         href: 'https://twig.symfony.com',
-        logo: <TwigLogo />,
+        logo: <LogoTwig />,
         knowledge: 'Experienced'
       }
     ]

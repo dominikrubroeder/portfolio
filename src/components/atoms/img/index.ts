@@ -1,5 +1,5 @@
-export { AuthjsLogo } from './authjs-logo';
-export { InkdropLogo } from './inkdrop-logo';
-export { InstagramLogo } from './instagram-logo';
-export { PostmanLogo } from './postman-logo';
-export { TwigLogo } from './twig-logo';
+export { LogoAuthjs } from './logo-authjs';
+export { LogoInkdrop } from './logo-inkdrop';
+export { LogoInstagram } from './logo-instagram';
+export { LogoPostman } from './logo-postman';
+export { LogoTwig } from './logo-twig';
