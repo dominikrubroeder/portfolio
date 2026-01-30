@@ -29,7 +29,7 @@ export function FaqWhatIsAUxEngineer() {
 
         <figcaption>
           Reference to UXE user experience engineering work areas at
-          <ExternalLink href="https://uxe.withgoogle.com" className="mr-0">
+          <ExternalLink href="https://uxe.withgoogle.com" className="mr-0 ml-0">
             uxe.google.com
           </ExternalLink>
           .
@@ -40,7 +40,7 @@ export function FaqWhatIsAUxEngineer() {
         A additional description can be found
         <ExternalLink
           href="https://www.coursera.org/articles/what-is-a-ux-engineer"
-          className="mr-0"
+          className="mr-0 ml-0"
         >
           here
         </ExternalLink>

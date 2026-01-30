@@ -23,7 +23,7 @@ export function ExternalLink({
       href={href}
       className={cn(
         'group inline-flex interactive transition',
-        variant === 'inline' && 'mr-2.5 ml-1 rounded px-1 hover:bg-muted',
+        variant === 'inline' && 'mr-2.5 ml-0.5 rounded px-1 hover:bg-muted',
         variant === 'prominent' &&
           'relative mx-1 inline-flex items-center gap-1 text-foreground hover:text-foreground!',
         color === 'primary' && 'text-primary hover:text-primary-hover',

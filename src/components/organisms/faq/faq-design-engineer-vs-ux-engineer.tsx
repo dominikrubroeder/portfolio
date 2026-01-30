@@ -125,6 +125,7 @@ export function FaqDesignEngineerVsUxEngineer() {
           href="https://chat.openai.com/share/955dcf23-a3d1-4381-bf7d-d1078c5a89fa"
           title="Design Engineer vs UX Engineer for frontend work on ChatGPT"
           aria-label="Open Design Engineer vs UX Engineer for frontend work on ChatGPT"
+          className="ml-0"
         >
           Source
         </ExternalLink>
