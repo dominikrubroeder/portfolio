@@ -25,16 +25,14 @@ export function BrandRow({
     >
       <span className="sr-only">{`Go to external ${brand.name} website`}</span>
 
-      <div className="flex min-w-0 flex-1 basis-0 items-center gap-4 overflow-hidden sm:gap-8">
+      <div className="flex items-center gap-3 sm:gap-8">
         <BrandLogo
           brand={brand.name}
-          className="size-11 min-h-0 min-w-0 sm:size-12 [&>svg]:size-11 sm:[&>svg]:size-12"
+          className="size-11 sm:size-12 [&>svg]:size-11 sm:[&>svg]:size-12"
         />
 
-        <div className="max-w-full min-w-0">
-          <div className="max-w-full truncate text-sm font-bold sm:text-base">
-            {brand.name}
-          </div>
+        <div>
+          <b>{brand.name}</b>
 
           {showDescription && brand.description && (
             <p className="hidden text-muted-foreground sm:block">
