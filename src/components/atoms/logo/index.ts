@@ -70,6 +70,7 @@ export { LogoNetlify } from './logo-netlify';
 export { LogoCanva } from './logo-canva';
 export { LogoStorybook } from './logo-storybook';
 export { LogoViteJs } from './logo-vite-js';
+export { LogoPaper } from './logo-paper';
 
 export * from './img';
 

@@ -119,7 +119,7 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        name: 'Vercel Speedinsights',
+        name: 'Vercel Speed Insights',
         href: 'https://vercel.com/docs/speed-insights',
         logo: '',
         description:
@@ -165,7 +165,7 @@ export const tools: Tools = [
     group: 'Authentication',
     children: [
       {
-        name: 'Auth.js (now part of Better Auth)',
+        name: 'Auth.js',
         href: 'https://authjs.dev',
         logo: '',
         description: 'Authentication for the Web. Free and open source.',
@@ -334,7 +334,7 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        name: 'upsun (formerly Platform.sh)',
+        name: 'upsun',
         description:
           'The end-to-end cloud platform for building, running and scaling web applications',
         href: 'https://upsun.com',
@@ -379,6 +379,13 @@ export const tools: Tools = [
         name: 'Framer',
         description: 'Design and publish stunning sites',
         href: 'https://www.framer.com',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
+        name: 'Paper',
+        description: 'design incredible. for the love of design.',
+        href: 'https://paper.design',
         logo: '',
         knowledge: 'Used'
       },
