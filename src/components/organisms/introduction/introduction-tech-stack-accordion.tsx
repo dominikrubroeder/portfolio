@@ -20,7 +20,7 @@ export function IntroductionTechStackAccordion({
   return (
     <Ul
       className={cn(
-        '-ml-2 flex list-none flex-wrap items-center gap-4',
+        '-ml-2 flex list-none flex-wrap items-center gap-4 gap-y-8',
         className
       )}
     >
