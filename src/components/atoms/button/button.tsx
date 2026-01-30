@@ -34,9 +34,12 @@ export function Button({
     variant === 'ghost-primary' && 'text-primary',
     variant === 'ghost-foreground' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground hover:text-foreground',
-    variant === 'text-primary' && 'text-primary hover:text-primary-hover',
-    variant === 'text-foreground' && 'text-foreground hover:text-primary',
-    variant === 'text-muted' && 'text-muted-foreground hover:text-foreground',
+    variant === 'text-primary' &&
+      'text-primary hover:text-primary-hover [&>svg]:hover:text-primary-hover group-hover:[&>svg]:text-primary-hover',
+    variant === 'text-foreground' &&
+      'text-foreground hover:text-primary [&>svg]:hover:text-primary group-hover:[&>svg]:text-primary',
+    variant === 'text-muted' &&
+      'text-muted-foreground hover:text-foreground [&>svg]:hover:text-foreground group-hover:[&>svg]:text-foreground',
     size === 'tiny' && 'text-xs py-1 px-1 gap-2 [&>svg]:size-3',
     size === 'small' && 'text-sm py-1 px-2 gap-2 [&>svg]:size-3',
     size === 'medium' && 'text-base py-2 px-3 gap-2 [&>svg]:size-5',
