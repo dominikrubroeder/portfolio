@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
-import { ColorVariantProp, SizeVariantProp } from '@/lib/types';
+import { ColorProp, SizeProp } from '@/lib/types';
 
 export function Badge({
   variant = 'primary',
@@ -10,8 +10,8 @@ export function Badge({
   children,
   ...rest
 }: {
-  variant?: ColorVariantProp;
-  size?: SizeVariantProp;
+  variant?: ColorProp;
+  size?: SizeProp;
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>) {

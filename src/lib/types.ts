@@ -2,10 +2,6 @@ export type PageParams = Promise<{ slug: string | null; id: string | null }>;
 export type PageSearchParams = Promise<{
   [key: string]: string | string[] | undefined;
 }>;
-export type PageProps = {
-  params: PageParams;
-  searchParams: PageSearchParams;
-};
 
 export type HTMLTag =
   | 'span'
@@ -37,22 +33,11 @@ export type SortByType = 'type-A-Z';
 
 export type SortProp = SortAlphabeticallyProp | SortByProgressProp;
 
-// TODO: Use `SizeVariantProp` across the app
-export type SizeVariantReducedProp = 'sm' | 'md' | 'lg';
-
-export type SizeVariantExtendedProp = 'xs' | 'xl';
-
-export type SizeVariantProp = SizeVariantReducedProp | SizeVariantExtendedProp;
+export type SizeProp = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 // TODO: Use `ColorVariantProp` across the app
-export type ColorVariantReducedProp = 'primary' | 'foreground' | 'muted';
+export type ColorReducedProp = 'primary' | 'foreground' | 'muted';
 
-export type ColorVariantIntentionProp =
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'destructive';
+export type ColorIntentionProp = 'success' | 'info' | 'warning' | 'destructive';
 
-export type ColorVariantProp =
-  | ColorVariantReducedProp
-  | ColorVariantIntentionProp;
+export type ColorProp = ColorReducedProp | ColorIntentionProp;

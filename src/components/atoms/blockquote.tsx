@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
-import { ColorVariantReducedProp } from '@/lib/types';
+import { ColorReducedProp } from '@/lib/types';
 
 export function Blockquote({
   variant = 'muted',
@@ -17,7 +17,7 @@ export function Blockquote({
   withBackground,
   ...rest
 }: {
-  variant?: ColorVariantReducedProp;
+  variant?: ColorReducedProp;
   indent?: boolean;
   quoteBar?: boolean;
   centered?: boolean;

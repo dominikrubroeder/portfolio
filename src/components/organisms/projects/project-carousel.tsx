@@ -248,9 +248,7 @@ export function ProjectCarousel() {
                     <Ul listStyle="disc">
                       {project.caseStudyUrls?.map((url) => (
                         <li key={url}>
-                          <ExternalLink href={url} variant="unstyled">
-                            {url}
-                          </ExternalLink>
+                          <ExternalLink href={url}>{url}</ExternalLink>
                         </li>
                       ))}
                     </Ul>
@@ -273,9 +271,7 @@ export function ProjectCarousel() {
                     <Ul listStyle="disc">
                       {project.demoUrls?.map((url) => (
                         <li key={url}>
-                          <ExternalLink href={url} variant="unstyled">
-                            {url}
-                          </ExternalLink>
+                          <ExternalLink href={url}>{url}</ExternalLink>
                         </li>
                       ))}
                     </Ul>
