@@ -9,9 +9,9 @@ export function Footer() {
       <p className="space-x-2">
         <ExternalLink
           href="https://nextjs.org"
-          variant="unstyled"
           title="Open Next.js website"
           aria-label="Open Next.js website"
+          size="xs"
         >
           Next.js 16.1.6
         </ExternalLink>
@@ -20,9 +20,9 @@ export function Footer() {
 
         <ExternalLink
           href="https://react.dev"
-          variant="unstyled"
           title="Open React website"
           aria-label="Open React website"
+          size="xs"
         >
           React 19.2.4
         </ExternalLink>
@@ -31,9 +31,9 @@ export function Footer() {
 
         <ExternalLink
           href="https://tailwindcss.com/docs"
-          variant="unstyled"
           title="Open Tailwind CSS documentation"
           aria-label="Open Tailwind CSS documentation"
+          size="xs"
         >
           Tailwind CSS 4.1.18
         </ExternalLink>
@@ -57,7 +57,6 @@ export function Footer() {
         <p>
           Santa Clause cap:
           <ExternalLink
-            variant="unstyled"
             color="muted"
             href="https://www.svgrepo.com/svg/206754/winter-hat-santa-claus"
             className="ml-1"

@@ -3,18 +3,19 @@ import type { ReactNode } from 'react';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
+import { ColorProp, SizeProp } from '@/lib/types';
 
 export function ExternalLink({
   href,
-  variant = 'inline',
+  size = 'md',
   color = 'foreground',
   className,
   children,
   ...rest
 }: {
   href: string;
-  variant?: 'inline' | 'prominent' | 'unstyled';
-  color?: 'primary' | 'muted' | 'foreground';
+  size?: SizeProp;
+  color?: ColorProp;
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLAnchorElement>) {
@@ -22,35 +23,25 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'group inline-flex interactive transition',
-        variant === 'inline' && 'mr-2.5 ml-0.5 rounded px-1 hover:bg-muted',
-        variant === 'prominent' &&
-          'relative mx-1 inline-flex items-center gap-1 text-foreground hover:text-foreground!',
+        'group relative inline-flex items-center',
         color === 'primary' && 'text-primary hover:text-primary-hover',
-        color === 'muted' && 'text-muted-foreground hover:text-foreground',
         color === 'foreground' && 'text-foreground',
+        color === 'muted' && 'text-muted-foreground hover:text-foreground',
+        size === 'xs' && 'text-xs',
+        size === 'sm' && 'text-sm',
+        size === 'md' && 'text-base',
+        size === 'lg' && 'text-lg',
         className
       )}
       target="_blank"
       rel="noopener noreferrer"
       {...rest}
     >
-      {children}
-
-      <span className="relative">
-        <ArrowUpRightIcon
-          className={cn(
-            variant === 'inline' &&
-              'absolute top-1 -right-4 size-3.5 text-current',
-            variant === 'prominent' && 'size-4 text-primary',
-            variant === 'unstyled' && 'ml-0.5'
-          )}
-        />
+      <span className="rounded px-1 hover:bg-muted active:bg-muted">
+        {children}
       </span>
 
-      {variant === 'prominent' && (
-        <span className="absolute inset-x-0 -bottom-1 h-1 w-full rounded-full bg-primary group-hover:scale-x-[1.04] group-hover:bg-primary-hover" />
-      )}
+      <ArrowUpRightIcon className={cn('size-3.5 text-current')} />
     </a>
   );
 }

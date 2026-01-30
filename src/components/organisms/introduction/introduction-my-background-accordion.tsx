@@ -105,9 +105,9 @@ export function IntroductionMyBackgroundAccordion() {
         with Vue (which can be a pro or a con depending on how you look at it).
       </p>
       <p>
-        <ExternalLink className="ml-0" href="https://www.typescriptlang.org">
+        <ExternalLink href="https://www.typescriptlang.org">
           TypeScript
-        </ExternalLink>{' '}
+        </ExternalLink>
         came as last piece to the puzzle which in the retrospective was a wise
         decision, as most of today&#39;s web applications or frameworks require
         TypeScript as the base.
@@ -119,7 +119,6 @@ export function IntroductionMyBackgroundAccordion() {
             href="https://astro.build/"
             title="Visit Astrob website"
             aria-label="Visit Astrob website"
-            className="ml-0"
           >
             Astro
           </ExternalLink>
@@ -129,7 +128,6 @@ export function IntroductionMyBackgroundAccordion() {
             href="https://gatsbyjs.com/"
             title="Visit Gatsby website"
             aria-label="Visit Gatsby website"
-            className="ml-0"
           >
             Gatsby
           </ExternalLink>
@@ -139,7 +137,7 @@ export function IntroductionMyBackgroundAccordion() {
             href="https://nuxtjs.org/"
             title="Visit Nuxt website"
             aria-label="Visit Nuxt website"
-            className="mr-4 ml-0"
+            className="mr-1"
           >
             Nuxt
           </ExternalLink>
@@ -150,7 +148,6 @@ export function IntroductionMyBackgroundAccordion() {
             href="https://remix.run/"
             title="Visit Remix website"
             aria-label="Visit Remix website"
-            className="ml-0"
           >
             Remix
           </ExternalLink>
@@ -160,7 +157,6 @@ export function IntroductionMyBackgroundAccordion() {
             href="https://svelte.dev/"
             title="Visit Svelte website"
             aria-label="Visit Svelte website"
-            className="ml-0"
           >
             Svelte
           </ExternalLink>

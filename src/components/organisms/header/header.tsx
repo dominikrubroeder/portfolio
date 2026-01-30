@@ -33,9 +33,9 @@ export function Header() {
             <span>UX Design Engineer</span>
             <span className="ml-1 hidden sm:inline-block">@</span>
             <ExternalLink
-              variant="inline"
-              color="muted"
               href="https://www.mediawave.de"
+              color="muted"
+              size="sm"
               title="Open mediawave commerce GmbH website"
               aria-label="Open mediawave commerce GmbH website"
               className="hidden sm:inline-flex"

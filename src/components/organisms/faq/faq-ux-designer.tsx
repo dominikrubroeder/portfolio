@@ -140,7 +140,6 @@ export function FaqUxDesigner() {
           href="https://chat.openai.com/share/ca8c7c7e-95da-46bb-bd06-fbb81ac53dea"
           title="Open UX Design: Key Predicates on ChatGPT"
           aria-label="Open UX Design: Key Predicates on ChatGPT"
-          className="ml-0"
         >
           Source
         </ExternalLink>
