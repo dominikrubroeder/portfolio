@@ -48,6 +48,7 @@ import {
   LogoNotes,
   LogoNpm,
   LogoPa11y,
+  LogoPaper,
   LogoPostman,
   type LogoProps,
   LogoRadixUi,
@@ -346,6 +347,9 @@ export function BrandLogo({
 
     case 'Vite':
       return <LogoViteJs className={className} />;
+
+    case 'Paper':
+      return <LogoPaper className={className} />;
 
     default:
       return DefaultLogo;
