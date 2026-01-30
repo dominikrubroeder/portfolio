@@ -1,9 +1,9 @@
-import { LogoInkdrop } from '@/components/atoms/img';
 import {
   LogoAlgolia,
   LogoCraft,
   LogoFigma,
   LogoGithub,
+  LogoInkdrop,
   LogoShopware,
   LogoStoryblok,
   LogoWebstorm

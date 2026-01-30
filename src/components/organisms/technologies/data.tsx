@@ -1,4 +1,3 @@
-import { LogoTwig } from '@/components/atoms/img';
 import {
   LogoCss,
   LogoHtml,
@@ -9,6 +8,7 @@ import {
   LogoReact,
   LogoSass,
   LogoTailwindCss,
+  LogoTwig,
   LogoTypescript
 } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';

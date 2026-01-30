@@ -1,18 +1,12 @@
 import { cn } from '@/lib/utils';
 
 import {
-  LogoAuthjs,
-  LogoInkdrop,
-  LogoInstagram,
-  LogoPostman,
-  LogoTwig
-} from '@/components/atoms/img';
-import {
   LogoAdobeIllustrator,
   LogoAdobePhotoshop,
   LogoAdobeXd,
   LogoAlgolia,
   LogoArc,
+  LogoAuthjs,
   LogoAws,
   LogoAxios,
   LogoBrave,
@@ -39,13 +33,14 @@ import {
   LogoHeroicons,
   LogoHotjar,
   LogoHtml,
+  LogoInkdrop,
+  LogoInstagram,
   LogoJavascript,
   LogoJira,
   LogoLighthouse,
   LogoLinkedin,
   LogoMarkdown,
   LogoMeilisearch,
-  type LogoProps,
   LogoMiro,
   LogoMotion,
   LogoNetlify,
@@ -53,6 +48,8 @@ import {
   LogoNotes,
   LogoNpm,
   LogoPa11y,
+  LogoPostman,
+  type LogoProps,
   LogoRadixUi,
   LogoReact,
   LogoSafari,
@@ -65,6 +62,7 @@ import {
   LogoStorybook,
   LogoTailwindCss,
   LogoTeams,
+  LogoTwig,
   LogoTypescript,
   LogoTypo3,
   LogoUiColors,

@@ -1,5 +1,4 @@
-import { LogoInstagram } from '@/components/atoms/img';
-import { LogoLinkedin, LogoXing } from '@/components/atoms/logo';
+import { LogoInstagram, LogoLinkedin, LogoXing } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';
 
 export const mainSocials: Brand[] = [

@@ -85,7 +85,7 @@ export function AccordionItemContained({
       </ButtonGroup>
 
       {isOpen && (
-        <div className="mb-5 p-4 pt-2 motion-safe:animate-fade-up">
+        <div className="mb-5 py-4 pt-2 motion-safe:animate-fade-up">
           {children}
         </div>
       )}

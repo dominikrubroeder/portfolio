@@ -71,5 +71,7 @@ export { LogoCanva } from './logo-canva';
 export { LogoStorybook } from './logo-storybook';
 export { LogoViteJs } from './logo-vite-js';
 
+export * from './img';
+
 export * from './config';
 export * from './types';
