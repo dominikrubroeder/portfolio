@@ -19,7 +19,8 @@ export const projects: Project[] = [
     category: ['Headless', 'Ecommerce', 'B2C', 'DIY'],
     url: 'https://www.sautershop.com/en',
     isCurrentProject: true,
-    readableTitle: 'Quality wood-working tools for DIY home projects',
+    readableTitle:
+      'Quality woodworking tools and accessorizes for DIY projects',
     timeframe: 'Ongoing – 2024',
     logo: <SautershopLogo className="h-12 w-auto" />,
     role: ['Frontend Developer'],
@@ -54,7 +55,8 @@ export const projects: Project[] = [
     title: 'Value Booster',
     category: ['Headless', 'Ecommerce', 'B2B', 'B2C'],
     url: 'https://www.mediawave.de/value-booster',
-    readableTitle: 'Kickstart in your headless ecommerce project',
+    readableTitle:
+      'Kickstart in your headless ecommerce project with the mediawave Value Booster',
     isCurrentProject: false,
     timeframe: 'Ongoing – 2024',
     logo: <MediawaveLogo className="h-12 w-auto" />,
@@ -131,8 +133,7 @@ export const projects: Project[] = [
     title: 'Segmüller',
     category: ['Ecommerce', 'Home Furniture', 'B2B'],
     url: 'https://www.segmueller.de',
-    readableTitle:
-      'Well-known home furniture store in Bavaria, Augsburg, Germany',
+    readableTitle: 'Well-known home furniture store in Augsburg (Germany)',
     isCurrentProject: false,
     timeframe: '2023 – 2021',
     logo: <SegmuellerLogo className="h-12 w-auto" />,
@@ -192,7 +193,7 @@ export const projects: Project[] = [
     category: ['Ecommerce', 'Website'],
     url: 'https://www.loy.info',
     readableTitle:
-      'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. Here i spend my 2.5 year training and 3 additional years during dual study and a full-time position, learning and working on frontend development and design.',
+      'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. I spend my two and a half years training and three additional years during dual study and full-time job here. This was all about print media, digital media and my initial design and development training.',
     isCurrentProject: false,
     timeframe: '2021 – 2016',
     logo: <LoyGmbHLogo className="h-12 w-auto" />,

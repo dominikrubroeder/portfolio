@@ -8,7 +8,7 @@ import { ButtonProps } from '@/components/atoms/button/types';
 import { extractEmail, extractPhoneNumber } from './helper';
 
 export function Button({
-  variant = 'contained',
+  variant = 'contained-primary',
   size = 'medium',
   href,
   target,
@@ -23,12 +23,12 @@ export function Button({
     'interactive select-none group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center transition-all',
     variant.includes('contained') &&
       'min-h-11 min-w-11 rounded-2xl hover:rounded-xl',
-    variant === 'contained' &&
-      'bg-primary text-primary-foreground  hover:bg-primary-hover',
-    variant === 'contained-muted' &&
-      'bg-muted text-foreground hover:bg-muted-hover',
     variant === 'contained-primary' &&
-      'bg-muted text-primary hover:bg-muted-hover',
+      'bg-primary text-primary-foreground hover:bg-primary-hover',
+    variant === 'contained-foreground' &&
+      'bg-muted text-foreground hover:bg-muted-hover',
+    variant === 'contained-muted' &&
+      'bg-muted text-muted-foreground hover:bg-muted-hover hover:text-foreground',
     variant?.includes('ghost') &&
       "min-h-11 min-w-11 text-foreground relative z-10 rounded-2xl hover:text-foreground group-hover:text-foreground after:absolute after:inset-0 after:-z-10 after:scale-75 after:rounded-lg after:bg-muted after:opacity-0 after:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 hover:after:rounded-xl active:after:rounded-xl active:after:opacity-100 hover:after:opacity-100 group-hover:text-foreground active:text-foreground group-hover:after:scale-100 group-hover:after:rounded-xl group-hover:after:opacity-100",
     variant === 'ghost' && 'text-foreground',

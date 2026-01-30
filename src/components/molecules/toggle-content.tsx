@@ -7,14 +7,19 @@ import { MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
 
-import { ButtonTextGroup } from '@/components/atoms/button';
+import { Button, ButtonProps } from '@/components/atoms/button';
+import { ButtonGroup } from '@/components/molecules/button-group';
 
 export function ToggleContent({
   label,
+  buttonPropsFirst,
+  buttonPropsSecond,
   className,
   children
 }: {
   label?: ReactNode;
+  buttonPropsFirst?: Partial<Pick<ButtonProps, 'variant'>>;
+  buttonPropsSecond?: ButtonProps;
   className?: string;
   children: ReactNode;
 }) {
@@ -22,28 +27,29 @@ export function ToggleContent({
 
   return (
     <div className={cn('space-y-8', className)}>
-      <ButtonTextGroup
-        buttonPropsFirst={{
-          children: (
-            <>
-              <span className="sr-only">{show ? 'Hide' : 'Close'}</span>
-              <div>
-                {show ? (
-                  <MinusIcon className="size-5" />
-                ) : (
-                  <PlusIcon className="size-5" />
-                )}
-              </div>
-            </>
-          ),
-          onClick: () => setShow((prevState) => !prevState)
-        }}
-        buttonPropsSecond={{
-          variant: 'ghost',
-          children: label,
-          onClick: () => setShow((prevState) => !prevState)
-        }}
-      />
+      <ButtonGroup>
+        <Button
+          onClick={() => setShow((prevState) => !prevState)}
+          {...buttonPropsFirst}
+        >
+          <span className="sr-only">{show ? 'Hide' : 'Close'}</span>
+          <div>
+            {show ? (
+              <MinusIcon className="size-5" />
+            ) : (
+              <PlusIcon className="size-5" />
+            )}
+          </div>
+        </Button>
+
+        <Button
+          variant="ghost"
+          onClick={() => setShow((prevState) => !prevState)}
+          {...buttonPropsSecond}
+        >
+          {label}
+        </Button>
+      </ButtonGroup>
 
       <div
         className={cn(

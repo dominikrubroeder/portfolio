@@ -1,5 +1,4 @@
 import { Container } from '@/components/atoms/container';
-import { Hr } from '@/components/atoms/hr';
 import { ContactSection } from '@/components/organisms/contact';
 import { FAQ } from '@/components/organisms/faq';
 import { HomeHero } from '@/components/organisms/home';
@@ -22,7 +21,7 @@ export default async function HomePage() {
       as="div"
       size="container"
       horizontalPadding
-      className="space-y-12"
+      className="space-y-24"
     >
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
 
@@ -34,23 +33,13 @@ export default async function HomePage() {
 
       <Projects />
 
-      <Hr />
-
       <Tools />
-
-      <Hr />
 
       <Technologies />
 
-      <Hr />
-
       <Socials />
 
-      <Hr />
-
       <FAQ />
-
-      <Hr />
 
       <ContactSection />
     </Container>

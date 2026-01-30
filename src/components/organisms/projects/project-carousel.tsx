@@ -21,6 +21,7 @@ import {
   MinusIcon,
   PlusIcon
 } from '@heroicons/react/16/solid';
+import { Hr } from '@/components/atoms/hr';
 
 export function ProjectCarousel() {
   const {
@@ -35,10 +36,10 @@ export function ProjectCarousel() {
 
   return (
     <div className="mx-auto space-y-4">
-      <div className="relative flex min-h-56 items-center justify-center rounded bg-background sm:h-96">
+      <div className="relative flex items-center justify-center rounded bg-background">
         <Button
           variant="ghost"
-          className="absolute right-14 -bottom-12 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+          className="absolute right-14 -bottom-14 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
           title="Go to previous project"
           aria-label="Go to previous project"
           onClick={goPrevious}
@@ -49,7 +50,7 @@ export function ProjectCarousel() {
 
         <Button
           variant="ghost"
-          className="absolute right-0 -bottom-12 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
+          className="absolute right-0 -bottom-14 z-20 bg-background/80 backdrop-blur-sm hover:bg-background/90"
           title="Go to next project"
           aria-label="Go to next project"
           onClick={goNext}
@@ -64,7 +65,7 @@ export function ProjectCarousel() {
           aria-label={`Go to external ${project.title} website`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex interactive items-center justify-center"
+          className="flex h-56 w-full interactive items-center justify-center rounded border p-4 xs:h-80 sm:h-96 md:h-120"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -130,7 +131,7 @@ export function ProjectCarousel() {
             transition={{ duration: 0.2 }}
           >
             <div className="space-y-2">
-              <div className="space-y-1 xs:flex xs:flex-wrap xs:items-center xs:gap-2">
+              <div className="space-y-1 xs:flex xs:flex-wrap xs:items-center xs:gap-2 xs:space-y-0">
                 <div className="flex items-center gap-2">
                   {activeProject === 0 && (
                     <span className="relative flex size-4 items-center justify-center rounded-full bg-primary/10">
@@ -139,9 +140,16 @@ export function ProjectCarousel() {
                     </span>
                   )}
 
-                  <div>
-                    <b>{project.title}</b>
-                  </div>
+                  <Link
+                    href={project.url}
+                    title={`Go to external ${project.title} website`}
+                    aria-label={`Go to external ${project.title} website`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold"
+                  >
+                    {project.title}
+                  </Link>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
@@ -150,17 +158,24 @@ export function ProjectCarousel() {
                       Current Project
                     </Badge>
                   )}
-
-                  {project.timeframe && (
-                    <Badge variant="muted" size="sm" className="self-center">
-                      {project.timeframe}
-                    </Badge>
-                  )}
                 </div>
               </div>
 
-              <div className="mb-3 inline-block text-muted-foreground">
-                {project.readableTitle}
+              <div className="mb-3 inline-block w-full text-muted-foreground">
+                {project.timeframe && (
+                  <div className="mb-3 flex items-center justify-center gap-4">
+                    <Badge
+                      variant="muted"
+                      size="sm"
+                      className="w-max shrink-0 self-center"
+                    >
+                      {project.timeframe}
+                    </Badge>
+                    <Hr className="my-0 inline-block h-1 w-full" />
+                  </div>
+                )}
+
+                <p>{project.readableTitle}</p>
               </div>
             </div>
 

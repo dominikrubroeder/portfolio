@@ -30,11 +30,11 @@ export function IntroductionHowIWorkAccordion() {
         if i'm stuck in a concept for too long
       </li>
       <li>
-        <b>See global scope – think system through paper to production</b>
+        <b>See global scope</b> – think system through paper to production
       </li>
       <li>
-        <b>Compose</b> latest trends together with core design principles and
-        user interface patterns
+        <b>Compose</b> trends together with core design principles and UI
+        patterns
       </li>
     </Ul>
   );

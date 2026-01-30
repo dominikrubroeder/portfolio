@@ -18,8 +18,8 @@ export function HomeHero() {
           </div>
 
           <h2 className="bg-background">
-            Building user interfaces for the web: A craft about UI components,
-            design systems and thinking beyond visible parts.
+            Building user interfaces for the web: A craft about UI components
+            and design systems.
           </h2>
         </div>
       </Container>

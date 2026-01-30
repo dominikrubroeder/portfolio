@@ -5,7 +5,10 @@ import { Ul } from '@/components/atoms/ul';
 
 export function AllTools() {
   return (
-    <ToggleContent label="All tools">
+    <ToggleContent
+      label="All tools"
+      buttonPropsFirst={{ variant: 'contained-muted' }}
+    >
       <Ul className="grid gap-6 sm:gap-10">
         {tools
           .slice()

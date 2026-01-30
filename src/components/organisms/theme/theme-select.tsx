@@ -12,7 +12,7 @@ export function ThemeSelect() {
 
   return (
     <Select
-      trigger={{ variant: 'contained' }}
+      trigger={{ variant: 'contained-primary' }}
       initialValue={
         THEME_OPTIONS.find((availableTheme) => availableTheme.key === theme.key)
           ?.value ?? THEME_OPTIONS[0].value

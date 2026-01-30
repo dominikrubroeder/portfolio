@@ -19,12 +19,12 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Dominik Rubröder | UX Design Engineer Portfolio',
+  title: 'Dominik Rubröder | UX Design Engineer',
   description:
     'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
   metadataBase: new URL('https://www.dominikrubroeder.dev'),
   openGraph: {
-    title: 'Dominik Rubröder | UX Design Engineer Portfolio',
+    title: 'Dominik Rubröder | UX Design Engineer',
     description:
       'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
     url: 'https://www.dominikrubroeder.dev',

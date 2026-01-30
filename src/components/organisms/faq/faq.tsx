@@ -21,6 +21,7 @@ export function FAQ() {
 
         <Accordion
           variant="contained"
+          buttonVariant={{ variant: 'contained-muted' }}
           items={[
             {
               title: 'What is a UX Engineer?',

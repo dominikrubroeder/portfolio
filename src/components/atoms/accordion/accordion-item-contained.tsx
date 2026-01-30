@@ -41,7 +41,7 @@ export function AccordionItemContained({
         )}
 
         <Button
-          variant="contained-muted"
+          variant="contained-foreground"
           title={
             isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
           }
@@ -62,7 +62,7 @@ export function AccordionItemContained({
             isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
           }
           onClick={() => setIsOpen((prevState) => !prevState)}
-          variant={buttonVariant?.variant || 'contained'}
+          variant={buttonVariant?.variant || 'contained-primary'}
         >
           {isOpen && (
             <>

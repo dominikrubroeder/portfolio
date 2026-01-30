@@ -4,7 +4,10 @@ import { BrandRow } from '@/components/organisms/brand';
 
 export function AllTechnologies() {
   return (
-    <ToggleContent label="All technologies">
+    <ToggleContent
+      label="All technologies"
+      buttonPropsFirst={{ variant: 'contained-muted' }}
+    >
       <ul className="grid gap-6 sm:gap-10">
         {technologies
           .slice()

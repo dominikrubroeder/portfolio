@@ -7,9 +7,9 @@ import type {
 export interface ButtonProps
   extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
   variant?:
-    | 'contained'
-    | 'contained-muted'
     | 'contained-primary'
+    | 'contained-foreground'
+    | 'contained-muted'
     | 'ghost'
     | 'ghost-muted'
     | 'text'

@@ -23,13 +23,12 @@ export function ExternalLink({
       href={href}
       className={cn(
         'group inline-flex interactive transition',
-        variant === 'inline' &&
-          'mr-2.5 ml-1 hover:text-primary hover:decoration-primary',
+        variant === 'inline' && 'mr-2.5 ml-1 rounded px-1 hover:bg-muted',
         variant === 'prominent' &&
           'relative mx-1 inline-flex items-center gap-1 text-foreground hover:text-foreground!',
         color === 'primary' && 'text-primary hover:text-primary-hover',
         color === 'muted' && 'text-muted-foreground hover:text-foreground',
-        color === 'foreground' && 'text-foreground hover:text-primary',
+        color === 'foreground' && 'text-foreground',
         className
       )}
       target="_blank"
@@ -42,7 +41,7 @@ export function ExternalLink({
         <ArrowUpRightIcon
           className={cn(
             variant === 'inline' &&
-              'absolute top-1 -right-3.5 size-3.5 text-current',
+              'absolute top-1 -right-4 size-3.5 text-current',
             variant === 'prominent' && 'size-4 text-primary',
             variant === 'unstyled' && 'ml-0.5'
           )}

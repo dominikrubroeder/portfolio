@@ -22,9 +22,16 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Contained: Story = {
+export const ContainedPrimary: Story = {
   args: {
-    variant: 'contained',
+    variant: 'contained-primary',
+    children: 'Button'
+  }
+};
+
+export const ContainedForeground: Story = {
+  args: {
+    variant: 'contained-foreground',
     children: 'Button'
   }
 };
