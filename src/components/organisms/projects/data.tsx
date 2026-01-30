@@ -1,12 +1,12 @@
 import {
-  AllesAutoLogo,
-  FrontendMentorLogo,
-  GithubLogo,
-  HdPlusLogo,
-  LoyGmbHLogo,
-  MediawaveLogo,
-  SautershopLogo,
-  SegmuellerLogo
+  LogoAllesAuto,
+  LogoFrontendMentor,
+  LogoGithub,
+  LogoHdPlus,
+  LogoLoyGmbh,
+  LogoMediawave,
+  LogoSautershop,
+  LogoSegmueller
 } from '@/components/atoms/logo';
 import type { Project } from '@/components/organisms/projects/types';
 import { getTechnologies } from '@/components/organisms/technologies';
@@ -22,7 +22,7 @@ export const projects: Project[] = [
     readableTitle:
       'Quality woodworking tools and accessorizes for DIY projects',
     timeframe: 'Ongoing – 2024',
-    logo: <SautershopLogo className="h-12 w-auto" />,
+    logo: <LogoSautershop className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     aspects: undefined,
     tools: getTools({
@@ -59,7 +59,7 @@ export const projects: Project[] = [
       'Kickstart in your headless ecommerce project with the mediawave Value Booster',
     isCurrentProject: false,
     timeframe: 'Ongoing – 2024',
-    logo: <MediawaveLogo className="h-12 w-auto" />,
+    logo: <LogoMediawave className="h-12 w-auto" />,
     role: ['Frontend Developer', 'Design Consulting'],
     aspects: [
       'Building the user interface with/without design files',
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       'Watch television in HD — via satellite or internet (IP), on your TV and smartphone',
     isCurrentProject: false,
     timeframe: '2023 – 2022',
-    logo: <HdPlusLogo className="h-12 w-auto" />,
+    logo: <LogoHdPlus className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer'],
     aspects: undefined,
     tools: getTools({
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     readableTitle: 'Well-known home furniture store in Augsburg (Germany)',
     isCurrentProject: false,
     timeframe: '2023 – 2021',
-    logo: <SegmuellerLogo className="h-12 w-auto" />,
+    logo: <LogoSegmueller className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     aspects: undefined,
     tools: getTools({
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     readableTitle: 'Online selling and re-selling and car service platform',
     isCurrentProject: false,
     timeframe: '2021',
-    logo: <AllesAutoLogo className="h-6 w-auto sm:h-12" />,
+    logo: <LogoAllesAuto className="h-6 w-auto sm:h-12" />,
     role: ['Frontend Developer'],
     aspects: undefined,
     tools: getTools({
@@ -196,7 +196,7 @@ export const projects: Project[] = [
       'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. I spend my two and a half years training and three additional years during dual study and full-time job here. This was all about print media, digital media and my initial design and development training.',
     isCurrentProject: false,
     timeframe: '2021 – 2016',
-    logo: <LoyGmbHLogo className="h-12 w-auto" />,
+    logo: <LogoLoyGmbh className="h-12 w-auto" />,
     role: [
       'Trainee',
       'Dual Student',
@@ -238,7 +238,7 @@ export const projects: Project[] = [
     url: 'https://www.frontendmentor.io',
     readableTitle: 'Many frontend coding challenges using a real-life workflow',
     isCurrentProject: false,
-    logo: <FrontendMentorLogo className="h-12 w-auto" />,
+    logo: <LogoFrontendMentor className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     aspects: undefined,
     tools: getTools({
@@ -282,7 +282,7 @@ export const projects: Project[] = [
     readableTitle:
       'All the private projects i did over the last years. Not in specific order or priority. Some are removed for clean-up!',
     isCurrentProject: false,
-    logo: <GithubLogo className="h-12 w-auto" />,
+    logo: <LogoGithub className="h-12 w-auto" />,
     role: ['Frontend Developer', 'iOS Development'],
     aspects: undefined,
     tools: getTools({ toolNames: ['GitHub', 'VS Code', 'WebStorm'] }),

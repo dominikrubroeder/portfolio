@@ -8,73 +8,73 @@ import {
   LogoTwig
 } from '@/components/atoms/img';
 import {
-  AdobeIllustratorLogo,
-  AdobePhotoshopLogo,
-  AdobeXdLogo,
-  AlgoliaLogo,
-  ArcLogo,
-  AwsLogo,
-  AxiosLogo,
-  BraveLogo,
-  BrunoLogo,
-  CanvaLogo,
-  ChatGptLogo,
-  ChromeLogo,
-  ClaudeAiLogo,
-  ClerkLogo,
-  ColorDesignerLogo,
-  ContentservLogo,
-  CookiehubLogo,
-  CraftLogo,
-  CssLogo,
-  DailyDevLogo,
-  FigmaLogo,
-  FirefoxLogo,
-  FramerLogo,
-  FrontendMentorLogo,
-  GithubLogo,
-  GitlabLogo,
-  GoogleAnalyticsLogo,
-  GoogleTagManagerLogo,
-  HeroiconsLogo,
-  HotjarLogo,
-  HtmlLogo,
-  JavascriptLogo,
-  JiraLogo,
-  LighthouseLogo,
-  LinkedinLogo,
+  LogoAdobeIllustrator,
+  LogoAdobePhotoshop,
+  LogoAdobeXd,
+  LogoAlgolia,
+  LogoArc,
+  LogoAws,
+  LogoAxios,
+  LogoBrave,
+  LogoBruno,
+  LogoCanva,
+  LogoChatgpt,
+  LogoChrome,
+  LogoClaudeAi,
+  LogoClerk,
+  LogoColorDesigner,
+  LogoContentserv,
+  LogoCookiehub,
+  LogoCraft,
+  LogoCss,
+  LogoDailydev,
+  LogoFigma,
+  LogoFirefox,
+  LogoFramer,
+  LogoFrontendMentor,
+  LogoGithub,
+  LogoGitlab,
+  LogoGoogleAnalytics,
+  LogoGoogleTagManager,
+  LogoHeroicons,
+  LogoHotjar,
+  LogoHtml,
+  LogoJavascript,
+  LogoJira,
+  LogoLighthouse,
+  LogoLinkedin,
+  LogoMarkdown,
+  LogoMeilisearch,
   type LogoProps,
-  MarkdownLogo,
-  MeilisearchLogo,
-  MiroLogo,
-  MotionLogo,
-  NetlifyLogo,
-  NextjsLogo,
-  NotesLogo,
-  NpmLogo,
-  Pa11yLogo,
-  RadixUILogo,
-  ReactLogo,
-  SafariLogo,
-  SassLogo,
-  ShadcnUiLogo,
-  ShopwareLogo,
-  SketchLogo,
-  SlackLogo,
-  StoryblokLogo,
-  StorybookLogo,
-  TailwindCssLogo,
-  TeamsLogo,
-  TypeScriptLogo,
-  Typo3Logo,
-  UicolorsLogo,
-  UsercentricsLogo,
-  V0Logo,
-  VercelLogo,
-  VisualStudioCodeLogo,
-  ViteJsLogo,
-  WebstormLogo,
-  XingLogo
+  LogoMiro,
+  LogoMotion,
+  LogoNetlify,
+  LogoNextjs,
+  LogoNotes,
+  LogoNpm,
+  LogoPa11y,
+  LogoRadixUi,
+  LogoReact,
+  LogoSafari,
+  LogoSass,
+  LogoShadcnUi,
+  LogoShopware,
+  LogoSketch,
+  LogoSlack,
+  LogoStoryblok,
+  LogoStorybook,
+  LogoTailwindCss,
+  LogoTeams,
+  LogoTypescript,
+  LogoTypo3,
+  LogoUiColors,
+  LogoUsercentrics,
+  LogoV0,
+  LogoVercel,
+  LogoVisualStudioCode,
+  LogoViteJs,
+  LogoWebstorm,
+  LogoXing
 } from '@/components/atoms/logo';
 
 interface BrandLogoProps extends LogoProps {
@@ -101,49 +101,49 @@ export function BrandLogo({
   const lowerCaseBrand = brand.toLowerCase();
 
   if (lowerCaseBrand.includes('storyblok')) {
-    return <StoryblokLogo className={className} />;
+    return <LogoStoryblok className={className} />;
   }
 
   if (lowerCaseBrand.includes('shopware')) {
-    return <ShopwareLogo className={className} />;
+    return <LogoShopware className={className} />;
   }
 
   if (
     lowerCaseBrand.includes('tailwind') ||
     lowerCaseBrand.includes('refactoring')
   ) {
-    return <TailwindCssLogo className={className} />;
+    return <LogoTailwindCss className={className} />;
   }
 
   if (lowerCaseBrand.includes('heroicons')) {
-    return <HeroiconsLogo className={className} />;
+    return <LogoHeroicons className={className} />;
   }
 
   if (lowerCaseBrand.includes('vercel')) {
-    return <VercelLogo className={className} />;
+    return <LogoVercel className={className} />;
   }
 
   if (lowerCaseBrand.includes('meilisearch')) {
-    return <MeilisearchLogo className={className} />;
+    return <LogoMeilisearch className={className} />;
   }
 
   if (
     lowerCaseBrand.includes('algolia') ||
     lowerCaseBrand.includes('instant')
   ) {
-    return <AlgoliaLogo className={className} />;
+    return <LogoAlgolia className={className} />;
   }
 
   if (lowerCaseBrand.includes('next')) {
-    return <NextjsLogo className={className} />;
+    return <LogoNextjs className={className} />;
   }
 
   if (lowerCaseBrand.includes('react')) {
-    return <ReactLogo className={className} />;
+    return <LogoReact className={className} />;
   }
 
   if (lowerCaseBrand.includes('storybook')) {
-    return <StorybookLogo className={className} />;
+    return <LogoStorybook className={className} />;
   }
 
   if (
@@ -154,200 +154,200 @@ export function BrandLogo({
   }
 
   if (brand.startsWith('@')) {
-    return <NpmLogo className={className} />;
+    return <LogoNpm className={className} />;
   }
 
   if (brand.startsWith('VS') || brand.startsWith('Visual Studio')) {
-    return <VisualStudioCodeLogo className={className} />;
+    return <LogoVisualStudioCode className={className} />;
   }
 
   if (brand.includes('Photoshop')) {
-    return <AdobePhotoshopLogo className={className} />;
+    return <LogoAdobePhotoshop className={className} />;
   }
 
   if (brand.includes('Illustrator')) {
-    return <AdobeIllustratorLogo className={className} />;
+    return <LogoAdobeIllustrator className={className} />;
   }
 
   switch (group) {
     case 'Packages':
-      return <NpmLogo className={className} />;
+      return <LogoNpm className={className} />;
   }
 
   switch (brand) {
     case 'Figma':
-      return <FigmaLogo className={className} />;
+      return <LogoFigma className={className} />;
 
     case 'WebStorm':
-      return <WebstormLogo className={className} />;
+      return <LogoWebstorm className={className} />;
 
     case 'Notes':
-      return <NotesLogo className={className} />;
+      return <LogoNotes className={className} />;
 
     case 'GitHub':
-      return <GithubLogo className={className} />;
+      return <LogoGithub className={className} />;
 
     case 'GitLab':
-      return <GitlabLogo className={className} />;
+      return <LogoGitlab className={className} />;
 
     case 'Miro':
-      return <MiroLogo className={className} />;
+      return <LogoMiro className={className} />;
 
     case 'TypeScript':
-      return <TypeScriptLogo className={className} />;
+      return <LogoTypescript className={className} />;
 
     case 'JavaScript':
-      return <JavascriptLogo className={className} />;
+      return <LogoJavascript className={className} />;
 
     case 'Markdown':
-      return <MarkdownLogo className={className} />;
+      return <LogoMarkdown className={className} />;
 
     case 'HTML':
-      return <HtmlLogo className={className} />;
+      return <LogoHtml className={className} />;
 
     case 'CSS':
-      return <CssLogo className={className} />;
+      return <LogoCss className={className} />;
 
     case 'LinkedIn':
-      return <LinkedinLogo className={className} />;
+      return <LogoLinkedin className={className} />;
 
     case 'Xing':
-      return <XingLogo className={className} />;
+      return <LogoXing className={className} />;
 
     case 'Instagram':
       return <LogoInstagram className={className} />;
 
     case 'Craft':
-      return <CraftLogo className={className} />;
+      return <LogoCraft className={className} />;
 
     case 'Inkdrop':
       return <LogoInkdrop className={className} />;
 
     case 'Chrome':
-      return <ChromeLogo className={className} />;
+      return <LogoChrome className={className} />;
 
     case 'Firefox':
-      return <FirefoxLogo className={className} />;
+      return <LogoFirefox className={className} />;
 
     case 'Safari':
-      return <SafariLogo className={className} />;
+      return <LogoSafari className={className} />;
 
     case 'Slack':
-      return <SlackLogo className={className} />;
+      return <LogoSlack className={className} />;
 
     case 'Teams':
-      return <TeamsLogo className={className} />;
+      return <LogoTeams className={className} />;
 
     case 'frontendmentor.io':
-      return <FrontendMentorLogo className={className} />;
+      return <LogoFrontendMentor className={className} />;
 
     case 'Jira':
-      return <JiraLogo className={className} />;
+      return <LogoJira className={className} />;
 
     case 'heroicons':
-      return <HeroiconsLogo className={className} />;
+      return <LogoHeroicons className={className} />;
 
     case 'daily.dev':
-      return <DailyDevLogo className={className} />;
+      return <LogoDailydev className={className} />;
 
     case 'npm':
-      return <NpmLogo className={className} />;
+      return <LogoNpm className={className} />;
 
     case 'shadcn/ui':
-      return <ShadcnUiLogo className={className} />;
+      return <LogoShadcnUi className={className} />;
 
     case 'Radix UI':
-      return <RadixUILogo className={className} />;
+      return <LogoRadixUi className={className} />;
 
     case 'Lighthouse':
-      return <LighthouseLogo className={className} />;
+      return <LogoLighthouse className={className} />;
 
     case 'Pa11y':
-      return <Pa11yLogo className={className} />;
+      return <LogoPa11y className={className} />;
 
     case 'ChatGPT':
-      return <ChatGptLogo className={className} />;
+      return <LogoChatgpt className={className} />;
 
     case 'Claude':
-      return <ClaudeAiLogo className={className} />;
+      return <LogoClaudeAi className={className} />;
 
     case 'v0':
-      return <V0Logo className={className} />;
+      return <LogoV0 className={className} />;
 
     case 'Google Analytics':
-      return <GoogleAnalyticsLogo className={className} />;
+      return <LogoGoogleAnalytics className={className} />;
 
     case 'Hotjar':
-      return <HotjarLogo className={className} />;
+      return <LogoHotjar className={className} />;
 
     case 'Google Tag Manager':
-      return <GoogleTagManagerLogo className={className} />;
+      return <LogoGoogleTagManager className={className} />;
 
     case 'Axios':
-      return <AxiosLogo className={className} />;
+      return <LogoAxios className={className} />;
 
     case 'Bruno':
-      return <BrunoLogo className={className} />;
+      return <LogoBruno className={className} />;
 
     case 'Postman':
       return <LogoPostman className={className} />;
 
     case 'Clerk':
-      return <ClerkLogo className={className} />;
+      return <LogoClerk className={className} />;
 
     case 'Arc':
-      return <ArcLogo className={className} />;
+      return <LogoArc className={className} />;
 
     case 'Brave':
-      return <BraveLogo className={className} />;
+      return <LogoBrave className={className} />;
 
     case 'Contentserv':
-      return <ContentservLogo className={className} />;
+      return <LogoContentserv className={className} />;
 
     case 'Typo3':
-      return <Typo3Logo className={className} />;
+      return <LogoTypo3 className={className} />;
 
     case 'Color Designer':
-      return <ColorDesignerLogo className={className} />;
+      return <LogoColorDesigner className={className} />;
 
     case 'uicolors':
-      return <UicolorsLogo className={className} />;
+      return <LogoUiColors className={className} />;
 
     case 'CookieHub':
-      return <CookiehubLogo className={className} />;
+      return <LogoCookiehub className={className} />;
 
     case 'Usercentrics':
-      return <UsercentricsLogo className={className} />;
+      return <LogoUsercentrics className={className} />;
 
     case 'Motion':
-      return <MotionLogo className={className} />;
+      return <LogoMotion className={className} />;
 
     case 'Framer':
-      return <FramerLogo className={className} />;
+      return <LogoFramer className={className} />;
 
     case 'Twig':
       return <LogoTwig className={className} />;
 
     case 'Sass':
-      return <SassLogo className={className} />;
+      return <LogoSass className={className} />;
 
     case 'Adobe XD (deprecated)':
-      return <AdobeXdLogo className={className} />;
+      return <LogoAdobeXd className={className} />;
 
     case 'AWS Amplify':
-      return <AwsLogo className={className} />;
+      return <LogoAws className={className} />;
 
     case 'netlify':
-      return <NetlifyLogo className={className} />;
+      return <LogoNetlify className={className} />;
 
     case 'Sketch':
-      return <SketchLogo className={className} />;
+      return <LogoSketch className={className} />;
 
     case 'Canva':
-      return <CanvaLogo className={className} />;
+      return <LogoCanva className={className} />;
 
     case 'Vite':
-      return <ViteJsLogo className={className} />;
+      return <LogoViteJs className={className} />;
 
     default:
       return DefaultLogo;

@@ -80,7 +80,7 @@ export function IntroductionMyBackgroundAccordion() {
         <b>React, Next.js and TypeScript</b>
       </p>
       <p>
-        Translating a idea from the mind, to paper, to pixel, to code into
+        Translating an idea from the mind, to paper, to pixel, to code into
         real-world applications has always been the most motivating thought that
         drives my mentality to keep learning.
       </p>

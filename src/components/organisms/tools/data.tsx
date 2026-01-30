@@ -1,12 +1,12 @@
 import { LogoInkdrop } from '@/components/atoms/img';
 import {
-  AlgoliaLogo,
-  CraftLogo,
-  FigmaLogo,
-  GithubLogo,
-  ShopwareLogo,
-  StoryblokLogo,
-  WebstormLogo
+  LogoAlgolia,
+  LogoCraft,
+  LogoFigma,
+  LogoGithub,
+  LogoShopware,
+  LogoStoryblok,
+  LogoWebstorm
 } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';
 import type { Tools } from '@/components/organisms/tools/types';
@@ -15,28 +15,28 @@ export const mainTools: Brand[] = [
   {
     name: 'Figma',
     description: 'for user interface design and prototyping',
-    logo: <FigmaLogo className="size-12" />,
+    logo: <LogoFigma className="size-12" />,
     href: 'https://www.figma.com',
     knowledge: 'Daily'
   },
   {
     name: 'WebStorm',
     description: 'as IDE',
-    logo: <WebstormLogo className="size-12" />,
+    logo: <LogoWebstorm className="size-12" />,
     href: 'https://www.jetbrains.com/webstorm',
     knowledge: 'Daily'
   },
   {
     name: 'Craft',
     description: 'as my main note and documentation tool',
-    logo: <CraftLogo className="size-12" />,
+    logo: <LogoCraft className="size-12" />,
     href: 'https://www.craft.do',
     knowledge: 'Daily'
   },
   {
     name: 'GitHub',
     description: 'to store my private codebase',
-    logo: <GithubLogo className="size-12" />,
+    logo: <LogoGithub className="size-12" />,
     href: 'https://github.com',
     knowledge: 'Daily'
   }
@@ -244,7 +244,7 @@ export const tools: Tools = [
       {
         name: 'Storyblok',
         href: 'https://www.storyblok.com',
-        logo: <StoryblokLogo className="size-12" />,
+        logo: <LogoStoryblok className="size-12" />,
         description: 'The Way to Modern Content',
         knowledge: 'Daily'
       },
@@ -985,7 +985,7 @@ export const tools: Tools = [
       {
         name: 'Algolia',
         href: 'https://www.algolia.com',
-        logo: <AlgoliaLogo className="size-12" />,
+        logo: <LogoAlgolia className="size-12" />,
         description: 'AI-Search, that understands',
         knowledge: 'Experienced'
       },
@@ -1019,7 +1019,7 @@ export const tools: Tools = [
       {
         name: 'Shopware',
         href: 'https://www.shopware.com',
-        logo: <ShopwareLogo />,
+        logo: <LogoShopware />,
         description:
           'The leading edge of ecommerce. Your business faster, limitless.',
         knowledge: 'Daily'

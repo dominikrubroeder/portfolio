@@ -1,6 +1,6 @@
 import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
-import { ChatGptLogo } from '@/components/atoms/logo';
+import { LogoChatgpt } from '@/components/atoms/logo';
 import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
 
 export function FaqDesignEngineerVsUxEngineer() {
@@ -16,7 +16,7 @@ export function FaqDesignEngineerVsUxEngineer() {
       <br />
 
       <p className="flex items-center gap-3">
-        <ChatGptLogo className="size-5" />
+        <LogoChatgpt className="size-5" />
         <span className="flex items-center gap-1.5">
           <span>ChatGPT</span>
           <ArrowTurnDownLeftIcon className="size-4" />

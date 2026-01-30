@@ -1,5 +1,5 @@
 import { Button } from '@/components/atoms/button';
-import { StorybookLogo } from '@/components/atoms/logo';
+import { LogoStorybook } from '@/components/atoms/logo';
 import { ComponentBaseProps } from '@/lib/types';
 
 export function ButtonStorybook({ className }: ComponentBaseProps) {
@@ -12,7 +12,7 @@ export function ButtonStorybook({ className }: ComponentBaseProps) {
       size="large"
       className={className}
     >
-      <StorybookLogo />
+      <LogoStorybook />
     </Button>
   );
 }

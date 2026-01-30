@@ -1,5 +1,5 @@
 import { Button } from '@/components/atoms/button';
-import { GithubLogo } from '@/components/atoms/logo';
+import { LogoGithub } from '@/components/atoms/logo';
 
 export function ButtonGithub({ className }: { className?: string }) {
   return (
@@ -11,7 +11,7 @@ export function ButtonGithub({ className }: { className?: string }) {
       size="large"
       className={className}
     >
-      <GithubLogo />
+      <LogoGithub />
     </Button>
   );
 }

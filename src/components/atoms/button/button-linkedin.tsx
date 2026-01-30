@@ -1,5 +1,5 @@
 import { Button } from '@/components/atoms/button';
-import { LinkedinLogo } from '@/components/atoms/logo';
+import { LogoLinkedin } from '@/components/atoms/logo';
 
 export function ButtonLinkedin({ className }: { className?: string }) {
   return (
@@ -11,7 +11,7 @@ export function ButtonLinkedin({ className }: { className?: string }) {
       size="large"
       className={className}
     >
-      <LinkedinLogo />
+      <LogoLinkedin />
     </Button>
   );
 }
