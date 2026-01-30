@@ -13,9 +13,9 @@ import { KnowledgeBar } from '@/components/atoms/knowledge-bar';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Marker } from '@/components/atoms/marker';
 import { Markup } from '@/components/atoms/markup';
-import { AtomIcon, MoleculeIcon, TemplateIcon } from '@/components/atoms/svg';
-import { OrganismnIcon } from '@/components/atoms/svg/organism-icon';
-import { PageIcon } from '@/components/atoms/svg/page-icon';
+import { IconAtom, IconMolecule, IconTemplate } from '@/components/atoms/icon';
+import { OrganismnIcon } from '@/components/atoms/icon/icon-organism';
+import { IconPage } from '@/components/atoms/icon/icon-page';
 import { TextDecoration } from '@/components/atoms/text-decoration';
 import { Toggle } from '@/components/atoms/toggle';
 import { Tooltip } from '@/components/atoms/tooltip';
@@ -43,7 +43,7 @@ export const components: ComponentGroup[] = [
     groupName: 'Atoms',
     groupDescription:
       'This is where the actual elements are starting. Getting on the metaphor from before, those are the elements in your closet like your T-Shirts, your caps, the accessories, or hair ties – all standalone things, which can be added together to build a bigger outfit. And they can vary in different color, sizes and other variations and properties.',
-    groupIcon: <AtomIcon />,
+    groupIcon: <IconAtom />,
     layoutOption: '3-cols',
     children: [
       {
@@ -217,7 +217,7 @@ export const components: ComponentGroup[] = [
     groupName: 'Molecules',
     groupDescription:
       'Molecules are one step up from Atoms, they slowly show how the outfit is being worn together. Combine your blue T-Shirt with a black Hoodie, and you have your upper body styled up. So Molecules use Atoms to build bigger groups of user interface elements – the good thing is, adjust one Atom, and it is being adjusted in all places where it is getting used as well.',
-    groupIcon: <MoleculeIcon />,
+    groupIcon: <IconMolecule />,
     layoutOption: '2-cols',
     children: [
       {
@@ -276,14 +276,14 @@ export const components: ComponentGroup[] = [
         </p>
       </>
     ),
-    groupIcon: <TemplateIcon />,
+    groupIcon: <IconTemplate />,
     layoutOption: 'rows',
     children: []
   },
   {
     groupName: 'Pages',
     groupDescription: '',
-    groupIcon: <PageIcon />,
+    groupIcon: <IconPage />,
     layoutOption: 'rows',
     children: []
   }

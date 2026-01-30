@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 
-import { DesignTokenIcon } from '@/components/atoms/svg/design-token-icon';
+import { IconDesignToken } from '@/components/atoms/icon/icon-design-token';
 
-export function AtomIcon({ className }: { className?: string }) {
+export function IconAtom({ className }: { className?: string }) {
   return (
     <div
       className={cn(
@@ -10,7 +10,7 @@ export function AtomIcon({ className }: { className?: string }) {
         className
       )}
     >
-      <DesignTokenIcon className="absolute -top-[6px] -right-[2px]" />
+      <IconDesignToken className="absolute -top-[6px] -right-[2px]" />
     </div>
   );
 }
