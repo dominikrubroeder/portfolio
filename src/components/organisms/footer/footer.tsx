@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="mt-16 space-y-3 border-t p-4 text-center text-xs md:pb-4">
       <p>Build your vision. Do it with style.</p>
       <p>Live your balance.</p>
-      <p className="space-x-2">
+      <p className="flex flex-wrap items-center justify-center gap-2">
         <ExternalLink
           href="https://nextjs.org"
           title="Open Next.js website"

@@ -43,6 +43,8 @@ export const metadata: Metadata = {
   keywords: [
     'Frontend',
     'Design Engineer',
+    'User Interface Engineer',
+    'User Interface Designer',
     'User experience',
     'UX',
     'User interface',

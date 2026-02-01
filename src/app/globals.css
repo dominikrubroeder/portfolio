@@ -359,7 +359,19 @@
   }
 
   ul {
-    @apply my-4;
+    @apply my-4 space-y-2;
+  }
+
+  ol {
+    @apply list-decimal space-y-4 pl-6;
+  }
+
+  ol ul {
+    @apply my-0 space-y-0 pl-4;
+  }
+
+  ol ul li {
+    @apply list-disc;
   }
 
   li > ul {

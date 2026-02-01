@@ -10,6 +10,9 @@ export function IntroductionHowIWorkAccordion() {
         <b>Code by design</b>
       </li>
       <li>
+        <b>Sync frontend design and code in frontend design engineering</b>
+      </li>
+      <li>
         <b>Design in system</b>
       </li>
       <li>
@@ -30,7 +33,7 @@ export function IntroductionHowIWorkAccordion() {
         if i'm stuck in a concept for too long
       </li>
       <li>
-        <b>See global scope</b> – think system through paper to production
+        <b>See global scope</b> – think system through from paper to production
       </li>
       <li>
         <b>Compose</b> trends together with core design principles and UI

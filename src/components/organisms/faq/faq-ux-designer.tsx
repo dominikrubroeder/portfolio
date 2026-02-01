@@ -2,6 +2,7 @@ import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { LogoChatgpt } from '@/components/atoms/logo';
 import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
+import { Ol } from '@/components/atoms/ol';
 
 export function FaqUxDesigner() {
   return (
@@ -30,11 +31,11 @@ export function FaqUxDesigner() {
         areas for UX designers to focus on:
       </p>
 
-      <ol className="mb-5 grid list-decimal gap-4 pl-8">
+      <Ol className="mb-5">
         <li>
-          <strong className="text-foreground">
+          <strong className="mr-1 text-foreground">
             User-Centered Design (UCD):
-          </strong>{' '}
+          </strong>
           Place users at the core of the design process. Understand their needs,
           behaviors, and preferences through research and testing. Continuously
           iterate based on user feedback.
@@ -115,14 +116,14 @@ export function FaqUxDesigner() {
           platforms.
         </li>
         <li>
-          <strong className="text-foreground">
+          <strong className="mr-1 text-foreground">
             User Research and Testing:
-          </strong>{' '}
+          </strong>
           Continuously conduct user research and testing to gather insights and
           validate design decisions. User feedback is invaluable for refining
           and improving the user experience.
         </li>
-      </ol>
+      </Ol>
 
       <p>
         <b className="text-foreground">By emphasizing these predicates</b>, UX

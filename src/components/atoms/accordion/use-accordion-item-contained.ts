@@ -24,8 +24,6 @@ export const useAccordionItemContained = ({
   const onClose = useCallback(() => {
     const accordionGroupElement = document.getElementById(accordionGroupId);
 
-    console.log(accordionGroupElement);
-
     accordionGroupElement?.scrollIntoView({
       behavior: 'smooth',
       block: focusView

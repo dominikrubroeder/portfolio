@@ -14,7 +14,7 @@ export function HomeHero() {
         <div className="space-y-2">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="primary">Team Frontend</Badge>
-            <p className="text-primary">The art of composing</p>
+            <div className="text-primary">The art of composing</div>
           </div>
 
           <h2 className="bg-background">

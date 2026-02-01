@@ -4,6 +4,7 @@ import {
   AccordionProps,
   getDefaultOpen
 } from '@/components/atoms/accordion';
+import { Ul } from '@/components/atoms/ul';
 
 export function Accordion({
   variant,
@@ -16,7 +17,7 @@ export function Accordion({
 }: AccordionProps) {
   if (variant === 'contained')
     return (
-      <ul className="scroll-mt-responsive" id={accordionGroupId}>
+      <Ul className="scroll-mt-responsive space-y-0" id={accordionGroupId}>
         {items.map(({ title, children }, index) => (
           <li key={index + accordionGroupId}>
             <AccordionItemContained
@@ -31,11 +32,11 @@ export function Accordion({
             </AccordionItemContained>
           </li>
         ))}
-      </ul>
+      </Ul>
     );
 
   return (
-    <ul className="scroll-mt-responsive space-y-6" id={accordionGroupId}>
+    <Ul className="scroll-mt-responsive space-y-6" id={accordionGroupId}>
       {items.map(({ title, children }, index) => (
         <li key={index + accordionGroupId}>
           <AccordionItem
@@ -47,6 +48,6 @@ export function Accordion({
           </AccordionItem>
         </li>
       ))}
-    </ul>
+    </Ul>
   );
 }

@@ -11,7 +11,7 @@ import { Avatar } from '@/components/atoms/avatar';
 export function Introduction() {
   return (
     <Container id="introduction">
-      <div className="relative z-10 rounded border bg-background p-4">
+      <div className="relative z-10 rounded border bg-background p-4 pb-0 sm:pb-2">
         <p className="flex flex-wrap items-center gap-1 font-bold text-foreground">
           <span>Hey there!</span>
           <Avatar width={24} height={24} className="scale-x-[-1]" />

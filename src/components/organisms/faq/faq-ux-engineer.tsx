@@ -2,6 +2,8 @@ import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { LogoChatgpt } from '@/components/atoms/logo';
 import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
+import { Ol } from '@/components/atoms/ol';
+import { Ul } from '@/components/atoms/ul';
 
 export function FaqUxEngineer() {
   return (
@@ -30,10 +32,10 @@ export function FaqUxEngineer() {
         that a UX Engineer should focus on:
       </p>
 
-      <ol className="mb-5 grid list-decimal gap-4 pl-8">
+      <Ol className="mb-5">
         <li>
           <strong className="text-foreground">User Research:</strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Conduct thorough research to understand the target audience.
             </li>
@@ -42,49 +44,49 @@ export function FaqUxEngineer() {
               Gather feedback through surveys, interviews, and usability
               testing.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">User Persona Development:</strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Create detailed user personas to represent different user types.
             </li>
             <li>Consider factors like demographics, behavior, and goals.</li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">Information Architecture:</strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>Design a clear and intuitive navigation structure.</li>
             <li>Organize information logically to facilitate easy access.</li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">
             Wireframing and Prototyping:
           </strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Develop wireframes and prototypes to visualize the user interface.
             </li>
             <li>
               Test and iterate on prototypes to refine the user experience.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">Visual Design:</strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>Focus on creating visually appealing and cohesive designs.</li>
             <li>
               Ensure consistency in color schemes, typography, and imagery.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">Accessibility:</strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Pay attention to accessibility standards to make the software
               usable for everyone.
@@ -93,11 +95,11 @@ export function FaqUxEngineer() {
               Consider factors like contrast, font size, and navigation for
               users with disabilities.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">Usability Testing:</strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Conduct regular usability testing with real users to identify any
               usability issues.
@@ -106,21 +108,21 @@ export function FaqUxEngineer() {
               Gather insights to refine the design and improve user
               interactions.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">Responsive Design:</strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Ensure that the user interface is responsive across various
               devices and screen sizes.
             </li>
             <li>Optimize for both desktop and mobile experiences.</li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">Performance Optimization:</strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Consider the performance of the application to ensure quick load
               times.
@@ -128,26 +130,26 @@ export function FaqUxEngineer() {
             <li>
               Optimize images and code to enhance the overall user experience.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">
             User Feedback and Iteration:
           </strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Establish mechanisms for collecting and analyzing user feedback.
             </li>
             <li>
               Iterate on the design based on feedback and evolving user needs.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">
             Collaboration with Development Teams:
           </strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Work closely with developers to ensure the feasibility of design
               implementation.
@@ -156,13 +158,13 @@ export function FaqUxEngineer() {
               Foster collaboration to achieve a balance between aesthetics and
               functionality.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <strong className="text-foreground">
             Stay Updated on Industry Trends:
           </strong>
-          <ul className="list-disc pl-4">
+          <Ul>
             <li>
               Stay informed about the latest trends and technologies in UX
               design.
@@ -171,9 +173,9 @@ export function FaqUxEngineer() {
               Incorporate innovative ideas that enhance the overall user
               experience.
             </li>
-          </ul>
+          </Ul>
         </li>
-      </ol>
+      </Ol>
 
       <p>
         <b className="text-foreground">By focusing on these predicates</b>, a UX

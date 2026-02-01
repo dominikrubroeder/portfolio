@@ -2,6 +2,8 @@ import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { LogoChatgpt } from '@/components/atoms/logo';
 import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
+import { Ul } from '@/components/atoms/ul';
+import { Ol } from '@/components/atoms/ol';
 
 export function FaqDesignEngineerVsUxEngineer() {
   return (
@@ -30,10 +32,10 @@ export function FaqDesignEngineerVsUxEngineer() {
         two roles:
       </p>
 
-      <ol className="mb-5 grid list-decimal gap-4 pl-8">
+      <Ol className="mb-5">
         <li>
           <p className="font-bold text-foreground">Design Engineer:</p>
-          <ul className="mb-5 grid list-disc gap-4 pl-8">
+          <Ul>
             <li>
               <span className="mr-1 font-bold text-foreground">
                 Primary Focus:
@@ -66,11 +68,11 @@ export function FaqDesignEngineerVsUxEngineer() {
               optimizing the frontend for performance, and collaborating closely
               with designers and backend developers.
             </li>
-          </ul>
+          </Ul>
         </li>
         <li>
           <p className="font-bold text-foreground">UX Engineer:</p>
-          <ul className="mb-5 grid list-disc gap-4 pl-8">
+          <Ul>
             <li>
               <span className="mr-1 font-bold text-foreground">
                 Primary Focus:
@@ -105,9 +107,9 @@ export function FaqDesignEngineerVsUxEngineer() {
               for user-centered design principles throughout the development
               process.
             </li>
-          </ul>
+          </Ul>
         </li>
-      </ol>
+      </Ol>
 
       <p>
         <b className="text-foreground">In summary</b>, while both Design

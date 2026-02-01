@@ -19,12 +19,13 @@ export function Badge({
     <div
       className={cn(
         'inline-flex self-start rounded',
-        variant === 'primary' && 'bg-primary/10 text-primary',
+        variant === 'primary' &&
+          'bg-primary/10 text-primary-hover dark:text-primary',
         variant === 'foreground' && 'bg-muted text-foreground',
         variant === 'muted' && 'bg-muted text-muted-foreground',
-        size === 'sm' && 'px-2.5 py-0.5 text-sm font-semibold tracking-wide',
-        size === 'md' && 'px-3 py-1 text-base font-semibold tracking-wide',
-        size === 'lg' && 'text-md px-3 py-2 font-bold tracking-wider',
+        size === 'sm' && 'px-2 py-0.5 text-sm',
+        size === 'md' && 'px-3 py-1 text-base',
+        size === 'lg' && 'text-md px-3 py-2',
         className
       )}
       {...rest}

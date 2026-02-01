@@ -2,17 +2,17 @@ import type { ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
 
-export function Ul({
+export function Ol({
   headline,
   offsetLeft,
-  listStyle = 'none',
+  listStyle,
   className,
   children,
   ...rest
 }: {
   headline?: string;
   offsetLeft?: boolean;
-  listStyle?: 'disc' | 'none';
+  listStyle?: 'decimal' | 'none';
   className?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLUListElement>) {
@@ -20,17 +20,18 @@ export function Ul({
     <div className="space-y-2">
       {headline && <b className="block">{headline}</b>}
 
-      <ul
+      <ol
         className={cn(
+          'space-y-2',
           offsetLeft && 'pl-4',
-          listStyle === 'disc' && 'list-disc pl-5 leading-7',
+          listStyle === 'decimal' && 'list-decimal pl-5 leading-7',
           listStyle === 'none' && 'list-none',
           className
         )}
         {...rest}
       >
         {children}
-      </ul>
+      </ol>
     </div>
   );
 }

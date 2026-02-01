@@ -60,48 +60,41 @@ export function ProjectCarousel() {
         </Button>
 
         <Link
+          key={project.title}
           href={project.url}
           title={`Go to external ${project.title} website`}
           aria-label={`Go to external ${project.title} website`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-56 w-full interactive items-center justify-center rounded border p-4 xs:h-80 sm:h-96 md:h-120"
+          className="flex h-92 w-full interactive items-center justify-center rounded border p-4 sm:h-120"
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={project.title}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              layout
-            >
-              {project.previewImage ? (
-                <figure>
-                  <Image
-                    src={project.previewImage}
-                    width={800}
-                    height={500}
-                    alt={`Preview image of project ${project.title}`}
-                    draggable={false}
-                    className="w-full rounded object-contain"
-                  />
+          {project.previewImage ? (
+            <figure>
+              <Image
+                src={project.previewImage}
+                width={800}
+                height={500}
+                alt={`Preview image of project ${project.title}`}
+                draggable={false}
+                className="absolute top-0 left-0 h-full w-full rounded object-cover object-left md:relative md:object-contain"
+                priority={true}
+              />
 
-                  {project.previewImageTimestamp && (
-                    <figcaption>
-                      Screenshot taken on{' '}
-                      {formatDate({
-                        dateString: project.previewImageTimestamp,
-                        format: 'Month Day, Year'
-                      })}
-                    </figcaption>
-                  )}
-                </figure>
-              ) : (
-                <span>{project.logo}</span>
+              {project.previewImageTimestamp && (
+                <figcaption className="space-x-1">
+                  <span>Screenshot taken on</span>
+                  <span>
+                    {formatDate({
+                      dateString: project.previewImageTimestamp,
+                      format: 'Month Day, Year'
+                    })}
+                  </span>
+                </figcaption>
               )}
-            </motion.div>
-          </AnimatePresence>
+            </figure>
+          ) : (
+            <span>{project.logo}</span>
+          )}
         </Link>
       </div>
 
@@ -182,6 +175,8 @@ export function ProjectCarousel() {
             <ButtonGroup className="w-full justify-between">
               <ButtonGroup className="inline-flex">
                 <Button
+                  title={`Read more on ${project.title}`}
+                  aria-label={`Read more on ${project.title}`}
                   onClick={() =>
                     setIsReadMore((previousState) => !previousState)
                   }
