@@ -3,6 +3,7 @@
 import { useCallback, useState } from 'react';
 
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/components/organisms/theme';
 
 export function Toggle({
   label,
@@ -16,6 +17,7 @@ export function Toggle({
   onClick?: () => void;
 }) {
   const [isEnabled, setIsEnabled] = useState<boolean | undefined>(enabled);
+  const { theme, shouldAnimate } = useTheme();
 
   const handleOnClick = useCallback(() => {
     setIsEnabled((previousState) => !previousState);
@@ -30,20 +32,25 @@ export function Toggle({
       )}
       onClick={handleOnClick}
     >
-      {label && <span>{label}</span>}
+      {label && <span className="text-foreground">{label}</span>}
 
       <div
         className={cn(
-          'relative flex h-8 w-14 items-center rounded-full px-1 transition',
-          isEnabled ? 'bg-primary' : 'bg-muted-hover'
+          'relative flex h-8 w-14 items-center rounded-full px-1',
+          shouldAnimate ? 'transition' : 'transition-none',
+          isEnabled ? 'bg-primary' : 'bg-muted-hover',
+          theme.key === 'wireframe' && 'border bg-background'
         )}
       >
         <span
           className={cn(
-            'absolute size-6 interactive rounded-full bg-primary-foreground transition',
-            isEnabled ? 'translate-x-full' : 'translate-x-0'
+            'absolute size-6 interactive rounded-full bg-primary-foreground',
+            shouldAnimate ? 'transition' : 'transition-none',
+            isEnabled ? 'translate-x-full' : 'translate-x-0',
+            theme.key === 'wireframe' && 'border bg-muted',
+            theme.key === 'wireframe' && isEnabled && 'bg-primary'
           )}
-        ></span>
+        />
       </div>
     </div>
   );

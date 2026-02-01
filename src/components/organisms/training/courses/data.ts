@@ -5,8 +5,8 @@ export const courses: LearningResource[] = [
     title: 'Subatomic (The Complete Guide to Design Tokens)',
     author: 'Brad Frost',
     href: 'https://designtokenscourse.com',
-    progress: 90,
-    isCurrent: true
+    progress: 100,
+    isCurrent: false
   },
   {
     title: 'Advanced CSS and Sass: Flexbox, Grid, Animations and More!',
@@ -65,10 +65,10 @@ export const courses: LearningResource[] = [
     isCurrent: false
   },
   {
-    title: 'animations.dev',
+    title: 'Animations on the Web',
     author: 'Emil Kowalski',
     href: 'https://animations.dev',
-    progress: 20,
+    progress: 100,
     isCurrent: false
   }
 ];

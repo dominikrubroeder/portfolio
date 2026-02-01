@@ -17,9 +17,9 @@ export default function DevModeLabel({
   classNameLabel?: string;
   children: ReactNode;
 }) {
-  const { theme } = useTheme();
+  const { themeMode } = useTheme();
 
-  if (theme !== 'dev') return null;
+  if (themeMode !== 'dev') return null;
 
   return (
     <motion.div className={cn('absolute inset-0 -z-10', className)}>

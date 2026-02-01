@@ -10,7 +10,7 @@ export function Socials() {
         <h2>
           Social accounts
           <span className="ml-2 font-medium text-muted-foreground">
-            You can see my social presence on
+            You can find my social presence on
           </span>
         </h2>
 

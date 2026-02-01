@@ -8,11 +8,12 @@ import { cn } from '@/lib/utils';
 
 import type { AnimationGeneratorType, ViewportOptions } from 'motion';
 import { useAnimate } from '@/components/molecules/animate';
+import { useTheme } from '@/components/organisms/theme';
 
 export function Animate({
   direction = 'up',
-  delay = 0.24,
-  duration = 0.4,
+  delay = 0.32,
+  duration = 0.8,
   type,
   viewport = { once: true, margin: '-50px' },
   className,
@@ -27,6 +28,10 @@ export function Animate({
   children: ReactNode;
 }) {
   const { variants } = useAnimate({ delay, duration, type });
+  const { theme, themeAnimationSettings } = useTheme();
+
+  if (theme.key !== 'animate' || themeAnimationSettings.disableAnimations)
+    return children;
 
   return (
     <motion.div

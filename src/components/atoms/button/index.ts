@@ -1,7 +1,11 @@
 export * from './button';
 
-export { GitHubButton } from './github-button';
-export { LinkedInButton } from './linkedin-button';
-export { ContactButton } from './contact-button';
-export { ButtonTextGroup } from './button-text-group';
-export { ScrollToTopButton } from './scroll-to-top-button';
+export { ButtonGithub } from './button-github';
+export { ButtonLinkedin } from './button-linkedin';
+export { ButtonContact } from './button-contact';
+export { ButtonScrollToTop } from './button-scroll-to-top';
+export { ButtonStorybook } from './button-storybook';
+export { ButtonBack } from './button-back';
+
+export * from './types';
+export * from './helper';

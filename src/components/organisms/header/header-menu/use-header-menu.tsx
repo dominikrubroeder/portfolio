@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -11,7 +11,8 @@ import {
   EnvelopeIcon,
   ListBulletIcon,
   PaintBrushIcon,
-  Square2StackIcon
+  Square2StackIcon,
+  UserIcon
 } from '@heroicons/react/24/outline';
 
 import type { UseScrollInViewProps } from '@/hooks/use-scroll-into-view';
@@ -35,37 +36,42 @@ export const useHeaderMenu = () => {
         {
           href: 'hero',
           label: 'Introduction',
-          icon: <DocumentTextIcon className="size-5" />
+          icon: <DocumentTextIcon className="size-6" />
+        },
+        {
+          href: 'why',
+          label: 'Why?',
+          icon: <UserIcon className="size-6" />
         },
         {
           href: 'projects',
           label: 'Projects',
-          icon: <Square2StackIcon className="size-5" />
+          icon: <Square2StackIcon className="size-6" />
         },
         {
           href: 'tools',
           label: 'Tools',
-          icon: <PaintBrushIcon className="size-5" />
+          icon: <PaintBrushIcon className="size-6" />
         },
         {
           href: 'technologies',
           label: 'Technologies',
-          icon: <CodeBracketIcon className="size-5" />
+          icon: <CodeBracketIcon className="size-6" />
         },
         {
           href: 'socials',
           label: 'Socials',
-          icon: <ChatBubbleOvalLeftEllipsisIcon className="size-5" />
+          icon: <ChatBubbleOvalLeftEllipsisIcon className="size-6" />
         },
         {
           href: 'faq',
-          label: 'QA Questions and Answers',
-          icon: <ListBulletIcon className="size-5" />
+          label: 'Questions and Answers',
+          icon: <ListBulletIcon className="size-6" />
         },
         {
           href: 'contact',
           label: 'Contact',
-          icon: <EnvelopeIcon className="size-5" />
+          icon: <EnvelopeIcon className="size-6" />
         }
       ];
     }
@@ -119,21 +125,14 @@ export const useHeaderMenu = () => {
       scrollIntoViewProps: UseScrollInViewProps;
     }) => {
       setIsOpen(false);
-      setActiveSection(activeSection);
-      scrollIntoView({ ...scrollIntoViewProps });
+
+      setTimeout(() => {
+        setActiveSection(activeSection);
+        scrollIntoView({ ...scrollIntoViewProps });
+      }, 400);
     },
     [scrollIntoView]
   );
-
-  useEffect(() => setIsOpen(false), [pathname]);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflowY = 'hidden';
-    } else {
-      document.body.style.overflowY = 'auto';
-    }
-  }, [isOpen]);
 
   return {
     isOpen,

@@ -6,6 +6,8 @@ import { projects } from '@/components/organisms/projects/data';
 
 export const useProjectCarousel = () => {
   const [activeProject, setActiveProject] = useState(0);
+  const [isReadMore, setIsReadMore] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(false);
 
   const project = useMemo(() => projects[activeProject], [activeProject]);
 
@@ -30,6 +32,10 @@ export const useProjectCarousel = () => {
     setActiveProject,
     project,
     goNext,
-    goPrevious
+    goPrevious,
+    isImageLoading,
+    isReadMore,
+    setIsReadMore,
+    setIsImageLoading
   };
 };

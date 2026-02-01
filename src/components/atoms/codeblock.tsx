@@ -30,7 +30,7 @@ export function CodeBlock({
   className?: string;
 }) {
   const { isCopied, copyToClipboard } = useClipboard({ timeout: 2000 });
-  const { appearance } = useTheme();
+  const { themeAppearance } = useTheme();
 
   const handleCopyToClipboard = useCallback(async () => {
     await copyToClipboard(code);
@@ -46,7 +46,7 @@ export function CodeBlock({
     >
       <span className="max-h-[65svh] overflow-auto">
         <Highlight
-          theme={appearance === 'light' ? themes.vsLight : themes.vsDark}
+          theme={themeAppearance === 'light' ? themes.vsLight : themes.vsDark}
           code={code}
           language={language}
         >
@@ -73,7 +73,10 @@ export function CodeBlock({
         <span className="font-mono">{fileName}</span>
 
         <ButtonGroup>
-          <Button variant="ghost" onClick={() => handleCopyToClipboard()}>
+          <Button
+            variant="ghost-foreground"
+            onClick={() => handleCopyToClipboard()}
+          >
             <span className="sr-only">Copy {fileName} code snippet</span>
             {isCopied ? <CheckIcon /> : <ClipboardCopy />}
           </Button>

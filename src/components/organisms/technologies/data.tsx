@@ -1,15 +1,15 @@
-import { TwigLogo } from '@/components/atoms/img';
 import {
-  CssLogo,
-  HtmlLogo,
-  JavascriptLogo,
-  MarkdownLogo,
-  MotionLogo,
-  NextjsLogo,
-  ReactLogo,
-  SassLogo,
-  TailwindCssLogo,
-  TypeScriptLogo
+  LogoCss,
+  LogoHtml,
+  LogoJavascript,
+  LogoMarkdown,
+  LogoMotion,
+  LogoNextjs,
+  LogoReact,
+  LogoSass,
+  LogoTailwindCss,
+  LogoTwig,
+  LogoTypescript
 } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';
 
@@ -17,35 +17,35 @@ export const mainTechnologies: Brand[] = [
   {
     name: 'React',
     description: 'as user interface web library',
-    logo: <ReactLogo className="size-12" />,
+    logo: <LogoReact className="size-12" />,
     href: 'https://react.dev/',
     knowledge: 'Daily'
   },
   {
     name: 'Next.js',
     description: 'as fullstack web framework',
-    logo: <NextjsLogo className="size-12" />,
+    logo: <LogoNextjs className="size-12" />,
     href: 'https://nextjs.org/',
     knowledge: 'Daily'
   },
   {
     name: 'TypeScript',
     description: 'as superset to JavaScript',
-    logo: <TypeScriptLogo className="size-12" />,
+    logo: <LogoTypescript className="size-12" />,
     href: 'https://www.typescriptlang.org/',
     knowledge: 'Daily'
   },
   {
     name: 'Tailwind CSS',
     description: 'as superset to CSS',
-    logo: <TailwindCssLogo className="size-12" />,
+    logo: <LogoTailwindCss className="size-12" />,
     href: 'https://tailwindcss.com/',
     knowledge: 'Daily'
   },
   {
     name: 'Motion',
     description: 'as animation library',
-    logo: <MotionLogo className="size-12" />,
+    logo: <LogoMotion className="size-12" />,
     href: 'https://motion.dev/',
     knowledge: 'Daily'
   }
@@ -57,49 +57,42 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'React',
-        href: 'https://react.dev/',
-        logo: <ReactLogo className="size-12" />,
         description: 'The library for web and native user interfaces',
+        href: 'https://react.dev/',
+        logo: <LogoReact className="size-12" />,
         knowledge: 'Daily'
       },
       {
         name: 'Vue.js',
-        description: '',
-        href: '',
+        description: undefined,
+        href: 'https://vuejs.org',
         logo: '',
         knowledge: 'Used'
       },
       {
         name: 'Nue.js',
-        description: '',
+        description: undefined,
         href: 'https://nuejs.org/',
         logo: '',
         knowledge: 'Not started'
       },
       {
         name: 'Svelte',
-        description: 'web development for the rest of us',
+        description: 'Web development for the rest of us',
         href: 'https://svelte.dev/',
         logo: '',
         knowledge: 'Used'
       },
       {
         name: 'SwiftUI',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Used'
       },
       {
-        name: 'Astro',
-        description: 'The web framework for content-driven websites',
-        href: 'https://astro.build/',
-        logo: '',
-        knowledge: 'Not started'
-      },
-      {
         name: 'Gatsby',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Not started'
@@ -110,10 +103,17 @@ export const technologies: { group: string; children: Brand[] }[] = [
     group: 'Full-Stack Framework',
     children: [
       {
+        name: 'Astro',
+        description: 'The web framework for content-driven websites',
+        href: 'https://astro.build/',
+        logo: '',
+        knowledge: 'Not started'
+      },
+      {
         name: 'Next.js',
         description: 'The React Framework for the Web',
         href: 'https://nextjs.org/',
-        logo: <NextjsLogo className="size-12" />,
+        logo: <LogoNextjs className="size-12" />,
         knowledge: 'Daily'
       },
       {
@@ -126,15 +126,16 @@ export const technologies: { group: string; children: Brand[] }[] = [
       },
       {
         name: 'Nuxt.js',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Used'
       },
       {
         name: 'React Router',
-        description: '(v7, framework mode)',
-        href: 'https://reactrouter.com/start/framework/installation',
+        description:
+          'A user-obsessed, standards-focused, multi-strategy router you can deploy anywhere.',
+        href: 'https://reactrouter.com',
         logo: '',
         knowledge: 'Used'
       }
@@ -146,14 +147,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'TypeScript',
         href: 'https://www.typescriptlang.org',
-        logo: <TypeScriptLogo className="size-12" />,
+        logo: <LogoTypescript className="size-12" />,
         description: 'TypeScript is JavaScript with syntax for types.',
         knowledge: 'Daily'
       },
       {
         name: 'JavaScript',
         href: 'https://www.w3schools.com/js/',
-        logo: <JavascriptLogo className="size-12" />,
+        logo: <LogoJavascript className="size-12" />,
         description: 'JavaScript is the programming language of the Web.',
         knowledge: 'Daily'
       },
@@ -161,7 +162,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Swift',
         href: '',
         logo: '',
-        description: '',
+        description: undefined,
         knowledge: 'Used'
       }
     ]
@@ -172,14 +173,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'HTML',
         href: 'https://www.w3schools.com/html/',
-        logo: <HtmlLogo className="size-12" />,
+        logo: <LogoHtml className="size-12" />,
         description: 'The default markup language for the web',
         knowledge: 'Daily'
       },
       {
         name: 'Markdown',
         href: 'https://markdown.de/',
-        logo: <MarkdownLogo className="size-12" />,
+        logo: <LogoMarkdown className="size-12" />,
         description: 'A simplified markup language',
         knowledge: 'Daily'
       }
@@ -191,14 +192,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'CSS',
         href: 'https://www.w3schools.com/css/',
-        logo: <CssLogo className="size-12" />,
+        logo: <LogoCss className="size-12" />,
         description: 'The default styling markup for the web',
         knowledge: 'Daily'
       },
       {
         name: 'Tailwind CSS',
         href: 'https://tailwindcss.com/',
-        logo: <TailwindCssLogo className="size-12" />,
+        logo: <LogoTailwindCss className="size-12" />,
         description:
           'Rapidly build modern websites without ever leaving your HTML.',
         knowledge: 'Daily'
@@ -222,14 +223,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'Node.js',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Used'
       },
       {
         name: 'Deno',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Not started'
@@ -241,7 +242,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'GraphQL',
-        description: '',
+        description: undefined,
         href: '',
         logo: '',
         knowledge: 'Not started'
@@ -253,7 +254,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'Vite',
-        description: '',
+        description: undefined,
         href: 'https://vite.dev/',
         logo: '',
         knowledge: 'Used'
@@ -267,7 +268,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Sass',
         description: 'Syntactically Awesome Style Sheets',
         href: 'https://sass-lang.com',
-        logo: <SassLogo />,
+        logo: <LogoSass />,
         knowledge: 'Experienced'
       }
     ]
@@ -279,7 +280,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Twig',
         description: 'The flexible, fast, and secure PHP template engine',
         href: 'https://twig.symfony.com',
-        logo: <TwigLogo />,
+        logo: <LogoTwig />,
         knowledge: 'Experienced'
       }
     ]

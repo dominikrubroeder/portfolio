@@ -5,54 +5,58 @@ import {
   IntroductionTechStackAccordion
 } from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
+import { Accordion } from '@/components/atoms/accordion';
+import { Avatar } from '@/components/atoms/avatar';
 
 export function Introduction() {
   return (
     <Container id="introduction">
-      <div className="space-y-6 rounded border p-4">
-        <p className="font-bold text-foreground">Hey there! 👋</p>
+      <div className="relative z-10 rounded border bg-background p-4 pb-0 sm:pb-2">
+        <p className="flex flex-wrap items-center gap-1 font-bold text-foreground">
+          <span>Hey there!</span>
+          <Avatar width={24} height={24} className="scale-x-[-1]" />
+          <span>👋</span>
+        </p>
 
-        <div className="space-y-3 text-wrap">
-          <h3 className="text-base font-bold">
-            My work is committed to the frontend. I like to create and build
-            dynamic interfaces that are designed to be for an interactive and
-            scalable web.
-          </h3>
+        <p>
+          <b>My work is rooted in the frontend.</b> Building user interfaces is
+          something i follow for almost 10 years now. In that area, i found
+          myself enjoying building components and creating the design system for
+          them as the most fitting thing for me, in short:
+          <i className="ml-1">design system engineering</i>.
+        </p>
 
-          <p>
-            Building user interfaces is something i follow for almost 10 years
-            now. In that area, i found myself enjoying building components and
-            creating the design system for them as the most fitting thing for me
-            – some call this <i>design system engineering</i>. An even easier
-            metaphor is building Lego bricks, that can be stacked together.
-          </p>
+        <p>
+          One component can connect to the next, and the next, and the next, and
+          all of a sudden we have a complete, streamlined, holistic and
+          homogenous user interface that can be adjusted in color, size,
+          spacing, typography and other theme-related properties from some root
+          files.
+        </p>
 
-          <p>
-            One component can connect to the next, and the next, and the next,
-            and all of a sudden we have a complete, streamlined, holistic and
-            homogenous user interface, that can be adjusted in color, size,
-            spacing, typography and other theme-related properties from some
-            root files.
-          </p>
-        </div>
-
-        <ul className="space-y-6">
-          <li>
-            <IntroductionMyBackgroundAccordion />
-          </li>
-
-          <li>
-            <IntroductionHowIWorkAccordion />
-          </li>
-
-          <li>
-            <TrainingAccordion />
-          </li>
-
-          <li>
-            <IntroductionTechStackAccordion />
-          </li>
-        </ul>
+        <Accordion
+          variant="contained"
+          items={[
+            {
+              title: 'My Background',
+              children: <IntroductionMyBackgroundAccordion />
+            },
+            {
+              title: 'Work ethic, how i work',
+              children: <IntroductionHowIWorkAccordion />
+            },
+            {
+              title: 'Training + Resources',
+              children: <TrainingAccordion />
+            },
+            {
+              title: 'My Tech Stack of Choice',
+              children: <IntroductionTechStackAccordion />
+            }
+          ]}
+          accordionGroupId="accordion-group-introduction"
+          focusView="start"
+        />
       </div>
     </Container>
   );

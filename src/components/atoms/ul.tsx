@@ -22,9 +22,9 @@ export function Ul({
 
       <ul
         className={cn(
-          'space-y-2',
           offsetLeft && 'pl-4',
           listStyle === 'disc' && 'list-disc pl-5 leading-7',
+          listStyle === 'none' && 'list-none',
           className
         )}
         {...rest}

@@ -1,48 +1,44 @@
-import { Accordion } from '@/components/atoms/accordion';
 import { Ul } from '@/components/atoms/ul';
 
 export function IntroductionHowIWorkAccordion() {
   return (
-    <Accordion title="Work ethic, how i work">
-      <Ul headline="I like to" listStyle="disc">
-        <li>
-          <b className="text-foreground">Care</b> on designing
-        </li>
-        <li>
-          <b className="text-foreground">Code</b> and
-          <b className="text-foreground"> build</b> for production applications
-        </li>
-        <li>
-          <b className="text-foreground">Using Psychology </b>
-          to design and build better user interfaces
-        </li>
-        <li>
-          <b className="text-foreground">Design</b> in system
-        </li>
-        <li>Be mindful</li>
-        <li>Write documentation</li>
-        <li>Work for good brands, products or services</li>
-        <li>Bring an idea from paper to production</li>
-        <li>
-          Work with pen and paper; fast sketching and scribbling improves
-          visualizing my ideas faster. Plus, I can also turn back to them later
-          when something else blocks the opportunity working on it immediately
-        </li>
-        <li>
-          Write notes on a regular basis; similar to work with pen and paper, it
-          will help organizing my thoughts, plus summarize the outcome of it
-          while being in the process. I often find myself with more clarity and
-          a feeling of structure if i get stuck in a concept for too long
-        </li>
-        <li>
-          Have a look on the latest trends and news in the tech space/design
-          area on a regular basis
-        </li>
-        <li>
-          Bring the latest trends together with core design principles and
-          psychological patterns
-        </li>
-      </Ul>
-    </Accordion>
+    <Ul listStyle="disc" className="my-0">
+      <li>
+        <b>Design with code</b>
+      </li>
+      <li>
+        <b>Code by design</b>
+      </li>
+      <li>
+        <b>Sync frontend design and code in frontend design engineering</b>
+      </li>
+      <li>
+        <b>Design in system</b>
+      </li>
+      <li>
+        <b>System thinking to solutionize</b>
+      </li>
+      <li>
+        <b>Design better user interfaces with psychology</b>
+      </li>
+      <li>
+        <b>Mindful hands-on mentality</b>
+      </li>
+      <li>
+        <b>Documentation is good</b>
+      </li>
+      <li>
+        <b>Write notes on a regular basis</b> – Tools, technologies, learnings,
+        findings and helpful tips. It also helps me find clarity and structure
+        if i'm stuck in a concept for too long
+      </li>
+      <li>
+        <b>See global scope</b> – think system through from paper to production
+      </li>
+      <li>
+        <b>Compose</b> trends together with core design principles and UI
+        patterns
+      </li>
+    </Ul>
   );
 }

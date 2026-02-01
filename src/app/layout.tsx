@@ -21,11 +21,12 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Dominik Rubröder | UX Design Engineer',
   description:
-    'Building user interfaces for the web. A craft, about UI components and design systems.',
+    'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
+  metadataBase: new URL('https://www.dominikrubroeder.dev'),
   openGraph: {
     title: 'Dominik Rubröder | UX Design Engineer',
     description:
-      'Building user interfaces for the web. A craft, about UI components and design systems.',
+      'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
     url: 'https://www.dominikrubroeder.dev',
     siteName: 'dominikrubroeder.dev',
     images: [
@@ -36,9 +37,24 @@ export const metadata: Metadata = {
         alt: 'Profile image Dominik Rubröder'
       }
     ],
-    locale: 'de_DE',
+    locale: 'en_US',
     type: 'website'
-  }
+  },
+  keywords: [
+    'Frontend',
+    'Design Engineer',
+    'User Interface Engineer',
+    'User Interface Designer',
+    'User experience',
+    'UX',
+    'User interface',
+    'UI designer',
+    'UI engineer',
+    'UI components',
+    'Webdesign',
+    'Next.js',
+    'React'
+  ]
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -47,11 +63,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <html
         lang="en"
         className={`scroll-smooth bg-background ${jetbrainsMono.variable}`}
-        data-appearance="dark"
       >
-        <body className="overflow-x-hidden bg-background text-base leading-[1.8] font-normal text-muted-foreground">
+        <body>
           <Header />
+
           <main>{children}</main>
+
           <Footer />
           <Analytics />
           <SpeedInsights />

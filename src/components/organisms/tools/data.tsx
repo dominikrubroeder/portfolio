@@ -1,13 +1,12 @@
-import { InkdropLogo } from '@/components/atoms/img';
 import {
-  AlgoliaLogo,
-  CraftLogo,
-  FigmaLogo,
-  GithubLogo,
-  GitlabLogo,
-  ShopwareLogo,
-  StoryblokLogo,
-  WebstormLogo
+  LogoAlgolia,
+  LogoCraft,
+  LogoFigma,
+  LogoGithub,
+  LogoInkdrop,
+  LogoShopware,
+  LogoStoryblok,
+  LogoWebstorm
 } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';
 import type { Tools } from '@/components/organisms/tools/types';
@@ -16,36 +15,29 @@ export const mainTools: Brand[] = [
   {
     name: 'Figma',
     description: 'for user interface design and prototyping',
-    logo: <FigmaLogo className="size-12" />,
+    logo: <LogoFigma className="size-12" />,
     href: 'https://www.figma.com',
     knowledge: 'Daily'
   },
   {
     name: 'WebStorm',
     description: 'as IDE',
-    logo: <WebstormLogo className="size-12" />,
+    logo: <LogoWebstorm className="size-12" />,
     href: 'https://www.jetbrains.com/webstorm',
     knowledge: 'Daily'
   },
   {
     name: 'Craft',
     description: 'as my main note and documentation tool',
-    logo: <CraftLogo className="size-12" />,
+    logo: <LogoCraft className="size-12" />,
     href: 'https://www.craft.do',
     knowledge: 'Daily'
   },
   {
     name: 'GitHub',
     description: 'to store my private codebase',
-    logo: <GithubLogo className="size-12" />,
+    logo: <LogoGithub className="size-12" />,
     href: 'https://github.com',
-    knowledge: 'Daily'
-  },
-  {
-    name: 'GitLab',
-    description: 'is mostly used at workspace to store the project’s codebase',
-    logo: <GitlabLogo className="size-12" />,
-    href: 'https://gitlab.com',
     knowledge: 'Daily'
   }
 ];
@@ -83,7 +75,7 @@ export const tools: Tools = [
         knowledge: 'Professional'
       },
       {
-        name: 'Claude AI',
+        name: 'Claude',
         href: 'https://claude.ai',
         logo: '',
         description: 'Talk with Claude, an AI assistant from Antrophic',
@@ -127,7 +119,7 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        name: 'Vercel Speedinsights',
+        name: 'Vercel Speed Insights',
         href: 'https://vercel.com/docs/speed-insights',
         logo: '',
         description:
@@ -185,6 +177,14 @@ export const tools: Tools = [
         logo: '',
         description:
           'The easiest way to add authentication and user management to your application.',
+        knowledge: 'Not started'
+      },
+      {
+        name: 'Better Auth',
+        href: 'https://www.better-auth.com',
+        logo: '',
+        description:
+          'The most comprehensive authentication framework for TypeScript.',
         knowledge: 'Not started'
       }
     ]
@@ -244,7 +244,7 @@ export const tools: Tools = [
       {
         name: 'Storyblok',
         href: 'https://www.storyblok.com',
-        logo: <StoryblokLogo className="size-12" />,
+        logo: <LogoStoryblok className="size-12" />,
         description: 'The Way to Modern Content',
         knowledge: 'Daily'
       },
@@ -334,7 +334,7 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        name: 'upsun (formerly Platform.sh)',
+        name: 'upsun',
         description:
           'The end-to-end cloud platform for building, running and scaling web applications',
         href: 'https://upsun.com',
@@ -383,6 +383,13 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
+        name: 'Paper',
+        description: 'design incredible. for the love of design.',
+        href: 'https://paper.design',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
         name: 'Sketch',
         description: 'Design, prototype, collaborate and handoff',
         href: 'https://www.sketch.com',
@@ -417,7 +424,7 @@ export const tools: Tools = [
         name: 'Inkdrop',
         description: 'Organizing your Markdown notes made simple',
         href: 'https://inkdrop.app',
-        logo: <InkdropLogo />,
+        logo: <LogoInkdrop />,
         knowledge: 'Daily'
       }
     ]
@@ -454,11 +461,11 @@ export const tools: Tools = [
     group: 'IDE + Editor',
     children: [
       {
-        name: 'Cursor AI',
-        href: 'https://cursor.sh',
+        name: 'Cursor',
+        href: 'https://cursor.com',
         logo: '',
         description: 'The AI-first code editor',
-        knowledge: 'Not started'
+        knowledge: 'Used'
       },
       {
         name: 'Sublime Text',
@@ -468,22 +475,30 @@ export const tools: Tools = [
         knowledge: 'Used'
       },
       {
-        name: 'VS Code',
-        description: 'Code editing. Redefined.',
+        name: 'Visual Studio Code',
+        description: 'The open source AI code editor',
         href: 'https://code.visualstudio.com',
         logo: '',
         knowledge: 'Professional'
       },
       {
         name: 'WebStorm',
-        description: 'The smartest JavaScript IDE',
+        description: 'The JavaScript and TypeScript IDE',
         href: 'https://www.jetbrains.com/webstorm',
         logo: '',
         knowledge: 'Daily'
       },
       {
+        name: 'Windsurf',
+        description: 'Where developers are doing their best work',
+        href: 'https://windsurf.com',
+        logo: '',
+        knowledge: 'Used'
+      },
+      {
         name: 'zed',
-        description: 'A high-performance, multiplayer code editor',
+        description:
+          'Zed is a minimal code editor crafted for speed and collaboration with humans and AI.',
         href: 'https://zed.dev',
         logo: '',
         knowledge: 'Used'
@@ -571,13 +586,6 @@ export const tools: Tools = [
         knowledge: 'Not started'
       },
       {
-        name: 'LottieFiles for Developers',
-        description: 'Ship Lottie animations to any platform',
-        href: 'https://lottiefiles.com/developers',
-        logo: '',
-        knowledge: 'Not started'
-      },
-      {
         name: 'Motion',
         description: 'A modern animation library for JavaScript and React',
         href: 'https://motion.dev/',
@@ -638,7 +646,7 @@ export const tools: Tools = [
         knowledge: 'Daily'
       },
       {
-        name: 'pnpM',
+        name: 'pnpm',
         description: 'Fast, disk space efficient package manager',
         href: 'https://pnpm.io',
         logo: '',
@@ -669,6 +677,14 @@ export const tools: Tools = [
         href: 'https://vercel.com/docs/speed-insights',
         logo: '',
         knowledge: 'Daily'
+      },
+      {
+        name: '@tanstack/*',
+        description:
+          'High-quality, headless utilities for modern web development',
+        href: 'https://tanstack.com',
+        logo: '',
+        knowledge: 'Not started'
       },
       {
         name: 'class-variance-authority',
@@ -780,11 +796,25 @@ export const tools: Tools = [
         knowledge: 'Experienced'
       },
       {
+        name: 'react-snowfall',
+        description: 'An awesome react component that creates snowfall',
+        href: 'https://www.npmjs.com/package/react-snowfall',
+        logo: '',
+        knowledge: 'Daily'
+      },
+      {
         name: 'react-syntax-highlighter',
         description: 'Syntax highlighting component for React',
         href: 'https://www.npmjs.com/package/react-syntax-highlighter',
         logo: '',
         knowledge: 'Used'
+      },
+      {
+        name: 'storybook',
+        description: 'Frontend workshop for UI development',
+        href: 'https://storybook.js.org',
+        logo: '',
+        knowledge: 'Experienced'
       },
       {
         name: 'use-debounce',
@@ -904,8 +934,7 @@ export const tools: Tools = [
         name: 'Miro',
         href: 'https://miro.com',
         logo: '/miro.png',
-        description:
-          "With the Power of Miro, You Can Visually Collaborate Any Time Anywhere Across Your Company. Don't Let Distances or Timezones Stop You from Building Beautiful Products for Your Users. Miro for UX & Design.",
+        description: 'Get from brainstorm to breakthrough with Miro',
         knowledge: 'Professional'
       },
       {
@@ -925,7 +954,7 @@ export const tools: Tools = [
     ]
   },
   {
-    group: 'Research + Study',
+    group: 'Research + Study + Data',
     children: [
       {
         name: 'Baymard Institute',
@@ -963,7 +992,7 @@ export const tools: Tools = [
       {
         name: 'Algolia',
         href: 'https://www.algolia.com',
-        logo: <AlgoliaLogo className="size-12" />,
+        logo: <LogoAlgolia className="size-12" />,
         description: 'AI-Search, that understands',
         knowledge: 'Experienced'
       },
@@ -997,9 +1026,9 @@ export const tools: Tools = [
       {
         name: 'Shopware',
         href: 'https://www.shopware.com',
-        logo: <ShopwareLogo />,
+        logo: <LogoShopware />,
         description:
-          'Build the exceptional. Comprehensive ecommerce solutions for all your B2C and B2B needs. Powered by the leading open commerce platform.',
+          'The leading edge of ecommerce. Your business faster, limitless.',
         knowledge: 'Daily'
       },
       {
@@ -1039,8 +1068,7 @@ export const tools: Tools = [
         name: 'cypress',
         href: 'https://www.cypress.io',
         logo: '',
-        description:
-          'Easily create tests for your modern web applications, debug them visually, and automatically run them in your continuous integration builds',
+        description: 'Browser testing for modern teams',
         knowledge: 'Not started'
       }
     ]
@@ -1048,6 +1076,14 @@ export const tools: Tools = [
   {
     group: 'UI',
     children: [
+      {
+        name: 'Base UI',
+        description:
+          'Unstyled UI components for building accessible user interfaces',
+        href: 'https://base-ui.com',
+        logo: '',
+        knowledge: 'Used'
+      },
       {
         name: 'Headless UI',
         description: 'Completely unstyled, fully accessible UI components',

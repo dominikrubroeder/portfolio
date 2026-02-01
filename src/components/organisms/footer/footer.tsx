@@ -6,36 +6,36 @@ export function Footer() {
     <footer className="mt-16 space-y-3 border-t p-4 text-center text-xs md:pb-4">
       <p>Build your vision. Do it with style.</p>
       <p>Live your balance.</p>
-      <p className="space-x-2">
+      <p className="flex flex-wrap items-center justify-center gap-2">
         <ExternalLink
           href="https://nextjs.org"
-          variant="unstyled"
           title="Open Next.js website"
           aria-label="Open Next.js website"
+          size="xs"
         >
-          Next.js 16.1.11
+          Next.js 16.1.6
         </ExternalLink>
 
         <span>|</span>
 
         <ExternalLink
           href="https://react.dev"
-          variant="unstyled"
           title="Open React website"
           aria-label="Open React website"
+          size="xs"
         >
-          React 19.2.3
+          React 19.2.4
         </ExternalLink>
 
         <span>|</span>
 
         <ExternalLink
           href="https://tailwindcss.com/docs"
-          variant="unstyled"
           title="Open Tailwind CSS documentation"
           aria-label="Open Tailwind CSS documentation"
+          size="xs"
         >
-          Tailwind CSS 4.1.17
+          Tailwind CSS 4.1.18
         </ExternalLink>
       </p>
 
@@ -57,9 +57,9 @@ export function Footer() {
         <p>
           Santa Clause cap:
           <ExternalLink
-            variant="unstyled"
+            color="muted"
             href="https://www.svgrepo.com/svg/206754/winter-hat-santa-claus"
-            className="ml-1 text-muted-foreground hover:text-foreground"
+            className="ml-1"
           >
             https://www.svgrepo.com/svg/206754/winter-hat-santa-claus
           </ExternalLink>

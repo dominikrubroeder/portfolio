@@ -1,10 +1,8 @@
-import React from 'react';
-
 import { Avatar } from '@/components/atoms/avatar';
 import {
-  ContactButton,
-  GitHubButton,
-  LinkedInButton
+  ButtonContact,
+  ButtonGithub,
+  ButtonLinkedin
 } from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
@@ -15,8 +13,8 @@ import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events';
 
 export function Header() {
   return (
-    <header className="max-w-container sticky top-0 z-100 mx-auto flex h-24 items-center justify-between gap-4 border-b bg-background px-4 py-4 pt-6 lg:relative lg:h-24 lg:border-none">
-      <div className="flex items-center gap-4">
+    <header className="max-w-container sticky top-0 z-100 mx-auto flex h-24 items-center justify-between gap-2 border-b bg-background px-4 py-4 pt-6 xs:gap-4 lg:relative lg:h-24 lg:border-none">
+      <div className="flex items-center gap-2 xs:gap-3">
         <Avatar
           className={cn(
             'size-11 lg:size-14',
@@ -27,14 +25,17 @@ export function Header() {
           as="Link"
         />
 
-        <h1 className="w-max text-base leading-6">
-          <span className="block w-max">Dominik Rubröder</span>
-          <span className="block text-sm font-normal text-muted-foreground lg:text-base">
+        <h1 className="w-max">
+          <span className="block w-max text-sm leading-snug xs:text-base">
+            Dominik Rubröder
+          </span>
+          <span className="block text-sm font-normal text-muted-foreground">
             <span>UX Design Engineer</span>
-            <span className="hidden pr-0.5 pl-1 sm:inline-block">@</span>
+            <span className="ml-1 hidden sm:inline-block">@</span>
             <ExternalLink
-              variant="prominent"
               href="https://www.mediawave.de"
+              color="muted"
+              size="sm"
               title="Open mediawave commerce GmbH website"
               aria-label="Open mediawave commerce GmbH website"
               className="hidden sm:inline-flex"
@@ -50,10 +51,10 @@ export function Header() {
       <div className="hidden lg:flex lg:items-center lg:gap-4">
         <ThemeQuickSettings />
 
-        <ButtonGroup className="gap-0">
-          <ContactButton iconPosition="right" buttonProps={{ size: 'large' }} />
-          <GitHubButton />
-          <LinkedInButton />
+        <ButtonGroup minimizeSpacing>
+          <ButtonContact iconPosition="right" buttonProps={{ size: 'large' }} />
+          <ButtonGithub />
+          <ButtonLinkedin />
         </ButtonGroup>
       </div>
     </header>

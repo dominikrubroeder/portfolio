@@ -5,19 +5,20 @@ import { Introduction } from '@/components/organisms/introduction';
 
 export function HomeHero() {
   return (
-    <Animate direction="scaleUp" className="space-y-6">
+    <Animate direction="scaleUp" className="space-y-3">
       <Container
         as="section"
-        className="space-y-6 pt-5 pb-1 lg:px-0 lg:pb-2"
+        className="relative z-10 space-y-6 pt-5 pb-1 lg:px-0 lg:pb-2"
         id="hero"
       >
         <div className="space-y-2">
-          <Badge size="medium" color="primary">
-            Team Frontend
-          </Badge>
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge variant="primary">Team Frontend</Badge>
+            <div className="text-primary">The art of composing</div>
+          </div>
 
-          <h2>
-            Building user interfaces for the web. A craft, about UI components
+          <h2 className="bg-background">
+            Building user interfaces for the web: A craft about UI components
             and design systems.
           </h2>
         </div>

@@ -5,37 +5,52 @@ import { CheckIcon } from '@heroicons/react/16/solid';
 import { useTheme } from '@/components/organisms/theme';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { ComponentBaseProps } from '@/lib/types';
+import { useEffect } from 'react';
 
 export function ThemeColorSetting({ className }: ComponentBaseProps) {
-  const { setTheme, theme } = useTheme();
+  const { theme, themeColor, setThemeColor } = useTheme();
+
+  useEffect(() => {
+    if (theme.key === 'wireframe') {
+      setThemeColor(undefined);
+    }
+
+    if (theme.key === 'animate') {
+      setThemeColor('primary');
+    }
+
+    if (theme.key === 'notes') {
+      setThemeColor('orange');
+    }
+  }, [theme.key]);
 
   return (
     <ButtonGroup className={className}>
       {/** TODO: Replace fixed color values with color variables */}
       <button
-        className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border border-blue-600 bg-blue-600 hover:scale-110 hover:border-blue-600 active:scale-100"
-        onClick={() => setTheme('blue')}
+        className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border border-blue bg-blue hover:scale-110 hover:border-blue active:scale-100"
+        onClick={() => setThemeColor('blue')}
       >
-        {theme === 'blue' && (
-          <CheckIcon className="size-4 shrink-0 text-white" />
+        {themeColor === 'blue' && (
+          <CheckIcon className="size-4 shrink-0 text-blue-foreground" />
         )}
       </button>
 
       <button
-        className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border-[#7d54f8] bg-[#7d54f8] hover:scale-110 hover:border-[#7d54f8] active:scale-100"
-        onClick={() => setTheme('primary')}
+        className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border-violett bg-violett hover:scale-110 hover:border-violett active:scale-100"
+        onClick={() => setThemeColor('violett')}
       >
-        {theme === 'primary' && (
-          <CheckIcon className="size-4 shrink-0 text-white" />
+        {(themeColor === 'primary' || themeColor === 'violett') && (
+          <CheckIcon className="size-4 shrink-0 text-violett-foreground" />
         )}
       </button>
 
       <button
-        className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border border-orange-600 bg-orange-600 hover:scale-110 hover:border-orange-600 active:scale-100"
-        onClick={() => setTheme('orange')}
+        className="flex size-8 shrink-0 interactive items-center justify-center rounded-full border border-orange bg-orange hover:scale-110 hover:border-orange active:scale-100"
+        onClick={() => setThemeColor('orange')}
       >
-        {theme === 'orange' && (
-          <CheckIcon className="size-4 shrink-0 text-white" />
+        {themeColor === 'orange' && (
+          <CheckIcon className="size-4 shrink-0 text-orange-foreground" />
         )}
       </button>
     </ButtonGroup>

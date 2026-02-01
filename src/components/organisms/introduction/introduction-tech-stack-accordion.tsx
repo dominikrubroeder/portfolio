@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { cn } from '@/lib/utils';
-
-import { Accordion } from '@/components/atoms/accordion';
 import { Ul } from '@/components/atoms/ul';
 import { BrandLink } from '@/components/organisms/brand';
 import { getTechnologies } from '@/components/organisms/technologies';
@@ -20,29 +18,40 @@ export function IntroductionTechStackAccordion({
   className?: string;
 }) {
   return (
-    <Accordion title="My Tech Stack of choice">
-      <Ul
-        className={cn(
-          '-ml-2 flex list-none flex-wrap items-center gap-2 pb-1',
-          className
-        )}
-      >
-        {tools.map((item) => (
-          <li key={item.name}>
-            <BrandLink brand={item} showLabel labelPosition="bottom" />
-          </li>
-        ))}
+    <Ul
+      className={cn(
+        '-ml-2 flex list-none flex-wrap items-center gap-4 gap-y-8',
+        className
+      )}
+    >
+      {tools.map((item, index) => (
+        <li
+          key={`list-item-introduction-tech-stack-accordion-tool-item-${index}-${item.name}`}
+          className="flex items-center gap-3"
+        >
+          <BrandLink
+            key={`brand-link-introduction-tech-stack-accordion-item-${index}-${item.name}`}
+            brand={item}
+            showLabel
+            labelPosition="bottom"
+          />
 
-        <li>
-          <PlusIcon className="mr-2 ml-1 size-6" />
+          {index === 0 && <PlusIcon className="mr-1 block size-6" />}
         </li>
+      ))}
 
-        {technologies.map((item) => (
-          <li key={item.name}>
-            <BrandLink brand={item} showLabel labelPosition="bottom" />
-          </li>
-        ))}
-      </Ul>
-    </Accordion>
+      {technologies.map((item, index) => (
+        <li
+          key={`list-item-introduction-tech-stack-accordion-technology-item-${index}-${item.name}`}
+        >
+          <BrandLink
+            key={`brand-link-introduction-tech-stack-accordion-item-${index}-${item.name}`}
+            brand={item}
+            showLabel
+            labelPosition="bottom"
+          />
+        </li>
+      ))}
+    </Ul>
   );
 }

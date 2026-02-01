@@ -6,9 +6,9 @@ export interface Project {
   title: string;
   category: string[];
   url: string;
-  status: 'Currently developing' | 'Published' | 'Online' | undefined;
+  isCurrentProject: boolean;
   readableTitle: string;
-  timeframe: string;
+  timeframe?: string;
   logo: ReactNode | undefined;
   role: string[] | undefined;
   aspects: string[] | undefined;
@@ -17,4 +17,6 @@ export interface Project {
   company: string | undefined;
   caseStudyUrls: string[] | undefined;
   demoUrls: string[] | undefined;
+  previewImage?: string;
+  previewImageTimestamp?: string;
 }

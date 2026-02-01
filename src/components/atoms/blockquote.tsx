@@ -2,8 +2,10 @@ import type { ReactNode } from 'react';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
+import { ColorReducedProp } from '@/lib/types';
 
 export function Blockquote({
+  variant = 'muted',
   indent,
   quoteBar = true,
   centered = true,
@@ -15,6 +17,7 @@ export function Blockquote({
   withBackground,
   ...rest
 }: {
+  variant?: ColorReducedProp;
   indent?: boolean;
   quoteBar?: boolean;
   centered?: boolean;
@@ -29,6 +32,9 @@ export function Blockquote({
     <blockquote
       {...rest}
       className={cn(
+        variant === 'primary' && 'text-primary',
+        variant === 'foreground' && 'text-foreground',
+        variant === 'muted' && 'text-muted-foreground',
         horizontalOffset && 'my-8',
         indent && 'ml-4 md:ml-8',
         quoteBar &&

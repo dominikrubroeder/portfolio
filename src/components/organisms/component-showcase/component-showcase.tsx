@@ -8,7 +8,7 @@ import { Badge } from '@/components/atoms/badge';
 import { Button } from '@/components/atoms/button';
 import { CodeBlock } from '@/components/atoms/codeblock';
 import { Container } from '@/components/atoms/container';
-import { DesignTokenIcon } from '@/components/atoms/svg/design-token-icon';
+import { IconDesignToken } from '@/components/atoms/icon/icon-design-token';
 import { components } from '@/components/organisms/component-showcase';
 
 export function ComponentShowcase() {
@@ -18,7 +18,7 @@ export function ComponentShowcase() {
 
       <div className="space-y-1">
         <div className="relative flex items-center gap-4">
-          <DesignTokenIcon className="absolute top-1/2 -left-8 -translate-y-1/2" />
+          <IconDesignToken className="absolute top-1/2 -left-8 -translate-y-1/2" />
           <h2>Design Tokens</h2>
         </div>
 
@@ -94,7 +94,7 @@ export function ComponentShowcase() {
                   <div className="group relative space-y-2 overflow-hidden">
                     {component.animatable && (
                       <Button
-                        variant="ghost"
+                        variant="ghost-foreground"
                         className="invisible absolute top-4 right-4 translate-y-4 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
                       >
                         <span className="sr-only">Reanimate</span>

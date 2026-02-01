@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import DevModeLabel from '@/components/atoms/dev-mode-label';
-import { ExperienceBar } from '@/components/atoms/experience-bar';
+import { KnowledgeBar } from '@/components/atoms/knowledge-bar';
 import type { Brand } from '@/components/organisms/brand';
 
 export default function Technology({
@@ -27,7 +27,7 @@ export default function Technology({
         )}
       >
         <Button
-          variant="ghost"
+          variant="ghost-foreground"
           href={technology.href}
           target="_blank"
           title={`Go to external ${technology.name} website`}
@@ -55,7 +55,7 @@ export default function Technology({
           aria-label={`${technology.name} logo`}
         />
 
-        <ExperienceBar
+        <KnowledgeBar
           progress={technology.knowledge}
           className="absolute right-5 bottom-4 text-right"
         />

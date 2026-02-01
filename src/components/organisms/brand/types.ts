@@ -4,7 +4,7 @@ import type { KnowledgeLevel } from '@/components/organisms/tools';
 
 export interface Brand {
   name: string;
-  description: string;
+  description: string | undefined;
   href: string;
   logo: ReactNode;
   knowledge: KnowledgeLevel;

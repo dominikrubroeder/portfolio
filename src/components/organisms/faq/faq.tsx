@@ -6,6 +6,7 @@ import {
   FaqUxEngineer,
   FaqWhatIsAUxEngineer
 } from '@/components/organisms/faq';
+import { Accordion } from '@/components/atoms/accordion';
 
 export function FAQ() {
   return (
@@ -18,12 +19,30 @@ export function FAQ() {
           </span>
         </h2>
 
-        <div id="accordion-group">
-          <FaqWhatIsAUxEngineer />
-          <FaqUxDesigner />
-          <FaqUxEngineer />
-          <FaqDesignEngineerVsUxEngineer />
-        </div>
+        <Accordion
+          variant="contained"
+          buttonVariant={{ variant: 'contained-muted' }}
+          items={[
+            {
+              title: 'What is a UX Engineer?',
+              children: <FaqWhatIsAUxEngineer />
+            },
+            {
+              title: 'On which predicates should a UX Designer focus on?',
+              children: <FaqUxDesigner />
+            },
+            {
+              title: 'On which predicates should a UX Engineer focus on?',
+              children: <FaqUxEngineer />
+            },
+            {
+              title: 'Design Engineer vs UX Engineer',
+              children: <FaqDesignEngineerVsUxEngineer />
+            }
+          ]}
+          accordionGroupId="accordion-group-faq"
+          focusView="start"
+        />
       </Container>
     </Animate>
   );

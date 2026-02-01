@@ -5,8 +5,8 @@ import { ProjectCarousel } from '@/components/organisms/projects';
 export function Projects() {
   return (
     <Animate direction="up">
-      <Container className="space-y-6 px-0" id="projects">
-        <h2>
+      <Container className="relative space-y-8 rounded px-0" id="projects">
+        <h2 className="mx-auto max-w-(--readable-container) bg-background">
           Projects
           <span className="ml-2 font-medium text-muted-foreground">
             show you, in which teams i have participated yet
