@@ -18,7 +18,7 @@ export function Badge({
   return (
     <div
       className={cn(
-        'inline-flex self-start rounded',
+        'inline-flex self-start rounded-full',
         variant === 'primary' &&
           'bg-primary/10 text-primary-hover dark:text-primary',
         variant === 'foreground' && 'bg-muted text-foreground',

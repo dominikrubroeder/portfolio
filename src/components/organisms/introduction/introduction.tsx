@@ -6,17 +6,12 @@ import {
 } from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
 import { Accordion } from '@/components/atoms/accordion';
-import { Avatar } from '@/components/atoms/avatar';
 
 export function Introduction() {
   return (
     <Container id="introduction">
       <div className="relative z-10 rounded border bg-background p-4 pb-0 sm:pb-2">
-        <p className="flex flex-wrap items-center gap-1 font-bold text-foreground">
-          <span>Hey there!</span>
-          <Avatar width={24} height={24} className="scale-x-[-1]" />
-          <span>👋</span>
-        </p>
+        <p className="space-x-1 font-bold text-foreground">Hey there! 👋</p>
 
         <p>
           <b>My work is rooted in the frontend.</b> Building user interfaces is
