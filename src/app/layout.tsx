@@ -1,7 +1,7 @@
 import './globals.css';
 import type { ReactNode } from 'react';
 
-import { JetBrains_Mono } from 'next/font/google';
+import { Indie_Flower, JetBrains_Mono } from 'next/font/google';
 
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -16,6 +16,12 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-jetbrains-mono'
+});
+
+const indieFlower = Indie_Flower({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-handwritten'
 });
 
 export const metadata: Metadata = {
@@ -62,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <ThemeProvider>
       <html
         lang="en"
-        className={`scroll-smooth bg-background ${jetbrainsMono.variable}`}
+        className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
       >
         <body>
           <Header />

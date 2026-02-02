@@ -1,4 +1,3 @@
-import { Badge } from '@/components/atoms/badge';
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
 import { Introduction } from '@/components/organisms/introduction';
@@ -12,9 +11,9 @@ export function HomeHero() {
         id="hero"
       >
         <div className="space-y-2">
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="primary">Team Frontend</Badge>
-            <div className="text-primary">The art of composing</div>
+          <div className="space-x-1.5 text-primary">
+            <span>The art of</span>
+            <span className="font-handwritten text-2xl">composing</span>
           </div>
 
           <h2 className="bg-background">
