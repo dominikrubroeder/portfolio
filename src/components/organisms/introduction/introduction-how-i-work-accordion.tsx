@@ -36,8 +36,7 @@ export function IntroductionHowIWorkAccordion() {
         <b>See global scope</b> – think system through from paper to production
       </li>
       <li>
-        <b>Compose</b> trends together with core design principles and UI
-        patterns
+        <b>Compose</b> trends with core design principles and UI patterns
       </li>
     </Ul>
   );
