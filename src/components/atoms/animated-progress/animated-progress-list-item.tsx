@@ -1,4 +1,8 @@
-import { NewspaperIcon, UserIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
+import {
+  NewspaperIcon,
+  UserIcon,
+  VideoCameraIcon
+} from '@heroicons/react/24/outline';
 
 import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { Badge } from '@/components/atoms/badge';
