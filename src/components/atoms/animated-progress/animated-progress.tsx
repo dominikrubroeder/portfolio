@@ -1,23 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-
-import { AnimatePresence, motion, useAnimation, useInView } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/components/organisms/theme';
-
-interface AnimatedProgressProps {
-  size?: number;
-  strokeWidth?: number;
-  progress?: number;
-  animateNumber?: boolean;
-  animateProgress?: boolean;
-  color?: 'text-primary' | string;
-  strokeColor?: 'stroke-primary' | string;
-  backgroundColor?: 'bg-muted' | string;
-  className?: string;
-}
+import {
+  AnimatedProgressProps,
+  useAnimatedProgress
+} from '@/components/atoms/animated-progress';
 
 export function AnimatedProgress({
   size = 200,
@@ -30,55 +19,15 @@ export function AnimatedProgress({
   backgroundColor = 'bg-transparent',
   className
 }: AnimatedProgressProps) {
-  const controls = useAnimation();
-  const ref = useRef(null);
-  const inView = useInView(ref);
-  const [currentProgress, setCurrentProgress] = useState(
-    animateNumber ? 0 : progress
-  );
-
-  const { shouldAnimate } = useTheme();
-
-  const center = size / 2;
-  const radius = size / 2 - strokeWidth / 2;
-  const circumference = 2 * Math.PI * radius;
-
-  useEffect(() => {
-    if (inView) {
-      if (animateProgress) {
-        controls.start({
-          strokeDashoffset: circumference - (progress / 100) * circumference,
-          transition: { duration: 2, ease: 'easeInOut' }
-        });
-      } else {
-        controls.set({
-          strokeDashoffset: circumference - (progress / 100) * circumference
-        });
-      }
-
-      if (animateNumber && currentProgress !== progress) {
-        let startTimestamp: number | null = null;
-        const step = (timestamp: number) => {
-          if (!startTimestamp) startTimestamp = timestamp;
-          const elapsed = Math.min((timestamp - startTimestamp) / 2000, 1);
-          setCurrentProgress(Math.floor(elapsed * progress));
-          if (elapsed < 1) {
-            window.requestAnimationFrame(step);
-          }
-        };
-        window.requestAnimationFrame(step);
-      }
-    }
-    // eslint-disable-next-line
-  }, [
-    controls,
-    inView,
+  const {
+    ref,
+    currentProgress,
+    center,
+    radius,
     circumference,
-    progress,
-    animateNumber,
-    animateProgress,
+    controls,
     shouldAnimate
-  ]);
+  } = useAnimatedProgress({ size, strokeWidth, progress, animateNumber });
 
   return (
     <div
