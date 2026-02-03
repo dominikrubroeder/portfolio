@@ -2,13 +2,12 @@
 
 import type { ReactNode } from 'react';
 
-import { motion } from 'motion/react';
+import { motion, MotionConfig } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
 import type { AnimationGeneratorType, ViewportOptions } from 'motion';
 import { useAnimate } from '@/components/molecules/animate';
-import { useTheme } from '@/components/organisms/theme';
 
 export function Animate({
   direction = 'up',
@@ -28,20 +27,18 @@ export function Animate({
   children: ReactNode;
 }) {
   const { variants } = useAnimate({ delay, duration, type });
-  const { theme, themeAnimationSettings } = useTheme();
-
-  if (theme.key !== 'animate' || themeAnimationSettings.disableAnimations)
-    return children;
 
   return (
-    <motion.div
-      variants={variants[direction]}
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewport}
-      className={cn(className)}
-    >
-      {children}
-    </motion.div>
+    <MotionConfig reducedMotion="user">
+      <motion.div
+        variants={variants[direction]}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        className={cn(className)}
+      >
+        {children}
+      </motion.div>
+    </MotionConfig>
   );
 }

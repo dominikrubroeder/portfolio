@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     'Webdesign',
     'Next.js',
     'React'
+  ],
+  authors: [
+    { name: 'Dominik Rubröder', url: 'https://www.dominikrubroeder.dev' }
   ]
 };
 

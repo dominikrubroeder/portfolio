@@ -26,7 +26,7 @@ export function Container({
       className={cn(
         'mx-auto scroll-mt-responsive',
         horizontalPadding && 'px-4 lg:px-0',
-        animateIn && 'animate-fade-up-1rem',
+        animateIn && 'motion-safe:animate-fade-up-1rem',
         size === 'container' && 'max-w-(--container)',
         size === 'md' && 'max-w-(--container-md)',
         size === 'readable-container' && 'max-w-(--readable-container)',

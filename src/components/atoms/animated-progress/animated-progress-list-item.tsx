@@ -9,6 +9,7 @@ import { Badge } from '@/components/atoms/badge';
 import type { LearningResource } from '@/components/organisms/training';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
   return (
@@ -44,14 +45,35 @@ export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
           </div>
         )}
 
-        <div className="w-full justify-between">
-          <h3 className="mb-0.5 flex-1 space-x-1.5 text-base font-normal md:mb-1">
-            <b className="text-foreground">{item.title}</b>
-            {item.isCurrent && <Badge size="sm">Currently</Badge>}
-            <span className="relative block text-muted-foreground">
+        <div className="relative w-full justify-between">
+          <div>
+            <div className="flex items-center gap-1.5">
+              <h3
+                className={cn(
+                  'mb-0 text-base font-bold text-foreground',
+                  item.isCurrent && 'pt-8 md:pt-0'
+                )}
+              >
+                {item.title}
+              </h3>
+
+              {item.isCurrent && (
+                <Badge size="sm" className="hidden self-center md:block">
+                  Current Course
+                </Badge>
+              )}
+            </div>
+
+            <span className="block text-muted-foreground">
               <i>by {item.author}</i>
             </span>
-          </h3>
+          </div>
+
+          {item.isCurrent && (
+            <Badge size="sm" className="absolute top-0 left-0 md:hidden">
+              Current Course
+            </Badge>
+          )}
         </div>
       </div>
 

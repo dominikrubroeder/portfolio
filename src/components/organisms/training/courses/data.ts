@@ -3,10 +3,17 @@ import type { LearningResource } from '@/components/organisms/training';
 export const courses: LearningResource[] = [
   {
     title: 'Subatomic (The Complete Guide to Design Tokens)',
-    author: 'Brad Frost',
+    author: 'Brad and Ian Frost',
     href: 'https://designtokenscourse.com',
     progress: 100,
     isCurrent: false
+  },
+  {
+    title: 'Atomic Design Certification Course',
+    author: 'Brad Frost',
+    href: 'https://atomicdesigncourse.com',
+    progress: 35,
+    isCurrent: true
   },
   {
     title: 'Advanced CSS and Sass: Flexbox, Grid, Animations and More!',

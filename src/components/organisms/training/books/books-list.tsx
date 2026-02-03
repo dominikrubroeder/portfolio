@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-import { AnimatedProgressListItem } from '@/components/atoms/animated-progress-list-item';
+import { AnimatedProgressListItem } from '@/components/atoms/animated-progress';
 import { Ul } from '@/components/atoms/ul';
 import { getBooks } from '@/components/organisms/training/books';
 

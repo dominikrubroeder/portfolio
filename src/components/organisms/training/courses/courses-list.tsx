@@ -1,4 +1,4 @@
-import { AnimatedProgressListItem } from '@/components/atoms/animated-progress-list-item';
+import { AnimatedProgressListItem } from '@/components/atoms/animated-progress';
 import { Ul } from '@/components/atoms/ul';
 import { getCourses } from '@/components/organisms/training/courses/helper';
 

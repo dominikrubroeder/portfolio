@@ -34,7 +34,7 @@ export interface ComponentGroup {
     componentName: string;
     component: ReactNode;
     animatable: boolean;
-    // TODO: add `animate-appearance`
+    // TODO: add `motion-safe:animate-appearance`
   }[];
 }
 
