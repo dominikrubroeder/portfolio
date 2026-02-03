@@ -2,7 +2,7 @@
 
 import type { ReactNode } from 'react';
 
-import { motion } from 'motion/react';
+import { motion, MotionConfig } from 'motion/react';
 
 import { cn } from '@/lib/utils';
 
@@ -29,14 +29,16 @@ export function Animate({
   const { variants } = useAnimate({ delay, duration, type });
 
   return (
-    <motion.div
-      variants={variants[direction]}
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewport}
-      className={cn(className)}
-    >
-      {children}
-    </motion.div>
+    <MotionConfig reducedMotion="user">
+      <motion.div
+        variants={variants[direction]}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        className={cn(className)}
+      >
+        {children}
+      </motion.div>
+    </MotionConfig>
   );
 }

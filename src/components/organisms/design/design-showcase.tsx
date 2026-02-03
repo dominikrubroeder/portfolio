@@ -31,10 +31,10 @@ export function DesignShowcase() {
       }
     >
       design
-      <span className="absolute -top-1 -left-1 size-2 bg-primary group-hover:animate-spin" />
-      <span className="absolute -top-1 -right-1 size-2 bg-primary group-hover:animate-spin" />
-      <span className="absolute -bottom-1 -left-1 size-2 bg-primary group-hover:animate-spin" />
-      <span className="absolute -right-1 -bottom-1 size-2 bg-primary group-hover:animate-spin" />
+      <span className="absolute -top-1 -left-1 size-2 bg-primary group-hover:motion-safe:animate-spin" />
+      <span className="absolute -top-1 -right-1 size-2 bg-primary group-hover:motion-safe:animate-spin" />
+      <span className="absolute -bottom-1 -left-1 size-2 bg-primary group-hover:motion-safe:animate-spin" />
+      <span className="absolute -right-1 -bottom-1 size-2 bg-primary group-hover:motion-safe:animate-spin" />
       <DesignDrawer className="absolute -right-3.5 -bottom-3 text-primary sm:hidden" />
       <div className="absolute -top-8 left-1/2 flex -translate-1/2 gap-2">
         <span

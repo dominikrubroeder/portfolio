@@ -30,7 +30,7 @@ export function Button({
     variant === 'contained-muted' &&
       'bg-muted text-muted-foreground hover:bg-muted-hover hover:text-foreground',
     variant?.includes('ghost') &&
-      "min-h-11 min-w-11 relative z-10 rounded-2xl after:absolute after:inset-0 after:-z-10 after:scale-75 after:rounded-lg after:bg-muted after:opacity-0 after:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 hover:after:rounded-xl active:after:rounded-xl active:after:opacity-100 hover:after:opacity-100 group-hover:text-foreground active:text-foreground group-hover:after:scale-100 group-hover:after:rounded-xl group-hover:after:opacity-100",
+      "min-h-11 min-w-11 relative z-10 rounded-2xl after:absolute after:inset-0 after:-z-10 after:motion-safe:scale-75 after:rounded-lg after:bg-muted after:opacity-0 after:motion-safe:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 hover:after:rounded-xl active:after:rounded-xl active:after:opacity-100 hover:after:opacity-100 group-hover:text-foreground active:text-foreground group-hover:after:scale-100 group-hover:after:rounded-xl group-hover:after:opacity-100",
     variant === 'ghost-primary' && 'text-primary',
     variant === 'ghost-foreground' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground hover:text-foreground',
