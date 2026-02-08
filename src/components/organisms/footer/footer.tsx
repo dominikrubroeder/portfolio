@@ -1,5 +1,6 @@
 import { ExternalLink } from '@/components/atoms/external-link';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events/winter/constants';
+import { formatDate } from '@/lib/utils';
 
 export function Footer() {
   return (
@@ -37,6 +38,13 @@ export function Footer() {
         >
           Tailwind CSS 4.1.18
         </ExternalLink>
+      </p>
+
+      <p className="space-x-1">
+        <span>Last updated:</span>
+        <span>
+          {formatDate({ dateString: '2026-02-08', format: 'Month Day, Year' })}
+        </span>
       </p>
 
       <p>
