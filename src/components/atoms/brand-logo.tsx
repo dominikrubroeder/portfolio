@@ -73,6 +73,7 @@ import {
   LogoVisualStudioCode,
   LogoViteJs,
   LogoWebstorm,
+  LogoX,
   LogoXing
 } from '@/components/atoms/logo';
 
@@ -350,6 +351,9 @@ export function BrandLogo({
 
     case 'Paper':
       return <LogoPaper className={className} />;
+
+    case 'X':
+      return <LogoX className={className} />;
 
     default:
       return DefaultLogo;
