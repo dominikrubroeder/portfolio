@@ -8,7 +8,7 @@ import {
 
 export function Technologies() {
   return (
-    <Animate direction="up">
+    <Animate>
       <Container className="space-y-6" id="technologies">
         <div className="space-y-3">
           <h2>

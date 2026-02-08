@@ -5,7 +5,7 @@ import { mainSocials } from '@/components/organisms/socials';
 
 export function Socials() {
   return (
-    <Animate direction="up">
+    <Animate>
       <Container className="space-y-8" id="socials">
         <h2>
           Social accounts

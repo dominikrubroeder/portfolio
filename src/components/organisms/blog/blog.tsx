@@ -10,7 +10,7 @@ export function Blog() {
   });
 
   return (
-    <Animate direction="up">
+    <Animate>
       <Container className="space-y-8" id="blog">
         <h2>
           Blog posts
