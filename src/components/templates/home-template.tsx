@@ -14,6 +14,7 @@ import { Socials } from '@/components/organisms/socials';
 import { FAQ } from '@/components/organisms/faq';
 import { ContactSection } from '@/components/organisms/contact';
 import { Container } from '@/components/atoms/container';
+import { GuidingPrinciple } from '@/components/organisms/guiding-principle';
 
 export function HomeTemplate() {
   return (
@@ -30,6 +31,8 @@ export function HomeTemplate() {
       <ThemeNotesBackgroundCornellNotes />
 
       <HomeHero />
+
+      <GuidingPrinciple />
 
       <Projects />
 
