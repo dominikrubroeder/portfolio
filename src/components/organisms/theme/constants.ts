@@ -32,4 +32,4 @@ export const THEME_OPTION_DEFAULT: ThemeOption = {
   value: 'Animate'
 };
 export const THEME_APPEARANCE_DEFAULT: ThemeAppearance = 'light';
-export const THEME_COLOR_DEFAULT: ThemeColor = 'violett';
+export const THEME_COLOR_DEFAULT: ThemeColor = 'blue';
