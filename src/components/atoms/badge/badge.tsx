@@ -1,7 +1,6 @@
-import type { ReactNode } from 'react';
-
 import { cn } from '@/lib/utils';
-import { ColorProp, SizeProp } from '@/lib/types';
+
+import type { BadgeProps } from '@/components/atoms/badge';
 
 export function Badge({
   variant = 'primary',
@@ -9,16 +8,11 @@ export function Badge({
   className,
   children,
   ...rest
-}: {
-  variant?: ColorProp;
-  size?: SizeProp;
-  className?: string;
-  children: ReactNode;
-} & React.HTMLAttributes<HTMLDivElement>) {
+}: BadgeProps & React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn(
-        'inline-flex self-start rounded-full',
+        'inline-flex w-max shrink-0 self-start rounded-full',
         variant === 'primary' &&
           'bg-primary/10 text-primary-hover dark:text-primary',
         variant === 'foreground' && 'bg-muted text-foreground',

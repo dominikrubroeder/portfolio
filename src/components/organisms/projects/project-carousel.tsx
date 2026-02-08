@@ -21,7 +21,7 @@ import {
   MinusIcon,
   PlusIcon
 } from '@heroicons/react/16/solid';
-import { Hr } from '@/components/atoms/hr';
+import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 
 export function ProjectCarousel() {
   const {
@@ -156,16 +156,15 @@ export function ProjectCarousel() {
 
                 <div className="mb-3 inline-block w-full text-muted-foreground">
                   {project.timeframe && (
-                    <div className="mb-3 flex items-center justify-center gap-4">
-                      <Badge
-                        variant="muted"
-                        size="sm"
-                        className="w-max shrink-0 self-center"
-                      >
-                        {project.timeframe}
-                      </Badge>
-                      <Hr className="my-0 inline-block h-1 w-full" />
-                    </div>
+                    <BadgeHrGroup
+                      badgeProps={{
+                        variant: 'muted',
+                        size: 'sm',
+                        className: 'self-center'
+                      }}
+                    >
+                      {project.timeframe}
+                    </BadgeHrGroup>
                   )}
 
                   <p>{project.readableTitle}</p>
