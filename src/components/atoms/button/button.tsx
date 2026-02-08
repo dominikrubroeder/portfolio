@@ -13,6 +13,7 @@ export function Button({
   href,
   target,
   rounded,
+  download,
   className,
   children,
   ...rest
@@ -54,6 +55,24 @@ export function Button({
 
   const isMail = href?.includes('mailto');
   const isPhone = href?.includes('tel');
+  const isDownload = href?.includes('.pdf');
+
+  if (isDownload) {
+    return (
+      <a
+        {...rest}
+        href={href}
+        title={rest.title ?? `Download file ${download}`}
+        aria-label={rest['aria-label'] ?? `Download file ${download}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        download={download}
+        className={classNames}
+      >
+        {children}
+      </a>
+    );
+  }
 
   if (href && (isMail || isPhone)) {
     const email = extractEmail({ input: href });

@@ -21,6 +21,7 @@ export interface ButtonProps
   href?: string;
   target?: HTMLAttributeAnchorTarget;
   rounded?: boolean;
+  download?: boolean;
   children: ReactNode;
 }
 

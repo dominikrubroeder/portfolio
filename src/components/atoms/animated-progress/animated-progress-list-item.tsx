@@ -8,17 +8,16 @@ import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { Badge } from '@/components/atoms/badge';
 import type { LearningResource } from '@/components/organisms/training';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/atoms/button';
 
 export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
   return (
-    <Link
+    <Button
+      variant="ghost-foreground"
       href={item.href}
       title={`View ${item.title} on external website`}
-      target="_blank"
-      rel="nofollow"
-      className="group -mx-2 flex items-center gap-3 rounded bg-background p-2 transition-all hover:bg-muted sm:items-center"
+      className="group -mx-2 flex items-center gap-3 p-2 sm:items-center"
     >
       <div className="flex flex-1 gap-3">
         {Number.isInteger(item.progress) ? (
@@ -78,6 +77,6 @@ export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
       </div>
 
       <ArrowUpRightIcon className="mr-4 size-5 text-current" />
-    </Link>
+    </Button>
   );
 }
