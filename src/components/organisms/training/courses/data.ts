@@ -12,7 +12,7 @@ export const courses: LearningResource[] = [
     title: 'Atomic Design Certification Course',
     author: 'Brad Frost',
     href: 'https://atomicdesigncourse.com',
-    progress: 35,
+    progress: 50,
     isCurrent: true
   },
   {
