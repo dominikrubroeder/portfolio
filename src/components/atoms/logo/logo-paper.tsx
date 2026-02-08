@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
-import { ComponentBaseProps } from '@/lib/types';
+import { BaseProps } from '@/lib/types';
 
-export function LogoPaper({ className }: ComponentBaseProps) {
+export function LogoPaper({ className }: BaseProps) {
   return (
     <svg
       width="39"

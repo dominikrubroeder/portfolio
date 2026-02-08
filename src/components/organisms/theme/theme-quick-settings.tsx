@@ -1,6 +1,6 @@
 'use client';
 
-import type { ComponentBaseProps } from '@/lib/types';
+import type { BaseProps } from '@/lib/types';
 
 import {
   ThemeAppearanceSelect,
@@ -10,7 +10,7 @@ import {
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { cn } from '@/lib/utils';
 
-export function ThemeQuickSettings({ className }: ComponentBaseProps) {
+export function ThemeQuickSettings({ className }: BaseProps) {
   return (
     <ButtonGroup className={cn('flex items-center gap-4', className)}>
       <ThemeAppearanceSelect />

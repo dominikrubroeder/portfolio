@@ -1,8 +1,8 @@
 import { Button } from '@/components/atoms/button';
 import { LogoStorybook } from '@/components/atoms/logo';
-import { ComponentBaseProps } from '@/lib/types';
+import { BaseProps } from '@/lib/types';
 
-export function ButtonStorybook({ className }: ComponentBaseProps) {
+export function ButtonStorybook({ className }: BaseProps) {
   return (
     <Button
       variant="ghost-foreground"

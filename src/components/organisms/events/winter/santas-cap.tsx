@@ -1,10 +1,10 @@
 'use client';
 
-import type { ComponentBaseProps } from '@/lib/types';
+import type { BaseProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/organisms/theme';
 
-export function SantasCap({ className }: ComponentBaseProps) {
+export function SantasCap({ className }: BaseProps) {
   const { isEventWinterEnabled } = useTheme();
 
   if (!isEventWinterEnabled) return null;
