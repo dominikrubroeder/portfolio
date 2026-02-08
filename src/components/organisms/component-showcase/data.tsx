@@ -224,7 +224,7 @@ export const components: ComponentGroup[] = [
         componentId: 'animate',
         componentName: 'Animate',
         component: (
-          <Animate direction="up">
+          <Animate>
             <Button>Animate me in! 🚀</Button>
           </Animate>
         ),
