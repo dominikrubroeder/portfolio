@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoTypescript({ className }: { className?: string }) {
+export function LogoTypescript({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"
@@ -10,8 +11,8 @@ export function LogoTypescript({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_753_1437)">
-        <g clipPath="url(#clip1_753_1438)">
+      <g clipPath={`url(#${id}-clip0_753_1437)`}>
+        <g clipPath={`url(#${id}-clip1_753_1438)`}>
           <path
             d="M115.5 0H12.5C5.59644 0 0 5.59644 0 12.5V115.5C0 122.404 5.59644 128 12.5 128H115.5C122.404 128 128 122.404 128 115.5V12.5C128 5.59644 122.404 0 115.5 0Z"
             fill="#3178C6"
@@ -29,10 +30,10 @@ export function LogoTypescript({ className }: { className?: string }) {
         </g>
       </g>
       <defs>
-        <clipPath id="clip0_753_1437">
+        <clipPath id={`${id}-clip0_753_1437`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
-        <clipPath id="clip1_753_1438">
+        <clipPath id={`${id}-clip1_753_1438`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
       </defs>

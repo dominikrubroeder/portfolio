@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoTeams({ className }: { className?: string }) {
+export function LogoTeams({ id, className }: LogoProps) {
   return (
     <svg
       width="139"
@@ -12,7 +13,7 @@ export function LogoTeams({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_875_1177)">
+      <g clipPath={`url(#${id}-clip0_875_1177)`}>
         <path
           d="M96.5941 48.6665H132.137C135.494 48.6665 138.217 51.3886 138.217 54.7465V87.1209C138.217 99.4621 128.212 109.466 115.871 109.466H115.765C103.424 109.468 93.4183 99.4652 93.4165 87.124C93.4165 87.123 93.4165 87.1219 93.4165 87.1208V51.8441C93.4166 50.0892 94.8392 48.6665 96.5941 48.6665Z"
           fill="#5059C9"
@@ -80,7 +81,7 @@ export function LogoTeams({ className }: { className?: string }) {
       </g>
       <defs>
         <linearGradient
-          id="paint0_linear_875_1177"
+          id={`${id}-paint0_linear_875_1177`}
           x1="12.8464"
           y1="24.8833"
           x2="58.7866"
@@ -91,7 +92,7 @@ export function LogoTeams({ className }: { className?: string }) {
           <stop offset="0.5" stopColor="#4D55BD" />
           <stop offset="1" stopColor="#3940AB" />
         </linearGradient>
-        <clipPath id="clip0_875_1177">
+        <clipPath id={`${id}-clip0_875_1177`}>
           <rect
             width="137.6"
             height="128"

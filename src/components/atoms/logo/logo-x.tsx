@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
-import { BaseProps } from '@/lib/types';
+import { BaseComponentProps } from '@/lib/types';
 
-export function LogoX({ className }: BaseProps) {
+export function LogoX({ className }: BaseComponentProps) {
   return (
     <svg
       viewBox="0 0 128 129"

@@ -12,7 +12,8 @@ export type HTMLTag =
   | 'header'
   | 'footer';
 
-export interface BaseProps {
+export interface BaseComponentProps {
+  id?: string;
   className?: string;
 }
 

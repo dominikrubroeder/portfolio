@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo';
-import { BaseProps } from '@/lib/types';
+import { BaseComponentProps } from '@/lib/types';
 
-export function LogoInstagram({ className }: BaseProps) {
+export function LogoInstagram({ className }: BaseComponentProps) {
   return (
     <Image
       src="/instagram.png"

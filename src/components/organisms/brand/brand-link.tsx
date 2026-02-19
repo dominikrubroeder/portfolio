@@ -6,11 +6,13 @@ import type { Brand } from '@/components/organisms/brand';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
 export function BrandLink({
+  brandLogoId,
   brand,
   size = 'medium',
   showLabel,
   labelPosition = 'top'
 }: {
+  brandLogoId: string;
   brand: Brand;
   size?: 'small' | 'medium';
   showLabel?: boolean;
@@ -38,7 +40,11 @@ export function BrandLink({
       {!!brand.logo ? (
         brand.logo
       ) : (
-        <BrandLogo brand={brand.name} className="mx-auto flex" />
+        <BrandLogo
+          id={brandLogoId}
+          brand={brand.name}
+          className="mx-auto flex"
+        />
       )}
 
       <div className="absolute -top-1.5 -right-1.5 flex size-5 -rotate-45 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 group-hover:opacity-100">

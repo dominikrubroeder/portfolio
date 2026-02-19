@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { BaseProps } from '@/lib/types';
+import { BaseComponentProps } from '@/lib/types';
 import { ButtonProps } from '@/components/atoms/button';
 
 export interface AccordionProps {
@@ -19,7 +19,7 @@ export interface AccordionProps {
 
 export interface AccordionItemProps
   extends Pick<AccordionProps, 'defaultOpen' | 'accordionIcon'>,
-    BaseProps {
+    BaseComponentProps {
   title: string | ReactNode;
   children: ReactNode;
   /** `offsetInnerContent` moves inner content slightly to the right. */

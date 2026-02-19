@@ -1,6 +1,5 @@
 import { ExternalLink } from '@/components/atoms/external-link';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events/winter/constants';
-import { formatDate } from '@/lib/utils';
 
 export function Footer() {
   return (
@@ -36,15 +35,8 @@ export function Footer() {
           aria-label="Open Tailwind CSS documentation"
           size="xs"
         >
-          Tailwind CSS 4.1.18
+          Tailwind CSS 4.2.0
         </ExternalLink>
-      </p>
-
-      <p className="space-x-1">
-        <span>Last updated:</span>
-        <span>
-          {formatDate({ dateString: '2026-02-08', format: 'Month Day, Year' })}
-        </span>
       </p>
 
       <p>

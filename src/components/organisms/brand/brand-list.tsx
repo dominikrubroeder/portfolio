@@ -14,10 +14,10 @@ export function BrandList({
   return (
     <Ul className={cn('-ml-2.5 md:-ml-4', className)}>
       {brands.map((brand, index) => (
-        <li key={brand.name}>
+        <li key={`brand-link-${brand.name}-${index}`}>
           <div className="inline-flex items-center gap-2 lg:gap-4">
             <BrandLink
-              key={`brand-link-list-item-${index}-${brand.name}`}
+              brandLogoId={`brand-link-${brand.name}-${index}`}
               brand={brand}
             />
 

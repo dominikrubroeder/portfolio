@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 
-import { defaultLogoSquareSize } from '@/components/atoms/logo';
+import { defaultLogoSquareSize, LogoProps } from '@/components/atoms/logo';
 
-export function LogoAlgolia({ className }: { className?: string }) {
+export function LogoAlgolia({ id, className }: LogoProps) {
   return (
     <svg
       width="128"

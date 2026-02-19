@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import type { LogoProps } from '@/components/atoms/logo';
 import { defaultLogoSize } from '@/components/atoms/logo';
 
-export function LogoLoyGmbh({ className }: LogoProps) {
+export function LogoLoyGmbh({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 79"
@@ -11,10 +11,10 @@ export function LogoLoyGmbh({ className }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSize, className)}
     >
-      <g clipPath="url(#clip0_1120_3634)">
+      <g clipPath={`url(#${id}-clip0_1120_3634)`}>
         <path
           d="M96.4259 71.8453C71.6488 79.8494 24.54 84.7725 6.57125 56.6882C0.0537951 46.4972 -2.60703 24.7904 3.22097 14.3193C17.2254 -10.7486 40.8175 4.07455 57.6444 7.15553C78.845 11.0229 79.8253 1.18746 101.177 4.26844C139.7 9.8379 135.509 59.2521 96.4259 71.8453Z"
-          fill="url(#paint0_linear_1120_3634)"
+          fill={`url(#${id}-paint0_linear_1120_3634)`}
         />
         <path
           d="M43.7046 51.4957C43.5107 51.1725 43.3383 50.8494 43.1767 50.5154H35.248C29.0107 50.5154 26.7915 45.9586 26.7915 42.0589V20.352C26.7915 18.1975 20.231 18.1975 20.231 20.352V42.0589C20.231 50.7632 26.5437 57.0759 34.3647 57.0759H49.4464C47.0713 55.7582 45.0896 53.8322 43.7046 51.4957Z"
@@ -31,7 +31,7 @@ export function LogoLoyGmbh({ className }: LogoProps) {
       </g>
       <defs>
         <linearGradient
-          id="paint0_linear_1120_3634"
+          id={`${id}-paint0_linear_1120_3634`}
           x1="-5.73183e-05"
           y1="39.0533"
           x2="128.001"
@@ -42,7 +42,7 @@ export function LogoLoyGmbh({ className }: LogoProps) {
           <stop offset="0.6" stopColor="#E94242" />
           <stop offset="1" stopColor="#EA5B1B" />
         </linearGradient>
-        <clipPath id="clip0_1120_3634">
+        <clipPath id={`${id}-clip0_1120_3634`}>
           <rect width="128" height="78.0837" fill="white" />
         </clipPath>
       </defs>

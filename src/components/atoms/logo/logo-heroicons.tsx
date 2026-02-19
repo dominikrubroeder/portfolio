@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 
-import { defaultLogoSquareSize } from '@/components/atoms/logo';
+import { defaultLogoSquareSize, type LogoProps } from '@/components/atoms/logo';
 
-export function LogoHeroicons({ className }: { className?: string }) {
+export function LogoHeroicons({ id, className }: LogoProps) {
   return (
     <svg
       width="128"

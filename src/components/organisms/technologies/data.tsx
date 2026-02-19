@@ -17,35 +17,37 @@ export const mainTechnologies: Brand[] = [
   {
     name: 'React',
     description: 'as user interface web library',
-    logo: <LogoReact className="size-12" />,
+    logo: <LogoReact id="technologies-react" className="size-12" />,
     href: 'https://react.dev/',
     knowledge: 'Daily'
   },
   {
     name: 'Next.js',
     description: 'as fullstack web framework',
-    logo: <LogoNextjs className="size-12" />,
+    logo: <LogoNextjs id="technologies-next-js" className="size-12" />,
     href: 'https://nextjs.org/',
     knowledge: 'Daily'
   },
   {
     name: 'TypeScript',
     description: 'as superset to JavaScript',
-    logo: <LogoTypescript className="size-12" />,
+    logo: <LogoTypescript id="technologies-typescript" className="size-12" />,
     href: 'https://www.typescriptlang.org/',
     knowledge: 'Daily'
   },
   {
     name: 'Tailwind CSS',
     description: 'as superset to CSS',
-    logo: <LogoTailwindCss className="size-12" />,
+    logo: (
+      <LogoTailwindCss id="technologies-tailwind-css" className="size-12" />
+    ),
     href: 'https://tailwindcss.com/',
     knowledge: 'Daily'
   },
   {
     name: 'Motion',
     description: 'as animation library',
-    logo: <LogoMotion className="size-12" />,
+    logo: <LogoMotion id="technologies-motion" className="size-12" />,
     href: 'https://motion.dev/',
     knowledge: 'Daily'
   }
@@ -59,7 +61,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'React',
         description: 'The library for web and native user interfaces',
         href: 'https://react.dev/',
-        logo: <LogoReact className="size-12" />,
+        logo: <LogoReact id="technologies-react-2" className="size-12" />,
         knowledge: 'Daily'
       },
       {
@@ -113,7 +115,12 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Next.js',
         description: 'The React Framework for the Web',
         href: 'https://nextjs.org/',
-        logo: <LogoNextjs className="size-12" />,
+        logo: (
+          <LogoNextjs
+            id="technologies-full-stack-next-js"
+            className="size-12"
+          />
+        ),
         knowledge: 'Daily'
       },
       {
@@ -147,14 +154,24 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'TypeScript',
         href: 'https://www.typescriptlang.org',
-        logo: <LogoTypescript className="size-12" />,
+        logo: (
+          <LogoTypescript
+            id="technologies-full-stack-typescript"
+            className="size-12"
+          />
+        ),
         description: 'TypeScript is JavaScript with syntax for types.',
         knowledge: 'Daily'
       },
       {
         name: 'JavaScript',
         href: 'https://www.w3schools.com/js/',
-        logo: <LogoJavascript className="size-12" />,
+        logo: (
+          <LogoJavascript
+            id="technologies-full-stack-javascript"
+            className="size-12"
+          />
+        ),
         description: 'JavaScript is the programming language of the Web.',
         knowledge: 'Daily'
       },
@@ -173,14 +190,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'HTML',
         href: 'https://www.w3schools.com/html/',
-        logo: <LogoHtml className="size-12" />,
+        logo: <LogoHtml id="technologies-html" className="size-12" />,
         description: 'The default markup language for the web',
         knowledge: 'Daily'
       },
       {
         name: 'Markdown',
         href: 'https://markdown.de/',
-        logo: <LogoMarkdown className="size-12" />,
+        logo: <LogoMarkdown id="technologies-markdown" className="size-12" />,
         description: 'A simplified markup language',
         knowledge: 'Daily'
       }
@@ -192,14 +209,19 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'CSS',
         href: 'https://www.w3schools.com/css/',
-        logo: <LogoCss className="size-12" />,
+        logo: <LogoCss id="technologies-css" className="size-12" />,
         description: 'The default styling markup for the web',
         knowledge: 'Daily'
       },
       {
         name: 'Tailwind CSS',
         href: 'https://tailwindcss.com/',
-        logo: <LogoTailwindCss className="size-12" />,
+        logo: (
+          <LogoTailwindCss
+            id="technologies-style-sheet-language-tailwind-css"
+            className="size-12"
+          />
+        ),
         description:
           'Rapidly build modern websites without ever leaving your HTML.',
         knowledge: 'Daily'
@@ -268,7 +290,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Sass',
         description: 'Syntactically Awesome Style Sheets',
         href: 'https://sass-lang.com',
-        logo: <LogoSass />,
+        logo: <LogoSass id="technologies-sass" />,
         knowledge: 'Experienced'
       }
     ]
@@ -280,7 +302,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Twig',
         description: 'The flexible, fast, and secure PHP template engine',
         href: 'https://twig.symfony.com',
-        logo: <LogoTwig />,
+        logo: <LogoTwig id="technologies-template-engine-twig" />,
         knowledge: 'Experienced'
       }
     ]

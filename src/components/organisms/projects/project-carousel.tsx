@@ -275,15 +275,14 @@ export function ProjectCarousel() {
                   <div className="space-y-4 pb-4">
                     <b className="block">Tools</b>
 
-                    <ul className="ml-1 flex flex-wrap gap-5">
+                    <ul className="-ml-2 flex flex-wrap gap-5">
                       {project.tools?.map((tool, index) => {
                         if (tool && tool.name) {
                           return (
-                            <li
-                              key={`list-item-project-tool-item-${index}-${tool.name}`}
-                            >
+                            <li key={`project-tool-item-${tool.name}-${index}`}>
                               <BrandLink
-                                key={`brand-link-project-tool-item-${index}-${tool.name}`}
+                                key={`bproject-tool-${tool.name}-${index}`}
+                                brandLogoId={`bproject-tool-${tool.name}-${index}`}
                                 brand={tool}
                                 showLabel
                                 labelPosition="bottom"
@@ -297,15 +296,17 @@ export function ProjectCarousel() {
 
                   <div className="space-y-4">
                     <b className="block">Technologies</b>
-                    <ul className="flex flex-wrap gap-5">
+
+                    <ul className="-ml-2 flex flex-wrap gap-5">
                       {project.technologies?.map((technology, index) => {
                         if (technology && technology.name) {
                           return (
                             <li
-                              key={`list-item-project-technology-item-${index}-${technology.name}`}
+                              key={`project-technology-item-${technology.name}-${index}`}
                             >
                               <BrandLink
-                                key={`brand-link-project-technology-item-${index}-${technology.name}`}
+                                key={`project-technology-${technology.name}-${index}`}
+                                brandLogoId={`project-technology-${technology.name}-${index}`}
                                 brand={technology}
                                 showLabel
                                 labelPosition="bottom"

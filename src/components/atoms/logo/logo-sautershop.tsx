@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import type { LogoProps } from '@/components/atoms/logo';
 import { defaultLogoSize } from '@/components/atoms/logo';
 
-export function LogoSautershop({ className }: LogoProps) {
+export function LogoSautershop({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 28"
@@ -11,7 +11,7 @@ export function LogoSautershop({ className }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSize, className)}
     >
-      <g clipPath="url(#clip0_1114_3774)">
+      <g clipPath={`url(#${id}-clip0_1114_3774)`}>
         <path
           d="M76.9045 0.388553L72.7525 27.3761L0.28125 27.2823L4.43318 0.2948L76.9045 0.388553Z"
           fill="#0055B8"
@@ -66,7 +66,7 @@ export function LogoSautershop({ className }: LogoProps) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_1114_3774">
+        <clipPath id={`${id}-clip0_1114_3774`}>
           <rect width="128" height="27.5635" fill="white" />
         </clipPath>
       </defs>

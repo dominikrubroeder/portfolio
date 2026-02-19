@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoFramer({ className }: { className?: string }) {
+export function LogoFramer({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"
@@ -11,16 +12,16 @@ export function LogoFramer({ className }: { className?: string }) {
       className={cn(defaultLogoSquareSize, className)}
     >
       <path
-        id="Vector"
+        id={`${id}-Vector`}
         d="M105.669 -0.219727V42.4469H63.3343L21 -0.219727H105.669ZM21 42.4469H63.3343L105.669 85.1136H63.3343V127.78L21 85.1136V42.4469Z"
         fill="none"
         className="fill-foreground"
       />
       <defs>
-        <clipPath id="clip0_748_1013">
+        <clipPath id={`${id}-clip0_748_1013`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
-        <clipPath id="clip1_748_1013">
+        <clipPath id={`${id}-clip1_748_1013`}>
           <rect
             width="85.33"
             height="128"

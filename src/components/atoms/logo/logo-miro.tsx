@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoMiro({ className }: { className?: string }) {
+export function LogoMiro({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"
@@ -21,10 +22,10 @@ export function LogoMiro({ className }: { className?: string }) {
         fill="#050038"
       />
       <defs>
-        <clipPath id="clip0_748_1013">
+        <clipPath id={`${id}-clip0_748_1013`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
-        <clipPath id="clip1_748_1013">
+        <clipPath id={`${id}-clip1_748_1013`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
       </defs>

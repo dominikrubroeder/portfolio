@@ -15,8 +15,8 @@ export function AllTools() {
           .sort((a, b) => {
             return a.group.localeCompare(b.group);
           })
-          .map((item) => (
-            <li key={item.group}>
+          .map((item, index) => (
+            <li key={`all-tools-${item.group}`}>
               <div className="space-y-3 sm:space-y-4">
                 <div className="font-bold">{item.group}</div>
 
@@ -26,7 +26,11 @@ export function AllTools() {
                     .sort((a, b) => a.name.localeCompare(b.name))
                     .map((child) => (
                       <li key={`${item.group}-${child.name}`}>
-                        <BrandRow brand={child} showKnowledgeBar />
+                        <BrandRow
+                          brand={child}
+                          index={index}
+                          showKnowledgeBar
+                        />
                       </li>
                     ))}
                 </Ul>

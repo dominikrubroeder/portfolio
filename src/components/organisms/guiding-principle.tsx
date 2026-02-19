@@ -12,7 +12,7 @@ export function GuidingPrinciple() {
         <BadgeHrGroup>Guiding principle</BadgeHrGroup>
 
         <h2 className="bg-background text-primary">
-          "Combine design and code into one craft and you get the best of both
+          "Combine design and code in one craft and you get the best of both
           worlds"
         </h2>
         <div>Dominik Rubröder, UX Design Engineer</div>

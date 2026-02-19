@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import type { LogoProps } from '@/components/atoms/logo';
 import { defaultLogoSquareSize } from '@/components/atoms/logo';
 
-export function LogoUiColors({ className }: LogoProps) {
+export function LogoUiColors({ id, className }: LogoProps) {
   return (
     <svg
       width="128"

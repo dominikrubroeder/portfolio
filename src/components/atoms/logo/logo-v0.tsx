@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoV0({ className }: LogoProps) {
+export function LogoV0({ id, className }: LogoProps) {
   return (
     <svg
       width="128"

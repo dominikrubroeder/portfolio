@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoFrontendMentor({ className }: { className?: string }) {
+export function LogoFrontendMentor({ id, className }: LogoProps) {
   return (
     <svg
       width="50"
@@ -12,7 +13,7 @@ export function LogoFrontendMentor({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_887_26)">
+      <g clipPath={`url(#${id}-clip0_887_26)`}>
         <path
           d="M48.4058 23.0602C48.1941 23.0603 47.9848 23.016 47.7914 22.9301L34.9066 17.1602C34.6424 17.0415 34.4181 16.8489 34.2607 16.6057C34.1034 16.3625 34.0197 16.0789 34.0197 15.7893C34.0197 15.4996 34.1034 15.2161 34.2607 14.9729C34.4181 14.7297 34.6424 14.5371 34.9066 14.4183L47.7914 8.66842C48.1551 8.50696 48.5679 8.49612 48.9396 8.63827C49.3113 8.78041 49.6116 9.06398 49.7747 9.42693C49.936 9.79089 49.9466 10.204 49.8041 10.5757C49.6615 10.9474 49.3775 11.2475 49.0142 11.4103L39.1975 15.7913L49.0162 20.1883C49.3302 20.3283 49.5866 20.5718 49.7426 20.8781C49.8985 21.1844 49.9447 21.535 49.8732 21.8713C49.8017 22.2075 49.617 22.509 49.3499 22.7255C49.0828 22.9419 48.7495 23.06 48.4058 23.0602Z"
           fill="#67BECE"
@@ -27,7 +28,7 @@ export function LogoFrontendMentor({ className }: { className?: string }) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_887_26">
+        <clipPath id={`${id}-clip0_887_26`}>
           <rect
             width="49.2192"
             height="44"

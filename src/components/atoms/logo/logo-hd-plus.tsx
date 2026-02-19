@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
+import type { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoHdPlus({ className, ...restProps }: { className: string }) {
+export function LogoHdPlus({ id, className, ...restProps }: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import type { LogoProps } from '@/components/atoms/logo';
 import { defaultLogoSize } from '@/components/atoms/logo';
 
-export function LogoAllesAuto({ className }: LogoProps) {
+export function LogoAllesAuto({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 13"

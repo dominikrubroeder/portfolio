@@ -1,17 +1,15 @@
 import { tools } from '@/components/organisms/tools/data';
 
 export function getTools({
-  toolNames,
+  names,
   sortBy = 'like-input'
 }: {
-  toolNames: string[];
+  names: string[];
   sortBy?: 'A-Z' | 'Z-A' | 'like-input';
 }) {
   const allTools = tools.map((group) => group.children).flat();
 
-  const filteredTools = allTools.filter((tool) =>
-    toolNames.includes(tool.name)
-  );
+  const filteredTools = allTools.filter((tool) => names.includes(tool.name));
 
   switch (sortBy) {
     case 'A-Z':

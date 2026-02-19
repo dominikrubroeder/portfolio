@@ -10,7 +10,7 @@ export const mainSocials: Brand[] = [
   {
     name: 'LinkedIn',
     description: 'as business profile',
-    logo: <LogoLinkedin />,
+    logo: <LogoLinkedin id="socials-linkedin" />,
     href: 'https://www.linkedin.com/in/dominik-rubröder-49a63817b',
     knowledge: 'Daily'
   },
@@ -32,7 +32,7 @@ export const mainSocials: Brand[] = [
     name: 'Xing',
     description: 'as business profile',
     href: 'https://www.xing.com/profile/Dominik_Rubroeder',
-    logo: <LogoXing />,
+    logo: <LogoXing id="socials-xing" />,
     knowledge: 'Daily'
   }
 ];

@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize, type LogoProps } from '@/components/atoms/logo';
 
-export function LogoShadcnUi({ className }: LogoProps) {
+export function LogoShadcnUi({ id, className }: LogoProps) {
   return (
     <svg
       width="128"

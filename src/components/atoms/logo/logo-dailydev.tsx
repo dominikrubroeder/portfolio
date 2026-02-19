@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 
-import { defaultLogoSquareSize } from '@/components/atoms/logo';
+import { defaultLogoSquareSize, LogoProps } from '@/components/atoms/logo';
 
-export function LogoDailydev({ className }: { className?: string }) {
+export function LogoDailydev({ id, className }: LogoProps) {
   return (
     <svg
       width="128"
@@ -12,7 +12,7 @@ export function LogoDailydev({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_978_2566)">
+      <g clipPath={`url(#${id}-clip0_978_2566)`}>
         <g opacity="0.56">
           <path
             fillRule="evenodd"
@@ -29,7 +29,7 @@ export function LogoDailydev({ className }: { className?: string }) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_978_2566">
+        <clipPath id={`${id}-clip0_978_2566`}>
           <rect
             width="128"
             height="71.5222"

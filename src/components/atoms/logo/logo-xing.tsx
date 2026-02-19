@@ -1,18 +1,19 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
-import { BaseProps } from '@/lib/types';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoXing({ className }: BaseProps) {
+export function LogoXing({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
+      id={id}
     >
-      <g clipPath="url(#clip0_752_1287)">
-        <g clipPath="url(#clip1_752_1287)">
+      <g clipPath={`url(#${id}-clip0_752_1287)`}>
+        <g clipPath={`url(#${id}-clip1_752_1287)`}>
           <path
             d="M19.9196 25.0591C18.8077 25.0591 17.8721 25.4493 17.4022 26.2129C16.9155 27.0017 16.991 28.017 17.5071 29.0449L29.989 50.6524C30.01 50.6943 30.01 50.7195 29.989 50.7573L10.3745 85.3711C9.86265 86.3907 9.88783 87.4144 10.3745 88.2032C10.8444 88.9626 11.6752 89.4618 12.787 89.4618H31.2477C34.0084 89.4618 35.3385 87.599 36.2825 85.8956C36.2825 85.8956 55.4648 51.9698 56.2117 50.6524C56.1361 50.5307 43.5199 28.5205 43.5199 28.5205C42.6011 26.8842 41.2123 25.0591 38.3803 25.0591H19.9196Z"
             fill="#005A5F"
@@ -24,10 +25,10 @@ export function LogoXing({ className }: BaseProps) {
         </g>
       </g>
       <defs>
-        <clipPath id="clip0_752_1287">
+        <clipPath id={`${id}-clip0_752_1287`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
-        <clipPath id="clip1_752_1287">
+        <clipPath id={`${id}-clip1_752_1287`}>
           <rect
             width="108.934"
             height="128"

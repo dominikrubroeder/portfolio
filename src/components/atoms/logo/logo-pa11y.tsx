@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoPa11y({ className }: LogoProps) {
+export function LogoPa11y({ id, className }: LogoProps) {
   return (
     <svg
       width="128"
@@ -13,7 +13,7 @@ export function LogoPa11y({ className }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_1018_1253)">
+      <g clipPath={`url(#${id}-clip0_1018_1253)`}>
         <path
           d="M32.1215 0.780273H20.4077C18.4908 0.780273 17 2.27112 17 4.18793V23.7819C17 25.6987 18.4908 27.1896 20.4077 27.1896H32.1215V125.373C32.1215 127.289 33.6123 128.78 35.5291 128.78H58.9567C60.8735 128.78 62.3644 127.289 62.3644 125.373V4.18793C62.3644 2.27112 60.8735 0.780273 58.9567 0.780273L32.1215 0.780273Z"
           fill="#3498DB"
@@ -39,7 +39,7 @@ export function LogoPa11y({ className }: LogoProps) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_1018_1253">
+        <clipPath id={`${id}-clip0_1018_1253`}>
           <rect
             width="94.1351"
             height="128"

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoLighthouse({ className }: LogoProps) {
+export function LogoLighthouse({ id, className }: LogoProps) {
   return (
     <svg
       width="128"
@@ -14,13 +14,13 @@ export function LogoLighthouse({ className }: LogoProps) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_1018_1253)">
+      <g clipPath={`url(#${id}-clip0_1018_1253)`}>
         <path
           d="M64 128.78C99.3462 128.78 128 100.127 128 64.7803C128 29.434 99.3462 0.780273 64 0.780273C28.6538 0.780273 0 29.434 0 64.7803C0 100.127 28.6538 128.78 64 128.78Z"
           fill="#0535C1"
         />
         <mask
-          id="mask0_1018_1253"
+          id={`${id}-mask0_1018_1253`}
           maskUnits="userSpaceOnUse"
           x="79"
           y="37"
@@ -32,7 +32,7 @@ export function LogoLighthouse({ className }: LogoProps) {
             fill="white"
           />
         </mask>
-        <g mask="url(#mask0_1018_1253)">
+        <g mask={`url(#${id}-mask0_1018_1253)`}>
           <path
             d="M106.183 45.6285H102.354C100.73 41.0358 96.357 37.75 91.2123 37.75C84.6887 37.75 79.3945 43.0442 79.3945 49.5678C79.3945 56.0914 84.6887 61.3866 91.2123 61.3866H106.183C108.272 61.3857 110.276 60.5552 111.753 59.0777C113.23 57.6001 114.061 55.5964 114.061 53.507C114.06 51.4178 113.23 49.4143 111.753 47.937C110.275 46.4597 108.272 45.6294 106.183 45.6285Z"
             fill="#EAEAEA"
@@ -44,10 +44,10 @@ export function LogoLighthouse({ className }: LogoProps) {
           />
           <path
             d="M118.118 61.387H91.2119L102.361 45.6289L118.118 61.387Z"
-            fill="url(#paint0_linear_1018_1253)"
+            fill={`url(#${id}-paint0_linear_1018_1253)`}
           />
           <mask
-            id="mask1_1018_1253"
+            id={`${id}-mask1_1018_1253`}
             maskUnits="userSpaceOnUse"
             x="91"
             y="45"
@@ -59,13 +59,13 @@ export function LogoLighthouse({ className }: LogoProps) {
               fill="white"
             />
           </mask>
-          <g mask="url(#mask1_1018_1253)">
+          <g mask={`url(#${id}-mask1_1018_1253)`}>
             <rect
               x="88.8477"
               y="35.3862"
               width="16.5457"
               height="25.2119"
-              fill="url(#pattern0_1018_1253)"
+              fill={`url(#${id}-pattern0_1018_1253)`}
             />
             <path
               d="M91.2119 37.75L97.6013 57.9273C99.7351 55.7837 103.03 52.8295 103.03 49.5678C103.03 43.0442 97.7355 37.75 91.2119 37.75Z"
@@ -89,7 +89,7 @@ export function LogoLighthouse({ className }: LogoProps) {
         </g>
         <path
           d="M106.183 45.6285H102.354C100.73 41.0358 96.357 37.75 91.2123 37.75C84.6887 37.75 79.3945 43.0442 79.3945 49.5678C79.3945 56.0914 84.6887 61.3866 91.2123 61.3866H106.183C108.272 61.3857 110.276 60.5552 111.753 59.0777C113.23 57.6001 114.061 55.5964 114.061 53.507C114.06 51.4178 113.23 49.4143 111.753 47.937C110.275 46.4597 108.272 45.6294 106.183 45.6285Z"
-          fill="url(#paint1_radial_1018_1253)"
+          fill={`url(#${id}-paint1_radial_1018_1253)`}
         />
         <path
           d="M46.5459 27.6895H80.0006V56.7806H46.5459V27.6895Z"
@@ -109,26 +109,26 @@ export function LogoLighthouse({ className }: LogoProps) {
         />
         <path
           d="M87.2162 65.5066L95.3488 120.404C86.0096 125.734 75.1977 128.779 63.6745 128.779C52.1513 128.779 41.3393 125.734 31.999 120.404L40.1328 65.5066H34.9085V53.8711H40.7262V30.5977L63.9996 16.0527L87.2718 30.5977V53.8711H93.0896V65.5066H87.2162Z"
-          fill="url(#paint2_linear_1018_1253)"
+          fill={`url(#${id}-paint2_linear_1018_1253)`}
         />
         <path
           d="M63.9999 53.8711H40.7266V30.5977L63.9999 16.0527V53.8711Z"
-          fill="url(#paint3_linear_1018_1253)"
+          fill={`url(#${id}-paint3_linear_1018_1253)`}
         />
         <path
           d="M63.9997 128.779C52.8931 128.786 41.9763 125.899 32.3242 120.404L39.6169 65.5068H63.9986L63.9997 128.779Z"
-          fill="url(#paint4_linear_1018_1253)"
+          fill={`url(#${id}-paint4_linear_1018_1253)`}
         />
         <path
           d="M64 53.8711H34.9089V65.5078H64V53.8711Z"
-          fill="url(#paint5_linear_1018_1253)"
+          fill={`url(#${id}-paint5_linear_1018_1253)`}
         />
         <path
           d="M64 128.78C99.3462 128.78 128 100.127 128 64.7803C128 29.434 99.3462 0.780273 64 0.780273C28.6538 0.780273 0 29.434 0 64.7803C0 100.127 28.6538 128.78 64 128.78Z"
-          fill="url(#paint6_radial_1018_1253)"
+          fill={`url(#${id}-paint6_radial_1018_1253)`}
         />
         <mask
-          id="mask2_1018_1253"
+          id={`${id}-mask2_1018_1253`}
           maskUnits="userSpaceOnUse"
           x="15"
           y="51"
@@ -140,7 +140,7 @@ export function LogoLighthouse({ className }: LogoProps) {
             fill="white"
           />
         </mask>
-        <g mask="url(#mask2_1018_1253)">
+        <g mask={`url(#${id}-mask2_1018_1253)`}>
           <path
             d="M46.5443 60.4157H42.1261C40.2541 55.1161 35.2087 51.3252 29.272 51.3252C21.7448 51.3252 15.6357 57.4343 15.6357 64.9615C15.6357 72.4887 21.7448 78.5978 29.272 78.5978H46.5443C51.5624 78.5978 55.6359 74.5254 55.6359 69.5073C55.6359 64.4891 51.5624 60.4157 46.5443 60.4157Z"
             fill="#FAFAFA"
@@ -152,10 +152,10 @@ export function LogoLighthouse({ className }: LogoProps) {
           />
           <path
             d="M60.3174 78.5976H29.2725L42.1364 60.4155L60.3174 78.5976Z"
-            fill="url(#paint7_linear_1018_1253)"
+            fill={`url(#${id}-paint7_linear_1018_1253)`}
           />
           <mask
-            id="mask3_1018_1253"
+            id={`${id}-mask3_1018_1253`}
             maskUnits="userSpaceOnUse"
             x="29"
             y="60"
@@ -167,13 +167,13 @@ export function LogoLighthouse({ className }: LogoProps) {
               fill="white"
             />
           </mask>
-          <g mask="url(#mask3_1018_1253)">
+          <g mask={`url(#${id}-mask3_1018_1253)`}>
             <rect
               x="26.5449"
               y="48.5977"
               width="19.0908"
               height="29.0911"
-              fill="url(#pattern1_1018_1253)"
+              fill={`url(#${id}-pattern1_1018_1253)`}
             />
             <path
               d="M29.2725 51.3252L36.6448 74.6072C39.1091 72.1342 42.9087 68.7251 42.9087 64.9615C42.9087 57.4343 36.7997 51.3252 29.2725 51.3252Z"
@@ -197,7 +197,7 @@ export function LogoLighthouse({ className }: LogoProps) {
         </g>
         <path
           d="M46.5443 60.4157H42.1261C40.2541 55.1161 35.2087 51.3252 29.272 51.3252C21.7448 51.3252 15.6357 57.4343 15.6357 64.9615C15.6357 72.4887 21.7448 78.5978 29.272 78.5978H46.5443C51.5624 78.5978 55.6359 74.5254 55.6359 69.5073C55.6359 64.4891 51.5624 60.4157 46.5443 60.4157Z"
-          fill="url(#paint8_radial_1018_1253)"
+          fill={`url(#${id}-paint8_radial_1018_1253)`}
         />
         <g opacity="0.1">
           <path
@@ -212,7 +212,7 @@ export function LogoLighthouse({ className }: LogoProps) {
       </g>
       <defs>
         <pattern
-          id="pattern0_1018_1253"
+          id={`${id}-pattern0_1018_1253`}
           patternContentUnits="objectBoundingBox"
           width="1"
           height="1"
@@ -223,7 +223,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           />
         </pattern>
         <pattern
-          id="pattern1_1018_1253"
+          id={`${id}-pattern1_1018_1253`}
           patternContentUnits="objectBoundingBox"
           width="1"
           height="1"
@@ -234,7 +234,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           />
         </pattern>
         <linearGradient
-          id="paint0_linear_1018_1253"
+          id={`${id}-paint0_linear_1018_1253`}
           x1="1436.35"
           y1="49.1902"
           x2="1436.35"
@@ -245,7 +245,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop offset="0.66" stopColor="#212121" stopOpacity="0" />
         </linearGradient>
         <radialGradient
-          id="paint1_radial_1018_1253"
+          id={`${id}-paint1_radial_1018_1253`}
           cx="0"
           cy="0"
           r="1"
@@ -256,7 +256,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <linearGradient
-          id="paint2_linear_1018_1253"
+          id={`${id}-paint2_linear_1018_1253`}
           x1="2352.25"
           y1="2310.93"
           x2="6833.61"
@@ -267,7 +267,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint3_linear_1018_1253"
+          id={`${id}-paint3_linear_1018_1253`}
           x1="1645.07"
           y1="2502.83"
           x2="486.708"
@@ -278,7 +278,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop offset="1" stopColor="#262626" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint4_linear_1018_1253"
+          id={`${id}-paint4_linear_1018_1253`}
           x1="2013.02"
           y1="893.489"
           x2="-1242.64"
@@ -289,7 +289,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop offset="1" stopColor="#262626" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="paint5_linear_1018_1253"
+          id={`${id}-paint5_linear_1018_1253`}
           x1="64"
           y1="635.704"
           x2="34.9089"
@@ -300,7 +300,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop offset="1" stopColor="#262626" stopOpacity="0" />
         </linearGradient>
         <radialGradient
-          id="paint6_radial_1018_1253"
+          id={`${id}-paint6_radial_1018_1253`}
           cx="0"
           cy="0"
           r="1"
@@ -311,7 +311,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
         <linearGradient
-          id="paint7_linear_1018_1253"
+          id={`${id}-paint7_linear_1018_1253`}
           x1="1581.33"
           y1="64.5247"
           x2="1581.33"
@@ -322,7 +322,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop offset="0.66" stopColor="#212121" stopOpacity="0" />
         </linearGradient>
         <radialGradient
-          id="paint8_radial_1018_1253"
+          id={`${id}-paint8_radial_1018_1253`}
           cx="0"
           cy="0"
           r="1"
@@ -332,7 +332,7 @@ export function LogoLighthouse({ className }: LogoProps) {
           <stop stopColor="white" stopOpacity="0.1" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </radialGradient>
-        <clipPath id="clip0_1018_1253">
+        <clipPath id={`${id}-clip0_1018_1253`}>
           <rect
             width="128"
             height="128"

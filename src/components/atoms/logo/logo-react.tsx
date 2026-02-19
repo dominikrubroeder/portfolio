@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoReact({ className }: { className?: string }) {
+export function LogoReact({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"

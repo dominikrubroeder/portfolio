@@ -1,14 +1,16 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoTailwindCss({ className }: { className?: string }) {
+export function LogoTailwindCss({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 79"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
+      id={id}
     >
       <path
         fillRule="evenodd"

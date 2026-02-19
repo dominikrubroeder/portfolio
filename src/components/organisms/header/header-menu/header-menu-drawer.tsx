@@ -134,14 +134,14 @@ export function HeaderMenuDrawer() {
               <li>
                 <div className="flex items-center justify-between gap-4">
                   <span className="text-foreground">LinkedIn</span>
-                  <ButtonLinkedin />
+                  <ButtonLinkedin id="header-menu-drawer-linkedin" />
                 </div>
               </li>
 
               <li>
                 <div className="flex items-center justify-between gap-4">
                   <span className="text-foreground">GitHub</span>
-                  <ButtonGithub />
+                  <ButtonGithub id="header-menu-drawer-github" />
                 </div>
               </li>
 

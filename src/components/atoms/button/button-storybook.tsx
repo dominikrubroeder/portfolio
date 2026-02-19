@@ -1,8 +1,8 @@
 import { Button } from '@/components/atoms/button';
 import { LogoStorybook } from '@/components/atoms/logo';
-import { BaseProps } from '@/lib/types';
+import { BaseComponentProps } from '@/lib/types';
 
-export function ButtonStorybook({ className }: BaseProps) {
+export function ButtonStorybook({ className }: BaseComponentProps) {
   return (
     <Button
       variant="ghost-foreground"
@@ -12,7 +12,7 @@ export function ButtonStorybook({ className }: BaseProps) {
       size="large"
       className={className}
     >
-      <LogoStorybook />
+      <LogoStorybook id="button-storybook" />
     </Button>
   );
 }

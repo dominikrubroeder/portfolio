@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoAxios({ className }: LogoProps) {
+export function LogoAxios({ id, className }: LogoProps) {
   return (
     <svg
       width="128"
@@ -13,8 +13,8 @@ export function LogoAxios({ className }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_1018_1253)">
-        <g clipPath="url(#clip1_1018_1253)">
+      <g clipPath={`url(#${id}-clip0_1018_1253)`}>
+        <g clipPath={`url(#${id}-clip1_1018_1253)`}>
           <path
             d="M59.4991 15.2441L27 41.7197H48.224V127.78L59.4991 118.699V15.2441Z"
             fill="#5A29E4"
@@ -26,10 +26,10 @@ export function LogoAxios({ className }: LogoProps) {
         </g>
       </g>
       <defs>
-        <clipPath id="clip0_1018_1253">
+        <clipPath id={`${id}-clip0_1018_1253`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
-        <clipPath id="clip1_1018_1253">
+        <clipPath id={`${id}-clip1_1018_1253`}>
           <rect
             width="74.9344"
             height="128"

@@ -1,5 +1,5 @@
-import { BaseProps, SizeReducedProp } from '@/lib/types';
+import { BaseComponentProps, SizeReducedProp } from '@/lib/types';
 
-export interface HrProps extends BaseProps {
+export interface HrProps extends BaseComponentProps {
   variant?: SizeReducedProp;
 }

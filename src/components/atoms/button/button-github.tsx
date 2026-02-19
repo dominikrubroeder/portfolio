@@ -1,7 +1,8 @@
 import { Button } from '@/components/atoms/button';
 import { LogoGithub } from '@/components/atoms/logo';
+import { BaseComponentProps } from '@/lib/types';
 
-export function ButtonGithub({ className }: { className?: string }) {
+export function ButtonGithub({ id, className }: BaseComponentProps) {
   return (
     <Button
       variant="ghost-foreground"
@@ -11,7 +12,7 @@ export function ButtonGithub({ className }: { className?: string }) {
       size="large"
       className={className}
     >
-      <LogoGithub />
+      <LogoGithub id={id || 'button-github'} />
     </Button>
   );
 }

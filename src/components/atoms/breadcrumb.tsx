@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
-import type { BaseProps } from '@/lib/types';
+import type { BaseComponentProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Ul } from '@/components/atoms/ul';
 
@@ -13,7 +13,7 @@ export function Breadcrumb({
   className
 }: {
   breadcrumb: { label: string; href: string }[];
-} & BaseProps) {
+} & BaseComponentProps) {
   return (
     <Ul
       className={cn(

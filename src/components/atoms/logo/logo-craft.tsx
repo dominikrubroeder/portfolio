@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoCraft({ className }: { className?: string }) {
+export function LogoCraft({ id, className }: LogoProps) {
   return (
     <svg
       width="129"
@@ -12,7 +13,7 @@ export function LogoCraft({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_10_3)">
+      <g clipPath={`url(#${id}-clip0_10_3)`}>
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -39,7 +40,7 @@ export function LogoCraft({ className }: { className?: string }) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_10_3">
+        <clipPath id={`${id}-clip0_10_3`}>
           <rect
             width="128"
             height="128"

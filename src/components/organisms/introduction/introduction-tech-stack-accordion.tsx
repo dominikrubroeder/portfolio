@@ -7,9 +7,9 @@ import { getTechnologies } from '@/components/organisms/technologies';
 import { getTools } from '@/components/organisms/tools';
 import { PlusIcon } from '@heroicons/react/24/outline';
 
-const tools = getTools({ toolNames: ['Figma'] });
+const tools = getTools({ names: ['Figma'] });
 const technologies = getTechnologies({
-  technologyNames: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Motion']
+  names: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Motion']
 });
 
 export function IntroductionTechStackAccordion({
@@ -26,11 +26,12 @@ export function IntroductionTechStackAccordion({
     >
       {tools.map((item, index) => (
         <li
-          key={`list-item-introduction-tech-stack-accordion-tool-item-${index}-${item.name}`}
+          key={`introduction-tech-stack-tool-item-${item.name}-${index}`}
           className="flex items-center gap-3"
         >
           <BrandLink
-            key={`brand-link-introduction-tech-stack-accordion-item-${index}-${item.name}`}
+            key={`introduction-tech-stack-tool-${item.name}-${index}`}
+            brandLogoId={`introduction-tech-stack-tool-${item.name}-${index}`}
             brand={item}
             showLabel
             labelPosition="bottom"
@@ -42,10 +43,11 @@ export function IntroductionTechStackAccordion({
 
       {technologies.map((item, index) => (
         <li
-          key={`list-item-introduction-tech-stack-accordion-technology-item-${index}-${item.name}`}
+          key={`introduction-tech-stack-technology-item-${item.name}-${index}`}
         >
           <BrandLink
-            key={`brand-link-introduction-tech-stack-accordion-item-${index}-${item.name}`}
+            key={`introduction-tech-stack-technology-${item.name}-${index}`}
+            brandLogoId={`introduction-tech-stack-technology-${item.name}-${index}`}
             brand={item}
             showLabel
             labelPosition="bottom"

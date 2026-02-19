@@ -106,7 +106,13 @@ export const components: ComponentGroup[] = [
       {
         componentId: 'brand-logo',
         componentName: 'Brand Logo',
-        component: <BrandLogo brand="Figma" className="size-16" />,
+        component: (
+          <BrandLogo
+            id="component-showcase-figma"
+            brand="Figma"
+            className="size-16"
+          />
+        ),
         animatable: false
       },
       {

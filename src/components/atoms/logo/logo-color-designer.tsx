@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoColorDesigner({ className }: LogoProps) {
+export function LogoColorDesigner({ id, className }: LogoProps) {
   return (
     <svg
       width="128"
@@ -34,7 +34,7 @@ export function LogoColorDesigner({ className }: LogoProps) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_1018_1253">
+        <clipPath id={`${id}-clip0_1018_1253`}>
           <rect
             width="128"
             height="128"

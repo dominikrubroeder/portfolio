@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoNotes({ className }: { className?: string }) {
+export function LogoNotes({ id, className }: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +19,7 @@ export function LogoNotes({ className }: { className?: string }) {
           <stop offset="100%" stopColor="#F5C52C"></stop>
         </linearGradient>
         <filter
-          id="c"
+          id={`${id}-c`}
           width="110.2%"
           height="146.7%"
           x="-5.1%"
@@ -40,24 +41,31 @@ export function LogoNotes({ className }: { className?: string }) {
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
           ></feColorMatrix>
         </filter>
-        <rect id="a" width="120" height="120" x="0" y="0" rx="28"></rect>
-        <path id="d" d="M-9 0h137v30H-9z"></path>
+        <rect
+          id={`${id}-a`}
+          width="120"
+          height="120"
+          x="0"
+          y="0"
+          rx="28"
+        ></rect>
+        <path id={`${id}-d`} d="M-9 0h137v30H-9z"></path>
       </defs>
       <g fill="none" fillRule="evenodd">
-        <mask id="b" fill="#fff">
+        <mask id={`${id}-b`} fill="#fff">
           <use xlinkHref="#a"></use>
         </mask>
         <use fill="#FFF" xlinkHref="#a"></use>
-        <g mask="url(#b)">
-          <use fill="#000" filter="url(#c)" xlinkHref="#d"></use>
-          <use fill="url(#e)" xlinkHref="#d"></use>
+        <g mask={`url(#${id}-b)`}>
+          <use fill="#000" filter={`url(#${id}-c)`} xlinkHref="#d"></use>
+          <use fill={`url(#${id}-e)`} xlinkHref="#d"></use>
         </g>
         <path
           fill="#C7C5C9"
           d="M0 59h120v2H0zM0 89h120v2H0z"
-          mask="url(#b)"
+          mask={`url(#${id}-b)`}
         ></path>
-        <g fill="#C2C0C4" mask="url(#b)">
+        <g fill="#C2C0C4" mask={`url(#${id}-b)`}>
           <g transform="translate(0 35)">
             <circle cx="11.5" cy="1.5" r="1.5"></circle>
             <circle cx="16.5" cy="1.5" r="1.5"></circle>
