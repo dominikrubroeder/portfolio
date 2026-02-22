@@ -10,5 +10,5 @@ export interface LearningResource {
   category?: string[];
   isCurrent?: boolean;
   knowledge?: KnowledgeLevel;
-  type?: 'video' | 'blog' | 'people';
+  type?: 'video' | 'blog' | 'people' | 'Course' | 'Book';
 }

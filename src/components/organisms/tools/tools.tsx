@@ -7,7 +7,7 @@ import { Marker } from '@/components/atoms/marker';
 export function Tools() {
   return (
     <Animate>
-      <Container className="space-y-6" id="tools">
+      <Container className="space-y-2" id="tools">
         <div className="space-y-5">
           <div className="space-y-3">
             <h2>

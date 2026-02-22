@@ -9,7 +9,7 @@ import {
 export function Technologies() {
   return (
     <Animate>
-      <Container className="space-y-6" id="technologies">
+      <Container className="space-y-2" id="technologies">
         <div className="space-y-3">
           <h2>
             Technologies

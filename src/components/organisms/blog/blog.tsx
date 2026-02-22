@@ -11,7 +11,7 @@ export function Blog() {
 
   return (
     <Animate>
-      <Container className="space-y-8" id="blog">
+      <Container className="space-y-4" id="blog">
         <h2>
           Blog posts
           <span className="ml-2 font-medium text-muted-foreground">

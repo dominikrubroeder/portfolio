@@ -1,7 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { ReactNode, useCallback, useState } from 'react';
 
 import { MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
 
@@ -9,29 +8,41 @@ import { cn } from '@/lib/utils';
 
 import { Button, ButtonProps } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
+import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
 
 export function ToggleContent({
   label,
   buttonPropsFirst,
   buttonPropsSecond,
   className,
-  children
+  children,
+  id
 }: {
   label?: ReactNode;
   buttonPropsFirst?: Partial<Pick<ButtonProps, 'variant'>>;
   buttonPropsSecond?: ButtonProps;
   className?: string;
   children: ReactNode;
+  id: string;
 }) {
   const [show, setShow] = useState<boolean>(false);
+  const { scrollIntoView } = useScrollIntoView();
+
+  const onClick = useCallback(() => {
+    scrollIntoView({
+      id: `toggle-content-${id}`,
+      options: { block: 'start', behavior: 'smooth' }
+    });
+    setShow((prevState) => !prevState);
+  }, []);
 
   return (
-    <div className={cn('space-y-8', className)}>
+    <div
+      className={cn('scroll-mt-responsive space-y-8 pt-4', className)}
+      id={`toggle-content-${id}`}
+    >
       <ButtonGroup>
-        <Button
-          onClick={() => setShow((prevState) => !prevState)}
-          {...buttonPropsFirst}
-        >
+        <Button onClick={onClick} {...buttonPropsFirst}>
           <span className="sr-only">{show ? 'Hide' : 'Close'}</span>
           <div>
             {show ? (
@@ -44,7 +55,7 @@ export function ToggleContent({
 
         <Button
           variant="ghost-foreground"
-          onClick={() => setShow((prevState) => !prevState)}
+          onClick={onClick}
           {...buttonPropsSecond}
         >
           {label}

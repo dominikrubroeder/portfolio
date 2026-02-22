@@ -4,7 +4,11 @@ import { PlatformsBlogsPeopleList } from '@/components/organisms/training/platfo
 
 export function AllResources() {
   return (
-    <ToggleContent label="All resources" className="mt-8 space-y-8">
+    <ToggleContent
+      label="All resources"
+      className="scroll-mt-responsive-md space-y-8"
+      id="all-resources"
+    >
       <CoursesList />
       <PlatformsBlogsPeopleList />
     </ToggleContent>

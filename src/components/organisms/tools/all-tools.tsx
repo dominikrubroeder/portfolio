@@ -8,6 +8,7 @@ export function AllTools() {
     <ToggleContent
       label="All tools"
       buttonPropsFirst={{ variant: 'contained-muted' }}
+      id="all-tools"
     >
       <Ul className="grid gap-6 sm:gap-10">
         {tools

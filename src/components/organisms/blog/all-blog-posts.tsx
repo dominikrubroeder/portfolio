@@ -3,7 +3,7 @@ import { Accordion } from '@/components/atoms/accordion';
 
 export function AllBlogPosts() {
   return (
-    <ToggleContent label="All blog posts">
+    <ToggleContent label="All blog posts" id="all-blog-posts">
       <Accordion
         items={[
           {

@@ -6,7 +6,7 @@ import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 export function IntroductionMyBackgroundAccordion() {
   return (
     <div>
-      <BadgeHrGroup>2016</BadgeHrGroup>
+      <BadgeHrGroup badgeProps={[{ children: '2016' }]} />
 
       <p>
         <b>Started as a designer</b>
@@ -27,7 +27,7 @@ export function IntroductionMyBackgroundAccordion() {
         the design step.
       </p>
 
-      <BadgeHrGroup>2017</BadgeHrGroup>
+      <BadgeHrGroup badgeProps={[{ children: '2017' }]} />
 
       <p>
         <b> From design to development, a first step</b>
@@ -69,7 +69,7 @@ export function IntroductionMyBackgroundAccordion() {
         interfaces i initially designed.
       </p>
 
-      <BadgeHrGroup>2021</BadgeHrGroup>
+      <BadgeHrGroup badgeProps={[{ children: '2021' }]} />
 
       <p>
         <b>React, Next.js and TypeScript</b>

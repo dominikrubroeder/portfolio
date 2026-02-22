@@ -2,23 +2,26 @@ import { Badge, BadgeProps } from '@/components/atoms/badge';
 import { Hr, HrProps } from '@/components/atoms/hr';
 import { BaseComponentProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { ReactNode } from 'react';
 
 export function BadgeHrGroup({
-  badgeProps = {},
+  badgeProps = [],
   hrProps = {},
-  children,
   className
 }: {
-  badgeProps?: Partial<Omit<BadgeProps, 'children'>>;
+  badgeProps?: BadgeProps[];
   hrProps?: Partial<HrProps>;
-  children: ReactNode;
 } & BaseComponentProps) {
   return (
     <div
       className={cn('mb-3 flex items-center justify-center gap-4', className)}
     >
-      <Badge {...badgeProps}>{children}</Badge>
+      <div className="flex gap-2">
+        {badgeProps.map((badge, index) => (
+          <Badge key={`badge-hr-group-badge-${index}`} {...badge}>
+            {badge.children}
+          </Badge>
+        ))}
+      </div>
       <Hr {...hrProps} className={cn('my-0', hrProps.className)} />
     </div>
   );

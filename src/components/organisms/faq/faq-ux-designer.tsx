@@ -6,15 +6,13 @@ import { Ol } from '@/components/atoms/ol';
 
 export function FaqUxDesigner() {
   return (
-    <>
+    <div className="space-y-4">
       <Blockquote horizontalOffset={false}>
         <b className="text-foreground">
           You are a Chief Designer. On which predicates should a UX Designer
           focus on?
         </b>
       </Blockquote>
-
-      <br />
 
       <p className="flex items-center gap-3">
         <LogoChatgpt className="size-5" />
@@ -133,8 +131,6 @@ export function FaqUxDesigner() {
         design principles are essential for success.
       </p>
 
-      <br />
-
       <p>
         <span>UX Design: Key Predicates on ChatGPT:</span>
         <ExternalLink
@@ -145,6 +141,6 @@ export function FaqUxDesigner() {
           Source
         </ExternalLink>
       </p>
-    </>
+    </div>
   );
 }

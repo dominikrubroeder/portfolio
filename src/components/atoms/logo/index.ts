@@ -72,6 +72,10 @@ export { LogoStorybook } from './logo-storybook';
 export { LogoViteJs } from './logo-vite-js';
 export { LogoPaper } from './logo-paper';
 export { LogoX } from './logo-x';
+export { LogoBaymardInstitute } from './logo-baymard-institute';
+export { LogoApple } from './logo-apple';
+export { LogoNielsenNormanGroup } from './logo-nielsen-norman-group';
+export { LogoStatista } from './logo-statista';
 
 export * from './img';
 

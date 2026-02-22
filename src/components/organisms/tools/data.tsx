@@ -620,7 +620,7 @@ export const tools: Tools = [
       },
       {
         name: 'X',
-        description: "What's happening?!",
+        description: '',
         href: 'https://x.com',
         logo: '',
         knowledge: 'Experienced'
@@ -958,7 +958,7 @@ export const tools: Tools = [
     children: [
       {
         name: 'Baymard Institute',
-        description: 'UX research for e-commerce',
+        description: 'The trusted authority in ecommerce UX',
         href: 'https://baymard.com',
         logo: '',
         knowledge: 'Professional'
@@ -971,15 +971,16 @@ export const tools: Tools = [
         knowledge: 'Experienced'
       },
       {
-        name: 'NN/g Group',
-        description: 'Nielsen Norman Group - UX research and consulting',
+        name: 'Nielsen Norman Group',
+        description:
+          'Research-based, results-driven. UX guidance and training.',
         href: 'https://www.nngroup.com',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         name: 'Statista',
-        description: 'Market and consumer data',
+        description: 'Empowering people with data',
         href: 'https://www.statista.com',
         logo: '',
         knowledge: 'Experienced'

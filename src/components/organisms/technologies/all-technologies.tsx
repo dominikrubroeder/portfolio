@@ -7,6 +7,7 @@ export function AllTechnologies() {
     <ToggleContent
       label="All technologies"
       buttonPropsFirst={{ variant: 'contained-muted' }}
+      id="all-technologies"
     >
       <ul className="grid gap-6 sm:gap-10">
         {technologies

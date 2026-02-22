@@ -9,7 +9,7 @@ export function GuidingPrinciple() {
         className="relative z-10 space-y-2 bg-background sm:py-12"
         id="guiding-principle"
       >
-        <BadgeHrGroup>Guiding principle</BadgeHrGroup>
+        <BadgeHrGroup badgeProps={[{ children: 'Guiding principle' }]} />
 
         <h2 className="bg-background text-primary">
           "Combine design and code in one craft and you get the best of both

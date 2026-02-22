@@ -469,6 +469,10 @@
   @apply scroll-mt-24 md:scroll-mt-28 lg:scroll-mt-0;
 }
 
+@utility scroll-mt-responsive-md {
+  @apply scroll-mt-40 md:scroll-mt-44 lg:scroll-mt-16;
+}
+
 /* Hide scrollbars for all browsers */
 .scrollbar-none {
   -ms-overflow-style: none;

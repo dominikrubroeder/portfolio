@@ -58,7 +58,7 @@ export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
 
               {item.isCurrent && (
                 <Badge size="sm" className="hidden self-center md:block">
-                  Current Course
+                  Current {item.type}
                 </Badge>
               )}
             </div>
@@ -70,7 +70,7 @@ export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
 
           {item.isCurrent && (
             <Badge size="sm" className="absolute top-0 left-0 md:hidden">
-              Current Course
+              Current {item.type}
             </Badge>
           )}
         </div>

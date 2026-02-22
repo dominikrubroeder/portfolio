@@ -16,7 +16,7 @@ import { getTools } from '@/components/organisms/tools';
 export const projects: Project[] = [
   {
     title: 'sautershop',
-    category: ['Headless', 'Ecommerce', 'B2C', 'DIY'],
+    category: ['Headless', 'B2C', 'Ecommerce'],
     url: 'https://www.sautershop.com/en',
     isCurrentProject: true,
     readableTitle:
@@ -53,7 +53,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Value Booster',
-    category: ['Headless', 'Ecommerce', 'B2B', 'B2C'],
+    category: ['Headless', 'B2B', 'B2C', 'Ecommerce'],
     url: 'https://www.mediawave.de/value-booster',
     readableTitle:
       'Kickstart in your headless ecommerce project with the mediawave Value Booster',
@@ -94,7 +94,7 @@ export const projects: Project[] = [
   },
   {
     title: 'HD+',
-    category: ['Headless', 'Website', 'B2C', 'Satellite Pay TV service'],
+    category: ['Headless', 'B2C', 'Ecommerce'],
     url: 'https://www.hd-plus.de',
     readableTitle:
       'Watch television in HD — via satellite or internet (IP), on your TV and smartphone',
@@ -131,7 +131,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Segmüller',
-    category: ['Ecommerce', 'Home Furniture', 'B2B'],
+    category: ['Ecommerce', 'B2C'],
     url: 'https://www.segmueller.de',
     readableTitle: 'Well-known home furniture store in Augsburg (Germany)',
     isCurrentProject: false,
@@ -161,8 +161,8 @@ export const projects: Project[] = [
     previewImageTimestamp: '2026-01-06'
   },
   {
-    title: 'alles.auto',
-    category: ['Platform', 'Car dealership'],
+    title: 'alles.auto Service Portal',
+    category: ['B2B'],
     url: 'https://www.alles.auto',
     readableTitle: 'Online selling and re-selling and car service platform',
     isCurrentProject: false,
@@ -184,7 +184,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Loy GmbH',
-    category: ['Ecommerce', 'Website'],
+    category: ['B2C', 'B2B', 'Ecommerce', 'Website'],
     url: 'https://www.loy.info',
     readableTitle:
       'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. I spend my two and a half years training and three additional years during dual study and full-time job here. This was all about print media, digital media and my initial design and development training.',
@@ -228,7 +228,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Frontend Mentor',
-    category: ['Training', 'Learning', 'Practise'],
+    category: [],
     url: 'https://www.frontendmentor.io',
     readableTitle: 'Many frontend coding challenges using a real-life workflow',
     isCurrentProject: false,
@@ -238,15 +238,11 @@ export const projects: Project[] = [
         className="h-12 w-auto"
       />
     ),
-    role: ['Frontend Developer'],
+    role: [],
     aspects: undefined,
-    tools: getTools({
-      names: ['Figma', 'WebStorm', 'VS Code', 'frontendmentor.io', 'GitHub']
-    }),
-    technologies: getTechnologies({
-      names: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Motion']
-    }),
-    company: 'Frontend Mentor',
+    tools: [],
+    technologies: [],
+    company: undefined,
     caseStudyUrls: undefined,
     demoUrls: [
       'https://github.com/dominikrubroeder?tab=repositories&q=frontendmentor',
@@ -270,30 +266,16 @@ export const projects: Project[] = [
   },
   {
     title: 'GitHub',
-    category: ['Private Projects'],
+    category: [],
     url: 'https://github.com/dominikrubroeder?tab=repositories',
     readableTitle:
       'All the private projects i did over the last years. Not in specific order or priority. Some are removed for clean-up!',
     isCurrentProject: false,
     logo: <LogoGithub id="projects-github" className="h-12 w-auto" />,
-    role: ['Frontend Developer', 'iOS Development'],
+    role: [],
     aspects: undefined,
-    tools: getTools({ names: ['GitHub', 'VS Code', 'WebStorm'] }),
-    technologies: getTechnologies({
-      names: [
-        'React',
-        'Next.js',
-        'TypeScript',
-        'JavaScript',
-        'Tailwind CSS',
-        'Motion',
-        'Vue.js',
-        'Remix',
-        'Svelte',
-        'Swift',
-        'SwiftUI'
-      ]
-    }),
+    tools: [],
+    technologies: [],
     company: undefined,
     caseStudyUrls: undefined,
     demoUrls: ['https://github.com/dominikrubroeder?tab=repositories']

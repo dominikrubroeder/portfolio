@@ -5,10 +5,12 @@ import {
   LogoAdobePhotoshop,
   LogoAdobeXd,
   LogoAlgolia,
+  LogoApple,
   LogoArc,
   LogoAuthjs,
   LogoAws,
   LogoAxios,
+  LogoBaymardInstitute,
   LogoBrave,
   LogoBruno,
   LogoCanva,
@@ -45,6 +47,7 @@ import {
   LogoMotion,
   LogoNetlify,
   LogoNextjs,
+  LogoNielsenNormanGroup,
   LogoNotes,
   LogoNpm,
   LogoPa11y,
@@ -59,6 +62,7 @@ import {
   LogoShopware,
   LogoSketch,
   LogoSlack,
+  LogoStatista,
   LogoStoryblok,
   LogoStorybook,
   LogoTailwindCss,
@@ -168,6 +172,18 @@ export function BrandLogo({
 
   if (brand.includes('Illustrator')) {
     return <LogoAdobeIllustrator id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('baymard')) {
+    return <LogoBaymardInstitute id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('apple')) {
+    return <LogoApple id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('nielsen norman')) {
+    return <LogoNielsenNormanGroup id={id} className={className} />;
   }
 
   switch (group) {
@@ -355,6 +371,9 @@ export function BrandLogo({
 
     case 'X':
       return <LogoX id={id} className={className} />;
+
+    case 'Statista':
+      return <LogoStatista id={id} className={className} />;
 
     default:
       return DefaultLogo;
