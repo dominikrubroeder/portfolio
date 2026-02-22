@@ -16,7 +16,7 @@ export function IntroductionHowIWorkAccordion() {
         <b>Design in system</b>
       </li>
       <li>
-        <b>System thinking to solutionize</b>
+        <b>Use system thinking to solutionize</b>
       </li>
       <li>
         <b>Design better user interfaces with psychology</b>
