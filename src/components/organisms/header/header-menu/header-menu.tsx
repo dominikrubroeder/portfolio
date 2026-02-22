@@ -4,8 +4,8 @@ import { ButtonGroup } from '@/components/molecules/button-group';
 export function HeaderMenu() {
   return (
     <ButtonGroup minimizeSpacing className="lg:hidden">
-      <ButtonLinkedin />
-      <ButtonGithub />
+      <ButtonLinkedin id="header-menu-linkedin" />
+      <ButtonGithub id="header-menu-github" />
     </ButtonGroup>
   );
 }

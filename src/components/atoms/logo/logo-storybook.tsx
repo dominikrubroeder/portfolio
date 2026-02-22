@@ -2,15 +2,16 @@ import { LogoProps } from '@/components/atoms/logo/types';
 import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 
-export function LogoStorybook({ className }: LogoProps) {
+export function LogoStorybook({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 129"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
+      id={id}
     >
-      <g clipPath="url(#clip0_1156_3294)">
+      <g clipPath={`url(#${id}-clip0_1156_3294)`}>
         <path
           d="M16.6275 118.382L12.6623 12.7285C12.5314 9.23914 15.2069 6.28198 18.6919 6.06417L108.558 0.447535C112.105 0.225828 115.161 2.92176 115.382 6.46907C115.391 6.60272 115.395 6.73659 115.395 6.8705V122C115.395 125.554 112.514 128.435 108.959 128.435C108.863 128.435 108.767 128.433 108.671 128.428L22.7697 124.57C19.4242 124.42 16.7531 121.729 16.6275 118.382Z"
           fill="#FF4785"
@@ -23,7 +24,7 @@ export function LogoStorybook({ className }: LogoProps) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_1156_3294">
+        <clipPath id={`${id}-clip0_1156_3294`}>
           <rect
             width="102.737"
             height="128"

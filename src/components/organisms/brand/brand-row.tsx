@@ -9,11 +9,13 @@ import { cn } from '@/lib/utils';
 export function BrandRow({
   brand,
   showKnowledgeBar,
-  showDescription = true
+  showDescription = true,
+  index
 }: {
   brand: Brand;
   showKnowledgeBar?: boolean;
   showDescription?: boolean;
+  index: number;
 }) {
   return (
     <Link
@@ -27,6 +29,7 @@ export function BrandRow({
 
       <div className="flex items-center gap-3 sm:gap-8">
         <BrandLogo
+          id={`brand-row-${brand.name}-${index}`}
           brand={brand.name}
           className="size-11 sm:size-12 [&>svg]:size-11 sm:[&>svg]:size-12"
         />
@@ -35,7 +38,7 @@ export function BrandRow({
           <b>{brand.name}</b>
 
           {showDescription && brand.description && (
-            <p className="hidden text-muted-foreground sm:block">
+            <p className="hidden leading-snug text-muted-foreground sm:block">
               {brand.description}
             </p>
           )}

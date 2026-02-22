@@ -1,7 +1,8 @@
 import { Button } from '@/components/atoms/button';
 import { LogoLinkedin } from '@/components/atoms/logo';
+import { BaseComponentProps } from '@/lib/types';
 
-export function ButtonLinkedin({ className }: { className?: string }) {
+export function ButtonLinkedin({ id, className }: BaseComponentProps) {
   return (
     <Button
       variant="ghost-foreground"
@@ -11,7 +12,7 @@ export function ButtonLinkedin({ className }: { className?: string }) {
       size="large"
       className={className}
     >
-      <LogoLinkedin />
+      <LogoLinkedin id={id || 'button-linkedin'} />
     </Button>
   );
 }

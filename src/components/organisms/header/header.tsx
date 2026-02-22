@@ -53,8 +53,8 @@ export function Header() {
 
         <ButtonGroup minimizeSpacing>
           <ButtonContact iconPosition="right" buttonProps={{ size: 'large' }} />
-          <ButtonGithub />
-          <ButtonLinkedin />
+          <ButtonGithub id="header-github" />
+          <ButtonLinkedin id="header-linkedin" />
         </ButtonGroup>
       </div>
     </header>

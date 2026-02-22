@@ -12,13 +12,13 @@ import { useAnimate } from '@/components/molecules/animate';
 export function Animate({
   direction = 'up',
   delay = 0.32,
-  duration = 0.8,
+  duration = 1,
   type,
-  viewport = { once: true, margin: '-50px' },
+  viewport = { once: true, margin: '-100px' },
   className,
   children
 }: {
-  direction: 'up' | 'left' | 'right' | 'down' | 'scaleUp';
+  direction?: 'up' | 'left' | 'right' | 'down' | 'scaleUp';
   delay?: number;
   duration?: number;
   type?: AnimationGeneratorType;

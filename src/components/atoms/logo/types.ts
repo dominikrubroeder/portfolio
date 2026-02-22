@@ -1,3 +1,5 @@
-export interface LogoProps {
-  className?: string;
+import { BaseComponentProps } from '@/lib/types';
+
+export interface LogoProps extends BaseComponentProps {
+  id: string;
 }

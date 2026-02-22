@@ -15,24 +15,13 @@ import { Ul } from '@/components/atoms/ul';
 import { BrandLink } from '@/components/organisms/brand';
 import { useProjectCarousel } from '@/components/organisms/projects';
 import { projects } from '@/components/organisms/projects/data';
-import { ButtonGroup } from '@/components/molecules/button-group';
-import {
-  ArrowUpRightIcon,
-  MinusIcon,
-  PlusIcon
-} from '@heroicons/react/16/solid';
-import { Hr } from '@/components/atoms/hr';
+import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
+import { ToggleContent } from '@/components/molecules/toggle-content';
+import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 
 export function ProjectCarousel() {
-  const {
-    project,
-    goNext,
-    goPrevious,
-    setActiveProject,
-    activeProject,
-    isReadMore,
-    setIsReadMore
-  } = useProjectCarousel();
+  const { project, goNext, goPrevious, setActiveProject, activeProject } =
+    useProjectCarousel();
 
   return (
     <div className="mx-auto space-y-4">
@@ -145,180 +134,173 @@ export function ProjectCarousel() {
                     </Link>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-2">
-                    {project.isCurrentProject && (
-                      <Badge size="sm" className="self-center">
-                        Current Project
-                      </Badge>
-                    )}
-                  </div>
+                  {project.isCurrentProject && (
+                    <Badge size="sm" className="self-center">
+                      Current Project
+                    </Badge>
+                  )}
                 </div>
 
                 <div className="mb-3 inline-block w-full text-muted-foreground">
                   {project.timeframe && (
-                    <div className="mb-3 flex items-center justify-center gap-4">
-                      <Badge
-                        variant="muted"
-                        size="sm"
-                        className="w-max shrink-0 self-center"
-                      >
-                        {project.timeframe}
-                      </Badge>
-                      <Hr className="my-0 inline-block h-1 w-full" />
-                    </div>
+                    <BadgeHrGroup
+                      badgeProps={[
+                        {
+                          variant: 'muted',
+                          size: 'sm',
+                          children: project.timeframe,
+                          className: 'self-center'
+                        }
+                      ]}
+                    />
                   )}
 
                   <p>{project.readableTitle}</p>
                 </div>
               </div>
 
-              <ButtonGroup className="w-full justify-between">
-                <ButtonGroup className="inline-flex">
-                  <Button
-                    title={`Read more on ${project.title}`}
-                    aria-label={`Read more on ${project.title}`}
-                    onClick={() =>
-                      setIsReadMore((previousState) => !previousState)
-                    }
-                  >
-                    {isReadMore ? <MinusIcon /> : <PlusIcon />}
-                  </Button>
+              <div className="relative">
+                <ToggleContent
+                  label="Read more"
+                  id={`project-${activeProject}`}
+                >
+                  <div className="space-y-4">
+                    {project.role?.length ? (
+                      <div>
+                        <b>Role</b>
+                        <div>{project.role?.join(', ')}</div>
+                      </div>
+                    ) : null}
 
-                  <Button
-                    variant="ghost-foreground"
-                    title={`Read more on ${project.title}`}
-                    aria-label={`Read more on ${project.title}`}
-                    onClick={() =>
-                      setIsReadMore((previousState) => !previousState)
-                    }
-                  >
-                    Read more
-                  </Button>
-                </ButtonGroup>
+                    {project.category.length ? (
+                      <div>
+                        <b>Category</b>
+                        <div>{project.category?.join(', ')}</div>
+                      </div>
+                    ) : null}
 
-                <Button variant="ghost-foreground" href={project.url}>
+                    {project.aspects?.length && (
+                      <Ul
+                        headline="Aspects"
+                        listStyle="disc"
+                        className="mt-0 leading-normal"
+                      >
+                        {project.aspects?.map((aspect, index) => (
+                          <li key={index}>{aspect}</li>
+                        ))}
+                      </Ul>
+                    )}
+
+                    {project.caseStudyUrls?.length && (
+                      <div className="space-y-4">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <b className="block">Case Study</b>
+                          <Badge
+                            variant="foreground"
+                            size="sm"
+                            className="self-center"
+                          >
+                            {project.demoUrls?.length}
+                          </Badge>
+                        </div>
+
+                        <Ul listStyle="disc">
+                          {project.caseStudyUrls?.map((url) => (
+                            <li key={url}>
+                              <ExternalLink href={url}>{url}</ExternalLink>
+                            </li>
+                          ))}
+                        </Ul>
+                      </div>
+                    )}
+
+                    {project.demoUrls?.length && (
+                      <div className="space-y-4">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <b className="block">Further links</b>
+                          <Badge
+                            variant="foreground"
+                            size="sm"
+                            className="self-center"
+                          >
+                            {project.demoUrls?.length}
+                          </Badge>
+                        </div>
+
+                        <Ul listStyle="disc">
+                          {project.demoUrls?.map((url) => (
+                            <li key={url}>
+                              <ExternalLink href={url}>{url}</ExternalLink>
+                            </li>
+                          ))}
+                        </Ul>
+                      </div>
+                    )}
+
+                    {project.tools?.length ? (
+                      <div className="space-y-4 pb-4">
+                        <b className="block">Tools</b>
+
+                        <ul className="-ml-2 flex flex-wrap gap-5">
+                          {project.tools?.map((tool, index) => {
+                            if (tool && tool.name) {
+                              return (
+                                <li
+                                  key={`project-tool-item-${tool.name}-${index}`}
+                                >
+                                  <BrandLink
+                                    key={`bproject-tool-${tool.name}-${index}`}
+                                    brandLogoId={`bproject-tool-${tool.name}-${index}`}
+                                    brand={tool}
+                                    showLabel
+                                    labelPosition="bottom"
+                                  />
+                                </li>
+                              );
+                            }
+                          })}
+                        </ul>
+                      </div>
+                    ) : null}
+
+                    {project.technologies?.length ? (
+                      <div className="space-y-4">
+                        <b className="block">Technologies</b>
+
+                        <ul className="-ml-2 flex flex-wrap gap-5">
+                          {project.technologies?.map((technology, index) => {
+                            if (technology && technology.name) {
+                              return (
+                                <li
+                                  key={`project-technology-item-${technology.name}-${index}`}
+                                >
+                                  <BrandLink
+                                    key={`project-technology-${technology.name}-${index}`}
+                                    brandLogoId={`project-technology-${technology.name}-${index}`}
+                                    brand={technology}
+                                    showLabel
+                                    labelPosition="bottom"
+                                  />
+                                </li>
+                              );
+                            }
+                          })}
+                        </ul>
+                      </div>
+                    ) : null}
+                  </div>
+                </ToggleContent>
+
+                <Button
+                  variant="ghost-foreground"
+                  href={project.url}
+                  className="absolute top-4 right-0"
+                >
                   <span className="sr-only">Open {project.readableTitle}</span>
                   Open
                   <ArrowUpRightIcon />
                 </Button>
-              </ButtonGroup>
-
-              {isReadMore && (
-                <div className="mt-4 space-y-3 motion-safe:animate-fade-up-1rem">
-                  <div>
-                    <b>Role</b>
-                    <div>{project.role?.join(', ')}</div>
-                  </div>
-
-                  <div>
-                    <b>Category</b>
-                    <div>{project.category?.join(', ')}</div>
-                  </div>
-
-                  {project.aspects?.length && (
-                    <Ul
-                      headline="Aspects"
-                      listStyle="disc"
-                      className="mt-0 leading-normal"
-                    >
-                      {project.aspects?.map((aspect, index) => (
-                        <li key={index}>{aspect}</li>
-                      ))}
-                    </Ul>
-                  )}
-
-                  {project.caseStudyUrls?.length && (
-                    <div className="space-y-4">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <b className="block">Case Study</b>
-                        <Badge
-                          variant="foreground"
-                          size="sm"
-                          className="self-center"
-                        >
-                          {project.demoUrls?.length}
-                        </Badge>
-                      </div>
-
-                      <Ul listStyle="disc">
-                        {project.caseStudyUrls?.map((url) => (
-                          <li key={url}>
-                            <ExternalLink href={url}>{url}</ExternalLink>
-                          </li>
-                        ))}
-                      </Ul>
-                    </div>
-                  )}
-
-                  {project.demoUrls?.length && (
-                    <div className="space-y-4">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <b className="block">Further links</b>
-                        <Badge
-                          variant="foreground"
-                          size="sm"
-                          className="self-center"
-                        >
-                          {project.demoUrls?.length}
-                        </Badge>
-                      </div>
-
-                      <Ul listStyle="disc">
-                        {project.demoUrls?.map((url) => (
-                          <li key={url}>
-                            <ExternalLink href={url}>{url}</ExternalLink>
-                          </li>
-                        ))}
-                      </Ul>
-                    </div>
-                  )}
-
-                  <div className="space-y-4 pb-4">
-                    <b className="block">Tools</b>
-
-                    <ul className="ml-1 flex flex-wrap gap-5">
-                      {project.tools?.map((tool, index) => {
-                        if (tool && tool.name) {
-                          return (
-                            <li
-                              key={`list-item-project-tool-item-${index}-${tool.name}`}
-                            >
-                              <BrandLink
-                                key={`brand-link-project-tool-item-${index}-${tool.name}`}
-                                brand={tool}
-                                showLabel
-                                labelPosition="bottom"
-                              />
-                            </li>
-                          );
-                        }
-                      })}
-                    </ul>
-                  </div>
-
-                  <div className="space-y-4">
-                    <b className="block">Technologies</b>
-                    <ul className="flex flex-wrap gap-5">
-                      {project.technologies?.map((technology, index) => {
-                        if (technology && technology.name) {
-                          return (
-                            <li
-                              key={`list-item-project-technology-item-${index}-${technology.name}`}
-                            >
-                              <BrandLink
-                                key={`brand-link-project-technology-item-${index}-${technology.name}`}
-                                brand={technology}
-                                showLabel
-                                labelPosition="bottom"
-                              />
-                            </li>
-                          );
-                        }
-                      })}
-                    </ul>
-                  </div>
-                </div>
-              )}
+              </div>
             </motion.div>
           </AnimatePresence>
         </MotionConfig>

@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoWebstorm({ className }: { className?: string }) {
+export function LogoWebstorm({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"
@@ -10,19 +11,19 @@ export function LogoWebstorm({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_651_91)">
-        <g clipPath="url(#clip1_651_91)">
+      <g clipPath={`url(#${id}-clip0_651_91)`}>
+        <g clipPath={`url(#${id}-clip0_651_91)`}>
           <path
             d="M17.1886 115.749L0 13.3486L32 0.182861L52.2971 12.2514L70.9486 2.19429L109.897 17.1886L87.9543 128L17.1886 115.749Z"
-            fill="url(#paint0_linear_651_91)"
+            fill={`url(#${id}-paint0_linear_651_91)`}
           />
           <path
             d="M128 43.3371L111.543 2.56L81.5544 0L35.2915 44.4343L47.7258 101.669L70.9486 118.126L128 84.1143L113.92 57.9657L128 43.3371Z"
-            fill="url(#paint1_linear_651_91)"
+            fill={`url(#${id}-paint1_linear_651_91)`}
           />
           <path
             d="M102.4 37.3028L113.92 57.9656L128 43.3371L117.76 17.9199L102.4 37.3028Z"
-            fill="url(#paint2_linear_651_91)"
+            fill={`url(#${id}-paint2_linear_651_91)`}
           />
           <path
             d="M103.497 24.5029H24.5029V103.497H103.497V24.5029Z"
@@ -41,7 +42,7 @@ export function LogoWebstorm({ className }: { className?: string }) {
       </g>
       <defs>
         <linearGradient
-          id="paint0_linear_651_91"
+          id={`${id}-paint0_linear_651_91`}
           x1="45.8386"
           y1="2.66954"
           x2="78.9632"
@@ -52,7 +53,7 @@ export function LogoWebstorm({ className }: { className?: string }) {
           <stop offset="0.9409" stopColor="#2086D7" />
         </linearGradient>
         <linearGradient
-          id="paint1_linear_651_91"
+          id={`${id}-paint1_linear_651_91`}
           x1="56.1738"
           y1="17.7999"
           x2="112.21"
@@ -63,7 +64,7 @@ export function LogoWebstorm({ className }: { className?: string }) {
           <stop offset="0.3656" stopColor="#00CDD7" />
         </linearGradient>
         <linearGradient
-          id="paint2_linear_651_91"
+          id={`${id}-paint2_linear_651_91`}
           x1="111.693"
           y1="27.9588"
           x2="119.051"
@@ -73,10 +74,10 @@ export function LogoWebstorm({ className }: { className?: string }) {
           <stop offset="0.2849" stopColor="#00CDD7" />
           <stop offset="0.9409" stopColor="#2086D7" />
         </linearGradient>
-        <clipPath id="clip0_651_91">
+        <clipPath id={`${id}-clip0_651_91`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
-        <clipPath id="clip1_651_91">
+        <clipPath id={`${id}-clip1_651_91`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
       </defs>

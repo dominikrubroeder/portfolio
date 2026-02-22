@@ -10,7 +10,7 @@ import { Accordion } from '@/components/atoms/accordion';
 
 export function FAQ() {
   return (
-    <Animate direction="up">
+    <Animate>
       <Container className="space-y-8" id="faq">
         <h2>
           QA

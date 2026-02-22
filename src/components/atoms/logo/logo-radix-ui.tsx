@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoRadixUi({ className }: LogoProps) {
+export function LogoRadixUi({ id, className }: LogoProps) {
   return (
     <svg
       width="128"
@@ -13,7 +13,7 @@ export function LogoRadixUi({ className }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_981_2039)">
+      <g clipPath={`url(#${id}-clip0_981_2039)`}>
         <path
           d="M60.9565 128C39.4414 128 22 109.313 22 86.2611C22 63.2089 39.4414 44.522 60.9565 44.522V128Z"
           className="fill-foreground"
@@ -28,7 +28,7 @@ export function LogoRadixUi({ className }: LogoProps) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_981_2039">
+        <clipPath id={`${id}-clip0_981_2039`}>
           <rect
             width="83.4783"
             height="128"

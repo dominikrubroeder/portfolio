@@ -15,28 +15,28 @@ export const mainTools: Brand[] = [
   {
     name: 'Figma',
     description: 'for user interface design and prototyping',
-    logo: <LogoFigma className="size-12" />,
+    logo: <LogoFigma id="tools-figma" className="size-12" />,
     href: 'https://www.figma.com',
     knowledge: 'Daily'
   },
   {
     name: 'WebStorm',
     description: 'as IDE',
-    logo: <LogoWebstorm className="size-12" />,
+    logo: <LogoWebstorm id="tools-webstorm" className="size-12" />,
     href: 'https://www.jetbrains.com/webstorm',
     knowledge: 'Daily'
   },
   {
     name: 'Craft',
     description: 'as my main note and documentation tool',
-    logo: <LogoCraft className="size-12" />,
+    logo: <LogoCraft id="tools-craft" className="size-12" />,
     href: 'https://www.craft.do',
     knowledge: 'Daily'
   },
   {
     name: 'GitHub',
     description: 'to store my private codebase',
-    logo: <LogoGithub className="size-12" />,
+    logo: <LogoGithub id="tools-github" className="size-12" />,
     href: 'https://github.com',
     knowledge: 'Daily'
   }
@@ -244,7 +244,7 @@ export const tools: Tools = [
       {
         name: 'Storyblok',
         href: 'https://www.storyblok.com',
-        logo: <LogoStoryblok className="size-12" />,
+        logo: <LogoStoryblok id="tools-storyblok" className="size-12" />,
         description: 'The Way to Modern Content',
         knowledge: 'Daily'
       },
@@ -620,7 +620,7 @@ export const tools: Tools = [
       },
       {
         name: 'X',
-        description: "What's happening?!",
+        description: '',
         href: 'https://x.com',
         logo: '',
         knowledge: 'Experienced'
@@ -958,7 +958,7 @@ export const tools: Tools = [
     children: [
       {
         name: 'Baymard Institute',
-        description: 'UX research for e-commerce',
+        description: 'The trusted authority in ecommerce UX',
         href: 'https://baymard.com',
         logo: '',
         knowledge: 'Professional'
@@ -971,15 +971,16 @@ export const tools: Tools = [
         knowledge: 'Experienced'
       },
       {
-        name: 'NN/g Group',
-        description: 'Nielsen Norman Group - UX research and consulting',
+        name: 'Nielsen Norman Group',
+        description:
+          'Research-based, results-driven. UX guidance and training.',
         href: 'https://www.nngroup.com',
         logo: '',
         knowledge: 'Experienced'
       },
       {
         name: 'Statista',
-        description: 'Market and consumer data',
+        description: 'Empowering people with data',
         href: 'https://www.statista.com',
         logo: '',
         knowledge: 'Experienced'
@@ -992,7 +993,7 @@ export const tools: Tools = [
       {
         name: 'Algolia',
         href: 'https://www.algolia.com',
-        logo: <LogoAlgolia className="size-12" />,
+        logo: <LogoAlgolia id="tools-algolia" className="size-12" />,
         description: 'AI-Search, that understands',
         knowledge: 'Experienced'
       },
@@ -1026,7 +1027,7 @@ export const tools: Tools = [
       {
         name: 'Shopware',
         href: 'https://www.shopware.com',
-        logo: <LogoShopware />,
+        logo: <LogoShopware id="tools-shopware" />,
         description:
           'The leading edge of ecommerce. Your business faster, limitless.',
         knowledge: 'Daily'

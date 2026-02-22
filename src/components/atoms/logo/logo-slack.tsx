@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoSlack({ className }: { className?: string }) {
+export function LogoSlack({ id, className }: LogoProps) {
   return (
     <svg
       width="128"
@@ -12,7 +13,7 @@ export function LogoSlack({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_875_1138)">
+      <g clipPath={`url(#${id}-clip0_875_1138)`}>
         <path
           d="M27.4143 80.6299C27.4143 87.9873 21.4678 93.9338 14.1103 93.9338C6.75285 93.9338 0.806396 87.9873 0.806396 80.6299C0.806396 73.2724 6.75285 67.3259 14.1103 67.3259H27.4143V80.6299ZM34.0662 80.6299C34.0662 73.2724 40.0127 67.3259 47.3702 67.3259C54.7277 67.3259 60.6741 73.2724 60.6741 80.6299V113.89C60.6741 121.247 54.7277 127.194 47.3702 127.194C40.0127 127.194 34.0662 121.247 34.0662 113.89V80.6299Z"
           fill="#E01E5A"
@@ -31,7 +32,7 @@ export function LogoSlack({ className }: { className?: string }) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_875_1138">
+        <clipPath id={`${id}-clip0_875_1138`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
       </defs>

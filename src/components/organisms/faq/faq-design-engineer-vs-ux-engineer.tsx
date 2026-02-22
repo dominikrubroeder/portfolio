@@ -15,8 +15,6 @@ export function FaqDesignEngineerVsUxEngineer() {
         </b>
       </Blockquote>
 
-      <br />
-
       <p className="flex items-center gap-3">
         <LogoChatgpt className="size-5" />
         <span className="flex items-center gap-1.5">

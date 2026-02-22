@@ -1,30 +1,53 @@
 import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 
 import { Ul } from '@/components/atoms/ul';
+import { Button } from '@/components/atoms/button';
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
 export function IntroductionDegreesList() {
   return (
     <Ul headline="Degrees">
       <li>
-        <div className="flex gap-4 md:items-center">
-          <CheckBadgeIcon className="size-6 text-primary" />
+        <Button
+          variant="ghost-foreground"
+          href="https://www.iu.de/en/bachelor/mediendesign/"
+          className="group -mx-2 flex justify-between gap-3 p-2"
+        >
+          <span className="flex gap-4 md:items-center">
+            <CheckBadgeIcon className="mt-1 size-6! text-primary" />
 
-          <div>
-            <b className="text-foreground">Bachelor of Arts</b> – Media Design
-            B.A, Dual study at IU university in Munich graduating in 2023
-          </div>
-        </div>
+            <span className="space-x-1.5">
+              <b className="text-foreground">Bachelor of Arts</b>
+              <span className="text-muted-foreground">
+                – Media Design B.A, Dual study at IU university in Munich
+                graduating in 2023
+              </span>
+            </span>
+          </span>
+
+          <ArrowUpRightIcon className="mr-4 size-5 text-current" />
+        </Button>
       </li>
 
       <li>
-        <div className="flex gap-4 md:items-center">
-          <CheckBadgeIcon className="size-6 text-primary" />
+        <Button
+          variant="ghost-foreground"
+          href="https://www.loy.info"
+          className="group -mx-2 flex justify-between gap-3 p-2"
+        >
+          <span className="flex gap-4 md:items-center">
+            <CheckBadgeIcon className="mt-1 size-6! text-primary" />
 
-          <div>
-            <b className="text-foreground">Trainee</b> as a media designer in
-            design and technology back in 2016
-          </div>
-        </div>
+            <span className="space-x-1.5">
+              <b className="text-foreground">Trainee</b>
+              <span className="text-muted-foreground">
+                – as a media designer in design and technology back in 2016
+              </span>
+            </span>
+          </span>
+
+          <ArrowUpRightIcon className="mr-4 size-5 text-current" />
+        </Button>
       </li>
     </Ul>
   );

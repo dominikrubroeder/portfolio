@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoNextjs({ className }: { className?: string }) {
+export function LogoNextjs({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"
@@ -12,7 +13,7 @@ export function LogoNextjs({ className }: { className?: string }) {
     >
       <defs>
         <linearGradient
-          id="gradient0"
+          id={`${id}-gradient0`}
           x1="77.5111"
           y1="82.8443"
           x2="102.756"
@@ -23,7 +24,7 @@ export function LogoNextjs({ className }: { className?: string }) {
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
-          id="gradient1"
+          id={`${id}-gradient1`}
           x1="86.0445"
           y1="38.3999"
           x2="85.9016"
@@ -33,7 +34,7 @@ export function LogoNextjs({ className }: { className?: string }) {
           <stop stopColor="white" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
-        <clipPath id="clip0">
+        <clipPath id={`${id}-clip0`}>
           <rect width="128" height="128" rx="196" ry="196" fill="white" />
         </clipPath>
       </defs>
@@ -44,17 +45,17 @@ export function LogoNextjs({ className }: { className?: string }) {
         rx="16"
         ry="16"
         fill="black"
-        clipPath="url(#clip0)"
+        clipPath={`url(#${id}-clip0)`}
       />
 
       <path
         d="M106.317 112.014L49.1677 38.3999H38.4V89.5786H47.0141V49.3394L99.5549 117.223C101.926 115.637 104.184 113.895 106.317 112.014Z"
-        fill="url(#gradient0)"
+        fill={`url(#${id}-gradient0)`}
       />
 
       <path
         d="M90.3112 38.3999H81.7778V89.5999H90.3112V38.3999Z"
-        fill="url(#gradient1)"
+        fill={`url(#${id}-gradient1)`}
       />
     </svg>
   );

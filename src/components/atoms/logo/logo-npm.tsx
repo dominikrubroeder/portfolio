@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize, type LogoProps } from '@/components/atoms/logo';
 
-export function LogoNpm({ className }: LogoProps) {
+export function LogoNpm({ id, className }: LogoProps) {
   return (
     <svg
       width="128"
@@ -12,7 +12,7 @@ export function LogoNpm({ className }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, 'mt-1.5', className)}
     >
-      <g clipPath="url(#clip0_979_992)">
+      <g clipPath={`url(#${id}-clip0_979_992)`}>
         <path
           d="M0 39H128V81.6667H64V88.7778H35.5556V81.6667H0V39ZM7.11111 74.5556H21.3333V53.2222H28.4444V74.5556H35.5556V46.1111H7.11111V74.5556ZM42.6667 46.1111V81.6667H56.8889V74.5556H71.1111V46.1111H42.6667ZM56.8889 53.2222H64V67.4444H56.8889V53.2222ZM78.2222 46.1111V74.5556H92.4444V53.2222H99.5556V74.5556H106.667V53.2222H113.778V74.5556H120.889V46.1111H78.2222Z"
           fill="#CB3837"
@@ -31,7 +31,7 @@ export function LogoNpm({ className }: LogoProps) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_979_992">
+        <clipPath id={`${id}-clip0_979_992`}>
           <rect
             width="128"
             height="49.7778"

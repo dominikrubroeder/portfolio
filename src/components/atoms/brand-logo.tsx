@@ -5,10 +5,12 @@ import {
   LogoAdobePhotoshop,
   LogoAdobeXd,
   LogoAlgolia,
+  LogoApple,
   LogoArc,
   LogoAuthjs,
   LogoAws,
   LogoAxios,
+  LogoBaymardInstitute,
   LogoBrave,
   LogoBruno,
   LogoCanva,
@@ -45,6 +47,7 @@ import {
   LogoMotion,
   LogoNetlify,
   LogoNextjs,
+  LogoNielsenNormanGroup,
   LogoNotes,
   LogoNpm,
   LogoPa11y,
@@ -59,6 +62,7 @@ import {
   LogoShopware,
   LogoSketch,
   LogoSlack,
+  LogoStatista,
   LogoStoryblok,
   LogoStorybook,
   LogoTailwindCss,
@@ -73,6 +77,7 @@ import {
   LogoVisualStudioCode,
   LogoViteJs,
   LogoWebstorm,
+  LogoX,
   LogoXing
 } from '@/components/atoms/logo';
 
@@ -82,6 +87,7 @@ interface BrandLogoProps extends LogoProps {
 }
 
 export function BrandLogo({
+  id,
   brand,
   group,
   className = 'size-12'
@@ -100,49 +106,49 @@ export function BrandLogo({
   const lowerCaseBrand = brand.toLowerCase();
 
   if (lowerCaseBrand.includes('storyblok')) {
-    return <LogoStoryblok className={className} />;
+    return <LogoStoryblok id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('shopware')) {
-    return <LogoShopware className={className} />;
+    return <LogoShopware id={id} className={className} />;
   }
 
   if (
     lowerCaseBrand.includes('tailwind') ||
     lowerCaseBrand.includes('refactoring')
   ) {
-    return <LogoTailwindCss className={className} />;
+    return <LogoTailwindCss id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('heroicons')) {
-    return <LogoHeroicons className={className} />;
+    return <LogoHeroicons id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('vercel')) {
-    return <LogoVercel className={className} />;
+    return <LogoVercel id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('meilisearch')) {
-    return <LogoMeilisearch className={className} />;
+    return <LogoMeilisearch id={id} className={className} />;
   }
 
   if (
     lowerCaseBrand.includes('algolia') ||
     lowerCaseBrand.includes('instant')
   ) {
-    return <LogoAlgolia className={className} />;
+    return <LogoAlgolia id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('next')) {
-    return <LogoNextjs className={className} />;
+    return <LogoNextjs id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('react')) {
-    return <LogoReact className={className} />;
+    return <LogoReact id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('storybook')) {
-    return <LogoStorybook className={className} />;
+    return <LogoStorybook id={id} className={className} />;
   }
 
   if (
@@ -153,203 +159,221 @@ export function BrandLogo({
   }
 
   if (brand.startsWith('@')) {
-    return <LogoNpm className={className} />;
+    return <LogoNpm id={id} className={className} />;
   }
 
   if (brand.startsWith('VS') || brand.startsWith('Visual Studio')) {
-    return <LogoVisualStudioCode className={className} />;
+    return <LogoVisualStudioCode id={id} className={className} />;
   }
 
   if (brand.includes('Photoshop')) {
-    return <LogoAdobePhotoshop className={className} />;
+    return <LogoAdobePhotoshop id={id} className={className} />;
   }
 
   if (brand.includes('Illustrator')) {
-    return <LogoAdobeIllustrator className={className} />;
+    return <LogoAdobeIllustrator id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('baymard')) {
+    return <LogoBaymardInstitute id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('apple')) {
+    return <LogoApple id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('nielsen norman')) {
+    return <LogoNielsenNormanGroup id={id} className={className} />;
   }
 
   switch (group) {
     case 'Packages':
-      return <LogoNpm className={className} />;
+      return <LogoNpm id={id} className={className} />;
   }
 
   switch (brand) {
     case 'Figma':
-      return <LogoFigma className={className} />;
+      return <LogoFigma id={id} className={className} />;
 
     case 'WebStorm':
-      return <LogoWebstorm className={className} />;
+      return <LogoWebstorm id={id} className={className} />;
 
     case 'Notes':
-      return <LogoNotes className={className} />;
+      return <LogoNotes id={id} className={className} />;
 
     case 'GitHub':
-      return <LogoGithub className={className} />;
+      return <LogoGithub id={id} className={className} />;
 
     case 'GitLab':
-      return <LogoGitlab className={className} />;
+      return <LogoGitlab id={id} className={className} />;
 
     case 'Miro':
-      return <LogoMiro className={className} />;
+      return <LogoMiro id={id} className={className} />;
 
     case 'TypeScript':
-      return <LogoTypescript className={className} />;
+      return <LogoTypescript id={id} className={className} />;
 
     case 'JavaScript':
-      return <LogoJavascript className={className} />;
+      return <LogoJavascript id={id} className={className} />;
 
     case 'Markdown':
-      return <LogoMarkdown className={className} />;
+      return <LogoMarkdown id={id} className={className} />;
 
     case 'HTML':
-      return <LogoHtml className={className} />;
+      return <LogoHtml id={id} className={className} />;
 
     case 'CSS':
-      return <LogoCss className={className} />;
+      return <LogoCss id={id} className={className} />;
 
     case 'LinkedIn':
-      return <LogoLinkedin className={className} />;
+      return <LogoLinkedin id={id} className={className} />;
 
     case 'Xing':
-      return <LogoXing className={className} />;
+      return <LogoXing id={id} className={className} />;
 
     case 'Instagram':
-      return <LogoInstagram className={className} />;
+      return <LogoInstagram id={id} className={className} />;
 
     case 'Craft':
-      return <LogoCraft className={className} />;
+      return <LogoCraft id={id} className={className} />;
 
     case 'Inkdrop':
       return <LogoInkdrop className={className} />;
 
     case 'Chrome':
-      return <LogoChrome className={className} />;
+      return <LogoChrome id={id} className={className} />;
 
     case 'Firefox':
-      return <LogoFirefox className={className} />;
+      return <LogoFirefox id={id} className={className} />;
 
     case 'Safari':
-      return <LogoSafari className={className} />;
+      return <LogoSafari id={id} className={className} />;
 
     case 'Slack':
-      return <LogoSlack className={className} />;
+      return <LogoSlack id={id} className={className} />;
 
     case 'Teams':
-      return <LogoTeams className={className} />;
+      return <LogoTeams id={id} className={className} />;
 
     case 'frontendmentor.io':
-      return <LogoFrontendMentor className={className} />;
+      return <LogoFrontendMentor id={id} className={className} />;
 
     case 'Jira':
-      return <LogoJira className={className} />;
+      return <LogoJira id={id} className={className} />;
 
     case 'heroicons':
-      return <LogoHeroicons className={className} />;
+      return <LogoHeroicons id={id} className={className} />;
 
     case 'daily.dev':
-      return <LogoDailydev className={className} />;
+      return <LogoDailydev id={id} className={className} />;
 
     case 'npm':
-      return <LogoNpm className={className} />;
+      return <LogoNpm id={id} className={className} />;
 
     case 'shadcn/ui':
-      return <LogoShadcnUi className={className} />;
+      return <LogoShadcnUi id={id} className={className} />;
 
     case 'Radix UI':
-      return <LogoRadixUi className={className} />;
+      return <LogoRadixUi id={id} className={className} />;
 
     case 'Lighthouse':
-      return <LogoLighthouse className={className} />;
+      return <LogoLighthouse id={id} className={className} />;
 
     case 'Pa11y':
-      return <LogoPa11y className={className} />;
+      return <LogoPa11y id={id} className={className} />;
 
     case 'ChatGPT':
-      return <LogoChatgpt className={className} />;
+      return <LogoChatgpt id={id} className={className} />;
 
     case 'Claude':
-      return <LogoClaudeAi className={className} />;
+      return <LogoClaudeAi id={id} className={className} />;
 
     case 'v0':
-      return <LogoV0 className={className} />;
+      return <LogoV0 id={id} className={className} />;
 
     case 'Google Analytics':
-      return <LogoGoogleAnalytics className={className} />;
+      return <LogoGoogleAnalytics id={id} className={className} />;
 
     case 'Hotjar':
-      return <LogoHotjar className={className} />;
+      return <LogoHotjar id={id} className={className} />;
 
     case 'Google Tag Manager':
-      return <LogoGoogleTagManager className={className} />;
+      return <LogoGoogleTagManager id={id} className={className} />;
 
     case 'Axios':
-      return <LogoAxios className={className} />;
+      return <LogoAxios id={id} className={className} />;
 
     case 'Bruno':
-      return <LogoBruno className={className} />;
+      return <LogoBruno id={id} className={className} />;
 
     case 'Postman':
-      return <LogoPostman className={className} />;
+      return <LogoPostman id={id} className={className} />;
 
     case 'Clerk':
-      return <LogoClerk className={className} />;
+      return <LogoClerk id={id} className={className} />;
 
     case 'Arc':
-      return <LogoArc className={className} />;
+      return <LogoArc id={id} className={className} />;
 
     case 'Brave':
-      return <LogoBrave className={className} />;
+      return <LogoBrave id={id} className={className} />;
 
     case 'Contentserv':
-      return <LogoContentserv className={className} />;
+      return <LogoContentserv id={id} className={className} />;
 
     case 'Typo3':
-      return <LogoTypo3 className={className} />;
+      return <LogoTypo3 id={id} className={className} />;
 
     case 'Color Designer':
-      return <LogoColorDesigner className={className} />;
+      return <LogoColorDesigner id={id} className={className} />;
 
     case 'uicolors':
-      return <LogoUiColors className={className} />;
+      return <LogoUiColors id={id} className={className} />;
 
     case 'CookieHub':
-      return <LogoCookiehub className={className} />;
+      return <LogoCookiehub id={id} className={className} />;
 
     case 'Usercentrics':
-      return <LogoUsercentrics className={className} />;
+      return <LogoUsercentrics id={id} className={className} />;
 
     case 'Motion':
-      return <LogoMotion className={className} />;
+      return <LogoMotion id={id} className={className} />;
 
     case 'Framer':
-      return <LogoFramer className={className} />;
+      return <LogoFramer id={id} className={className} />;
 
     case 'Twig':
-      return <LogoTwig className={className} />;
+      return <LogoTwig id={id} className={className} />;
 
     case 'Sass':
-      return <LogoSass className={className} />;
+      return <LogoSass id={id} className={className} />;
 
     case 'Adobe XD (deprecated)':
-      return <LogoAdobeXd className={className} />;
+      return <LogoAdobeXd id={id} className={className} />;
 
     case 'AWS Amplify':
-      return <LogoAws className={className} />;
+      return <LogoAws id={id} className={className} />;
 
     case 'netlify':
-      return <LogoNetlify className={className} />;
+      return <LogoNetlify id={id} className={className} />;
 
     case 'Sketch':
-      return <LogoSketch className={className} />;
+      return <LogoSketch id={id} className={className} />;
 
     case 'Canva':
-      return <LogoCanva className={className} />;
+      return <LogoCanva id={id} className={className} />;
 
     case 'Vite':
-      return <LogoViteJs className={className} />;
+      return <LogoViteJs id={id} className={className} />;
 
     case 'Paper':
-      return <LogoPaper className={className} />;
+      return <LogoPaper id={id} className={className} />;
+
+    case 'X':
+      return <LogoX id={id} className={className} />;
+
+    case 'Statista':
+      return <LogoStatista id={id} className={className} />;
 
     default:
       return DefaultLogo;

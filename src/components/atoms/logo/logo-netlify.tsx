@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 import type { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoNetlify({ className }: LogoProps) {
+export function LogoNetlify({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 129"
@@ -11,7 +11,7 @@ export function LogoNetlify({ className }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_1125_3177)">
+      <g clipPath={`url(#${id}-clip0_1125_3177)`}>
         <path
           d="M29.3589 90.7585V77.6506L29.6321 77.3771H32.3629L32.6361 77.6506V90.7585L32.3629 91.032H29.6321L29.3589 90.7585Z"
           fill="#05BDBA"
@@ -73,7 +73,7 @@ export function LogoNetlify({ className }: LogoProps) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_1125_3177">
+        <clipPath id={`${id}-clip0_1125_3177`}>
           <rect
             width="128"
             height="52.0321"

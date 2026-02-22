@@ -12,8 +12,8 @@ export type HTMLTag =
   | 'header'
   | 'footer';
 
-// TODO: Use `ComponentBaseProps` in regular components
-export interface ComponentBaseProps {
+export interface BaseComponentProps {
+  id?: string;
   className?: string;
 }
 
@@ -33,7 +33,9 @@ export type SortByType = 'type-A-Z';
 
 export type SortProp = SortAlphabeticallyProp | SortByProgressProp;
 
-export type SizeProp = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type SizeReducedProp = 'sm' | 'md' | 'lg';
+
+export type SizeProp = SizeReducedProp | 'xs' | 'xl';
 
 // TODO: Use `ColorVariantProp` across the app
 export type ColorReducedProp = 'primary' | 'foreground' | 'muted';

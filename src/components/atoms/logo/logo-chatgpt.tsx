@@ -1,9 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
-import type { LogoProps } from '@/components/atoms/logo/types';
+import { BaseComponentProps } from '@/lib/types';
 
-export function LogoChatgpt({ className }: LogoProps) {
+export function LogoChatgpt({ className }: BaseComponentProps) {
   return (
     <svg
       width="128"

@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 
-import { defaultLogoSquareSize } from '@/components/atoms/logo';
+import { defaultLogoSquareSize, LogoProps } from '@/components/atoms/logo';
 
-export function LogoMarkdown({ className }: { className?: string }) {
+export function LogoMarkdown({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 208 128"
@@ -22,7 +22,7 @@ export function LogoMarkdown({ className }: { className?: string }) {
         className="fill-foreground"
       />
       <defs>
-        <clipPath id="clip0_748_1013">
+        <clipPath id={`${id}-clip0_748_1013`}>
           <rect
             width="208"
             height="128"

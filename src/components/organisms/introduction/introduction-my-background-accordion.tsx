@@ -1,16 +1,13 @@
-import { Badge } from '@/components/atoms/badge';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Markup } from '@/components/atoms/markup';
 import { Ul } from '@/components/atoms/ul';
-import { Hr } from '@/components/atoms/hr';
+import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 
 export function IntroductionMyBackgroundAccordion() {
   return (
     <div>
-      <div className="mb-3 flex items-center justify-center gap-4">
-        <Badge>2016</Badge>
-        <Hr className="my-0 inline-block h-1 w-full" />
-      </div>
+      <BadgeHrGroup badgeProps={[{ children: '2016' }]} />
+
       <p>
         <b>Started as a designer</b>
       </p>
@@ -29,10 +26,9 @@ export function IntroductionMyBackgroundAccordion() {
         designing, i wanted to know and understand what&#39;s happening after
         the design step.
       </p>
-      <div className="mb-3 flex items-center justify-center gap-4">
-        <Badge>2017</Badge>
-        <Hr className="my-0 inline-block h-1 w-full" />
-      </div>
+
+      <BadgeHrGroup badgeProps={[{ children: '2017' }]} />
+
       <p>
         <b> From design to development, a first step</b>
       </p>
@@ -72,10 +68,9 @@ export function IntroductionMyBackgroundAccordion() {
         From there on i focused on adapting my design changes into the real user
         interfaces i initially designed.
       </p>
-      <div className="mb-3 flex items-center justify-center gap-4">
-        <Badge>2021</Badge>
-        <Hr className="my-0 inline-block h-1 w-full" />
-      </div>
+
+      <BadgeHrGroup badgeProps={[{ children: '2021' }]} />
+
       <p>
         <b>React, Next.js and TypeScript</b>
       </p>
@@ -171,27 +166,6 @@ export function IntroductionMyBackgroundAccordion() {
         Together with other tools and technologies, they build up the system
         that makes this initial thought a reality.
       </p>
-      {/*
-      
-       <Hr />
-
-      <h4 className="flex items-center gap-2">
-        <Badge>2025</Badge>
-        Create, build, learn, explore and reflect
-      </h4>
-
-      <Blockquote className="mb-0 text-foreground">
-        <p>
-          Translating an idea from the mind to production gets me excited. It means creativity flows, it
-          means freedom on a canvas, ready to be used and get painted. And it
-          means, good products come to life.
-        </p>
-        <p>
-          With all the requirements, all the people working on it, it really
-          feels fantastic once you see the application up and running, and in
-          action.
-        </p>
-      </Blockquote> */}
     </div>
   );
 }

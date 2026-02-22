@@ -4,10 +4,10 @@ import { CheckIcon } from '@heroicons/react/16/solid';
 
 import { useTheme } from '@/components/organisms/theme';
 import { ButtonGroup } from '@/components/molecules/button-group';
-import { ComponentBaseProps } from '@/lib/types';
+import { BaseComponentProps } from '@/lib/types';
 import { useEffect } from 'react';
 
-export function ThemeColorSetting({ className }: ComponentBaseProps) {
+export function ThemeColorSetting({ className }: BaseComponentProps) {
   const { theme, themeColor, setThemeColor } = useTheme();
 
   useEffect(() => {

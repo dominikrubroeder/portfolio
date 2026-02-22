@@ -10,7 +10,7 @@ import {
   SunIcon as SunIconSolid
 } from '@heroicons/react/24/solid';
 
-import type { ComponentBaseProps, PositionProp } from '@/lib/types';
+import type { BaseComponentProps, PositionProp } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/atoms/button';
@@ -49,7 +49,7 @@ export function ThemeAppearanceSelect({
   className
 }: {
   menuPosition?: PositionProp;
-} & ComponentBaseProps) {
+} & BaseComponentProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { theme, themeAppearance, setThemeAppearance } = useTheme();
 

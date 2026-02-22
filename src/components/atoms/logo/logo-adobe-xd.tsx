@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import type { LogoProps } from '@/components/atoms/logo';
 import { defaultLogoSquareSize } from '@/components/atoms/logo';
 
-export function LogoAdobeXd({ className }: LogoProps) {
+export function LogoAdobeXd({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"
@@ -11,7 +11,7 @@ export function LogoAdobeXd({ className }: LogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={cn(defaultLogoSquareSize, className)}
     >
-      <g clipPath="url(#clip0_1120_3667)">
+      <g clipPath={`url(#${id}-clip0_1120_3667)`}>
         <path
           d="M22.6672 1.78027H105.334C117.867 1.78027 128 11.9136 128 24.4469V103.914C128 116.447 117.867 126.58 105.334 126.58H22.6672C10.1338 126.58 0.000488281 116.447 0.000488281 103.914V24.4469C0.000488281 11.9136 10.1338 1.78027 22.6672 1.78027Z"
           fill="#470137"
@@ -26,7 +26,7 @@ export function LogoAdobeXd({ className }: LogoProps) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_1120_3667">
+        <clipPath id={`${id}-clip0_1120_3667`}>
           <rect
             width="128"
             height="124.8"

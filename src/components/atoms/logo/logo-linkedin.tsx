@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
+import { LogoProps } from '@/components/atoms/logo/types';
 
-export function LogoLinkedin({ className }: { className?: string }) {
+export function LogoLinkedin({ id, className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"
@@ -23,10 +24,10 @@ export function LogoLinkedin({ className }: { className?: string }) {
         fill="white"
       />
       <defs>
-        <clipPath id="clip0_752_1287">
+        <clipPath id={`${id}-clip0_752_1287`}>
           <rect width="128" height="128" fill="white" />
         </clipPath>
-        <clipPath id="clip1_752_1287">
+        <clipPath id={`${id}-clip1_752_1287`}>
           <rect
             width="128"
             height="128"
