@@ -76,6 +76,15 @@ export { LogoBaymardInstitute } from './logo-baymard-institute';
 export { LogoApple } from './logo-apple';
 export { LogoNielsenNormanGroup } from './logo-nielsen-norman-group';
 export { LogoStatista } from './logo-statista';
+export { LogoBetterAuth } from './logo-better-auth';
+export { LogoBaseUi } from './logo-base-ui';
+export { LogoHeadlessUi } from './logo-headless-ui';
+export { LogoMaterialUi } from './logo-material-ui';
+export { LogoPracticalUi } from './logo-practical-ui';
+export { LogoDribbble } from './logo-dribbble';
+export { LogoMobbin } from './logo-mobbin';
+export { LogoPinterest } from './logo-pinterest';
+export { LogoToolfolio } from './logo-toolfolio';
 
 export * from './img';
 

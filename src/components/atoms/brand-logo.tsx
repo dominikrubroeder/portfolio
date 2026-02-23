@@ -10,7 +10,9 @@ import {
   LogoAuthjs,
   LogoAws,
   LogoAxios,
+  LogoBaseUi,
   LogoBaymardInstitute,
+  LogoBetterAuth,
   LogoBrave,
   LogoBruno,
   LogoCanva,
@@ -24,6 +26,7 @@ import {
   LogoCraft,
   LogoCss,
   LogoDailydev,
+  LogoDribbble,
   LogoFigma,
   LogoFirefox,
   LogoFramer,
@@ -32,6 +35,7 @@ import {
   LogoGitlab,
   LogoGoogleAnalytics,
   LogoGoogleTagManager,
+  LogoHeadlessUi,
   LogoHeroicons,
   LogoHotjar,
   LogoHtml,
@@ -42,8 +46,10 @@ import {
   LogoLighthouse,
   LogoLinkedin,
   LogoMarkdown,
+  LogoMaterialUi,
   LogoMeilisearch,
   LogoMiro,
+  LogoMobbin,
   LogoMotion,
   LogoNetlify,
   LogoNextjs,
@@ -52,7 +58,9 @@ import {
   LogoNpm,
   LogoPa11y,
   LogoPaper,
+  LogoPinterest,
   LogoPostman,
+  LogoPracticalUi,
   type LogoProps,
   LogoRadixUi,
   LogoReact,
@@ -67,6 +75,7 @@ import {
   LogoStorybook,
   LogoTailwindCss,
   LogoTeams,
+  LogoToolfolio,
   LogoTwig,
   LogoTypescript,
   LogoTypo3,
@@ -374,6 +383,33 @@ export function BrandLogo({
 
     case 'Statista':
       return <LogoStatista id={id} className={className} />;
+
+    case 'Better Auth':
+      return <LogoBetterAuth id={id} className={className} />;
+
+    case 'Base UI':
+      return <LogoBaseUi id={id} className={className} />;
+
+    case 'Headless UI':
+      return <LogoHeadlessUi id={id} className={className} />;
+
+    case 'Material UI':
+      return <LogoMaterialUi id={id} className={className} />;
+
+    case 'Practical UI':
+      return <LogoPracticalUi id={id} className={className} />;
+
+    case 'Dribbble':
+      return <LogoDribbble id={id} className={className} />;
+
+    case 'Mobbin':
+      return <LogoMobbin id={id} className={className} />;
+
+    case 'Pinterest':
+      return <LogoPinterest id={id} className={className} />;
+
+    case 'Toolfolio':
+      return <LogoToolfolio id={id} className={className} />;
 
     default:
       return DefaultLogo;

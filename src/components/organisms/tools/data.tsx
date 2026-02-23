@@ -537,14 +537,14 @@ export const tools: Tools = [
     children: [
       {
         name: 'Dribbble',
-        description: "Discover the world's top designers & creatives",
+        description: 'Discover the World’s Top Designers',
         href: 'https://dribbble.com',
         logo: '',
         knowledge: 'Used'
       },
       {
         name: 'Mobbin',
-        description: 'Latest mobile design patterns',
+        description: 'Discover real-world design inspiration',
         href: 'https://mobbin.com',
         logo: '',
         knowledge: 'Used'
@@ -559,8 +559,7 @@ export const tools: Tools = [
       },
       {
         name: 'Toolfolio',
-        description:
-          'Discover new tools and resources for designers and developers',
+        description: 'All the Tools You Need in one place',
         href: 'https://www.toolfolio.io',
         logo: '',
         knowledge: 'Not started'
@@ -632,8 +631,7 @@ export const tools: Tools = [
     children: [
       {
         name: 'bun',
-        description:
-          'Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one',
+        description: 'Bun is a fast JavaScript all-in-one toolkit',
         href: 'https://bun.sh',
         logo: '',
         knowledge: 'Not started'
@@ -1094,7 +1092,7 @@ export const tools: Tools = [
       },
       {
         name: 'Material UI',
-        description: 'React components for faster and easier web development',
+        description: 'Ready to use Material Design components',
         href: 'https://mui.com',
         logo: '',
         knowledge: 'Used'
@@ -1102,7 +1100,7 @@ export const tools: Tools = [
       {
         name: 'Practical UI',
         description: 'Practical UI components and patterns',
-        href: 'https://practicalui.dev',
+        href: 'https://www.practical-ui.com',
         logo: '',
         knowledge: 'Professional'
       },
@@ -1132,7 +1130,7 @@ export const tools: Tools = [
       {
         name: 'Refactoring UI',
         description:
-          "Learn how to design awesome UIs by yourself using specific tactics explained from a developer's point-of-view",
+          'Make your ideas look awesome, without relying on a designer',
         href: 'https://www.refactoringui.com',
         logo: '',
         knowledge: 'Daily'
