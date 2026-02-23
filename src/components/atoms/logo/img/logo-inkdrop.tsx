@@ -7,7 +7,7 @@ import { defaultLogoSquareSize } from '@/components/atoms/logo/config';
 export function LogoInkdrop({ className }: { className?: string }) {
   return (
     <Image
-      src="/tools/logo-inkdrop.png"
+      src="/logos/logo-inkdrop.png"
       width={128}
       height={128}
       alt="Inkdrop logo"

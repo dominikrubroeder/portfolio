@@ -11,7 +11,7 @@ import {
 export function LogoAuthjs({ className }: { className?: string }) {
   return (
     <Image
-      src="/tools/logo-auth-js.png"
+      src="/logos/logo-auth-js.png"
       width={defaultLogoWidth}
       height={defaultLogoHeight}
       alt="Auth.js logo"

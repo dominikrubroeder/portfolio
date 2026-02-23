@@ -10,7 +10,7 @@ export function LogoPostman({ className }: LogoProps) {
     <Image
       width={128}
       height={128}
-      src="/tools/logo-postman.png"
+      src="/logos/logo-postman.png"
       alt="Postman Logo"
       className={cn('object-contain', defaultLogoSquareSize, className)}
     />
