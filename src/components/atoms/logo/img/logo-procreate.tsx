@@ -1,5 +1,10 @@
 import { cn } from '@/lib/utils';
-import { defaultLogoHeight, defaultLogoSquareSize, defaultLogoWidth, LogoProps } from '@/components/atoms/logo';
+import {
+  defaultLogoHeight,
+  defaultLogoSquareSize,
+  defaultLogoWidth,
+  LogoProps
+} from '@/components/atoms/logo';
 import Image from 'next/image';
 
 export function LogoProcreate({ id, className }: LogoProps) {
