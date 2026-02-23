@@ -25,6 +25,7 @@ import {
   LogoCookiehub,
   LogoCraft,
   LogoCss,
+  LogoCursor,
   LogoDailydev,
   LogoDribbble,
   LogoFigma,
@@ -46,6 +47,7 @@ import {
   LogoLighthouse,
   LogoLinkedin,
   LogoMarkdown,
+  LogoMaterialIcons,
   LogoMaterialUi,
   LogoMeilisearch,
   LogoMiro,
@@ -61,6 +63,7 @@ import {
   LogoPinterest,
   LogoPostman,
   LogoPracticalUi,
+  LogoProcreate,
   type LogoProps,
   LogoRadixUi,
   LogoReact,
@@ -73,6 +76,7 @@ import {
   LogoStatista,
   LogoStoryblok,
   LogoStorybook,
+  LogoSublimeText,
   LogoTailwindCss,
   LogoTeams,
   LogoToolfolio,
@@ -80,6 +84,7 @@ import {
   LogoTypescript,
   LogoTypo3,
   LogoUiColors,
+  LogoUpsun,
   LogoUsercentrics,
   LogoV0,
   LogoVercel,
@@ -410,6 +415,21 @@ export function BrandLogo({
 
     case 'Toolfolio':
       return <LogoToolfolio id={id} className={className} />;
+
+    case 'upsun':
+      return <LogoUpsun id={id} className={className} />;
+
+    case 'Procreate':
+      return <LogoProcreate id={id} className={className} />;
+
+    case 'Material Icons':
+      return <LogoMaterialIcons id={id} className={className} />;
+
+    case 'Cursor':
+      return <LogoCursor id={id} className={className} />;
+
+    case 'Sublime Text':
+      return <LogoSublimeText id={id} className={className} />;
 
     default:
       return DefaultLogo;

@@ -8,7 +8,7 @@ import { defaultLogoSquareSize } from '@/components/atoms/logo';
 export function LogoTwig({ className }: LogoProps) {
   return (
     <Image
-      src="/technologies/twig-logo.png"
+      src="/technologies/logo-twig.png"
       width={128}
       height={128}
       alt="Twig logo"

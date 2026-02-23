@@ -85,6 +85,10 @@ export { LogoDribbble } from './logo-dribbble';
 export { LogoMobbin } from './logo-mobbin';
 export { LogoPinterest } from './logo-pinterest';
 export { LogoToolfolio } from './logo-toolfolio';
+export { LogoUpsun } from './logo-upsun';
+export { LogoMaterialIcons } from './logo-material-icons';
+export { LogoCursor } from './logo-cursor';
+export { LogoSublimeText } from './logo-sublime-text';
 
 export * from './img';
 

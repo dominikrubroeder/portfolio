@@ -6,7 +6,7 @@ import { BaseComponentProps } from '@/lib/types';
 export function LogoInstagram({ className }: BaseComponentProps) {
   return (
     <Image
-      src="/instagram.png"
+      src="/socials/logo-instagram.png"
       width={128}
       height={128}
       alt="Instagram logo"

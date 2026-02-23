@@ -335,8 +335,7 @@ export const tools: Tools = [
       },
       {
         name: 'upsun',
-        description:
-          'The end-to-end cloud platform for building, running and scaling web applications',
+        description: 'Deliver every release with certainty',
         href: 'https://upsun.com',
         logo: '',
         knowledge: 'Used'
@@ -403,7 +402,7 @@ export const tools: Tools = [
     children: [
       {
         name: 'Procreate',
-        description: 'Made for artists, by artists',
+        description: 'Art is for everyone',
         href: 'https://procreate.art',
         logo: '',
         knowledge: 'Used'
@@ -464,12 +463,12 @@ export const tools: Tools = [
         name: 'Cursor',
         href: 'https://cursor.com',
         logo: '',
-        description: 'The AI-first code editor',
+        description: 'The best way to code with AI',
         knowledge: 'Used'
       },
       {
         name: 'Sublime Text',
-        description: 'A sophisticated text editor for code, markup and prose',
+        description: 'Text Editing, Done Right',
         href: 'https://www.sublimetext.com',
         logo: '',
         knowledge: 'Used'

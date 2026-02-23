@@ -2,14 +2,18 @@ import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
 
-import { defaultLogoSquareSize } from '@/components/atoms/logo';
+import {
+  defaultLogoHeight,
+  defaultLogoSquareSize,
+  defaultLogoWidth
+} from '@/components/atoms/logo';
 
 export function LogoAuthjs({ className }: { className?: string }) {
   return (
     <Image
-      src="/auth-js.png"
-      width={128}
-      height={128}
+      src="/tools/logo-auth-js.png"
+      width={defaultLogoWidth}
+      height={defaultLogoHeight}
       alt="Auth.js logo"
       draggable={false}
       className={cn(
