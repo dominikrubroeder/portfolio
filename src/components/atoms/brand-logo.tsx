@@ -44,12 +44,15 @@ import {
   LogoInstagram,
   LogoJavascript,
   LogoJira,
+  LogoJitter,
   LogoLighthouse,
   LogoLinkedin,
+  LogoLottieFiles,
   LogoMarkdown,
   LogoMaterialIcons,
   LogoMaterialUi,
   LogoMeilisearch,
+  LogoMidjourney,
   LogoMiro,
   LogoMobbin,
   LogoMotion,
@@ -79,11 +82,13 @@ import {
   LogoSublimeText,
   LogoTailwindCss,
   LogoTeams,
+  LogoTheVerge,
   LogoToolfolio,
   LogoTwig,
   LogoTypescript,
   LogoTypo3,
   LogoUiColors,
+  LogoUnsplash,
   LogoUpsun,
   LogoUsercentrics,
   LogoV0,
@@ -91,8 +96,10 @@ import {
   LogoVisualStudioCode,
   LogoViteJs,
   LogoWebstorm,
+  LogoWindsurf,
   LogoX,
-  LogoXing
+  LogoXing,
+  LogoZed
 } from '@/components/atoms/logo';
 
 interface BrandLogoProps extends LogoProps {
@@ -200,6 +207,14 @@ export function BrandLogo({
     return <LogoNielsenNormanGroup id={id} className={className} />;
   }
 
+  if (lowerCaseBrand.includes('chatgpt') || lowerCaseBrand.includes('dall')) {
+    return <LogoChatgpt id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('procreate')) {
+    return <LogoProcreate id={id} className={className} />;
+  }
+
   switch (group) {
     case 'Packages':
       return <LogoNpm id={id} className={className} />;
@@ -295,9 +310,6 @@ export function BrandLogo({
 
     case 'Pa11y':
       return <LogoPa11y id={id} className={className} />;
-
-    case 'ChatGPT':
-      return <LogoChatgpt id={id} className={className} />;
 
     case 'Claude':
       return <LogoClaudeAi id={id} className={className} />;
@@ -419,9 +431,6 @@ export function BrandLogo({
     case 'upsun':
       return <LogoUpsun id={id} className={className} />;
 
-    case 'Procreate':
-      return <LogoProcreate id={id} className={className} />;
-
     case 'Material Icons':
       return <LogoMaterialIcons id={id} className={className} />;
 
@@ -430,6 +439,27 @@ export function BrandLogo({
 
     case 'Sublime Text':
       return <LogoSublimeText id={id} className={className} />;
+
+    case 'Windsurf':
+      return <LogoWindsurf id={id} className={className} />;
+
+    case 'zed':
+      return <LogoZed id={id} className={className} />;
+
+    case 'Midjourney':
+      return <LogoMidjourney id={id} className={className} />;
+
+    case 'Unsplash':
+      return <LogoUnsplash id={id} className={className} />;
+
+    case 'Jitter':
+      return <LogoJitter id={id} className={className} />;
+
+    case 'LottieFiles':
+      return <LogoLottieFiles id={id} className={className} />;
+
+    case 'The Verge':
+      return <LogoTheVerge id={id} className={className} />;
 
     default:
       return DefaultLogo;

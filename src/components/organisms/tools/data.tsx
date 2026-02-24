@@ -496,8 +496,7 @@ export const tools: Tools = [
       },
       {
         name: 'zed',
-        description:
-          'Zed is a minimal code editor crafted for speed and collaboration with humans and AI.',
+        description: 'Love your editor again',
         href: 'https://zed.dev',
         logo: '',
         knowledge: 'Used'
@@ -510,7 +509,7 @@ export const tools: Tools = [
       {
         name: 'Dall-E',
         description: 'Creating images from text',
-        href: 'https://openai.com/dall-e-2',
+        href: 'https://openai.com/dall-e-3',
         logo: '',
         knowledge: 'Not started'
       },
@@ -523,7 +522,7 @@ export const tools: Tools = [
         knowledge: 'Not started'
       },
       {
-        name: 'Unplash',
+        name: 'Unsplash',
         description: "The internet's source for visuals",
         href: 'https://unsplash.com',
         logo: '',
@@ -569,16 +568,15 @@ export const tools: Tools = [
     group: 'Motion + Animation',
     children: [
       {
-        name: 'jitter.video',
-        description: 'Simple motion design tool',
+        name: 'Jitter',
+        description: 'Super fast motion for every team',
         href: 'https://jitter.video',
         logo: '',
         knowledge: 'Not started'
       },
       {
         name: 'LottieFiles',
-        description:
-          'Lightweight, scalable animations for your website and apps',
+        description: 'Great designs come alive with motion!',
         href: 'https://lottiefiles.com',
         logo: '',
         knowledge: 'Not started'
@@ -592,7 +590,7 @@ export const tools: Tools = [
       },
       {
         name: 'Procreate Dreams',
-        description: 'Animation made easy',
+        description: 'Edit. Animate. Create.',
         href: 'https://procreate.art/dreams',
         logo: '',
         knowledge: 'Not started'
@@ -611,7 +609,7 @@ export const tools: Tools = [
       },
       {
         name: 'The Verge',
-        description: 'Technology, science, art, and culture',
+        description: 'The Verge is about technology and how it makes us feel',
         href: 'https://www.theverge.com',
         logo: '',
         knowledge: 'Used'

@@ -89,6 +89,13 @@ export { LogoUpsun } from './logo-upsun';
 export { LogoMaterialIcons } from './logo-material-icons';
 export { LogoCursor } from './logo-cursor';
 export { LogoSublimeText } from './logo-sublime-text';
+export { LogoWindsurf } from './logo-windsurf';
+export { LogoZed } from './logo-zed';
+export { LogoMidjourney } from './logo-midjourney';
+export { LogoUnsplash } from './logo-unsplash';
+export { LogoJitter } from './logo-jitter';
+export { LogoLottieFiles } from './logo-lottie-files';
+export { LogoTheVerge } from './logo-the-verge';
 
 export * from './img';
 
