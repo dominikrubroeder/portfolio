@@ -6,7 +6,7 @@ export function GuidingPrinciple() {
   return (
     <Animate>
       <Container
-        className="relative z-10 space-y-2 bg-background sm:py-12"
+        className="relative z-10 space-y-2 bg-background sm:pt-12"
         id="guiding-principle"
       >
         <BadgeHrGroup badgeProps={[{ children: 'Guiding principle' }]} />
@@ -15,7 +15,7 @@ export function GuidingPrinciple() {
           "Combine design and code in one craft and you get the best of both
           worlds"
         </h2>
-        <div>Dominik Rubröder, UX Design Engineer</div>
+        <div className="sm:pb-8">Dominik Rubröder, UX Design Engineer</div>
       </Container>
     </Animate>
   );
