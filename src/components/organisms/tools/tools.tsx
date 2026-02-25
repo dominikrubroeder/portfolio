@@ -12,7 +12,8 @@ export function Tools() {
             <h2>
               Tools
               <span className="ml-2 font-medium text-muted-foreground">
-                visualize, organize and communicate the application we build
+                help to visualize, organize and communicate the application we
+                build
               </span>
             </h2>
 
