@@ -12,7 +12,7 @@ export function Projects() {
         <h2 className="mx-auto max-w-(--readable-container) bg-background">
           Projects
           <span className="ml-2 font-medium text-muted-foreground">
-            show you, in which teams i have participated yet
+            I’ve contributed to
           </span>
         </h2>
 

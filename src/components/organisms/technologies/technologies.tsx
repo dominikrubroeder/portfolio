@@ -13,8 +13,9 @@ export function Technologies() {
         <div className="space-y-3">
           <h2>
             Technologies
+            <span className="font-medium text-muted-foreground">,</span>
             <span className="ml-2 font-medium text-muted-foreground">
-              are the foundation of writing production-ready code
+              the foundation of writing production-ready code
             </span>
           </h2>
 
