@@ -1,6 +1,7 @@
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { technologies } from '@/components/organisms/technologies';
 import { BrandRow } from '@/components/organisms/brand';
+import { Ul } from '@/components/atoms/ul';
 
 export function AllTechnologies() {
   return (
@@ -22,13 +23,13 @@ export function AllTechnologies() {
                   <div className="font-bold">{item.group}</div>
 
                   {index === 0 && (
-                    <span className="absolute top-1 right-4 text-xs sm:right-21">
-                      Experience level
+                    <span className="absolute top-1/2 right-5 -translate-y-1/2 text-xs sm:right-22">
+                      Usage level
                     </span>
                   )}
                 </div>
 
-                <ul className="space-y-5 rounded border bg-background p-2 sm:p-4">
+                <Ul className="space-y-5 rounded border bg-background p-2 sm:p-4">
                   {item.children
                     .slice()
                     .sort((a, b) => a.name.localeCompare(b.name))
@@ -41,7 +42,7 @@ export function AllTechnologies() {
                         />
                       </li>
                     ))}
-                </ul>
+                </Ul>
               </div>
             </li>
           ))}

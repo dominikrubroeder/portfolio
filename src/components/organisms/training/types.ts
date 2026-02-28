@@ -1,4 +1,4 @@
-import type { KnowledgeLevel } from '@/components/organisms/tools';
+import type { UsageLevel } from '@/components/organisms/tools';
 
 export interface LearningResource {
   title: string;
@@ -9,6 +9,6 @@ export interface LearningResource {
   progress?: number;
   category?: string[];
   isCurrent?: boolean;
-  knowledge?: KnowledgeLevel;
+  knowledge?: UsageLevel;
   type?: 'video' | 'blog' | 'people' | 'Course' | 'Book';
 }

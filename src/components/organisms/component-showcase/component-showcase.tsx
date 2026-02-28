@@ -111,7 +111,7 @@ export function ComponentShowcase() {
                       className="group flex items-center justify-between gap-4"
                     >
                       <h3 className="mb-0">{component.componentName}</h3>
-                      <div className="invisible translate-y-4 opacity-0 transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="invisible translate-y-4 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 motion-safe:transition">
                         <span className="sr-only">
                           Go to $
                           {component.componentName

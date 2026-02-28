@@ -59,7 +59,7 @@ export function HeaderMenuDrawer() {
                 <li key={item.href}>
                   <button
                     className={cn(
-                      'flex w-full items-center justify-between gap-4 pb-2 transition hover:text-foreground',
+                      'flex w-full items-center justify-between gap-4 pb-2 hover:text-foreground motion-safe:transition',
                       pathname.replace('/', '') === item.href &&
                         'text-foreground',
                       item.href === activeSection && 'text-foreground'

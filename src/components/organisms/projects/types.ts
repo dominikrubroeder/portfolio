@@ -6,7 +6,8 @@ export interface Project {
   title: string;
   category: string[];
   url: string;
-  isCurrentProject: boolean;
+  isCurrent: boolean;
+  isActive: boolean;
   readableTitle: string;
   timeframe?: string;
   logo: ReactNode | undefined;

@@ -1,11 +1,11 @@
 import type { Brand } from '@/components/organisms/brand';
 
-export type KnowledgeLevel =
-  | 'Not started'
-  | 'Used'
-  | 'Experienced'
-  | 'Professional'
-  | 'Regularly'
-  | 'Daily';
+export type UsageLevel =
+  | 'Aware'
+  | 'Basic'
+  | 'Working'
+  | 'Applied'
+  | 'Advanced'
+  | 'Expert';
 
 export type Tools = { group: string; children: Brand[] }[];

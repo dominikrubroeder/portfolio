@@ -4,7 +4,7 @@ import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 
 export function GuidingPrinciple() {
   return (
-    <Animate>
+    <Animate className="xl:mb-16!">
       <Container
         className="relative z-10 space-y-2 bg-background sm:pt-12"
         id="guiding-principle"
@@ -13,9 +13,18 @@ export function GuidingPrinciple() {
 
         <h2 className="bg-background text-primary">
           "Combine design and code in one craft and you get the best of both
-          worlds"
+          worlds."
         </h2>
-        <div className="sm:pb-8">Dominik Rubröder, UX Design Engineer</div>
+
+        <p className="hidden">
+          Enhance this symbiosis with business factors and human psychology
+          patterns and you get an even richer result, which needs to be
+          translated into the UI.
+        </p>
+
+        <div className="sm:pb-8 xl:pb-12">
+          Dominik Rubröder, UX Design Engineer
+        </div>
       </Container>
     </Animate>
   );

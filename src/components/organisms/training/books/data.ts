@@ -13,7 +13,15 @@ export const books: LearningResource[] = [
     title: 'The Design of Future Things',
     author: 'Don Norman',
     href: 'https://www.nngroup.com/books/design-of-future-things/',
-    progress: 0,
+    progress: 100,
+    isCurrent: false,
+    type: 'Book'
+  },
+  {
+    title: 'Emotional Design: Why We Love (Or Hate) Everyday Things',
+    author: 'Don Norman',
+    href: 'https://www.nngroup.com/books/emotional-design/',
+    progress: 5,
     isCurrent: true,
     type: 'Book'
   },

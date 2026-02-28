@@ -15,9 +15,11 @@ import {
   LogoBetterAuth,
   LogoBrave,
   LogoBruno,
+  LogoBun,
   LogoCanva,
   LogoChatgpt,
   LogoChrome,
+  LogoClassVarianceAuthority,
   LogoClaudeAi,
   LogoClerk,
   LogoColorDesigner,
@@ -45,6 +47,7 @@ import {
   LogoJavascript,
   LogoJira,
   LogoJitter,
+  LogoJunie,
   LogoLighthouse,
   LogoLinkedin,
   LogoLottieFiles,
@@ -56,6 +59,7 @@ import {
   LogoMiro,
   LogoMobbin,
   LogoMotion,
+  LogoN8n,
   LogoNetlify,
   LogoNextjs,
   LogoNielsenNormanGroup,
@@ -64,6 +68,7 @@ import {
   LogoPa11y,
   LogoPaper,
   LogoPinterest,
+  LogoPnpm,
   LogoPostman,
   LogoPracticalUi,
   LogoProcreate,
@@ -99,6 +104,7 @@ import {
   LogoWindsurf,
   LogoX,
   LogoXing,
+  LogoYarn,
   LogoZed
 } from '@/components/atoms/logo';
 
@@ -116,7 +122,7 @@ export function BrandLogo({
   const DefaultLogo = (
     <div
       className={cn(
-        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted text-muted-foreground transition group-hover:border-border group-hover:text-foreground hover:text-foreground',
+        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted text-muted-foreground group-hover:border-border group-hover:text-foreground hover:text-foreground motion-safe:transition',
         className
       )}
     >
@@ -460,6 +466,24 @@ export function BrandLogo({
 
     case 'The Verge':
       return <LogoTheVerge id={id} className={className} />;
+
+    case 'Bun':
+      return <LogoBun id={id} className={className} />;
+
+    case 'Yarn':
+      return <LogoYarn id={id} className={className} />;
+
+    case 'pnpm':
+      return <LogoPnpm id={id} className={className} />;
+
+    case 'class-variance-authority':
+      return <LogoClassVarianceAuthority id={id} className={className} />;
+
+    case 'n8n':
+      return <LogoN8n id={id} className={className} />;
+
+    case 'Junie':
+      return <LogoJunie id={id} className={className} />;
 
     default:
       return DefaultLogo;

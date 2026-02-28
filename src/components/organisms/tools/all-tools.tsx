@@ -1,7 +1,7 @@
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { tools } from '@/components/organisms/tools';
-import { BrandRow } from '../brand';
 import { Ul } from '@/components/atoms/ul';
+import { BrandRow } from '@/components/organisms/brand';
 
 export function AllTools() {
   return (
@@ -19,7 +19,15 @@ export function AllTools() {
           .map((item, index) => (
             <li key={`all-tools-${item.group}`}>
               <div className="space-y-3 sm:space-y-4">
-                <div className="font-bold">{item.group}</div>
+                <div className="relative flex justify-between gap-4">
+                  <div className="font-bold">{item.group}</div>
+
+                  {index === 0 && (
+                    <span className="absolute top-1/2 right-5 -translate-y-1/2 text-xs sm:right-29">
+                      Usage level
+                    </span>
+                  )}
+                </div>
 
                 <Ul className="space-y-5 rounded border bg-background p-4 sm:space-y-3 sm:p-4">
                   {item.children

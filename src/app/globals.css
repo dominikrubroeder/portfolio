@@ -189,7 +189,7 @@
 
     --muted: hsl(240 23.8% 95.9%);
     --muted-foreground: hsl(240 2.3% 44%);
-    --muted-hover: hsl(240, 7%, 83%);
+    --muted-hover: hsl(240 23.8% 93%);
 
     --border: hsl(0 0% 92%);
 
@@ -201,7 +201,7 @@
 
     --container: 96rem;
     --container-md: 72rem;
-    --readable-container: 48rem;
+    --readable-container: 44rem;
 
     --font-jetbrains-mono: 'JetBrains Mono';
     --font-handwritten: 'Indie Flower';
@@ -343,11 +343,11 @@
   }
 
   h1 {
-    @apply text-6xl leading-[1.2];
+    @apply text-5xl xs:text-6xl xs:leading-[1.2];
   }
 
   h2:not(.h2) {
-    @apply text-5xl leading-[1.2];
+    @apply text-4xl xs:text-5xl xs:leading-[1.2];
   }
 
   h3,
@@ -471,6 +471,10 @@
 
 @utility scroll-mt-responsive-md {
   @apply scroll-mt-40 md:scroll-mt-44 lg:scroll-mt-16;
+}
+
+@utility break-words {
+  word-break: break-word;
 }
 
 /* Hide scrollbars for all browsers */

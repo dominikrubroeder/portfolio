@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Brand } from '@/components/organisms/brand';
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
-import { KnowledgeBar } from '@/components/atoms/knowledge-bar';
+import { UsageBar } from '@/components/molecules/usage-bar/usage-bar';
 import { cn } from '@/lib/utils';
 
 export function BrandRow({
@@ -21,12 +21,10 @@ export function BrandRow({
     <Link
       href={brand.href}
       title={`Go to external ${brand.name} website`}
-      aria-label={`Go to external ${brand.name} website`}
+      aria-label={`Click to go to external ${brand.name} website`}
       target="_blank"
-      className="group relative flex items-center justify-between gap-3 rounded p-2 transition hover:bg-muted xs:gap-4"
+      className="group relative flex items-center justify-between gap-3 rounded p-2 hover:bg-muted motion-safe:transition xs:gap-4 xl:gap-8"
     >
-      <span className="sr-only">{`Go to external ${brand.name} website`}</span>
-
       <div className="flex items-center gap-3 sm:gap-8">
         <BrandLogo
           id={`brand-row-${brand.name}-${index}`}
@@ -34,7 +32,7 @@ export function BrandRow({
           className="size-11 sm:size-12 [&>svg]:size-11 sm:[&>svg]:size-12"
         />
 
-        <div>
+        <div className="break-words">
           <b>{brand.name}</b>
 
           {showDescription && brand.description && (
@@ -46,7 +44,7 @@ export function BrandRow({
       </div>
 
       <div className="flex items-center justify-between gap-2 sm:gap-4">
-        {showKnowledgeBar && <KnowledgeBar progress={brand.knowledge} />}
+        {showKnowledgeBar && <UsageBar usageLevel={brand.knowledge} />}
 
         <Button
           variant="text-muted"

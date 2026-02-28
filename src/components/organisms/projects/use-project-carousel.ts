@@ -1,12 +1,12 @@
 'use client';
 
 import { useCallback, useMemo, useState } from 'react';
-
-import { projects } from '@/components/organisms/projects/data';
+import { getProjects } from '@/components/organisms/projects/helper';
 
 export const useProjectCarousel = () => {
   const [activeProject, setActiveProject] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(false);
+  const projects = getProjects({ sorting: 'is-current-first' });
 
   const project = useMemo(() => projects[activeProject], [activeProject]);
 
@@ -26,13 +26,23 @@ export const useProjectCarousel = () => {
     []
   );
 
+  const isShowCurrentProjectTooltip = useMemo(() => {
+    const currentProjectsCount = projects.filter(
+      (project) => project.isCurrent
+    )?.length;
+
+    return currentProjectsCount > 1;
+  }, []);
+
   return {
+    projects,
     activeProject,
     setActiveProject,
     project,
     goNext,
     goPrevious,
     isImageLoading,
+    isShowCurrentProjectTooltip,
     setIsImageLoading
   };
 };

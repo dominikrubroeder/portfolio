@@ -3,7 +3,6 @@
 import type { ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/components/organisms/theme';
 
 export function ButtonGroup({
   stretchButtons,
@@ -16,8 +15,6 @@ export function ButtonGroup({
   className?: string;
   children: ReactNode;
 }) {
-  const { theme } = useTheme();
-
   return (
     <div
       className={cn(
@@ -25,7 +22,6 @@ export function ButtonGroup({
         stretchButtons &&
           '[&>a]:flex-1 sm:[&>a]:flex-none [&>button]:flex-1 sm:[&>button]:flex-none',
         minimizeSpacing && 'gap-0 -space-x-1',
-        theme.key === 'wireframe' && className?.includes('gap-0') && 'gap-2!',
         className
       )}
     >

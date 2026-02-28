@@ -15,13 +15,52 @@ import { getTools } from '@/components/organisms/tools';
 // TODO: Complete tools and technologie logos
 export const projects: Project[] = [
   {
+    title: 'uvex',
+    category: ['Headless', 'B2C', 'Ecommerce'],
+    url: 'https://uvex-group.shop',
+    isCurrent: true,
+    isActive: true,
+    readableTitle:
+      'Protecting People – The mission of the uvex brand with its vison and with its products',
+    timeframe: 'From 2025 – Ongoing',
+    logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
+    role: ['Design Engineer'],
+    aspects: undefined,
+    tools: getTools({
+      names: [
+        'Figma',
+        'WebStorm',
+        'Shopware',
+        'Storyblok',
+        'Algolia',
+        'Auth.js',
+        'Jira',
+        'Slack',
+        'Teams',
+        'GitLab',
+        'Motion',
+        'GitLab'
+      ],
+      sortBy: 'like-input'
+    }),
+    technologies: getTechnologies({
+      names: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
+    }),
+    company: 'mediawave commerce GmbH',
+    caseStudyUrls: undefined,
+    demoUrls: undefined,
+    previewImage: '/projects/project-uvex-preview-wallpaper.png',
+    previewImageTimestamp: '2026-02-27'
+  },
+  {
     title: 'sautershop',
     category: ['Headless', 'B2C', 'Ecommerce'],
     url: 'https://www.sautershop.com/en',
-    isCurrentProject: true,
+    isCurrent: false,
+    isActive: false,
     readableTitle:
       'Quality woodworking tools and accessorizes for DIY projects',
-    timeframe: 'Ongoing – 2024',
+    timeframe: 'From 2024 – Feb. 2026',
     logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     aspects: undefined,
@@ -57,8 +96,9 @@ export const projects: Project[] = [
     url: 'https://www.mediawave.de/value-booster',
     readableTitle:
       'Kickstart in your headless ecommerce project with the mediawave Value Booster',
-    isCurrentProject: false,
-    timeframe: 'Ongoing – 2024',
+    isCurrent: true,
+    isActive: true,
+    timeframe: 'From 2024 – Ongoing',
     logo: <LogoMediawave id="projects-mediawave" className="h-12 w-auto" />,
     role: ['Frontend Developer', 'Design Consulting'],
     aspects: [
@@ -98,8 +138,9 @@ export const projects: Project[] = [
     url: 'https://www.hd-plus.de',
     readableTitle:
       'Watch television in HD — via satellite or internet (IP), on your TV and smartphone',
-    isCurrentProject: false,
-    timeframe: '2023 – 2022',
+    isCurrent: false,
+    isActive: false,
+    timeframe: 'From 2022 – 2023',
     logo: <LogoHdPlus id="projects-hd-plus" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer'],
     aspects: undefined,
@@ -134,8 +175,9 @@ export const projects: Project[] = [
     category: ['Ecommerce', 'B2C'],
     url: 'https://www.segmueller.de',
     readableTitle: 'Well-known home furniture store in Augsburg (Germany)',
-    isCurrentProject: false,
-    timeframe: '2023 – 2021',
+    isCurrent: false,
+    isActive: false,
+    timeframe: 'From 2021 – 2023',
     logo: <LogoSegmueller id="projects-segmueller" className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     aspects: undefined,
@@ -165,7 +207,8 @@ export const projects: Project[] = [
     category: ['B2B'],
     url: 'https://www.alles.auto',
     readableTitle: 'Online selling and re-selling and car service platform',
-    isCurrentProject: false,
+    isCurrent: false,
+    isActive: false,
     timeframe: '2021',
     logo: (
       <LogoAllesAuto id="projects-alles-auto" className="h-6 w-auto sm:h-12" />
@@ -187,9 +230,10 @@ export const projects: Project[] = [
     category: ['B2C', 'B2B', 'Ecommerce', 'Website'],
     url: 'https://www.loy.info',
     readableTitle:
-      'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. I spend my two and a half years training and three additional years during dual study and full-time job here. This was all about print media, digital media and my initial design and development training.',
-    isCurrentProject: false,
-    timeframe: '2021 – 2016',
+      'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. Here I spend my two and a half years of training, three additional years during dual study at the IU International University of Applied Sciences, Munich and a full-time job. It was all about digital media work, development of UI and layout, and in some parts about print media.',
+    isCurrent: false,
+    isActive: false,
+    timeframe: 'From 2016 – 2021',
     logo: <LogoLoyGmbh id="projects-loy-gmbh" className="h-12 w-auto" />,
     role: [
       'Trainee',
@@ -231,7 +275,8 @@ export const projects: Project[] = [
     category: [],
     url: 'https://www.frontendmentor.io',
     readableTitle: 'Many frontend coding challenges using a real-life workflow',
-    isCurrentProject: false,
+    isCurrent: false,
+    isActive: false,
     logo: (
       <LogoFrontendMentor
         id="projects-frontend-mentor"
@@ -270,7 +315,8 @@ export const projects: Project[] = [
     url: 'https://github.com/dominikrubroeder?tab=repositories',
     readableTitle:
       'All the private projects i did over the last years. Not in specific order or priority. Some are removed for clean-up!',
-    isCurrentProject: false,
+    isCurrent: false,
+    isActive: false,
     logo: <LogoGithub id="projects-github" className="h-12 w-auto" />,
     role: [],
     aspects: undefined,

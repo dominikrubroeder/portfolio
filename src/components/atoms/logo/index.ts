@@ -96,6 +96,11 @@ export { LogoUnsplash } from './logo-unsplash';
 export { LogoJitter } from './logo-jitter';
 export { LogoLottieFiles } from './logo-lottie-files';
 export { LogoTheVerge } from './logo-the-verge';
+export { LogoBun } from './logo-bun';
+export { LogoYarn } from './logo-yarn';
+export { LogoClassVarianceAuthority } from './logo-class-variance-authority';
+export { LogoN8n } from './logo-n8n';
+export { LogoJunie } from './logo-junie';
 
 export * from './img';
 

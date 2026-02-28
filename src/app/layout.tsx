@@ -13,6 +13,7 @@ import { ThemeProvider } from '@/components/organisms/theme';
 import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
+import { TooltipProvider } from '@/components/atoms/tooltip/shadcnui/tooltip';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -67,7 +68,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
           <Header />
 
-          <main>{children}</main>
+          <main>
+            <TooltipProvider>{children}</TooltipProvider>
+          </main>
 
           <Footer />
           <Analytics />

@@ -21,7 +21,7 @@ export function Expandable({
   return (
     <motion.div
       className={cn(
-        'cursor-pointer rounded border p-4 transition hover:bg-muted',
+        'cursor-pointer rounded border p-4 hover:bg-muted motion-safe:transition',
         className
       )}
       onClick={() => setOpen((prev) => !prev)}

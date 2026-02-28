@@ -34,7 +34,7 @@ export function Avatar({
   return (
     <Link
       href="/"
-      className="relative shrink-0 interactive transition hover:scale-[1.06] active:scale-[0.98]"
+      className="relative shrink-0 interactive hover:scale-[1.06] active:scale-[0.98] motion-safe:transition"
       title="Go to Home page"
       aria-label="Click to go to Home page"
     >

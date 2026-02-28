@@ -19,21 +19,21 @@ export const mainTechnologies: Brand[] = [
     description: 'as user interface web library',
     logo: <LogoReact id="technologies-react" className="size-12" />,
     href: 'https://react.dev/',
-    knowledge: 'Daily'
+    knowledge: 'Expert'
   },
   {
     name: 'Next.js',
     description: 'as fullstack web framework',
     logo: <LogoNextjs id="technologies-next-js" className="size-12" />,
     href: 'https://nextjs.org/',
-    knowledge: 'Daily'
+    knowledge: 'Expert'
   },
   {
     name: 'TypeScript',
     description: 'as superset to JavaScript',
     logo: <LogoTypescript id="technologies-typescript" className="size-12" />,
     href: 'https://www.typescriptlang.org/',
-    knowledge: 'Daily'
+    knowledge: 'Expert'
   },
   {
     name: 'Tailwind CSS',
@@ -42,14 +42,14 @@ export const mainTechnologies: Brand[] = [
       <LogoTailwindCss id="technologies-tailwind-css" className="size-12" />
     ),
     href: 'https://tailwindcss.com/',
-    knowledge: 'Daily'
+    knowledge: 'Expert'
   },
   {
     name: 'Motion',
     description: 'as animation library',
     logo: <LogoMotion id="technologies-motion" className="size-12" />,
     href: 'https://motion.dev/',
-    knowledge: 'Daily'
+    knowledge: 'Expert'
   }
 ];
 
@@ -62,42 +62,42 @@ export const technologies: { group: string; children: Brand[] }[] = [
         description: 'The library for web and native user interfaces',
         href: 'https://react.dev/',
         logo: <LogoReact id="technologies-react-2" className="size-12" />,
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       },
       {
         name: 'Vue.js',
         description: undefined,
         href: 'https://vuejs.org',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Working'
       },
       {
         name: 'Nue.js',
         description: undefined,
         href: 'https://nuejs.org/',
         logo: '',
-        knowledge: 'Not started'
+        knowledge: 'Basic'
       },
       {
         name: 'Svelte',
         description: 'Web development for the rest of us',
         href: 'https://svelte.dev/',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Working'
       },
       {
         name: 'SwiftUI',
         description: undefined,
         href: '',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Working'
       },
       {
         name: 'Gatsby',
         description: undefined,
         href: '',
         logo: '',
-        knowledge: 'Not started'
+        knowledge: 'Basic'
       }
     ]
   },
@@ -109,7 +109,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         description: 'The web framework for content-driven websites',
         href: 'https://astro.build/',
         logo: '',
-        knowledge: 'Not started'
+        knowledge: 'Basic'
       },
       {
         name: 'Next.js',
@@ -121,7 +121,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
             className="size-12"
           />
         ),
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       },
       {
         name: 'Remix',
@@ -129,14 +129,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
           'Focused on web standards and modern web app UX, you’re simply going to build better websites',
         href: 'https://remix.run/',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Working'
       },
       {
         name: 'Nuxt.js',
         description: undefined,
         href: '',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Working'
       },
       {
         name: 'React Router',
@@ -144,7 +144,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
           'A user-obsessed, standards-focused, multi-strategy router you can deploy anywhere.',
         href: 'https://reactrouter.com',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Working'
       }
     ]
   },
@@ -161,7 +161,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
           />
         ),
         description: 'TypeScript is JavaScript with syntax for types.',
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       },
       {
         name: 'JavaScript',
@@ -173,14 +173,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
           />
         ),
         description: 'JavaScript is the programming language of the Web.',
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       },
       {
         name: 'Swift',
         href: '',
         logo: '',
         description: undefined,
-        knowledge: 'Used'
+        knowledge: 'Working'
       }
     ]
   },
@@ -192,14 +192,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
         href: 'https://www.w3schools.com/html/',
         logo: <LogoHtml id="technologies-html" className="size-12" />,
         description: 'The default markup language for the web',
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       },
       {
         name: 'Markdown',
         href: 'https://markdown.de/',
         logo: <LogoMarkdown id="technologies-markdown" className="size-12" />,
         description: 'A simplified markup language',
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       }
     ]
   },
@@ -211,7 +211,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         href: 'https://www.w3schools.com/css/',
         logo: <LogoCss id="technologies-css" className="size-12" />,
         description: 'The default styling markup for the web',
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       },
       {
         name: 'Tailwind CSS',
@@ -224,7 +224,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         ),
         description:
           'Rapidly build modern websites without ever leaving your HTML.',
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       }
     ]
   },
@@ -236,7 +236,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         description: 'A modern animation library for JavaScript and React',
         href: 'https://motion.dev/',
         logo: '',
-        knowledge: 'Daily'
+        knowledge: 'Expert'
       }
     ]
   },
@@ -248,14 +248,14 @@ export const technologies: { group: string; children: Brand[] }[] = [
         description: undefined,
         href: '',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Working'
       },
       {
         name: 'Deno',
         description: undefined,
         href: '',
         logo: '',
-        knowledge: 'Not started'
+        knowledge: 'Basic'
       }
     ]
   },
@@ -267,7 +267,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         description: undefined,
         href: '',
         logo: '',
-        knowledge: 'Not started'
+        knowledge: 'Basic'
       }
     ]
   },
@@ -279,7 +279,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         description: undefined,
         href: 'https://vite.dev/',
         logo: '',
-        knowledge: 'Used'
+        knowledge: 'Working'
       }
     ]
   },
@@ -291,7 +291,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         description: 'Syntactically Awesome Style Sheets',
         href: 'https://sass-lang.com',
         logo: <LogoSass id="technologies-sass" />,
-        knowledge: 'Experienced'
+        knowledge: 'Applied'
       }
     ]
   },
@@ -303,7 +303,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
         description: 'The flexible, fast, and secure PHP template engine',
         href: 'https://twig.symfony.com',
         logo: <LogoTwig id="technologies-template-engine-twig" />,
-        knowledge: 'Experienced'
+        knowledge: 'Applied'
       }
     ]
   }

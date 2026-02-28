@@ -3,9 +3,11 @@
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/components/organisms/theme';
-import { ButtonProps } from '@/components/atoms/button/types';
-import { extractEmail, extractPhoneNumber } from './helper';
+import {
+  ButtonProps,
+  extractEmail,
+  extractPhoneNumber
+} from '@/components/atoms/button';
 
 export function Button({
   variant = 'contained-primary',
@@ -18,10 +20,8 @@ export function Button({
   children,
   ...rest
 }: ButtonProps) {
-  const { theme } = useTheme();
-
   const classNames = cn(
-    'interactive select-none group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center transition-all',
+    'interactive select-none group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center motion-safe:transition-all',
     variant.includes('contained') &&
       'min-h-11 min-w-11 rounded-2xl hover:rounded-xl',
     variant === 'contained-primary' &&
@@ -46,10 +46,6 @@ export function Button({
     size === 'medium' && 'text-base py-2 px-3 gap-2 [&>svg]:size-5',
     size === 'large' && 'text-lg py-2 px-3 gap-3 [&>svg]:size-6',
     rounded && 'rounded-full',
-    theme.key !== 'animate' && 'transition-none',
-    theme.key === 'wireframe' &&
-      variant === 'ghost-foreground' &&
-      'border hover:text-white hover:bg-muted after:hidden',
     className
   );
 

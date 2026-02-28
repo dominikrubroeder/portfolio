@@ -1,5 +1,5 @@
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
-import { JSON_LD_KNOWS_ABOUT } from '@/lib/seo/structured-data/index';
+import { JSON_LD_KNOWS_ABOUT } from '@/lib/seo/structured-data';
 
 export const jsonLd = {
   '@context': 'https://schema.org',
@@ -69,41 +69,47 @@ export const jsonLd = {
       description:
         'Featured web design engineering projects by Dominik Rubröder.',
       url: ROUTING_PUBLIC_DOMAIN,
-      numberOfItems: 6,
+      numberOfItems: 7,
       itemListElement: [
         {
           '@type': 'ListItem',
           position: 1,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Sautershop'
+          name: 'uvex'
         },
         {
           '@type': 'ListItem',
           position: 2,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Value Booster'
+          name: 'Sautershop'
         },
         {
           '@type': 'ListItem',
           position: 3,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'HD+'
+          name: 'Value Booster'
         },
         {
           '@type': 'ListItem',
           position: 4,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Segmüller'
+          name: 'HD+'
         },
         {
           '@type': 'ListItem',
           position: 5,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'alles.auto Service Portal'
+          name: 'Segmüller'
         },
         {
           '@type': 'ListItem',
           position: 6,
+          url: ROUTING_PUBLIC_DOMAIN,
+          name: 'alles.auto Service Portal'
+        },
+        {
+          '@type': 'ListItem',
+          position: 7,
           url: ROUTING_PUBLIC_DOMAIN,
           name: 'Loy GmbH'
         }

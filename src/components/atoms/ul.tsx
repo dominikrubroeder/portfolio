@@ -7,6 +7,7 @@ export function Ul({
   offsetLeft,
   listStyle = 'none',
   className,
+  containerClassName,
   children,
   ...rest
 }: {
@@ -14,10 +15,11 @@ export function Ul({
   offsetLeft?: boolean;
   listStyle?: 'disc' | 'none';
   className?: string;
+  containerClassName?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLUListElement>) {
   return (
-    <div className="space-y-2">
+    <div className={cn(containerClassName)}>
       {headline && <b className="block">{headline}</b>}
 
       <ul
