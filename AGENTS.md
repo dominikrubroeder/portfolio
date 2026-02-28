@@ -21,12 +21,28 @@ Before you write any code, those rules have to be followed for all concepts and 
 
 ## 📂 Project Structure
 
-- **App**: Main entry point of the application about pages and layouts
+- **App**: Main entry point of the application, pages and layouts
 - **Components**: Stored in `src/components`
 - **Hooks**: Global hooks are stored in `src/hooks`, feature- or component dedicated hooks are stored right in the
   component directory. If a hook is used in several components, it should be stored in the global hook directory
   `src/hooks`
 - **Libraries**: Stored in `src/lib`
+
+## 👨‍💻 Coding rules
+
+- Named exports only
+- No default exports
+- Always export/import from a 3-level directory structure. Example:
+    - `import { Button } from '@/components/atoms/button'`
+    - This is also true for helper files, type definitions or constants. They should be exported from the root component
+      directory and imported accordingly.
+    - Helper files are named `helper.ts`
+    - Type defintions are names `types.ts`
+    - Constants are named `constants.ts`
+    - Tests are stored right in the component directory
+- Always format after code implementation with `npm run format`
+- Write test cases accordingly for each implementation
+- When a new crucial script or command was established, make sure it is documented in the root `README.md`
 
 ## 👁️ About the Frontend-End Design Engineering Vision
 
@@ -69,8 +85,7 @@ Before you write any code, those rules have to be followed for all concepts and 
     - Templates: Templates build the structure and layout of a page. They are not the page itself yet, they consume the
       actual data which is either passed in or loaded directly in the template. The purpose of templates is to make the
       UI reusable for several pages, while having one source of truth for editing and modifying the template – letting
-      the
-      pages all adjust accordingly all at once.
+      the pages adjust accordingly all at once.
     - Pages: The actual, content-rich page the user is presented in the UI. All components come together here, and the
       page is ready for production. This also means with valid metadata for SEO and other structured data.
 - **Components**:
