@@ -35,7 +35,7 @@ export function Footer() {
           aria-label="Open Tailwind CSS documentation"
           size="xs"
         >
-          Tailwind CSS 4.2.0
+          Tailwind CSS 4.2.1
         </ExternalLink>
       </p>
 
