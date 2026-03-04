@@ -16,6 +16,8 @@ Goals:
 - The UI is predicatable
 - The UI always provides proper feedback, letting the user know what happened, what the state is and what's likely to
   happen next – the user is in the loop
+- The feedback should be subtle, passive in best case, not interrupting the active user flow, but clearly identifiable
+  and assignable to the current context
 - Use the laws of UX: [https://lawsofux.com](https://lawsofux.com) when you implement components on your own or revise
   existing components
 
@@ -27,7 +29,7 @@ Before you write any code, those rules have to be followed for all concepts and 
 - Use `sequential-thinking` MCP whenever the task requires deeper investigation
 - Prepare yourself a proper plan and tell the plan beforehand
 - Always use all files of the `docs` folder to enhance your knowledge:
-    - `docs/REACT_BEST_PRACTISES.md`
+  - `docs/REACT_BEST_PRACTISES.md`
 - Make a summary of what was executed, why this was beneficial for the whole project and if possible, tell numbers
   about the improvement (like performance gain)
 
@@ -53,13 +55,13 @@ Before you write any code, those rules have to be followed for all concepts and 
 - Named exports only
 - No default exports
 - Always export/import from a 3-level directory structure. Example:
-    - `import { Button } from '@/components/atoms/button'`
-    - This is also true for helper files, type definitions or constants. They should be exported from the root component
-      directory and imported accordingly.
-    - Helper files are named `helper.ts`
-    - Type defintions are names `types.ts`
-    - Constants are named `constants.ts`
-    - Tests are stored right in the component directory
+  - `import { Button } from '@/components/atoms/button'`
+  - This is also true for helper files, type definitions or constants. They should be exported from the root component
+    directory and imported accordingly.
+  - Helper files are named `helper.ts`
+  - Type defintions are names `types.ts`
+  - Constants are named `constants.ts`
+  - Tests are stored right in the component directory
 - Write test cases accordingly for each implementation
 - When a new crucial script or command was established, make sure it is documented in the root `README.md`
 - When an implementation requires a new dependency, always point out the reason for the dependency and request
@@ -75,7 +77,7 @@ Before you write any code, those rules have to be followed for all concepts and 
 - Choose color wisely to indicate important actions and hints for the user to navigate and make them aware of it
 - In the center of the UI should be text and storytelling, supplemented by icons and svgs
 - Use `motion` to animate the UI
-    - Do not overload motion, it should be clearly used to support a specific goal
+  - Do not overload motion, it should be clearly used to support a specific goal
 - Keep in mind all accessibility requirements for the UI, such as disabling motion when the user prefers reduced motion
 
 ## 🔵 Design System
@@ -87,26 +89,26 @@ Atomic Design approach by Brad Frost, enhanced with the Subatomic approach inclu
 - Design Tokens: Design tokens are key-value pairs of design properties stored in variables. They are getting
   consumed by their bigger entities `atoms`, `molecules`, `organisms`, `templates` and `pages`
 - Atoms: The smallest UI component. It can't be broken further down. Examples are:
-    - `button`
-    - `icon`
-    - `input`
+  - `button`
+  - `icon`
+  - `input`
 - Molecules: A group of atoms that build up a larger UI element. Examples are:
-    - `form`
-    - `dialog`
-    - `drawer`
+  - `form`
+  - `dialog`
+  - `drawer`
 - Organisms: A group of molecules and atoms resulting in a standalone content element. It is often referred to as
   a "section", so it's self-enclosed compared to other sections. Organisms can also be whole "feature-groups". So
   when a component is only used in this specific feature, and nowhere else, the component should be stored in this
   feature group with the organism directory. All
   components in this directory should be prefixed with the feature name. Examples are:
-    - `theme-context`
-    - `theme-animation-setting`
-    - `theme-color-setting`
-    - ...
-    - `live-edit-container`
-    - `live-edit-context`
-    - `live-edit-drawer`
-    - ...
+  - `theme-context`
+  - `theme-animation-setting`
+  - `theme-color-setting`
+  - ...
+  - `live-edit-container`
+  - `live-edit-context`
+  - `live-edit-drawer`
+  - ...
 - Templates: Templates build the structure and layout of a page. They are not the page itself yet, they consume the
   actual data which is either passed in or loaded directly in the template. The purpose of templates is to make the
   UI reusable for several pages, while having one source of truth for editing and modifying the template – letting
