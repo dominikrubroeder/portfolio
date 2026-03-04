@@ -5,3 +5,7 @@ export { LogoPostman } from './logo-postman';
 export { LogoTwig } from './logo-twig';
 export { LogoProcreate } from './logo-procreate';
 export { LogoPnpm } from './logo-pnpm';
+export { LogoTanStack } from './logo-tanstack';
+export { LogoZod } from './logo-zod';
+
+export * from './config';

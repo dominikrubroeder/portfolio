@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import {
   defaultLogoHeight,
+  defaultLogoImageClassName,
   defaultLogoSquareSize,
   defaultLogoWidth,
   LogoProps
@@ -14,7 +15,11 @@ export function LogoProcreate({ id, className }: LogoProps) {
       width={defaultLogoWidth}
       height={defaultLogoHeight}
       alt="Procreate logo"
-      className={cn(defaultLogoSquareSize, 'object-contain', className)}
+      className={cn(
+        defaultLogoImageClassName,
+        defaultLogoSquareSize,
+        className
+      )}
       id={id}
     />
   );

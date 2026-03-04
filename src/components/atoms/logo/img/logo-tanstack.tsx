@@ -1,7 +1,4 @@
-import Image from 'next/image';
-
 import { cn } from '@/lib/utils';
-
 import {
   defaultLogoHeight,
   defaultLogoImageClassName,
@@ -9,19 +6,22 @@ import {
   defaultLogoWidth,
   LogoProps
 } from '@/components/atoms/logo';
+import Image from 'next/image';
 
-export function LogoPostman({ className }: LogoProps) {
+export function LogoTanStack({ id, className }: LogoProps) {
   return (
     <Image
+      src="/logos/logo-tanstack.png"
       width={defaultLogoWidth}
       height={defaultLogoHeight}
-      src="/logos/logo-postman.png"
-      alt="Postman Logo"
+      alt="TanStack logo"
+      draggable={false}
       className={cn(
         defaultLogoImageClassName,
         defaultLogoSquareSize,
         className
       )}
+      id={id}
     />
   );
 }

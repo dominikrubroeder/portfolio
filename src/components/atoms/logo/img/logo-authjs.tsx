@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 
 import {
   defaultLogoHeight,
+  defaultLogoImageClassName,
   defaultLogoSquareSize,
   defaultLogoWidth
 } from '@/components/atoms/logo';
@@ -17,7 +18,7 @@ export function LogoAuthjs({ className }: { className?: string }) {
       alt="Auth.js logo"
       draggable={false}
       className={cn(
-        'shrink-0 object-contain',
+        defaultLogoImageClassName,
         defaultLogoSquareSize,
         className
       )}

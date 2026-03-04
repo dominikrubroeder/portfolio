@@ -1,7 +1,9 @@
 import { cn } from '@/lib/utils';
 
 import {
+  LogoAdobe,
   LogoAdobeIllustrator,
+  LogoAdobeInDesign,
   LogoAdobePhotoshop,
   LogoAdobeXd,
   LogoAlgolia,
@@ -28,12 +30,17 @@ import {
   LogoCraft,
   LogoCss,
   LogoCursor,
+  LogoCypress,
   LogoDailydev,
   LogoDribbble,
+  LogoElasticsearch,
+  LogoEslint,
+  LogoFactFinder,
   LogoFigma,
   LogoFirefox,
   LogoFramer,
   LogoFrontendMentor,
+  LogoGhostInspector,
   LogoGithub,
   LogoGitlab,
   LogoGoogleAnalytics,
@@ -45,9 +52,11 @@ import {
   LogoInkdrop,
   LogoInstagram,
   LogoJavascript,
+  LogoJest,
   LogoJira,
   LogoJitter,
   LogoJunie,
+  LogoKlarna,
   LogoLighthouse,
   LogoLinkedin,
   LogoLottieFiles,
@@ -67,10 +76,14 @@ import {
   LogoNpm,
   LogoPa11y,
   LogoPaper,
+  LogoPayone,
+  LogoPayPal,
   LogoPinterest,
+  LogoPlaywright,
   LogoPnpm,
   LogoPostman,
   LogoPracticalUi,
+  LogoPrettier,
   LogoProcreate,
   type LogoProps,
   LogoRadixUi,
@@ -78,17 +91,22 @@ import {
   LogoSafari,
   LogoSass,
   LogoShadcnUi,
+  LogoShopify,
   LogoShopware,
   LogoSketch,
   LogoSlack,
   LogoStatista,
   LogoStoryblok,
   LogoStorybook,
+  LogoStripe,
   LogoSublimeText,
   LogoTailwindCss,
+  LogoTanStack,
+  LogoTeamGrid,
   LogoTeams,
   LogoTheVerge,
   LogoToolfolio,
+  LogoTrello,
   LogoTwig,
   LogoTypescript,
   LogoTypo3,
@@ -105,7 +123,8 @@ import {
   LogoX,
   LogoXing,
   LogoYarn,
-  LogoZed
+  LogoZed,
+  LogoZod
 } from '@/components/atoms/logo';
 
 interface BrandLogoProps extends LogoProps {
@@ -120,14 +139,14 @@ export function BrandLogo({
   className = 'size-12'
 }: BrandLogoProps) {
   const DefaultLogo = (
-    <div
+    <span
       className={cn(
-        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted text-muted-foreground group-hover:border-border group-hover:text-foreground hover:text-foreground motion-safe:transition',
+        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted text-center text-muted-foreground group-hover:border-border group-hover:text-foreground hover:text-foreground motion-safe:transition',
         className
       )}
     >
       {brand.charAt(0)}
-    </div>
+    </span>
   );
 
   const lowerCaseBrand = brand.toLowerCase();
@@ -185,7 +204,7 @@ export function BrandLogo({
     return <LogoAuthjs className={className} />;
   }
 
-  if (brand.startsWith('@')) {
+  if (lowerCaseBrand === 'clsx' || lowerCaseBrand === 'use-debounce') {
     return <LogoNpm id={id} className={className} />;
   }
 
@@ -219,6 +238,64 @@ export function BrandLogo({
 
   if (lowerCaseBrand.includes('procreate')) {
     return <LogoProcreate id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('eslint')) {
+    return <LogoEslint id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('tanstack')) {
+    return <LogoTanStack id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('paypal')) {
+    return <LogoPayPal id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('stripe')) {
+    return <LogoStripe id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('indesign')) {
+    return <LogoAdobeInDesign id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('elasticsearch')) {
+    return <LogoElasticsearch id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('factfinder')) {
+    return <LogoFactFinder id={id} className={className} />;
+  }
+
+  if (
+    lowerCaseBrand.includes('magento') ||
+    lowerCaseBrand.includes('adobe commerce')
+  ) {
+    return <LogoAdobe id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('shopify')) {
+    return <LogoShopify id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('cypress')) {
+    return <LogoCypress id={id} className={className} />;
+  }
+
+  if (
+    lowerCaseBrand.includes('ghost inspector') ||
+    lowerCaseBrand.includes('ghostinspector')
+  ) {
+    return <LogoGhostInspector id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('jest')) {
+    return <LogoJest id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('playwright')) {
+    return <LogoPlaywright id={id} className={className} />;
   }
 
   switch (group) {
@@ -484,6 +561,24 @@ export function BrandLogo({
 
     case 'Junie':
       return <LogoJunie id={id} className={className} />;
+
+    case 'prettier':
+      return <LogoPrettier id={id} className={className} />;
+
+    case 'zod':
+      return <LogoZod id={id} className={className} />;
+
+    case 'Klarna':
+      return <LogoKlarna id={id} className={className} />;
+
+    case 'PAYONE':
+      return <LogoPayone id={id} className={className} />;
+
+    case 'TeamGrid':
+      return <LogoTeamGrid id={id} className={className} />;
+
+    case 'Trello':
+      return <LogoTrello id={id} className={className} />;
 
     default:
       return DefaultLogo;

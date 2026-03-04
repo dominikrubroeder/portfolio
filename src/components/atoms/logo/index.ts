@@ -101,8 +101,26 @@ export { LogoYarn } from './logo-yarn';
 export { LogoClassVarianceAuthority } from './logo-class-variance-authority';
 export { LogoN8n } from './logo-n8n';
 export { LogoJunie } from './logo-junie';
+export { LogoEslint } from './logo-eslint';
+export { LogoPrettier } from './logo-prettier';
+export { LogoKlarna } from './logo-klarna';
+export { LogoPayone } from './logo-payone';
+export { LogoPayPal } from './logo-paypal';
+export { LogoStripe } from './logo-stripe';
+export { LogoAdobeInDesign } from './logo-adobe-in-design';
+export { LogoTeamGrid } from './logo-teamgrid';
+export { LogoTrello } from './logo-trello';
+export { LogoElasticsearch } from './logo-elasticsearch';
+export { LogoFactFinder } from './logo-fact-finder';
+export { LogoAdobe } from './logo-adobe';
+export { LogoShopify } from './logo-shopify';
+export { LogoCypress } from './logo-cypress';
+export { LogoGhostInspector } from './logo-ghost-inspector';
+export { LogoJest } from './logo-jest';
+export { LogoPlaywright } from './logo-playwright';
 
 export * from './img';
 
 export * from './config';
 export * from './types';
+export { defaultLogoImageClassName } from '@/components/atoms/logo/img';
