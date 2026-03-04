@@ -2,6 +2,7 @@ import { ExternalLink } from '@/components/atoms/external-link';
 import { Markup } from '@/components/atoms/markup';
 import { Ul } from '@/components/atoms/ul';
 import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
+import { BrandName } from '@/components/organisms/brand';
 
 export function IntroductionMyBackgroundAccordion() {
   return (
@@ -34,10 +35,16 @@ export function IntroductionMyBackgroundAccordion() {
       </p>
       <p>
         At first, i only handled HTML and CSS changes, primarily in Shopware 5
-        at that time, which used
-        <Markup variant="muted" as="span">
-          .twig
-        </Markup>
+        at that time, which used{' '}
+        <BrandName
+          brandName="Twig"
+          label={
+            <Markup variant="muted" as="span">
+              .twig
+            </Markup>
+          }
+          className="mr-1 ml-1.5"
+        />
         as their template engine.
       </p>
       <p>
@@ -82,27 +89,48 @@ export function IntroductionMyBackgroundAccordion() {
       <p>
         With that, building large applications in the modern JavaScript
         ecosystem inevitability leads to the big players
-        <ExternalLink href="https://react.dev">React</ExternalLink> and
-        <ExternalLink href="https://nextjs.org" className="mr-0">
-          Next.js
-        </ExternalLink>
+        <BrandName
+          brandName="React"
+          label={<ExternalLink href="https://react.dev">React</ExternalLink>}
+          className="mr-1 ml-1.5"
+        />
+        and
+        <BrandName
+          brandName="Next.js"
+          label={
+            <ExternalLink href="https://nextjs.org" className="mr-0">
+              Next.js
+            </ExternalLink>
+          }
+          className="-mr-4 ml-1.5"
+        />
         .
       </p>
       <p>
         While i also took a close look at
-        <ExternalLink href="https://vuejs.org">Vue</ExternalLink> and enjoyed
-        the elegant and more &#39;premium&#39; syntax of it, i stuck and got
-        more into React because of its larger community, the wide-spread package
-        options and the job opportunities.
+        <BrandName
+          brandName="Vue"
+          label={<ExternalLink href="https://vuejs.org">Vue</ExternalLink>}
+          className="mr-1 ml-1.5"
+        />
+        and enjoyed the elegant and more &#39;premium&#39; syntax of it, i stuck
+        and got more into React because of its larger community, the wide-spread
+        package options and the job opportunities.
       </p>
       <p>
         Also, with React i felt more in the real JavaScript environment than
         with Vue (which can be a pro or a con depending on how you look at it).
       </p>
       <p>
-        <ExternalLink href="https://www.typescriptlang.org">
-          TypeScript
-        </ExternalLink>
+        <BrandName
+          brandName="TypeScript"
+          label={
+            <ExternalLink href="https://www.typescriptlang.org">
+              TypeScript
+            </ExternalLink>
+          }
+          className="mr-1"
+        />
         came as last piece to the puzzle which in the retrospective was a wise
         decision, as most of today&#39;s web applications or frameworks require
         TypeScript as the base.
@@ -110,57 +138,84 @@ export function IntroductionMyBackgroundAccordion() {
       <p>Of course, there are much more frameworks out there, like:</p>
       <Ul listStyle="disc">
         <li>
-          <ExternalLink
-            href="https://astro.build/"
-            title="Visit Astrob website"
-            aria-label="Visit Astrob website"
-          >
-            Astro
-          </ExternalLink>
+          <BrandName
+            brandName="Astro"
+            label={
+              <ExternalLink
+                href="https://astro.build/"
+                title="Visit Astrob website"
+                aria-label="Visit Astrob website"
+              >
+                Astro
+              </ExternalLink>
+            }
+          />
         </li>
         <li>
-          <ExternalLink
-            href="https://gatsbyjs.com/"
-            title="Visit Gatsby website"
-            aria-label="Visit Gatsby website"
-          >
-            Gatsby
-          </ExternalLink>
+          <BrandName
+            brandName="Gatsby"
+            label={
+              <ExternalLink
+                href="https://gatsbyjs.com/"
+                title="Visit Gatsby website"
+                aria-label="Visit Gatsby website"
+              >
+                Gatsby
+              </ExternalLink>
+            }
+          />
         </li>
         <li>
-          <ExternalLink
-            href="https://nuxtjs.org/"
-            title="Visit Nuxt website"
-            aria-label="Visit Nuxt website"
-            className="mr-1"
-          >
-            Nuxt
-          </ExternalLink>
-          (Fullstack Vue.js framework)
+          <BrandName
+            brandName="Nuxt"
+            label={
+              <>
+                <ExternalLink
+                  href="https://nuxtjs.org/"
+                  title="Visit Nuxt website"
+                  aria-label="Visit Nuxt website"
+                  className="mr-1"
+                >
+                  Nuxt
+                </ExternalLink>
+                (Fullstack Vue.js framework)
+              </>
+            }
+          />
         </li>
         <li>
-          <ExternalLink
-            href="https://remix.run/"
-            title="Visit Remix website"
-            aria-label="Visit Remix website"
-          >
-            Remix
-          </ExternalLink>
+          <BrandName
+            brandName="Remix"
+            label={
+              <ExternalLink
+                href="https://remix.run/"
+                title="Visit Remix website"
+                aria-label="Visit Remix website"
+              >
+                Remix
+              </ExternalLink>
+            }
+          />
         </li>
         <li>
-          <ExternalLink
-            href="https://svelte.dev/"
-            title="Visit Svelte website"
-            aria-label="Visit Svelte website"
-          >
-            Svelte
-          </ExternalLink>
+          <BrandName
+            brandName="Svelte"
+            label={
+              <ExternalLink
+                href="https://svelte.dev/"
+                title="Visit Svelte website"
+                aria-label="Visit Svelte website"
+              >
+                Svelte
+              </ExternalLink>
+            }
+          />
         </li>
         <li>and several more</li>
       </Ul>
       <p>
         But in the end, the tech stack is the <i>framework</i> bringing the
-        application to life, <i>not</i> the key factor of the project.
+        application to life, not the key factor of the project.
       </p>
       <p>
         Together with other tools and technologies, they build up the system
