@@ -16,14 +16,14 @@ export function GuidingPrinciple() {
           worlds."
         </h2>
 
-        <p className="hidden">
-          Enhance this symbiosis with business factors and human psychology
-          patterns and you get an even richer result, which needs to be
-          translated into the UI.
+        <p>
+          Enhance this symbiosis with brand, user, marketing, business and human
+          psychology factors and you get an even richer result, which needs to
+          be translated into the UI.
         </p>
 
-        <div className="sm:pb-8 xl:pb-12">
-          Dominik Rubröder, UX Design Engineer
+        <div className="text-right sm:pb-8 xl:pb-12">
+          – Dominik Rubröder, UX Design Engineer
         </div>
       </Container>
     </Animate>
