@@ -1,7 +1,7 @@
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { Accordion } from '@/components/atoms/accordion';
 
-export function AllBlogPosts() {
+export function BlogPostsList() {
   return (
     <ToggleContent label="All blog posts" id="all-blog-posts">
       <Accordion

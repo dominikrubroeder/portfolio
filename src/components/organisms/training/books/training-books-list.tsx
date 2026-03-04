@@ -4,7 +4,7 @@ import { AnimatedProgressListItem } from '@/components/atoms/animated-progress';
 import { Ul } from '@/components/atoms/ul';
 import { getBooks } from '@/components/organisms/training/books';
 
-export function BooksList({ className }: { className?: string }) {
+export function TrainingBooksList({ className }: { className?: string }) {
   const books = getBooks({ sorting: 'progress-100-0-A-Z' });
 
   return (

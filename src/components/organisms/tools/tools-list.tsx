@@ -3,7 +3,7 @@ import { tools } from '@/components/organisms/tools';
 import { Ul } from '@/components/atoms/ul';
 import { BrandRow } from '@/components/organisms/brand';
 
-export function AllTools() {
+export function ToolsList() {
   return (
     <ToggleContent
       label="All tools"
@@ -29,20 +29,26 @@ export function AllTools() {
                   )}
                 </div>
 
-                <Ul className="space-y-5 rounded border bg-background p-4 sm:space-y-3 sm:p-4">
-                  {item.children
-                    .slice()
-                    .sort((a, b) => a.name.localeCompare(b.name))
-                    .map((child) => (
-                      <li key={`${item.group}-${child.name}`}>
-                        <BrandRow
-                          brand={child}
-                          index={index}
-                          showKnowledgeBar
-                        />
-                      </li>
-                    ))}
-                </Ul>
+                <div className="space-y-2">
+                  <Ul className="mb-0 space-y-5 rounded border bg-background p-4 sm:space-y-3 sm:p-4">
+                    {item.children
+                      .slice()
+                      .sort((a, b) => a.name.localeCompare(b.name))
+                      .map((child) => (
+                        <li key={`${item.group}-${child.name}`}>
+                          <BrandRow
+                            brand={child}
+                            index={index}
+                            showKnowledgeBar
+                          />
+                        </li>
+                      ))}
+                  </Ul>
+
+                  {item.description && (
+                    <small className="block">{item.description}</small>
+                  )}
+                </div>
               </div>
             </li>
           ))}

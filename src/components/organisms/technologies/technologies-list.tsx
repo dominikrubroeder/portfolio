@@ -3,7 +3,7 @@ import { technologies } from '@/components/organisms/technologies';
 import { BrandRow } from '@/components/organisms/brand';
 import { Ul } from '@/components/atoms/ul';
 
-export function AllTechnologies() {
+export function TechnologiesList() {
   return (
     <ToggleContent
       label="All technologies"

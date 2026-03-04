@@ -1,7 +1,7 @@
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
 import { BrandList } from '@/components/organisms/brand';
-import { AllTools, mainTools } from '@/components/organisms/tools';
+import { mainTools, ToolsList } from '@/components/organisms/tools';
 
 export function Tools() {
   return (
@@ -23,7 +23,7 @@ export function Tools() {
           <BrandList brands={mainTools} />
         </div>
 
-        <AllTools />
+        <ToolsList />
       </Container>
     </Animate>
   );

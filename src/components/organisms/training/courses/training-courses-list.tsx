@@ -2,7 +2,7 @@ import { AnimatedProgressListItem } from '@/components/atoms/animated-progress';
 import { Ul } from '@/components/atoms/ul';
 import { getCourses } from '@/components/organisms/training/courses/helper';
 
-export function CoursesList() {
+export function TrainingCoursesList() {
   const courses = getCourses({ sortBy: 'progress-100-0-A-Z' });
 
   return (

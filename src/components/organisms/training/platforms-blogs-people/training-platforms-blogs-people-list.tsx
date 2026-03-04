@@ -2,7 +2,7 @@ import { AnimatedProgressListItem } from '@/components/atoms/animated-progress';
 import { Ul } from '@/components/atoms/ul';
 import { getPlatformsBlogsPeople } from '@/components/organisms/training/platforms-blogs-people';
 
-export function PlatformsBlogsPeopleList() {
+export function TrainingPlatformsBlogsPeopleList() {
   const platformsBlogsPeople = getPlatformsBlogsPeople({ sortBy: 'type-A-Z' });
 
   return (

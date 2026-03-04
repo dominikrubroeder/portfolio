@@ -1,4 +1,4 @@
 export { Blog } from './blog';
-export { AllBlogPosts } from './all-blog-posts';
+export { BlogPostsList } from './blog-posts-list';
 
 export * from './blog-posts';
