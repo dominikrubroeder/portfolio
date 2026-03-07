@@ -7,8 +7,10 @@ import {
   LogoAdobePhotoshop,
   LogoAdobeXd,
   LogoAlgolia,
+  LogoAngular,
   LogoApple,
   LogoArc,
+  LogoAstro,
   LogoAuthjs,
   LogoAws,
   LogoAxios,
@@ -32,6 +34,7 @@ import {
   LogoCursor,
   LogoCypress,
   LogoDailydev,
+  LogoDeno,
   LogoDribbble,
   LogoElasticsearch,
   LogoEslint,
@@ -45,6 +48,7 @@ import {
   LogoGitlab,
   LogoGoogleAnalytics,
   LogoGoogleTagManager,
+  LogoGraphQl,
   LogoHeadlessUi,
   LogoHeroicons,
   LogoHotjar,
@@ -72,8 +76,11 @@ import {
   LogoNetlify,
   LogoNextjs,
   LogoNielsenNormanGroup,
+  LogoNodeJs,
   LogoNotes,
   LogoNpm,
+  LogoNueJs,
+  LogoNuxt,
   LogoPa11y,
   LogoPaper,
   LogoPayone,
@@ -88,6 +95,7 @@ import {
   type LogoProps,
   LogoRadixUi,
   LogoReact,
+  LogoRemix,
   LogoSafari,
   LogoSass,
   LogoShadcnUi,
@@ -100,6 +108,9 @@ import {
   LogoStorybook,
   LogoStripe,
   LogoSublimeText,
+  LogoSvelte,
+  LogoSwift,
+  LogoSwiftUi,
   LogoTailwindCss,
   LogoTanStack,
   LogoTeamGrid,
@@ -118,6 +129,7 @@ import {
   LogoVercel,
   LogoVisualStudioCode,
   LogoViteJs,
+  LogoVueJs,
   LogoWebstorm,
   LogoWindsurf,
   LogoX,
@@ -296,6 +308,22 @@ export function BrandLogo({
 
   if (lowerCaseBrand.includes('playwright')) {
     return <LogoPlaywright id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('svelte')) {
+    return <LogoSvelte id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('swiftui')) {
+    return <LogoSwiftUi id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('vue.js')) {
+    return <LogoVueJs id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('angular')) {
+    return <LogoAngular id={id} className={className} />;
   }
 
   switch (group) {
@@ -579,6 +607,30 @@ export function BrandLogo({
 
     case 'Trello':
       return <LogoTrello id={id} className={className} />;
+
+    case 'Nue.js':
+      return <LogoNueJs id={id} className={className} />;
+
+    case 'Astro':
+      return <LogoAstro id={id} className={className} />;
+
+    case 'Nuxt':
+      return <LogoNuxt id={id} className={className} />;
+
+    case 'Remix':
+      return <LogoRemix id={id} className={className} />;
+
+    case 'Swift':
+      return <LogoSwift id={id} className={className} />;
+
+    case 'GraphQL':
+      return <LogoGraphQl id={id} className={className} />;
+
+    case 'Deno':
+      return <LogoDeno id={id} className={className} />;
+
+    case 'Node.js':
+      return <LogoNodeJs id={id} className={className} />;
 
     default:
       return DefaultLogo;
