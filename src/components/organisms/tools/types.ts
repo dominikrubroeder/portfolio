@@ -8,4 +8,8 @@ export type UsageLevel =
   | 'Advanced'
   | 'Expert';
 
-export type Tools = { group: string; children: Brand[] }[];
+export type Tools = {
+  group: string;
+  children: Brand[];
+  description?: string;
+}[];
