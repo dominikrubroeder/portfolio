@@ -44,7 +44,9 @@ export function BrandRow({
       </div>
 
       <div className="flex items-center justify-between gap-2 sm:gap-3">
-        {showKnowledgeBar && <UsageBar usageLevel={brand.knowledge} />}
+        {showKnowledgeBar && brand.usageLevel && (
+          <UsageBar usageLevel={brand.usageLevel} />
+        )}
 
         <Button
           variant="text-muted"
