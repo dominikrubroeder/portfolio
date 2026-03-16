@@ -22,7 +22,7 @@ export function HomeTemplate() {
       as="div"
       size="container"
       horizontalPadding
-      className="space-y-12 sm:space-y-24"
+      className="space-y-12 sm:space-y-21"
     >
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
 
