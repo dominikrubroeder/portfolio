@@ -199,9 +199,8 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
 
+    --container-readable: 44rem;
     --container: 96rem;
-    --container-md: 72rem;
-    --readable-container: 44rem;
 
     --font-jetbrains-mono: 'JetBrains Mono';
     --font-handwritten: 'Indie Flower';
