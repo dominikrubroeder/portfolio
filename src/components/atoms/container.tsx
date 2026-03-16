@@ -28,7 +28,7 @@ export function Container({
         horizontalPadding && 'px-4 lg:px-0',
         animateIn && 'motion-safe:animate-fade-up-1rem',
         size === 'container' && 'max-w-(--container)',
-        size === 'md' && 'max-w-(--container-md)',
+        size === 'md' && 'max-w-md',
         size === 'readable-container' && 'max-w-(--readable-container)',
         className
       )}
