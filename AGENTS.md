@@ -6,7 +6,7 @@
 
 Mission: Make others easily aware of my background, skill set and drivers
 
-Vision: Combine design and code into one craft
+Vision: Combine design and code into one craft. Design at the core, code in execution.
 
 Goals:
 
@@ -68,12 +68,13 @@ Before you write any code, those rules have to be followed for all concepts and 
   confirmation before installation
 - When you finish an implementation, run `npm run format && npm run build` to ensure the implementation is error-less
 
-## 👁️ About the Frontend Design Engineering Vision
+## 👁️ About the Frontend Design Engineer Vision
 
 - Design with code
 - Code by design
 - Sync design and code in frontend design engineering, it's one craft
 - Focus on a color-rich, but not overloaded UI appearance
+  - Use the 60/30/10 color rule
 - Choose color wisely to indicate important actions and hints for the user to navigate and make them aware of it
 - In the center of the UI should be text and storytelling, supplemented by icons and svgs
 - Use `motion` to animate the UI
