@@ -10,23 +10,31 @@ export function BrandLink({
   brand,
   size = 'medium',
   showLabel,
-  labelPosition = 'top'
+  labelPosition = 'top',
+  href,
+  title,
+  ariaLabel,
+  className
 }: {
   brandLogoId: string;
   brand: Brand;
   size?: 'small' | 'medium';
   showLabel?: boolean;
   labelPosition?: 'top' | 'bottom' | 'left' | 'right';
+  href?: string;
+  title?: string;
+  ariaLabel?: string;
+  className?: string;
 }) {
   return (
     <Button
       variant="ghost-foreground"
-      href={brand.href}
-      title={`Open ${brand.name} website`}
-      aria-label={`Open ${brand.name} website`}
+      href={href || brand.href}
+      title={title || `Open ${brand.name} website`}
+      aria-label={ariaLabel || `Open ${brand.name} website`}
       className={cn(
         'group relative [&>img]:block [&>svg]:block',
-        size === 'small' && 'h-14 w-16 p-1 [&>img]:size-8 [&>svg]:size-8',
+        size === 'small' && 'h-11 w-11 p-1 [&>img]:size-6 [&>svg]:size-6',
         size === 'medium' && 'h-17 w-18 p-2 [&>img]:size-12 [&>svg]:size-12',
         showLabel &&
           (labelPosition === 'top' || labelPosition === 'bottom') &&
@@ -34,7 +42,8 @@ export function BrandLink({
         showLabel &&
           (labelPosition === 'left' || labelPosition === 'right') &&
           'flex items-center',
-        showLabel && 'gap-3'
+        showLabel && 'gap-3',
+        className
       )}
     >
       {!!brand.logo ? (
@@ -47,8 +56,14 @@ export function BrandLink({
         />
       )}
 
-      <div className="absolute -top-1.5 -right-1.5 flex size-5 -rotate-45 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 group-hover:opacity-100">
-        <ArrowRightIcon className="size-3" />
+      <div
+        className={cn(
+          'absolute flex -rotate-45 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 group-hover:opacity-100',
+          size === 'small' && '-top-1 -right-1 size-4 [&>svg]:size-3',
+          size === 'medium' && '-top-1.5 -right-1.5 size-5 [&>svg]:size-3'
+        )}
+      >
+        <ArrowRightIcon />
       </div>
 
       <span
