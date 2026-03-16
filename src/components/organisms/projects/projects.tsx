@@ -14,11 +14,11 @@ export function Projects() {
       >
         <div className="hidden" aria-hidden="true">
           {projects.map(
-            (p) =>
-              p.previewImage && (
+            (project) =>
+              project.previewImage && (
                 <Image
-                  key={p.previewImage}
-                  src={p.previewImage}
+                  key={project.previewImage}
+                  src={project.previewImage}
                   width={800}
                   height={500}
                   loading="eager"

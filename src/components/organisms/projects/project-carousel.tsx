@@ -48,10 +48,10 @@ export function ProjectCarousel() {
           aria-label={`Go to external ${project.title} website`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-96 w-full interactive items-center justify-center rounded border p-4 sm:h-112"
+          className="flex h-96 w-full interactive items-center justify-center rounded border p-4 md:h-112"
         >
           {project.previewImage ? (
-            <figure className="relative h-full w-full">
+            <figure className="relative h-full w-full md:h-auto">
               {isImageLoading && (
                 <div
                   className="absolute inset-0 z-10 flex animate-pulse items-center justify-center rounded bg-muted"
@@ -66,7 +66,7 @@ export function ProjectCarousel() {
                 alt={`Preview image of project ${project.title}`}
                 draggable={false}
                 className={cn(
-                  'absolute top-0 left-0 h-full max-h-84 w-full rounded object-cover object-left transition-opacity duration-300 md:relative md:h-auto md:object-contain',
+                  'absolute top-0 left-0 h-full max-h-84 w-full rounded object-cover object-left md:relative md:max-h-none md:object-contain',
                   isImageLoading ? 'opacity-0' : 'opacity-100'
                 )}
                 loading="eager"
@@ -74,7 +74,7 @@ export function ProjectCarousel() {
               />
 
               {project.previewImageTimestamp && (
-                <figcaption className="absolute -bottom-1 left-1/2 w-max -translate-x-1/2 space-x-1">
+                <figcaption className="absolute -bottom-1 left-1/2 w-max -translate-x-1/2 space-x-1 md:relative md:bottom-auto md:left-auto md:w-auto md:translate-x-0">
                   <span>Screenshot from</span>
                   <span>
                     {formatDate({
@@ -240,6 +240,33 @@ export function ProjectCarousel() {
 
                         <div className="text-foreground">
                           {project.role?.join(', ')}
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {project.companies?.length ? (
+                      <div>
+                        <small className="block text-muted-foreground">
+                          Company
+                        </small>
+
+                        <div className="text-foreground">
+                          {project.companies.map(({ href, label }, index) => {
+                            if (href) {
+                              return (
+                                <ExternalLink
+                                  key={href + index}
+                                  href={href}
+                                  aria-label={`Go to external ${label} website`}
+                                  className="-ml-4"
+                                >
+                                  {label}
+                                </ExternalLink>
+                              );
+                            } else {
+                              return label;
+                            }
+                          })}
                         </div>
                       </div>
                     ) : null}
