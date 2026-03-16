@@ -167,7 +167,9 @@ export const tools: Tools = [
         description: 'Opensource IDE for exploring and testing APIs',
         knowledge: 'Working'
       }
-    ]
+    ],
+    description:
+      'In day to day work, i use the IDE and the actual local development environment as preview for the APIs. Only when the team or the task requires an external API client, i plug them into the workflow.'
   },
   {
     group: 'Authentication',
@@ -700,7 +702,7 @@ export const tools: Tools = [
           'High-quality, headless utilities for modern web development',
         href: 'https://tanstack.com',
         logo: '',
-        knowledge: 'Basic'
+        knowledge: 'Aware'
       },
       {
         name: 'class-variance-authority',
@@ -756,6 +758,13 @@ export const tools: Tools = [
         name: '@eslint/config',
         description: 'Find and fix problems in your JavaScript code',
         href: 'https://eslint.org',
+        logo: '',
+        knowledge: 'Expert'
+      },
+      {
+        name: 'next-intl',
+        description: 'Internationalization for Next.js',
+        href: 'https://next-intl.dev',
         logo: '',
         knowledge: 'Expert'
       },
@@ -859,9 +868,11 @@ export const tools: Tools = [
           'TypeScript-first schema validation with static type inference',
         href: 'https://zod.dev',
         logo: '',
-        knowledge: 'Expert'
+        knowledge: 'Applied'
       }
-    ]
+    ],
+    description:
+      "In case you can't find a popular package, you can always reach out and get in touch to clarify the experience with it."
   },
   {
     group: 'Payment',
@@ -871,10 +882,10 @@ export const tools: Tools = [
         description: 'Smooth payments',
         href: 'https://www.klarna.com',
         logo: '',
-        knowledge: 'Basic'
+        knowledge: 'Aware'
       },
       {
-        name: 'PayOne',
+        name: 'PAYONE',
         description: 'Payment service provider',
         href: 'https://www.payone.com',
         logo: '',
@@ -892,7 +903,7 @@ export const tools: Tools = [
         description: 'Online payment processing for internet businesses',
         href: 'https://stripe.com',
         logo: '',
-        knowledge: 'Basic'
+        knowledge: 'Aware'
       }
     ]
   },
@@ -944,7 +955,7 @@ export const tools: Tools = [
         href: 'https://www.atlassian.com/software/jira',
         logo: '',
         description: 'Issue & project tracking software',
-        knowledge: 'Expert'
+        knowledge: 'Advanced'
       },
       {
         name: 'Miro',
@@ -957,15 +968,15 @@ export const tools: Tools = [
         name: 'TeamGrid',
         href: 'https://teamgrid.app',
         logo: '',
-        description: 'Project management and team collaboration',
+        description: 'Work. Better. Together.',
         knowledge: 'Advanced'
       },
       {
         name: 'Trello',
         href: 'https://www.trello.com/',
         logo: '',
-        description: '',
-        knowledge: 'Basic'
+        description: 'Capture, organize, and tackle your to-dos from anywhere.',
+        knowledge: 'Aware'
       }
     ]
   },
@@ -1014,11 +1025,18 @@ export const tools: Tools = [
         knowledge: 'Applied'
       },
       {
-        name: 'Elastic Search',
+        name: 'Elasticsearch',
         href: 'https://www.elastic.co/elasticsearch',
         logo: '',
         description: 'Distributed, RESTful search and analytics engine',
-        knowledge: 'Basic'
+        knowledge: 'Aware'
+      },
+      {
+        name: 'FactFinder',
+        href: 'https://www.fact-finder.de',
+        logo: '',
+        description: 'Help every visitor find the right product, fast.',
+        knowledge: 'Aware'
       },
       {
         name: 'meilisearch',
@@ -1037,15 +1055,14 @@ export const tools: Tools = [
         name: 'Shopify',
         href: 'https://www.shopify.com',
         logo: '',
-        description: 'Commerce platform for everyone',
-        knowledge: 'Basic'
+        description: 'The All-in-One Commerce Platform for Businesses',
+        knowledge: 'Aware'
       },
       {
         name: 'Shopware',
         href: 'https://www.shopware.com',
         logo: <LogoShopware id="tools-shopware" />,
-        description:
-          'The leading edge of ecommerce. Your business faster, limitless.',
+        description: 'Open commerce. Full control. Agentic by design.',
         knowledge: 'Expert'
       },
       {
@@ -1053,7 +1070,7 @@ export const tools: Tools = [
         href: 'https://business.adobe.com/de/products/magento/magento-commerce.html',
         logo: '',
         description: 'Flexible, scalable eCommerce solutions',
-        knowledge: 'Basic'
+        knowledge: 'Aware'
       }
     ]
   },
@@ -1064,7 +1081,7 @@ export const tools: Tools = [
         name: 'Ghost Inspector',
         href: 'https://ghostinspector.com',
         logo: '',
-        description: 'Automated browser testing',
+        description: 'Catch bugs before they cost you',
         knowledge: 'Working'
       },
       {
@@ -1079,14 +1096,14 @@ export const tools: Tools = [
         href: 'https://playwright.dev',
         logo: '',
         description: 'Reliable end-to-end testing for modern web apps',
-        knowledge: 'Basic'
+        knowledge: 'Aware'
       },
       {
         name: 'cypress',
         href: 'https://www.cypress.io',
         logo: '',
         description: 'Browser testing for modern teams',
-        knowledge: 'Basic'
+        knowledge: 'Aware'
       }
     ]
   },
@@ -1114,13 +1131,6 @@ export const tools: Tools = [
         href: 'https://mui.com',
         logo: '',
         knowledge: 'Working'
-      },
-      {
-        name: 'Practical UI',
-        description: 'Practical UI components and patterns',
-        href: 'https://www.practical-ui.com',
-        logo: '',
-        knowledge: 'Advanced'
       },
       {
         name: 'Radix UI',
