@@ -12,9 +12,9 @@ export function Technologies() {
       <Container className="space-y-2" id="technologies">
         <div className="space-y-3">
           <h2>
-            Technologies
+            Technologies,
             <span className="ml-2 font-medium text-muted-foreground">
-              , the foundation of writing production-ready code
+              the foundation of writing production-ready code
             </span>
           </h2>
 
