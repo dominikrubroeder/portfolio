@@ -1,15 +1,25 @@
 import {
+  LogoAngular,
+  LogoAstro,
   LogoCss,
+  LogoDeno,
+  LogoGraphQl,
   LogoHtml,
   LogoJavascript,
   LogoMarkdown,
   LogoMotion,
   LogoNextjs,
+  LogoNodeJs,
+  LogoNueJs,
   LogoReact,
   LogoSass,
+  LogoSvelte,
+  LogoSwift,
+  LogoSwiftUi,
   LogoTailwindCss,
   LogoTwig,
-  LogoTypescript
+  LogoTypescript,
+  LogoVueJs
 } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';
 
@@ -58,46 +68,66 @@ export const technologies: { group: string; children: Brand[] }[] = [
     group: 'Framework + Library',
     children: [
       {
+        name: 'Angular',
+        description:
+          'The framework for building scalable web apps with confidence',
+        href: 'https://angular.dev',
+        logo: (
+          <LogoAngular
+            id="technologies-framework-angular"
+            className="size-12"
+          />
+        ),
+        knowledge: 'Aware'
+      },
+      {
         name: 'React',
         description: 'The library for web and native user interfaces',
         href: 'https://react.dev/',
-        logo: <LogoReact id="technologies-react-2" className="size-12" />,
+        logo: (
+          <LogoReact id="technologies-framework-react" className="size-12" />
+        ),
         knowledge: 'Expert'
       },
       {
         name: 'Vue.js',
-        description: undefined,
+        description: 'The Progressive JavaScript Framework',
         href: 'https://vuejs.org',
-        logo: '',
+        logo: (
+          <LogoVueJs id="technologies-framework-vue-js" className="size-12" />
+        ),
         knowledge: 'Working'
       },
       {
         name: 'Nue.js',
-        description: undefined,
+        description: 'The UNIX of the Web',
         href: 'https://nuejs.org/',
-        logo: '',
-        knowledge: 'Basic'
+        logo: (
+          <LogoNueJs id="technologies-framework-nue-js" className="size-12" />
+        ),
+        knowledge: 'Aware'
       },
       {
         name: 'Svelte',
         description: 'Web development for the rest of us',
         href: 'https://svelte.dev/',
-        logo: '',
-        knowledge: 'Working'
+        logo: (
+          <LogoSvelte id="technologies-framework-svelte" className="size-12" />
+        ),
+        knowledge: 'Basic'
       },
       {
         name: 'SwiftUI',
-        description: undefined,
-        href: '',
-        logo: '',
+        description:
+          'Innovative, exceptionally simple way to build user interfaces across all Apple platforms with the power of Swift',
+        href: 'https://developer.apple.com/swiftui/',
+        logo: (
+          <LogoSwiftUi
+            id="technologies-framework-swift-ui"
+            className="size-12"
+          />
+        ),
         knowledge: 'Working'
-      },
-      {
-        name: 'Gatsby',
-        description: undefined,
-        href: '',
-        logo: '',
-        knowledge: 'Basic'
       }
     ]
   },
@@ -108,8 +138,10 @@ export const technologies: { group: string; children: Brand[] }[] = [
         name: 'Astro',
         description: 'The web framework for content-driven websites',
         href: 'https://astro.build/',
-        logo: '',
-        knowledge: 'Basic'
+        logo: (
+          <LogoAstro id="technologies-full-stack-astro" className="size-12" />
+        ),
+        knowledge: 'Aware'
       },
       {
         name: 'Next.js',
@@ -125,18 +157,17 @@ export const technologies: { group: string; children: Brand[] }[] = [
       },
       {
         name: 'Remix',
-        description:
-          'Focused on web standards and modern web app UX, you’re simply going to build better websites',
+        description: 'A Full Stack Framework Built on Web APIs',
         href: 'https://remix.run/',
         logo: '',
-        knowledge: 'Working'
+        knowledge: 'Basic'
       },
       {
-        name: 'Nuxt.js',
-        description: undefined,
-        href: '',
+        name: 'Nuxt',
+        description: 'The Full-Stack Vue Framework',
+        href: 'https://nuxt.com',
         logo: '',
-        knowledge: 'Working'
+        knowledge: 'Aware'
       },
       {
         name: 'React Router',
@@ -144,7 +175,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
           'A user-obsessed, standards-focused, multi-strategy router you can deploy anywhere.',
         href: 'https://reactrouter.com',
         logo: '',
-        knowledge: 'Working'
+        knowledge: 'Basic'
       }
     ]
   },
@@ -177,10 +208,16 @@ export const technologies: { group: string; children: Brand[] }[] = [
       },
       {
         name: 'Swift',
-        href: '',
-        logo: '',
-        description: undefined,
-        knowledge: 'Working'
+        href: 'https://developer.apple.com/swift/',
+        logo: (
+          <LogoSwift
+            id="technologies-programming-language-swift"
+            className="size-12"
+          />
+        ),
+        description:
+          'A powerful and intuitive programming language for iOS, iPadOS, macOS, tvOS, and watchOS',
+        knowledge: 'Basic'
       }
     ]
   },
@@ -245,17 +282,27 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'Node.js',
-        description: undefined,
-        href: '',
-        logo: '',
-        knowledge: 'Working'
+        description: 'Run JavaScript everywhere',
+        href: 'https://nodejs.org/en',
+        logo: (
+          <LogoNodeJs
+            id="technologies-runtime-environment-node-js"
+            className="size-12"
+          />
+        ),
+        knowledge: 'Aware'
       },
       {
         name: 'Deno',
-        description: undefined,
-        href: '',
-        logo: '',
-        knowledge: 'Basic'
+        description: 'The next generation JavaScript runtime',
+        href: 'https://deno.com',
+        logo: (
+          <LogoDeno
+            id="technologies-runtime-environment-deno"
+            className="size-12"
+          />
+        ),
+        knowledge: 'Aware'
       }
     ]
   },
@@ -264,10 +311,11 @@ export const technologies: { group: string; children: Brand[] }[] = [
     children: [
       {
         name: 'GraphQL',
-        description: undefined,
-        href: '',
-        logo: '',
-        knowledge: 'Basic'
+        description:
+          'Open-source data query and manipulation language for APIs',
+        href: 'https://graphql.org',
+        logo: <LogoGraphQl id="technologies-query-language-graph-ql" />,
+        knowledge: 'Aware'
       }
     ]
   },
