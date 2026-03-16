@@ -109,7 +109,7 @@ export function IntroductionMyBackgroundAccordion() {
       <p>
         While i also took a close look at
         <BrandName
-          brandName="Vue"
+          brandName="Vue.js"
           label={<ExternalLink href="https://vuejs.org">Vue</ExternalLink>}
           className="mr-1 ml-1.5"
         />
@@ -147,20 +147,6 @@ export function IntroductionMyBackgroundAccordion() {
                 aria-label="Visit Astrob website"
               >
                 Astro
-              </ExternalLink>
-            }
-          />
-        </li>
-        <li>
-          <BrandName
-            brandName="Gatsby"
-            label={
-              <ExternalLink
-                href="https://gatsbyjs.com/"
-                title="Visit Gatsby website"
-                aria-label="Visit Gatsby website"
-              >
-                Gatsby
               </ExternalLink>
             }
           />

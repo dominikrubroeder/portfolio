@@ -17,9 +17,9 @@ export function IntroductionDegreesList() {
             <CheckBadgeIcon className="mt-1 size-6! text-primary" />
 
             <span className="space-x-1.5">
-              <b className="text-foreground">Bachelor of Arts</b>
+              <b className="text-foreground">Media Design B.A.</b>
               <span className="text-muted-foreground">
-                – Media Design B.A, Dual study at IU university in Munich
+                – Dual study at the IU International University in Munich,
                 graduating in 2023
               </span>
             </span>
@@ -39,9 +39,10 @@ export function IntroductionDegreesList() {
             <CheckBadgeIcon className="mt-1 size-6! text-primary" />
 
             <span className="space-x-1.5">
-              <b className="text-foreground">Trainee</b>
+              <b className="text-foreground">Media Designer</b>
               <span className="text-muted-foreground">
-                – as a media designer in design and technology back in 2016
+                – Trainee as Media Designer in Design and Technology, back in
+                2016
               </span>
             </span>
           </span>

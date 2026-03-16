@@ -22,6 +22,9 @@ export function IntroductionHowIWorkAccordion() {
         <b>Design better user interfaces with psychology</b>
       </li>
       <li>
+        <b>Design context-aware</b>
+      </li>
+      <li>
         <b>Mindful hands-on mentality</b>
       </li>
       <li>
