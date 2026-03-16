@@ -18,11 +18,7 @@ import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger
-} from '@/components/atoms/tooltip/shadcnui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/atoms/tooltip/shadcnui/tooltip';
 import { ButtonGroup } from '@/components/molecules/button-group';
 
 export function ProjectCarousel() {
@@ -250,7 +246,14 @@ export function ProjectCarousel() {
                           Company
                         </small>
 
-                        <div className="text-foreground">
+                        <div
+                          className={cn(
+                            'text-foreground',
+                            project.companies.some((company) => !!company.href)
+                              ? '-ml-1'
+                              : ''
+                          )}
+                        >
                           {project.companies.map(({ href, label }, index) => {
                             if (href) {
                               return (
@@ -258,7 +261,7 @@ export function ProjectCarousel() {
                                   key={href + index}
                                   href={href}
                                   aria-label={`Go to external ${label} website`}
-                                  className="-ml-4"
+                                  className="flex"
                                 >
                                   {label}
                                 </ExternalLink>
@@ -283,7 +286,7 @@ export function ProjectCarousel() {
                       </div>
                     ) : null}
 
-                    {project.aspects?.length && (
+                    {project.aspects?.length ? (
                       <Ul
                         headline="Aspects"
                         listStyle="disc"
@@ -296,9 +299,9 @@ export function ProjectCarousel() {
                           </li>
                         ))}
                       </Ul>
-                    )}
+                    ) : null}
 
-                    {project.caseStudyUrls?.length && (
+                    {project.caseStudyUrls?.length ? (
                       <div className="space-y-4">
                         <div className="flex flex-wrap items-center gap-2">
                           <small className="block text-muted-foreground">
@@ -322,9 +325,9 @@ export function ProjectCarousel() {
                           ))}
                         </Ul>
                       </div>
-                    )}
+                    ) : null}
 
-                    {project.demoUrls?.length && (
+                    {project.demoUrls?.length ? (
                       <div className="space-y-4">
                         <div className="flex flex-wrap items-center gap-2">
                           <small className="block text-muted-foreground">
@@ -348,7 +351,7 @@ export function ProjectCarousel() {
                           ))}
                         </Ul>
                       </div>
-                    )}
+                    ) : null}
 
                     {project.tools?.length ? (
                       <div className="space-y-4 pb-4">
