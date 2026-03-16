@@ -21,7 +21,7 @@ export const books: LearningResource[] = [
     title: 'Emotional Design: Why We Love (Or Hate) Everyday Things',
     author: 'Don Norman',
     href: 'https://www.nngroup.com/books/emotional-design/',
-    progress: 5,
+    progress: 50,
     isCurrent: true,
     type: 'Book'
   },
