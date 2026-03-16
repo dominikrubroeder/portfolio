@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getProjects } from '@/components/organisms/projects/helper';
 
 export const useProjectCarousel = () => {
@@ -8,7 +8,16 @@ export const useProjectCarousel = () => {
   const [isImageLoading, setIsImageLoading] = useState(false);
   const projects = getProjects({ sorting: 'is-current-first' });
 
-  const project = useMemo(() => projects[activeProject], [activeProject]);
+  const project = useMemo(
+    () => projects[activeProject],
+    [activeProject, projects]
+  );
+
+  useEffect(() => {
+    if (project?.previewImage) {
+      setIsImageLoading(true);
+    }
+  }, [project?.previewImage]);
 
   const goNext = useCallback(
     () =>

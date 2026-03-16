@@ -33,7 +33,9 @@ export function ProjectCarousel() {
     goPrevious,
     setActiveProject,
     activeProject,
-    isShowCurrentProjectTooltip
+    isShowCurrentProjectTooltip,
+    isImageLoading,
+    setIsImageLoading
   } = useProjectCarousel();
 
   return (
@@ -46,23 +48,34 @@ export function ProjectCarousel() {
           aria-label={`Go to external ${project.title} website`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-92 w-full interactive items-center justify-center rounded border p-4 sm:h-112"
+          className="flex h-96 w-full interactive items-center justify-center rounded border p-4 sm:h-112"
         >
           {project.previewImage ? (
-            <figure>
+            <figure className="relative h-full w-full">
+              {isImageLoading && (
+                <div
+                  className="absolute inset-0 z-10 flex animate-pulse items-center justify-center rounded bg-muted"
+                  aria-hidden="true"
+                />
+              )}
+
               <Image
                 src={project.previewImage}
                 width={800}
                 height={500}
                 alt={`Preview image of project ${project.title}`}
                 draggable={false}
-                className="absolute top-0 left-0 h-full w-full rounded object-cover object-left md:relative md:object-contain"
-                priority={true}
+                className={cn(
+                  'absolute top-0 left-0 h-full max-h-84 w-full rounded object-cover object-left transition-opacity duration-300 md:relative md:h-auto md:object-contain',
+                  isImageLoading ? 'opacity-0' : 'opacity-100'
+                )}
+                loading="eager"
+                onLoad={() => setIsImageLoading(false)}
               />
 
               {project.previewImageTimestamp && (
-                <figcaption className="space-x-1">
-                  <span>Screenshot taken on</span>
+                <figcaption className="absolute -bottom-1 left-1/2 w-max -translate-x-1/2 space-x-1">
+                  <span>Screenshot from</span>
                   <span>
                     {formatDate({
                       dateString: project.previewImageTimestamp,
@@ -143,24 +156,28 @@ export function ProjectCarousel() {
             >
               <div className="space-y-2">
                 <div className="flex flex-wrap items-center gap-2">
-                  <div className="flex items-center gap-2">
-                    {activeProject === 0 && (
-                      <span className="relative flex size-4 items-center justify-center rounded-full bg-primary/10">
-                        <span className="size-2 rounded-full bg-primary motion-safe:animate-pulse" />
-                        <span className="sr-only">Is current project</span>
-                      </span>
-                    )}
+                  <div>
+                    <div className="flex items-center gap-2">
+                      {activeProject === 0 && (
+                        <span className="relative flex size-4 items-center justify-center rounded-full bg-primary/10">
+                          <span className="size-2 rounded-full bg-primary motion-safe:animate-pulse" />
+                          <span className="sr-only">Is current project</span>
+                        </span>
+                      )}
 
-                    <Link
-                      href={project.url}
-                      title={`Go to external ${project.title} website`}
-                      aria-label={`Go to external ${project.title} website`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-bold"
-                    >
-                      {project.title}
-                    </Link>
+                      <Link
+                        href={project.url}
+                        title={`Go to external ${project.title} website`}
+                        aria-label={`Go to external ${project.title} website`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-bold"
+                      >
+                        {project.title}
+                      </Link>
+                    </div>
+
+                    {project.subline && <p>{project.subline}</p>}
                   </div>
 
                   {project.isCurrent && (
@@ -205,7 +222,7 @@ export function ProjectCarousel() {
                     />
                   )}
 
-                  <p>{project.readableTitle}</p>
+                  <p>{project.description}</p>
                 </div>
               </div>
 
@@ -217,15 +234,25 @@ export function ProjectCarousel() {
                   <div className="space-y-4">
                     {project.role?.length ? (
                       <div>
-                        <b>Role</b>
-                        <div>{project.role?.join(', ')}</div>
+                        <small className="block text-muted-foreground">
+                          Role
+                        </small>
+
+                        <div className="text-foreground">
+                          {project.role?.join(', ')}
+                        </div>
                       </div>
                     ) : null}
 
                     {project.category.length ? (
                       <div>
-                        <b>Category</b>
-                        <div>{project.category?.join(', ')}</div>
+                        <small className="block text-muted-foreground">
+                          Category
+                        </small>
+
+                        <div className="text-foreground">
+                          {project.category?.join(', ')}
+                        </div>
                       </div>
                     ) : null}
 
@@ -233,10 +260,13 @@ export function ProjectCarousel() {
                       <Ul
                         headline="Aspects"
                         listStyle="disc"
+                        headlineClassName="font-normal mb-1.5 text-sm text-muted-foreground"
                         className="mt-0 leading-normal"
                       >
                         {project.aspects?.map((aspect, index) => (
-                          <li key={index}>{aspect}</li>
+                          <li key={index} className="text-foreground">
+                            {aspect}
+                          </li>
                         ))}
                       </Ul>
                     )}
@@ -244,7 +274,10 @@ export function ProjectCarousel() {
                     {project.caseStudyUrls?.length && (
                       <div className="space-y-4">
                         <div className="flex flex-wrap items-center gap-2">
-                          <b className="block">Case Study</b>
+                          <small className="block text-muted-foreground">
+                            Case studies
+                          </small>
+
                           <Badge
                             variant="foreground"
                             size="sm"
@@ -267,7 +300,10 @@ export function ProjectCarousel() {
                     {project.demoUrls?.length && (
                       <div className="space-y-4">
                         <div className="flex flex-wrap items-center gap-2">
-                          <b className="block">Further links</b>
+                          <small className="block text-muted-foreground">
+                            Further links
+                          </small>
+
                           <Badge
                             variant="foreground"
                             size="sm"
@@ -278,9 +314,9 @@ export function ProjectCarousel() {
                         </div>
 
                         <Ul listStyle="disc">
-                          {project.demoUrls?.map((url) => (
-                            <li key={url}>
-                              <ExternalLink href={url}>{url}</ExternalLink>
+                          {project.demoUrls?.map(({ label, src }) => (
+                            <li key={src}>
+                              <ExternalLink href={src}>{label}</ExternalLink>
                             </li>
                           ))}
                         </Ul>
@@ -289,9 +325,11 @@ export function ProjectCarousel() {
 
                     {project.tools?.length ? (
                       <div className="space-y-4 pb-4">
-                        <b className="block">Tools</b>
+                        <small className="block text-muted-foreground">
+                          Tools
+                        </small>
 
-                        <ul className="-ml-2 flex flex-wrap gap-5">
+                        <Ul className="flex flex-wrap gap-5">
                           {project.tools?.map((tool, index) => {
                             if (tool && tool.name) {
                               return (
@@ -309,15 +347,17 @@ export function ProjectCarousel() {
                               );
                             }
                           })}
-                        </ul>
+                        </Ul>
                       </div>
                     ) : null}
 
                     {project.technologies?.length ? (
                       <div className="space-y-4">
-                        <b className="block">Technologies</b>
+                        <small className="block text-muted-foreground">
+                          Technologies
+                        </small>
 
-                        <ul className="-ml-2 flex flex-wrap gap-5">
+                        <Ul className="flex flex-wrap gap-5">
                           {project.technologies?.map((technology, index) => {
                             if (technology && technology.name) {
                               return (
@@ -335,7 +375,7 @@ export function ProjectCarousel() {
                               );
                             }
                           })}
-                        </ul>
+                        </Ul>
                       </div>
                     ) : null}
                   </div>
@@ -346,7 +386,7 @@ export function ProjectCarousel() {
                   href={project.url}
                   className="absolute top-4 right-0"
                 >
-                  <span className="sr-only">Open {project.readableTitle}</span>
+                  <span className="sr-only">Open {project.description}</span>
                   Open
                   <ArrowUpRightIcon />
                 </Button>
