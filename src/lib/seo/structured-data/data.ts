@@ -69,13 +69,13 @@ export const jsonLd = {
       description:
         'Featured web design engineering projects by Dominik Rubröder.',
       url: ROUTING_PUBLIC_DOMAIN,
-      numberOfItems: 7,
+      numberOfItems: 8,
       itemListElement: [
         {
           '@type': 'ListItem',
           position: 1,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'uvex'
+          name: 'Uvex'
         },
         {
           '@type': 'ListItem',
@@ -110,6 +110,12 @@ export const jsonLd = {
         {
           '@type': 'ListItem',
           position: 7,
+          url: ROUTING_PUBLIC_DOMAIN,
+          name: "IU International University of Applied Sciences, Bachelor's Degree in Media Design"
+        },
+        {
+          '@type': 'ListItem',
+          position: 8,
           url: ROUTING_PUBLIC_DOMAIN,
           name: 'Loy GmbH'
         }
