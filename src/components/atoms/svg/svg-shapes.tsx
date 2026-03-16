@@ -1,14 +1,16 @@
 import { cn } from '@/lib/utils';
+import { BaseComponentProps } from '@/lib/types';
 
-export function Shapes({ className }: { className?: string }) {
+export function SvgShapes({ id, className }: BaseComponentProps) {
   return (
     <svg
       viewBox="0 0 1678 1319"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn('w-full', className)}
+      id={id}
     >
-      <g clipPath="url(#clip0_1206_2871)">
+      <g clipPath={`url(#${id}-clip0_1206_2871)`}>
         <path
           d="M424.5 454H238.5C225.521 454 215 464.521 215 477.5C215 490.479 225.521 501 238.5 501H424.5C437.479 501 448 490.479 448 477.5C448 464.521 437.479 454 424.5 454Z"
           style={{ fill: 'var(--color-primary)' }}
@@ -61,7 +63,7 @@ export function Shapes({ className }: { className?: string }) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_1206_2871">
+        <clipPath id={`${id}-clip0_1206_2871`}>
           <rect width="1678" height="1319" fill="white" />
         </clipPath>
       </defs>
