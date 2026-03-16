@@ -29,7 +29,7 @@ export function BrandRow({
         <BrandLogo
           id={`brand-row-${brand.name}-${index}`}
           brand={brand.name}
-          className="size-11 sm:size-12 [&>svg]:size-11 sm:[&>svg]:size-12"
+          className="size-8 xs:size-11 sm:size-12 [&>svg]:size-8 xs:[&>svg]:size-11 sm:[&>svg]:size-12"
         />
 
         <div className="break-words">
@@ -43,14 +43,16 @@ export function BrandRow({
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-2 sm:gap-4">
+      <div className="flex items-center justify-between gap-2 sm:gap-3">
         {showKnowledgeBar && <UsageBar usageLevel={brand.knowledge} />}
 
         <Button
           variant="text-muted"
-          className={cn(showKnowledgeBar && 'hidden sm:flex')}
+          title={`Go to external ${brand.name} website`}
+          aria-label={`Click to go to external ${brand.name} website`}
+          className={cn(showKnowledgeBar && 'hidden xs:block')}
         >
-          <ArrowUpRightIcon className="size-5" />
+          <ArrowUpRightIcon className="size-4" />
           <span className="sr-only">Go to external ${brand.name} website</span>
         </Button>
       </div>
