@@ -12,15 +12,9 @@ export function GuidingPrinciple() {
         <BadgeHrGroup badgeProps={[{ children: 'Guiding principle' }]} />
 
         <h2 className="bg-background text-primary">
-          "Combine design and code in one craft and you get the best of both
+          "Combine design and code into one craft and you get the best of both
           worlds."
         </h2>
-
-        <p>
-          Enhance this symbiosis with brand, user, marketing, business and human
-          psychology factors and you get an even richer result, which needs to
-          be translated into the UI.
-        </p>
 
         <div className="text-right sm:pb-8 xl:pb-12">
           – Dominik Rubröder, UX Design Engineer
