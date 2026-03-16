@@ -385,6 +385,10 @@
     @apply text-foreground;
   }
 
+  small {
+    @apply text-sm;
+  }
+
   figcaption {
     @apply text-center text-sm;
   }
