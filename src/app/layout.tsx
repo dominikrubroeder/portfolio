@@ -8,7 +8,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Footer } from '@/components/organisms/footer';
 import { Header } from '@/components/organisms/header';
-import { ThemeProvider } from '@/components/organisms/theme';
+import { themeInitializationScript, ThemeProvider } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
@@ -55,12 +55,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider>
-      <html
-        lang="en"
-        className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
-      >
-        <body>
+    <html
+      lang="en"
+      className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
+        <ThemeProvider>
+          <script
+            id="theme-initializer"
+            dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
+          />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -75,8 +80,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Footer />
           <Analytics />
           <SpeedInsights />
-        </body>
-      </html>
-    </ThemeProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

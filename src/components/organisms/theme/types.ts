@@ -32,7 +32,8 @@ export type ThemeContextType = {
   themeAnimationSettings: ThemeAnimationSettings;
   setThemeAnimationSettings: Dispatch<SetStateAction<ThemeAnimationSettings>>;
   themeMode: ThemeMode | undefined;
-  setThemeMode: (themeMode: ThemeMode) => void;
+  setThemeMode: Dispatch<SetStateAction<ThemeMode | undefined>>;
   setIsEventWinterEnabled: (isEventWinterEnabled: boolean) => void;
   shouldAnimate: boolean;
+  isInitialized: boolean;
 } & ThemeEvents;
