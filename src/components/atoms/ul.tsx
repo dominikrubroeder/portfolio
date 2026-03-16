@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 
 export function Ul({
   headline,
+  headlineClassName,
   offsetLeft,
   listStyle = 'none',
   className,
@@ -14,13 +15,14 @@ export function Ul({
   headline?: string;
   offsetLeft?: boolean;
   listStyle?: 'disc' | 'none';
+  headlineClassName?: string;
   className?: string;
   containerClassName?: string;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLUListElement>) {
   return (
     <div className={cn(containerClassName)}>
-      {headline && <b className="block">{headline}</b>}
+      {headline && <b className={cn('block', headlineClassName)}>{headline}</b>}
 
       <ul
         className={cn(
