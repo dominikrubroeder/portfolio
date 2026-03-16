@@ -7,5 +7,5 @@ export interface Brand {
   description: string | undefined;
   href: string;
   logo: ReactNode;
-  knowledge: UsageLevel;
+  knowledge: UsageLevel | undefined;
 }
