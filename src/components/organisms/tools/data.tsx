@@ -42,7 +42,7 @@ export const mainTools: Brand[] = [
   }
 ];
 
-export const tools: Tools = [
+const tools: Tools = [
   {
     group: 'Accessibility',
     children: [
@@ -64,7 +64,7 @@ export const tools: Tools = [
     ]
   },
   {
-    group: 'AI',
+    group: 'AI + Agents',
     children: [
       {
         name: 'ChatGPT',
@@ -100,7 +100,7 @@ export const tools: Tools = [
     ]
   },
   {
-    group: 'Analytics',
+    group: 'Analytics + Tracking',
     children: [
       {
         name: 'Google Analytics',
@@ -1185,3 +1185,4 @@ export const tools: Tools = [
     ]
   }
 ];
+export default tools;

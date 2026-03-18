@@ -23,7 +23,7 @@ export function ToolsList() {
                   <div className="font-bold">{item.group}</div>
 
                   {index === 0 && (
-                    <span className="absolute top-1/2 right-5 -translate-y-1/2 text-xs sm:right-29">
+                    <span className="absolute top-1/2 right-17 -translate-y-1/2 text-xs sm:right-29">
                       Usage level
                     </span>
                   )}

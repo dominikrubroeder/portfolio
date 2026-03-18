@@ -31,7 +31,7 @@ export function SvgShapes({ id, className }: BaseComponentProps) {
         <path
           d="M1296 71H1268C1265.79 71 1264 72.7909 1264 75V103C1264 105.209 1265.79 107 1268 107H1296C1298.21 107 1300 105.209 1300 103V75C1300 72.7909 1298.21 71 1296 71Z"
           style={{ fill: 'var(--color-primary)' }}
-          className="hidden hover:animate-pulse active:scale-95 2xl:block"
+          className="hidden 2xl:block"
         />
         <path
           d="M0 0H193C215.091 0 233 17.9086 233 40C233 62.0914 215.091 80 193 80H0V0Z"

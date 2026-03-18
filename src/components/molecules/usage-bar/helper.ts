@@ -15,9 +15,9 @@ export const getUsageBarDescription = ({
     case 'Applied':
       return 'Applied – Used independently in multiple projects.';
     case 'Advanced':
-      return 'Advanced – Applied in complex or high-impact work.';
+      return 'Advanced – Worked with or applied in complex, higher-demanding work.';
     case 'Expert':
-      return 'Expert – Deep expertise. Optimization, mentoring, or strategic application.';
+      return 'Expert – Deep expertise. Regular usage, optimization, mentoring, or strategic application.';
     default:
       return '';
   }

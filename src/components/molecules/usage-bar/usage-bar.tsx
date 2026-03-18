@@ -5,7 +5,6 @@ import { StarIcon } from '@heroicons/react/24/solid';
 import { cn } from '@/lib/utils';
 
 import type { UsageLevel } from '@/components/organisms/tools/types';
-import { useTheme } from '@/components/organisms/theme';
 import {
   Tooltip,
   TooltipContent,
@@ -23,8 +22,6 @@ export function UsageBar({
   hideFavoriteMarker?: boolean;
   className?: string;
 }) {
-  const { shouldAnimate } = useTheme();
-
   return (
     <div className={cn('flex shrink-0 gap-2', className)}>
       {!hideFavoriteMarker && usageLevel === 'Expert' && (
@@ -55,8 +52,7 @@ export function UsageBar({
         <div className="relative h-2 w-18 overflow-hidden rounded-full bg-muted group-hover:bg-muted-hover motion-safe:transition sm:w-24">
           <span
             className={cn(
-              'absolute top-0 left-0 h-full rounded-full border-0 bg-primary',
-              shouldAnimate && 'transition',
+              'absolute top-0 left-0 h-full rounded-full border-0 bg-primary motion-safe:transition',
               usageLevel === 'Aware' && 'w-0',
               usageLevel === 'Basic' && 'w-1/6',
               usageLevel === 'Working' && 'w-1/4',

@@ -13,7 +13,7 @@ import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events';
 
 export function Header() {
   return (
-    <header className="max-w-container sticky top-0 z-100 mx-auto flex h-24 items-center justify-between gap-2 border-b bg-background px-4 py-4 pt-6 xs:gap-4 lg:relative lg:h-24 lg:border-none">
+    <header className="max-w-container sticky top-0 z-100 mx-auto flex items-center justify-between gap-2 border-b bg-background p-4 xs:gap-4 lg:relative lg:h-24 lg:border-none">
       <div className="flex items-center gap-2 xs:gap-3">
         <Avatar
           className={cn(

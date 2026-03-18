@@ -21,10 +21,11 @@ export function FaqWhatIsAUxEngineer() {
         <Image
           src="/uxe-user-experience-engineer-at-google.png"
           alt="UXE user experience engineer at google"
-          width={1024}
-          height={292}
+          width={600}
+          height={171}
           className="rounded-xl object-contain"
           draggable={false}
+          loading="eager"
         />
 
         <figcaption>

@@ -290,7 +290,7 @@ export const technologies: { group: string; children: Brand[] }[] = [
             className="size-12"
           />
         ),
-        usageLevel: 'Aware'
+        usageLevel: 'Basic'
       },
       {
         name: 'Deno',

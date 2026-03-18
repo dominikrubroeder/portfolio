@@ -155,7 +155,7 @@ export const projects: Project[] = [
       'Watch television in HD — via satellite or internet (IP), on your TV and smartphone',
     isCurrent: false,
     isActive: false,
-    timeframe: 'From 2022 – 2023',
+    timeframe: 'From 2023 – 2024',
     logo: <LogoHdPlus id="projects-hd-plus" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer'],
     aspects: undefined,
@@ -304,14 +304,14 @@ export const projects: Project[] = [
   },
   {
     title: 'Loy GmbH',
-    subline: 'Trainee as Media Designer in Design and Tech',
+    subline: undefined,
     category: ['B2C', 'B2B', 'Ecommerce', 'Website'],
     url: 'https://www.loy.info',
     description:
-      'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. Here I spend my two and a half years of training, three additional years during dual study at the IU International University of Applied Sciences (Munich) and a full-time position. My work was all about digital media, design and development of user interfaces, layouts, and in some parts about print media.',
+      'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. Here I spend my two and a half years of training as Media Designer in Design and Tech, three additional years during dual study at the IU International University of Applied Sciences in Munich and a full-time position. My work was all about digital media production, design and development of user interfaces, layouts, and in some parts about print media.',
     isCurrent: false,
     isActive: false,
-    timeframe: 'From 2016 – 2019',
+    timeframe: 'From 2016 – 2021',
     logo: <LogoLoyGmbh id="projects-loy-gmbh" className="h-12 w-auto" />,
     role: [
       'Trainee',
@@ -365,7 +365,8 @@ export const projects: Project[] = [
     title: 'Frontend Mentor',
     category: [],
     url: 'https://www.frontendmentor.io',
-    description: 'Many frontend coding challenges using a real-life workflow.',
+    description:
+      'Many frontend coding challenges using a real-life workflow. Great to solidify existing skills or to do fun projects.',
     isCurrent: false,
     isActive: false,
     logo: (

@@ -18,11 +18,7 @@ import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger
-} from '@/components/atoms/tooltip/shadcnui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/atoms/tooltip/shadcnui/tooltip';
 import { ButtonGroup } from '@/components/molecules/button-group';
 
 export function ProjectCarousel() {
@@ -177,7 +173,9 @@ export function ProjectCarousel() {
                       </Link>
                     </div>
 
-                    {project.subline && <p>{project.subline}</p>}
+                    {project.subline && (
+                      <p className="leading-normal">{project.subline}</p>
+                    )}
                   </div>
 
                   {project.isCurrent && (
