@@ -8,9 +8,15 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Footer } from '@/components/organisms/footer';
 import { Header } from '@/components/organisms/header';
-import { ThemeProvider } from '@/components/organisms/theme';
+import {
+  themeInitializationScript,
+  ThemeProvider
+} from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
+import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
+import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
+import { TooltipProvider } from '@/components/atoms/tooltip/shadcnui/tooltip';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -28,16 +34,16 @@ export const metadata: Metadata = {
   title: 'Dominik Rubröder | UX Design Engineer',
   description:
     'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
-  metadataBase: new URL('https://www.dominikrubroeder.dev'),
+  metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
     title: 'Dominik Rubröder | UX Design Engineer',
     description:
       'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
-    url: 'https://www.dominikrubroeder.dev',
-    siteName: 'dominikrubroeder.dev',
+    url: ROUTING_PUBLIC_DOMAIN,
+    siteName: ROUTING_PUBLIC_DOMAIN.replace('https://www.', ''),
     images: [
       {
-        url: 'https://www.dominikrubroeder.dev/avatar.jpg',
+        url: `${ROUTING_PUBLIC_DOMAIN}/avatar.jpg`,
         width: 500,
         height: 500,
         alt: 'Profile image Dominik Rubröder'
@@ -46,43 +52,39 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website'
   },
-  keywords: [
-    'Frontend',
-    'Design Engineer',
-    'User Interface Engineer',
-    'User Interface Designer',
-    'User experience',
-    'UX',
-    'User interface',
-    'UI designer',
-    'UI engineer',
-    'UI components',
-    'Webdesign',
-    'Next.js',
-    'React'
-  ],
-  authors: [
-    { name: 'Dominik Rubröder', url: 'https://www.dominikrubroeder.dev' }
-  ]
+  keywords: SEO_KEYWORDS,
+  authors: [{ name: 'Dominik Rubröder', url: ROUTING_PUBLIC_DOMAIN }]
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider>
-      <html
-        lang="en"
-        className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
-      >
-        <body>
+    <html
+      lang="en"
+      className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
+        <ThemeProvider>
+          <script
+            id="theme-initializer"
+            dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+
           <Header />
 
-          <main>{children}</main>
+          <main>
+            <TooltipProvider>{children}</TooltipProvider>
+          </main>
 
           <Footer />
           <Analytics />
           <SpeedInsights />
-        </body>
-      </html>
-    </ThemeProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

@@ -20,7 +20,7 @@ export function DesignShowcase() {
   return (
     <span
       className={cn(
-        'group relative inline-block border transition hover:border-primary sm:mx-4',
+        'group relative inline-block border hover:border-primary motion-safe:transition sm:mx-4',
         state.color === 'primary' && 'text-primary',
         state.color === 'neutral' && 'text-foreground'
       )}

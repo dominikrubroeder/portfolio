@@ -25,6 +25,8 @@ export const THEME_KEY = 'dr-theme';
 export const THEME_KEY_APPEARANCE = 'dr-theme-appearance';
 export const THEME_KEY_COLOR = 'dr-theme-color';
 export const THEME_KEY_FONT_SIZE = 'dr-theme-font-size';
+export const THEME_KEY_EVENT_WINTER = 'dr-theme-event-winter';
+export const THEME_KEY_MODE = 'dr-theme-mode';
 
 export const THEME_DEFAULT: Theme = 'animate';
 export const THEME_OPTION_DEFAULT: ThemeOption = {

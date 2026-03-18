@@ -50,7 +50,7 @@ export const courses: LearningResource[] = [
     type: 'Course'
   },
   {
-    title: 'Next.js 15 & React – The Complete Guide',
+    title: 'Next.js & React - The Complete Guide',
     author: 'Maximilian Schwarzmüller',
     href: 'https://www.udemy.com/course/nextjs-react-the-complete-guide',
     progress: 100,

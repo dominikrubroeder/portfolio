@@ -1,7 +1,7 @@
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate';
 import { Accordion, AccordionItemProps } from '@/components/atoms/accordion';
-import { AllBlogPosts } from '@/components/organisms/blog/all-blog-posts';
+import { BlogPostsList } from '@/components/organisms/blog/blog-posts-list';
 import { blogPosts } from '@/components/organisms/blog/blog-posts';
 
 export function Blog() {
@@ -43,7 +43,7 @@ export function Blog() {
           accordionIcon="arrow-right"
         />
 
-        <AllBlogPosts />
+        <BlogPostsList />
       </Container>
     </Animate>
   );

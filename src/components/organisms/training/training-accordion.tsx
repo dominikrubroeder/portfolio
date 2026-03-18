@@ -1,6 +1,8 @@
 import { IntroductionDegreesList } from '@/components/organisms/introduction';
-import { BooksList } from '@/components/organisms/training/books';
-import { AllResources } from '@/components/organisms/training/all-resources';
+import {
+  TrainingBooksList,
+  TrainingResourcesList
+} from '@/components/organisms/training';
 import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import { Ul } from '@/components/atoms/ul';
 import { Button } from '@/components/atoms/button';
@@ -35,9 +37,9 @@ export function TrainingAccordion() {
         </li>
       </Ul>
 
-      <BooksList />
+      <TrainingBooksList />
 
-      <AllResources />
+      <TrainingResourcesList />
     </>
   );
 }

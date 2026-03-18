@@ -16,7 +16,9 @@ import {
   THEME_KEY,
   THEME_KEY_APPEARANCE,
   THEME_KEY_COLOR,
+  THEME_KEY_EVENT_WINTER,
   THEME_KEY_FONT_SIZE,
+  THEME_KEY_MODE,
   THEME_OPTION_DEFAULT,
   THEME_OPTIONS,
   ThemeAnimationSettings,
@@ -43,6 +45,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [themeEvents, setThemeEvents] = useState<ThemeEvents>({
     isEventWinterEnabled: true
   });
+  const [isInitialized, setIsInitialized] = useState(false);
   const [themeAnimationSettings, setThemeAnimationSettings] =
     useState<ThemeAnimationSettings>({
       disableAnimations: false,
@@ -51,14 +54,90 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       type: 'spring'
     });
 
-  const handleTheme = useCallback((themeOption: ThemeOption) => {
-    setTheme(themeOption);
+  const applyThemeAppearance = useCallback((appearance: ThemeAppearance) => {
+    const htmlElement = document.documentElement;
+    let resolvedAppearance = appearance;
+
+    if (appearance === 'system') {
+      resolvedAppearance = window.matchMedia('(prefers-color-scheme: dark)')
+        .matches
+        ? 'dark'
+        : 'light';
+    }
+
+    htmlElement.classList.forEach((className) => {
+      if (className.startsWith('theme-appearance-')) {
+        htmlElement.classList.remove(className);
+      }
+    });
+
+    htmlElement.classList.add(`theme-appearance-${resolvedAppearance}`);
+    htmlElement.dataset.themeAppearance = appearance;
+  }, []);
+
+  useEffect(() => {
+    if (!isInitialized) return;
+
+    applyThemeAppearance(themeAppearance);
+
+    if (themeAppearance === 'system') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = () => applyThemeAppearance('system');
+
+      mediaQuery.addEventListener('change', handleChange);
+      return () => mediaQuery.removeEventListener('change', handleChange);
+    }
+  }, [themeAppearance, applyThemeAppearance]);
+
+  const handleThemeColor = useCallback((themeColor: ThemeColor) => {
+    setThemeColor(themeColor);
+
+    if (themeColor) {
+      localStorage.setItem(THEME_KEY_COLOR, themeColor);
+    } else {
+      localStorage.removeItem(THEME_KEY_COLOR);
+    }
+  }, []);
+
+  const handleThemeAppearance = useCallback(
+    (themeAppearance: ThemeAppearance) => {
+      setThemeAppearance(themeAppearance);
+      localStorage.setItem(THEME_KEY_APPEARANCE, themeAppearance);
+    },
+    []
+  );
+
+  const handleTheme = useCallback(
+    (themeOption: ThemeOption) => {
+      setTheme(themeOption);
+      localStorage.setItem(THEME_KEY, themeOption.key);
+
+      if (themeOption.key === 'wireframe') {
+        handleThemeColor(undefined);
+      }
+
+      if (themeOption.key === 'animate') {
+        handleThemeColor('primary');
+      }
+
+      if (themeOption.key === 'notes') {
+        handleThemeColor('orange');
+      }
+    },
+    [handleThemeColor]
+  );
+
+  const handleThemeFontSize = useCallback((themeFontSize: ThemeFontSize) => {
+    setThemeFontSize(themeFontSize);
+    localStorage.setItem(THEME_KEY_FONT_SIZE, themeFontSize);
+  }, []);
+
+  useEffect(() => {
+    if (!isInitialized) return;
 
     const htmlTag = document.documentElement;
+    const themeOptionKey = theme.key;
 
-    const themeOptionKey = themeOption.key;
-
-    // TODO: Only remove real "Themes" here
     htmlTag.classList.forEach((className) => {
       if (className.startsWith('theme-style')) {
         htmlTag.classList.remove(className);
@@ -66,46 +145,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     });
 
     htmlTag.classList.add(`theme-style-${themeOptionKey}`);
-
     htmlTag.dataset.theme = themeOptionKey;
+  }, [theme.key]);
 
-    localStorage.setItem(THEME_KEY, themeOptionKey);
-  }, []);
-
-  // TODO: Check why in night times, explicit `light` appearance is not working
-  const handleThemeAppearance = useCallback(
-    (themeAppearance: ThemeAppearance) => {
-      setThemeAppearance(themeAppearance);
-
-      const htmlElement = document.documentElement;
-
-      if (themeAppearance === 'system') {
-        const systemPrefersDark = window.matchMedia(
-          '(prefers-color-scheme: dark)'
-        ).matches;
-        htmlElement.classList.toggle(
-          'theme-appearance-dark',
-          systemPrefersDark
-        );
-      } else {
-        htmlElement.classList.forEach((className) => {
-          if (className.startsWith('theme-appearance-')) {
-            htmlElement.classList.remove(className);
-          }
-        });
-
-        htmlElement.classList.add(`theme-appearance-${themeAppearance}`);
-      }
-
-      htmlElement.dataset.themeAppearance = themeAppearance;
-
-      localStorage.setItem(THEME_KEY_APPEARANCE, themeAppearance);
-    },
-    []
-  );
-
-  const handleThemeColor = useCallback((themeColor: ThemeColor) => {
-    setThemeColor(themeColor);
+  useEffect(() => {
+    if (!isInitialized) return;
 
     const htmlTag = document.documentElement;
 
@@ -119,17 +163,13 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     if (themeColor) {
       htmlTag.classList.add(`theme-color-${themeColor}`);
-      localStorage.setItem(THEME_KEY_COLOR, themeColor);
-    } else {
-      localStorage.removeItem(THEME_KEY_COLOR);
     }
-  }, []);
+  }, [themeColor]);
 
-  const handleThemeFontSize = useCallback((themeFontSize: ThemeFontSize) => {
-    setThemeFontSize(themeFontSize);
+  useEffect(() => {
+    if (!isInitialized) return;
 
     const htmlTag = document.documentElement;
-
     const themeFontSizeKey = `theme-font-size-${themeFontSize}`;
 
     htmlTag.classList.forEach((className) => {
@@ -148,46 +188,80 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
             : '100%';
 
     htmlTag.classList.add(themeFontSizeKey);
-
     htmlTag.dataset.themeFontSize = themeFontSize;
+  }, [themeFontSize]);
 
-    localStorage.setItem(THEME_KEY_FONT_SIZE, themeFontSize);
-  }, []);
+  const handleIsEventWinterEnabled = useCallback(
+    (isEventWinterEnabled: boolean) => {
+      setThemeEvents((prevState) => {
+        return { ...prevState, isEventWinterEnabled };
+      });
+      localStorage.setItem(
+        THEME_KEY_EVENT_WINTER,
+        JSON.stringify(isEventWinterEnabled)
+      );
+    },
+    []
+  );
 
   const initTheme = useCallback(() => {
     const localTheme = localStorage.getItem(THEME_KEY);
     const localThemeColor = localStorage.getItem(THEME_KEY_COLOR);
     const localThemeAppearance = localStorage.getItem(THEME_KEY_APPEARANCE);
     const localThemeFontSize = localStorage.getItem(THEME_KEY_FONT_SIZE);
+    const localThemeMode = localStorage.getItem(THEME_KEY_MODE);
+    const localIsEventWinterEnabled = localStorage.getItem(
+      THEME_KEY_EVENT_WINTER
+    );
 
-    // TODO: Make a safer type-check for `localTheme` value
-    if (localTheme)
-      handleTheme({
+    if (localTheme && THEME_OPTIONS.some((opt) => opt.key === localTheme)) {
+      setTheme({
         key: localTheme as Theme,
         value: capitalizeWords(localTheme)
       });
+    }
 
-    // TODO: Make a safer type-check for `localThemeAppearance` value
-    if (localThemeAppearance)
-      handleThemeAppearance(localThemeAppearance as ThemeAppearance);
+    if (
+      localThemeAppearance === 'light' ||
+      localThemeAppearance === 'dark' ||
+      localThemeAppearance === 'system'
+    ) {
+      handleThemeAppearance(localThemeAppearance);
+    }
 
-    // TODO: Make a safer type-check for `localThemeColor` value
-    if (localThemeColor) handleThemeColor(localThemeColor as ThemeColor);
+    if (
+      localThemeColor === 'primary' ||
+      localThemeColor === 'violett' ||
+      localThemeColor === 'blue' ||
+      localThemeColor === 'orange'
+    ) {
+      handleThemeColor(localThemeColor);
+    }
 
-    // TODO: Make a safer type-check for `localThemeFontSize` value
-    if (localThemeFontSize)
-      handleThemeFontSize(localThemeFontSize as ThemeFontSize);
-  }, [handleThemeColor, themeColor]);
+    if (
+      localThemeFontSize === 'sm' ||
+      localThemeFontSize === 'md' ||
+      localThemeFontSize === 'lg'
+    ) {
+      handleThemeFontSize(localThemeFontSize);
+    }
 
-  const handleIsEventWinterEnabled = useCallback(
-    (isEventWinterEnabled: boolean) => {
-      // TODO: Save this state to local storage
-      setThemeEvents((prevState) => {
-        return { ...prevState, isEventWinterEnabled };
-      });
-    },
-    []
-  );
+    if (localThemeMode === 'design' || localThemeMode === 'dev') {
+      setThemeMode(localThemeMode);
+    }
+
+    if (localIsEventWinterEnabled !== null) {
+      handleIsEventWinterEnabled(JSON.parse(localIsEventWinterEnabled));
+    }
+
+    setIsInitialized(true);
+  }, [
+    handleTheme,
+    handleThemeAppearance,
+    handleThemeColor,
+    handleThemeFontSize,
+    handleIsEventWinterEnabled
+  ]);
 
   const shuffleTheme = useCallback(() => {
     let randomIndex = Math.floor(Math.random() * THEME_OPTIONS.length);
@@ -209,19 +283,19 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [theme]);
 
   const shouldAnimate = useMemo(
-    () => theme.key === 'animate' && themeAnimationSettings.disableAnimations,
+    () => theme.key === 'animate' && !themeAnimationSettings.disableAnimations,
     [theme.key, themeAnimationSettings.disableAnimations]
   );
 
   useEffect(() => {
-    if (theme.key !== 'animate') {
-      handleIsEventWinterEnabled(false);
+    if (isInitialized) {
+      if (themeMode) {
+        localStorage.setItem(THEME_KEY_MODE, themeMode);
+      } else {
+        localStorage.removeItem(THEME_KEY_MODE);
+      }
     }
-
-    if (theme.key === 'animate' && !themeEvents.isEventWinterEnabled) {
-      handleIsEventWinterEnabled(true);
-    }
-  }, [theme.key]);
+  }, [themeMode, isInitialized]);
 
   useEffect(() => initTheme(), []);
 
@@ -241,7 +315,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     setThemeMode,
     ...themeEvents,
     setIsEventWinterEnabled: handleIsEventWinterEnabled,
-    shouldAnimate
+    shouldAnimate,
+    isInitialized
   };
 
   return (

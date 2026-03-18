@@ -1,21 +1,29 @@
 import { cn } from '@/lib/utils';
 
 import {
+  LogoAdobe,
   LogoAdobeIllustrator,
+  LogoAdobeInDesign,
   LogoAdobePhotoshop,
   LogoAdobeXd,
   LogoAlgolia,
+  LogoAngular,
   LogoApple,
   LogoArc,
+  LogoAstro,
   LogoAuthjs,
   LogoAws,
   LogoAxios,
+  LogoBaseUi,
   LogoBaymardInstitute,
+  LogoBetterAuth,
   LogoBrave,
   LogoBruno,
+  LogoBun,
   LogoCanva,
   LogoChatgpt,
   LogoChrome,
+  LogoClassVarianceAuthority,
   LogoClaudeAi,
   LogoClerk,
   LogoColorDesigner,
@@ -23,62 +31,112 @@ import {
   LogoCookiehub,
   LogoCraft,
   LogoCss,
+  LogoCursor,
+  LogoCypress,
   LogoDailydev,
+  LogoDeno,
+  LogoDribbble,
+  LogoElasticsearch,
+  LogoEslint,
+  LogoFactFinder,
   LogoFigma,
   LogoFirefox,
   LogoFramer,
   LogoFrontendMentor,
+  LogoGhostInspector,
   LogoGithub,
   LogoGitlab,
   LogoGoogleAnalytics,
   LogoGoogleTagManager,
+  LogoGraphQl,
+  LogoHeadlessUi,
   LogoHeroicons,
   LogoHotjar,
   LogoHtml,
   LogoInkdrop,
   LogoInstagram,
   LogoJavascript,
+  LogoJest,
   LogoJira,
+  LogoJitter,
+  LogoJunie,
+  LogoKlarna,
   LogoLighthouse,
   LogoLinkedin,
+  LogoLottieFiles,
   LogoMarkdown,
+  LogoMaterialIcons,
+  LogoMaterialUi,
   LogoMeilisearch,
+  LogoMidjourney,
   LogoMiro,
+  LogoMobbin,
   LogoMotion,
+  LogoN8n,
   LogoNetlify,
   LogoNextjs,
   LogoNielsenNormanGroup,
+  LogoNodeJs,
   LogoNotes,
   LogoNpm,
+  LogoNueJs,
+  LogoNuxt,
   LogoPa11y,
   LogoPaper,
+  LogoPayone,
+  LogoPayPal,
+  LogoPinterest,
+  LogoPlaywright,
+  LogoPnpm,
   LogoPostman,
+  LogoPracticalUi,
+  LogoPrettier,
+  LogoProcreate,
   type LogoProps,
   LogoRadixUi,
   LogoReact,
+  LogoRemix,
   LogoSafari,
   LogoSass,
   LogoShadcnUi,
+  LogoShopify,
   LogoShopware,
   LogoSketch,
   LogoSlack,
   LogoStatista,
   LogoStoryblok,
   LogoStorybook,
+  LogoStripe,
+  LogoSublimeText,
+  LogoSvelte,
+  LogoSwift,
+  LogoSwiftUi,
   LogoTailwindCss,
+  LogoTanStack,
+  LogoTeamGrid,
   LogoTeams,
+  LogoTheVerge,
+  LogoToolfolio,
+  LogoTrello,
   LogoTwig,
   LogoTypescript,
   LogoTypo3,
   LogoUiColors,
+  LogoUnsplash,
+  LogoUpsun,
   LogoUsercentrics,
   LogoV0,
   LogoVercel,
   LogoVisualStudioCode,
   LogoViteJs,
+  LogoVueJs,
   LogoWebstorm,
+  LogoWindsurf,
   LogoX,
-  LogoXing
+  LogoXing,
+  LogoYarn,
+  LogoZed,
+  LogoZod
 } from '@/components/atoms/logo';
 
 interface BrandLogoProps extends LogoProps {
@@ -93,14 +151,14 @@ export function BrandLogo({
   className = 'size-12'
 }: BrandLogoProps) {
   const DefaultLogo = (
-    <div
+    <span
       className={cn(
-        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted text-muted-foreground transition group-hover:border-border group-hover:text-foreground hover:text-foreground',
+        'flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded border border-transparent bg-muted text-center text-muted-foreground group-hover:border-border group-hover:text-foreground hover:text-foreground motion-safe:transition',
         className
       )}
     >
       {brand.charAt(0)}
-    </div>
+    </span>
   );
 
   const lowerCaseBrand = brand.toLowerCase();
@@ -158,7 +216,7 @@ export function BrandLogo({
     return <LogoAuthjs className={className} />;
   }
 
-  if (brand.startsWith('@')) {
+  if (lowerCaseBrand === 'clsx' || lowerCaseBrand === 'use-debounce') {
     return <LogoNpm id={id} className={className} />;
   }
 
@@ -184,6 +242,88 @@ export function BrandLogo({
 
   if (lowerCaseBrand.includes('nielsen norman')) {
     return <LogoNielsenNormanGroup id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('chatgpt') || lowerCaseBrand.includes('dall')) {
+    return <LogoChatgpt id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('procreate')) {
+    return <LogoProcreate id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('eslint')) {
+    return <LogoEslint id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('tanstack')) {
+    return <LogoTanStack id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('paypal')) {
+    return <LogoPayPal id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('stripe')) {
+    return <LogoStripe id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('indesign')) {
+    return <LogoAdobeInDesign id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('elasticsearch')) {
+    return <LogoElasticsearch id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('factfinder')) {
+    return <LogoFactFinder id={id} className={className} />;
+  }
+
+  if (
+    lowerCaseBrand.includes('magento') ||
+    lowerCaseBrand.includes('adobe commerce')
+  ) {
+    return <LogoAdobe id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('shopify')) {
+    return <LogoShopify id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('cypress')) {
+    return <LogoCypress id={id} className={className} />;
+  }
+
+  if (
+    lowerCaseBrand.includes('ghost inspector') ||
+    lowerCaseBrand.includes('ghostinspector')
+  ) {
+    return <LogoGhostInspector id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('jest')) {
+    return <LogoJest id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('playwright')) {
+    return <LogoPlaywright id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('svelte')) {
+    return <LogoSvelte id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('swiftui')) {
+    return <LogoSwiftUi id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('vue.js')) {
+    return <LogoVueJs id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('angular')) {
+    return <LogoAngular id={id} className={className} />;
   }
 
   switch (group) {
@@ -282,9 +422,6 @@ export function BrandLogo({
     case 'Pa11y':
       return <LogoPa11y id={id} className={className} />;
 
-    case 'ChatGPT':
-      return <LogoChatgpt id={id} className={className} />;
-
     case 'Claude':
       return <LogoClaudeAi id={id} className={className} />;
 
@@ -374,6 +511,126 @@ export function BrandLogo({
 
     case 'Statista':
       return <LogoStatista id={id} className={className} />;
+
+    case 'Better Auth':
+      return <LogoBetterAuth id={id} className={className} />;
+
+    case 'Base UI':
+      return <LogoBaseUi id={id} className={className} />;
+
+    case 'Headless UI':
+      return <LogoHeadlessUi id={id} className={className} />;
+
+    case 'Material UI':
+      return <LogoMaterialUi id={id} className={className} />;
+
+    case 'Practical UI':
+      return <LogoPracticalUi id={id} className={className} />;
+
+    case 'Dribbble':
+      return <LogoDribbble id={id} className={className} />;
+
+    case 'Mobbin':
+      return <LogoMobbin id={id} className={className} />;
+
+    case 'Pinterest':
+      return <LogoPinterest id={id} className={className} />;
+
+    case 'Toolfolio':
+      return <LogoToolfolio id={id} className={className} />;
+
+    case 'upsun':
+      return <LogoUpsun id={id} className={className} />;
+
+    case 'Material Icons':
+      return <LogoMaterialIcons id={id} className={className} />;
+
+    case 'Cursor':
+      return <LogoCursor id={id} className={className} />;
+
+    case 'Sublime Text':
+      return <LogoSublimeText id={id} className={className} />;
+
+    case 'Windsurf':
+      return <LogoWindsurf id={id} className={className} />;
+
+    case 'zed':
+      return <LogoZed id={id} className={className} />;
+
+    case 'Midjourney':
+      return <LogoMidjourney id={id} className={className} />;
+
+    case 'Unsplash':
+      return <LogoUnsplash id={id} className={className} />;
+
+    case 'Jitter':
+      return <LogoJitter id={id} className={className} />;
+
+    case 'LottieFiles':
+      return <LogoLottieFiles id={id} className={className} />;
+
+    case 'The Verge':
+      return <LogoTheVerge id={id} className={className} />;
+
+    case 'Bun':
+      return <LogoBun id={id} className={className} />;
+
+    case 'Yarn':
+      return <LogoYarn id={id} className={className} />;
+
+    case 'pnpm':
+      return <LogoPnpm id={id} className={className} />;
+
+    case 'class-variance-authority':
+      return <LogoClassVarianceAuthority id={id} className={className} />;
+
+    case 'n8n':
+      return <LogoN8n id={id} className={className} />;
+
+    case 'Junie':
+      return <LogoJunie id={id} className={className} />;
+
+    case 'prettier':
+      return <LogoPrettier id={id} className={className} />;
+
+    case 'zod':
+      return <LogoZod id={id} className={className} />;
+
+    case 'Klarna':
+      return <LogoKlarna id={id} className={className} />;
+
+    case 'PAYONE':
+      return <LogoPayone id={id} className={className} />;
+
+    case 'TeamGrid':
+      return <LogoTeamGrid id={id} className={className} />;
+
+    case 'Trello':
+      return <LogoTrello id={id} className={className} />;
+
+    case 'Nue.js':
+      return <LogoNueJs id={id} className={className} />;
+
+    case 'Astro':
+      return <LogoAstro id={id} className={className} />;
+
+    case 'Nuxt':
+      return <LogoNuxt id={id} className={className} />;
+
+    case 'Remix':
+      return <LogoRemix id={id} className={className} />;
+
+    case 'Swift':
+      return <LogoSwift id={id} className={className} />;
+
+    case 'GraphQL':
+      return <LogoGraphQl id={id} className={className} />;
+
+    case 'Deno':
+      return <LogoDeno id={id} className={className} />;
+
+    case 'Node.js':
+      return <LogoNodeJs id={id} className={className} />;
 
     default:
       return DefaultLogo;

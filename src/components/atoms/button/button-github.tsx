@@ -1,18 +1,19 @@
-import { Button } from '@/components/atoms/button';
-import { LogoGithub } from '@/components/atoms/logo';
 import { BaseComponentProps } from '@/lib/types';
+import { BrandLink } from '@/components/organisms/brand';
+import { getTools } from '@/components/organisms/tools';
 
 export function ButtonGithub({ id, className }: BaseComponentProps) {
+  const github = getTools({ names: ['GitHub'] })?.[0];
+
   return (
-    <Button
-      variant="ghost-foreground"
+    <BrandLink
+      brandLogoId={id || 'button-github'}
+      brand={github}
+      size="small"
       href="https://github.com/dominikrubroeder"
       title="Go to GitHub profile of Dominik Rubröder"
       aria-label="Go to GitHub profile of Dominik Rubröder"
-      size="large"
       className={className}
-    >
-      <LogoGithub id={id || 'button-github'} />
-    </Button>
+    />
   );
 }

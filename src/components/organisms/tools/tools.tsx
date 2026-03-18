@@ -1,8 +1,7 @@
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
 import { BrandList } from '@/components/organisms/brand';
-import { AllTools, mainTools } from '@/components/organisms/tools';
-import { Marker } from '@/components/atoms/marker';
+import { mainTools, ToolsList } from '@/components/organisms/tools';
 
 export function Tools() {
   return (
@@ -13,9 +12,8 @@ export function Tools() {
             <h2>
               Tools
               <span className="ml-2 font-medium text-muted-foreground">
-                help to <Marker animate={true}>visualize</Marker>
-                <span> and </span>
-                <Marker animate>communicate</Marker> the application we build
+                help to visualize, organize and communicate the application we
+                build
               </span>
             </h2>
 
@@ -25,7 +23,7 @@ export function Tools() {
           <BrandList brands={mainTools} />
         </div>
 
-        <AllTools />
+        <ToolsList />
       </Container>
     </Animate>
   );

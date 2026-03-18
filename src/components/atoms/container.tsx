@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 export function Container({
   as = 'section',
-  size = 'readable-container',
+  size = 'container-readable',
   horizontalPadding,
   animateIn,
   className,
@@ -13,7 +13,7 @@ export function Container({
   ...rest
 }: {
   as?: HTMLTag;
-  size?: 'container' | 'md' | 'readable-container';
+  size?: 'container' | 'container-readable';
   horizontalPadding?: boolean;
   animateIn?: boolean;
   className?: string;
@@ -28,8 +28,7 @@ export function Container({
         horizontalPadding && 'px-4 lg:px-0',
         animateIn && 'motion-safe:animate-fade-up-1rem',
         size === 'container' && 'max-w-(--container)',
-        size === 'md' && 'max-w-(--container-md)',
-        size === 'readable-container' && 'max-w-(--readable-container)',
+        size === 'container-readable' && 'max-w-(--container-readable)',
         className
       )}
       {...rest}

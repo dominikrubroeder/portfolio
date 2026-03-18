@@ -9,8 +9,8 @@ export function Hr({
   return (
     <hr
       className={cn(
-        'mx-auto inline-block h-1 w-full',
-        variant === 'md' && 'sm:max-w-(--readable-container)',
+        'block h-1 w-full',
+        variant === 'md' && 'mx-auto sm:max-w-(--readable-container)',
         className
       )}
     />

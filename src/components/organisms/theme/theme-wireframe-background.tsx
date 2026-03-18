@@ -1,7 +1,12 @@
 'use client';
 
-import { Shapes } from '@/components/atoms/svg';
+import { SvgShapes } from '@/components/atoms/svg';
 
 export function ThemeWireframeBackground() {
-  return <Shapes className="absolute top-28 left-0 z-0 hidden xl:block" />;
+  return (
+    <SvgShapes
+      id="background-shapes"
+      className="absolute top-28 right-0 left-0 z-0 hidden xl:block"
+    />
+  );
 }

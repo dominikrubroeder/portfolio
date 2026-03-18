@@ -12,6 +12,7 @@ export { ThemeWireframeBackground } from './theme-wireframe-background';
 export { ThemeNotesBackgroundCornellNotes } from './theme-notes-background-cornell-notes';
 
 export * from './theme-context';
+export { themeInitializationScript } from './helper';
 
 export { ThemeQuickSettings } from './theme-quick-settings';
 

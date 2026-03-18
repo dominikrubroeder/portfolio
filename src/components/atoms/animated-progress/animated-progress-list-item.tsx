@@ -8,7 +8,6 @@ import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { Badge } from '@/components/atoms/badge';
 import type { LearningResource } from '@/components/organisms/training';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
-import { cn } from '@/lib/utils';
 import { Button } from '@/components/atoms/button';
 
 export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
@@ -19,7 +18,7 @@ export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
       title={`View ${item.title} on external website`}
       className="group -mx-2 flex items-center gap-3 p-2 sm:items-center"
     >
-      <div className="flex flex-1 gap-3">
+      <div className="flex flex-1 items-center gap-3">
         {Number.isInteger(item.progress) ? (
           <AnimatedProgress
             size={32}
@@ -46,33 +45,19 @@ export function AnimatedProgressListItem({ item }: { item: LearningResource }) {
 
         <div className="relative w-full justify-between">
           <div>
-            <div className="flex items-center gap-1.5">
-              <h3
-                className={cn(
-                  'mb-0 text-base font-bold text-foreground',
-                  item.isCurrent && 'pt-8 md:pt-0'
-                )}
-              >
-                {item.title}
-              </h3>
-
+            <h3 className="mb-0 text-base font-bold text-balance text-foreground">
+              {item.title}
               {item.isCurrent && (
-                <Badge size="sm" className="hidden self-center md:block">
+                <Badge size="sm" className="ml-1 font-normal">
                   Current {item.type}
                 </Badge>
               )}
-            </div>
+            </h3>
 
             <span className="block text-muted-foreground">
               <i>by {item.author}</i>
             </span>
           </div>
-
-          {item.isCurrent && (
-            <Badge size="sm" className="absolute top-0 left-0 md:hidden">
-              Current {item.type}
-            </Badge>
-          )}
         </div>
       </div>
 

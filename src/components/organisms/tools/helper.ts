@@ -1,4 +1,4 @@
-import { tools } from '@/components/organisms/tools/data';
+import tools from '@/components/organisms/tools/data';
 
 export function getTools({
   names,

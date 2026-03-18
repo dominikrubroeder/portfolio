@@ -17,32 +17,32 @@ export const mainTools: Brand[] = [
     description: 'for user interface design and prototyping',
     logo: <LogoFigma id="tools-figma" className="size-12" />,
     href: 'https://www.figma.com',
-    knowledge: 'Daily'
+    usageLevel: 'Expert'
   },
   {
     name: 'WebStorm',
     description: 'as IDE',
     logo: <LogoWebstorm id="tools-webstorm" className="size-12" />,
     href: 'https://www.jetbrains.com/webstorm',
-    knowledge: 'Daily'
+    usageLevel: 'Expert'
   },
   {
     name: 'Craft',
     description: 'as my main note and documentation tool',
     logo: <LogoCraft id="tools-craft" className="size-12" />,
     href: 'https://www.craft.do',
-    knowledge: 'Daily'
+    usageLevel: 'Expert'
   },
   {
     name: 'GitHub',
     description: 'to store my private codebase',
     logo: <LogoGithub id="tools-github" className="size-12" />,
     href: 'https://github.com',
-    knowledge: 'Daily'
+    usageLevel: 'Expert'
   }
 ];
 
-export const tools: Tools = [
+const tools: Tools = [
   {
     group: 'Accessibility',
     children: [
@@ -51,7 +51,7 @@ export const tools: Tools = [
         href: 'https://pa11y.org',
         logo: '',
         description: 'Pa11y is your automated accessibility testing pal.',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'Lighthouse',
@@ -59,27 +59,35 @@ export const tools: Tools = [
           'An open-source, automated tool for improving the quality of web pages',
         href: 'https://developers.google.com/web/tools/lighthouse',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       }
     ]
   },
   {
-    group: 'AI',
+    group: 'AI + Agents',
     children: [
       {
         name: 'ChatGPT',
         href: 'https://chatgpt.com',
         logo: '',
         description:
-          'A conversational AI system that listens, learns, and challenges.',
-        knowledge: 'Professional'
+          'A conversational AI system that listens, learns, and challenges',
+        usageLevel: 'Advanced'
       },
       {
         name: 'Claude',
         href: 'https://claude.ai',
         logo: '',
         description: 'Talk with Claude, an AI assistant from Antrophic',
-        knowledge: 'Used'
+        usageLevel: 'Working'
+      },
+      {
+        name: 'Junie',
+        href: 'https://www.jetbrains.com/junie/',
+        logo: '',
+        description:
+          'Your smart coding agent. More than productivity – a new way to code',
+        usageLevel: 'Working'
       },
       {
         name: 'v0',
@@ -87,12 +95,12 @@ export const tools: Tools = [
         logo: '',
         description:
           'Generate UI with shadcn/ui from simple text prompts and images',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       }
     ]
   },
   {
-    group: 'Analytics',
+    group: 'Analytics + Tracking',
     children: [
       {
         name: 'Google Analytics',
@@ -100,7 +108,7 @@ export const tools: Tools = [
         logo: '',
         description:
           'Measure your advertising ROI as well as track your Flash, video, and social networking sites and applications',
-        knowledge: 'Experienced'
+        usageLevel: 'Working'
       },
       {
         name: 'Google Tag Manager',
@@ -108,7 +116,7 @@ export const tools: Tools = [
         logo: '',
         description:
           'Google Tag Manager helps make tag management simple, easy and reliable',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Hotjar',
@@ -116,7 +124,7 @@ export const tools: Tools = [
         logo: '',
         description:
           'See how visitors are really using your website, collect user feedback and turn more visitors into customers',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Vercel Speed Insights',
@@ -124,14 +132,14 @@ export const tools: Tools = [
         logo: '',
         description:
           'Real-time performance insights for your Vercel deployments',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'Vercel Web Analytics',
         href: 'https://vercel.com/docs/analytics',
         logo: '',
         description: 'Privacy-friendly analytics for your Vercel projects',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       }
     ]
   },
@@ -143,23 +151,25 @@ export const tools: Tools = [
         href: 'https://axios-http.com/',
         logo: '',
         description: 'Promise based HTTP client for the browser and node.js',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Postman',
         href: 'https://www.postman.com/',
         logo: '',
         description: "The World's Leading API Platform",
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Bruno',
         href: 'https://www.usebruno.com/',
         logo: '',
         description: 'Opensource IDE for exploring and testing APIs',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       }
-    ]
+    ],
+    description:
+      'In day to day work, i use the IDE and the actual local development environment as preview for the APIs. Only when the team or the task requires an external API client, i plug them into the workflow.'
   },
   {
     group: 'Authentication',
@@ -169,7 +179,7 @@ export const tools: Tools = [
         href: 'https://authjs.dev',
         logo: '',
         description: 'Authentication for the Web. Free and open source.',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Clerk',
@@ -177,7 +187,7 @@ export const tools: Tools = [
         logo: '',
         description:
           'The easiest way to add authentication and user management to your application.',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       },
       {
         name: 'Better Auth',
@@ -185,7 +195,19 @@ export const tools: Tools = [
         logo: '',
         description:
           'The most comprehensive authentication framework for TypeScript.',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
+      }
+    ]
+  },
+  {
+    group: 'Automation',
+    children: [
+      {
+        name: 'n8n',
+        href: 'https://n8n.io',
+        logo: '',
+        description: 'Flexible AI workflow automation for technical teams',
+        usageLevel: 'Basic'
       }
     ]
   },
@@ -197,14 +219,14 @@ export const tools: Tools = [
         href: 'https://arc.net',
         logo: '',
         description: 'A better way to browse',
-        knowledge: 'Used'
+        usageLevel: 'Basic'
       },
       {
         name: 'Brave',
         href: 'https://brave.com',
         logo: '',
         description: 'Secure, fast & private web browser with adblocker',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'Chrome',
@@ -212,21 +234,21 @@ export const tools: Tools = [
         logo: '',
         description:
           'A fast, secure, and free web browser built for the modern web',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Firefox',
         href: 'https://www.mozilla.org/firefox',
         logo: '',
         description: 'Firefox is more than a browser',
-        knowledge: 'Experienced'
+        usageLevel: 'Expert'
       },
       {
         name: 'Safari',
         href: 'https://www.apple.com/safari',
         logo: '',
         description: 'A faster, smarter way to browse the web',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       }
     ]
   },
@@ -239,21 +261,21 @@ export const tools: Tools = [
         logo: '',
         description:
           'Product Information Management and Marketing Experience Management',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       },
       {
         name: 'Storyblok',
         href: 'https://www.storyblok.com',
         logo: <LogoStoryblok id="tools-storyblok" className="size-12" />,
         description: 'The Way to Modern Content',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Typo3',
         href: 'https://typo3.org',
         logo: '',
         description: 'The Professional, Flexible Content Management System',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       }
     ]
   },
@@ -265,7 +287,7 @@ export const tools: Tools = [
         href: 'https://www.cookiehub.com',
         logo: '',
         description: 'Cookie consent management platform',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'Usercentrics',
@@ -273,7 +295,7 @@ export const tools: Tools = [
         logo: '',
         description:
           'Consent Management Platform for GDPR, CCPA & ePrivacy compliance',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       }
     ]
   },
@@ -285,14 +307,14 @@ export const tools: Tools = [
         description: 'Where work happens',
         href: 'https://slack.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Teams',
         description: 'Meet, chat, call, and collaborate in just one place',
         href: 'https://www.microsoft.com/microsoft-teams',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       }
     ]
   },
@@ -304,14 +326,14 @@ export const tools: Tools = [
         description: 'Simple color palette generator',
         href: 'https://colordesigner.io',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'uicolors',
         description: 'Tailwind CSS color generator',
         href: 'https://uicolors.app',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       }
     ]
   },
@@ -323,7 +345,7 @@ export const tools: Tools = [
         description: 'Build full-stack web and mobile apps in hours',
         href: 'https://aws.amazon.com/amplify',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'netlify',
@@ -331,22 +353,21 @@ export const tools: Tools = [
           'The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web',
         href: 'https://www.netlify.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'upsun',
-        description:
-          'The end-to-end cloud platform for building, running and scaling web applications',
+        description: 'Deliver every release with certainty',
         href: 'https://upsun.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Vercel',
         description: 'Develop. Preview. Ship. For the best frontend teams',
         href: 'https://vercel.com',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       }
     ]
   },
@@ -358,7 +379,7 @@ export const tools: Tools = [
         description: 'Design, prototype, and share user experiences',
         href: 'https://www.adobe.com/products/xd.html',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'Canva',
@@ -366,35 +387,35 @@ export const tools: Tools = [
           'Create stunning visuals, from social media posts to presentations',
         href: 'https://www.figma.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Figma',
         description: 'The collaborative interface design tool',
         href: 'https://www.figma.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Framer',
         description: 'Design and publish stunning sites',
         href: 'https://www.framer.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Basic'
       },
       {
         name: 'Paper',
         description: 'design incredible. for the love of design.',
         href: 'https://paper.design',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Basic'
       },
       {
         name: 'Sketch',
         description: 'Design, prototype, collaborate and handoff',
         href: 'https://www.sketch.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Working'
       }
     ]
   },
@@ -403,10 +424,10 @@ export const tools: Tools = [
     children: [
       {
         name: 'Procreate',
-        description: 'Made for artists, by artists',
+        description: 'Art is for everyone',
         href: 'https://procreate.art',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       }
     ]
   },
@@ -415,17 +436,17 @@ export const tools: Tools = [
     children: [
       {
         name: 'Craft',
-        description: 'A fresh take on documents',
+        description: 'Your space for notes, tasks, and big ideas',
         href: 'https://www.craft.do',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Inkdrop',
         description: 'Organizing your Markdown notes made simple',
         href: 'https://inkdrop.app',
         logo: <LogoInkdrop />,
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       }
     ]
   },
@@ -438,7 +459,7 @@ export const tools: Tools = [
           'Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS',
         href: 'https://heroicons.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'luicide-react',
@@ -446,14 +467,14 @@ export const tools: Tools = [
           'Beautiful & consistent icon toolkit made by the community',
         href: 'https://lucide.dev',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'Material Icons',
         description: 'Material Design icons by Google',
         href: 'https://fonts.google.com/icons',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       }
     ]
   },
@@ -464,44 +485,43 @@ export const tools: Tools = [
         name: 'Cursor',
         href: 'https://cursor.com',
         logo: '',
-        description: 'The AI-first code editor',
-        knowledge: 'Used'
+        description: 'The best way to code with AI',
+        usageLevel: 'Working'
       },
       {
         name: 'Sublime Text',
-        description: 'A sophisticated text editor for code, markup and prose',
+        description: 'Text Editing, Done Right',
         href: 'https://www.sublimetext.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Visual Studio Code',
         description: 'The open source AI code editor',
         href: 'https://code.visualstudio.com',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'WebStorm',
         description: 'The JavaScript and TypeScript IDE',
         href: 'https://www.jetbrains.com/webstorm',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Windsurf',
         description: 'Where developers are doing their best work',
         href: 'https://windsurf.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'zed',
-        description:
-          'Zed is a minimal code editor crafted for speed and collaboration with humans and AI.',
+        description: 'Love your editor again',
         href: 'https://zed.dev',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       }
     ]
   },
@@ -511,9 +531,9 @@ export const tools: Tools = [
       {
         name: 'Dall-E',
         description: 'Creating images from text',
-        href: 'https://openai.com/dall-e-2',
+        href: 'https://openai.com/dall-e-3',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'Midjourney',
@@ -521,14 +541,14 @@ export const tools: Tools = [
           'An independent research lab exploring new mediums of thought',
         href: 'https://www.midjourney.com',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
-        name: 'Unplash',
+        name: 'Unsplash',
         description: "The internet's source for visuals",
         href: 'https://unsplash.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       }
     ]
   },
@@ -537,17 +557,17 @@ export const tools: Tools = [
     children: [
       {
         name: 'Dribbble',
-        description: "Discover the world's top designers & creatives",
+        description: 'Discover the World’s Top Designers',
         href: 'https://dribbble.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Mobbin',
-        description: 'Latest mobile design patterns',
+        description: 'Discover real-world design inspiration',
         href: 'https://mobbin.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Pinterest',
@@ -555,15 +575,14 @@ export const tools: Tools = [
           'Discover recipes, home ideas, style inspiration and other ideas to try',
         href: 'https://www.pinterest.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'Toolfolio',
-        description:
-          'Discover new tools and resources for designers and developers',
+        description: 'All the Tools You Need in one place',
         href: 'https://www.toolfolio.io',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       }
     ]
   },
@@ -571,33 +590,32 @@ export const tools: Tools = [
     group: 'Motion + Animation',
     children: [
       {
-        name: 'jitter.video',
-        description: 'Simple motion design tool',
+        name: 'Jitter',
+        description: 'Super fast motion for every team',
         href: 'https://jitter.video',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'LottieFiles',
-        description:
-          'Lightweight, scalable animations for your website and apps',
+        description: 'Great designs come alive with motion!',
         href: 'https://lottiefiles.com',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'Motion',
         description: 'A modern animation library for JavaScript and React',
         href: 'https://motion.dev/',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Procreate Dreams',
-        description: 'Animation made easy',
+        description: 'Edit. Animate. Create.',
         href: 'https://procreate.art/dreams',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       }
     ]
   },
@@ -609,21 +627,21 @@ export const tools: Tools = [
         description: 'Where developers grow together',
         href: 'https://daily.dev',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'The Verge',
-        description: 'Technology, science, art, and culture',
+        description: 'The Verge is about technology and how it makes us feel',
         href: 'https://www.theverge.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'X',
         description: '',
         href: 'https://x.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       }
     ]
   },
@@ -631,33 +649,33 @@ export const tools: Tools = [
     group: 'Package Manager',
     children: [
       {
-        name: 'bun',
-        description:
-          'Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one',
+        name: 'Bun',
+        description: 'Bun is a fast JavaScript all-in-one toolkit',
         href: 'https://bun.sh',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'npm',
         description: 'Build amazing things',
         href: 'https://www.npmjs.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'pnpm',
-        description: 'Fast, disk space efficient package manager',
+        description: 'Save time. Save disk space. Supercharge your monorepos.',
         href: 'https://pnpm.io',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
-        name: 'yarn',
-        description: 'Safe, stable, reproducible projects',
+        name: 'Yarn',
+        description:
+          'Fast, reliable, and secure dependency management for JavaScript.',
         href: 'https://yarnpkg.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       }
     ]
   },
@@ -669,14 +687,14 @@ export const tools: Tools = [
         description: 'Privacy-friendly analytics for Vercel deployments',
         href: 'https://vercel.com/docs/analytics',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: '@vercel/speed-insights',
         description: 'Real-time performance insights for Vercel deployments',
         href: 'https://vercel.com/docs/speed-insights',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: '@tanstack/*',
@@ -684,14 +702,14 @@ export const tools: Tools = [
           'High-quality, headless utilities for modern web development',
         href: 'https://tanstack.com',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       },
       {
         name: 'class-variance-authority',
         description: 'Creating variants with the "cva" function',
         href: 'https://cva.style',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'clsx',
@@ -699,63 +717,70 @@ export const tools: Tools = [
           'A tiny utility for constructing className strings conditionally',
         href: 'https://github.com/lukeed/clsx',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: '@heroicons/react',
         description: 'Beautiful hand-crafted SVG icons for React',
         href: 'https://heroicons.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: '@meilisearch/instant-meilisearch',
         description: 'The search client to use Meilisearch with InstantSearch',
         href: 'https://www.npmjs.com/package/@meilisearch/instant-meilisearch',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: '@shopware/api-client',
         description: 'Shopware API client for JavaScript/TypeScript',
         href: 'https://www.npmjs.com/package/@shopware/api-client',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: '@shopware/api-gen',
         description: 'Generate TypeScript types from Shopware API',
         href: 'https://www.npmjs.com/package/@shopware/api-gen',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: '@storyblok/react',
         description: 'React SDK for Storyblok',
         href: 'https://www.npmjs.com/package/@storyblok/react',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: '@eslint/config',
         description: 'Find and fix problems in your JavaScript code',
         href: 'https://eslint.org',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
+      },
+      {
+        name: 'next-intl',
+        description: 'Internationalization for Next.js',
+        href: 'https://next-intl.dev',
+        logo: '',
+        usageLevel: 'Expert'
       },
       {
         name: 'eslint-plugin-tailwindcss',
         description: 'ESLint plugin for Tailwind CSS usage',
         href: 'https://www.npmjs.com/package/eslint-plugin-tailwindcss',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'html-react-parser',
         description: 'HTML to React parser',
         href: 'https://www.npmjs.com/package/html-react-parser',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'lucide-react',
@@ -763,14 +788,14 @@ export const tools: Tools = [
           'Beautiful & consistent icon toolkit made by the community',
         href: 'https://lucide.dev',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'next-view-transitions',
         description: 'Use CSS View Transitions API in Next.js App Router',
         href: 'https://www.npmjs.com/package/next-view-transitions',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'react-hook-form',
@@ -778,7 +803,7 @@ export const tools: Tools = [
           'Performant, flexible and extensible forms with easy validation',
         href: 'https://react-hook-form.com',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'react-instantsearch',
@@ -786,56 +811,56 @@ export const tools: Tools = [
           'Lightning-fast search for React and React Native applications',
         href: 'https://www.npmjs.com/package/react-instantsearch',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'react-instantsearch-nextjs',
         description: 'React InstantSearch for Next.js',
         href: 'https://www.npmjs.com/package/react-instantsearch-nextjs',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'react-snowfall',
         description: 'An awesome react component that creates snowfall',
         href: 'https://www.npmjs.com/package/react-snowfall',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'react-syntax-highlighter',
         description: 'Syntax highlighting component for React',
         href: 'https://www.npmjs.com/package/react-syntax-highlighter',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'storybook',
         description: 'Frontend workshop for UI development',
         href: 'https://storybook.js.org',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'use-debounce',
         description: 'Debounce hook for React',
         href: 'https://www.npmjs.com/package/use-debounce',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'prettier',
         description: 'Opinionated code formatter',
         href: 'https://prettier.io',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'prism-react-renderer',
         description: 'Lightweight and flexible syntax highlighter for React',
         href: 'https://github.com/FormidableLabs/prism-react-renderer',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'zod',
@@ -843,9 +868,11 @@ export const tools: Tools = [
           'TypeScript-first schema validation with static type inference',
         href: 'https://zod.dev',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Applied'
       }
-    ]
+    ],
+    description:
+      "In case you can't find a popular package, you can always reach out and get in touch to clarify the experience with it."
   },
   {
     group: 'Payment',
@@ -855,28 +882,28 @@ export const tools: Tools = [
         description: 'Smooth payments',
         href: 'https://www.klarna.com',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       },
       {
-        name: 'PayOne',
+        name: 'PAYONE',
         description: 'Payment service provider',
         href: 'https://www.payone.com',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Basic'
       },
       {
         name: 'PayPal',
         description: 'The safer, easier way to pay online',
         href: 'https://www.paypal.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Stripe',
         description: 'Online payment processing for internet businesses',
         href: 'https://stripe.com',
         logo: '',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       }
     ]
   },
@@ -889,7 +916,7 @@ export const tools: Tools = [
           'Automated auditing, performance metrics, and best practices for the web',
         href: 'https://developers.google.com/web/tools/lighthouse',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       }
     ]
   },
@@ -902,21 +929,21 @@ export const tools: Tools = [
           'Create logos, icons, drawings, typography, and illustrations',
         href: 'https://www.adobe.com/products/illustrator.html',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'Adobe InDesign',
         description: 'Design and publish great projects',
         href: 'https://www.adobe.com/products/indesign.html',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'Adobe Photoshop',
         description: 'Imaging and graphic design software',
         href: 'https://www.adobe.com/products/photoshop.html',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       }
     ]
   },
@@ -928,28 +955,28 @@ export const tools: Tools = [
         href: 'https://www.atlassian.com/software/jira',
         logo: '',
         description: 'Issue & project tracking software',
-        knowledge: 'Daily'
+        usageLevel: 'Advanced'
       },
       {
         name: 'Miro',
         href: 'https://miro.com',
         logo: '/miro.png',
         description: 'Get from brainstorm to breakthrough with Miro',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'TeamGrid',
         href: 'https://teamgrid.app',
         logo: '',
-        description: 'Project management and team collaboration',
-        knowledge: 'Professional'
+        description: 'Work. Better. Together.',
+        usageLevel: 'Advanced'
       },
       {
         name: 'Trello',
         href: 'https://www.trello.com/',
         logo: '',
-        description: '',
-        knowledge: 'Not started'
+        description: 'Capture, organize, and tackle your to-dos from anywhere.',
+        usageLevel: 'Aware'
       }
     ]
   },
@@ -961,14 +988,14 @@ export const tools: Tools = [
         description: 'The trusted authority in ecommerce UX',
         href: 'https://baymard.com',
         logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Advanced'
       },
       {
         name: 'Human Interface Guidelines (Apple)',
         description: 'Design principles and guidelines for Apple platforms',
         href: 'https://developer.apple.com/design/human-interface-guidelines',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'Nielsen Norman Group',
@@ -976,14 +1003,14 @@ export const tools: Tools = [
           'Research-based, results-driven. UX guidance and training.',
         href: 'https://www.nngroup.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'Statista',
         description: 'Empowering people with data',
         href: 'https://www.statista.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       }
     ]
   },
@@ -995,14 +1022,21 @@ export const tools: Tools = [
         href: 'https://www.algolia.com',
         logo: <LogoAlgolia id="tools-algolia" className="size-12" />,
         description: 'AI-Search, that understands',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
-        name: 'Elastic Search',
+        name: 'Elasticsearch',
         href: 'https://www.elastic.co/elasticsearch',
         logo: '',
         description: 'Distributed, RESTful search and analytics engine',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
+      },
+      {
+        name: 'FactFinder',
+        href: 'https://www.fact-finder.de',
+        logo: '',
+        description: 'Help every visitor find the right product, fast.',
+        usageLevel: 'Aware'
       },
       {
         name: 'meilisearch',
@@ -1010,7 +1044,7 @@ export const tools: Tools = [
         logo: '',
         description:
           'Lightning Fast, Ultra Relevant, and Typo-Tolerant Search Engine',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       }
     ]
   },
@@ -1021,23 +1055,22 @@ export const tools: Tools = [
         name: 'Shopify',
         href: 'https://www.shopify.com',
         logo: '',
-        description: 'Commerce platform for everyone',
-        knowledge: 'Not started'
+        description: 'The All-in-One Commerce Platform for Businesses',
+        usageLevel: 'Aware'
       },
       {
         name: 'Shopware',
         href: 'https://www.shopware.com',
         logo: <LogoShopware id="tools-shopware" />,
-        description:
-          'The leading edge of ecommerce. Your business faster, limitless.',
-        knowledge: 'Daily'
+        description: 'Open commerce. Full control. Agentic by design.',
+        usageLevel: 'Expert'
       },
       {
         name: 'Adobe Commerce (Magento)',
         href: 'https://business.adobe.com/de/products/magento/magento-commerce.html',
         logo: '',
         description: 'Flexible, scalable eCommerce solutions',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       }
     ]
   },
@@ -1048,29 +1081,29 @@ export const tools: Tools = [
         name: 'Ghost Inspector',
         href: 'https://ghostinspector.com',
         logo: '',
-        description: 'Automated browser testing',
-        knowledge: 'Used'
+        description: 'Catch bugs before they cost you',
+        usageLevel: 'Working'
       },
       {
         name: 'Jest',
         href: 'https://jestjs.io',
         logo: '',
         description: 'Delightful JavaScript Testing',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Playwright',
         href: 'https://playwright.dev',
         logo: '',
         description: 'Reliable end-to-end testing for modern web apps',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       },
       {
         name: 'cypress',
         href: 'https://www.cypress.io',
         logo: '',
         description: 'Browser testing for modern teams',
-        knowledge: 'Not started'
+        usageLevel: 'Aware'
       }
     ]
   },
@@ -1083,35 +1116,28 @@ export const tools: Tools = [
           'Unstyled UI components for building accessible user interfaces',
         href: 'https://base-ui.com',
         logo: '',
-        knowledge: 'Used'
+        usageLevel: 'Working'
       },
       {
         name: 'Headless UI',
         description: 'Completely unstyled, fully accessible UI components',
         href: 'https://headlessui.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'Material UI',
-        description: 'React components for faster and easier web development',
+        description: 'Ready to use Material Design components',
         href: 'https://mui.com',
         logo: '',
-        knowledge: 'Used'
-      },
-      {
-        name: 'Practical UI',
-        description: 'Practical UI components and patterns',
-        href: 'https://practicalui.dev',
-        logo: '',
-        knowledge: 'Professional'
+        usageLevel: 'Working'
       },
       {
         name: 'Radix UI',
         description: 'Low-level UI primitives with a focus on accessibility',
         href: 'https://www.radix-ui.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'shadcn/ui',
@@ -1119,7 +1145,7 @@ export const tools: Tools = [
           'Beautifully designed components built with Radix UI and Tailwind CSS',
         href: 'https://ui.shadcn.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'Tailwind UI',
@@ -1127,15 +1153,15 @@ export const tools: Tools = [
           'Beautiful UI components, crafted by the creators of Tailwind CSS',
         href: 'https://tailwindui.com',
         logo: '',
-        knowledge: 'Experienced'
+        usageLevel: 'Applied'
       },
       {
         name: 'Refactoring UI',
         description:
-          "Learn how to design awesome UIs by yourself using specific tactics explained from a developer's point-of-view",
+          'Make your ideas look awesome, without relying on a designer',
         href: 'https://www.refactoringui.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       }
     ]
   },
@@ -1147,15 +1173,16 @@ export const tools: Tools = [
         description: "The world's leading AI-powered developer platform",
         href: 'https://github.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       },
       {
         name: 'GitLab',
         description: 'The most comprehensive AI-powered DevSecOps Platform',
         href: 'https://about.gitlab.com',
         logo: '',
-        knowledge: 'Daily'
+        usageLevel: 'Expert'
       }
     ]
   }
 ];
+export default tools;

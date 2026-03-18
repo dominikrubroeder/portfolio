@@ -2,8 +2,8 @@ import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
 import { BrandList } from '@/components/organisms/brand';
 import {
-  AllTechnologies,
-  mainTechnologies
+  mainTechnologies,
+  TechnologiesList
 } from '@/components/organisms/technologies';
 
 export function Technologies() {
@@ -12,9 +12,9 @@ export function Technologies() {
       <Container className="space-y-2" id="technologies">
         <div className="space-y-3">
           <h2>
-            Technologies
+            Technologies,
             <span className="ml-2 font-medium text-muted-foreground">
-              are the foundation of writing production-ready code
+              the foundation of writing production-ready code
             </span>
           </h2>
 
@@ -23,7 +23,7 @@ export function Technologies() {
 
         <BrandList brands={mainTechnologies} />
 
-        <AllTechnologies />
+        <TechnologiesList />
       </Container>
     </Animate>
   );

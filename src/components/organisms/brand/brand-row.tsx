@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Brand } from '@/components/organisms/brand';
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
-import { KnowledgeBar } from '@/components/atoms/knowledge-bar';
+import { UsageBar } from '@/components/molecules/usage-bar/usage-bar';
 import { cn } from '@/lib/utils';
 
 export function BrandRow({
@@ -21,20 +21,18 @@ export function BrandRow({
     <Link
       href={brand.href}
       title={`Go to external ${brand.name} website`}
-      aria-label={`Go to external ${brand.name} website`}
+      aria-label={`Click to go to external ${brand.name} website`}
       target="_blank"
-      className="group relative flex items-center justify-between gap-3 rounded p-2 transition hover:bg-muted xs:gap-4"
+      className="group relative flex items-center justify-between gap-3 rounded p-2 hover:bg-muted motion-safe:transition xs:gap-4 xl:gap-8"
     >
-      <span className="sr-only">{`Go to external ${brand.name} website`}</span>
-
       <div className="flex items-center gap-3 sm:gap-8">
         <BrandLogo
           id={`brand-row-${brand.name}-${index}`}
           brand={brand.name}
-          className="size-11 sm:size-12 [&>svg]:size-11 sm:[&>svg]:size-12"
+          className="size-8 xs:size-11 sm:size-12 [&>svg]:size-8 xs:[&>svg]:size-11 sm:[&>svg]:size-12"
         />
 
-        <div>
+        <div className="break-words">
           <b>{brand.name}</b>
 
           {showDescription && brand.description && (
@@ -45,14 +43,18 @@ export function BrandRow({
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-2 sm:gap-4">
-        {showKnowledgeBar && <KnowledgeBar progress={brand.knowledge} />}
+      <div className="flex items-center justify-between gap-2 sm:gap-3">
+        {showKnowledgeBar && brand.usageLevel && (
+          <UsageBar usageLevel={brand.usageLevel} />
+        )}
 
         <Button
           variant="text-muted"
-          className={cn(showKnowledgeBar && 'hidden sm:flex')}
+          title={`Go to external ${brand.name} website`}
+          aria-label={`Click to go to external ${brand.name} website`}
+          className={cn(showKnowledgeBar && 'hidden xs:block')}
         >
-          <ArrowUpRightIcon className="size-5" />
+          <ArrowUpRightIcon className="size-4" />
           <span className="sr-only">Go to external ${brand.name} website</span>
         </Button>
       </div>

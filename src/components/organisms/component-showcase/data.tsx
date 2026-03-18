@@ -9,7 +9,7 @@ import { BrandLogo } from '@/components/atoms/brand-logo';
 import { Button } from '@/components/atoms/button';
 import { CodeBlock } from '@/components/atoms/codeblock';
 import { Divider } from '@/components/atoms/divider';
-import { KnowledgeBar } from '@/components/atoms/knowledge-bar';
+import { UsageBar } from '@/components/molecules/usage-bar/usage-bar';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Marker } from '@/components/atoms/marker';
 import { Markup } from '@/components/atoms/markup';
@@ -18,11 +18,16 @@ import { OrganismnIcon } from '@/components/atoms/icon/icon-organism';
 import { IconPage } from '@/components/atoms/icon/icon-page';
 import { TextDecoration } from '@/components/atoms/text-decoration';
 import { Toggle } from '@/components/atoms/toggle';
-import { Tooltip } from '@/components/atoms/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/atoms/tooltip/shadcnui/tooltip';
 import { Ul } from '@/components/atoms/ul';
 import { Animate } from '@/components/molecules/animate';
 import { DesignDrawer } from '@/components/molecules/drawer';
 import { Introduction } from '@/components/organisms/introduction';
+import { InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export interface ComponentGroup {
   groupName: string;
@@ -152,7 +157,7 @@ export const components: ComponentGroup[] = [
       {
         componentId: 'experience-bar',
         componentName: 'Experience Bar',
-        component: <KnowledgeBar progress="Professional" />,
+        component: <UsageBar usageLevel="Advanced" />,
         animatable: true
       },
       {
@@ -199,8 +204,19 @@ export const components: ComponentGroup[] = [
         componentId: 'tool-tip',
         componentName: 'Tooltip',
         component: (
-          <Tooltip text="More text" position="bottom">
-            Tooltip
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button
+                className="size-4 rounded-full"
+                aria-label="Tooltip about the knowlege, usage level of a tool or
+                  technology"
+              >
+                <InformationCircleIcon className="size-4" />
+              </button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p className="mb-0">I am the tooltip helper text!</p>
+            </TooltipContent>
           </Tooltip>
         ),
         animatable: false
