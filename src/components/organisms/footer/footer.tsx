@@ -10,10 +10,10 @@ export function Footer() {
         <ExternalLink
           href="https://nextjs.org"
           title="Open Next.js website"
-          aria-label="Open Next.js website"
+          aria-label="Click to open external Next.js website"
           size="xs"
         >
-          Next.js 16.1.6
+          Next.js 16.2.0
         </ExternalLink>
 
         <span>|</span>
@@ -21,7 +21,7 @@ export function Footer() {
         <ExternalLink
           href="https://react.dev"
           title="Open React website"
-          aria-label="Open React website"
+          aria-label="Click to open external React website"
           size="xs"
         >
           React 19.2.4
@@ -32,10 +32,10 @@ export function Footer() {
         <ExternalLink
           href="https://tailwindcss.com/docs"
           title="Open Tailwind CSS documentation"
-          aria-label="Open Tailwind CSS documentation"
+          aria-label="Click to open external Tailwind CSS documentation"
           size="xs"
         >
-          Tailwind CSS 4.2.1
+          Tailwind CSS 4.2.2
         </ExternalLink>
       </p>
 
