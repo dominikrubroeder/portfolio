@@ -3,7 +3,6 @@
 import { useCallback, useRef, useState } from 'react';
 
 import type { AccordionItemContainedProps } from '@/components/atoms/accordion';
-import { useEffectAfterMount } from '@/hooks/use-effect-after-mount';
 import { useReducedMotion } from 'framer-motion';
 
 export const useAccordionItemContained = ({
@@ -32,13 +31,22 @@ export const useAccordionItemContained = ({
     });
   }, [accordionGroupId, focusView, isReducedMotion]);
 
-  useEffectAfterMount(() => {
-    isOpen ? onOpen() : onClose();
-  }, [isOpen, onOpen]);
+  const toggle = useCallback(() => {
+    setIsOpen((prev) => {
+      const next = !prev;
+
+      if (next) {
+        setTimeout(onOpen, 0);
+      } else {
+        setTimeout(onClose, 0);
+      }
+      return next;
+    });
+  }, [onOpen, onClose]);
 
   return {
     isOpen,
-    setIsOpen,
+    toggle,
     ref
   };
 };
