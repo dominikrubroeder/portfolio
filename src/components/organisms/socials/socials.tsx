@@ -8,9 +8,9 @@ export function Socials() {
     <Animate>
       <Container className="space-y-8" id="socials">
         <h2>
-          Social accounts
+          Socials
           <span className="ml-2 font-medium text-muted-foreground">
-            You can find my social presence on
+            You can find me on
           </span>
         </h2>
 
