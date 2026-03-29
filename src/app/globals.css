@@ -472,7 +472,7 @@
   @apply scroll-mt-18 lg:scroll-mt-0;
 }
 @utility scroll-mt-responsive-md {
-  @apply scroll-mt-34 lg:scroll-mt-0;
+  @apply scroll-mt-34 lg:scroll-mt-32!;
 }
 
 @utility break-words {
