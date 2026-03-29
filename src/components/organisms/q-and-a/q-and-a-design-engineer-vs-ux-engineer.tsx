@@ -5,7 +5,7 @@ import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
 import { Ul } from '@/components/atoms/ul';
 import { Ol } from '@/components/atoms/ol';
 
-export function FaqDesignEngineerVsUxEngineer() {
+export function QAndADesignEngineerVsUxEngineer() {
   return (
     <div className="space-y-4">
       <Blockquote horizontalOffset={false}>

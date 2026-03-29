@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 
-export function FaqWhatIsAUxEngineer() {
+export function QAndAWhatIsAUxEngineer() {
   return (
     <>
       <Blockquote className="mt-0" quotes>

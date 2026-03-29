@@ -5,7 +5,7 @@ import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
 import { Ol } from '@/components/atoms/ol';
 import { Ul } from '@/components/atoms/ul';
 
-export function FaqUxEngineer() {
+export function QAndAUxEngineer() {
   return (
     <>
       <Blockquote horizontalOffset={false}>
