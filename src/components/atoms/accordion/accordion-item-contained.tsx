@@ -25,7 +25,7 @@ export function AccordionItemContained({
   children,
   className
 }: AccordionItemContainedProps) {
-  const { isOpen, setIsOpen, ref } = useAccordionItemContained({
+  const { isOpen, toggle, ref } = useAccordionItemContained({
     accordionGroupId,
     focusView
   });
@@ -48,7 +48,7 @@ export function AccordionItemContained({
           aria-label={
             isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
           }
-          onClick={() => setIsOpen((prevState) => !prevState)}
+          onClick={toggle}
           className="flex-1 justify-start text-left"
         >
           {title}
@@ -61,7 +61,7 @@ export function AccordionItemContained({
           aria-label={
             isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
           }
-          onClick={() => setIsOpen((prevState) => !prevState)}
+          onClick={toggle}
           variant={buttonVariant?.variant || 'contained-primary'}
         >
           {isOpen && (

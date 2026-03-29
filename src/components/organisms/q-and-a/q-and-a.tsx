@@ -1,19 +1,19 @@
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate/animate';
 import {
-  FaqDesignEngineerVsUxEngineer,
-  FaqUxDesigner,
-  FaqUxEngineer,
-  FaqWhatIsAUxEngineer
-} from '@/components/organisms/faq';
+  QAndADesignEngineerVsUxEngineer,
+  QAndAUxDesigner,
+  QAndAUxEngineer,
+  QAndAWhatIsAUxEngineer
+} from '@/components/organisms/q-and-a';
 import { Accordion } from '@/components/atoms/accordion';
 
-export function FAQ() {
+export function QAndA() {
   return (
     <Animate>
       <Container className="space-y-8" id="faq">
         <h2>
-          QA
+          Q&A
           <span className="ml-2 font-medium text-muted-foreground">
             Some questions and answers about UX design engineering
           </span>
@@ -25,19 +25,19 @@ export function FAQ() {
           items={[
             {
               title: 'What is a UX Engineer?',
-              children: <FaqWhatIsAUxEngineer />
+              children: <QAndAWhatIsAUxEngineer />
             },
             {
               title: 'On which predicates should a UX Designer focus on?',
-              children: <FaqUxDesigner />
+              children: <QAndAUxDesigner />
             },
             {
               title: 'On which predicates should a UX Engineer focus on?',
-              children: <FaqUxEngineer />
+              children: <QAndAUxEngineer />
             },
             {
               title: 'Design Engineer vs UX Engineer',
-              children: <FaqDesignEngineerVsUxEngineer />
+              children: <QAndADesignEngineerVsUxEngineer />
             }
           ]}
           accordionGroupId="accordion-group-faq"

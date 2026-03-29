@@ -21,25 +21,25 @@ Goals:
 - Use the laws of UX: [https://lawsofux.com](https://lawsofux.com) when you implement components on your own or revise
   existing components
 
-## 📝 Requirements
-
-Before you write any code, those rules have to be followed for all concepts and implementations:
-
-- Make yourself aware of the foundations in this file
-- Use `sequential-thinking` MCP whenever the task requires deeper investigation
-- Prepare yourself a proper plan and tell the plan beforehand
-- Always use all files of the `docs` folder to enhance your knowledge:
-  - `docs/REACT_BEST_PRACTISES.md`
-- Make a summary of what was executed, why this was beneficial for the whole project and if possible, tell numbers
-  about the improvement (like performance gain)
-
 ## ⚛️ Tech-Stack
 
-- `next` version 16+
-- `react` version 19+
+- `next` version 16.2.0
+- `react` version 19.2.4
 - `tailwindcss` version 4+
 - `typescript` version 5+
 - `motion` version 12+
+
+## 📝 Before you code
+
+Before you write any code, those rules have to be followed for all concepts and implementations:
+
+- Make yourself aware of the `Foundation` in this file
+- Make yourself aware of the `Tech-Stack` in this file
+- Make yourself aware and use of all files and folders in the `docs` directory to enhance your knowledge
+- Use `sequential-thinking` MCP whenever the task requires deeper investigation
+- Prepare yourself a proper plan and tell the plan beforehand
+- Make a summary of what was executed, why this was beneficial for the whole project and if possible, tell numbers
+  about the improvement (like performance gain)
 
 ## 📂 Project Structure
 

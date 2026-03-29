@@ -16,7 +16,8 @@ export function Animate({
   type,
   viewport = { once: true, margin: '-100px' },
   className,
-  children
+  children,
+  ref
 }: {
   direction?: 'up' | 'left' | 'right' | 'down' | 'scaleUp';
   delay?: number;
@@ -25,12 +26,14 @@ export function Animate({
   viewport?: ViewportOptions;
   className?: string;
   children: ReactNode;
+  ref?: React.Ref<HTMLDivElement>;
 }) {
   const { variants } = useAnimate({ delay, duration, type });
 
   return (
     <MotionConfig reducedMotion="user">
       <motion.div
+        ref={ref}
         variants={variants[direction]}
         initial="hidden"
         whileInView="visible"

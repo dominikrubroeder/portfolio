@@ -11,7 +11,7 @@ export function ContactSection() {
         className="mx-auto"
       >
         <EnvelopeIcon className="size-6" />
-        Do you need more infos?
+        Do you have more questions?
       </Button>
     </Container>
   );

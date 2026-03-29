@@ -10,6 +10,7 @@ export function Container({
   animateIn,
   className,
   children,
+  ref,
   ...rest
 }: {
   as?: HTMLTag;
@@ -18,11 +19,13 @@ export function Container({
   animateIn?: boolean;
   className?: string;
   children: ReactNode;
+  ref?: React.Ref<any>;
 } & React.HTMLAttributes<HTMLElement>) {
   const Comp = as;
 
   return (
     <Comp
+      ref={ref}
       className={cn(
         'mx-auto scroll-mt-responsive',
         horizontalPadding && 'px-4 lg:px-0',

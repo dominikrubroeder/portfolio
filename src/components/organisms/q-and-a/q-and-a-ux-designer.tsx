@@ -4,7 +4,7 @@ import { LogoChatgpt } from '@/components/atoms/logo';
 import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
 import { Ol } from '@/components/atoms/ol';
 
-export function FaqUxDesigner() {
+export function QAndAUxDesigner() {
   return (
     <div className="space-y-4">
       <Blockquote horizontalOffset={false}>

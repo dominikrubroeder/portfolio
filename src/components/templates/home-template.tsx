@@ -11,7 +11,7 @@ import { Projects } from '@/components/organisms/projects';
 import { Tools } from '@/components/organisms/tools';
 import { Technologies } from '@/components/organisms/technologies';
 import { Socials } from '@/components/organisms/socials';
-import { FAQ } from '@/components/organisms/faq';
+import { QAndA } from '@/components/organisms/q-and-a';
 import { ContactSection } from '@/components/organisms/contact';
 import { Container } from '@/components/atoms/container';
 import { GuidingPrinciple } from '@/components/organisms/guiding-principle';
@@ -42,7 +42,7 @@ export function HomeTemplate() {
 
       <Socials />
 
-      <FAQ />
+      <QAndA />
 
       <ContactSection />
     </Container>
