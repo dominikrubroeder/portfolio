@@ -14,8 +14,8 @@ export function IntroductionMyBackgroundAccordion() {
       </p>
       <p>
         <b className="font-bold text-foreground">Back in 2016</b>, i started as
-        Media Designer in a small ecommerce company &#39;Loy GmbH&#39; where we
-        focused on small or mid-sized companies handling the online ecommerce
+        Media Designer in a small digital agency &#39;Loy GmbH&#39; where we
+        focused on small or mid-sized companies handling the online e-commerce
         business for them.
       </p>
       <p>
@@ -35,7 +35,7 @@ export function IntroductionMyBackgroundAccordion() {
       </p>
       <p>
         At first, i only handled HTML and CSS changes, primarily in Shopware 5
-        at that time, which used{' '}
+        at that time, which used
         <BrandName
           brandName="Twig"
           label={
@@ -48,7 +48,7 @@ export function IntroductionMyBackgroundAccordion() {
         as their template engine.
       </p>
       <p>
-        JavaScript was coming slowing into the game, and i took a first Udemy
+        JavaScript was coming slowing into the pool, and i took a first Udemy
         course (props to the masters
         <ExternalLink
           href="https://www.udemy.com/user/academind"
@@ -72,8 +72,8 @@ export function IntroductionMyBackgroundAccordion() {
         care and be enthusiastic about.
       </p>
       <p>
-        From there on i focused on adapting my design changes into the real user
-        interfaces i initially designed.
+        From there on i focused on adapting the design changes into the real,
+        production-ready user interfaces i initially designed.
       </p>
 
       <BadgeHrGroup badgeProps={[{ children: '2021' }]} />
@@ -84,7 +84,7 @@ export function IntroductionMyBackgroundAccordion() {
       <p>
         Translating an idea from the mind, to paper, to pixel, to code into
         real-world applications has always been the most motivating thought that
-        drives my mentality to keep learning.
+        drives my mentality to keep on learning.
       </p>
       <p>
         With that, building large applications in the modern JavaScript
@@ -204,8 +204,8 @@ export function IntroductionMyBackgroundAccordion() {
         application to life, not the key factor of the project.
       </p>
       <p>
-        Together with other tools and technologies, they build up the system
-        that makes this initial thought a reality.
+        Together with other tools and technologies, they build up the
+        technological system that makes this initial thought a reality.
       </p>
     </div>
   );
