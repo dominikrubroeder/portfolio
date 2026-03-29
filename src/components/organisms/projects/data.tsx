@@ -1,6 +1,5 @@
 import {
   LogoAllesAuto,
-  LogoFrontendMentor,
   LogoGithub,
   LogoHdPlus,
   LogoIu,
@@ -11,9 +10,8 @@ import {
 } from '@/components/atoms/logo';
 import type { Project } from '@/components/organisms/projects/types';
 import { getTechnologies } from '@/components/organisms/technologies';
-import { getTools } from '@/components/organisms/tools'; // TODO: Complete tools and technologie logos
+import { getTools } from '@/components/organisms/tools';
 
-// TODO: Complete tools and technologie logos
 export const projects: Project[] = [
   {
     title: 'Uvex',
@@ -358,99 +356,6 @@ export const projects: Project[] = [
       {
         label: 'https://variasophia.de',
         src: 'https://variasophia.de'
-      }
-    ]
-  },
-  {
-    title: 'Frontend Mentor',
-    category: [],
-    url: 'https://www.frontendmentor.io',
-    description:
-      'Many frontend coding challenges using a real-life workflow. Great to solidify existing skills or to do fun projects.',
-    isCurrent: false,
-    isActive: false,
-    logo: (
-      <LogoFrontendMentor
-        id="projects-frontend-mentor"
-        className="h-12 w-auto"
-      />
-    ),
-    role: [],
-    aspects: undefined,
-    tools: [],
-    technologies: [],
-    companies: undefined,
-    caseStudyUrls: undefined,
-    demoUrls: [
-      {
-        label:
-          'https://github.com/dominikrubroeder?tab=repositories&q=frontendmentor',
-        src: 'https://github.com/dominikrubroeder?tab=repositories&q=frontendmentor'
-      },
-      {
-        label: 'https://expenses-chart-component-website.vercel.app',
-        src: 'https://expenses-chart-component-website.vercel.app'
-      },
-      {
-        label:
-          'https://intro-section-with-dropdown-navigation-website.vercel.app',
-        src: 'https://intro-section-with-dropdown-navigation-website.vercel.app'
-      },
-      {
-        label: 'https://ecommerce-product-page-website.vercel.app',
-        src: 'https://ecommerce-product-page-website.vercel.app'
-      },
-      {
-        label: 'https://interactive-pricing-component-website.vercel.app',
-        src: 'https://interactive-pricing-component-website.vercel.app'
-      },
-      {
-        label: 'https://space-tourism-website-dr.vercel.app',
-        src: 'https://space-tourism-website-dr.vercel.app'
-      },
-      {
-        label: 'https://advice-generator-dr.vercel.app',
-        src: 'https://advice-generator-dr.vercel.app'
-      },
-      {
-        label: 'https://github-user-search-app-dr.vercel.app',
-        src: 'https://github-user-search-app-dr.vercel.app'
-      },
-      {
-        label: 'https://interactive-comments-section-dr.vercel.app',
-        src: 'https://interactive-comments-section-dr.vercel.app'
-      },
-      {
-        label: 'https://password-generator-app-dr.vercel.app',
-        src: 'https://password-generator-app-dr.vercel.app'
-      },
-      {
-        label: 'https://tip-calculator-app-dr.vercel.app',
-        src: 'https://tip-calculator-app-dr.vercel.app'
-      },
-      {
-        label: 'https://photosnap-multi-page-website-dr.vercel.app',
-        src: 'https://photosnap-multi-page-website-dr.vercel.app'
-      },
-      {
-        label: 'https://entertainment-web-app-dr.vercel.app',
-        src: 'https://entertainment-web-app-dr.vercel.app'
-      },
-      {
-        label: 'https://dictionary-web-app-dr.vercel.app',
-        src: 'https://dictionary-web-app-dr.vercel.app'
-      },
-      {
-        label: 'https://skilled-elearning-landing-page-dr.vercel.app',
-        src: 'https://skilled-elearning-landing-page-dr.vercel.app'
-      },
-      {
-        label: 'https://sunnyside-agency-landing-page-dr.vercel.app',
-        src: 'https://sunnyside-agency-landing-page-dr.vercel.app'
-      },
-      {
-        label: 'https://multi-step-form-dr.vercel.app',
-        src: 'https://multi-step-form-dr.vercel.app'
       }
     ]
   },
