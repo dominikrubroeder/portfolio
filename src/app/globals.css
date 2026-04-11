@@ -174,18 +174,22 @@
     --primary: hsl(255 92% 65%);
     --primary-foreground: hsl(0 0% 100%);
     --primary-hover: hsl(255 92% 59%);
+    --primary-border: hsl(255 92% 51%);
 
     --blue: hsl(221.33, 97%, 53.5%);
     --blue-foreground: hsl(0 0% 100%);
     --blue-hover: hsl(221.33, 97%, 53.5%);
+    --blue-border: hsl(221.33, 97%, 46.5%);
 
     --violett: hsl(255, 92%, 65%);
     --violett-foreground: hsl(0 0% 100%);
     --violett-hover: hsl(255 92% 59%);
+    --violett-border: hsl(255 92% 51%);
 
-    --orange: hsl(0 92% 71%);
+    --orange: hsl(14 100% 50%);
     --orange-foreground: hsl(0 0% 100%);
-    --orange-hover: hsl(0 92% 71%);
+    --orange-hover: hsl(14 100% 58%);
+    --orange-border: hsl(14 100% 58%);
 
     --muted: hsl(240 23.8% 95.9%);
     --muted-foreground: hsl(240 2.3% 44%);

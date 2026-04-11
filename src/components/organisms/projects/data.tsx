@@ -20,8 +20,8 @@ export const projects: Project[] = [
     isCurrent: true,
     isActive: true,
     description:
-      'Protecting People – The mission of the Uvex brand with its vison and with its products',
-    timeframe: 'From 2025 – Ongoing',
+      'Protecting People – The mission of the Uvex brand with its vision and products',
+    timeframe: '2025',
     logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
     role: ['Design Engineer'],
     aspects: ['Consulting in CMS component set integration in Storyblok'],
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     isCurrent: false,
     isActive: false,
     description: 'Quality woodworking tools and accessorizes for DIY projects',
-    timeframe: 'From 2024 – Feb. 2026',
+    timeframe: '2024 – Feb. 2026',
     logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     aspects: undefined,
@@ -105,7 +105,7 @@ export const projects: Project[] = [
       'Kickstart in your headless ecommerce project with the mediawave Value Booster',
     isCurrent: true,
     isActive: true,
-    timeframe: 'From 2024 – Ongoing',
+    timeframe: '2024',
     logo: <LogoMediawave id="projects-mediawave" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer', 'Design Consultant'],
     aspects: [
@@ -153,7 +153,7 @@ export const projects: Project[] = [
       'Watch television in HD — via satellite or internet (IP), on your TV and smartphone',
     isCurrent: false,
     isActive: false,
-    timeframe: 'From 2023 – 2024',
+    timeframe: '2023 – 2024',
     logo: <LogoHdPlus id="projects-hd-plus" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer'],
     aspects: undefined,
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     description: 'Well-known home furniture store in Augsburg (Germany)',
     isCurrent: false,
     isActive: false,
-    timeframe: 'From 2021 – 2023',
+    timeframe: '2021 – 2023',
     logo: <LogoSegmueller id="projects-segmueller" className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     aspects: undefined,
@@ -237,7 +237,7 @@ export const projects: Project[] = [
     title: 'alles.auto Service Portal',
     category: ['B2B'],
     url: 'https://www.alles.auto',
-    description: 'Online selling and re-selling and car service platform',
+    description: 'Online selling, re-selling and car service platform',
     isCurrent: false,
     isActive: false,
     timeframe: '2021',
@@ -273,13 +273,88 @@ export const projects: Project[] = [
     ]
   },
   {
+    title: 'Locaboo',
+    category: ['App', 'B2C'],
+    url: 'https://www.locaboo.com',
+    description: 'Location booking made digital',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2016 – 2021',
+    logo: undefined,
+    role: ['Frontend Developer'],
+    aspects: undefined,
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.loy.info',
+        label: 'Loy GmbH'
+      }
+    ],
+    caseStudyUrls: [],
+    demoUrls: [],
+    previewImage: '/projects/project-locaboo-preview-wallpaper.png',
+    previewImageTimestamp: '2026-01-06'
+  },
+  {
+    title: 'Welleat',
+    category: ['Ecommerce', 'B2C'],
+    url: 'https://www.welleat.de',
+    description: 'Healthy food supplements',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2018 – 2019',
+    logo: undefined,
+    role: ['Frontend Developer'],
+    aspects: undefined,
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.loy.info',
+        label: 'Loy GmbH'
+      }
+    ],
+    caseStudyUrls: [],
+    demoUrls: [],
+    previewImage: '/projects/project-welleat-preview-wallpaper.png',
+    previewImageTimestamp: '2026-04-11'
+  },
+  {
+    title: 'Variasophia',
+    category: ['Ecommerce', 'B2C'],
+    url: 'https://variasophia.de',
+    description: 'Traditional Bavarian folk costumes',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2017',
+    logo: undefined,
+    role: ['Frontend Developer'],
+    aspects: undefined,
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.loy.info',
+        label: 'Loy GmbH'
+      }
+    ],
+    caseStudyUrls: [],
+    demoUrls: [],
+    previewImage: '/projects/project-variasophia-preview-wallpaper.png',
+    previewImageTimestamp: '2026-04-11'
+  }
+];
+
+export const educationalProjects: Project[] = [
+  {
     title: 'IU International University of Applied Sciences',
     subline: "Bachelor's degree in Media Design",
     category: [],
     url: 'https://www.iu.de/en/bachelor/mediendesign/',
     description:
       '"Design your life. With your Media Design studies". I studied Media Design at the IU International University of Applied Sciences in Munich, with specialization in user experience. While study, we had several theoretical, but also practical projects – targeting mostly digital media, but also print media, audio and video related projects.',
-    timeframe: 'From 2019 – 2023',
+    timeframe: '2019 – 2023',
     role: ['Dual Student'],
     isCurrent: false,
     isActive: false,
@@ -309,7 +384,7 @@ export const projects: Project[] = [
       'A small digital agency for small and mid-sized companies nearby Munich, Bavaria. Here I spend my two and a half years of training as Media Designer in Design and Tech, three additional years during dual study at the IU International University of Applied Sciences in Munich and a full-time position. My work was all about digital media production, design and development of user interfaces, layouts, and in some parts about print media.',
     isCurrent: false,
     isActive: false,
-    timeframe: 'From 2016 – 2021',
+    timeframe: '2016 – 2021',
     logo: <LogoLoyGmbh id="projects-loy-gmbh" className="h-12 w-auto" />,
     role: [
       'Trainee',

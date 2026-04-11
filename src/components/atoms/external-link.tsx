@@ -7,16 +7,20 @@ import { ColorProp, SizeProp } from '@/lib/types';
 
 export function ExternalLink({
   href,
+  variant = 'underline',
   size = 'md',
   color = 'foreground',
   className,
+  showExternalIndicator = true,
   children,
   ...rest
 }: {
   href: string;
+  variant?: 'underline' | 'text';
   size?: SizeProp;
   color?: ColorProp;
   className?: string;
+  showExternalIndicator?: boolean;
   children: ReactNode;
 } & React.HTMLAttributes<HTMLAnchorElement>) {
   return (
@@ -24,6 +28,7 @@ export function ExternalLink({
       href={href}
       className={cn(
         'group relative inline-flex items-center',
+        variant === 'underline',
         color === 'primary' && 'text-primary hover:text-primary-hover',
         color === 'foreground' && 'text-foreground',
         color === 'muted' && 'text-muted-foreground hover:text-foreground',
@@ -41,7 +46,9 @@ export function ExternalLink({
         {children}
       </span>
 
-      <ArrowUpRightIcon className={cn('size-3.5 text-current')} />
+      {showExternalIndicator && (
+        <ArrowUpRightIcon className={cn('size-3.5 text-current')} />
+      )}
     </a>
   );
 }

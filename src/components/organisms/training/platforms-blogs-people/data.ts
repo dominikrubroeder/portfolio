@@ -19,15 +19,8 @@ export const platformsBlogsPeople: LearningResource[] = [
     title: 'Builder.io',
     author: 'Steve Sewell',
     description: 'Drag and drop page builder and CMS',
-    href: 'https://www.builder.io',
+    href: 'https://www.builder.io/blog',
     type: 'blog'
-  },
-  {
-    title: 'Design+Code',
-    author: 'Meng To',
-    description: 'Learn to design and code React and Swift apps',
-    href: 'https://designcode.io',
-    type: 'video'
   },
   {
     title: 'dev.to',
@@ -63,16 +56,9 @@ export const platformsBlogsPeople: LearningResource[] = [
   {
     title: 'Learn Next.js',
     author: 'Vercel',
-    description: 'The React Framework for Production',
-    href: 'https://nextjs.org/learn',
-    type: 'blog'
-  },
-  {
-    title: 'Refactoring UI',
-    author: 'Adam Wathan and Steve Schoger',
     description:
-      "Learn how to design awesome UIs by yourself using specific tactics explained from a developer's point-of-view",
-    href: 'https://www.refactoringui.com',
+      'Go from beginner to expert in Next.js, with the official guide from Vercel',
+    href: 'https://nextjs.org/learn',
     type: 'blog'
   },
   {

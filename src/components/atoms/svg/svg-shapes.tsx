@@ -12,10 +12,6 @@ export function SvgShapes({ id, className }: BaseComponentProps) {
     >
       <g clipPath={`url(#${id}-clip0_1206_2871)`}>
         <path
-          d="M424.5 454H238.5C225.521 454 215 464.521 215 477.5C215 490.479 225.521 501 238.5 501H424.5C437.479 501 448 490.479 448 477.5C448 464.521 437.479 454 424.5 454Z"
-          style={{ fill: 'var(--color-primary)' }}
-        />
-        <path
           d="M404 173H324C317.373 173 312 178.373 312 185C312 191.627 317.373 197 324 197H404C410.627 197 416 191.627 416 185C416 178.373 410.627 173 404 173Z"
           style={{ fill: 'var(--color-primary)' }}
           className="hidden 2xl:block"
@@ -27,11 +23,6 @@ export function SvgShapes({ id, className }: BaseComponentProps) {
         <path
           d="M1530 945C1611.74 945 1678 878.738 1678 797C1678 715.262 1611.74 649 1530 649C1448.26 649 1382 715.262 1382 797C1382 878.738 1448.26 945 1530 945Z"
           style={{ fill: 'var(--color-primary)' }}
-        />
-        <path
-          d="M1296 71H1268C1265.79 71 1264 72.7909 1264 75V103C1264 105.209 1265.79 107 1268 107H1296C1298.21 107 1300 105.209 1300 103V75C1300 72.7909 1298.21 71 1296 71Z"
-          style={{ fill: 'var(--color-primary)' }}
-          className="hidden 2xl:block"
         />
         <path
           d="M0 0H193C215.091 0 233 17.9086 233 40C233 62.0914 215.091 80 193 80H0V0Z"

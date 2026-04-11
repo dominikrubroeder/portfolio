@@ -14,7 +14,7 @@ export const useAnimate = ({
   const fadeInUp: Variants = {
     hidden: {
       opacity: 0,
-      y: 60
+      y: 40
     },
     visible: {
       opacity: 1,

@@ -1,5 +1,5 @@
-import { BaseComponentProps, SizeReducedProp } from '@/lib/types';
+import { BaseComponentProps } from '@/lib/types';
 
 export interface HrProps extends BaseComponentProps {
-  variant?: SizeReducedProp;
+  variant?: 'contained' | 'full-width';
 }

@@ -1,17 +1,45 @@
 import { ExternalLink } from '@/components/atoms/external-link';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events/winter/constants';
+import { cn } from '@/lib/utils';
+import { BrandLink } from '@/components/organisms/brand';
+import { Ul } from '@/components/atoms/ul';
+import { socials } from '@/components/organisms/socials';
+import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="mt-16 space-y-3 border-t p-4 text-center text-xs md:pb-4">
-      <p>Build your vision. Do it with style.</p>
-      <p>Live your balance.</p>
+    <footer className="relative z-10 mt-16 space-y-3 border-t bg-background p-4 text-center text-xs md:pb-4">
+      <div className="mx-auto inline-flex items-center gap-2">
+        <Link href="/projects" className="underline">
+          Projects
+        </Link>
+        <span>|</span>
+        <Link href="/resources" className="underline">
+          Resources
+        </Link>
+      </div>
+
+      <Ul className={cn('my-0 mb-0 inline-flex')}>
+        {socials.map((brand, index) => (
+          <li key={`brand-link-${brand.name}-${index}`} className="mb-0">
+            <BrandLink
+              brandLogoId={`brand-link-${brand.name}-${index}`}
+              brand={brand}
+              size="small"
+            />
+          </li>
+        ))}
+      </Ul>
+
+      <p>Design your vision</p>
+
       <p className="flex flex-wrap items-center justify-center gap-2">
         <ExternalLink
           href="https://nextjs.org"
           title="Open Next.js website"
           aria-label="Click to open external Next.js website"
           size="xs"
+          color="muted"
         >
           Next.js 16.2.2
         </ExternalLink>
@@ -23,6 +51,7 @@ export function Footer() {
           title="Open React website"
           aria-label="Click to open external React website"
           size="xs"
+          color="muted"
         >
           React 19.2.4
         </ExternalLink>
@@ -34,6 +63,7 @@ export function Footer() {
           title="Open Tailwind CSS documentation"
           aria-label="Click to open external Tailwind CSS documentation"
           size="xs"
+          color="muted"
         >
           Tailwind CSS 4.2.2
         </ExternalLink>

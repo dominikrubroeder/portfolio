@@ -1,5 +1,4 @@
 import { ExternalLink } from '@/components/atoms/external-link';
-import { Markup } from '@/components/atoms/markup';
 import { Ul } from '@/components/atoms/ul';
 import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 import { BrandName } from '@/components/organisms/brand';
@@ -39,9 +38,7 @@ export function IntroductionMyBackgroundAccordion() {
         <BrandName
           brandName="Twig"
           label={
-            <Markup variant="muted" as="span">
-              .twig
-            </Markup>
+            <ExternalLink href="https://twig.symfony.com">Twig</ExternalLink>
           }
           className="mr-1 ml-1.5"
         />
