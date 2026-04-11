@@ -17,6 +17,7 @@ import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
 import { TooltipProvider } from '@/components/atoms/tooltip/shadcnui/tooltip';
+import { PageTemplate } from '@/components/templates/page-template';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
       <body>
         <ThemeProvider>
@@ -76,9 +78,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
           <Header />
 
-          <main>
+          <PageTemplate>
             <TooltipProvider>{children}</TooltipProvider>
-          </main>
+          </PageTemplate>
 
           <Footer />
           <Analytics />
