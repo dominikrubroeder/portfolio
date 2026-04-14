@@ -41,7 +41,7 @@ export function Footer() {
           size="xs"
           color="muted"
         >
-          Next.js 16.2.2
+          Next.js 16.2.3
         </ExternalLink>
 
         <span>|</span>
@@ -53,7 +53,7 @@ export function Footer() {
           size="xs"
           color="muted"
         >
-          React 19.2.4
+          React 19.2.5
         </ExternalLink>
 
         <span>|</span>
