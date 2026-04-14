@@ -131,5 +131,16 @@ export const books: LearningResource[] = [
     type: 'Book',
     releaseYear: 2011,
     category: ['Design']
+  },
+  {
+    title:
+      'Hack the Design System: Revolutionize the way your organization scales design',
+    author: 'Pierre Henri Clouin, Sampo Jalasto, Elisa Pyrhönen',
+    href: 'https://www.capgemini.com/us-en/solutions/hack-the-design-system-a-new-book-on-building-products-faster/',
+    progress: 0,
+    isCurrent: false,
+    type: 'Book',
+    releaseYear: 2019,
+    category: ['Design']
   }
 ];

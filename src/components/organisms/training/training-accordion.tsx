@@ -1,4 +1,4 @@
-import { IntroductionDegreesList } from '@/components/organisms/introduction';
+import { IntroductionDegrees } from '@/components/organisms/introduction';
 import { CheckBadgeIcon } from '@heroicons/react/24/outline';
 import { Ul } from '@/components/atoms/ul';
 import { Button } from '@/components/atoms/button';
@@ -7,7 +7,7 @@ import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 export function TrainingAccordion() {
   return (
     <>
-      <IntroductionDegreesList />
+      <IntroductionDegrees />
 
       <Ul headline="Certifications">
         <li>

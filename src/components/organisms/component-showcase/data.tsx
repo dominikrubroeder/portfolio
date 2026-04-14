@@ -14,19 +14,13 @@ import { ExternalLink } from '@/components/atoms/external-link';
 import { Marker } from '@/components/atoms/marker';
 import { Markup } from '@/components/atoms/markup';
 import { IconAtom, IconMolecule, IconTemplate } from '@/components/atoms/icon';
-import { OrganismnIcon } from '@/components/atoms/icon/icon-organism';
 import { IconPage } from '@/components/atoms/icon/icon-page';
 import { TextDecoration } from '@/components/atoms/text-decoration';
 import { Toggle } from '@/components/atoms/toggle';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger
-} from '@/components/atoms/tooltip/shadcnui/tooltip';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/atoms/tooltip/shadcnui/tooltip';
 import { Ul } from '@/components/atoms/ul';
 import { Animate } from '@/components/molecules/animate';
 import { DesignDrawer } from '@/components/molecules/drawer';
-import { Introduction } from '@/components/organisms/introduction';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 
 export interface ComponentGroup {
@@ -256,21 +250,6 @@ export const components: ComponentGroup[] = [
         componentId: 'drawer',
         componentName: 'Drawer',
         component: <DesignDrawer />,
-        animatable: false
-      }
-    ]
-  },
-  {
-    groupName: 'Organisms',
-    groupDescription:
-      'Organisms – like you may can imagine from now on – are again one step above Atoms and Molecules. Here we have a complete outfit together – a full, standalone feature or text section like a Newsletter section, or a Hero banner on your Home page. They are reusable building blocks, which can be inserted in as many places as desired – with one single source of truth for applying changes to this exact element.',
-    groupIcon: <OrganismnIcon />,
-    layoutOption: '2-cols',
-    children: [
-      {
-        componentId: 'introduction',
-        componentName: 'Introduction',
-        component: <Introduction />,
         animatable: false
       }
     ]

@@ -1,6 +1,6 @@
 import { Ul } from '@/components/atoms/ul';
 
-export function IntroductionHowIWorkAccordion() {
+export function IntroductionPrinciples() {
   return (
     <Ul listStyle="disc" className="my-0">
       <li>
@@ -41,6 +41,9 @@ export function IntroductionHowIWorkAccordion() {
       </li>
       <li>
         <b>Compose</b> trends with core design principles and UI patterns
+      </li>
+      <li>
+        <b>Fix the problem at the root, not the symptoms</b>
       </li>
     </Ul>
   );

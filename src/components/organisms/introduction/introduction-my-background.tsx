@@ -2,8 +2,9 @@ import { ExternalLink } from '@/components/atoms/external-link';
 import { Ul } from '@/components/atoms/ul';
 import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 import { BrandName } from '@/components/organisms/brand';
+import { Hr } from '@/components/atoms/hr';
 
-export function IntroductionMyBackgroundAccordion() {
+export function IntroductionMyBackground() {
   return (
     <div>
       <BadgeHrGroup badgeProps={[{ children: '2016' }]} />
@@ -32,6 +33,7 @@ export function IntroductionMyBackgroundAccordion() {
       <p>
         <b> From design to development, a first step</b>
       </p>
+
       <p>
         At first, i only handled HTML and CSS changes, primarily in Shopware 5
         at that time, which used
@@ -99,7 +101,7 @@ export function IntroductionMyBackgroundAccordion() {
               Next.js
             </ExternalLink>
           }
-          className="-mr-4 ml-1.5"
+          className="ml-1.5"
         />
         .
       </p>
@@ -203,6 +205,79 @@ export function IntroductionMyBackgroundAccordion() {
       <p>
         Together with other tools and technologies, they build up the
         technological system that makes this initial thought a reality.
+      </p>
+
+      <BadgeHrGroup badgeProps={[{ children: '2026' }]} />
+
+      <p>
+        <b>Making the full circle, connecting with the root dots</b>
+      </p>
+
+      <p>
+        Design Engineering. It is per definition described as "Design
+        engineering combines design (appearance) with coding (functionality) to
+        create smooth, easy user experiences." which makes it good for a person
+        having both abilities: to plan, visualize and create on the one hand and
+        to build, perform and function on the other side.
+      </p>
+
+      <p>
+        This benefit, of having both sides of the spectrum makes it easier and
+        better to design, while also better at coding because in the end both
+        departments are needed to create the desired product (the user
+        interface) that should mirror the business' goals and intentions.
+      </p>
+
+      <p>
+        During the last years working more in the field of coding, i noticed
+        something crucially for me. I miss design. Without a vision while work,
+        simply building interfaces for the sake of it, feels shallow to me. No
+        soul, no good reason to reach for. It becomes harder for me to enjoy
+        what i am doing.
+      </p>
+
+      <p>
+        That's why i am convinced that projects and everything what you do
+        should have a clear reason why, a descriptive meaning what you want to
+        achieve before you do it. And it actually has another benefit: you have
+        a clear path to follow. I'm sure that when the path is clear, so will be
+        the product, with more focus and clear intentions.
+      </p>
+
+      <p>
+        In the current industry, this relates most of all to requirements
+        engineering, making it super clear what's to build, why to build and how
+        to build. Without this roadmap, products, features or other enhancements
+        are set up to fail before they had even begun.
+      </p>
+
+      <p>
+        This may sound obvious, but in day to day work this often gets lost
+        quickly, especially in longer-lasting projects and the overall way of
+        work. Requirements changing while being in the process is not agile, it
+        is bad planning. Even though time says "we have to ship faster", "We
+        have to do this", "We have to do that", with the lack of those
+        definitions, the result will be fuzzy. Therefore, strong management is
+        needed. And people that what to carry the idea and vision from beginning
+        to end.
+      </p>
+
+      <p>
+        With all of that said, i am happy to see what is coming next, and what
+        good things we can build for the web and the people using it.
+      </p>
+
+      <Hr />
+
+      <p>
+        Source:
+        <ExternalLink
+          color="muted"
+          href="https://chatgpt.com/share/69dcbda0-aae4-8330-b839-8157a9fec032"
+          aria-label=""
+        >
+          Design Engineering
+        </ExternalLink>
       </p>
     </div>
   );

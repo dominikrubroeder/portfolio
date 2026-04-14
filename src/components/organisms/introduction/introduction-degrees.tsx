@@ -4,7 +4,7 @@ import { Ul } from '@/components/atoms/ul';
 import { Button } from '@/components/atoms/button';
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid';
 
-export function IntroductionDegreesList() {
+export function IntroductionDegrees() {
   return (
     <Ul headline="Degrees">
       <li>

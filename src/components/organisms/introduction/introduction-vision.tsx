@@ -1,7 +1,7 @@
 import { Blockquote } from '@/components/atoms/blockquote';
 import Link from '@/components/atoms/link';
 
-export function IntroductionVisionAccordion() {
+export function IntroductionVision() {
   return (
     <div className="mb-8 space-y-4">
       <Blockquote>

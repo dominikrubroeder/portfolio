@@ -27,7 +27,7 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'group relative inline-flex items-center',
+        'group relative',
         variant === 'underline',
         color === 'primary' && 'text-primary hover:text-primary-hover',
         color === 'foreground' && 'text-foreground',
@@ -47,7 +47,9 @@ export function ExternalLink({
       </span>
 
       {showExternalIndicator && (
-        <ArrowUpRightIcon className={cn('size-3.5 text-current')} />
+        <ArrowUpRightIcon
+          className={cn('inline-block size-3.5 text-current')}
+        />
       )}
     </a>
   );
