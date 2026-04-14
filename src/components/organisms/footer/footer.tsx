@@ -13,7 +13,7 @@ export function Footer() {
           aria-label="Click to open external Next.js website"
           size="xs"
         >
-          Next.js 16.2.2
+          Next.js 16.2.3
         </ExternalLink>
 
         <span>|</span>
@@ -24,7 +24,7 @@ export function Footer() {
           aria-label="Click to open external React website"
           size="xs"
         >
-          React 19.2.4
+          React 19.2.5
         </ExternalLink>
 
         <span>|</span>
