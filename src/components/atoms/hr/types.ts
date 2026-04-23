@@ -1,5 +1,5 @@
 import { BaseComponentProps } from '@/lib/types';
 
 export interface HrProps extends BaseComponentProps {
-  variant?: 'contained' | 'full-width';
+  variant?: 'container-readable' | 'container' | 'full-width';
 }

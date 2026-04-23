@@ -11,7 +11,9 @@ export function Hr({
       className={cn(
         'block h-1',
         variant === 'full-width' && 'w-full',
-        variant === 'contained' && 'mx-auto sm:max-w-(--container-readable)',
+        variant !== 'full-width' && 'mx-auto',
+        variant === 'container-readable' && 'sm:max-w-(--container-readable)',
+        variant === 'container' && 'sm:max-w-(--container)',
         className
       )}
     />

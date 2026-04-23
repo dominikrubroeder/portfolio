@@ -17,7 +17,7 @@ export function HomeHero() {
       <ThemeWireframeBackground />
 
       <Animate delay={0.1} className="space-y-3">
-        <Container as="div">
+        <Container as="div" className="space-y-3">
           <div className="relative z-10 space-y-6 pb-1 lg:pb-2">
             <div className="xs:space-y-2">
               <div className="space-x-1.5 text-primary">
@@ -34,18 +34,28 @@ export function HomeHero() {
           <div>
             <div className="relative z-10 rounded border bg-background p-4 pb-0 sm:pb-2">
               <p className="p-1">
-                Building user interfaces is my passion for over 10 years now. It
-                is commited to the frontend, where one component connects to the
+                Building user interfaces is my passion for over 10 years now. I
+                am commited to the frontend, where one component connects to the
                 next, and the next, and the next, and all of a sudden we have a
                 complete, streamlined, holistic and homogenous user interface
                 that can be adjusted in color, size, spacing, typography and
                 other theme-related properties from some root files.
               </p>
 
+              <p>
+                During the last years, i combined design and coding into one
+                craft; design engineering. The goal is to build a smooth user
+                experience by leveraging both department values at the same
+                time. Personally, i want to close the gap between design and
+                engineering as much as possible and bring it together with
+                psychology patterns.
+              </p>
+
               <p className="p-1">
-                Building user interfaces for the web: It's a craft about UI
-                components and design systems, to enable companies shipping user
-                interfaces reliably, predictably and with a strategic approach.
+                So, building user interfaces for the web: It's a craft about UI
+                components and design systems. With it, companies ship user
+                interfaces more reliably, predictably and with a systematic
+                approach.
               </p>
               {/** – and as a UX Design Engineer, my goal is to close
                the gap between design and engineering as much as possible. */}

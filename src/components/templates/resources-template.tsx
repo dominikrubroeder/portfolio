@@ -1,25 +1,22 @@
 import { Animate } from '@/components/molecules/animate';
 import { Container } from '@/components/atoms/container';
 import { Ul } from '@/components/atoms/ul';
-import {
-  getBooks,
-  getCourses,
-  getPlatformsBlogsPeople
-} from '@/components/organisms/training';
+import { getBooks, getCourses, getPlatformsBlogsPeople } from '@/components/organisms/training';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Hr } from '@/components/atoms/hr';
+import { getResearch } from '@/components/organisms/training/research';
 
 export function ResourcesTemplate() {
   return (
     <>
       <Animate delay={0.1}>
         <Container as="section" size="container-readable" className="space-y-2">
-          <h2>Resources</h2>
+          <h1>Resources</h1>
           <p>
             Resources educate and help us grow in our expertise by leveraging
-            the community knowledge, research and proven principles of the past
-            that stood the test of time; letting us apply them to our daily
-            work.
+            the community knowledge, research findings and proven principles of
+            the past that stood the test of time; letting us apply them to our
+            daily work.
           </p>
         </Container>
       </Animate>
@@ -69,7 +66,7 @@ export function ResourcesTemplate() {
         </Container>
       </Animate>
 
-      <Hr variant="contained" />
+      <Hr variant="container-readable" />
 
       <Container as="section" size="container-readable">
         <h3 className="mb-0">Courses</h3>
@@ -96,7 +93,7 @@ export function ResourcesTemplate() {
         </Ul>
       </Container>
 
-      <Hr variant="contained" />
+      <Hr variant="container-readable" />
 
       <Container as="section" size="container-readable">
         <h3 className="mb-0">Platforms and People</h3>
@@ -105,27 +102,90 @@ export function ResourcesTemplate() {
           {getPlatformsBlogsPeople({ sortBy: 'A-Z' }).map((platform) => (
             <li key={platform.title}>
               <div>
-                <h4 className="mb-0">{platform.title}</h4>
-                <small>{platform.author}</small>
+                <div>
+                  <h4 className="mb-0">{platform.title}</h4>
+                  <small className="flex flex-wrap items-center gap-2">
+                    <span>{platform.author}</span>
+
+                    {platform.releaseYear && (
+                      <>
+                        <span className="size-1 rounded-full bg-muted-foreground" />
+                        <span>{platform.releaseYear}</span>
+                      </>
+                    )}
+
+                    {platform.category && (
+                      <>
+                        <span className="size-1 rounded-full bg-muted-foreground" />
+                        <span>{platform.category.join(', ')}</span>
+                      </>
+                    )}
+                  </small>
+                </div>
+
+                {platform.description && <p>{platform.description}</p>}
+
+                <ExternalLink
+                  href={platform.href}
+                  color="primary"
+                  className="-ml-1"
+                  title={`Read more about ${platform.title}`}
+                  aria-label={`Click to read more about ${platform.title} in an external tab`}
+                >
+                  More on {platform.title}
+                </ExternalLink>
+              </div>
+            </li>
+          ))}
+        </Ul>
+      </Container>
+
+      <Hr variant="container-readable" />
+
+      <Container as="section" size="container-readable">
+        <h3 className="mb-0">Research, Study and Data</h3>
+
+        <Ul className="space-y-6">
+          {getResearch({ sorting: 'A-Z' }).map((researchItem) => (
+            <li key={researchItem.title}>
+              <div>
+                <h4 className="mb-0">{researchItem.title}</h4>
+                <small className="flex flex-wrap items-center gap-2">
+                  <span>{researchItem.author}</span>
+
+                  {researchItem.releaseYear && (
+                    <>
+                      <span className="size-1 rounded-full bg-muted-foreground" />
+                      <span>{researchItem.releaseYear}</span>
+                    </>
+                  )}
+
+                  {researchItem.category && (
+                    <>
+                      <span className="size-1 rounded-full bg-muted-foreground" />
+                      <span>{researchItem.category.join(', ')}</span>
+                    </>
+                  )}
+                </small>
               </div>
 
-              {platform.description && <p>{platform.description}</p>}
+              {researchItem.description && <p>{researchItem.description}</p>}
 
               <ExternalLink
-                href={platform.href}
+                href={researchItem.href}
                 color="primary"
                 className="-ml-1"
-                title={`Read more about ${platform.title}`}
-                aria-label={`Click to read more about ${platform.title} in an external tab`}
+                title={`Read more about ${researchItem.title}`}
+                aria-label={`Click to read more about ${researchItem.title} in an external tab`}
               >
-                More on {platform.title}
+                More on {researchItem.title}
               </ExternalLink>
             </li>
           ))}
         </Ul>
       </Container>
 
-      <Hr variant="contained" />
+      <Hr variant="container-readable" />
 
       <Container
         as="section"
@@ -134,10 +194,12 @@ export function ResourcesTemplate() {
       >
         <small className="text-center">
           Note: None of these links are affiliate links or links with commercial
-          background. All of those a personally curated resources found and used
+          intent. All of those resources are personally curated, found and used
           during the last years.
         </small>
       </Container>
+
+      <Hr variant="container" />
     </>
   );
 }

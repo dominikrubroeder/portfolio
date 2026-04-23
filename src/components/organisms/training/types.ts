@@ -7,7 +7,14 @@ export interface LearningResource {
   href: string;
   /** A number between 0 and 100 */
   progress?: number;
-  category?: ('Design' | 'Engineering' | 'Psychology' | 'Product')[];
+  category?: (
+    | 'Design'
+    | 'Engineering'
+    | 'Psychology'
+    | 'Product'
+    | 'Research, Study and Data'
+    | 'Learning'
+  )[];
   isCurrent?: boolean;
   knowledge?: UsageLevel;
   type?: 'video' | 'blog' | 'people' | 'Course' | 'Book';

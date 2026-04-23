@@ -25,7 +25,7 @@ export function ProjectsTemplate() {
     <>
       <Animate delay={0.1}>
         <Container as="section" className="space-y-2">
-          <h2>Projects</h2>
+          <h1 className="text-6xl font-black">Projects</h1>
           <p>
             To these projects i contributed either as designer or engineer, in
             the timeframe from 2016 to 2026. Not all projects are listed, only
@@ -209,6 +209,8 @@ export function ProjectsTemplate() {
             ))}
         </Ul>
       </Container>
+
+      <Hr />
     </>
   );
 }

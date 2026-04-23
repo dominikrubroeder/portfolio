@@ -13,13 +13,7 @@ import {
   DialogTitle,
   DialogTrigger
 } from '@/components/molecules/dialog';
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerFooter,
-  DrawerTrigger
-} from '@/components/molecules/drawer';
+import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerTrigger } from '@/components/molecules/drawer';
 
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { ThemeWinterToggle } from '@/components/organisms/events';
@@ -32,10 +26,7 @@ import { ThemeFontSizeSetting } from '@/components/organisms/theme/theme-font-si
 import { Toggle } from '@/components/atoms/toggle';
 import { ThemeSpacingContainerWidthSetting } from '@/components/organisms/theme/theme-spacing-container-width-setting';
 import { ThemeSpacingSectionBreakSetting } from '@/components/organisms/theme/theme-spacing-section-break-setting';
-import {
-  ArrowsRightLeftIcon,
-  ArrowUturnLeftIcon
-} from '@heroicons/react/16/solid';
+import { ArrowUturnLeftIcon, PlusIcon } from '@heroicons/react/16/solid';
 import { ThemeAnimationSetting } from '@/components/organisms/theme/theme-animation-setting';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import { useTheme } from '@/components/organisms/theme/theme-context';
@@ -53,12 +44,12 @@ export function ThemeDrawer({
   const { theme } = useTheme();
   const isDesktop = useMediaQuery('(min-width: 768px)');
   const defaultTrigger = (
-    <Button {...buttonProps}>
+    <Button variant="text-foreground" {...buttonProps}>
       {buttonIconOnly ? (
-        <ArrowsRightLeftIcon />
+        <PlusIcon />
       ) : (
         <>
-          <ArrowsRightLeftIcon /> <span>Modify Theme: {theme.value}</span>
+          <PlusIcon /> <span>Modify Theme</span>
         </>
       )}
     </Button>
@@ -66,11 +57,9 @@ export function ThemeDrawer({
 
   const header = (
     <DialogHeader>
-      <DialogTitle>Modify this beautiful page</DialogTitle>
+      <DialogTitle>Modify me</DialogTitle>
       <DialogDescription>
-        Feel free to edit this theme to your behalfs. Change colors, set a new
-        theme overall, or play around with current events to see how the app
-        behaves on those changes.
+        Theme settings; apply them to your behalf.
       </DialogDescription>
     </DialogHeader>
   );
@@ -160,11 +149,6 @@ export function ThemeDrawer({
 
   const footer = (
     <DrawerFooter className="pt-2">
-      <p className="flex items-center justify-center gap-1 text-center text-xs text-muted-foreground">
-        <InformationCircleIcon className="size-4" />
-        Theme settings do auto-apply
-      </p>
-
       <div className="grid gap-1">
         <DrawerClose asChild>
           <Button variant="ghost-foreground">
@@ -176,6 +160,11 @@ export function ThemeDrawer({
           <Button variant="ghost-foreground">Close</Button>
         </DrawerClose>
       </div>
+
+      <p className="flex items-center justify-center gap-1 text-center text-xs text-muted-foreground">
+        <InformationCircleIcon className="size-4" />
+        Theme settings auto-apply
+      </p>
     </DrawerFooter>
   );
 

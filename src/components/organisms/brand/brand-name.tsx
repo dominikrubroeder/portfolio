@@ -21,7 +21,7 @@ export function BrandName({
         className="min-h-none min-w-none inline-block size-4 text-xs hover:text-current"
       />
 
-      <span className={cn(labelClassName)}>{label}</span>
+      <span className={cn('text-foreground', labelClassName)}>{label}</span>
     </span>
   );
 }

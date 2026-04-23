@@ -2,7 +2,6 @@ import {
   LogoAlgolia,
   LogoCraft,
   LogoFigma,
-  LogoGithub,
   LogoInkdrop,
   LogoShopware,
   LogoStoryblok,
@@ -31,13 +30,6 @@ export const mainTools: Brand[] = [
     description: 'as my main note and documentation tool',
     logo: <LogoCraft id="tools-craft" className="size-12" />,
     href: 'https://www.craft.do',
-    usageLevel: 'Expert'
-  },
-  {
-    name: 'GitHub',
-    description: 'to store my private codebase',
-    logo: <LogoGithub id="tools-github" className="size-12" />,
-    href: 'https://github.com',
     usageLevel: 'Expert'
   }
 ];
@@ -167,9 +159,7 @@ const tools: Tools = [
         description: 'Opensource IDE for exploring and testing APIs',
         usageLevel: 'Working'
       }
-    ],
-    description:
-      'In day to day work, i use the IDE and the actual local development environment as preview for the APIs. Only when the team or the task requires an external API client, i plug them into the workflow.'
+    ]
   },
   {
     group: 'Authentication',
@@ -872,7 +862,7 @@ const tools: Tools = [
       }
     ],
     description:
-      "In case you can't find a popular package, you can always reach out and get in touch to clarify the experience with it."
+      "In case you can't find a popular package, reach out and get in touch to clarify my experience with it."
   },
   {
     group: 'Payment',

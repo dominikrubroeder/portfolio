@@ -6,10 +6,11 @@ import {
 } from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
-import { ThemeQuickSettings } from '@/components/organisms/theme';
+import { ThemeColorSetting } from '@/components/organisms/theme';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { cn } from '@/lib/utils';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events';
+import { ButtonFigma } from '@/components/atoms/button/button-figma';
 
 export function Header() {
   return (
@@ -38,7 +39,7 @@ export function Header() {
               size="sm"
               title="Open mediawave commerce GmbH website"
               aria-label="Open mediawave commerce GmbH website"
-              className="hidden sm:inline-flex"
+              className="hidden sm:inline-block"
             >
               mediawave
             </ExternalLink>
@@ -49,10 +50,12 @@ export function Header() {
       <HeaderMenu />
 
       <div className="hidden lg:flex lg:items-center lg:gap-4">
-        <ThemeQuickSettings />
+        <ButtonContact buttonProps={{ size: 'large', className: 'mr-2' }} />
+
+        <ThemeColorSetting />
 
         <ButtonGroup minimizeSpacing>
-          <ButtonContact iconPosition="right" buttonProps={{ size: 'large' }} />
+          <ButtonFigma />
           <ButtonGithub id="header-github" />
           <ButtonLinkedin id="header-linkedin" />
         </ButtonGroup>

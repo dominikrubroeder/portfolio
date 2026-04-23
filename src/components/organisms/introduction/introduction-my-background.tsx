@@ -35,20 +35,34 @@ export function IntroductionMyBackground() {
       </p>
 
       <p>
-        At first, i only handled HTML and CSS changes, primarily in Shopware 5
+        At first, i only handled HTML and CSS changes, primarily in
+        <BrandName
+          brandName="Shopware"
+          label={
+            <ExternalLink href="https://twig.symfony.com">
+              Shopware 5
+            </ExternalLink>
+          }
+          className="mr-0.5 ml-1.5"
+        />
         at that time, which used
         <BrandName
           brandName="Twig"
           label={
             <ExternalLink href="https://twig.symfony.com">Twig</ExternalLink>
           }
-          className="mr-1 ml-1.5"
+          className="mr-0.5 ml-1.5"
         />
         as their template engine.
       </p>
       <p>
-        JavaScript was coming slowing into the pool, and i took a first Udemy
-        course (props to the masters
+        <BrandName
+          brandName="JavaScript"
+          label="JavaScript"
+          className="mr-0.5"
+        />
+        was coming slowly into the game, and i took a first Udemy course (props
+        to the masters
         <ExternalLink
           href="https://www.udemy.com/user/academind"
           className="mr-0 ml-1"
@@ -83,7 +97,7 @@ export function IntroductionMyBackground() {
       <p>
         Translating an idea from the mind, to paper, to pixel, to code into
         real-world applications has always been the most motivating thought that
-        drives my mentality to keep on learning.
+        drove my mentality to keep on learning.
       </p>
       <p>
         With that, building large applications in the modern JavaScript
@@ -91,7 +105,7 @@ export function IntroductionMyBackground() {
         <BrandName
           brandName="React"
           label={<ExternalLink href="https://react.dev">React</ExternalLink>}
-          className="mr-1 ml-1.5"
+          className="mr-0.5 ml-1.5"
         />
         and
         <BrandName
@@ -110,7 +124,7 @@ export function IntroductionMyBackground() {
         <BrandName
           brandName="Vue.js"
           label={<ExternalLink href="https://vuejs.org">Vue</ExternalLink>}
-          className="mr-1 ml-1.5"
+          className="mr-0.5 ml-1.5"
         />
         and enjoyed the elegant and more &#39;premium&#39; syntax of it, i stuck
         and got more into React because of its larger community, the wide-spread
@@ -128,7 +142,7 @@ export function IntroductionMyBackground() {
               TypeScript
             </ExternalLink>
           }
-          className="mr-1"
+          className="mr-0.5"
         />
         came as last piece to the puzzle which in the retrospective was a wise
         decision, as most of today&#39;s web applications or frameworks require
@@ -159,7 +173,7 @@ export function IntroductionMyBackground() {
                   href="https://nuxtjs.org/"
                   title="Visit Nuxt website"
                   aria-label="Visit Nuxt website"
-                  className="mr-1"
+                  className="mr-0.5"
                 >
                   Nuxt
                 </ExternalLink>
@@ -218,30 +232,38 @@ export function IntroductionMyBackground() {
         engineering combines design (appearance) with coding (functionality) to
         create smooth, easy user experiences." which makes it good for a person
         having both abilities: to plan, visualize and create on the one hand and
-        to build, perform and function on the other side.
+        to build, perform and function on the other.
       </p>
 
       <p>
         This benefit, of having both sides of the spectrum makes it easier and
-        better to design, while also better at coding because in the end both
-        departments are needed to create the desired product (the user
-        interface) that should mirror the business' goals and intentions.
+        better to design, while also better at coding because the same person
+        knows what the other department is about and the values of it. Also, in
+        the end both departments are needed to create the desired product (the
+        user interface) that should mirror the business' goals and intentions
+        for the people using it.
       </p>
 
       <p>
         During the last years working more in the field of coding, i noticed
         something crucially for me. I miss design. Without a vision while work,
-        simply building interfaces for the sake of it, feels shallow to me. No
-        soul, no good reason to reach for. It becomes harder for me to enjoy
-        what i am doing.
+        simply building user interfaces for the sake of it, feels shallow,
+        almost hollow to me. No soul, no good reason to reach for. It becomes
+        harder for me to enjoy what i am doing.
       </p>
 
       <p>
         That's why i am convinced that projects and everything what you do
         should have a clear reason why, a descriptive meaning what you want to
-        achieve before you do it. And it actually has another benefit: you have
-        a clear path to follow. I'm sure that when the path is clear, so will be
-        the product, with more focus and clear intentions.
+        achieve before you do it. This means a vision description, a mission
+        description and a description of the values of it. And – sticking to it,
+        investing into it.
+      </p>
+
+      <p>
+        And it actually has another benefit: you have a clear path to go on. I'm
+        sure that when the path is clear, so will be the product, with more
+        focus and clear intentions.
       </p>
 
       <p>
@@ -254,12 +276,11 @@ export function IntroductionMyBackground() {
       <p>
         This may sound obvious, but in day to day work this often gets lost
         quickly, especially in longer-lasting projects and the overall way of
-        work. Requirements changing while being in the process is not agile, it
-        is bad planning. Even though time says "we have to ship faster", "We
-        have to do this", "We have to do that", with the lack of those
-        definitions, the result will be fuzzy. Therefore, strong management is
-        needed. And people that what to carry the idea and vision from beginning
-        to end.
+        work, focusing primarily on "making it work" and "shipping it".
+        Requirements changing while being in the process is not agile, it is bad
+        planning. With the lack of those definitions, the result will be fuzzy.
+        Therefore, strong management is needed. And people that what to carry
+        the idea and vision from beginning to end.
       </p>
 
       <p>
