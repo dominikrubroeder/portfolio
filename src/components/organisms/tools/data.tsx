@@ -1056,7 +1056,7 @@ const tools: Tools = [
         usageLevel: 'Expert'
       },
       {
-        name: 'Adobe Commerce (Magento)',
+        name: 'Adobe Commerce',
         href: 'https://business.adobe.com/de/products/magento/magento-commerce.html',
         logo: '',
         description: 'Flexible, scalable eCommerce solutions',

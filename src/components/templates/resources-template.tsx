@@ -30,7 +30,7 @@ export function ResourcesTemplate() {
               <li key={book.title}>
                 <div>
                   <h4 className="mb-0">{book.title}</h4>
-                  <small className="flex flex-wrap items-center gap-2">
+                  <small className="flex flex-wrap items-center gap-2 font-normal">
                     <span>{book.author}</span>
 
                     {book.releaseYear && (
@@ -76,7 +76,7 @@ export function ResourcesTemplate() {
             <li key={course.title}>
               <div>
                 <h4 className="mb-0">{course.title}</h4>
-                <small>{course.author}</small>
+                <small className="font-normal">{course.author}</small>
               </div>
 
               <ExternalLink
@@ -104,7 +104,7 @@ export function ResourcesTemplate() {
               <div>
                 <div>
                   <h4 className="mb-0">{platform.title}</h4>
-                  <small className="flex flex-wrap items-center gap-2">
+                  <small className="flex flex-wrap items-center gap-2 font-normal">
                     <span>{platform.author}</span>
 
                     {platform.releaseYear && (
@@ -148,28 +148,13 @@ export function ResourcesTemplate() {
         <Ul className="space-y-6">
           {getResearch({ sorting: 'A-Z' }).map((researchItem) => (
             <li key={researchItem.title}>
-              <div>
-                <h4 className="mb-0">{researchItem.title}</h4>
-                <small className="flex flex-wrap items-center gap-2">
-                  <span>{researchItem.author}</span>
+              <h4 className="mb-0">{researchItem.title}</h4>
 
-                  {researchItem.releaseYear && (
-                    <>
-                      <span className="size-1 rounded-full bg-muted-foreground" />
-                      <span>{researchItem.releaseYear}</span>
-                    </>
-                  )}
-
-                  {researchItem.category && (
-                    <>
-                      <span className="size-1 rounded-full bg-muted-foreground" />
-                      <span>{researchItem.category.join(', ')}</span>
-                    </>
-                  )}
-                </small>
-              </div>
-
-              {researchItem.description && <p>{researchItem.description}</p>}
+              {researchItem.description && (
+                <p className="text-muted-foreground">
+                  {researchItem.description}
+                </p>
+              )}
 
               <ExternalLink
                 href={researchItem.href}

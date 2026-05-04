@@ -27,7 +27,7 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'group relative',
+        'group relative font-normal',
         variant === 'underline',
         color === 'primary' && 'text-primary hover:text-primary-hover',
         color === 'foreground' && 'text-foreground',

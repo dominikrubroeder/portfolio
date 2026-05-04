@@ -35,7 +35,7 @@ export function BrandRow({
           <b>{brand.name}</b>
 
           {showDescription && brand.description && (
-            <p className="hidden leading-snug text-muted-foreground sm:block">
+            <p className="hidden leading-snug font-normal text-muted-foreground sm:block">
               {brand.description}
             </p>
           )}

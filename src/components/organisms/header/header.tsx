@@ -1,9 +1,5 @@
 import { Avatar } from '@/components/atoms/avatar';
-import {
-  ButtonContact,
-  ButtonGithub,
-  ButtonLinkedin
-} from '@/components/atoms/button';
+import { ButtonContact, ButtonGithub, ButtonLinkedin } from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
 import { ThemeColorSetting } from '@/components/organisms/theme';
@@ -14,7 +10,7 @@ import { ButtonFigma } from '@/components/atoms/button/button-figma';
 
 export function Header() {
   return (
-    <header className="max-w-container sticky top-0 z-100 mx-auto flex items-center justify-between gap-2 border-b bg-background p-4 xs:gap-4 lg:relative lg:h-24 lg:border-none">
+    <header className="sticky top-0 z-100 mx-auto flex max-w-(--container) items-center justify-between gap-2 border-b bg-background p-4 xs:gap-4 lg:relative lg:h-24 lg:border-none">
       <div className="flex items-center gap-2 xs:gap-3">
         <Avatar
           className={cn(
@@ -27,7 +23,7 @@ export function Header() {
         />
 
         <h1 className="w-max">
-          <span className="block w-max text-sm leading-snug xs:text-base">
+          <span className="block w-max text-sm leading-snug sm:text-base">
             Dominik Rubröder
           </span>
           <span className="block text-sm font-normal text-muted-foreground">

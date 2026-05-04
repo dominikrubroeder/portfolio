@@ -11,7 +11,7 @@ export function HomeTemplate() {
 
       <ThemeNotesBackgroundCornellNotes />
 
-      <div className="mx-auto mb-8 max-w-(--container) px-4 text-8xl font-black text-foreground sm:mb-12 sm:text-9xl">
+      <div className="mx-auto mb-8 max-w-(--container) px-4 text-7xl font-black text-foreground xs:text-8xl sm:mb-8 sm:text-9xl">
         Design the thing. Code the thing. Make it good.
       </div>
     </>

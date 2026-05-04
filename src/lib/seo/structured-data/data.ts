@@ -8,9 +8,9 @@ export const jsonLd = {
       '@type': 'WebSite',
       '@id': `${ROUTING_PUBLIC_DOMAIN}/#website`,
       url: ROUTING_PUBLIC_DOMAIN,
-      name: 'Dominik Rubröder | Design Engineer',
+      name: 'Dominik Rubröder, Design Engineer',
       description:
-        'Portfolio of Dominik Rubröder, a design engineer specializing in interactive interfaces and design systems.',
+        'Portfolio of Dominik Rubröder, a design engineer specialized in interface and design systems.',
       author: {
         '@id': `${ROUTING_PUBLIC_DOMAIN}/#person`
       }
@@ -19,9 +19,9 @@ export const jsonLd = {
       '@type': 'ProfilePage',
       '@id': `${ROUTING_PUBLIC_DOMAIN}/#profilepage`,
       url: ROUTING_PUBLIC_DOMAIN,
-      name: 'Dominik Rubröder | UX Design Engineer',
+      name: 'Dominik Rubröder, UX Design Engineer',
       dateCreated: '2024-01-15',
-      dateModified: '2026-02-25',
+      dateModified: '2026-04-27',
       isPartOf: {
         '@id': `${ROUTING_PUBLIC_DOMAIN}/#website`
       },

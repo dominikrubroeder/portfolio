@@ -10,7 +10,7 @@ export function ButtonFigma({ id, className }: BaseComponentProps) {
       brandLogoId={id || 'button-figma'}
       brand={figma}
       size="small"
-      href="https://figma.com"
+      href="https://www.figma.com/design/yGICVbl9clikVNXP2Lkkue/Portfolio?node-id=745-2&t=VgM8HleoXUZm4M9t-1"
       title="Go to Figma file of Dominik Rubröders portfolio"
       aria-label="Go to Figma file of Dominik Rubröders portfolio"
       className={className}

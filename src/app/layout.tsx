@@ -8,10 +8,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Footer } from '@/components/organisms/footer';
 import { Header } from '@/components/organisms/header';
-import {
-  themeInitializationScript,
-  ThemeProvider
-} from '@/components/organisms/theme';
+import { themeInitializationScript, ThemeProvider } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
@@ -32,9 +29,8 @@ const indieFlower = Indie_Flower({
 });
 
 export const metadata: Metadata = {
-  title: 'Dominik Rubröder | UX Design Engineer',
-  description:
-    'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
+  title: 'Dominik Rubröder, UX Design Engineer',
+  description: 'Design the thing. All the way through.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
     title: 'Dominik Rubröder | UX Design Engineer',

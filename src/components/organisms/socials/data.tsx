@@ -1,9 +1,4 @@
-import {
-  LogoInstagram,
-  LogoLinkedin,
-  LogoX,
-  LogoXing
-} from '@/components/atoms/logo';
+import { LogoInstagram, LogoLinkedin, LogoX } from '@/components/atoms/logo';
 import type { Brand } from '@/components/organisms/brand';
 
 export const socials: Brand[] = [
@@ -26,13 +21,6 @@ export const socials: Brand[] = [
     description: 'for private posts',
     href: 'https://www.instagram.com/domirubroeder',
     logo: <LogoInstagram />,
-    usageLevel: undefined
-  },
-  {
-    name: 'Xing',
-    description: 'as business profile',
-    href: 'https://www.xing.com/profile/Dominik_Rubroeder',
-    logo: <LogoXing id="socials-xing" />,
     usageLevel: undefined
   }
 ];

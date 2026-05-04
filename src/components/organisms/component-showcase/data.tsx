@@ -17,7 +17,11 @@ import { IconAtom, IconMolecule, IconTemplate } from '@/components/atoms/icon';
 import { IconPage } from '@/components/atoms/icon/icon-page';
 import { TextDecoration } from '@/components/atoms/text-decoration';
 import { Toggle } from '@/components/atoms/toggle';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/atoms/tooltip/shadcnui/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/atoms/tooltip/shadcnui/tooltip';
 import { Ul } from '@/components/atoms/ul';
 import { Animate } from '@/components/molecules/animate';
 import { DesignDrawer } from '@/components/molecules/drawer';

@@ -9,18 +9,18 @@ export default function ToolsPage() {
   return (
     <>
       <Animate delay={0.1}>
-        <Container as="section" size="container-readable" className="space-y-2">
+        <Container as="section" size="container-readable">
           <h1>Tools</h1>
           <p>
-            Tools help getting our ideas into the digital world, visualize them,
-            save them and refine them. They organize, optimize, analyse and help
-            us getting them done.
+            Tools help get our ideas into the world, visualize them, save them
+            and refine them. They organize, optimize, analyse and help us
+            getting them done.
           </p>
         </Container>
       </Animate>
 
       <Animate delay={0.16}>
-        <Container as="section" size="container-readable" className="space-y-2">
+        <Container as="section" size="container-readable">
           <h2>My main daily drivers</h2>
           <div>
             <BrandList brands={mainTools} />
@@ -29,7 +29,7 @@ export default function ToolsPage() {
       </Animate>
 
       <Animate delay={0.24}>
-        <Container as="section" size="container-readable" className="space-y-2">
+        <Container as="section" size="container-readable">
           <h2>Extended list, all tools</h2>
           <Ul className="grid gap-6 sm:gap-10">
             {tools

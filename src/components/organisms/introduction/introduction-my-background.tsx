@@ -53,7 +53,7 @@ export function IntroductionMyBackground() {
           }
           className="mr-0.5 ml-1.5"
         />
-        as their template engine.
+        as template engine.
       </p>
       <p>
         <BrandName
@@ -61,7 +61,7 @@ export function IntroductionMyBackground() {
           label="JavaScript"
           className="mr-0.5"
         />
-        was coming slowly into the game, and i took a first Udemy course (props
+        was coming slowly into the game, and i took a first Udemy course. (Props
         to the masters
         <ExternalLink
           href="https://www.udemy.com/user/academind"
@@ -257,11 +257,11 @@ export function IntroductionMyBackground() {
         should have a clear reason why, a descriptive meaning what you want to
         achieve before you do it. This means a vision description, a mission
         description and a description of the values of it. And – sticking to it,
-        investing into it.
+        investing time into it.
       </p>
 
       <p>
-        And it actually has another benefit: you have a clear path to go on. I'm
+        It actually has another benefit: you have a clear path to go on. I'm
         sure that when the path is clear, so will be the product, with more
         focus and clear intentions.
       </p>
@@ -277,10 +277,10 @@ export function IntroductionMyBackground() {
         This may sound obvious, but in day to day work this often gets lost
         quickly, especially in longer-lasting projects and the overall way of
         work, focusing primarily on "making it work" and "shipping it".
-        Requirements changing while being in the process is not agile, it is bad
-        planning. With the lack of those definitions, the result will be fuzzy.
-        Therefore, strong management is needed. And people that what to carry
-        the idea and vision from beginning to end.
+        Fundamental requirements changing while being in the process is not
+        agile, it is bad planning. With the lack of those definitions, the
+        result will be fuzzy. Therefore, strong management is needed. And people
+        that what to carry the idea and vision from beginning to end.
       </p>
 
       <p>

@@ -27,15 +27,12 @@ export function ProjectsTemplate() {
         <Container as="section" className="space-y-2">
           <h1 className="text-6xl font-black">Projects</h1>
           <p>
-            To these projects i contributed either as designer or engineer, in
-            the timeframe from 2016 to 2026. Not all projects are listed, only
-            the ones with active participation for a longer period than 3 month.
+            I contributed either as designer or engineer to the following
+            projects; in the later projects starting around 2020, my role merged
+            into a hybrid role of design engineering.
           </p>
 
-          <p>
-            In the later projects, starting around 2020, my role was a hybrid
-            role of designing and engineering in parallel on the same project.
-          </p>
+          <p>Only projects with a longer period than 3 months are listed.</p>
         </Container>
       </Animate>
 
@@ -101,7 +98,7 @@ export function ProjectsTemplate() {
 
             {heroProject.description && <p>{heroProject.description}</p>}
 
-            <p>{heroProject.subline}</p>
+            <p className="text-muted-foreground">{heroProject.subline}</p>
 
             <ExternalLink
               href={heroProject.url}
@@ -119,7 +116,7 @@ export function ProjectsTemplate() {
       <Hr />
 
       <Container as="section">
-        <Ul className="space-y-5 sm:space-y-12">
+        <Ul className="space-y-5 sm:space-y-12 md:-mx-6">
           {projects
             .filter((_, index) => index !== 0)
             .map((project) => (
@@ -189,8 +186,12 @@ export function ProjectsTemplate() {
                       </div>
 
                       <div>
-                        <p>{project.description}</p>
-                        <p>{project.subline}</p>
+                        <p className="text-muted-foreground">
+                          {project.description}
+                        </p>
+                        <p className="text-muted-foreground">
+                          {project.subline}
+                        </p>
                       </div>
                     </div>
 
