@@ -8,7 +8,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Footer } from '@/components/organisms/footer';
 import { Header } from '@/components/organisms/header';
-import { themeInitializationScript, ThemeProvider } from '@/components/organisms/theme';
+import {
+  themeInitializationScript,
+  ThemeProvider
+} from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';

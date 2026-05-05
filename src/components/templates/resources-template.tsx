@@ -1,7 +1,11 @@
 import { Animate } from '@/components/molecules/animate';
 import { Container } from '@/components/atoms/container';
 import { Ul } from '@/components/atoms/ul';
-import { getBooks, getCourses, getPlatformsBlogsPeople } from '@/components/organisms/training';
+import {
+  getBooks,
+  getCourses,
+  getPlatformsBlogsPeople
+} from '@/components/organisms/training';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Hr } from '@/components/atoms/hr';
 import { getResearch } from '@/components/organisms/training/research';

@@ -70,11 +70,17 @@ export function IntroductionMyBackground() {
           Maximilian Schwarzmüller
         </ExternalLink>
         ,
-        <ExternalLink href="https://www.udemy.com/user/jonasschmedtmann/">
+        <ExternalLink
+          href="https://www.udemy.com/user/jonasschmedtmann/"
+          className="mr-0.5"
+        >
           Jonas Schmedtmann
         </ExternalLink>
         and
-        <ExternalLink href="https://www.udemy.com/user/brad-traversy">
+        <ExternalLink
+          href="https://www.udemy.com/user/brad-traversy"
+          className="mr-0.5"
+        >
           Brad Traversy
         </ExternalLink>
         for introducing me in the fundamentals and beyond).
@@ -177,7 +183,9 @@ export function IntroductionMyBackground() {
                 >
                   Nuxt
                 </ExternalLink>
-                (Fullstack Vue.js framework)
+                <span className="font-normal">
+                  (Fullstack Vue.js framework)
+                </span>
               </>
             }
           />
@@ -224,7 +232,7 @@ export function IntroductionMyBackground() {
       <BadgeHrGroup badgeProps={[{ children: '2026' }]} />
 
       <p>
-        <b>Making the full circle, connecting with the root dots</b>
+        <b>Making the full circle, connecting with my root dots</b>
       </p>
 
       <p>

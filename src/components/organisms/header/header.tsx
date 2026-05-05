@@ -1,5 +1,9 @@
 import { Avatar } from '@/components/atoms/avatar';
-import { ButtonContact, ButtonGithub, ButtonLinkedin } from '@/components/atoms/button';
+import {
+  ButtonContact,
+  ButtonGithub,
+  ButtonLinkedin
+} from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { HeaderMenu } from '@/components/organisms/header';
 import { ThemeColorSetting } from '@/components/organisms/theme';
@@ -22,7 +26,7 @@ export function Header() {
           as="Link"
         />
 
-        <h1 className="w-max">
+        <h1 className="mb-0 w-max">
           <span className="block w-max text-sm leading-snug sm:text-base">
             Dominik Rubröder
           </span>

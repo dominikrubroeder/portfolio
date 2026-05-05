@@ -1,9 +1,14 @@
 import { Container } from '@/components/atoms/container';
 import { Animate } from '@/components/molecules/animate';
-import { IntroductionMyBackground, IntroductionPrinciples } from '@/components/organisms/introduction';
+import {
+  IntroductionMyBackground,
+  IntroductionPrinciples
+} from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
 import { Hr } from '@/components/atoms/hr';
 import { Ul } from '@/components/atoms/ul';
+import { ExternalLink } from '@/components/atoms/external-link';
+import { BrandName } from '@/components/organisms/brand';
 
 export default function IntroductionPage() {
   return (
@@ -13,7 +18,7 @@ export default function IntroductionPage() {
           <h1>Introduction</h1>
           <p>
             For the past 10 years I combined design and code into one craft for
-            building user interfaces. I enjoy both abilities to allow ideas come
+            building user interfaces. I enjoy both abilities to make ideas come
             to life in concept but also from a technical standpoint.
           </p>
         </Container>
@@ -29,6 +34,23 @@ export default function IntroductionPage() {
       <Container as="section" size="container-readable">
         <h2>Education</h2>
         <TrainingAccordion />
+      </Container>
+
+      <Container as="section" size="container-readable">
+        <h2>Work history</h2>
+        <p>
+          Please view my work history on
+          <BrandName
+            brandName="LinkedIn"
+            label={
+              <ExternalLink href="https://www.linkedin.com/in/dominik-rubröder-49a63817b">
+                LinkedIn
+              </ExternalLink>
+            }
+            className="ml-1.5"
+          />
+          .
+        </p>
       </Container>
 
       <Container as="section" size="container-readable">

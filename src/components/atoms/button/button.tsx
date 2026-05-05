@@ -45,7 +45,7 @@ export function Button({
     size === 'small' && 'text-sm py-1 px-2 gap-2 [&>svg]:size-3',
     size === 'medium' && 'text-base py-2 px-3 gap-2 [&>svg]:size-5',
     size === 'large' && 'text-lg py-2 px-3 gap-3 [&>svg]:size-6',
-    rounded && 'rounded-full',
+    rounded && 'rounded-full hover:rounded-full',
     className
   );
 
