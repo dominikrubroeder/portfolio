@@ -83,7 +83,7 @@ export function IntroductionMyBackground() {
         >
           Brad Traversy
         </ExternalLink>
-        for introducing me in the fundamentals and beyond).
+        for introducing me in the fundamentals and beyond)
       </p>
       <p>
         It took me several starts until this ecosystem clicked to me. But the

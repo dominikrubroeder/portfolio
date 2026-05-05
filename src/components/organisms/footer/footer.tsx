@@ -84,7 +84,7 @@ export function Footer() {
           ))}
         </Ul>
 
-        <p>Design your vision</p>
+        <p>Design your vision. Live your balance.</p>
 
         <p className="flex flex-wrap items-center justify-center gap-2">
           <ExternalLink
