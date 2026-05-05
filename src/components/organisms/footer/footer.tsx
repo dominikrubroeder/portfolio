@@ -15,56 +15,56 @@ export function Footer() {
         <li>
           <Link
             href="/introduction"
-            className="group inline-flex items-center justify-between gap-4"
+            className="group inline-flex items-center justify-between gap-2 sm:gap-4"
           >
             <div className="text-4xl font-black text-foreground xs:text-5xl sm:text-6xl">
               Introduction
             </div>
-            <ArrowRightIcon className="size-10 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100" />
+            <ArrowRightIcon className="size-8 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 sm:size-10" />
           </Link>
         </li>
         <li>
           <Link
             href="/projects"
-            className="group inline-flex items-center justify-between gap-4"
+            className="group inline-flex items-center justify-between gap-2 sm:gap-4"
           >
             <div className="text-4xl font-black text-foreground xs:text-5xl sm:text-6xl">
               Projects
             </div>
-            <ArrowRightIcon className="size-10 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100" />
+            <ArrowRightIcon className="size-8 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 sm:size-10" />
           </Link>
         </li>
         <li>
           <Link
             href="/tools"
-            className="group inline-flex items-center justify-between gap-4"
+            className="group inline-flex items-center justify-between gap-2 sm:gap-4"
           >
             <div className="text-4xl font-black text-foreground xs:text-5xl sm:text-6xl">
               Tools
             </div>
-            <ArrowRightIcon className="size-10 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100" />
+            <ArrowRightIcon className="size-8 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 sm:size-10" />
           </Link>
         </li>
         <li>
           <Link
             href="/technologies"
-            className="group inline-flex items-center justify-between gap-4"
+            className="group inline-flex items-center justify-between gap-2 sm:gap-4"
           >
             <div className="text-4xl font-black text-foreground xs:text-5xl sm:text-6xl">
               Technologies
             </div>
-            <ArrowRightIcon className="size-10 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100" />
+            <ArrowRightIcon className="size-8 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 sm:size-10" />
           </Link>
         </li>
         <li>
           <Link
             href="/resources"
-            className="group inline-flex items-center justify-between gap-4"
+            className="group inline-flex items-center justify-between gap-2 sm:gap-4"
           >
             <div className="text-4xl font-black text-foreground xs:text-5xl sm:text-6xl">
               Resources
             </div>
-            <ArrowRightIcon className="size-10 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100" />
+            <ArrowRightIcon className="size-8 translate-y-1/2 text-primary opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100 sm:size-10" />
           </Link>
         </li>
       </ul>

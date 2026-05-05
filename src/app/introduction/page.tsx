@@ -9,6 +9,7 @@ import { Hr } from '@/components/atoms/hr';
 import { Ul } from '@/components/atoms/ul';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { BrandName } from '@/components/organisms/brand';
+import { Blockquote } from '@/components/atoms/blockquote';
 
 export default function IntroductionPage() {
   return (
@@ -16,11 +17,11 @@ export default function IntroductionPage() {
       <Animate delay={0.1}>
         <Container as="section" size="container-readable">
           <h1>Introduction</h1>
-          <p>
+          <Blockquote className="mt-3 sm:mt-5">
             For the past 10 years I combined design and code into one craft for
             building user interfaces. I enjoy both abilities to make ideas come
             to life in concept but also from a technical standpoint.
-          </p>
+          </Blockquote>
         </Container>
       </Animate>
 

@@ -8,6 +8,7 @@ import { Ul } from '@/components/atoms/ul';
 import { projects } from '@/components/organisms/projects/data';
 import { Badge } from '@/components/atoms/badge';
 import { preload } from 'react-dom';
+import { Blockquote } from '@/components/atoms/blockquote';
 
 export function ProjectsTemplate() {
   const heroProject = projects[0];
@@ -26,11 +27,11 @@ export function ProjectsTemplate() {
       <Animate delay={0.1}>
         <Container as="section" className="space-y-2">
           <h1 className="text-6xl font-black">Projects</h1>
-          <p>
+          <Blockquote className="mt-3 sm:mt-5">
             I contributed either as designer or engineer to the following
             projects; in the later projects starting around 2020, my role merged
             into a hybrid role of design engineering.
-          </p>
+          </Blockquote>
 
           <p>Only projects with a longer period than 3 months are listed.</p>
         </Container>

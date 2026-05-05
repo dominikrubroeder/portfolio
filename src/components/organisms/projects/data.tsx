@@ -100,7 +100,7 @@ export const projects: Project[] = [
   {
     title: 'Value Booster',
     category: ['Headless', 'B2B', 'B2C', 'Ecommerce'],
-    url: 'https://www.mediawave.de/value-booster',
+    url: 'https://www.mediawave.de/accelerators',
     description:
       'Kickstart in your headless ecommerce project with the mediawave Value Booster',
     isCurrent: true,

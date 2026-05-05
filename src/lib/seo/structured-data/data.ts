@@ -8,7 +8,7 @@ export const jsonLd = {
       '@type': 'WebSite',
       '@id': `${ROUTING_PUBLIC_DOMAIN}/#website`,
       url: ROUTING_PUBLIC_DOMAIN,
-      name: 'Dominik Rubröder, Design Engineer',
+      name: 'Dominik Rubröder, UX Design Engineer',
       description:
         'Portfolio of Dominik Rubröder, a design engineer specialized in interface and design systems.',
       author: {
@@ -21,7 +21,7 @@ export const jsonLd = {
       url: ROUTING_PUBLIC_DOMAIN,
       name: 'Dominik Rubröder, UX Design Engineer',
       dateCreated: '2024-01-15',
-      dateModified: '2026-04-27',
+      dateModified: '2026-05-05',
       isPartOf: {
         '@id': `${ROUTING_PUBLIC_DOMAIN}/#website`
       },
@@ -69,7 +69,7 @@ export const jsonLd = {
       description:
         'Featured web design engineering projects by Dominik Rubröder.',
       url: ROUTING_PUBLIC_DOMAIN,
-      numberOfItems: 8,
+      numberOfItems: 9,
       itemListElement: [
         {
           '@type': 'ListItem',
@@ -111,13 +111,19 @@ export const jsonLd = {
           '@type': 'ListItem',
           position: 7,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: "IU International University of Applied Sciences, Bachelor's Degree in Media Design"
+          name: 'Locaboo'
         },
         {
           '@type': 'ListItem',
           position: 8,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Loy GmbH'
+          name: 'Welleat'
+        },
+        {
+          '@type': 'ListItem',
+          position: 9,
+          url: ROUTING_PUBLIC_DOMAIN,
+          name: 'Variasophia'
         }
       ]
     }
