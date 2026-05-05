@@ -3,18 +3,14 @@
 import { ArrowUpIcon } from '@heroicons/react/16/solid';
 
 import { Button } from '@/components/atoms/button/button';
+import { cn } from '@/lib/utils';
+import { useScrollToTop } from '@/hooks/use-scroll-to-top';
 
-import { useScrollIntoView } from '@/hooks/use-scroll-into-view';
-
-export function ButtonScrollToTop() {
-  const { scrollIntoView } = useScrollIntoView();
+export function ButtonScrollToTop({ className }: { className?: string }) {
+  const { scrollToTop } = useScrollToTop();
 
   return (
-    <Button
-      className="sticky top-0 right-0"
-      rounded
-      onClick={() => scrollIntoView({ id: 'header' })}
-    >
+    <Button className={cn(className)} rounded onClick={() => scrollToTop()}>
       <ArrowUpIcon />
       <span className="sr-only">Scroll to the top of the page</span>
     </Button>

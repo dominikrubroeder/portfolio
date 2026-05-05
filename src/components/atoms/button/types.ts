@@ -4,8 +4,9 @@ import type {
   ReactNode
 } from 'react';
 
-export interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+export interface ButtonProps extends HTMLAttributes<
+  HTMLButtonElement | HTMLAnchorElement
+> {
   variant?:
     | 'contained-primary'
     | 'contained-foreground'

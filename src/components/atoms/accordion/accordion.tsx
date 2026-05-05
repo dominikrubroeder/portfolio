@@ -36,7 +36,7 @@ export function Accordion({
     );
 
   return (
-    <Ul className="scroll-mt-responsive space-y-6" id={accordionGroupId}>
+    <Ul className="scroll-mt-responsive space-y-3" id={accordionGroupId}>
       {items.map(({ title, children }, index) => (
         <li key={index + accordionGroupId}>
           <AccordionItem

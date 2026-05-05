@@ -14,7 +14,7 @@ export const useAnimate = ({
   const fadeInUp: Variants = {
     hidden: {
       opacity: 0,
-      y: 60
+      y: 40
     },
     visible: {
       opacity: 1,
@@ -46,15 +46,15 @@ export const useAnimate = ({
   const fadeInLeft: Variants = {
     hidden: {
       opacity: 0,
-      x: -60
+      x: -16
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
         duration,
-        ease: 'easeOut',
-        delay
+        delay,
+        type: 'spring'
       }
     }
   };
@@ -62,15 +62,15 @@ export const useAnimate = ({
   const fadeInRight: Variants = {
     hidden: {
       opacity: 0,
-      x: 60
+      x: 16
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
         duration,
-        ease: 'easeOut',
-        delay
+        delay,
+        type: 'spring'
       }
     }
   };

@@ -27,7 +27,7 @@ export function Container({
     <Comp
       ref={ref}
       className={cn(
-        'mx-auto scroll-mt-responsive',
+        'mx-auto scroll-mt-responsive px-4',
         horizontalPadding && 'px-4 lg:px-0',
         animateIn && 'motion-safe:animate-fade-up-1rem',
         size === 'container' && 'max-w-(--container)',

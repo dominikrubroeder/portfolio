@@ -3,7 +3,6 @@ import Link from 'next/link';
 import type { Brand } from '@/components/organisms/brand';
 import { BrandLogo } from '@/components/atoms/brand-logo';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
-import { UsageBar } from '@/components/molecules/usage-bar/usage-bar';
 import { cn } from '@/lib/utils';
 
 export function BrandRow({
@@ -36,28 +35,22 @@ export function BrandRow({
           <b>{brand.name}</b>
 
           {showDescription && brand.description && (
-            <p className="hidden leading-snug text-muted-foreground sm:block">
+            <p className="hidden leading-snug font-normal text-muted-foreground sm:block">
               {brand.description}
             </p>
           )}
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-2 sm:gap-3">
-        {showKnowledgeBar && brand.usageLevel && (
-          <UsageBar usageLevel={brand.usageLevel} />
-        )}
-
-        <Button
-          variant="text-muted"
-          title={`Go to external ${brand.name} website`}
-          aria-label={`Click to go to external ${brand.name} website`}
-          className={cn(showKnowledgeBar && 'hidden xs:block')}
-        >
-          <ArrowUpRightIcon className="size-4" />
-          <span className="sr-only">Go to external ${brand.name} website</span>
-        </Button>
-      </div>
+      <Button
+        variant="text-muted"
+        title={`Go to external ${brand.name} website`}
+        aria-label={`Click to go to external ${brand.name} website`}
+        className={cn(showKnowledgeBar && 'hidden xs:block')}
+      >
+        <ArrowUpRightIcon className="size-4" />
+        <span className="sr-only">Go to external ${brand.name} website</span>
+      </Button>
     </Link>
   );
 }

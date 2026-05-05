@@ -18,7 +18,8 @@ export interface AccordionProps {
 }
 
 export interface AccordionItemProps
-  extends Pick<AccordionProps, 'defaultOpen' | 'accordionIcon'>,
+  extends
+    Pick<AccordionProps, 'defaultOpen' | 'accordionIcon'>,
     BaseComponentProps {
   title: string | ReactNode;
   children: ReactNode;
@@ -28,7 +29,8 @@ export interface AccordionItemProps
 }
 
 export interface AccordionItemContainedProps
-  extends Pick<
+  extends
+    Pick<
       AccordionProps,
       'accordionGroupId' | 'focusView' | 'accordionIcon' | 'buttonVariant'
     >,

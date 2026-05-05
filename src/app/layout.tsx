@@ -17,6 +17,7 @@ import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
 import { TooltipProvider } from '@/components/atoms/tooltip/shadcnui/tooltip';
+import { PageTemplate } from '@/components/templates/page-template';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -31,9 +32,8 @@ const indieFlower = Indie_Flower({
 });
 
 export const metadata: Metadata = {
-  title: 'Dominik Rubröder | UX Design Engineer',
-  description:
-    'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
+  title: 'Dominik Rubröder, UX Design Engineer',
+  description: 'Design the thing. All the way through.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
     title: 'Dominik Rubröder | UX Design Engineer',
@@ -62,6 +62,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
       <body>
         <ThemeProvider>
@@ -76,9 +77,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
           <Header />
 
-          <main>
+          <PageTemplate>
             <TooltipProvider>{children}</TooltipProvider>
-          </main>
+          </PageTemplate>
 
           <Footer />
           <Analytics />

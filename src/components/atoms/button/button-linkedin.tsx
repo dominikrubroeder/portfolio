@@ -1,6 +1,7 @@
 import { BaseComponentProps } from '@/lib/types';
 import { BrandLink } from '@/components/organisms/brand';
 import { socials } from '@/components/organisms/socials';
+import { cn } from '@/lib/utils';
 
 export function ButtonLinkedin({ id, className }: BaseComponentProps) {
   const linkedin = socials.find((social) => social.name === 'LinkedIn');
@@ -15,7 +16,7 @@ export function ButtonLinkedin({ id, className }: BaseComponentProps) {
       title="Go to LinkedIn profile of Dominik Rubröder"
       aria-label="Go to LinkedIn profile of Dominik Rubröder"
       size="small"
-      className={className}
+      className={cn(className)}
     />
   );
 }

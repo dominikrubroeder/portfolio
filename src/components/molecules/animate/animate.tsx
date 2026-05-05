@@ -10,7 +10,7 @@ import type { AnimationGeneratorType, ViewportOptions } from 'motion';
 import { useAnimate } from '@/components/molecules/animate';
 
 export function Animate({
-  direction = 'up',
+  direction = 'right',
   delay = 0.32,
   duration = 1,
   type,

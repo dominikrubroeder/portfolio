@@ -12,11 +12,7 @@ const technologies = getTechnologies({
   names: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Motion']
 });
 
-export function IntroductionTechStackAccordion({
-  className
-}: {
-  className?: string;
-}) {
+export function IntroductionTechStack({ className }: { className?: string }) {
   return (
     <Ul
       className={cn(

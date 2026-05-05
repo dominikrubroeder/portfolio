@@ -2,49 +2,18 @@ import {
   EVENTS_WINTER_SCENE_ENABLED,
   Snowfall
 } from '@/components/organisms/events';
-import {
-  ThemeNotesBackgroundCornellNotes,
-  ThemeWireframeBackground
-} from '@/components/organisms/theme';
-import { HomeHero } from '@/components/organisms/home';
-import { Projects } from '@/components/organisms/projects';
-import { Tools } from '@/components/organisms/tools';
-import { Technologies } from '@/components/organisms/technologies';
-import { Socials } from '@/components/organisms/socials';
-import { QAndA } from '@/components/organisms/q-and-a';
-import { ContactSection } from '@/components/organisms/contact';
-import { Container } from '@/components/atoms/container';
-import { GuidingPrinciple } from '@/components/organisms/guiding-principle';
+import { ThemeNotesBackgroundCornellNotes } from '@/components/organisms/theme';
 
 export function HomeTemplate() {
   return (
-    <Container
-      as="div"
-      size="container"
-      horizontalPadding
-      className="space-y-12 sm:space-y-21"
-    >
+    <>
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
-
-      <ThemeWireframeBackground />
 
       <ThemeNotesBackgroundCornellNotes />
 
-      <HomeHero />
-
-      <GuidingPrinciple />
-
-      <Projects />
-
-      <Tools />
-
-      <Technologies />
-
-      <Socials />
-
-      <QAndA />
-
-      <ContactSection />
-    </Container>
+      <div className="mx-auto mb-8 max-w-(--container) px-4 text-7xl font-black text-foreground xs:text-8xl sm:mb-8 sm:text-9xl">
+        Design the thing. Code the thing. Make it good.
+      </div>
+    </>
   );
 }

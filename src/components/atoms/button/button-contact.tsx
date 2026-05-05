@@ -7,7 +7,7 @@ import { Button } from '@/components/atoms/button';
 
 export function ButtonContact({
   buttonProps,
-  withLabel,
+  withLabel = true,
   iconPosition = 'left'
 }: {
   buttonProps?: Omit<ButtonProps, 'children'>;
@@ -17,12 +17,12 @@ export function ButtonContact({
   return (
     <Button
       href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-      variant="ghost-foreground"
+      variant="contained-primary"
       {...buttonProps}
     >
       {iconPosition === 'left' && <EnvelopeIcon className="size-5" />}
 
-      <span className={cn(withLabel ? '' : 'sr-only')}>Contact</span>
+      <span className={cn(withLabel ? '' : 'sr-only')}>Get in Touch</span>
 
       {iconPosition === 'right' && <EnvelopeIcon className="size-5" />}
     </Button>

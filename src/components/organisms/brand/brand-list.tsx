@@ -23,7 +23,9 @@ export function BrandList({
 
             <div className="space-x-1 leading-normal">
               <b>{brand.name}</b>
-              <span className="font-medium">{brand.description}</span>
+              <span className="font-normal text-muted-foreground">
+                {brand.description}
+              </span>
             </div>
           </div>
         </li>

@@ -60,6 +60,13 @@ export const mainTechnologies: Brand[] = [
     logo: <LogoMotion id="technologies-motion" className="size-12" />,
     href: 'https://motion.dev/',
     usageLevel: 'Expert'
+  },
+  {
+    name: 'Markdown',
+    href: 'https://markdown.de/',
+    logo: <LogoMarkdown id="technologies-markdown" className="size-12" />,
+    description: 'for documentation and AI communication',
+    usageLevel: 'Expert'
   }
 ];
 
