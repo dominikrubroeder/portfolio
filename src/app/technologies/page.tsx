@@ -4,6 +4,7 @@ import { BrandList } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';
 import { mainTechnologies } from '@/components/organisms/technologies';
 import type { Metadata } from 'next';
+import { Blockquote } from '@/components/atoms/blockquote';
 
 export const metadata: Metadata = {
   title: 'Technologies | Dominik Rubröder, UX Design Engineer',
@@ -17,11 +18,11 @@ export default function TechnologiesPage() {
       <Animate delay={0.1}>
         <Container as="section" size="container-readable" className="space-y-2">
           <h1>Technologies</h1>
-          <p>
+          <Blockquote className="mt-3 sm:mt-5">
             Technologies; languages that bring design to life with code. There
             is a wide array of frameworks out there, here is what i use for
             daily coding:
-          </p>
+          </Blockquote>
         </Container>
       </Animate>
 

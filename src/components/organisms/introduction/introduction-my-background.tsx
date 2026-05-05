@@ -244,12 +244,12 @@ export function IntroductionMyBackground() {
       </p>
 
       <p>
-        This benefit, of having both sides of the spectrum makes it easier and
-        better to design, while also better at coding because the same person
-        knows what the other department is about and the values of it. Also, in
-        the end both departments are needed to create the desired product (the
-        user interface) that should mirror the business' goals and intentions
-        for the people using it.
+        This benefit, of having both sides of the front-end spectrum makes it
+        easier and better to design, while also better at coding because the
+        same person knows what the other department is about and the values of
+        it. Also, in the end both departments are needed to create the desired
+        product (the user interface) that should mirror the business goals and
+        its intentions for the people using it.
       </p>
 
       <p>
@@ -264,8 +264,8 @@ export function IntroductionMyBackground() {
         That's why i am convinced that projects and everything what you do
         should have a clear reason why, a descriptive meaning what you want to
         achieve before you do it. This means a vision description, a mission
-        description and a description of the values of it. And – sticking to it,
-        investing time into it.
+        description and a description of the values, the reason why of it. And –
+        sticking to it, investing time into it.
       </p>
 
       <p>
@@ -277,8 +277,9 @@ export function IntroductionMyBackground() {
       <p>
         In the current industry, this relates most of all to requirements
         engineering, making it super clear what's to build, why to build and how
-        to build. Without this roadmap, products, features or other enhancements
-        are set up to fail before they had even begun.
+        to build – based on specific requirements. Without this roadmap,
+        products, features, or enhancements are set up to fail before they even
+        begin.
       </p>
 
       <p>
@@ -286,7 +287,7 @@ export function IntroductionMyBackground() {
         quickly, especially in longer-lasting projects and the overall way of
         work, focusing primarily on "making it work" and "shipping it".
         Fundamental requirements changing while being in the process is not
-        agile, it is bad planning. With the lack of those definitions, the
+        agile, it is bad planning. With the lack of these definitions, the
         result will be fuzzy. Therefore, strong management is needed. And people
         that what to carry the idea and vision from beginning to end.
       </p>

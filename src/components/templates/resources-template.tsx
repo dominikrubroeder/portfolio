@@ -9,6 +9,7 @@ import {
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Hr } from '@/components/atoms/hr';
 import { getResearch } from '@/components/organisms/training/research';
+import { Blockquote } from '@/components/atoms/blockquote';
 
 export function ResourcesTemplate() {
   return (
@@ -16,12 +17,12 @@ export function ResourcesTemplate() {
       <Animate delay={0.1}>
         <Container as="section" size="container-readable" className="space-y-2">
           <h1>Resources</h1>
-          <p>
+          <Blockquote className="mt-3 sm:mt-5">
             Resources educate and help us grow in our expertise by leveraging
             the community knowledge, research findings and proven principles of
             the past that stood the test of time; letting us apply them to our
             daily work.
-          </p>
+          </Blockquote>
         </Container>
       </Animate>
 

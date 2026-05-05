@@ -5,6 +5,7 @@ import { BrandList, BrandRow } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';
 import { Ul } from '@/components/atoms/ul';
 import type { Metadata } from 'next';
+import { Blockquote } from '@/components/atoms/blockquote';
 
 export const metadata: Metadata = {
   title: 'Tools | Dominik Rubröder, UX Design Engineer',
@@ -17,11 +18,11 @@ export default function ToolsPage() {
       <Animate delay={0.1}>
         <Container as="section" size="container-readable">
           <h1>Tools</h1>
-          <p>
+          <Blockquote className="mt-3 sm:mt-5">
             Tools help get our ideas into the world, visualize them, save them
             and refine them. They organize, optimize, analyse and help us get
             things done.
-          </p>
+          </Blockquote>
         </Container>
       </Animate>
 
