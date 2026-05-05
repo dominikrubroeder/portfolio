@@ -4,6 +4,12 @@ import { mainTools, tools } from '@/components/organisms/tools';
 import { BrandList, BrandRow } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';
 import { Ul } from '@/components/atoms/ul';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Tools | Dominik Rubröder, UX Design Engineer',
+  description: 'Get things done and into the world with the right tools.'
+};
 
 export default function ToolsPage() {
   return (
@@ -13,8 +19,8 @@ export default function ToolsPage() {
           <h1>Tools</h1>
           <p>
             Tools help get our ideas into the world, visualize them, save them
-            and refine them. They organize, optimize, analyse and help us
-            getting them done.
+            and refine them. They organize, optimize, analyse and help us get
+            things done.
           </p>
         </Container>
       </Animate>

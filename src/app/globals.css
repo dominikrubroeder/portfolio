@@ -346,11 +346,11 @@
   }
 
   h1:not(.h1) {
-    @apply mb-2 text-5xl xs:text-7xl sm:text-8xl;
+    @apply mb-2 text-4xl xs:text-5xl sm:text-8xl;
   }
 
   h2:not(.h2) {
-    @apply mb-6 text-4xl xs:text-5xl sm:text-6xl;
+    @apply mb-6 text-3xl xs:text-4xl sm:text-6xl;
   }
 
   h3,

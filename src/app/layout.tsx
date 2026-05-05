@@ -36,9 +36,8 @@ export const metadata: Metadata = {
   description: 'Design the thing. All the way through.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
-    title: 'Dominik Rubröder | UX Design Engineer',
-    description:
-      'Sync frontend design and code in frontend design engineering. Build user interfaces based on brand values, user needs and business goals.',
+    title: 'Dominik Rubröder, UX Design Engineer',
+    description: 'Design the thing. All the way through.',
     url: ROUTING_PUBLIC_DOMAIN,
     siteName: ROUTING_PUBLIC_DOMAIN.replace('https://www.', ''),
     images: [

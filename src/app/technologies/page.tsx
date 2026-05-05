@@ -3,6 +3,13 @@ import { Animate } from '@/components/molecules/animate';
 import { BrandList } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';
 import { mainTechnologies } from '@/components/organisms/technologies';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Technologies | Dominik Rubröder, UX Design Engineer',
+  description:
+    'Coding technologies; languages that bring design to life with code.'
+};
 
 export default function TechnologiesPage() {
   return (
@@ -12,8 +19,8 @@ export default function TechnologiesPage() {
           <h1>Technologies</h1>
           <p>
             Technologies; languages that bring design to life with code. There
-            is a wide array of frameworks out there, here is what i use in daily
-            coding:
+            is a wide array of frameworks out there, here is what i use for
+            daily coding:
           </p>
         </Container>
       </Animate>
