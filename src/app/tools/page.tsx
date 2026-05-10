@@ -1,5 +1,4 @@
 import { Container } from '@/components/atoms/container';
-import { Animate } from '@/components/molecules/animate';
 import { mainTools, tools } from '@/components/organisms/tools';
 import { BrandList, BrandRow } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 export default function ToolsPage() {
   return (
     <>
-      <Animate delay={0.1}>
+      <div className="animate-to-left [animation-delay:100ms]">
         <Container as="section" size="container-readable">
           <h1>Tools</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -24,18 +23,18 @@ export default function ToolsPage() {
             things done.
           </Blockquote>
         </Container>
-      </Animate>
+      </div>
 
-      <Animate delay={0.16}>
+      <div className="animate-to-left [animation-delay:160ms]">
         <Container as="section" size="container-readable">
           <h2>My main daily drivers</h2>
           <div>
             <BrandList brands={mainTools} />
           </div>
         </Container>
-      </Animate>
+      </div>
 
-      <Animate delay={0.24}>
+      <div className="animate-to-left [animation-delay:240ms]">
         <Container as="section" size="container-readable">
           <h2>Extended list, all tools</h2>
           <Ul className="grid gap-6 sm:gap-10">
@@ -76,7 +75,7 @@ export default function ToolsPage() {
               ))}
           </Ul>
         </Container>
-      </Animate>
+      </div>
 
       <Hr variant="container" />
     </>

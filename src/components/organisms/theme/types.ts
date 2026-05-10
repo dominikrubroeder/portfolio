@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 
-export type Theme = 'animate' | 'notes' | 'wireframe';
+export type Theme = 'default' | 'notes' | 'wireframe';
 export type ThemeOption = { key: Theme; value: string };
 export type ThemeColor = 'primary' | 'violett' | 'blue' | 'orange' | undefined;
 export type ThemeMode = 'design' | 'dev';

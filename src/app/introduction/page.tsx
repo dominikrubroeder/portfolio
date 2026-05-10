@@ -1,5 +1,4 @@
 import { Container } from '@/components/atoms/container';
-import { Animate } from '@/components/molecules/animate';
 import {
   IntroductionMyBackground,
   IntroductionPrinciples
@@ -14,7 +13,7 @@ import { Blockquote } from '@/components/atoms/blockquote';
 export default function IntroductionPage() {
   return (
     <>
-      <Animate delay={0.1}>
+      <div className="animate-to-left [animation-delay:100ms]">
         <Container as="section" size="container-readable">
           <h1>Introduction</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -23,14 +22,14 @@ export default function IntroductionPage() {
             to life in concept but also from a technical standpoint.
           </Blockquote>
         </Container>
-      </Animate>
+      </div>
 
-      <Animate delay={0.16}>
+      <div className="animate-to-left [animation-delay:160ms]">
         <Container as="section" size="container-readable">
           <h2>My Journey</h2>
           <IntroductionMyBackground />
         </Container>
-      </Animate>
+      </div>
 
       <Container as="section" size="container-readable">
         <h2>Education</h2>

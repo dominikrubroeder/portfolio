@@ -241,8 +241,8 @@ export const components: ComponentGroup[] = [
     layoutOption: '2-cols',
     children: [
       {
-        componentId: 'animate',
-        componentName: 'Animate',
+        componentId: 'default',
+        componentName: 'Default',
         component: (
           <Animate>
             <Button>Animate me in! 🚀</Button>

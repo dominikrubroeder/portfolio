@@ -1,4 +1,3 @@
-import { Animate } from '@/components/molecules/animate';
 import { Container } from '@/components/atoms/container';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -24,20 +23,20 @@ export function ProjectsTemplate() {
 
   return (
     <>
-      <Animate delay={0.1}>
+      <div className="animate-to-left [animation-delay:100ms]">
         <Container as="section" className="space-y-2">
           <h1 className="text-6xl font-black">Projects</h1>
           <Blockquote className="mt-3 sm:mt-5">
             I contributed either as designer or engineer to the following
             projects; in the later projects starting around 2020, my role merged
-            into a hybrid role of design engineering.
+            into a unified role of design engineering.
           </Blockquote>
 
           <p>Only projects with a longer period than 3 months are listed.</p>
         </Container>
-      </Animate>
+      </div>
 
-      <Animate delay={0.16} className="-mt-6">
+      <div className="-mt-6 animate-to-left [animation-delay:160ms]">
         <Container as="section" size="container">
           <Link
             href={heroProject.url}
@@ -112,7 +111,7 @@ export function ProjectsTemplate() {
             </ExternalLink>
           </div>
         </Container>
-      </Animate>
+      </div>
 
       <Hr />
 
