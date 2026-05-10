@@ -5,11 +5,11 @@ import {
   ThemeOption
 } from '@/components/organisms/theme/types';
 
-export const THEMES: Theme[] = ['animate', 'notes', 'wireframe'];
+export const THEMES: Theme[] = ['default', 'notes', 'wireframe'];
 export const THEME_OPTIONS: ThemeOption[] = [
   {
-    key: 'animate',
-    value: 'Animate'
+    key: 'default',
+    value: 'Default'
   },
   {
     key: 'notes',
@@ -28,10 +28,10 @@ export const THEME_KEY_FONT_SIZE = 'dr-theme-font-size';
 export const THEME_KEY_EVENT_WINTER = 'dr-theme-event-winter';
 export const THEME_KEY_MODE = 'dr-theme-mode';
 
-export const THEME_DEFAULT: Theme = 'animate';
+export const THEME_DEFAULT: Theme = 'default';
 export const THEME_OPTION_DEFAULT: ThemeOption = {
   key: THEME_DEFAULT,
-  value: 'Animate'
+  value: 'Default'
 };
 export const THEME_APPEARANCE_DEFAULT: ThemeAppearance = 'light';
 export const THEME_COLOR_DEFAULT: ThemeColor = 'blue';

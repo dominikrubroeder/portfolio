@@ -1,9 +1,21 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-/**
- * Tailwind CSS 4 Global Styles
- */
+@theme {
+  --animate-to-left: to-left 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes to-left {
+    0% {
+      opacity: 0;
+      transform: translateX(1.6rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
 
 /* ============================================
    Theme Configuration
@@ -421,12 +433,12 @@
     --primary-hover: hsl(221.33 97.1% 68%);
   }
 
-  :root[data-theme='animate'] [data-theme-appearance='dark'] {
+  :root[data-theme='default'] [data-theme-appearance='dark'] {
     --background: hsl(0 0% 8%);
     --foreground: hsl(0 0% 100%);
   }
 
-  :root[data-theme='animate'] [data-theme-appearance='light'] {
+  :root[data-theme='default'] [data-theme-appearance='light'] {
     --background: hsl(0 0% 100%);
     --foreground: hsl(0 0% 0%);
   }

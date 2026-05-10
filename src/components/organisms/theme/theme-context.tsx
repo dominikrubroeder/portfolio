@@ -116,7 +116,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
         handleThemeColor(undefined);
       }
 
-      if (themeOption.key === 'animate') {
+      if (themeOption.key === 'default') {
         handleThemeColor('primary');
       }
 
@@ -283,7 +283,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [theme]);
 
   const shouldAnimate = useMemo(
-    () => theme.key === 'animate' && !themeAnimationSettings.disableAnimations,
+    () => theme.key === 'default' && !themeAnimationSettings.disableAnimations,
     [theme.key, themeAnimationSettings.disableAnimations]
   );
 

@@ -1,28 +1,37 @@
 import { Blockquote } from '@/components/atoms/blockquote';
-import { Container } from '@/components/atoms/container';
 
 export function Why() {
   return (
-    <Container id="why" className="space-y-4">
-      <h2>Why am i doing this job?</h2>
+    <div
+      id="why"
+      className="space-y-4 rounded border border-t-8 border-r-8 border-t-primary border-r-primary p-8"
+    >
+      <small className="text-primary">Motivation</small>
+      <h2>Why am i doing design engineering?</h2>
 
       <div>
         <Blockquote className="mb-4">
           It's simple, i love to build user interfaces!
         </Blockquote>
+        <p>
+          Whether it's the style, the colors, the fonts, the design language, a
+          theme or the code, i want to build user interfaces, that
+          <i> servers purpose, supporting the projects goals and intentions</i>.
+        </p>
 
         <p>
-          Weather it's the colors, the style, the fonts, the design language,
-          building themes or the code itself, i want to build user interfaces
-          that
-          <i className="ml-1">servers purpose</i>,
-          <i className="ml-1">supporting the projects goals and intentions</i>.
+          Processes should be streamlined as far as possible, there should be
+          room for creativity wherever it's needed. There should be room to
+          improve user interfaces to be production ready. Nothing is more
+          frustrating than a half-ready product or service that is released to
+          the user too soon.
         </p>
+
         <p>
-          This can be achieved by gathering knowledge and with practise, with
-          tools, with technologies and in my opinion with system thinking.
+          Quality needs to be ensured - the time should be taken and invested to
+          keep it alive. <i>Especially</i> in the fast-paced timelines of today.
         </p>
       </div>
-    </Container>
+    </div>
   );
 }
