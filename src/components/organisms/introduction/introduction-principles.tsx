@@ -17,7 +17,8 @@ export function IntroductionPrinciples() {
       </li>
       <li>Write notes on a regular basis</li>
       <li>
-        Consider the global scope– think system through from paper to production
+        Consider the global scope – think system through from paper to
+        production
       </li>
       <li>Compose trends with core design principles and UI patterns</li>
       <li>Fix the problem at the root, not the symptoms</li>
