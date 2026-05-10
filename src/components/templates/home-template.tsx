@@ -22,8 +22,10 @@ export function HomeTemplate() {
 
       <ThemeNotesBackgroundCornellNotes />
 
-      <div className="mx-auto -mt-4 mb-6 max-w-(--container) bg-primary px-4 pb-3.5 text-4xl leading-[1.1] font-black text-primary-foreground xs:text-7xl sm:mt-0 sm:mb-8 sm:pb-4 sm:text-9xl sm:leading-none">
-        Design the thing. Code the thing. Make it good.
+      <div className="mx-auto -mt-4 mb-6 bg-primary px-4 pb-3.5 text-4xl leading-[1.1] font-black text-primary-foreground xs:text-7xl sm:mb-8 sm:pb-4 sm:text-9xl sm:leading-none xl:mt-0">
+        <div className="mx-auto max-w-(--container)">
+          Design the thing. Code the thing. Make it good.
+        </div>
       </div>
     </>
   );
