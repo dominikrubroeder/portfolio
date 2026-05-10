@@ -69,7 +69,7 @@ export function Footer() {
         </li>
       </ul>
 
-      <footer className="relative z-10 mt-8 space-y-3 border-t bg-background p-4 text-center text-xs sm:mt-16 md:pb-4">
+      <footer className="relative z-10 mt-8 space-y-3 border-t bg-background p-4 text-center text-xs md:pb-4">
         <ButtonScrollToTop className="absolute top-5 right-4" />
 
         <Ul className={cn('my-0 mb-0 inline-flex')}>
@@ -94,7 +94,7 @@ export function Footer() {
             size="xs"
             color="muted"
           >
-            Next.js 16.2.4
+            Next.js 16.2.6
           </ExternalLink>
 
           <span>|</span>

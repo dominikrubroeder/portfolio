@@ -21,7 +21,7 @@ export default function TechnologiesPage() {
           <Blockquote className="mt-3 sm:mt-5">
             Technologies; languages that bring design to life with code. There
             is a wide array of frameworks out there, here is what i use for
-            daily coding:
+            daily coding tasks:
           </Blockquote>
         </Container>
       </Animate>
