@@ -118,7 +118,7 @@ export function Footer() {
             size="xs"
             color="muted"
           >
-            Tailwind CSS 4.2.4
+            Tailwind CSS 4.3
           </ExternalLink>
         </p>
 
