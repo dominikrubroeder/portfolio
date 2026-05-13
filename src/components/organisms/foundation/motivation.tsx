@@ -4,7 +4,7 @@ import { Blockquote } from '@/components/atoms/blockquote';
 export function Motivation() {
   return (
     <HeroBox
-      overline="Motivation: Reason why"
+      overline="Reason why"
       title="Why am i doing design engineering?"
       className="mx-auto max-w-(--container-readable)"
     >

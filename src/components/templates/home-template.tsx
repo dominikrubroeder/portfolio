@@ -1,12 +1,8 @@
-import {
-  EVENTS_WINTER_SCENE_ENABLED,
-  Snowfall
-} from '@/components/organisms/events';
+import { EVENTS_WINTER_SCENE_ENABLED, Snowfall } from '@/components/organisms/events';
 import { ThemeNotesBackgroundCornellNotes } from '@/components/organisms/theme';
 import { projects } from '@/components/organisms/projects/data';
 import { preload } from 'react-dom';
-import { Mission, Vision } from '@/components/organisms/foundation';
-import { Why } from '@/components/organisms/why';
+import { Mission, Vision, Why } from '@/components/organisms/foundation';
 import { Container } from '@/components/organisms/layout';
 
 export function HomeTemplate() {

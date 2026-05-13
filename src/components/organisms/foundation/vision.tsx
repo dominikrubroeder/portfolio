@@ -10,14 +10,13 @@ export function Vision() {
 
   return (
     <HeroBox
-      overline="Vision: What drives me"
+      overline="What drives me"
       title={
         collapsed ? (
           <div>
             A design system is a click and go collection of components...
             <Button
-              size="small"
-              className="mx-1 -translate-y-2"
+              className="mx-2 -translate-y-2"
               onClick={() => setCollapsed((prevState) => !prevState)}
               title="Expand vision details"
               aria-label="Click to expand vision details"
@@ -29,13 +28,14 @@ export function Vision() {
           </div>
         ) : (
           <div>
-            A design system is a click and go collection of components
+            A design system is a
+            <span className="ml-2.5 text-primary">organized</span> click and go
+            collection of components
             <span className="ml-1 text-primary">
               with guidelines, principles and documentation...
             </span>
             <Button
-              size="small"
-              className="mx-1 -translate-y-2"
+              className="mx-2 -translate-y-2"
               onClick={() => setCollapsed((prevState) => !prevState)}
               title="Collapse vision details"
               aria-label="Click to collapse vision details"
@@ -43,7 +43,7 @@ export function Vision() {
               <MinusIcon />
             </Button>
             composing them like music. Designers and engineers need to work
-            together to create the best possible set with the fundamentals set
+            together to create the best possible set – with the fundamentals set
             in the business strategy.
           </div>
         )

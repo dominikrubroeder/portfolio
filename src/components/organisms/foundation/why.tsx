@@ -4,7 +4,7 @@ import { HeroBox } from '@/components/molecules/hero-box';
 export function Why() {
   return (
     <HeroBox
-      overline="Motivation: Reason why"
+      overline="The reason why"
       title="Why am i doing design engineering?"
     >
       <div className="max-w-(--container-readable)">
