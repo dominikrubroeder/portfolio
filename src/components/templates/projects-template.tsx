@@ -1,4 +1,4 @@
-import { Container } from '@/components/atoms/container';
+import { Container } from '../organisms/layout/container';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink } from '@/components/atoms/external-link';

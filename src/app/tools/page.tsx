@@ -1,4 +1,4 @@
-import { Container } from '@/components/atoms/container';
+import { Container } from '../../components/organisms/layout/container';
 import { mainTools, tools } from '@/components/organisms/tools';
 import { BrandList, BrandRow } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';

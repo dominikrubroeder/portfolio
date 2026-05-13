@@ -1,5 +1,5 @@
 import { preload } from 'react-dom';
-import { Container } from '@/components/atoms/container';
+import { Container } from '@/components/organisms/layout';
 import { Animate } from '@/components/molecules/animate/animate';
 import { getProjects, ProjectCarousel } from '@/components/organisms/projects';
 

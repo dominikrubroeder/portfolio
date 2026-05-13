@@ -13,12 +13,13 @@ import {
   Theme,
   THEME_APPEARANCE_DEFAULT,
   THEME_COLOR_DEFAULT,
+  THEME_FONT_SIZE_DEFAULT,
   THEME_KEY,
   THEME_KEY_APPEARANCE,
   THEME_KEY_COLOR,
   THEME_KEY_EVENT_WINTER,
   THEME_KEY_FONT_SIZE,
-  THEME_KEY_MODE,
+  THEME_KEY_PERSONA,
   THEME_OPTION_DEFAULT,
   THEME_OPTIONS,
   ThemeAnimationSettings,
@@ -40,7 +41,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [themeAppearance, setThemeAppearance] = useState<ThemeAppearance>(
     THEME_APPEARANCE_DEFAULT
   );
-  const [themeFontSize, setThemeFontSize] = useState<ThemeFontSize>('md');
+  const [themeFontSize, setThemeFontSize] = useState<ThemeFontSize>(
+    THEME_FONT_SIZE_DEFAULT
+  );
   const [themeMode, setThemeMode] = useState<ThemeMode | undefined>(undefined);
   const [themeEvents, setThemeEvents] = useState<ThemeEvents>({
     isEventWinterEnabled: true
@@ -209,7 +212,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const localThemeColor = localStorage.getItem(THEME_KEY_COLOR);
     const localThemeAppearance = localStorage.getItem(THEME_KEY_APPEARANCE);
     const localThemeFontSize = localStorage.getItem(THEME_KEY_FONT_SIZE);
-    const localThemeMode = localStorage.getItem(THEME_KEY_MODE);
+    const localThemeMode = localStorage.getItem(THEME_KEY_PERSONA);
     const localIsEventWinterEnabled = localStorage.getItem(
       THEME_KEY_EVENT_WINTER
     );
@@ -290,9 +293,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (isInitialized) {
       if (themeMode) {
-        localStorage.setItem(THEME_KEY_MODE, themeMode);
+        localStorage.setItem(THEME_KEY_PERSONA, themeMode);
       } else {
-        localStorage.removeItem(THEME_KEY_MODE);
+        localStorage.removeItem(THEME_KEY_PERSONA);
       }
     }
   }, [themeMode, isInitialized]);

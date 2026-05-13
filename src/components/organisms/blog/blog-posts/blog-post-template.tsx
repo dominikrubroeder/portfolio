@@ -1,4 +1,4 @@
-import { Container } from '@/components/atoms/container';
+import { Container } from '@/components/organisms/layout';
 import { Avatar } from '@/components/atoms/avatar';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { Ul } from '@/components/atoms/ul';

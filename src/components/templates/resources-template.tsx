@@ -1,5 +1,5 @@
 import { Animate } from '@/components/molecules/animate';
-import { Container } from '@/components/atoms/container';
+import { Container } from '../organisms/layout/container';
 import { Ul } from '@/components/atoms/ul';
 import {
   getBooks,

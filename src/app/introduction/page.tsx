@@ -1,4 +1,4 @@
-import { Container } from '@/components/atoms/container';
+import { Container } from '../../components/organisms/layout/container';
 import {
   IntroductionMyBackground,
   IntroductionPrinciples

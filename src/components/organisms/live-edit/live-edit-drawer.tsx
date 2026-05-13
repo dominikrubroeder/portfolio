@@ -112,7 +112,7 @@ export function LiveEditDrawer({
     <Drawer
       open={isOpenDrawer}
       onOpenChange={setIsOpenDrawer}
-      direction={isDesktop ? 'right' : undefined}
+      direction="right"
     >
       <DrawerTrigger asChild>{trigger ?? defaultTrigger}</DrawerTrigger>
 

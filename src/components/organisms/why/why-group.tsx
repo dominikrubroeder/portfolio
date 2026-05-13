@@ -1,4 +1,4 @@
-import { Container } from '@/components/atoms/container';
+import { Container } from '@/components/organisms/layout';
 import { Why } from '@/components/organisms/why';
 import { Blockquote } from '@/components/atoms/blockquote';
 

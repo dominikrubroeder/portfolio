@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { Badge } from '@/components/atoms/badge';
 import { Button } from '@/components/atoms/button';
 import { CodeBlock } from '@/components/atoms/codeblock';
-import { Container } from '@/components/atoms/container';
+import { Container } from '@/components/organisms/layout';
 import { IconDesignToken } from '@/components/atoms/icon/icon-design-token';
 import { components } from '@/components/organisms/component-showcase';
 

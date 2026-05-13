@@ -35,7 +35,6 @@ import { ThemeSpacingSectionBreakSetting } from '@/components/organisms/theme/th
 import { ArrowUturnLeftIcon, PlusIcon } from '@heroicons/react/16/solid';
 import { ThemeAnimationSetting } from '@/components/organisms/theme/theme-animation-setting';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
-import { useTheme } from '@/components/organisms/theme/theme-context';
 
 export function ThemeDrawer({
   trigger,
@@ -47,7 +46,6 @@ export function ThemeDrawer({
   buttonIconOnly?: boolean;
 }) {
   const [open, setOpen] = useState<boolean>(false);
-  const { theme } = useTheme();
   const isDesktop = useMediaQuery('(min-width: 768px)');
   const defaultTrigger = (
     <Button variant="text-foreground" {...buttonProps}>

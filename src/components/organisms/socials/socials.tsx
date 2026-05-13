@@ -1,4 +1,4 @@
-import { Container } from '@/components/atoms/container';
+import { Container } from '@/components/organisms/layout';
 import { Animate } from '@/components/molecules/animate/animate';
 import { BrandList } from '@/components/organisms/brand';
 import { socials } from '@/components/organisms/socials';

@@ -9,7 +9,7 @@ import { Accordion } from '@/components/atoms/accordion';
 import { Hr } from '@/components/atoms/hr';
 import { ContactButton } from '@/components/organisms/contact';
 import { ThemeWireframeBackground } from '@/components/organisms/theme';
-import { Container } from '@/components/atoms/container';
+import { Container } from '@/components/organisms/layout';
 
 export function HomeHero() {
   return (

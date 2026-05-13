@@ -5,6 +5,9 @@ import {
 import { ThemeNotesBackgroundCornellNotes } from '@/components/organisms/theme';
 import { projects } from '@/components/organisms/projects/data';
 import { preload } from 'react-dom';
+import { Mission, Vision } from '@/components/organisms/foundation';
+import { Why } from '@/components/organisms/why';
+import { Container } from '@/components/organisms/layout';
 
 export function HomeTemplate() {
   projects.forEach((project) => {
@@ -27,6 +30,12 @@ export function HomeTemplate() {
           Design the thing. Code the thing. Make it good.
         </div>
       </div>
+
+      <Container size="container">
+        <Vision />
+        <Mission />
+        <Why />
+      </Container>
     </>
   );
 }

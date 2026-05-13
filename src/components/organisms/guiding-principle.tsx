@@ -1,4 +1,4 @@
-import { Container } from '@/components/atoms/container';
+import { Container } from './layout/container';
 import { Animate } from '@/components/molecules/animate';
 import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 

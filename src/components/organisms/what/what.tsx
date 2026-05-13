@@ -1,5 +1,4 @@
-import { Container } from '@/components/atoms/container';
-import { formatDate } from '@/lib/utils';
+import { Container } from '@/components/organisms/layout';
 
 export function What() {
   return (

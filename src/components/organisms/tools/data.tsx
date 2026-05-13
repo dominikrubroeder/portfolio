@@ -862,7 +862,7 @@ const tools: Tools = [
       }
     ],
     description:
-      "In case you can't find a popular package, reach out and get in touch to clarify my experience with it."
+      "In case you can't find a popular package, please get in touch to clarify my experience with it."
   },
   {
     group: 'Payment',

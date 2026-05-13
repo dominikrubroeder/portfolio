@@ -353,7 +353,8 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .title {
     @apply font-black text-foreground;
   }
 
@@ -361,7 +362,8 @@
     @apply text-4xl xs:text-5xl sm:text-8xl;
   }
 
-  h2:not(.h2) {
+  h2:not(.h2),
+  .title {
     @apply mb-6 text-3xl xs:text-4xl sm:text-6xl;
   }
 
