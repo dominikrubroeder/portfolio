@@ -4,6 +4,7 @@ import { ThemeSelect } from '@/components/organisms/theme/theme-select';
 import { ThemeAppearanceSelect } from '@/components/organisms/theme/theme-appearance-select';
 import { ThemeColorSetting } from '@/components/organisms/theme/theme-color-setting';
 import { ThemeFontSizeSetting } from '@/components/organisms/theme/theme-font-size-setting';
+import { ThemeAnimationEnabledToggle } from '@/components/organisms/theme/theme-animation-enabled-toggle';
 
 export function ThemeSettings() {
   return (
@@ -29,6 +30,13 @@ export function ThemeSettings() {
         <ThemeSettingOption>
           <div className="text-foreground">Font Size</div>
           <ThemeFontSizeSetting />
+        </ThemeSettingOption>
+      </ThemeSettingSection>
+
+      <ThemeSettingSection title="Animation">
+        <ThemeSettingOption>
+          <div className="text-foreground">Enable Animations</div>
+          <ThemeAnimationEnabledToggle />
         </ThemeSettingOption>
       </ThemeSettingSection>
     </>

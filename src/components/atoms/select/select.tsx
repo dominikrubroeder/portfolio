@@ -12,17 +12,17 @@ export function Select({
   placeholder,
   options,
   initialValue,
-  onValueChangeAction
+  onValueChange
 }: {
   trigger: Omit<ButtonProps, 'children'>;
   placeholder: string;
   initialValue?: string;
   options: SelectOption[];
-  onValueChangeAction?: (option: SelectOption) => void;
+  onValueChange?: (option: SelectOption) => void;
 }) {
   const { value, isOpen, toggleOpen, handleSelection } = useSelect({
     initialValue,
-    onValueChangeAction
+    onValueChange: onValueChange
   });
 
   return (

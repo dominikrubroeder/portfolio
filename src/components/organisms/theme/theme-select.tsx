@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  THEME_OPTION_DEFAULT,
   THEME_OPTIONS,
   ThemeOption,
   useTheme
@@ -8,23 +9,18 @@ import {
 import { Select } from '@/components/atoms/select';
 
 export function ThemeSelect() {
-  const { theme, setTheme, isInitialized } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
     <Select
       trigger={{ variant: 'contained-primary' }}
       initialValue={
-        isInitialized
-          ? (THEME_OPTIONS.find(
-              (availableTheme) => availableTheme.key === theme.key
-            )?.value ?? THEME_OPTIONS[0].value)
-          : ''
+        THEME_OPTIONS.find((availableTheme) => availableTheme.key === theme.key)
+          ?.value || THEME_OPTION_DEFAULT.value
       }
       placeholder="Select a theme"
       options={THEME_OPTIONS}
-      onValueChangeAction={(themeOption) =>
-        setTheme(themeOption as ThemeOption)
-      }
+      onValueChange={(themeOption) => setTheme(themeOption as ThemeOption)}
     />
   );
 }

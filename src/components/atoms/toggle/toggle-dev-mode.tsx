@@ -15,7 +15,7 @@ export function ToggleDevMode({ className }: { className?: string }) {
         onClick={() => {
           setThemeMode('dev');
         }}
-        enabled={themeMode === 'dev'}
+        isEnabled={themeMode === 'dev'}
       />
     </div>
   );

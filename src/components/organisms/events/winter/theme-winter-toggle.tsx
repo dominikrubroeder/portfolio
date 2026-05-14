@@ -8,7 +8,7 @@ export function ThemeWinterToggle() {
 
   return (
     <Toggle
-      enabled={isEventWinterEnabled}
+      isEnabled={isEventWinterEnabled}
       onClick={() => setIsEventWinterEnabled(!isEventWinterEnabled)}
     />
   );

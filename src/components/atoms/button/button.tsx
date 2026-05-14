@@ -3,7 +3,11 @@
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
-import { ButtonProps, extractEmail, extractPhoneNumber } from '@/components/atoms/button';
+import {
+  ButtonProps,
+  extractEmail,
+  extractPhoneNumber
+} from '@/components/atoms/button';
 import { useTheme } from '@/components/organisms/theme';
 
 export function Button({

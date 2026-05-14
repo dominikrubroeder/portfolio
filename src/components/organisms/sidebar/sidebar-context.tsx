@@ -9,61 +9,45 @@ import {
   useState
 } from 'react';
 
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
-
-export type SidebarTrigger = 'theme' | null;
+export type SidebarKey = 'theme' | null;
 
 export interface SidebarContextValue {
-  /** The active sidebar trigger key, or null when the sidebar is closed. */
-  trigger: SidebarTrigger;
+  /** The active sidebar key, or `null` when the sidebar is closed. */
+  key: SidebarKey;
   /** Whether the sidebar is currently open. */
   isOpen: boolean;
   /** Open the sidebar with the given trigger key. */
-  open: (trigger: SidebarTrigger) => void;
+  open: (trigger: SidebarKey) => void;
   /** Close the sidebar. */
   close: () => void;
   /** Toggle the sidebar for a given trigger key.
    *  If that trigger is already active, close; otherwise open with the new trigger. */
-  toggle: (trigger: SidebarTrigger) => void;
+  toggle: (trigger: SidebarKey) => void;
 }
-
-// ---------------------------------------------------------------------------
-// Context
-// ---------------------------------------------------------------------------
 
 const SidebarContext = createContext<SidebarContextValue | null>(null);
 
-// ---------------------------------------------------------------------------
-// Provider
-// ---------------------------------------------------------------------------
-
 export function SidebarProvider({ children }: { children: ReactNode }) {
-  const [trigger, setTrigger] = useState<SidebarTrigger>(null);
+  const [key, setKey] = useState<SidebarKey>(null);
 
-  const open = useCallback((key: string) => setTrigger(key), []);
+  const open = useCallback((key: SidebarKey) => setKey(key), []);
 
-  const close = useCallback(() => setTrigger(null), []);
+  const close = useCallback(() => setKey(null), []);
 
   const toggle = useCallback(
-    (key: string) => setTrigger((prev) => (prev === key ? null : key)),
+    (key: SidebarKey) => setKey((prev) => (prev === key ? null : key)),
     []
   );
 
   const value = useMemo<SidebarContextValue>(
-    () => ({ trigger, isOpen: trigger !== null, open, close, toggle }),
-    [trigger, open, close, toggle]
+    () => ({ key: key, isOpen: key !== null, open, close, toggle }),
+    [key, open, close, toggle]
   );
 
   return (
     <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>
   );
 }
-
-// ---------------------------------------------------------------------------
-// Hook
-// ---------------------------------------------------------------------------
 
 export function useSidebar(): SidebarContextValue {
   const ctx = useContext(SidebarContext);

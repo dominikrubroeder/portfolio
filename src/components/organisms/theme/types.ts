@@ -2,18 +2,24 @@ import { Dispatch, SetStateAction } from 'react';
 
 export type Theme = 'default' | 'crazy-color' | 'notes' | 'wireframe';
 export type ThemeOption = { key: Theme; value: string };
-export type ThemeColor = 'primary' | 'violett' | 'blue' | 'orange' | undefined;
+export type ThemeColor =
+  | 'primary'
+  | 'violett'
+  | 'blue'
+  | 'orange'
+  | 'foreground'
+  | undefined;
 export type ThemeMode = 'design' | 'dev';
 export type ThemeFontSize = 'sm' | 'md' | 'lg';
 export type ThemeAppearance = 'light' | 'dark' | 'system';
 export type ThemeEvents = {
   isEventWinterEnabled: boolean;
 };
-export type ThemeAnimationDuration = 0.2 | 0.4 | 0.6 | 0.8;
-export type ThemeAnimationDelay = 0.24 | 0.4 | 0.8;
+export type ThemeAnimationDuration = 0 | 0.2 | 0.4 | 0.6 | 0.8;
+export type ThemeAnimationDelay = 0 | 0.24 | 0.4 | 0.8;
 export type ThemeAnimationType = 'spring' | 'linear';
 export type ThemeAnimationSettings = {
-  disableAnimations: boolean;
+  isEnabled: boolean;
   duration: ThemeAnimationDuration;
   delay: ThemeAnimationDelay;
   type: ThemeAnimationType;

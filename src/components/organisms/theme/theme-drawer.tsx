@@ -35,6 +35,7 @@ import { ThemeSpacingSectionBreakSetting } from '@/components/organisms/theme/th
 import { ArrowUturnLeftIcon, PlusIcon } from '@heroicons/react/16/solid';
 import { ThemeAnimationSetting } from '@/components/organisms/theme/theme-animation-setting';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
+import { useTheme } from '@/components/organisms/theme';
 
 export function ThemeDrawer({
   trigger,
@@ -45,6 +46,7 @@ export function ThemeDrawer({
   buttonProps?: ReducedButtonProps;
   buttonIconOnly?: boolean;
 }) {
+  const { themeMode, setThemeMode } = useTheme();
   const [open, setOpen] = useState<boolean>(false);
   const isDesktop = useMediaQuery('(min-width: 768px)');
   const defaultTrigger = (
@@ -140,12 +142,18 @@ export function ThemeDrawer({
       <ThemeSettingSection title="Modes">
         <ThemeSettingOption>
           <div className="text-foreground">Dev Mode</div>
-          <Toggle />
+          <Toggle
+            isEnabled={themeMode === 'dev'}
+            onClick={() => setThemeMode('dev')}
+          />
         </ThemeSettingOption>
 
         <ThemeSettingOption>
           <div className="text-foreground">Design Mode</div>
-          <Toggle />
+          <Toggle
+            isEnabled={themeMode === 'design'}
+            onClick={() => setThemeMode('design')}
+          />
         </ThemeSettingOption>
       </ThemeSettingSection>
     </div>

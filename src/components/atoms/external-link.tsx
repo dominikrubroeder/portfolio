@@ -42,7 +42,7 @@ export function ExternalLink({
       rel="noopener noreferrer"
       {...rest}
     >
-      <span className="rounded px-1 hover:bg-muted active:bg-muted">
+      <span className="px-1 hover:bg-muted active:bg-muted [html[data-theme=default]_&]:rounded">
         {children}
       </span>
 

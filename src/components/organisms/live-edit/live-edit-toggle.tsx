@@ -10,7 +10,7 @@ export function LiveEditToggle() {
     <Toggle
       label="Enable live edit"
       className="justify-between"
-      enabled={liveEditEnabled}
+      isEnabled={liveEditEnabled}
       onClick={() => setLiveEditEnabled((previousState) => !previousState)}
     />
   );

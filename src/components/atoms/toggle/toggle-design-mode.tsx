@@ -15,7 +15,7 @@ export function ToggleDesignMode({ className }: { className?: string }) {
         onClick={() => {
           setThemeMode('design');
         }}
-        enabled={themeMode === 'design'}
+        isEnabled={themeMode === 'design'}
       />
     </div>
   );

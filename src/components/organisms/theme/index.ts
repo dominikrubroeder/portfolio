@@ -12,6 +12,7 @@ export { ThemeWireframeBackground } from './theme-wireframe-background';
 export { ThemeNotesBackgroundCornellNotes } from './theme-notes-background-cornell-notes';
 export { ThemeSidebar } from './theme-sidebar';
 export { ThemeSidebarTrigger } from './theme-sidebar-trigger';
+export { ThemeAnimationEnabledToggle } from './theme-animation-enabled-toggle';
 
 export * from './theme-context';
 export { themeInitializationScript } from './helper';

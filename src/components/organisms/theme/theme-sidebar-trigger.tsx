@@ -10,7 +10,7 @@ export function ThemeSidebarTrigger() {
   const { theme } = useTheme();
 
   return (
-    <Button variant="text-muted" size="small" onClick={() => toggle('theme')}>
+    <Button variant="ghost-muted" size="small" onClick={() => toggle('theme')}>
       <SwatchIcon /> Modify Theme: {theme.value}
     </Button>
   );

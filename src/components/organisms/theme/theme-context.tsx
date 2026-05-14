@@ -11,6 +11,7 @@ import {
 } from 'react';
 import {
   Theme,
+  THEME_ANIMATION_SETTINGS_DEFAULT,
   THEME_APPEARANCE_DEFAULT,
   THEME_COLOR_DEFAULT,
   THEME_FONT_SIZE_DEFAULT,
@@ -36,6 +37,7 @@ import { capitalizeWords } from '@/lib/utils';
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [isInitialized, setIsInitialized] = useState(false);
   const [theme, setTheme] = useState<ThemeOption>(THEME_OPTION_DEFAULT);
   const [themeColor, setThemeColor] = useState<ThemeColor>(THEME_COLOR_DEFAULT);
   const [themeAppearance, setThemeAppearance] = useState<ThemeAppearance>(
@@ -44,18 +46,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [themeFontSize, setThemeFontSize] = useState<ThemeFontSize>(
     THEME_FONT_SIZE_DEFAULT
   );
+  const [themeAnimationSettings, setThemeAnimationSettings] =
+    useState<ThemeAnimationSettings>(THEME_ANIMATION_SETTINGS_DEFAULT);
   const [themeMode, setThemeMode] = useState<ThemeMode | undefined>(undefined);
   const [themeEvents, setThemeEvents] = useState<ThemeEvents>({
     isEventWinterEnabled: true
   });
-  const [isInitialized, setIsInitialized] = useState(false);
-  const [themeAnimationSettings, setThemeAnimationSettings] =
-    useState<ThemeAnimationSettings>({
-      disableAnimations: false,
-      delay: 0.24,
-      duration: 0.4,
-      type: 'spring'
-    });
 
   const applyThemeAppearance = useCallback((appearance: ThemeAppearance) => {
     const htmlElement = document.documentElement;
@@ -112,20 +108,27 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   const handleTheme = useCallback(
     (themeOption: ThemeOption) => {
-      setTheme(themeOption);
-      localStorage.setItem(THEME_KEY, themeOption.key);
-
-      if (themeOption.key === 'wireframe') {
-        handleThemeColor(undefined);
-      }
-
       if (themeOption.key === 'default') {
         handleThemeColor('primary');
+        setThemeAnimationSettings(THEME_ANIMATION_SETTINGS_DEFAULT);
+      }
+
+      if (themeOption.key === 'wireframe') {
+        handleThemeColor('foreground');
+        setThemeAnimationSettings({
+          isEnabled: false,
+          delay: 0,
+          duration: 0,
+          type: 'linear'
+        });
       }
 
       if (themeOption.key === 'notes') {
         handleThemeColor('orange');
       }
+
+      setTheme(themeOption);
+      localStorage.setItem(THEME_KEY, themeOption.key);
     },
     [handleThemeColor]
   );
@@ -286,8 +289,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [theme]);
 
   const shouldAnimate = useMemo(
-    () => theme.key === 'default' && !themeAnimationSettings.disableAnimations,
-    [theme.key, themeAnimationSettings.disableAnimations]
+    () => theme.key === 'default' && !themeAnimationSettings.isEnabled,
+    [theme.key, themeAnimationSettings.isEnabled]
   );
 
   useEffect(() => {

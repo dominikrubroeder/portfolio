@@ -18,7 +18,7 @@ export function Why() {
         <p>
           With a design system that feeds the user interface appropriately,
           streamlined processes and design-development workflows that help
-          people getting things done as comfortably as possible.
+          people get things done as comfortably as possible.
         </p>
       </div>
     </HeroBox>

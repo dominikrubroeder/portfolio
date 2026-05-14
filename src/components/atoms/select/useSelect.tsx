@@ -5,10 +5,10 @@ import { SelectOption } from '@/components/atoms/select/types';
 
 export const useSelect = ({
   initialValue,
-  onValueChangeAction
+  onValueChange
 }: {
   initialValue: string | undefined;
-  onValueChangeAction?: (options: SelectOption) => void;
+  onValueChange?: (options: SelectOption) => void;
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [value, setValue] = useState<string | undefined>(initialValue);
@@ -17,9 +17,9 @@ export const useSelect = ({
     (option: SelectOption) => {
       setValue(option.value);
       setIsOpen(false);
-      onValueChangeAction ? onValueChangeAction(option) : null;
+      onValueChange ? onValueChange(option) : null;
     },
-    [onValueChangeAction]
+    [onValueChange]
   );
 
   const toggleOpen = useCallback(

@@ -1,5 +1,6 @@
 import {
   Theme,
+  ThemeAnimationSettings,
   ThemeAppearance,
   ThemeColor,
   ThemeFontSize,
@@ -29,3 +30,9 @@ export const THEME_OPTION_DEFAULT: ThemeOption = THEME_OPTIONS[0];
 export const THEME_APPEARANCE_DEFAULT: ThemeAppearance = 'light';
 export const THEME_COLOR_DEFAULT: ThemeColor = 'blue';
 export const THEME_FONT_SIZE_DEFAULT: ThemeFontSize = 'md';
+export const THEME_ANIMATION_SETTINGS_DEFAULT: ThemeAnimationSettings = {
+  isEnabled: true,
+  delay: 0.24,
+  duration: 0.4,
+  type: 'spring'
+};

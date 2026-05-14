@@ -195,7 +195,7 @@ export const components: ComponentGroup[] = [
       {
         componentId: 'toggle',
         componentName: 'Toggle',
-        component: <Toggle />,
+        component: <Toggle isEnabled={true} onClick={() => {}} />,
         animatable: false
       },
       {

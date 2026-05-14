@@ -1,3 +1,5 @@
+'use client';
+
 import { ThemeSettingSection } from '@/components/organisms/theme/theme-setting-section';
 import { ThemeSettingOption } from '@/components/organisms/theme/theme-setting-option';
 import { ThemeSelect } from '@/components/organisms/theme/theme-select';
@@ -9,8 +11,11 @@ import { ThemeSpacingSectionBreakSetting } from '@/components/organisms/theme/th
 import { ThemeAnimationSetting } from '@/components/organisms/theme/theme-animation-setting';
 import { ThemeWinterToggle } from '@/components/organisms/events';
 import { Toggle } from '@/components/atoms/toggle';
+import { useTheme } from '@/components/organisms/theme';
 
 export function ThemeSettingsBackup() {
+  const { themeMode, setThemeMode } = useTheme();
+
   return (
     <>
       <ThemeSettingSection title="Theme">
@@ -83,12 +88,18 @@ export function ThemeSettingsBackup() {
       <ThemeSettingSection title="Modes">
         <ThemeSettingOption>
           <div className="text-foreground">Dev Mode</div>
-          <Toggle />
+          <Toggle
+            isEnabled={themeMode === 'dev'}
+            onClick={() => setThemeMode('dev')}
+          />
         </ThemeSettingOption>
 
         <ThemeSettingOption>
           <div className="text-foreground">Design Mode</div>
-          <Toggle />
+          <Toggle
+            isEnabled={themeMode === 'design'}
+            onClick={() => setThemeMode('design')}
+          />
         </ThemeSettingOption>
       </ThemeSettingSection>
     </>

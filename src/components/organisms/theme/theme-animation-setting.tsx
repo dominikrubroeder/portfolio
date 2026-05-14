@@ -16,12 +16,12 @@ export function ThemeAnimationSetting() {
       <ThemeSettingOption>
         <div className="text-foreground">Disable Animations</div>
         <Toggle
-          enabled={themeAnimationSettings.disableAnimations}
+          isEnabled={themeAnimationSettings.isEnabled}
           onClick={() =>
             setThemeAnimationSettings((prevState) => {
               return {
                 ...prevState,
-                disableAnimations: !prevState.disableAnimations
+                isEnabled: !prevState.isEnabled
               };
             })
           }

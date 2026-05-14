@@ -27,9 +27,7 @@ export function ThemeSpacingContainerWidthSetting() {
       initialValue={THEME_SPACING_CONTAINER_WIDTH_OPTIONS[0].value}
       placeholder="Select a width"
       options={THEME_SPACING_CONTAINER_WIDTH_OPTIONS}
-      onValueChangeAction={(themeOption) =>
-        setTheme(themeOption as ThemeOption)
-      }
+      onValueChange={(themeOption) => setTheme(themeOption as ThemeOption)}
     />
   );
 }
