@@ -24,7 +24,7 @@ export function Vision() {
               <PlusIcon />
             </Button>
             composing them like music. Designers and engineers need to work
-            together to create the best possible set.
+            together to create the best possible set for the task.
           </div>
         ) : (
           <div>
@@ -43,8 +43,10 @@ export function Vision() {
               <MinusIcon />
             </Button>
             composing them like music. Designers and engineers need to work
-            together to create the best possible set – with the fundamentals set
-            in the business strategy.
+            together to create the best possible set for the task –
+            <span className="ml-2 text-primary">
+              and the foundation is set in the business strategy.
+            </span>
           </div>
         )
       }

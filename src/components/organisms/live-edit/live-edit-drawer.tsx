@@ -18,8 +18,8 @@ import {
 } from '@/components/molecules/drawer';
 
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { ThemeDrawerSection } from '@/components/organisms/theme/theme-drawer-section';
-import { ThemeDrawerOption } from '@/components/organisms/theme/theme-drawer-option';
+import { ThemeSettingSection } from '../theme/theme-setting-section';
+import { ThemeSettingOption } from '../theme/theme-setting-option';
 import { ThemeSpacingContainerWidthSetting } from '@/components/organisms/theme/theme-spacing-container-width-setting';
 import { ThemeSpacingSectionBreakSetting } from '@/components/organisms/theme/theme-spacing-section-break-setting';
 import {
@@ -70,20 +70,20 @@ export function LiveEditDrawer({
 
   const content = (
     <div className="space-y-6 px-4 md:px-0">
-      <ThemeDrawerSection
+      <ThemeSettingSection
         title="Spacing"
         description="Spacing changes may not be visible on mobile devices"
       >
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Width</div>
           <ThemeSpacingContainerWidthSetting />
-        </ThemeDrawerOption>
+        </ThemeSettingOption>
 
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Section Break</div>
           <ThemeSpacingSectionBreakSetting />
-        </ThemeDrawerOption>
-      </ThemeDrawerSection>
+        </ThemeSettingOption>
+      </ThemeSettingSection>
     </div>
   );
 

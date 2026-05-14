@@ -1,4 +1,3 @@
-import { Animate } from '@/components/molecules/animate';
 import { Container } from '../organisms/layout/container';
 import { Ul } from '@/components/atoms/ul';
 import {
@@ -14,7 +13,7 @@ import { Blockquote } from '@/components/atoms/blockquote';
 export function ResourcesTemplate() {
   return (
     <>
-      <Animate delay={0.1}>
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
         <Container as="section" size="container-readable" className="space-y-2">
           <h1>Resources</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -24,9 +23,9 @@ export function ResourcesTemplate() {
             daily work.
           </Blockquote>
         </Container>
-      </Animate>
+      </div>
 
-      <Animate delay={0.16}>
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
         <Container as="section" size="container-readable">
           <h3 className="mb-0">Books</h3>
 
@@ -69,7 +68,7 @@ export function ResourcesTemplate() {
             ))}
           </Ul>
         </Container>
-      </Animate>
+      </div>
 
       <Hr variant="container-readable" />
 

@@ -1,4 +1,7 @@
-import { EVENTS_WINTER_SCENE_ENABLED, Snowfall } from '@/components/organisms/events';
+import {
+  EVENTS_WINTER_SCENE_ENABLED,
+  Snowfall
+} from '@/components/organisms/events';
 import { ThemeNotesBackgroundCornellNotes } from '@/components/organisms/theme';
 import { projects } from '@/components/organisms/projects/data';
 import { preload } from 'react-dom';

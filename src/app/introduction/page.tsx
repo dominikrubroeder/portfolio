@@ -1,4 +1,4 @@
-import { Container } from '../../components/organisms/layout/container';
+import { Container } from '@/components/organisms/layout';
 import {
   IntroductionMyBackground,
   IntroductionPrinciples
@@ -13,7 +13,7 @@ import { Blockquote } from '@/components/atoms/blockquote';
 export default function IntroductionPage() {
   return (
     <>
-      <div className="animate-to-left [animation-delay:100ms]">
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
         <Container as="section" size="container-readable">
           <h1>Introduction</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -24,7 +24,7 @@ export default function IntroductionPage() {
         </Container>
       </div>
 
-      <div className="animate-to-left [animation-delay:160ms]">
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
         <Container as="section" size="container-readable">
           <h2>My Journey</h2>
           <IntroductionMyBackground />

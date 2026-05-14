@@ -1,5 +1,4 @@
-import { Container } from '../../components/organisms/layout/container';
-import { Animate } from '@/components/molecules/animate';
+import { Container } from '@/components/organisms/layout/container';
 import { BrandList } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';
 import { mainTechnologies } from '@/components/organisms/technologies';
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 export default function TechnologiesPage() {
   return (
     <>
-      <Animate delay={0.1}>
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
         <Container as="section" size="container-readable" className="space-y-2">
           <h1>Technologies</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -24,13 +23,13 @@ export default function TechnologiesPage() {
             daily coding tasks:
           </Blockquote>
         </Container>
-      </Animate>
+      </div>
 
-      <Animate delay={0.16}>
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
         <Container as="section" size="container-readable">
           <BrandList brands={mainTechnologies} />
         </Container>
-      </Animate>
+      </div>
 
       <Hr variant="container" />
     </>

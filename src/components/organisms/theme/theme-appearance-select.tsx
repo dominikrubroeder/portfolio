@@ -103,7 +103,7 @@ export function ThemeAppearanceSelect({
                 <Button
                   variant="ghost-foreground"
                   onClick={() => handleThemeChange(value as ThemeAppearance)}
-                  className="w-full"
+                  className="w-full font-normal"
                 >
                   {label}
                 </Button>

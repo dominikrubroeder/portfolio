@@ -1,4 +1,4 @@
-import { Container } from '../../components/organisms/layout/container';
+import { Container } from '@/components/organisms/layout';
 import { mainTools, tools } from '@/components/organisms/tools';
 import { BrandList, BrandRow } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ToolsPage() {
   return (
     <>
-      <div className="animate-to-left [animation-delay:100ms]">
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
         <Container as="section" size="container-readable">
           <h1>Tools</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -25,7 +25,7 @@ export default function ToolsPage() {
         </Container>
       </div>
 
-      <div className="animate-to-left [animation-delay:160ms]">
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
         <Container as="section" size="container-readable">
           <h2>My main daily drivers</h2>
           <div>
@@ -34,7 +34,7 @@ export default function ToolsPage() {
         </Container>
       </div>
 
-      <div className="animate-to-left [animation-delay:240ms]">
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:240ms]">
         <Container as="section" size="container-readable">
           <h2>Extended list, all tools</h2>
           <Ul className="grid gap-6 sm:gap-10">

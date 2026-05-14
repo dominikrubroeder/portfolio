@@ -29,7 +29,7 @@ export function ThemeFontSizeSetting({ className }: { className?: string }) {
 
       <Button
         variant="ghost-foreground"
-        className={cn('text-lg', themeFontSize === 'lg' && 'underline')}
+        className={cn('text-xl', themeFontSize === 'lg' && 'underline')}
         onClick={() => setThemeFontSize('lg')}
       >
         Aa

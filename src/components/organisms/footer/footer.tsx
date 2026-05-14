@@ -7,6 +7,7 @@ import { socials } from '@/components/organisms/socials';
 import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 import { ButtonScrollToTop } from '@/components/atoms/button';
+import { ThemeSidebarTrigger } from '@/components/organisms/theme';
 
 export function Footer() {
   return (
@@ -71,6 +72,8 @@ export function Footer() {
 
       <footer className="relative z-10 mt-8 space-y-3 border-t bg-background p-4 text-center text-xs md:pb-4">
         <ButtonScrollToTop className="absolute top-5 right-4" />
+
+        <ThemeSidebarTrigger />
 
         <Ul className={cn('my-0 mb-0 inline-flex')}>
           {socials.map((brand, index) => (

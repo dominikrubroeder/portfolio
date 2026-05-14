@@ -10,7 +10,8 @@ import { Footer } from '@/components/organisms/footer';
 import { Header } from '@/components/organisms/header';
 import {
   themeInitializationScript,
-  ThemeProvider
+  ThemeProvider,
+  ThemeSidebar
 } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
@@ -18,6 +19,7 @@ import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
 import { TooltipProvider } from '@/components/atoms/tooltip/shadcnui/tooltip';
 import { PageTemplate } from '@/components/templates/page-template';
+import { SidebarProvider } from '@/components/organisms/sidebar';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -65,25 +67,31 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body>
         <ThemeProvider>
-          <script
-            id="theme-initializer"
-            dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          />
+          <SidebarProvider>
+            <script
+              id="theme-initializer"
+              dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
+            />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
-          <Header />
+            <Header />
 
-          <PageTemplate>
-            <TooltipProvider>{children}</TooltipProvider>
-          </PageTemplate>
+            <PageTemplate>
+              <TooltipProvider>
+                {children}
+                <ThemeSidebar />
+              </TooltipProvider>
+            </PageTemplate>
 
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
+            <Footer />
+          </SidebarProvider>
         </ThemeProvider>
+
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

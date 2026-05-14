@@ -12,16 +12,8 @@ export const THEME_OPTIONS: ThemeOption[] = [
     value: 'Default'
   },
   {
-    key: 'crazy-color',
-    value: 'Crazy Color'
-  },
-  {
     key: 'wireframe',
     value: 'Wireframe'
-  },
-  {
-    key: 'notes',
-    value: 'Notes'
   }
 ];
 

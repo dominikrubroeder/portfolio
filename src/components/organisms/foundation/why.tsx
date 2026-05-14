@@ -3,10 +3,7 @@ import { HeroBox } from '@/components/molecules/hero-box';
 
 export function Why() {
   return (
-    <HeroBox
-      overline="The reason why"
-      title="Why am i doing design engineering?"
-    >
+    <HeroBox overline="Reason why" title="Why am i doing design engineering?">
       <div className="max-w-(--container-readable)">
         <Blockquote className="mb-4">
           It's simple, i love to build user interfaces!
@@ -14,8 +11,8 @@ export function Why() {
 
         <p>
           Whether it's the style, the colors, the fonts, the design language, a
-          theme or the code, i want to build user interfaces, that
-          <i> servers purpose supporting the projects goals and intentions</i>.
+          theme or the code, i want to build user interfaces that
+          <i> servers purpose, supporting the projects goals and intentions</i>.
         </p>
 
         <p>

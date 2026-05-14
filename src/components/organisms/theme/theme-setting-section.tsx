@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export function ThemeDrawerSection({
+export function ThemeSettingSection({
   title,
   description,
   children
@@ -18,7 +18,9 @@ export function ThemeDrawerSection({
         )}
       </div>
 
-      <div className="space-y-6 rounded-xl border p-6">{children}</div>
+      <div className="space-y-6 border p-6 [html[data-theme=default]_&]:rounded-xl">
+        {children}
+      </div>
     </div>
   );
 }

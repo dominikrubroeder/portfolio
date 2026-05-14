@@ -15,7 +15,7 @@ export function HeroBox({
   return (
     <div
       className={cn(
-        'space-y-4 rounded border border-t-8 border-r-8 border-t-primary border-r-primary p-8',
+        'space-y-4 border border-t-8 border-r-8 border-t-primary border-r-primary p-8 [html[data-theme=default]_&]:rounded',
         className
       )}
     >

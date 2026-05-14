@@ -23,7 +23,7 @@ export function ProjectsTemplate() {
 
   return (
     <>
-      <div className="animate-to-left [animation-delay:100ms]">
+      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
         <Container as="section" className="space-y-2">
           <h1 className="text-6xl font-black">Projects</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -36,7 +36,7 @@ export function ProjectsTemplate() {
         </Container>
       </div>
 
-      <div className="-mt-6 animate-to-left [animation-delay:160ms]">
+      <div className="-mt-6 [html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
         <Container as="section" size="container">
           <Link
             href={heroProject.url}
