@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { useTheme } from '@/components/organisms/theme';
-import type { AccordionItemProps } from '@/components/atoms/accordion';
+import type { AccordionItemProps } from '@/components/molecules/accordion/index';
 import { ArrowRightIcon, MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
 
 export function AccordionItem({

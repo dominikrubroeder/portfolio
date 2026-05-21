@@ -1,26 +1,26 @@
 import { Blockquote } from '@/components/atoms/blockquote';
-import { HeroBox } from '@/components/molecules/hero-box';
 
 export function Why() {
   return (
-    <HeroBox overline="Reason why" title="Why am i doing design engineering?">
-      <div className="max-w-(--container-readable)">
-        <Blockquote className="mb-4">
-          It's simple, i love to build user interfaces!
-        </Blockquote>
+    <div className="space-y-3">
+      <b>Why am i doing design engineering?</b>
 
-        <p>
-          Whether it's the style, the colors, the fonts, the design language, a
-          theme or the code, i want to build user interfaces that
-          <i> servers purpose, supporting the projects goals and intentions</i>.
-        </p>
+      <Blockquote variant="foreground">
+        It's simple, i love to build user interfaces! And everything around
+        frontend, design, UX and even psychology related topics.
+      </Blockquote>
 
-        <p>
-          With a design system that feeds the user interface appropriately,
-          streamlined processes and design-development workflows that help
-          people get things done as comfortably as possible.
-        </p>
-      </div>
-    </HeroBox>
+      <p>
+        Whether it's the style, the colors, the fonts, the design language, a
+        theme or the code, i want to build user interfaces that
+        <i> servers purpose, supporting the projects goals and intentions</i>.
+      </p>
+
+      <p>
+        With a design system that feeds the user interface appropriately,
+        streamlined processes and design-development workflows that help people
+        get things done appropriately to the task.
+      </p>
+    </div>
   );
 }

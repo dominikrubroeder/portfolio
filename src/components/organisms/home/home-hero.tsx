@@ -5,7 +5,7 @@ import {
   IntroductionTechStack
 } from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
-import { Accordion } from '@/components/atoms/accordion';
+import { Accordion } from '@/components/molecules/accordion';
 import { Hr } from '@/components/atoms/hr';
 import { ContactButton } from '@/components/organisms/contact';
 import { ThemeWireframeBackground } from '@/components/organisms/theme';

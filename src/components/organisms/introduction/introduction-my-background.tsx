@@ -236,20 +236,35 @@ export function IntroductionMyBackground() {
       </p>
 
       <p>
-        Design Engineering. It is per definition described as "Design
+        <b>Design Engineering.</b> It is per definition described as "Design
         engineering combines design (appearance) with coding (functionality) to
-        create smooth, easy user experiences." which makes it good for a person
-        having both abilities: to plan, visualize and create on the one hand and
-        to build, perform and function on the other.
+        create smooth, easy user experiences."
       </p>
 
       <p>
-        This benefit, of having both sides of the front-end spectrum makes it
-        easier and better to design, while also better at coding because the
-        same person knows what the other department is about and the values of
-        it. Also, in the end both departments are needed to create the desired
-        product (the user interface) that should mirror the business goals and
-        its intentions for the people using it.
+        This makes the workflow complete from the design sketch to
+        production-ready frontend code. To plan, visualize and create on the
+        design side and to build, perform and function in the engineering part.
+        Successful user interfaces need both – plus the fundamentals of the
+        business, marketing and sales strategy baked into it.
+      </p>
+
+      <p>
+        As the possibilities seem endless in the era of AI, another topic arises
+        more and more: requirement engineering.
+      </p>
+
+      <p>
+        When everything can be build and it is not a question of the "how" and
+        "if" anymore, the question wanders more to the "what". This pool of
+        options requires a clear definition about the project (and task) goals,
+        dos, don'ts and constraints – in other words, the <i>requirements</i>{' '}
+        are getting more important than ever.
+      </p>
+
+      <p>
+        Otherwise the result will be fuzzy, and budget plus timeline is lost
+        quickly, moving into the false direction.
       </p>
 
       <p>
@@ -258,43 +273,6 @@ export function IntroductionMyBackground() {
         simply building user interfaces for the sake of it, feels shallow,
         almost hollow to me. No soul, no good reason to reach for. It becomes
         harder for me to enjoy what i am doing.
-      </p>
-
-      <p>
-        That's why i am convinced that projects and everything what you do
-        should have a clear reason why, a descriptive meaning what you want to
-        achieve before you do it. This means a vision description, a mission
-        description and a description of the values, the reason why of it. And –
-        sticking to it, investing time into it.
-      </p>
-
-      <p>
-        It actually has another benefit: you have a clear path to go on. I'm
-        sure that when the path is clear, so will be the product, with more
-        focus and clear intentions.
-      </p>
-
-      <p>
-        In the current industry, this relates most of all to requirements
-        engineering, making it super clear what's to build, why to build and how
-        to build – based on specific requirements. Without this roadmap,
-        products, features, or enhancements are set up to fail before they even
-        begin.
-      </p>
-
-      <p>
-        This may sound obvious, but in day to day work this often gets lost
-        quickly, especially in longer-lasting projects and the overall way of
-        work, focusing primarily on "making it work" and "shipping it".
-        Fundamental requirements changing while being in the process is not
-        agile, it is bad planning. With the lack of these definitions, the
-        result will be fuzzy. Therefore, strong management is needed. And people
-        that what to carry the idea and vision from beginning to end.
-      </p>
-
-      <p>
-        With all of that said, i am happy to see what is coming next, and what
-        good things we can build for the web and the people using it.
       </p>
 
       <Hr />

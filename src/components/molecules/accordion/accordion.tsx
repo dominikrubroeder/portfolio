@@ -3,8 +3,9 @@ import {
   AccordionItemContained,
   AccordionProps,
   getDefaultOpen
-} from '@/components/atoms/accordion';
+} from '@/components/molecules/accordion/index';
 import { Ul } from '@/components/atoms/ul';
+import { cn } from '@/lib/utils';
 
 export function Accordion({
   variant,
@@ -13,11 +14,15 @@ export function Accordion({
   accordionGroupId,
   defaultOpen,
   focusView,
-  accordionIcon = 'plus-minus'
+  accordionIcon = 'plus-minus',
+  className
 }: AccordionProps) {
   if (variant === 'contained')
     return (
-      <Ul className="scroll-mt-responsive space-y-0" id={accordionGroupId}>
+      <Ul
+        className={cn('scroll-mt-responsive space-y-0', className)}
+        id={accordionGroupId}
+      >
         {items.map(({ title, children }, index) => (
           <li key={index + accordionGroupId}>
             <AccordionItemContained
@@ -36,7 +41,10 @@ export function Accordion({
     );
 
   return (
-    <Ul className="scroll-mt-responsive space-y-3" id={accordionGroupId}>
+    <Ul
+      className={cn('scroll-mt-responsive space-y-3', className)}
+      id={accordionGroupId}
+    >
       {items.map(({ title, children }, index) => (
         <li key={index + accordionGroupId}>
           <AccordionItem

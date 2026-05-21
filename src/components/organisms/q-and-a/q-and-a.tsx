@@ -6,7 +6,7 @@ import {
   QAndAUxEngineer,
   QAndAWhatIsAUxEngineer
 } from '@/components/organisms/q-and-a';
-import { Accordion } from '@/components/atoms/accordion';
+import { Accordion } from '@/components/molecules/accordion';
 
 export function QAndA() {
   return (

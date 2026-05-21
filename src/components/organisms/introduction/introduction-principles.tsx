@@ -3,6 +3,7 @@ import { Ul } from '@/components/atoms/ul';
 export function IntroductionPrinciples() {
   return (
     <Ul listStyle="disc" className="my-0">
+      <li>Start small and grow with demands</li>
       <li>Design in system</li>
       <li>Design better user interfaces with psychology</li>
       <li>Design context-aware</li>

@@ -1,5 +1,5 @@
 import { ToggleContent } from '@/components/molecules/toggle-content';
-import { Accordion } from '@/components/atoms/accordion';
+import { Accordion } from '@/components/molecules/accordion';
 
 export function BlogPostsList() {
   return (

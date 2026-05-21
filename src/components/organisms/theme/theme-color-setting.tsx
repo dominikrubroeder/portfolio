@@ -13,7 +13,7 @@ export function ThemeColorSetting({ className }: BaseComponentProps) {
     <ButtonGroup className={className}>
       {/** TODO: Replace fixed color values with color variables */}
       <button
-        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-blue bg-blue hover:scale-110 hover:border-blue active:scale-100 motion-safe:interactive"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-blue bg-blue hover:scale-110 hover:border-blue active:scale-100 [html[data-theme=default]_&]:motion-safe:interactive"
         onClick={() => setThemeColor('blue')}
       >
         {isInitialized && themeColor === 'blue' && (
@@ -22,7 +22,7 @@ export function ThemeColorSetting({ className }: BaseComponentProps) {
       </button>
 
       <button
-        className="flex size-8 shrink-0 items-center justify-center rounded-full border-violett bg-violett hover:scale-110 hover:border-violett active:scale-100 motion-safe:interactive"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border-violett bg-violett hover:scale-110 hover:border-violett active:scale-100 [html[data-theme=default]_&]:motion-safe:interactive"
         onClick={() => setThemeColor('violett')}
       >
         {((isInitialized && themeColor === 'primary') ||
@@ -32,7 +32,7 @@ export function ThemeColorSetting({ className }: BaseComponentProps) {
       </button>
 
       <button
-        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-orange bg-orange hover:scale-110 hover:border-orange active:scale-100 motion-safe:interactive"
+        className="flex size-8 shrink-0 items-center justify-center rounded-full border border-orange bg-orange hover:scale-110 hover:border-orange active:scale-100 [html[data-theme=default]_&]:motion-safe:interactive"
         onClick={() => setThemeColor('orange')}
       >
         {isInitialized && themeColor === 'orange' && (

@@ -39,6 +39,23 @@ export function ThemeSettings() {
           <ThemeAnimationEnabledToggle />
         </ThemeSettingOption>
       </ThemeSettingSection>
+
+      <ThemeSettingSection title="Border">
+        <ThemeSettingOption>
+          <div className="text-foreground">Radius</div>
+          <ThemeAnimationEnabledToggle />
+        </ThemeSettingOption>
+
+        <ThemeSettingOption>
+          <div className="text-foreground">Style</div>
+          <ThemeAnimationEnabledToggle />
+        </ThemeSettingOption>
+
+        <ThemeSettingOption>
+          <div className="text-foreground">Width</div>
+          <ThemeAnimationEnabledToggle />
+        </ThemeSettingOption>
+      </ThemeSettingSection>
     </>
   );
 }

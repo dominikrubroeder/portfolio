@@ -2,6 +2,7 @@ import {
   Theme,
   ThemeAnimationSettings,
   ThemeAppearance,
+  ThemeBorderSettings,
   ThemeColor,
   ThemeFontSize,
   ThemeOption
@@ -35,4 +36,9 @@ export const THEME_ANIMATION_SETTINGS_DEFAULT: ThemeAnimationSettings = {
   delay: 0.24,
   duration: 0.4,
   type: 'spring'
+};
+export const THEME_BORDER_SETTINGS_DEFAULT: ThemeBorderSettings = {
+  radius: 'sm',
+  style: 'solid',
+  width: 'sm'
 };

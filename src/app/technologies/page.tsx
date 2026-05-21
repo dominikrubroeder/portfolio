@@ -4,6 +4,7 @@ import { Hr } from '@/components/atoms/hr';
 import { mainTechnologies } from '@/components/organisms/technologies';
 import type { Metadata } from 'next';
 import { Blockquote } from '@/components/atoms/blockquote';
+import { HeroNavigation } from '@/components/molecules/hero-navigation';
 
 export const metadata: Metadata = {
   title: 'Technologies | Dominik Rubröder, UX Design Engineer',
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export default function TechnologiesPage() {
   return (
     <>
-      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
+      <div className="animate-in-to-left-100">
         <Container as="section" size="container-readable" className="space-y-2">
           <h1>Technologies</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -25,13 +26,15 @@ export default function TechnologiesPage() {
         </Container>
       </div>
 
-      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
+      <div className="animate-in-to-left-160">
         <Container as="section" size="container-readable">
           <BrandList brands={mainTechnologies} />
         </Container>
       </div>
 
       <Hr variant="container" />
+
+      <HeroNavigation />
     </>
   );
 }

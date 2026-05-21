@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Accordion } from '@/components/atoms/accordion';
+import { Accordion } from '@/components/molecules/accordion';
 import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { Avatar } from '@/components/atoms/avatar';
 import { Badge } from '@/components/atoms/badge';

@@ -9,11 +9,12 @@ import { ExternalLink } from '@/components/atoms/external-link';
 import { Hr } from '@/components/atoms/hr';
 import { getResearch } from '@/components/organisms/training/research';
 import { Blockquote } from '@/components/atoms/blockquote';
+import { HeroNavigation } from '@/components/molecules/hero-navigation';
 
 export function ResourcesTemplate() {
   return (
     <>
-      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
+      <div className="animate-in-to-left-100">
         <Container as="section" size="container-readable" className="space-y-2">
           <h1>Resources</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -25,7 +26,7 @@ export function ResourcesTemplate() {
         </Container>
       </div>
 
-      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
+      <div className="animate-in-to-left-160">
         <Container as="section" size="container-readable">
           <h3 className="mb-0">Books</h3>
 
@@ -189,6 +190,8 @@ export function ResourcesTemplate() {
       </Container>
 
       <Hr variant="container" />
+
+      <HeroNavigation />
     </>
   );
 }

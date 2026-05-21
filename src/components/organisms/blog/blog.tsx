@@ -1,6 +1,9 @@
 import { Container } from '@/components/organisms/layout';
 import { Animate } from '@/components/molecules/animate';
-import { Accordion, AccordionItemProps } from '@/components/atoms/accordion';
+import {
+  Accordion,
+  AccordionItemProps
+} from '@/components/molecules/accordion';
 import { BlogPostsList } from '@/components/organisms/blog/blog-posts-list';
 import { blogPosts } from '@/components/organisms/blog/blog-posts';
 

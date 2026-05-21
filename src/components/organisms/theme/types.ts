@@ -24,6 +24,14 @@ export type ThemeAnimationSettings = {
   delay: ThemeAnimationDelay;
   type: ThemeAnimationType;
 };
+export type ThemeBorderSettingRadius = 'sm' | 'md' | 'lg';
+export type ThemeBorderSettingStyle = 'solid' | 'dashed' | 'dotted';
+export type ThemeBorderSettingWidth = 'sm' | 'md' | 'lg';
+export type ThemeBorderSettings = {
+  radius: ThemeBorderSettingRadius;
+  style: ThemeBorderSettingStyle;
+  width: ThemeBorderSettingWidth;
+};
 
 export type ThemeContextType = {
   theme: ThemeOption;

@@ -51,6 +51,7 @@ import {
   LogoGraphQl,
   LogoHeadlessUi,
   LogoHeroicons,
+  LogoHeroUi,
   LogoHotjar,
   LogoHtml,
   LogoInkdrop,
@@ -631,6 +632,9 @@ export function BrandLogo({
 
     case 'Node.js':
       return <LogoNodeJs id={id} className={className} />;
+
+    case 'HeroUI':
+      return <LogoHeroUi id={id} className={className} />;
 
     default:
       return DefaultLogo;

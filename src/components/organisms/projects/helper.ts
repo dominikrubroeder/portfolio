@@ -3,6 +3,10 @@ import { FilterProp, SortProp } from '@/lib/types';
 import type { Project } from '@/components/organisms/projects';
 import { projects } from '@/components/organisms/projects/data';
 
+export function getProject({ title }: { title: string }) {
+  return projects.find((project) => project.title === title);
+}
+
 export function getProjects({
   sorting,
   filter

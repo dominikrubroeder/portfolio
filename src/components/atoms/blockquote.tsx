@@ -9,24 +9,26 @@ export function Blockquote({
   indent,
   quoteBar = true,
   centered = true,
-  className,
-  children,
   quotes,
   author,
   horizontalOffset = true,
   withBackground,
+  isHighlight,
+  className,
+  children,
   ...rest
 }: {
   variant?: ColorReducedProp;
   indent?: boolean;
   quoteBar?: boolean;
   centered?: boolean;
-  className?: string;
-  children?: ReactNode;
   quotes?: boolean;
   author?: ReactNode;
   horizontalOffset?: boolean;
   withBackground?: boolean;
+  isHighlight?: boolean;
+  className?: string;
+  children?: ReactNode;
 } & React.HTMLAttributes<HTMLElement>) {
   return (
     <blockquote

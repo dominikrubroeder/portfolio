@@ -1,17 +1,9 @@
 'use client';
 
-import {
-  ArrowRightIcon,
-  ChevronDownIcon,
-  MinusIcon,
-  PlusIcon
-} from '@heroicons/react/16/solid';
+import { ArrowRightIcon, ChevronDownIcon, MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
-import {
-  AccordionItemContainedProps,
-  useAccordionItemContained
-} from '@/components/atoms/accordion';
+import { AccordionItemContainedProps, useAccordionItemContained } from '@/components/molecules/accordion/index';
 import { Button } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
@@ -49,7 +41,7 @@ export function AccordionItemContained({
             isOpen ? `Close accordion: ${title}` : `Open accordion: ${title}`
           }
           onClick={toggle}
-          className="flex-1 justify-start text-left"
+          className="flex-1 justify-start text-left font-normal"
         >
           {title}
         </Button>
@@ -85,7 +77,7 @@ export function AccordionItemContained({
       </ButtonGroup>
 
       {isOpen && (
-        <div className="mb-5 py-4 pt-2 motion-safe:animate-fade-up">
+        <div className="mb-5 px-3.5 py-4 pt-2 font-normal text-muted-foreground motion-safe:animate-fade-up">
           {children}
         </div>
       )}

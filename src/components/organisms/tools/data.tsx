@@ -1116,6 +1116,14 @@ const tools: Tools = [
         usageLevel: 'Applied'
       },
       {
+        name: 'HeroUI',
+        description:
+          'Beautiful, accessible React UI components built on React Aria and Tailwind CSS',
+        href: 'https://heroui.com',
+        logo: '',
+        usageLevel: 'Aware'
+      },
+      {
         name: 'Material UI',
         description: 'Ready to use Material Design components',
         href: 'https://mui.com',

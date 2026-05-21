@@ -44,13 +44,13 @@ export function Button({
     variant === 'text-muted' &&
       'text-muted-foreground hover:text-foreground [&>svg]:hover:text-foreground group-hover:[&>svg]:text-foreground',
     size === 'tiny' &&
-      'min-h-6 min-w-6 [html[data-theme=default]_&]:rounded-lg [html[data-theme=default]_&]:hover:rounded-md text-xs py-1 px-1 gap-2 [&>svg]:size-3.5',
+      'min-h-6 min-w-6 [html[data-theme=default]_&]:rounded-lg [html[data-theme=default]_&]:hover:rounded-md text-xs py-1 px-1 gap-1 [&>svg]:size-3.5',
     size === 'small' &&
-      ' min-h-8 min-w-8 [html[data-theme=default]_&]:rounded-xl [html[data-theme=default]_&]:hover:rounded-lg text-sm py-1 px-2 gap-2 [&>svg]:size-3.5',
+      ' min-h-8 min-w-8 [html[data-theme=default]_&]:rounded-xl [html[data-theme=default]_&]:hover:rounded-lg text-sm py-1 px-2 gap-1 [&>svg]:size-3.5',
     size === 'medium' &&
       'min-h-11 min-w-11 [html[data-theme=default]_&]:rounded-2xl [html[data-theme=default]_&]:hover:rounded-xl text-base py-2 px-3 gap-2 [&>svg]:size-5',
     size === 'large' &&
-      'min-h-11 min-w-11 [html[data-theme=default]_&]:rounded-2xl [html[data-theme=default]_&]:hover:rounded-xl text-lg py-2 px-3 gap-3 [&>svg]:size-6',
+      'min-h-11 min-w-11 [html[data-theme=default]_&]:rounded-2xl [html[data-theme=default]_&]:hover:rounded-xl text-lg py-2 px-3.5 gap-2 [&>svg]:size-6',
     rounded &&
       '[html[data-theme=default]_&]:rounded-full [html[data-theme=default]_&]:hover:rounded-full',
     theme.key === 'wireframe' &&
@@ -62,6 +62,7 @@ export function Button({
   const isMail = href?.includes('mailto');
   const isPhone = href?.includes('tel');
   const isDownload = href?.includes('.pdf');
+  const isExternal = href?.includes('https');
 
   if (isDownload) {
     return (
@@ -110,6 +111,19 @@ export function Button({
       </a>
     );
   }
+
+  if (isExternal)
+    return (
+      <a
+        {...rest}
+        href={href}
+        target="_blank"
+        rel={rest.rel}
+        className={classNames}
+      >
+        {children}
+      </a>
+    );
 
   if (href)
     return (

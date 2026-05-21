@@ -2,7 +2,7 @@
 
 import { useCallback, useRef, useState } from 'react';
 
-import type { AccordionItemContainedProps } from '@/components/atoms/accordion';
+import type { AccordionItemContainedProps } from '@/components/molecules/accordion/index';
 import { useReducedMotion } from 'framer-motion';
 
 export const useAccordionItemContained = ({

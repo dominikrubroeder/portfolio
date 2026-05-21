@@ -15,6 +15,7 @@ export interface AccordionProps {
    * */
   focusView?: 'start' | 'center';
   accordionIcon?: 'plus-minus' | 'chevron' | 'arrow-right';
+  className?: string;
 }
 
 export interface AccordionItemProps

@@ -1,18 +1,11 @@
 'use client';
 
-import {
-  createContext,
-  ReactNode,
-  use,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState
-} from 'react';
+import { createContext, ReactNode, use, useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Theme,
   THEME_ANIMATION_SETTINGS_DEFAULT,
   THEME_APPEARANCE_DEFAULT,
+  THEME_BORDER_SETTINGS_DEFAULT,
   THEME_COLOR_DEFAULT,
   THEME_FONT_SIZE_DEFAULT,
   THEME_KEY,
@@ -25,6 +18,7 @@ import {
   THEME_OPTIONS,
   ThemeAnimationSettings,
   ThemeAppearance,
+  ThemeBorderSettings,
   ThemeColor,
   ThemeContextType,
   ThemeEvents,
@@ -48,6 +42,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
   const [themeAnimationSettings, setThemeAnimationSettings] =
     useState<ThemeAnimationSettings>(THEME_ANIMATION_SETTINGS_DEFAULT);
+  const [themeBorderSettings, setThemeBorderSettings] =
+    useState<ThemeBorderSettings>(THEME_BORDER_SETTINGS_DEFAULT);
   const [themeMode, setThemeMode] = useState<ThemeMode | undefined>(undefined);
   const [themeEvents, setThemeEvents] = useState<ThemeEvents>({
     isEventWinterEnabled: true

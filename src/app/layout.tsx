@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <body>
+      <body className="flex min-h-screen flex-col">
         <ThemeProvider>
           <SidebarProvider>
             <script

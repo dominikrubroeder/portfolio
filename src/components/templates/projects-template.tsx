@@ -8,9 +8,11 @@ import { projects } from '@/components/organisms/projects/data';
 import { Badge } from '@/components/atoms/badge';
 import { preload } from 'react-dom';
 import { Blockquote } from '@/components/atoms/blockquote';
+import { getProject } from '@/components/organisms/projects';
+import { HeroNavigation } from '@/components/molecules/hero-navigation';
 
 export function ProjectsTemplate() {
-  const heroProject = projects[0];
+  const heroProject = getProject({ title: 'Value Booster' });
 
   projects.forEach((project) => {
     if (project.previewImage) {
@@ -23,7 +25,7 @@ export function ProjectsTemplate() {
 
   return (
     <>
-      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
+      <div className="animate-in-to-left-100">
         <Container as="section" className="space-y-2">
           <h1 className="text-6xl font-black">Projects</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -36,89 +38,91 @@ export function ProjectsTemplate() {
         </Container>
       </div>
 
-      <div className="-mt-6 [html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
-        <Container as="section" size="container">
-          <Link
-            href={heroProject.url}
-            title={`Open ${heroProject.title} in external tab`}
-            aria-label={`Click to open ${heroProject.title} in an external tab`}
-            target="_blank"
-          >
-            {heroProject.previewImage ? (
-              <Image
-                src={heroProject.previewImage}
-                alt={`${heroProject.title} preview image`}
-                width={1920}
-                height={630}
-                className="max-w-panorama w-full"
-                draggable={false}
-                loading="eager"
-              />
-            ) : null}
-          </Link>
-
-          <div className="mx-auto max-w-(--container-readable)">
-            <div>
-              <h3 className="mb-0">{heroProject.title}</h3>
-              <small className="flex flex-wrap items-center gap-2">
-                <ul className="my-0 -mr-1">
-                  {heroProject.companies?.map((company) => (
-                    <li
-                      key={`Project ${heroProject.title} company ${company.label}`}
-                    >
-                      {company.href ? (
-                        <ExternalLink
-                          variant="text"
-                          href={company.href}
-                          size="sm"
-                          color="muted"
-                          className="mr-0 -ml-1"
-                          showExternalIndicator={false}
-                        >
-                          {company.label}
-                        </ExternalLink>
-                      ) : (
-                        <span>{company.label}</span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-                <span className="size-1 rounded-full bg-muted-foreground" />
-                <span>{heroProject.timeframe}</span>
-                {heroProject.isActive && (
-                  <>
-                    <span className="size-1 rounded-full bg-muted-foreground" />
-                    <Badge variant="muted" size="sm">
-                      Ongoing
-                    </Badge>
-                  </>
-                )}
-              </small>
-            </div>
-
-            {heroProject.description && <p>{heroProject.description}</p>}
-
-            <p className="text-muted-foreground">{heroProject.subline}</p>
-
-            <ExternalLink
+      {heroProject && (
+        <div className="-mt-6 animate-in-to-left-160">
+          <Container as="section" size="container">
+            <Link
               href={heroProject.url}
-              color="primary"
-              title={`View ${heroProject.title}`}
-              aria-label={`Click to view ${heroProject.title} in a new tab`}
-              className="-ml-1"
+              title={`Open ${heroProject.title} in external tab`}
+              aria-label={`Click to open ${heroProject.title} in an external tab`}
+              target="_blank"
             >
-              View {heroProject.title}
-            </ExternalLink>
-          </div>
-        </Container>
-      </div>
+              {heroProject.previewImage ? (
+                <Image
+                  src={heroProject.previewImage}
+                  alt={`${heroProject.title} preview image`}
+                  width={1920}
+                  height={630}
+                  className="max-w-panorama w-full"
+                  draggable={false}
+                  loading="eager"
+                />
+              ) : null}
+            </Link>
+
+            <div className="mx-auto max-w-(--container-readable)">
+              <div>
+                <h3 className="mb-0">{heroProject.title}</h3>
+                <small className="flex flex-wrap items-center gap-2">
+                  <ul className="my-0 -mr-1">
+                    {heroProject.companies?.map((company) => (
+                      <li
+                        key={`Project ${heroProject.title} company ${company.label}`}
+                      >
+                        {company.href ? (
+                          <ExternalLink
+                            variant="text"
+                            href={company.href}
+                            size="sm"
+                            color="muted"
+                            className="mr-0 -ml-1"
+                            showExternalIndicator={false}
+                          >
+                            {company.label}
+                          </ExternalLink>
+                        ) : (
+                          <span>{company.label}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="size-1 rounded-full bg-muted-foreground" />
+                  <span>{heroProject.timeframe}</span>
+                  {heroProject.isActive && (
+                    <>
+                      <span className="size-1 rounded-full bg-muted-foreground" />
+                      <Badge variant="muted" size="sm">
+                        Ongoing
+                      </Badge>
+                    </>
+                  )}
+                </small>
+              </div>
+
+              {heroProject.description && <p>{heroProject.description}</p>}
+
+              <p className="text-muted-foreground">{heroProject.subline}</p>
+
+              <ExternalLink
+                href={heroProject.url}
+                color="primary"
+                title={`View ${heroProject.title}`}
+                aria-label={`Click to view ${heroProject.title} in a new tab`}
+                className="-ml-1"
+              >
+                View {heroProject.title}
+              </ExternalLink>
+            </div>
+          </Container>
+        </div>
+      )}
 
       <Hr />
 
       <Container as="section">
         <Ul className="space-y-5 sm:space-y-12 md:-mx-6">
           {projects
-            .filter((_, index) => index !== 0)
+            .filter((project) => project.title !== heroProject?.title)
             .map((project) => (
               <li key={project.title}>
                 <div className="grid gap-2 sm:flex sm:gap-5">
@@ -212,6 +216,8 @@ export function ProjectsTemplate() {
       </Container>
 
       <Hr />
+
+      <HeroNavigation />
     </>
   );
 }

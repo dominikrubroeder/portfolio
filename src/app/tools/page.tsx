@@ -5,6 +5,7 @@ import { Hr } from '@/components/atoms/hr';
 import { Ul } from '@/components/atoms/ul';
 import type { Metadata } from 'next';
 import { Blockquote } from '@/components/atoms/blockquote';
+import { HeroNavigation } from '@/components/molecules/hero-navigation';
 
 export const metadata: Metadata = {
   title: 'Tools | Dominik Rubröder, UX Design Engineer',
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export default function ToolsPage() {
   return (
     <>
-      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:100ms]">
+      <div className="animate-in-to-left-100">
         <Container as="section" size="container-readable">
           <h1>Tools</h1>
           <Blockquote className="mt-3 sm:mt-5">
@@ -25,7 +26,7 @@ export default function ToolsPage() {
         </Container>
       </div>
 
-      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:160ms]">
+      <div className="animate-in-to-left-160">
         <Container as="section" size="container-readable">
           <h2>My main daily drivers</h2>
           <div>
@@ -34,7 +35,7 @@ export default function ToolsPage() {
         </Container>
       </div>
 
-      <div className="[html[data-theme=default]_&]:animate-to-left [html[data-theme=default]_&]:[animation-delay:240ms]">
+      <div className="animate-in-to-left-240">
         <Container as="section" size="container-readable">
           <h2>Extended list, all tools</h2>
           <Ul className="grid gap-6 sm:gap-10">
@@ -78,6 +79,8 @@ export default function ToolsPage() {
       </div>
 
       <Hr variant="container" />
+
+      <HeroNavigation />
     </>
   );
 }
