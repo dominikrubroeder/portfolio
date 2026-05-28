@@ -11,15 +11,16 @@ import { Header } from '@/components/organisms/header';
 import {
   themeInitializationScript,
   ThemeProvider,
-  ThemeSidebar
+  ThemeSidebar,
+  ThemeWireframeBackground
 } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
 import { TooltipProvider } from '@/components/atoms/tooltip/shadcnui/tooltip';
-import { PageTemplate } from '@/components/templates/page-template';
 import { SidebarProvider } from '@/components/organisms/sidebar';
+import { ScrollToTop } from '@/components/atoms/scroll-to-top';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -79,12 +80,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
             <Header />
 
-            <PageTemplate>
+            <ThemeWireframeBackground />
+
+            <main className="flex-1 space-y-8 pt-4 sm:space-y-12">
+              <ScrollToTop />
               <TooltipProvider>
                 {children}
                 <ThemeSidebar />
               </TooltipProvider>
-            </PageTemplate>
+            </main>
 
             <Footer />
           </SidebarProvider>

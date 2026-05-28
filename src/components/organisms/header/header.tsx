@@ -39,7 +39,9 @@ export function Header() {
         </h1>
       </div>
 
-      <ThemeColorSetting />
+      <div className="hidden xs:block">
+        <ThemeColorSetting className="gap-1.5 sm:gap-2" />
+      </div>
     </header>
   );
 }

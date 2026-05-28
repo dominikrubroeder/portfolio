@@ -4,7 +4,7 @@ import { Typewriter } from '@/components/atoms/typewriter';
 import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import type { Metadata } from 'next';
 import { PlaygroundBox } from '@/components/organisms/playground';
-import { HeroNavigation } from '@/components/molecules/hero-navigation';
+import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
 
 export const metadata: Metadata = {
   title: 'Playground | Dominik Rubröder, UX Design Engineer',
@@ -36,7 +36,7 @@ export default function PlaygroundPage() {
         </PlaygroundBox>
       </Container>
 
-      <HeroNavigation />
+      <HeroNavigation hiddenLink="/playground" />
     </>
   );
 }

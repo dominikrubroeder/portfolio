@@ -2,10 +2,7 @@ import { Button } from '@/components/atoms/button';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { BrandLink, BrandName } from '@/components/organisms/brand';
 import { Badge } from '@/components/atoms/badge';
-import {
-  ThemeColorSetting,
-  ThemeSidebarTrigger
-} from '@/components/organisms/theme';
+import { ThemeColorSetting, ThemeSidebarTrigger } from '@/components/organisms/theme';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { Accordion } from '@/components/molecules/accordion';
@@ -13,6 +10,8 @@ import { Mission, Vision, Why } from '@/components/organisms/foundation';
 import { IntroductionTechStack } from '@/components/organisms/introduction';
 import { Container } from '@/components/organisms/layout';
 import { getTools } from '@/components/organisms/tools';
+import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
+import { Hr } from '@/components/atoms/hr';
 
 export default function ShowcasePage() {
   const figmaBrand = getTools({ names: ['Figma'] })?.[0];
@@ -27,8 +26,8 @@ export default function ShowcasePage() {
       </Container>
 
       <Container
-        size="container"
-        className="mx-4 animate-in-to-top-160 space-y-5 rounded border p-6 py-7"
+        size="container-readable"
+        className="animate-in-to-top-160 space-y-5 rounded border p-6 py-7"
       >
         <div className="flex flex-wrap items-center gap-5">
           <Button>Hello, world</Button>
@@ -82,6 +81,10 @@ export default function ShowcasePage() {
           />
         </div>
       </Container>
+
+      <Hr />
+
+      <HeroNavigation hiddenLink="/showcase" />
     </>
   );
 }

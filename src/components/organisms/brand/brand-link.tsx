@@ -68,7 +68,7 @@ export function BrandLink({
 
       <span
         className={cn(
-          'absolute -bottom-6 left-1/2 w-max max-w-18 -translate-x-1/2 truncate text-sm',
+          'absolute -bottom-6 left-1/2 w-max max-w-18 -translate-x-1/2 truncate text-sm font-normal',
           !showLabel && 'sr-only'
         )}
       >

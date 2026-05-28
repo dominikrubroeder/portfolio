@@ -401,7 +401,7 @@
     }
 
     ul li {
-        @apply font-bold text-foreground;
+        @apply text-foreground;
     }
 
     ol ul {

@@ -77,7 +77,7 @@ export function AccordionItemContained({
       </ButtonGroup>
 
       {isOpen && (
-        <div className="mb-5 px-3.5 py-4 pt-2 font-normal text-muted-foreground motion-safe:animate-fade-up">
+        <div className="px-3.5 py-4 pt-2 font-normal text-muted-foreground motion-safe:animate-fade-up">
           {children}
         </div>
       )}

@@ -1,7 +1,6 @@
-import type { ReactNode } from 'react';
-
-import type { ColorReducedProp, HTMLTag, SizeProp } from '@/lib/types';
 import { cn } from '@/lib/utils';
+
+import type { MarkupProps } from './types';
 
 export function Markup({
   variant = 'foreground',
@@ -11,14 +10,7 @@ export function Markup({
   className,
   children,
   ...rest
-}: {
-  variant?: ColorReducedProp;
-  size?: SizeProp;
-  as?: HTMLTag;
-  backticks?: boolean;
-  className?: string;
-  children: ReactNode;
-} & React.HTMLAttributes<HTMLDivElement>) {
+}: MarkupProps & React.HTMLAttributes<HTMLDivElement>) {
   const Comp = as;
 
   return (

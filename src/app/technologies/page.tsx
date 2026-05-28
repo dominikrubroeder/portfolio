@@ -4,7 +4,7 @@ import { Hr } from '@/components/atoms/hr';
 import { mainTechnologies } from '@/components/organisms/technologies';
 import type { Metadata } from 'next';
 import { Blockquote } from '@/components/atoms/blockquote';
-import { HeroNavigation } from '@/components/molecules/hero-navigation';
+import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
 
 export const metadata: Metadata = {
   title: 'Technologies | Dominik Rubröder, UX Design Engineer',
@@ -34,7 +34,7 @@ export default function TechnologiesPage() {
 
       <Hr variant="container" />
 
-      <HeroNavigation />
+      <HeroNavigation hiddenLink="/technologies" />
     </>
   );
 }

@@ -3,11 +3,7 @@
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
-import {
-  ButtonProps,
-  extractEmail,
-  extractPhoneNumber
-} from '@/components/atoms/button';
+import { ButtonProps, extractEmail, extractPhoneNumber } from '@/components/atoms/button';
 import { useTheme } from '@/components/organisms/theme';
 
 export function Button({
@@ -61,7 +57,7 @@ export function Button({
 
   const isMail = href?.includes('mailto');
   const isPhone = href?.includes('tel');
-  const isDownload = href?.includes('.pdf');
+  const isDownload = href?.includes('.pdf') || !!download;
   const isExternal = href?.includes('https');
 
   if (isDownload) {
@@ -69,11 +65,10 @@ export function Button({
       <a
         {...rest}
         href={href}
-        title={rest.title ?? `Download file ${download}`}
-        aria-label={rest['aria-label'] ?? `Download file ${download}`}
+        title={rest.title ?? `Download file ${href}`}
+        aria-label={rest['aria-label'] ?? `Download file ${href}`}
         target="_blank"
         rel="noopener noreferrer"
-        download={download}
         className={classNames}
       >
         {children}

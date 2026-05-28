@@ -16,7 +16,7 @@
     "upgrade-lint@latest": "npm i eslint@latest @eslint/eslintrc@latest --save-dev --save-exact",
     "upgrade-next@latest": "npm i next@latest eslint-config-next@latest --save-exact",
     "upgrade-react@latest": "npm i react@latest react-dom@latest @types/react@latest @types/react-dom@latest --save-exact",
-    "upgrade-storybook@latest": "npm i storybook@latest vite@7 vitest@4 @chromatic-com/storybook@latest @storybook/addon-a11y@latest @storybook/addon-docs@latest @storybook/addon-onboarding@latest @storybook/addon-vitest@latest @storybook/nextjs-vite@latest @vitest/browser-playwright@latest @vitest/coverage-v8@latest eslint-plugin-storybook@latest playwright@latest --save-exact --save-dev",
+    "upgrade-storybook@latest": "npx storybook@latest upgrade --save-exact",
     "upgrade-tailwindcss@latest": "npm i tailwindcss@latest --save-dev --save-exact",
     "upgrade-tailwindcss-devtools@latest": "npm i prettier-plugin-tailwindcss@latest @tailwindcss/postcss@latest eslint-plugin-tailwindcss@beta --save-dev --save-exact && npm i tailwind-merge@latest tw-animate-css@latest --save-exact",
     "storybook": "storybook dev -p 6006",

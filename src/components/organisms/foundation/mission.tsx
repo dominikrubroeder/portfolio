@@ -1,10 +1,10 @@
-import { HeroBox } from '@/components/molecules/hero-box';
-
 export function Mission() {
   return (
-    <HeroBox
-      overline="What i want to achieve"
-      title="Providing great user interfaces that mirror the owners intend, vision and goals for the people using them."
-    />
+    <div className="space-y-3">
+      <div className="title mb-0">
+        "Providing great user interfaces that mirror the owners intend, vision
+        and goals for the people using them."
+      </div>
+    </div>
   );
 }
