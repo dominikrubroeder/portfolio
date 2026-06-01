@@ -2,15 +2,13 @@ import type { Metadata } from 'next';
 import { Container } from '@/components/organisms/layout';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { Ul } from '@/components/atoms/ul';
-import {
-  getBooks,
-  getCourses,
-  getPlatformsBlogsPeople
-} from '@/components/organisms/training';
+import { getBooks, getCourses, getPlatformsBlogsPeople } from '@/components/organisms/training';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Hr } from '@/components/atoms/hr';
 import { getResearch } from '@/components/organisms/training/research';
 import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Resources | Dominik Rubröder, UX Design Engineer',
@@ -18,6 +16,9 @@ export const metadata: Metadata = {
     'Apply community knowledge, research and proven principles to our daily work.'
 };
 
+{
+  /** Hier Bücher Cover einfügen */
+}
 export default function ResourcesPage() {
   return (
     <>
@@ -40,38 +41,60 @@ export default function ResourcesPage() {
           <Ul className="space-y-6">
             {getBooks({ sorting: 'A-Z' }).map((book) => (
               <li key={book.title}>
-                <div>
-                  <h4 className="mb-0">{book.title}</h4>
-                  <small className="flex flex-wrap items-center gap-2 font-normal">
-                    <span>{book.author}</span>
+                <div className="flex gap-3">
+                  {book.cover && (
+                    <Link
+                      href={book.href}
+                      target="_blank"
+                      title={`Read more about ${book.title}`}
+                      aria-label={`Click to read more about ${book.title} in an external tab`}
+                    >
+                      <Image
+                        src={book.cover}
+                        width={200}
+                        height={300}
+                        className="h-auto w-16 interactive object-contain"
+                        alt={book.title}
+                        draggable={false}
+                      />
+                    </Link>
+                  )}
 
-                    {book.releaseYear && (
-                      <>
-                        <span className="size-1 rounded-full bg-muted-foreground" />
-                        <span>{book.releaseYear}</span>
-                      </>
-                    )}
+                  <div>
+                    <div>
+                      <h4 className="mb-0">{book.title}</h4>
+                      <small className="flex flex-wrap items-center gap-2 font-normal">
+                        <span>{book.author}</span>
 
-                    {book.category && (
-                      <>
-                        <span className="size-1 rounded-full bg-muted-foreground" />
-                        <span>{book.category.join(', ')}</span>
-                      </>
-                    )}
-                  </small>
+                        {book.releaseYear && (
+                          <>
+                            <span className="size-1 rounded-full bg-muted-foreground" />
+                            <span>{book.releaseYear}</span>
+                          </>
+                        )}
+
+                        {book.category && (
+                          <>
+                            <span className="size-1 rounded-full bg-muted-foreground" />
+                            <span>{book.category.join(', ')}</span>
+                          </>
+                        )}
+                      </small>
+                    </div>
+
+                    {book.description && <p>{book.description}</p>}
+
+                    <ExternalLink
+                      href={book.href}
+                      color="primary"
+                      className="-ml-1"
+                      title={`Read more about ${book.title}`}
+                      aria-label={`Click to read more about ${book.title} in an external tab`}
+                    >
+                      More on {book.title}
+                    </ExternalLink>
+                  </div>
                 </div>
-
-                {book.description && <p>{book.description}</p>}
-
-                <ExternalLink
-                  href={book.href}
-                  color="primary"
-                  className="-ml-1"
-                  title={`Read more about ${book.title}`}
-                  aria-label={`Click to read more about ${book.title} in an external tab`}
-                >
-                  More on {book.title}
-                </ExternalLink>
               </li>
             ))}
           </Ul>

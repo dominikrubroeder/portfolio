@@ -23,7 +23,7 @@ export function QAndAWhatIsAUxEngineer() {
           alt="UXE user experience engineer at google"
           width={600}
           height={171}
-          className="rounded-xl object-contain"
+          className="rounded-theme-xl object-contain"
           draggable={false}
           loading="eager"
         />

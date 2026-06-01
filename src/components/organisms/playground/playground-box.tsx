@@ -10,7 +10,7 @@ export function PlaygroundBox({
   children: ReactNode;
 }) {
   return (
-    <div className="relative rounded-2xl border">
+    <div className="relative rounded-theme border">
       <div className="flex min-h-32 items-center justify-center p-4">
         {children}
       </div>

@@ -3,18 +3,23 @@ import { Blockquote } from '@/components/atoms/blockquote';
 export function Why() {
   return (
     <div className="space-y-3">
-      <b>Why am i doing design engineering?</b>
-
-      <Blockquote variant="foreground">
-        It's simple, i love to build user interfaces! And everything around
-        frontend, design, UX and even psychology related topics.
+      <Blockquote variant="foreground" className="my-0 mb-4">
+        It's simple, i love to build user interfaces!
       </Blockquote>
 
       <p>
-        Whether it's the style, the colors, the fonts, the design language, a
-        theme or the code, i want to build user interfaces that
-        <i> servers purpose, supporting the projects goals and intentions</i>.
+        And everything around frontend, design, UX and psychology related
+        topics. Combining them is a powerful toolkit to create good, appropriate
+        and flexible user interfaces.
       </p>
+
+      <p>
+        Whether it's the style, the colors, the fonts, the design language, a
+        theme or the code, i want to build user interfaces that builds on top of
+        defined requirements, with the rules of design, branding and psychology.
+      </p>
+
+      <p>Supporting the projects goals and intentions.</p>
 
       <p>
         With a design system that feeds the user interface appropriately,

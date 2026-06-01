@@ -4,6 +4,7 @@ export interface LearningResource {
   title: string;
   author: string;
   description?: string;
+  cover?: string;
   href: string;
   /** A number between 0 and 100 */
   progress?: number;

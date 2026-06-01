@@ -24,6 +24,8 @@ export const books: LearningResource[] = [
   {
     title: 'Emotional Design: Why We Love (Or Hate) Everyday Things',
     author: 'Don Norman',
+    cover:
+      '/books/don-norman-emotional-design-why-we-love-or-hate-everyday-things.jpg',
     href: 'https://www.nngroup.com/books/emotional-design/',
     progress: 50,
     isCurrent: true,
@@ -74,6 +76,7 @@ export const books: LearningResource[] = [
   {
     title: 'Articulating Design Decisions',
     author: 'Tom Greever',
+    cover: '/books/tom-greever-articulating-design-decisions.jpg',
     href: 'https://www.oreilly.com/library/view/articulating-design-decisions/9781491921555/',
     progress: 0,
     isCurrent: false,
@@ -84,6 +87,7 @@ export const books: LearningResource[] = [
   {
     title: 'Atomic Design',
     author: 'Brad Frost',
+    cover: '/books/brad-frost-atomic-design.png',
     href: 'https://atomicdesign.bradfrost.com',
     progress: 20,
     isCurrent: false,

@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { ColorReducedProp } from '@/lib/types';
 
 export function Blockquote({
-  variant = 'muted',
+  variant = 'foreground',
   indent,
   quoteBar = true,
   centered = true,
@@ -34,13 +34,14 @@ export function Blockquote({
     <blockquote
       {...rest}
       className={cn(
+        'font-bold text-foreground',
         variant === 'primary' && 'text-primary',
         variant === 'foreground' && 'text-foreground',
         variant === 'muted' && 'text-muted-foreground',
         horizontalOffset && 'my-8',
         indent && 'ml-4 md:ml-8',
         quoteBar &&
-          'relative pl-4 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-primary',
+          'relative pl-4 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-theme before:bg-primary',
         centered && 'mx-auto',
         withBackground && 'rounded bg-primary/10 px-2 py-3 pl-5',
         className

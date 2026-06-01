@@ -530,7 +530,27 @@
     @apply [html[data-theme=default]_&]:motion-safe:animate-to-left [html[data-theme=default]_&]:motion-safe:[animation-delay:240ms]
 }
 
+@utility rounded-theme-sm {
+    @apply [html[data-theme=default]_&]:rounded-sm;
+}
+
+@utility rounded-theme-md {
+    @apply [html[data-theme=default]_&]:rounded-md;
+}
+
+@utility rounded-theme-lg {
+    @apply [html[data-theme=default]_&]:rounded-lg;
+}
+
+@utility rounded-theme-xl {
+    @apply [html[data-theme=default]_&]:rounded-xl;
+}
+
 @utility rounded-theme {
+    @apply [html[data-theme=default]_&]:rounded-2xl;
+}
+
+@utility rounded-theme-2xl {
     @apply [html[data-theme=default]_&]:rounded-2xl;
 }
 

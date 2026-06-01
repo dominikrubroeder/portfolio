@@ -3,7 +3,10 @@ import { ArrowRightIcon } from '@heroicons/react/16/solid';
 import { Container } from '@/components/organisms/layout';
 import { ButtonContact } from '@/components/atoms/button';
 import { cn } from '@/lib/utils';
-import { heroNavigation, HeroNavigationPathname } from '@/components/molecules/hero-navigation';
+import {
+  heroNavigation,
+  HeroNavigationPathname
+} from '@/components/molecules/hero-navigation';
 
 export function HeroNavigation({
   hiddenLink,
@@ -17,7 +20,7 @@ export function HeroNavigation({
   return (
     <Container className={cn('space-y-5', className)}>
       <div>
-        <small className="text-foreground uppercase">More</small>
+        <small className="uppercase">More</small>
       </div>
 
       <ul
@@ -38,7 +41,7 @@ export function HeroNavigation({
                 className="group flex w-full items-center justify-between gap-2 sm:inline-flex sm:gap-4"
               >
                 <div>{item.label}</div>
-                <div className="flex size-11 items-center justify-center bg-muted transition hover:bg-muted-hover [html[data-theme=default]_&]:rounded-2xl [html[data-theme=default]_&]:hover:rounded-xl">
+                <div className="flex size-11 items-center justify-center rounded-theme bg-muted transition hover:rounded-theme-xl hover:bg-muted-hover">
                   <ArrowRightIcon className="size-5" />
                 </div>
               </Link>

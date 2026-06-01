@@ -22,27 +22,17 @@ export const useAccordionItemContained = ({
     [isReducedMotion]
   );
 
-  const onClose = useCallback(() => {
-    const accordionGroupElement = document.getElementById(accordionGroupId);
-
-    accordionGroupElement?.scrollIntoView({
-      behavior: isReducedMotion ? 'instant' : 'smooth',
-      block: focusView
-    });
-  }, [accordionGroupId, focusView, isReducedMotion]);
-
   const toggle = useCallback(() => {
     setIsOpen((prev) => {
       const next = !prev;
 
       if (next) {
         setTimeout(onOpen, 0);
-      } else {
-        setTimeout(onClose, 0);
       }
+
       return next;
     });
-  }, [onOpen, onClose]);
+  }, [onOpen]);
 
   return {
     isOpen,

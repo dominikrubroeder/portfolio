@@ -1,5 +1,8 @@
 import { Container } from '@/components/organisms/layout';
-import { IntroductionMyBackground, IntroductionPrinciples } from '@/components/organisms/introduction';
+import {
+  IntroductionDesignPrinciples,
+  IntroductionMyBackground
+} from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
 import { Ul } from '@/components/atoms/ul';
 import { ExternalLink } from '@/components/atoms/external-link';
@@ -21,7 +24,7 @@ export default function IntroductionPage() {
           <Blockquote className="mt-3 sm:mt-5">
             Since ten years I combine design and coding into one craft for
             building user interfaces: frontend design engineering. With it,
-            design comes to life in terms of look, feel and function.
+            design comes to life in terms of look, feel and function altogether.
           </Blockquote>
         </Container>
       </div>
@@ -73,7 +76,7 @@ export default function IntroductionPage() {
         className="bg-background"
       >
         <h2>Design Principles</h2>
-        <IntroductionPrinciples />
+        <IntroductionDesignPrinciples />
       </Container>
 
       <Container

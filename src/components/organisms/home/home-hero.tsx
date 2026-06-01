@@ -1,7 +1,7 @@
 import { Animate } from '@/components/molecules/animate/animate';
 import {
+  IntroductionDesignPrinciples,
   IntroductionMyBackground,
-  IntroductionPrinciples,
   IntroductionTechStack
 } from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
@@ -79,7 +79,7 @@ export function HomeHero() {
                   },
                   {
                     title: 'Principles',
-                    children: <IntroductionPrinciples />
+                    children: <IntroductionDesignPrinciples />
                   },
                   {
                     title: 'Base Tech Stack',
