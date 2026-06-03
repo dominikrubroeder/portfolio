@@ -4,6 +4,7 @@ export const books: LearningResource[] = [
   {
     title: 'The Design of Everyday Things: Revised and Expanded Edition',
     author: 'Don Norman',
+    cover: '/books/don-norman-the-design-of-everyday-things.jpg',
     href: 'https://www.nngroup.com/books/design-everyday-things-revised/',
     progress: 100,
     isCurrent: false,
@@ -14,6 +15,7 @@ export const books: LearningResource[] = [
   {
     title: 'The Design of Future Things',
     author: 'Don Norman',
+    cover: '/books/don-norman-the-design-of-future-things.jpg',
     href: 'https://www.nngroup.com/books/design-of-future-things/',
     progress: 100,
     isCurrent: false,
@@ -36,6 +38,7 @@ export const books: LearningResource[] = [
   {
     title: 'Refactoring UI',
     author: 'Adam Wathan, Steve Schoger',
+    cover: '/books/wathan-schoger-refactoring-ui.png',
     href: 'https://www.refactoringui.com',
     progress: 100,
     isCurrent: false,
@@ -46,6 +49,7 @@ export const books: LearningResource[] = [
   {
     title: 'Practical UI',
     author: 'Adham Dannaway',
+    cover: '/books/adham-dannaway-practical-ui.png',
     href: 'https://www.practical-ui.com',
     progress: 20,
     isCurrent: false,
@@ -56,6 +60,7 @@ export const books: LearningResource[] = [
   {
     title: 'The Path to Senior Product Designer',
     author: 'Artiom Dashinsky',
+    cover: '/books/artiom-dashinsky-the-path-to-senior-product-designer.png',
     href: 'https://productdesigninterview.com/the-path-to-senior-product-designer',
     progress: 100,
     isCurrent: false,
@@ -66,6 +71,7 @@ export const books: LearningResource[] = [
   {
     title: 'React Key Concepts, 2nd Edition',
     author: 'Maximilian Schwarzmüller',
+    cover: '/books/maximilian-schwarzmüller-react-key-concepts.jpg',
     href: 'https://maximilian-schwarzmueller.com/book-react-key-concepts/',
     progress: 20,
     isCurrent: false,
@@ -98,6 +104,7 @@ export const books: LearningResource[] = [
   {
     title: 'Laws of UX, 2nd Edition',
     author: 'Jon Yablonski',
+    cover: '/books/jon-yablonski-laws-of-ux.jpeg',
     href: 'https://lawsofux.com/book/',
     progress: 100,
     isCurrent: false,
@@ -109,6 +116,7 @@ export const books: LearningResource[] = [
     title:
       'User Friendly: How the Hidden Rules of Design Are Changing the Way We Live, Work, and Play',
     author: 'Cliff Kuang, Robert Fabricant',
+    cover: '/books/kuang-fabricant-user-friendly.jpeg',
     href: 'https://amzn.eu/d/dUVQVw6',
     progress: 0,
     isCurrent: false,
@@ -119,6 +127,7 @@ export const books: LearningResource[] = [
   {
     title: 'Neurowebdesign',
     author: 'Jonas Reggelin',
+    cover: '/books/jonas-reggelin-neurowebdesign.jpg',
     href: 'https://neuro-webdesign.de/en-gb',
     progress: 0,
     isCurrent: false,
@@ -129,6 +138,7 @@ export const books: LearningResource[] = [
   {
     title: 'Living with Complexity',
     author: 'Don Norman',
+    cover: '/books/don-norman-living-with-complexity.jpg',
     href: 'https://www.nngroup.com/books/living-with-complexity/',
     progress: 100,
     isCurrent: false,
@@ -140,6 +150,7 @@ export const books: LearningResource[] = [
     title:
       'Hack the Design System: Revolutionize the way your organization scales design',
     author: 'Pierre Henri Clouin, Sampo Jalasto, Elisa Pyrhönen',
+    cover: '/books/clouin-jalasto-pyrhöhnen-hack-the-design-system.jpg',
     href: 'https://www.capgemini.com/us-en/solutions/hack-the-design-system-a-new-book-on-building-products-faster/',
     progress: 0,
     isCurrent: false,

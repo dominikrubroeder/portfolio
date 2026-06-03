@@ -16,9 +16,6 @@ export const metadata: Metadata = {
     'Apply community knowledge, research and proven principles to our daily work.'
 };
 
-{
-  /** Hier Bücher Cover einfügen */
-}
 export default function ResourcesPage() {
   return (
     <>
@@ -48,6 +45,7 @@ export default function ResourcesPage() {
                       target="_blank"
                       title={`Read more about ${book.title}`}
                       aria-label={`Click to read more about ${book.title} in an external tab`}
+                      rel="noopener noreferrer"
                     >
                       <Image
                         src={book.cover}

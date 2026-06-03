@@ -215,6 +215,13 @@ export default async function HomePage() {
               children: (
                 <div>
                   <p>
+                    <b>
+                      Animations provide navigation guidance and add delightful
+                      joy to user interactions, transitions
+                    </b>
+                  </p>
+
+                  <p>
                     Animations exist in different types and styles:
                     Microanimations, Animations on scroll, on Click
                   </p>
