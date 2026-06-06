@@ -87,8 +87,13 @@ export function IntroductionDesignPrinciples() {
             <p>
               Designing in system means leveraging a system. We don't want to
               reinvent the wheel over and over again, making the same thing over
-              and over again, but unify and document already solved problems
-              which return regularly.
+              and over again and think about the same things again and again.
+            </p>
+
+            <p>
+              We want to unify and document already solved problems which return
+              regularly, and we want a system that works reliable with a
+              predictable mental model.
             </p>
 
             <p>This way, we save time and effort to</p>

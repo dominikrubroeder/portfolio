@@ -1,5 +1,5 @@
 import { ExternalLink } from '@/components/atoms/external-link';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';
 import { BrandName } from '@/components/organisms/brand';
 import { Hr } from '@/components/atoms/hr';

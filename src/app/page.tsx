@@ -1,8 +1,16 @@
-import { EVENTS_WINTER_SCENE_ENABLED, Snowfall } from '@/components/organisms/events';
+import {
+  EVENTS_WINTER_SCENE_ENABLED,
+  Snowfall
+} from '@/components/organisms/events';
 import { ThemeNotesBackgroundCornellNotes } from '@/components/organisms/theme';
 import { Container } from '@/components/organisms/layout';
 import { ButtonGroup } from '@/components/molecules/button-group';
-import { Button, ButtonFigma, ButtonGithub, ButtonLinkedin } from '@/components/atoms/button';
+import {
+  Button,
+  ButtonFigma,
+  ButtonGithub,
+  ButtonLinkedin
+} from '@/components/atoms/button';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 import { ArrowDownOnSquareIcon } from '@heroicons/react/24/outline';
 import { Accordion } from '@/components/molecules/accordion';
@@ -12,7 +20,7 @@ import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navi
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Hr } from '@/components/atoms/hr';
 import Image from 'next/image';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 
 export default async function HomePage() {
   return (
@@ -26,11 +34,11 @@ export default async function HomePage() {
           Stack stack stack... frontend complete.
         </div>
 
-        <p>
+        <h1 className="mb-3 text-base font-normal text-muted-foreground">
           <b>Design engineering</b> UI components, scalable design systems and
           themable user interfaces for the web – strategically and
           systematically.
-        </p>
+        </h1>
 
         <ButtonGroup stretchButtons>
           <Button href="/introduction">
@@ -58,7 +66,6 @@ export default async function HomePage() {
 
         <Accordion
           variant="contained"
-          buttonVariant={{ variant: 'contained-foreground' }}
           items={[
             {
               title: 'Designing systems',

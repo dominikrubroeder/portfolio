@@ -6,7 +6,7 @@ import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
 import type { BaseComponentProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 
 export function Breadcrumb({
   breadcrumb,

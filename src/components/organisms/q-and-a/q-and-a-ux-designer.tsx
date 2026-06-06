@@ -2,7 +2,7 @@ import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { LogoChatgpt } from '@/components/atoms/logo';
 import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
-import { Ol } from '@/components/atoms/ol';
+import { Ol } from '@/components/organisms/typography';
 
 export function QAndAUxDesigner() {
   return (

@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Badge } from '@/components/atoms/badge';
 import { Hr } from '@/components/atoms/hr';
-import { Ul } from '@/components/atoms/ul';
+import { H1, Ul } from '@/components/organisms/typography';
 import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function ProjectsPage() {
     <>
       <div className="animate-in-to-left-100">
         <Container as="section" className="space-y-2">
-          <h1 className="text-6xl font-black">Projects</h1>
+          <H1>Projects</H1>
           <Blockquote className="mt-3 sm:mt-5">
             I contributed either as designer or engineer to the following
             projects; in the later projects starting around 2020, my role merged

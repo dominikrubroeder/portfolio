@@ -1,6 +1,14 @@
 'use client';
 
-import { createContext, ReactNode, use, useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  ReactNode,
+  use,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState
+} from 'react';
 import {
   Theme,
   THEME_ANIMATION_SETTINGS_DEFAULT,

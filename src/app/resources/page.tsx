@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/organisms/layout';
 import { Blockquote } from '@/components/atoms/blockquote';
-import { Ul } from '@/components/atoms/ul';
-import { getBooks, getCourses, getPlatformsBlogsPeople } from '@/components/organisms/training';
+import { H1, Ul } from '@/components/organisms/typography';
+import {
+  getBooks,
+  getCourses,
+  getPlatformsBlogsPeople
+} from '@/components/organisms/training';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Hr } from '@/components/atoms/hr';
 import { getResearch } from '@/components/organisms/training/research';
@@ -21,7 +25,7 @@ export default function ResourcesPage() {
     <>
       <div className="animate-in-to-left-100">
         <Container as="section" size="container-readable" className="space-y-2">
-          <h1>Resources</h1>
+          <H1>Resources</H1>
           <Blockquote className="mt-3 sm:mt-5">
             Resources educate and help us grow in our expertise by leveraging
             the community knowledge, research findings and proven principles of

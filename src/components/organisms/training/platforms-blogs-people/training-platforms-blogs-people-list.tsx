@@ -1,5 +1,5 @@
 import { AnimatedProgressListItem } from '@/components/atoms/animated-progress';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { getPlatformsBlogsPeople } from '@/components/organisms/training/platforms-blogs-people';
 
 export function TrainingPlatformsBlogsPeopleList() {

@@ -18,7 +18,7 @@ export function HeroNavigation({
   className?: string;
 }) {
   return (
-    <Container className={cn('space-y-5', className)}>
+    <Container className={cn('min-w-96 space-y-5', className)}>
       <div>
         <small className="uppercase">More</small>
       </div>

@@ -2,7 +2,7 @@ import { ExternalLink } from '@/components/atoms/external-link';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events/winter/constants';
 import { cn } from '@/lib/utils';
 import { BrandLink } from '@/components/organisms/brand';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { socials } from '@/components/organisms/socials';
 import { ButtonScrollToTop } from '@/components/atoms/button';
 import { ThemeSidebarTrigger } from '@/components/organisms/theme';

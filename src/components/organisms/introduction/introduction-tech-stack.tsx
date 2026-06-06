@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { cn } from '@/lib/utils';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { BrandLink } from '@/components/organisms/brand';
 import { getTechnologies } from '@/components/organisms/technologies';
 import { getTools } from '@/components/organisms/tools';

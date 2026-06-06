@@ -20,7 +20,7 @@ import {
   ThemeFontSizeSetting
 } from '@/components/organisms/theme';
 import { DialogTitle } from '@/components/molecules/dialog';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 
 export function HeaderMenuDrawer() {
   const {

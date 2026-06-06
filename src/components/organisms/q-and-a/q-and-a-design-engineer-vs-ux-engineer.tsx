@@ -2,8 +2,8 @@ import { Blockquote } from '@/components/atoms/blockquote';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { LogoChatgpt } from '@/components/atoms/logo';
 import { ArrowTurnDownLeftIcon } from '@heroicons/react/16/solid';
-import { Ul } from '@/components/atoms/ul';
-import { Ol } from '@/components/atoms/ol';
+import { Ul } from '@/components/organisms/typography';
+import { Ol } from '@/components/organisms/typography';
 
 export function QAndADesignEngineerVsUxEngineer() {
   return (

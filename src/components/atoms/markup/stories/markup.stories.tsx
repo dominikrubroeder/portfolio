@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Markup } from '@/components/atoms/markup';
 
 const meta = {
-  title: 'Atoms/Markup',
+  title: 'Atoms/markup',
   component: Markup,
   parameters: {
     layout: 'centered'

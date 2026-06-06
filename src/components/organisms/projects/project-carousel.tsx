@@ -11,7 +11,7 @@ import { cn, formatDate } from '@/lib/utils';
 import { Badge } from '@/components/atoms/badge';
 import { Button } from '@/components/atoms/button';
 import { ExternalLink } from '@/components/atoms/external-link';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { BrandLink } from '@/components/organisms/brand';
 import { useProjectCarousel } from '@/components/organisms/projects';
 import { BadgeHrGroup } from '@/components/molecules/badge-hr-group';

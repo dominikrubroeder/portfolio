@@ -1,9 +1,17 @@
 'use client';
 
-import { ArrowRightIcon, ChevronDownIcon, MinusIcon, PlusIcon } from '@heroicons/react/16/solid';
+import {
+  ArrowRightIcon,
+  ChevronDownIcon,
+  MinusIcon,
+  PlusIcon
+} from '@heroicons/react/16/solid';
 
 import { cn } from '@/lib/utils';
-import { AccordionItemContainedProps, useAccordionItemContained } from '@/components/molecules/accordion/index';
+import {
+  AccordionItemContainedProps,
+  useAccordionItemContained
+} from '@/components/molecules/accordion/index';
 import { Button } from '@/components/atoms/button';
 import { ButtonGroup } from '@/components/molecules/button-group';
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
@@ -13,7 +21,7 @@ export function AccordionItemContained({
   accordionGroupId,
   focusView,
   accordionIcon,
-  buttonVariant,
+  buttonVariant = { variant: 'contained-foreground' },
   children,
   className
 }: AccordionItemContainedProps) {

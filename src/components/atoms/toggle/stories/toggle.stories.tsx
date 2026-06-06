@@ -4,7 +4,7 @@ import { fn } from 'storybook/test';
 import { Toggle } from '@/components/atoms/toggle';
 
 const meta = {
-  title: 'Atoms/Toggle',
+  title: 'Atoms/toggle',
   component: Toggle,
   parameters: {
     layout: 'centered'

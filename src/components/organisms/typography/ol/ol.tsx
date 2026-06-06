@@ -22,7 +22,7 @@ export function Ol({
 
       <ol
         className={cn(
-          'space-y-2',
+          'space-y-2 text-foreground',
           offsetLeft && 'pl-4',
           listStyle === 'decimal' && 'list-decimal pl-5 leading-7',
           listStyle === 'none' && 'list-none',

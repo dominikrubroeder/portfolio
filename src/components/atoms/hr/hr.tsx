@@ -9,7 +9,7 @@ export function Hr({
   return (
     <hr
       className={cn(
-        'block h-1',
+        'block h-1 min-w-32',
         variant === 'full-width' && 'w-full',
         variant !== 'full-width' && 'mx-auto',
         variant === 'container-readable' && 'sm:max-w-(--container-readable)',

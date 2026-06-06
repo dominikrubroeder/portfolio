@@ -1,6 +1,6 @@
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { tools } from '@/components/organisms/tools';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { BrandRow } from '@/components/organisms/brand';
 
 export function ToolsList() {

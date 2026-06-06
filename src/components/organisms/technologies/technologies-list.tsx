@@ -1,7 +1,7 @@
 import { ToggleContent } from '@/components/molecules/toggle-content';
 import { technologies } from '@/components/organisms/technologies';
 import { BrandRow } from '@/components/organisms/brand';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 
 export function TechnologiesList() {
   return (

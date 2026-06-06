@@ -1,7 +1,7 @@
 import { Button } from '@/components/atoms/button';
 import Link from 'next/link';
 import type { Brand } from '@/components/organisms/brand';
-import { BrandLogo } from '@/components/atoms/brand-logo';
+import { BrandLogo } from '@/components/organisms/brand';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 import { cn } from '@/lib/utils';
 

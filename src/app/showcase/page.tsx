@@ -2,7 +2,10 @@ import { Button } from '@/components/atoms/button';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { BrandLink, BrandName } from '@/components/organisms/brand';
 import { Badge } from '@/components/atoms/badge';
-import { ThemeColorSetting, ThemeSidebarTrigger } from '@/components/organisms/theme';
+import {
+  ThemeColorSetting,
+  ThemeSidebarTrigger
+} from '@/components/organisms/theme';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { Accordion } from '@/components/molecules/accordion';
@@ -12,6 +15,8 @@ import { Container } from '@/components/organisms/layout';
 import { getTools } from '@/components/organisms/tools';
 import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
 import { Hr } from '@/components/atoms/hr';
+import { H1 } from '@/components/organisms/typography';
+import { Marker } from '@/components/atoms/marker';
 
 export default function ShowcasePage() {
   const figmaBrand = getTools({ names: ['Figma'] })?.[0];
@@ -19,7 +24,7 @@ export default function ShowcasePage() {
   return (
     <>
       <Container>
-        <h1>Showcase</h1>
+        <H1>Showcase</H1>
         <Blockquote>
           Here are all components listed of this website. Storybook link ...
         </Blockquote>
@@ -49,6 +54,11 @@ export default function ShowcasePage() {
             className="mr-0.5"
           />
           <AnimatedProgress progress={90} size={32} strokeWidth={5} />
+          <Marker animate>Hello, world</Marker>
+          <Marker variant="green">Hello, world</Marker>
+          <Marker variant="yellow">Hello, world</Marker>
+          <Marker variant="red">Hello, world</Marker>
+          <Marker variant="purple">Hello, world</Marker>
         </div>
 
         <div>

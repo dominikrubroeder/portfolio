@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 import type { Brand } from '@/components/organisms/brand';
 import { BrandLink } from '@/components/organisms/brand';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 
 export function BrandList({
   brands,

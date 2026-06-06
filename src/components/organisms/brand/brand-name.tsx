@@ -1,4 +1,4 @@
-import { BrandLogo } from '@/components/atoms/brand-logo';
+import { BrandLogo } from '@/components/organisms/brand';
 import { cn } from '@/lib/utils';
 import { ReactNode } from 'react';
 

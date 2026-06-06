@@ -4,7 +4,7 @@ import {
   IntroductionMyBackground
 } from '@/components/organisms/introduction';
 import { TrainingAccordion } from '@/components/organisms/training';
-import { Ul } from '@/components/atoms/ul';
+import { H1, H2, Ul } from '@/components/organisms/typography';
 import { ExternalLink } from '@/components/atoms/external-link';
 import { BrandName } from '@/components/organisms/brand';
 import { Blockquote } from '@/components/atoms/blockquote';
@@ -20,7 +20,7 @@ export default function IntroductionPage() {
           size="container-readable"
           className="bg-background"
         >
-          <h1>Introduction</h1>
+          <H1>Introduction</H1>
           <Blockquote className="mt-3 sm:mt-5">
             Since ten years I combine design and coding into one craft for
             building user interfaces: frontend design engineering. With it,
@@ -35,7 +35,7 @@ export default function IntroductionPage() {
           size="container-readable"
           className="bg-background"
         >
-          <h2>My Journey</h2>
+          <H2>My Journey</H2>
           <IntroductionMyBackground />
         </Container>
       </div>
@@ -45,7 +45,7 @@ export default function IntroductionPage() {
         size="container-readable"
         className="bg-background"
       >
-        <h2>Education</h2>
+        <H2>Education</H2>
         <TrainingAccordion />
       </Container>
 
@@ -54,7 +54,7 @@ export default function IntroductionPage() {
         size="container-readable"
         className="bg-background"
       >
-        <h2>Work history</h2>
+        <H2>Work history</H2>
         <p>
           Please view my work history on
           <BrandName
@@ -75,7 +75,7 @@ export default function IntroductionPage() {
         size="container-readable"
         className="bg-background"
       >
-        <h2>Design Principles</h2>
+        <H2>Design Principles</H2>
         <IntroductionDesignPrinciples />
       </Container>
 
@@ -84,7 +84,7 @@ export default function IntroductionPage() {
         size="container-readable"
         className="bg-background"
       >
-        <h2>What's important to me</h2>
+        <H2>What's important to me</H2>
         <Ul listStyle="disc">
           <li>To identify a clear vision in the company</li>
           <li>A vivid communication within the team</li>

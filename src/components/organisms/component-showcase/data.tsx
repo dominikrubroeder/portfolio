@@ -5,7 +5,7 @@ import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import { Avatar } from '@/components/atoms/avatar';
 import { Badge } from '@/components/atoms/badge';
 import { Blockquote } from '@/components/atoms/blockquote';
-import { BrandLogo } from '@/components/atoms/brand-logo';
+import { BrandLogo } from '@/components/organisms/brand';
 import { Button } from '@/components/atoms/button';
 import { CodeBlock } from '@/components/atoms/codeblock';
 import { Divider } from '@/components/atoms/divider';
@@ -22,7 +22,7 @@ import {
   TooltipContent,
   TooltipTrigger
 } from '@/components/atoms/tooltip/shadcnui/tooltip';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { Animate } from '@/components/molecules/animate';
 import { DesignDrawer } from '@/components/molecules/drawer';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
@@ -175,7 +175,7 @@ export const components: ComponentGroup[] = [
       {
         componentId: 'marker',
         componentName: 'Marker',
-        component: <Marker color="primary">Highlight me</Marker>,
+        component: <Marker variant="primary">Highlight me</Marker>,
         animatable: true
       },
       {

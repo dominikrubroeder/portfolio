@@ -9,23 +9,26 @@ export function Why() {
 
       <p>
         And everything around frontend, design, UX and psychology related
-        topics. Combining them is a powerful toolkit to create good, appropriate
-        and flexible user interfaces.
+        topics. Combining them is a powerful toolkit to create good and
+        appropriate user interfaces.
       </p>
 
+      {/**
       <p>
         Whether it's the style, the colors, the fonts, the design language, a
-        theme or the code, i want to build user interfaces that builds on top of
-        defined requirements, with the rules of design, branding and psychology.
+        theme or the code, i want to build user interfaces that builds solutions
+        for problems, with the rules of design, engineering and psychology.
+        Branding
       </p>
 
       <p>Supporting the projects goals and intentions.</p>
 
       <p>
-        With a design system that feeds the user interface appropriately,
-        streamlined processes and design-development workflows that help people
-        get things done appropriately to the task.
+        With a design system that feeds the user interface, streamlined
+        processes and design-development workflows that help people get things
+        done accordingly to the tasks requirements.
       </p>
+      */}
     </div>
   );
 }

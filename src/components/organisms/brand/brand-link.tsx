@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 
-import { BrandLogo } from '@/components/atoms/brand-logo';
-import { Button } from '@/components/atoms/button';
 import type { Brand } from '@/components/organisms/brand';
+import { BrandLogo } from '@/components/organisms/brand';
+import { Button } from '@/components/atoms/button';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
 export function BrandLink({

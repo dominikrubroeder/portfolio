@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
 import { AnimatedProgressListItem } from '@/components/atoms/animated-progress';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { getBooks } from '@/components/organisms/training/books';
 
 export function TrainingBooksList({ className }: { className?: string }) {

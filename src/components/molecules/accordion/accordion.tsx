@@ -4,7 +4,7 @@ import {
   AccordionProps,
   getDefaultOpen
 } from '@/components/molecules/accordion/index';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { cn } from '@/lib/utils';
 
 export function Accordion({

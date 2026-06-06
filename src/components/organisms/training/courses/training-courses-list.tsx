@@ -1,5 +1,5 @@
 import { AnimatedProgressListItem } from '@/components/atoms/animated-progress';
-import { Ul } from '@/components/atoms/ul';
+import { Ul } from '@/components/organisms/typography';
 import { getCourses } from '@/components/organisms/training/courses/helper';
 
 export function TrainingCoursesList() {

@@ -5,6 +5,7 @@ import { AnimatedProgress } from '@/components/atoms/animated-progress';
 import type { Metadata } from 'next';
 import { PlaygroundBox } from '@/components/organisms/playground';
 import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
+import { H1 } from '@/components/organisms/typography';
 
 export const metadata: Metadata = {
   title: 'Playground | Dominik Rubröder, UX Design Engineer',
@@ -16,7 +17,7 @@ export default function PlaygroundPage() {
   return (
     <>
       <Container>
-        <h1>Playground</h1>
+        <H1>Playground</H1>
         <Blockquote>
           Experimentally using new techniques and playing around with components
           before usage – or simply test some ideas! Everything is allowed here.

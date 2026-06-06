@@ -5,6 +5,7 @@ import { mainTechnologies } from '@/components/organisms/technologies';
 import type { Metadata } from 'next';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
+import { H1 } from '@/components/organisms/typography';
 
 export const metadata: Metadata = {
   title: 'Technologies | Dominik Rubröder, UX Design Engineer',
@@ -17,7 +18,7 @@ export default function TechnologiesPage() {
     <>
       <div className="animate-in-to-left-100">
         <Container as="section" size="container-readable" className="space-y-2">
-          <h1>Technologies</h1>
+          <H1>Technologies</H1>
           <Blockquote className="mt-3 sm:mt-5">
             Technologies; languages that bring design to life with code. There
             is a wide array of frameworks out there, here is what i use for
