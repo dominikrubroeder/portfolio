@@ -37,7 +37,7 @@ export function Footer() {
             size="xs"
             color="muted"
           >
-            Next.js 16.2.6
+            Next.js 16.2.7
           </ExternalLink>
 
           <span>|</span>
