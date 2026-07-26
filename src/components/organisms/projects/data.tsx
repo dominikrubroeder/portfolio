@@ -24,7 +24,7 @@ export const projects: Project[] = [
     timeframe: '2025 – May 2026',
     logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
     role: ['Design Engineer'],
-    aspects: ['Consulting in CMS component set integration in Storyblok'],
+    aspects: ['Set up a new CMS component system in Storyblok'],
     tools: getTools({
       names: [
         'Figma',
@@ -65,7 +65,10 @@ export const projects: Project[] = [
     timeframe: '2024 – Feb. 2026',
     logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
     role: ['Frontend Developer'],
-    aspects: undefined,
+    aspects: [
+      'Build the frontend for the ecommerce shop in Next.js',
+      'Consult in design decisions for a 3D configurator'
+    ],
     tools: getTools({
       names: [
         'Figma',
@@ -109,9 +112,11 @@ export const projects: Project[] = [
     logo: <LogoMediawave id="projects-mediawave" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer', 'Design Consultant'],
     aspects: [
-      'Building the user interface with/without design files',
-      'Connecting several headless systems into one centric user interface',
-      'Maintain and build up the design system to ensure a consistent, flexible and reusable user interface'
+      'Create and maintain a CMS component system in Storyblok',
+      'Create and maintain a design system in Figma',
+      'Create and provide design concepts and UI prototypes for project pitches',
+      'Build different page types for a ecommerce blueprint frontend: Home Page, Category Page, Product Page, Cart Page, Checkout Page, Account Pages',
+      'Compose several headless integrations in one frontend'
     ],
     tools: getTools({
       names: [
@@ -156,7 +161,10 @@ export const projects: Project[] = [
     timeframe: '2023 – 2024',
     logo: <LogoHdPlus id="projects-hd-plus" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer'],
-    aspects: undefined,
+    aspects: [
+      'Design the user interface of the ecommerce shop',
+      'Build the frontend for the ecommerce shop in Next.js'
+    ],
     tools: getTools({
       names: [
         'Figma',
@@ -200,7 +208,7 @@ export const projects: Project[] = [
     timeframe: '2021 – 2023',
     logo: <LogoSegmueller id="projects-segmueller" className="h-12 w-auto" />,
     role: ['Frontend Developer'],
-    aspects: undefined,
+    aspects: ['Integrate frontend features in Twig and SCSS'],
     tools: getTools({
       names: [
         'Storyblok',
@@ -245,7 +253,7 @@ export const projects: Project[] = [
       <LogoAllesAuto id="projects-alles-auto" className="h-6 w-auto sm:h-12" />
     ),
     role: ['Frontend Developer'],
-    aspects: undefined,
+    aspects: ['Integrate frontend features in React'],
     tools: getTools({
       names: [
         'VS Code',
@@ -282,7 +290,10 @@ export const projects: Project[] = [
     timeframe: '2016 – 2021',
     logo: undefined,
     role: ['Frontend Developer'],
-    aspects: undefined,
+    aspects: [
+      'Create print media and resources for the Locaboo brand',
+      'Publish changes to the former CMS Contenido'
+    ],
     tools: [],
     technologies: [],
     companies: [
@@ -306,7 +317,10 @@ export const projects: Project[] = [
     timeframe: '2018 – 2019',
     logo: undefined,
     role: ['Frontend Developer'],
-    aspects: undefined,
+    aspects: [
+      'Participate in designing the user interface for the ecommerce shop',
+      'Build the user interface in Twig and SCSS with Shopware 5'
+    ],
     tools: [],
     technologies: [],
     companies: [
@@ -330,7 +344,7 @@ export const projects: Project[] = [
     timeframe: '2017',
     logo: undefined,
     role: ['Frontend Developer'],
-    aspects: undefined,
+    aspects: ['Build the user interface in Twig and SCSS with Shopware 5'],
     tools: [],
     technologies: [],
     companies: [

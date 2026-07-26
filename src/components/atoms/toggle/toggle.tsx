@@ -5,14 +5,16 @@ import { useTheme } from '@/components/organisms/theme';
 
 export function Toggle({
   label,
-  className,
   isEnabled,
-  onClick
+  onClick,
+  stretchWidth,
+  className
 }: {
   label?: string;
-  className?: string;
   isEnabled: boolean;
   onClick: () => void;
+  stretchWidth?: boolean;
+  className?: string;
 }) {
   const { theme, shouldAnimate } = useTheme();
 
@@ -21,6 +23,7 @@ export function Toggle({
       className={cn(
         'flex cursor-pointer items-center gap-2 select-none',
         !isEnabled && 'interactive',
+        stretchWidth && 'justify-between',
         className
       )}
       onClick={onClick}

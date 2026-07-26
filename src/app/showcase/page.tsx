@@ -13,26 +13,24 @@ import { Mission, Vision, Why } from '@/components/organisms/foundation';
 import { IntroductionTechStack } from '@/components/organisms/introduction';
 import { Container } from '@/components/organisms/layout';
 import { getTools } from '@/components/organisms/tools';
-import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
-import { Hr } from '@/components/atoms/hr';
-import { H1 } from '@/components/organisms/typography';
 import { Marker } from '@/components/atoms/marker';
+import { PageTemplate } from '@/components/templates/page-template';
+import { redirect } from 'next/navigation';
 
 export default function ShowcasePage() {
+  redirect('/');
+
   const figmaBrand = getTools({ names: ['Figma'] })?.[0];
 
   return (
-    <>
-      <Container>
-        <H1>Showcase</H1>
-        <Blockquote>
-          Here are all components listed of this website. Storybook link ...
-        </Blockquote>
-      </Container>
-
+    <PageTemplate
+      h1="Showcase"
+      heroBlockquote="Here are all components listed of this website. Storybook link ..."
+      heroNavigationHiddenLink="/showcase"
+    >
       <Container
         size="container-readable"
-        className="animate-in-to-top-160 space-y-5 rounded border p-6 py-7"
+        className="animate-in-to-left-160 space-y-5 rounded border p-6 py-7"
       >
         <div className="flex flex-wrap items-center gap-5">
           <Button>Hello, world</Button>
@@ -91,10 +89,6 @@ export default function ShowcasePage() {
           />
         </div>
       </Container>
-
-      <Hr />
-
-      <HeroNavigation hiddenLink="/showcase" />
-    </>
+    </PageTemplate>
   );
 }

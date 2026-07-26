@@ -28,7 +28,7 @@ export default function Link({
       className={cn(
         'relative mx-1 inline-flex items-center gap-1 text-foreground transition',
         variant === 'marker' &&
-          'rounded-theme-md bg-violet-200 px-1 hover:bg-violet-300',
+          'rounded-2xl-md bg-violet-200 px-1 hover:bg-violet-300',
         className
       )}
     >

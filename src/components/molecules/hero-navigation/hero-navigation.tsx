@@ -7,6 +7,7 @@ import {
   heroNavigation,
   HeroNavigationPathname
 } from '@/components/molecules/hero-navigation';
+import { IconLucide } from '@/components/atoms/icon/icon-lucide';
 
 export function HeroNavigation({
   hiddenLink,
@@ -30,7 +31,7 @@ export function HeroNavigation({
         )}
       >
         {heroNavigation
-          .filter((item) => item.href !== hiddenLink)
+          .filter((item) => item.href !== hiddenLink && !item.hidden)
           .map((item, index, array) => (
             <li
               key={item.href}
@@ -38,10 +39,14 @@ export function HeroNavigation({
             >
               <Link
                 href={item.href}
-                className="group flex w-full items-center justify-between gap-2 sm:inline-flex sm:gap-4"
+                className="group interactive-none flex w-full items-center justify-between gap-4 sm:inline-flex sm:gap-4"
               >
-                <div>{item.label}</div>
-                <div className="flex size-11 items-center justify-center rounded-theme bg-muted transition hover:rounded-theme-xl hover:bg-muted-hover">
+                <div className="flex items-center gap-4 [&>svg]:group-hover:text-primary">
+                  <IconLucide name={item.icon} />
+                  <div className="group-hover:text-primary">{item.label}</div>
+                </div>
+
+                <div className="flex size-11 interactive items-center justify-center rounded-2xl bg-muted transition hover:rounded-xl hover:bg-muted-hover hover:bg-primary hover:text-primary-foreground">
                   <ArrowRightIcon className="size-5" />
                 </div>
               </Link>

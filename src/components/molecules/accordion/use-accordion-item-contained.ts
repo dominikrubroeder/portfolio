@@ -1,14 +1,9 @@
 'use client';
 
 import { useCallback, useRef, useState } from 'react';
-
-import type { AccordionItemContainedProps } from '@/components/molecules/accordion/index';
 import { useReducedMotion } from 'framer-motion';
 
-export const useAccordionItemContained = ({
-  accordionGroupId,
-  focusView = 'start'
-}: Pick<AccordionItemContainedProps, 'accordionGroupId' | 'focusView'>) => {
+export const useAccordionItemContained = () => {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
   const isReducedMotion = useReducedMotion();
@@ -22,17 +17,10 @@ export const useAccordionItemContained = ({
     [isReducedMotion]
   );
 
-  const toggle = useCallback(() => {
-    setIsOpen((prev) => {
-      const next = !prev;
-
-      if (next) {
-        setTimeout(onOpen, 0);
-      }
-
-      return next;
-    });
-  }, [onOpen]);
+  const toggle = useCallback(
+    () => setIsOpen((previousState) => !previousState),
+    [onOpen]
+  );
 
   return {
     isOpen,

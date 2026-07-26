@@ -335,7 +335,7 @@
     @apply min-h-3 min-w-3 shrink-0;
   }
 
-  a {
+  a:not(.interactive-none) {
     @apply interactive cursor-pointer transition hover:text-foreground;
   }
 
@@ -360,22 +360,37 @@
   }
 
   h1,
-  h2,
+  h2 {
+    @apply font-black text-foreground;
+  }
+
   h3,
   h4,
   h5,
-  h6,
-  .title {
-    @apply font-black text-foreground;
+  h6 {
+    @apply font-bold text-foreground;
   }
 
   h1:not(.h1) {
     @apply text-4xl xs:text-5xl sm:text-6xl;
   }
 
+  h1 > svg {
+    @apply size-12;
+  }
+
+  h2:not(.sticky-none) {
+    @apply sticky-headline;
+  }
+
   h2:not(.h2),
   .title {
-    @apply mb-6 text-3xl xs:text-4xl;
+    @apply mb-3 text-3xl xs:text-4xl;
+  }
+
+  h3:not(.h3),
+  .title {
+    @apply mb-4 text-2xl xs:text-2xl;
   }
 
   h3,
@@ -397,7 +412,7 @@
   }
 
   ol {
-    @apply list-decimal space-y-4 pl-6;
+    @apply list-decimal space-y-2 pl-6;
   }
 
   ul li {
@@ -422,7 +437,7 @@
   }
 
   small {
-    @apply text-sm font-normal text-muted-foreground;
+    @apply text-sm leading-none font-normal text-muted-foreground;
   }
 
   figcaption {
@@ -518,6 +533,10 @@
   @apply [html[data-theme=default]_&]:motion-safe:animate-to-top [html[data-theme=default]_&]:motion-safe:[animation-delay:240ms];
 }
 
+@utility animate-in-to-top-320 {
+  @apply [html[data-theme=default]_&]:motion-safe:animate-to-top [html[data-theme=default]_&]:motion-safe:[animation-delay:320ms];
+}
+
 @utility animate-in-to-left-100 {
   @apply [html[data-theme=default]_&]:motion-safe:animate-to-left [html[data-theme=default]_&]:motion-safe:[animation-delay:100ms];
 }
@@ -528,6 +547,10 @@
 
 @utility animate-in-to-left-240 {
   @apply [html[data-theme=default]_&]:motion-safe:animate-to-left [html[data-theme=default]_&]:motion-safe:[animation-delay:240ms];
+}
+
+@utility animate-in-to-left-320 {
+  @apply [html[data-theme=default]_&]:motion-safe:animate-to-left [html[data-theme=default]_&]:motion-safe:[animation-delay:320ms];
 }
 
 @utility rounded-theme-sm {
@@ -552,6 +575,10 @@
 
 @utility rounded-theme-2xl {
   @apply [html[data-theme=default]_&]:rounded-2xl;
+}
+
+@utility sticky-headline {
+  @apply sticky top-18 z-20 mb-2 bg-background py-4 sm:top-0;
 }
 
 /* Hide scrollbars for all browsers */

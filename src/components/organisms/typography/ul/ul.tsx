@@ -12,7 +12,7 @@ export function Ul({
   children,
   ...rest
 }: {
-  headline?: string;
+  headline?: string | ReactNode;
   offsetLeft?: boolean;
   listStyle?: 'disc' | 'none';
   headlineClassName?: string;

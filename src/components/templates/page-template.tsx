@@ -1,18 +1,51 @@
 import { ReactNode } from 'react';
-import { ScrollToTop } from '@/components/atoms/scroll-to-top';
-import { cn } from '@/lib/utils';
+import { Blockquote } from '@/components/atoms/blockquote';
+import { Container } from '@/components/organisms/layout';
+import { H1 } from '@/components/organisms/typography';
+import {
+  HeroNavigation,
+  HeroNavigationPathname
+} from '@/components/molecules/hero-navigation';
+import { Hr } from '@/components/atoms/hr';
+import { IconLucide } from '@/components/atoms/icon/icon-lucide';
 
 export function PageTemplate({
-  className,
+  h1,
+  heroIcon,
+  heroBlockquote,
+  heroDescription,
+  heroNavigationHiddenLink,
   children
 }: {
-  className?: string;
+  h1: string;
+  heroIcon?: string;
+  heroBlockquote: ReactNode;
+  heroDescription?: ReactNode;
+  heroNavigationHiddenLink?: HeroNavigationPathname;
   children: ReactNode;
 }) {
   return (
-    <main className={cn('flex-1 space-y-8 pt-4 sm:space-y-12', className)}>
-      <ScrollToTop />
+    <>
+      <div className="animate-in-to-left-100">
+        <Container as="section" size="container-readable">
+          <div className="flex items-center gap-3">
+            {heroIcon && (
+              <IconLucide name={heroIcon} className="text-primary" />
+            )}
+            <H1>{h1}</H1>
+          </div>
+
+          <Blockquote className="mt-3 sm:mt-5">{heroBlockquote}</Blockquote>
+
+          {heroDescription && <div>{heroDescription}</div>}
+        </Container>
+      </div>
+
       {children}
-    </main>
+
+      <Hr />
+
+      <HeroNavigation hiddenLink={heroNavigationHiddenLink} />
+    </>
   );
 }

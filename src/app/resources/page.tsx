@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/organisms/layout';
-import { Blockquote } from '@/components/atoms/blockquote';
-import { H1, Ul } from '@/components/organisms/typography';
+import { H2, Ul } from '@/components/organisms/typography';
 import {
   getBooks,
   getCourses,
@@ -10,9 +9,10 @@ import {
 import { ExternalLink } from '@/components/atoms/external-link';
 import { Hr } from '@/components/atoms/hr';
 import { getResearch } from '@/components/organisms/training/research';
-import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PageTemplate } from '@/components/templates/page-template';
+import { heroNavigation } from '@/components/molecules/hero-navigation';
 
 export const metadata: Metadata = {
   title: 'Resources | Dominik Rubröder, UX Design Engineer',
@@ -22,22 +22,15 @@ export const metadata: Metadata = {
 
 export default function ResourcesPage() {
   return (
-    <>
-      <div className="animate-in-to-left-100">
-        <Container as="section" size="container-readable" className="space-y-2">
-          <H1>Resources</H1>
-          <Blockquote className="mt-3 sm:mt-5">
-            Resources educate and help us grow in our expertise by leveraging
-            the community knowledge, research findings and proven principles of
-            the past that stood the test of time; letting us apply them to our
-            daily work.
-          </Blockquote>
-        </Container>
-      </div>
-
+    <PageTemplate
+      h1="Resources"
+      heroIcon={heroNavigation.find((item) => item.href === '/resources')?.icon}
+      heroBlockquote="Resources educate and help us grow in our expertise by leveraging the community knowledge, research findings and proven principles of the past that stood the test of time; letting us apply them to our daily work."
+      heroNavigationHiddenLink="/resources"
+    >
       <div className="animate-in-to-left-160">
         <Container as="section" size="container-readable">
-          <h3 className="mb-0">Books</h3>
+          <H2 className="sticky-headline">Books</H2>
 
           <Ul className="space-y-6">
             {getBooks({ sorting: 'A-Z' }).map((book) => (
@@ -106,25 +99,31 @@ export default function ResourcesPage() {
       <Hr variant="container-readable" />
 
       <Container as="section" size="container-readable">
-        <h3 className="mb-0">Courses</h3>
+        <H2>Courses</H2>
 
         <Ul className="space-y-6">
           {getCourses({ sortBy: 'A-Z' }).map((course) => (
             <li key={course.title}>
-              <div>
-                <h4 className="mb-0">{course.title}</h4>
-                <small className="font-normal">{course.author}</small>
-              </div>
+              <div className="flex gap-3">
+                {course?.icon && course.icon}
 
-              <ExternalLink
-                href={course.href}
-                color="primary"
-                className="-ml-1"
-                title={`Read more about ${course.title}`}
-                aria-label={`Click to read more about ${course.title} in an external tab`}
-              >
-                More on {course.title}
-              </ExternalLink>
+                <div>
+                  <div>
+                    <h4 className="mb-0">{course.title}</h4>
+                    <small className="font-normal">{course.author}</small>
+                  </div>
+
+                  <ExternalLink
+                    href={course.href}
+                    color="primary"
+                    className="-ml-1"
+                    title={`Read more about ${course.title}`}
+                    aria-label={`Click to read more about ${course.title} in an external tab`}
+                  >
+                    More on {course.title}
+                  </ExternalLink>
+                </div>
+              </div>
             </li>
           ))}
         </Ul>
@@ -133,44 +132,48 @@ export default function ResourcesPage() {
       <Hr variant="container-readable" />
 
       <Container as="section" size="container-readable">
-        <h3 className="mb-0">Platforms and People</h3>
+        <H2>Platforms and People</H2>
 
         <Ul className="space-y-6">
           {getPlatformsBlogsPeople({ sortBy: 'A-Z' }).map((platform) => (
             <li key={platform.title}>
-              <div>
+              <div className="flex gap-3">
+                {platform.logo && platform.logo}
+
                 <div>
-                  <h4 className="mb-0">{platform.title}</h4>
-                  <small className="flex flex-wrap items-center gap-2 font-normal">
-                    <span>{platform.author}</span>
+                  <div>
+                    <h4 className="mb-0">{platform.title}</h4>
+                    <small className="flex flex-wrap items-center gap-2 font-normal">
+                      <span>{platform.author}</span>
 
-                    {platform.releaseYear && (
-                      <>
-                        <span className="size-1 rounded-full bg-muted-foreground" />
-                        <span>{platform.releaseYear}</span>
-                      </>
-                    )}
+                      {platform.releaseYear && (
+                        <>
+                          <span className="size-1 rounded-full bg-muted-foreground" />
+                          <span>{platform.releaseYear}</span>
+                        </>
+                      )}
 
-                    {platform.category && (
-                      <>
-                        <span className="size-1 rounded-full bg-muted-foreground" />
-                        <span>{platform.category.join(', ')}</span>
-                      </>
-                    )}
-                  </small>
+                      {platform.category && (
+                        <>
+                          <span className="size-1 rounded-full bg-muted-foreground" />
+                          <span>{platform.category.join(', ')}</span>
+                        </>
+                      )}
+                    </small>
+                  </div>
+
+                  {platform.description && <p>{platform.description}</p>}
+
+                  <ExternalLink
+                    href={platform.href}
+                    color="primary"
+                    className="-ml-1"
+                    title={`Read more about ${platform.title}`}
+                    aria-label={`Click to read more about ${platform.title} in an external tab`}
+                  >
+                    More on {platform.title}
+                  </ExternalLink>
                 </div>
-
-                {platform.description && <p>{platform.description}</p>}
-
-                <ExternalLink
-                  href={platform.href}
-                  color="primary"
-                  className="-ml-1"
-                  title={`Read more about ${platform.title}`}
-                  aria-label={`Click to read more about ${platform.title} in an external tab`}
-                >
-                  More on {platform.title}
-                </ExternalLink>
               </div>
             </li>
           ))}
@@ -180,7 +183,7 @@ export default function ResourcesPage() {
       <Hr variant="container-readable" />
 
       <Container as="section" size="container-readable">
-        <h3 className="mb-0">Research, Study and Data</h3>
+        <H2>Research, Study and Data</H2>
 
         <Ul className="space-y-6">
           {getResearch({ sorting: 'A-Z' }).map((researchItem) => (
@@ -220,10 +223,6 @@ export default function ResourcesPage() {
           during the last years.
         </small>
       </Container>
-
-      <Hr variant="container" />
-
-      <HeroNavigation hiddenLink="/resources" />
-    </>
+    </PageTemplate>
   );
 }

@@ -9,7 +9,7 @@ export function LogoSublimeText({ id, className }: LogoProps) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       id={id}
-      className={cn('rounded-theme-xl', defaultLogoSquareSize, className)}
+      className={cn('rounded-2xl-xl', defaultLogoSquareSize, className)}
     >
       <rect width="128" height="128" fill="#4B4B4B" />
       <path

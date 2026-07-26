@@ -2,8 +2,8 @@
 
 import { useSidebar } from '@/components/organisms/sidebar';
 import { Button, ButtonProps } from '@/components/atoms/button';
-import { SwatchIcon } from '@heroicons/react/24/outline';
 import { useTheme } from '@/components/organisms/theme';
+import { BrushCleaning } from 'lucide-react';
 
 export function ThemeSidebarTrigger({
   buttonProps = { variant: 'ghost-muted', size: 'small' },
@@ -17,7 +17,7 @@ export function ThemeSidebarTrigger({
 
   return (
     <Button {...buttonProps} onClick={() => toggle('theme')}>
-      <SwatchIcon /> Modify Theme{showThemeValue ? `: ${theme.value}` : ''}
+      <BrushCleaning /> Modify Theme{showThemeValue ? `: ${theme.value}` : ''}
     </Button>
   );
 }

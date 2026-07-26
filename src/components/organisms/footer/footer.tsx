@@ -4,81 +4,163 @@ import { cn } from '@/lib/utils';
 import { BrandLink } from '@/components/organisms/brand';
 import { Ul } from '@/components/organisms/typography';
 import { socials } from '@/components/organisms/socials';
-import { ButtonScrollToTop } from '@/components/atoms/button';
-import { ThemeSidebarTrigger } from '@/components/organisms/theme';
+import { Button, ButtonScrollToTop } from '@/components/atoms/button';
+import {
+  IconAtomicDesign,
+  IconAtomicDesignTokens
+} from '@/components/atoms/icon';
+import { ButtonGroup } from '@/components/molecules/button-group';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/atoms/tooltip';
+import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/react/16/solid';
 
 export function Footer() {
   return (
     <>
-      <footer className="relative z-10 mt-8 space-y-3 border-t bg-background p-4 text-center text-xs md:pb-4">
+      <footer className="relative z-10 mt-8 space-y-3 border-t bg-background px-4 py-6 text-center text-xs">
         <ButtonScrollToTop className="absolute top-5 right-4" />
 
-        <ThemeSidebarTrigger />
+        <div className="space-y-1">
+          <div className="flex items-center justify-center gap-1">
+            <Ul className={cn('my-0 mb-0 inline-flex w-auto')}>
+              {socials.map((brand, index) => (
+                <li key={`brand-link-${brand.name}-${index}`} className="mb-0">
+                  <BrandLink
+                    brandLogoId={`brand-link-${brand.name}-${index}`}
+                    brand={brand}
+                    size="small"
+                  />
+                </li>
+              ))}
+            </Ul>
 
-        <Ul className={cn('my-0 mb-0 inline-flex')}>
-          {socials.map((brand, index) => (
-            <li key={`brand-link-${brand.name}-${index}`} className="mb-0">
-              <BrandLink
-                brandLogoId={`brand-link-${brand.name}-${index}`}
-                brand={brand}
-                size="small"
-              />
-            </li>
-          ))}
-        </Ul>
+            <div className="inline-flex items-center gap-0.5">
+              <span>Certified in:</span>
+              <ButtonGroup minimizeSpacing>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost-foreground"
+                      href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
+                      hideExternalIndicator
+                    >
+                      <IconAtomicDesign />
+                    </Button>
+                  </TooltipTrigger>
 
-        <p>Design your vision. Live your balance.</p>
+                  <TooltipContent>
+                    <p>
+                      <b>Atomic Design</b> by Brad Frost
+                    </p>
+                    <a
+                      href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
+                      className="mt-2 flex items-center gap-1"
+                      target="_blank"
+                    >
+                      See more <ArrowUpRightIcon className="size-3" />
+                    </a>
+                  </TooltipContent>
+                </Tooltip>
 
-        <p className="flex flex-wrap items-center justify-center gap-2">
-          <ExternalLink
-            href="https://nextjs.org"
-            title="Open Next.js website"
-            aria-label="Click to open external Next.js website"
-            size="xs"
-            color="muted"
-          >
-            Next.js 16.2.7
-          </ExternalLink>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost-foreground"
+                      href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
+                      hideExternalIndicator
+                    >
+                      <IconAtomicDesignTokens id="footer-icon-atomic-design-tokens" />
+                    </Button>
+                  </TooltipTrigger>
 
-          <span>|</span>
+                  <TooltipContent>
+                    <p>
+                      <b>Subatomic</b> by Brad and Ian Frost
+                    </p>
+                    <p className="flex gap-3">
+                      <a
+                        href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
+                        className="mt-2 flex items-center gap-1"
+                        target="_blank"
+                      >
+                        See more <ArrowUpRightIcon className="size-3" />
+                      </a>
 
-          <ExternalLink
-            href="https://react.dev"
-            title="Open React website"
-            aria-label="Click to open external React website"
-            size="xs"
-            color="muted"
-          >
-            React 19.2.5
-          </ExternalLink>
+                      <a
+                        href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
+                        className="mt-2 flex items-center gap-1"
+                        target="_blank"
+                      >
+                        See certificate <ArrowRightIcon className="size-3" />
+                      </a>
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              </ButtonGroup>
+            </div>
+          </div>
 
-          <span>|</span>
+          <p className="mx-auto max-w-sm">
+            Design your vision. Live your balance.
+          </p>
+        </div>
 
-          <ExternalLink
-            href="https://tailwindcss.com/docs"
-            title="Open Tailwind CSS documentation"
-            aria-label="Click to open external Tailwind CSS documentation"
-            size="xs"
-            color="muted"
-          >
-            Tailwind CSS 4.3
-          </ExternalLink>
-        </p>
+        <div>
+          <p className="flex flex-wrap items-center justify-center gap-2">
+            <ExternalLink
+              href="https://nextjs.org"
+              title="Open Next.js website"
+              aria-label="Click to open external Next.js website"
+              size="xs"
+              color="muted"
+            >
+              <span>Next.js 16.2.11</span>
+            </ExternalLink>
 
-        <p className="space-x-0.5">
-          <span>Contact:</span>
-          <a
-            href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-            title="Send mail to dominik.rubroeder@icloud.com"
-            aria-label="Send mail to dominik.rubroeder@icloud.com"
-          >
-            dominik.rubroeder@icloud.com
-          </a>
-        </p>
-        <p>
-          &copy; 2026
-          <span className="ml-1.5">Dominik Rubröder</span>
-        </p>
+            <span>|</span>
+
+            <ExternalLink
+              href="https://react.dev"
+              title="Open React website"
+              aria-label="Click to open external React website"
+              size="xs"
+              color="muted"
+            >
+              <span>React 19.2.7</span>
+            </ExternalLink>
+
+            <span>|</span>
+
+            <ExternalLink
+              href="https://tailwindcss.com/docs"
+              title="Open Tailwind CSS documentation"
+              aria-label="Click to open external Tailwind CSS documentation"
+              size="xs"
+              color="muted"
+            >
+              <span>Tailwind CSS 4.3.2</span>
+            </ExternalLink>
+          </p>
+
+          <p className="space-x-0.5">
+            <span>Contact:</span>
+            <a
+              href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
+              title="Send mail to dominik.rubroeder@icloud.com"
+              aria-label="Send mail to dominik.rubroeder@icloud.com"
+            >
+              dominik.rubroeder@icloud.com
+            </a>
+          </p>
+
+          <p>
+            &copy; 2026
+            <span className="ml-1.5">Dominik Rubröder</span>
+          </p>
+        </div>
 
         {EVENTS_WINTER_SCENE_ENABLED && (
           <p>

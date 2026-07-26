@@ -18,7 +18,7 @@ import {
 import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
-import { TooltipProvider } from '@/components/atoms/tooltip/shadcnui/tooltip';
+import { TooltipProvider } from '@/components/atoms/tooltip';
 import { SidebarProvider } from '@/components/organisms/sidebar';
 import { ScrollToTop } from '@/components/atoms/scroll-to-top';
 
@@ -68,30 +68,31 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body className="flex min-h-screen flex-col">
         <ThemeProvider>
-          <SidebarProvider>
-            <script
-              id="theme-initializer"
-              dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
-            />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
+          <TooltipProvider>
+            <SidebarProvider>
+              <script
+                id="theme-initializer"
+                dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
+              />
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+              />
 
-            <Header />
+              <Header />
 
-            <ThemeWireframeBackground />
+              <ThemeWireframeBackground />
 
-            <main className="flex-1 space-y-8 pt-4 sm:space-y-12">
-              <ScrollToTop />
-              <TooltipProvider>
+              <main className="flex-1 space-y-8 pt-4 sm:space-y-12">
+                <ScrollToTop />
+
                 {children}
                 <ThemeSidebar />
-              </TooltipProvider>
-            </main>
+              </main>
 
-            <Footer />
-          </SidebarProvider>
+              <Footer />
+            </SidebarProvider>
+          </TooltipProvider>
         </ThemeProvider>
 
         <Analytics />

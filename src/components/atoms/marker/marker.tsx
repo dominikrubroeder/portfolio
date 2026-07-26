@@ -24,7 +24,7 @@ export function Marker({
   if (animate) {
     return (
       <Comp
-        className={cn('relative inline-flex rounded-theme pr-1.5', className)}
+        className={cn('relative inline-flex rounded-2xl pr-1.5', className)}
       >
         <motion.span
           animate={{ width: ['0%', '102%'], opacity: [0, 1] }}

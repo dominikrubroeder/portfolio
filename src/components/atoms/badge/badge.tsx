@@ -13,6 +13,7 @@ export function Badge({
   ...rest
 }: BadgeProps & React.HTMLAttributes<HTMLDivElement>) {
   const { theme } = useTheme();
+
   return (
     <div
       className={cn(

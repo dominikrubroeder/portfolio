@@ -6,7 +6,7 @@ export function Markup({
   variant = 'foreground',
   size = 'md',
   as = 'div',
-  backticks = true,
+  backticks = false,
   className,
   children,
   ...rest
@@ -16,7 +16,7 @@ export function Markup({
   return (
     <Comp
       className={cn(
-        'mx-1.5 inline-flex rounded border',
+        'mr-0.5 ml-1 inline-flex rounded border',
         variant === 'primary' && 'text-primary',
         variant === 'foreground' && 'text-foreground',
         variant === 'muted' && 'text-muted-foreground',

@@ -1,16 +1,12 @@
 import type { Metadata } from 'next';
-import { getProject } from '@/components/organisms/projects';
+import {
+  getProject,
+  ProjectHero,
+  ProjectListSection
+} from '@/components/organisms/projects';
 import { projects } from '@/components/organisms/projects/data';
 import { preload } from 'react-dom';
-import { Container } from '@/components/organisms/layout';
-import { Blockquote } from '@/components/atoms/blockquote';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ExternalLink } from '@/components/atoms/external-link';
-import { Badge } from '@/components/atoms/badge';
-import { Hr } from '@/components/atoms/hr';
-import { H1, Ul } from '@/components/organisms/typography';
-import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
+import { PageTemplate } from '@/components/templates/page-template';
 
 export const metadata: Metadata = {
   title: 'Projects | Dominik Rubröder, UX Design Engineer',
@@ -30,200 +26,22 @@ export default function ProjectsPage() {
   });
 
   return (
-    <>
-      <div className="animate-in-to-left-100">
-        <Container as="section" className="space-y-2">
-          <H1>Projects</H1>
-          <Blockquote className="mt-3 sm:mt-5">
-            I contributed either as designer or engineer to the following
-            projects; in the later projects starting around 2020, my role merged
-            into a unified role of design engineering.
-          </Blockquote>
-
-          <p>Only projects with a longer period than 3 months are listed.</p>
-        </Container>
-      </div>
-
+    <PageTemplate
+      h1="Projects"
+      heroBlockquote="I contributed either as designer or engineer to the following projects; in the later projects starting around 2021, my role merged into a unified role in design engineering."
+      heroDescription={
+        <p>Only projects with a longer period than 3 months are listed.</p>
+      }
+      heroNavigationHiddenLink="/projects"
+    >
       {heroProject && (
-        <div className="-mt-6 animate-in-to-left-160">
-          <Container as="section" size="container">
-            <Link
-              href={heroProject.url}
-              title={`Open ${heroProject.title} in external tab`}
-              aria-label={`Click to open ${heroProject.title} in an external tab`}
-              target="_blank"
-            >
-              {heroProject.previewImage ? (
-                <Image
-                  src={heroProject.previewImage}
-                  alt={`${heroProject.title} preview image`}
-                  width={1920}
-                  height={630}
-                  className="max-w-panorama w-full"
-                  draggable={false}
-                  loading="eager"
-                />
-              ) : null}
-            </Link>
-
-            <div className="mx-auto max-w-(--container-readable)">
-              <div>
-                <h3 className="mb-0">{heroProject.title}</h3>
-                <small className="flex flex-wrap items-center gap-2">
-                  <ul className="my-0 -mr-1">
-                    {heroProject.companies?.map((company) => (
-                      <li
-                        key={`Project ${heroProject.title} company ${company.label}`}
-                      >
-                        {company.href ? (
-                          <ExternalLink
-                            variant="text"
-                            href={company.href}
-                            size="sm"
-                            color="muted"
-                            className="mr-0 -ml-1"
-                            showExternalIndicator={false}
-                          >
-                            {company.label}
-                          </ExternalLink>
-                        ) : (
-                          <span>{company.label}</span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                  <span className="size-1 rounded-full bg-muted-foreground" />
-                  <span>{heroProject.timeframe}</span>
-                  {heroProject.isActive && (
-                    <>
-                      <span className="size-1 rounded-full bg-muted-foreground" />
-                      <Badge variant="muted" size="sm">
-                        Ongoing
-                      </Badge>
-                    </>
-                  )}
-                </small>
-              </div>
-
-              {heroProject.description && <p>{heroProject.description}</p>}
-
-              <p className="text-muted-foreground">{heroProject.subline}</p>
-
-              <ExternalLink
-                href={heroProject.url}
-                color="primary"
-                title={`View ${heroProject.title}`}
-                aria-label={`Click to view ${heroProject.title} in a new tab`}
-                className="-ml-1"
-              >
-                View {heroProject.title}
-              </ExternalLink>
-            </div>
-          </Container>
-        </div>
+        <ProjectHero
+          project={heroProject}
+          className="-mt-6 animate-in-to-left-160"
+        />
       )}
 
-      <Hr />
-
-      <Container as="section">
-        <Ul className="space-y-5 sm:space-y-12 md:-mx-6">
-          {projects
-            .filter((project) => project.title !== heroProject?.title)
-            .map((project) => (
-              <li key={project.title}>
-                <div className="grid gap-2 sm:flex sm:gap-5">
-                  <Link
-                    href={project.url}
-                    title={`Open ${project.title} in external tab`}
-                    aria-label={`Click to open ${project.title} in an external tab`}
-                    target="_blank"
-                  >
-                    {project.previewImage ? (
-                      <Image
-                        src={project.previewImage}
-                        alt={`${project.title} preview image`}
-                        width={800}
-                        height={600}
-                        className="h-auto w-full sm:h-44 sm:w-80 sm:object-contain sm:object-left"
-                        draggable={false}
-                        loading="eager"
-                      />
-                    ) : (
-                      <div className="flex h-32 w-full items-center justify-center sm:h-60 sm:w-80 [&>svg]:max-h-32 [&>svg]:max-w-60">
-                        {project.logo}
-                      </div>
-                    )}
-                  </Link>
-
-                  <div className="flex-1">
-                    <div className="space-y-2">
-                      <div>
-                        <h3 className="mb-0">{project.title}</h3>
-                        <small className="flex flex-wrap items-center gap-2">
-                          <ul className="my-0 -mr-1">
-                            {project.companies?.map((company) => (
-                              <li
-                                key={`Project ${project.title} company ${company.label}`}
-                              >
-                                {company.href ? (
-                                  <ExternalLink
-                                    variant="text"
-                                    href={company.href}
-                                    size="sm"
-                                    color="muted"
-                                    className="mr-0 -ml-1"
-                                    showExternalIndicator={false}
-                                  >
-                                    {company.label}
-                                  </ExternalLink>
-                                ) : (
-                                  <span>{company.label}</span>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                          <span className="size-1 rounded-full bg-muted-foreground" />
-                          <span>{project.timeframe}</span>
-                          {project.isActive && (
-                            <>
-                              <span className="size-1 rounded-full bg-muted-foreground" />
-                              <Badge variant="muted" size="sm">
-                                Ongoing
-                              </Badge>
-                            </>
-                          )}
-                        </small>
-                      </div>
-
-                      <div>
-                        <p className="text-muted-foreground">
-                          {project.description}
-                        </p>
-                        <p className="text-muted-foreground">
-                          {project.subline}
-                        </p>
-                      </div>
-                    </div>
-
-                    <ExternalLink
-                      href={project.url}
-                      color="primary"
-                      title={`View ${project.title}`}
-                      aria-label={`Click to view ${project.title} in an external tab`}
-                      className="-ml-1"
-                    >
-                      View {project.title}
-                    </ExternalLink>
-                  </div>
-                </div>
-              </li>
-            ))}
-        </Ul>
-      </Container>
-
-      <Hr />
-
-      <HeroNavigation hiddenLink="/projects" />
-    </>
+      <ProjectListSection projectHeroTitle={heroProject?.title} />
+    </PageTemplate>
   );
 }

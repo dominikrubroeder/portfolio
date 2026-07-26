@@ -130,6 +130,7 @@ export { LogoGraphQl } from './logo-graph-ql';
 export { LogoDeno } from './logo-deno';
 export { LogoNodeJs } from './logo-node-js';
 export { LogoHeroUi } from './logo-hero-ui';
+export { LogoUdemy } from './logo-udemy';
 
 export * from './img';
 

@@ -9,7 +9,9 @@ export interface TypewriterProps {
   cursorClassName?: string;
   typeSpeed?: number;
   deleteSpeed?: number;
+  deleteLastPhrase?: boolean;
   pauseDuration?: number;
+  startDelay?: number;
   delay?: number;
   loop?: boolean;
   showCursor?: boolean;
@@ -23,7 +25,9 @@ export function Typewriter({
   cursorClassName,
   typeSpeed = 80,
   deleteSpeed = 40,
+  deleteLastPhrase = true,
   pauseDuration = 2000,
+  startDelay = 1200,
   delay = 0,
   loop = true,
   showCursor = true
@@ -32,9 +36,17 @@ export function Typewriter({
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
-    if (isComplete) return;
+    const timeout = setTimeout(() => {
+      setHasStarted(true);
+    }, startDelay);
+    return () => clearTimeout(timeout);
+  }, [startDelay]);
+
+  useEffect(() => {
+    if (isComplete || !hasStarted) return;
 
     const currentPhrase = phrases[phraseIndex] || '';
 
@@ -64,6 +76,13 @@ export function Typewriter({
         );
         return () => clearTimeout(timeout);
       } else {
+        const isLastPhrase = phraseIndex === phrases.length - 1;
+
+        if (isLastPhrase && !deleteLastPhrase) {
+          setIsComplete(true);
+          return;
+        }
+
         if (phrases.length > 1 || loop) {
           const timeout = setTimeout(() => {
             setIsDeleting(true);
@@ -81,12 +100,14 @@ export function Typewriter({
     deleteSpeed,
     pauseDuration,
     loop,
-    isComplete
+    isComplete,
+    hasStarted,
+    deleteLastPhrase
   ]);
 
   return (
     <span className={cn('inline-flex items-baseline', className)}>
-      <span className="whitespace-pre-wrap">{displayText}</span>
+      <span className="whitespace-pre-wrap text-foreground">{displayText}</span>
 
       {showCursor && (
         <motion.span

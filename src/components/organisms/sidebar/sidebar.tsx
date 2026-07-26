@@ -18,7 +18,7 @@ export function Sidebar({
     <>
       <aside
         className={cn(
-          'fixed top-2 right-2 z-max h-[97svh] min-w-40 scrollbar-none overflow-y-auto rounded-theme border bg-background [html[data-theme=default]_&]:transition-all',
+          'fixed top-2 right-2 z-max h-[97svh] min-w-40 scrollbar-none overflow-y-auto rounded-2xl border bg-background [html[data-theme=default]_&]:transition-all',
           isOpen
             ? 'translate-x-0 scale-100 opacity-100'
             : 'translate-x-full scale-95 opacity-75'

@@ -1,4 +1,5 @@
 import type { LearningResource } from '@/components/organisms/training';
+import { LogoNextjs, LogoUdemy } from '@/components/atoms/logo';
 
 export const platformsBlogsPeople: LearningResource[] = [
   {
@@ -38,6 +39,9 @@ export const platformsBlogsPeople: LearningResource[] = [
   {
     title: 'Learn Next.js',
     author: 'Vercel',
+    logo: (
+      <LogoNextjs className="size-16" id="platforms-blogs-people-nextjs-logo" />
+    ),
     description:
       'Go from beginner to expert in Next.js, with the official guide from Vercel',
     href: 'https://nextjs.org/learn',
@@ -47,6 +51,9 @@ export const platformsBlogsPeople: LearningResource[] = [
   {
     title: 'Udemy',
     author: 'Eren Bali, Gagan Biyani and Oktay Caglar',
+    logo: (
+      <LogoUdemy className="size-16" id="platforms-blogs-people-udemy-logo" />
+    ),
     description: 'Online learning and teaching marketplace',
     href: 'https://www.udemy.com',
     type: 'video',

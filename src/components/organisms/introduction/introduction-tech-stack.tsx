@@ -5,9 +5,10 @@ import { Ul } from '@/components/organisms/typography';
 import { BrandLink } from '@/components/organisms/brand';
 import { getTechnologies } from '@/components/organisms/technologies';
 import { getTools } from '@/components/organisms/tools';
-import { PlusIcon } from '@heroicons/react/24/outline';
+import { PencilLineIcon } from 'lucide-react';
+import { PlusIcon } from '@heroicons/react/16/solid';
 
-const tools = getTools({ names: ['Figma'] });
+const tools = getTools({ names: ['Figma', 'Craft'] });
 const technologies = getTechnologies({
   names: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Motion']
 });
@@ -32,10 +33,16 @@ export function IntroductionTechStack({ className }: { className?: string }) {
             showLabel
             labelPosition="bottom"
           />
-
-          {index === 0 && <PlusIcon className="mr-1 block size-6" />}
         </li>
       ))}
+
+      <li>
+        <PencilLineIcon className="size-12" />
+      </li>
+
+      <li>
+        <PlusIcon className="mr-1 block size-6" />
+      </li>
 
       {technologies.map((item, index) => (
         <li

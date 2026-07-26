@@ -2,26 +2,62 @@
 
 import { Typewriter, TypewriterProps } from '@/components/atoms/typewriter';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { AnimatePresence, motion } from 'motion/react';
 
 export function TypewriterOverlay({ ...props }: TypewriterProps) {
-  const { refresh } = useRouter();
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    if (document) {
+      document.body.classList.toggle('overflow-hidden');
+    }
+  }, []);
+
+  useEffect(() => {
     const time = setTimeout(() => {
-      refresh();
       setIsVisible(false);
-    }, 6200);
+      document.body.classList.remove('overflow-hidden');
+    }, props.delay ?? 6200);
 
     return () => clearTimeout(time);
-  }, [isVisible, refresh]);
-
-  if (!isVisible) return null;
+  }, [isVisible]);
 
   return (
-    <div className="absolute inset-0 top-0 right-0 bottom-0 left-0 z-100 flex items-center justify-center bg-background">
-      <Typewriter {...props} />
-    </div>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          key="typewriter-overlay"
+          className="fixed inset-0 top-0 right-0 bottom-0 left-0 z-100 flex size-full items-center justify-center bg-background"
+        >
+          <motion.div
+            animate={{ scale: [0.2, 1], opacity: [0.8, 1] }}
+            exit={{ scale: [1, 0.8], opacity: [1, 0] }}
+            className="relative border p-4"
+          >
+            <motion.span
+              animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
+              exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
+              className="absolute -top-1 -left-1 size-2 border border-primary bg-primary"
+            />
+            <motion.span
+              animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
+              exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
+              className="absolute -top-1 -right-1 size-2 border border-primary bg-background"
+            />
+            <motion.span
+              animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
+              exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
+              className="absolute -bottom-1 -left-1 size-2 border border-primary bg-background"
+            />
+            <motion.span
+              animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
+              exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
+              className="absolute -right-1 -bottom-1 size-2 border border-primary bg-primary"
+            />
+            <Typewriter {...props} />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

@@ -18,7 +18,7 @@ export function ThemeSettingSection({
         )}
       </div>
 
-      <div className="space-y-6 rounded-theme-xl border p-6">{children}</div>
+      <div className="rounded-2xl-xl space-y-6 border p-6">{children}</div>
     </div>
   );
 }
