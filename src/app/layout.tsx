@@ -11,8 +11,7 @@ import { Header } from '@/components/organisms/header';
 import {
   themeInitializationScript,
   ThemeProvider,
-  ThemeSidebar,
-  ThemeWireframeBackground
+  ThemeSidebar
 } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
@@ -80,8 +79,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               />
 
               <Header />
-
-              <ThemeWireframeBackground />
 
               <main className="flex-1 space-y-8 pt-4 sm:space-y-12">
                 <ScrollToTop />

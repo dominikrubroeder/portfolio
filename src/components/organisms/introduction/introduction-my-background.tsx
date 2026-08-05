@@ -188,12 +188,12 @@ export function IntroductionMyBackground() {
           application to life, not the key factor of the project.
         </p>
         <p>
-          Together with other technologies, people and tools, it adds to the
+          Together with other tools, technologies and people, it adds to the
           system that makes this initial thought a reality.
         </p>
       </div>
 
-      <div>
+      <div className="hidden">
         <BadgeHrGroup badgeProps={[{ children: '2026' }]} />
 
         <H3 className="mt-0">

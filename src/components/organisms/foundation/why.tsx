@@ -44,7 +44,6 @@ export function Why() {
         <Badge>User Experience</Badge>
         <Badge>Satisfaction</Badge>
         <Badge>Prototyping</Badge>
-        <Badge>Creativity</Badge>
       </div>
 
       <p className="hidden">

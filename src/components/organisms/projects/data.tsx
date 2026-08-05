@@ -115,8 +115,8 @@ export const projects: Project[] = [
       'Create and maintain a CMS component system in Storyblok',
       'Create and maintain a design system in Figma',
       'Create and provide design concepts and UI prototypes for project pitches',
-      'Build different page types for a ecommerce blueprint frontend: Home Page, Category Page, Product Page, Cart Page, Checkout Page, Account Pages',
-      'Compose several headless integrations in one frontend'
+      'Build different page types for a headless ecommerce blueprint frontend: Home Page, Category Page, Product Page, Cart Page, Checkout Page, Account Pages',
+      'Compose the frontend integrations in code with its architecture'
     ],
     tools: getTools({
       names: [

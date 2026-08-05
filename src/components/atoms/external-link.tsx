@@ -30,6 +30,8 @@ export function ExternalLink({
         'group relative items-center px-1 hover:bg-muted active:bg-muted [&_img]:inline-block [&_img]:align-middle [&_svg]:inline-block [&_svg]:align-text-top [&_svg:first-child]:mb-1 [&_svg:first-child]:align-middle [html[data-theme=default]_&]:rounded',
         variant === 'underline',
         color === 'primary' && 'text-primary hover:text-primary-hover',
+        color === 'primary-foreground' &&
+          'text-primary-foreground hover:text-primary-hover',
         color === 'foreground' && 'text-foreground',
         color === 'muted' && 'text-muted-foreground hover:text-foreground',
         size === 'xs' && 'space-x-0.5 text-xs [&_img]:size-3 [&_svg]:size-3',

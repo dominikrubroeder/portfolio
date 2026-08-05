@@ -53,4 +53,7 @@ export type ColorReducedProp = 'primary' | 'foreground' | 'muted';
 
 export type ColorIntentionProp = 'success' | 'info' | 'warning' | 'destructive';
 
-export type ColorProp = ColorReducedProp | ColorIntentionProp;
+export type ColorProp =
+  | ColorReducedProp
+  | ColorIntentionProp
+  | 'primary-foreground';

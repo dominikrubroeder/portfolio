@@ -30,7 +30,7 @@ export default function IntroductionPage() {
           <p>
             This is why <i>design and code synergy</i> relates much to me and my
             work. Since my training in 2016 i connect design with code in my
-            workflow.
+            workflow to create user interfaces.
           </p>
 
           <p></p>

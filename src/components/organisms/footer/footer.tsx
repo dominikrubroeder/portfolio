@@ -36,12 +36,15 @@ export function Footer() {
                 </li>
               ))}
             </Ul>
+          </div>
 
-            <div className="inline-flex items-center gap-0.5">
-              <span>Certified in:</span>
-              <ButtonGroup minimizeSpacing>
-                <Tooltip>
-                  <TooltipTrigger asChild>
+          <div className="max-w-container mx-auto space-y-0.5 pt-2 pb-0.5">
+            <span className="block">Certified in:</span>
+
+            <ButtonGroup minimizeSpacing className="mx-auto inline-flex gap-6">
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="flex items-center gap-0">
                     <Button
                       variant="ghost-foreground"
                       href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
@@ -49,24 +52,28 @@ export function Footer() {
                     >
                       <IconAtomicDesign />
                     </Button>
-                  </TooltipTrigger>
+                    Atomic Design
+                  </div>
+                </TooltipTrigger>
 
-                  <TooltipContent>
-                    <p>
-                      <b>Atomic Design</b> by Brad Frost
-                    </p>
-                    <a
-                      href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
-                      className="mt-2 flex items-center gap-1"
-                      target="_blank"
-                    >
-                      See more <ArrowUpRightIcon className="size-3" />
-                    </a>
-                  </TooltipContent>
-                </Tooltip>
+                <TooltipContent>
+                  <p>
+                    <b>by Brad Frost</b>
+                  </p>
 
-                <Tooltip>
-                  <TooltipTrigger asChild>
+                  <a
+                    href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
+                    className="mt-2 flex items-center gap-1"
+                    target="_blank"
+                  >
+                    See more <ArrowUpRightIcon className="size-3" />
+                  </a>
+                </TooltipContent>
+              </Tooltip>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="flex items-center gap-0">
                     <Button
                       variant="ghost-foreground"
                       href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
@@ -74,33 +81,32 @@ export function Footer() {
                     >
                       <IconAtomicDesignTokens id="footer-icon-atomic-design-tokens" />
                     </Button>
-                  </TooltipTrigger>
+                    Subatomic
+                  </div>
+                </TooltipTrigger>
 
-                  <TooltipContent>
-                    <p>
-                      <b>Subatomic</b> by Brad and Ian Frost
-                    </p>
-                    <p className="flex gap-3">
-                      <a
-                        href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
-                        className="mt-2 flex items-center gap-1"
-                        target="_blank"
-                      >
-                        See more <ArrowUpRightIcon className="size-3" />
-                      </a>
+                <TooltipContent>
+                  <p>by Brad and Ian Frost</p>
+                  <p className="flex gap-3">
+                    <a
+                      href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
+                      className="mt-2 flex items-center gap-1"
+                      target="_blank"
+                    >
+                      See certificate <ArrowRightIcon className="size-3" />
+                    </a>
 
-                      <a
-                        href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
-                        className="mt-2 flex items-center gap-1"
-                        target="_blank"
-                      >
-                        See certificate <ArrowRightIcon className="size-3" />
-                      </a>
-                    </p>
-                  </TooltipContent>
-                </Tooltip>
-              </ButtonGroup>
-            </div>
+                    <a
+                      href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
+                      className="mt-2 flex items-center gap-1"
+                      target="_blank"
+                    >
+                      See more <ArrowUpRightIcon className="size-3" />
+                    </a>
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </ButtonGroup>
           </div>
 
           <p className="mx-auto max-w-sm">
@@ -117,7 +123,7 @@ export function Footer() {
               size="xs"
               color="muted"
             >
-              <span>Next.js 16.2.11</span>
+              <span>Next.js 16.3.0</span>
             </ExternalLink>
 
             <span>|</span>
@@ -129,7 +135,7 @@ export function Footer() {
               size="xs"
               color="muted"
             >
-              <span>React 19.2.7</span>
+              <span>React 19.2.8</span>
             </ExternalLink>
 
             <span>|</span>
@@ -141,7 +147,7 @@ export function Footer() {
               size="xs"
               color="muted"
             >
-              <span>Tailwind CSS 4.3.2</span>
+              <span>Tailwind CSS 4.3.3</span>
             </ExternalLink>
           </p>
 

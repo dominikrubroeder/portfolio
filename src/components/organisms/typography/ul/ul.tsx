@@ -22,10 +22,15 @@ export function Ul({
 } & React.HTMLAttributes<HTMLUListElement>) {
   return (
     <div className={cn(containerClassName)}>
-      {headline && <b className={cn('block', headlineClassName)}>{headline}</b>}
+      {headline && (
+        <b className={cn('block text-current', headlineClassName)}>
+          {headline}
+        </b>
+      )}
 
       <ul
         className={cn(
+          '[&>li]:text-current [&>li::marker]:text-current',
           offsetLeft && 'pl-4',
           listStyle === 'disc' && 'list-disc pl-5 leading-7',
           listStyle === 'none' && 'list-none',

@@ -7,6 +7,33 @@ export function IntroductionDesignPrinciples() {
       <div className="space-y-4">
         <div
           className="scroll-mt-20 space-y-2"
+          id="principle-design-with-code-code-by-design"
+        >
+          <div className="scroll-mt-20 space-y-2">
+            <H3>Design with code, code by design</H3>
+
+            <p>
+              While design covers research, concept and visualization, code
+              covers implementation, performance and building the user
+              interface.
+            </p>
+
+            <p>
+              To me, it is not about design vs. code or code vs. design, it is
+              about design <i>with</i> code and code <i>by</i> design. It is a
+              synergetic connection between those professions where one benefits
+              and improves the other – also known as the 1 + 1 = 3 effect.
+            </p>
+
+            <p>
+              The end product is more in harmony and straightforward when both
+              professions are valued similarly.
+            </p>
+          </div>
+        </div>
+
+        <div
+          className="scroll-mt-20 space-y-3"
           id="principle-start-small-and-grow-with-demands"
         >
           <H3>Start small and grow with demands</H3>
@@ -257,30 +284,6 @@ export function IntroductionDesignPrinciples() {
         </div>
 
         <div className="scroll-mt-20 space-y-2">
-          <H3>Code by design, design with code</H3>
-
-          <p>In the era of AI, possibilities seem endless.</p>
-          <p>
-            Design and code both target the same goal: bring the idea to life.
-            While design covers the research, concept and visualization, code
-            covers implementation, performance, execution and delivers the user
-            interface with its features to the end user.
-          </p>
-
-          <p>
-            So it is not about design vs. code or code vs. design, it is about
-            design <i>with</i> code and code <i>by</i> design. It is a
-            synergetic connection between those professions where one benefits
-            and improves the other.
-          </p>
-
-          <p>
-            The end product will be more in harmony when both are valued
-            similarly.
-          </p>
-        </div>
-
-        <div className="scroll-mt-20 space-y-2">
           <H3>Design context-aware</H3>
           <div>
             <p>
@@ -340,32 +343,6 @@ export function IntroductionDesignPrinciples() {
             <p>This way, we save time and effort to</p>
 
             <p>Use system thinking to solutionize</p>
-          </div>
-        </div>
-
-        <div className="scroll-mt-20 space-y-2">
-          <H3>Design with code, code by design</H3>
-          <div>
-            <p>
-              Especially as a frontend design engineer like me, this is a simple
-              rule to follow: when writing code, I like to think more about the
-              design if one is availble, the requirements and the desired
-              outcome then about the actual code itself. The reason is simple:
-              with code we want to make the design come to life, the code is the
-              tool to make this happen.
-            </p>
-
-            <p>
-              So the outcome should be in the center of attention, the code
-              aligning with the required steps to get there.
-            </p>
-
-            <p>
-              I also want to get into the perspective of the frontend engineer
-              that will translate the design to code, in terms of naming,
-              handover – there should be a symmetry in those fields, when
-              designer is someone else as the developer.
-            </p>
           </div>
         </div>
       </div>

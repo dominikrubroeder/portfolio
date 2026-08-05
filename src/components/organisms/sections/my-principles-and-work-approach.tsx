@@ -10,6 +10,14 @@ export function MyPrinciplesAndWorkApproachSection() {
       <ol className="mb-8 pl-8.5">
         <li>
           <a
+            href="#principle-design-with-code-code-by-design"
+            className="text-primary"
+          >
+            Design with code, code by design
+          </a>
+        </li>
+        <li>
+          <a
             href="#principle-start-small-and-grow-with-demands"
             className="text-primary"
           >
@@ -51,14 +59,6 @@ export function MyPrinciplesAndWorkApproachSection() {
             className="text-primary"
           >
             Business leads, design serves
-          </a>
-        </li>
-        <li>
-          <a
-            href="#principle-code-by-design-design-with-code"
-            className="text-primary"
-          >
-            Code by design, design with code
           </a>
         </li>
         <li>

@@ -45,7 +45,10 @@ export default async function HomePage() {
         </p>
 
         <ButtonGroup stretchButtons>
-          <Button href="/introduction">
+          <Button
+            href="/introduction"
+            className="bg-primary text-primary-foreground"
+          >
             Introduction
             <ArrowRightIcon />
           </Button>

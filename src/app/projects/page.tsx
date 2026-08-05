@@ -28,7 +28,7 @@ export default function ProjectsPage() {
   return (
     <PageTemplate
       h1="Projects"
-      heroBlockquote="I contributed either as designer or engineer to the following projects; in the later projects starting around 2021, my role merged into a unified role in design engineering."
+      heroBlockquote="I contributed either as frontend designer or engineer to the following projects; in the later projects starting around 2021, my role merged into a unified role as frontend design engineer."
       heroDescription={
         <p>Only projects with a longer period than 3 months are listed.</p>
       }

@@ -17,15 +17,20 @@ export function ProjectHero({
   className?: string;
 }) {
   return (
-    <div className={cn('bg-muted py-12', className)}>
-      <Container as="section" size="container">
-        <Link
-          href={project.url}
-          title={`Open ${project.title} in external tab`}
-          aria-label={`Click to open ${project.title} in an external tab`}
-          target="_blank"
-        >
-          {project.previewImage ? (
+    <div className={cn('bg-primary py-12', className)}>
+      <Container
+        as="section"
+        size="container"
+        className="text-primary-foreground"
+      >
+        {project.previewImage && (
+          <Link
+            href={project.url}
+            title={`Open ${project.title} in external tab`}
+            aria-label={`Click to open ${project.title} in an external tab`}
+            target="_blank"
+            className="relative"
+          >
             <Image
               src={project.previewImage}
               alt={`${project.title} preview image`}
@@ -35,14 +40,17 @@ export function ProjectHero({
               draggable={false}
               loading="eager"
             />
-          ) : null}
-        </Link>
+          </Link>
+        )}
 
         <div className="mx-auto max-w-(--container-readable)">
           <div>
-            <H2 className="sticky-none mb-0">{project.title}</H2>
-            <small className="flex flex-wrap items-center gap-2">
-              <ul className="my-0 -mr-1">
+            <H2 className="sticky-none mb-0 text-primary-foreground">
+              {project.title}
+            </H2>
+
+            <small className="flex flex-wrap items-center gap-2 text-primary-foreground">
+              <ul className="my-0 -mr-1 text-primary-foreground">
                 {project.companies?.map((company) => (
                   <li key={`Project ${project.title} company ${company.label}`}>
                     {company.href ? (
@@ -50,7 +58,7 @@ export function ProjectHero({
                         variant="text"
                         href={company.href}
                         size="sm"
-                        color="muted"
+                        color="primary-foreground"
                         className="mr-0 -ml-1"
                         showExternalIndicator={false}
                       >
@@ -62,11 +70,14 @@ export function ProjectHero({
                   </li>
                 ))}
               </ul>
-              <span className="size-1 rounded-full bg-muted-foreground" />
+
+              <span className="size-1 rounded-full bg-primary-foreground" />
+
               <span>{project.timeframe}</span>
+
               {project.isActive && (
                 <>
-                  <span className="size-1 rounded-full bg-muted-foreground" />
+                  <span className="size-1 rounded-full bg-primary-foreground" />
                   <Badge size="sm">Ongoing</Badge>
                 </>
               )}
@@ -75,10 +86,15 @@ export function ProjectHero({
 
           {project.description && <p>{project.description}</p>}
 
-          <p className="text-muted-foreground">{project.subline}</p>
+          <p>{project.subline}</p>
 
           {project.aspects?.length && (
-            <Ul headline="Responsibilities" listStyle="disc">
+            <Ul
+              headline="Responsibilities"
+              listStyle="disc"
+              className="text-primary-foreground"
+              containerClassName="text-primary-foreground"
+            >
               {project.aspects.map((aspect) => (
                 <li key={aspect}>{aspect}</li>
               ))}
