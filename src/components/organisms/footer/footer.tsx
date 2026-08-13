@@ -94,7 +94,7 @@ export function Footer() {
             size="xs"
             color="muted"
           >
-            Next.js 16.2.6
+            Next.js 16.3.0
           </ExternalLink>
 
           <span>|</span>
@@ -106,7 +106,7 @@ export function Footer() {
             size="xs"
             color="muted"
           >
-            React 19.2.5
+            React 19.2.8
           </ExternalLink>
 
           <span>|</span>
@@ -118,7 +118,7 @@ export function Footer() {
             size="xs"
             color="muted"
           >
-            Tailwind CSS 4.2.4
+            Tailwind CSS 4.3.3
           </ExternalLink>
         </p>
 
