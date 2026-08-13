@@ -14,7 +14,7 @@ export default function ToolsPage() {
   return (
     <PageTemplate
       h1="Tools"
-      heroBlockquote="Tools help getting our ideas into the world, visualize them, save and refine them. They organize, optimize, analyse to help us get things done."
+      heroBlockquote="Tools get our ideas into the world, visualize them, save and refine them. They organize, optimize, analyse, share and help us get things done."
       heroNavigationHiddenLink="/tools"
     >
       <Container
@@ -23,9 +23,7 @@ export default function ToolsPage() {
         className="animate-in-to-left-160"
       >
         <H2>My main tools</H2>
-        <div>
-          <BrandList brands={mainTools} />
-        </div>
+        <BrandList brands={mainTools} />
       </Container>
 
       <Container
@@ -34,7 +32,7 @@ export default function ToolsPage() {
         className="animate-in-to-left-240"
       >
         <H2>Extended list, all tools</H2>
-        <Ul className="grid gap-6 sm:gap-10">
+        <Ul className="grid w-full gap-6 sm:gap-10">
           {tools
             .slice()
             .sort((a, b) => {

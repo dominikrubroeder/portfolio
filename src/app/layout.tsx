@@ -34,12 +34,16 @@ const indieFlower = Indie_Flower({
 });
 
 export const metadata: Metadata = {
-  title: 'Dominik Rubröder, UX Design Engineer',
-  description: 'Design the thing. All the way through.',
+  title:
+    'Design with code, code by design | UX Design Engineer Dominik Rubröder',
+  description:
+    'This is my motto since i started my career. I love to design, even more with code.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
-    title: 'Dominik Rubröder, UX Design Engineer',
-    description: 'Design the thing. All the way through.',
+    title:
+      'Design with code, code by design | UX Design Engineer Dominik Rubröder',
+    description:
+      'This is my motto since i started my career. I love to design, even more with code.',
     url: ROUTING_PUBLIC_DOMAIN,
     siteName: ROUTING_PUBLIC_DOMAIN.replace('https://www.', ''),
     images: [

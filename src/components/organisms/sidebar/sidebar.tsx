@@ -18,14 +18,14 @@ export function Sidebar({
     <>
       <aside
         className={cn(
-          'fixed top-2 right-2 z-max h-[97svh] min-w-40 scrollbar-none overflow-y-auto rounded-2xl border bg-background [html[data-theme=default]_&]:transition-all',
+          'fixed top-auto right-4 bottom-0 left-4 z-max max-h-[75svh] min-w-96 scrollbar-none overflow-y-auto rounded-2xl border bg-background ease-in-out motion-safe:duration-300 sm:top-2 sm:right-2 sm:left-auto sm:h-[97svh] sm:max-h-none [html[data-theme=default]_&]:transition-all',
           isOpen
-            ? 'translate-x-0 scale-100 opacity-100'
-            : 'translate-x-full scale-95 opacity-75'
+            ? 'translate-y-4 scale-100 opacity-100 sm:translate-x-0'
+            : 'translate-y-full scale-95 opacity-75 sm:translate-x-full'
         )}
       >
-        <header className="sticky top-0 z-10 bg-background px-6 pt-6 pb-4">
-          <div className="title mb-0">{title}</div>
+        <header className="sticky top-0 z-max bg-background px-6 pt-6 pb-4">
+          <div className="title mb-0 text-foreground">{title}</div>
         </header>
 
         <div className="h-full space-y-6 overflow-hidden overflow-y-scroll px-6 pt-4">

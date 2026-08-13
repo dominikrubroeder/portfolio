@@ -10,12 +10,6 @@ import {
   IconAtomicDesignTokens
 } from '@/components/atoms/icon';
 import { ButtonGroup } from '@/components/molecules/button-group';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger
-} from '@/components/atoms/tooltip';
-import { ArrowRightIcon, ArrowUpRightIcon } from '@heroicons/react/16/solid';
 
 export function Footer() {
   return (
@@ -38,74 +32,29 @@ export function Footer() {
             </Ul>
           </div>
 
-          <div className="max-w-container mx-auto space-y-0.5 pt-2 pb-0.5">
+          <div className="max-w-container mx-auto space-y-1 pt-2 pb-1.5">
             <span className="block">Certified in:</span>
 
-            <ButtonGroup minimizeSpacing className="mx-auto inline-flex gap-6">
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div className="flex items-center gap-0">
-                    <Button
-                      variant="ghost-foreground"
-                      href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
-                      hideExternalIndicator
-                    >
-                      <IconAtomicDesign />
-                    </Button>
-                    Atomic Design
-                  </div>
-                </TooltipTrigger>
+            <ButtonGroup className="mx-auto inline-flex">
+              <Button
+                variant="ghost-foreground"
+                href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
+                size="small"
+                className="gap-1.5"
+              >
+                <IconAtomicDesign />
+                <span>Atomic Design</span>
+              </Button>
 
-                <TooltipContent>
-                  <p>
-                    <b>by Brad Frost</b>
-                  </p>
-
-                  <a
-                    href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
-                    className="mt-2 flex items-center gap-1"
-                    target="_blank"
-                  >
-                    See more <ArrowUpRightIcon className="size-3" />
-                  </a>
-                </TooltipContent>
-              </Tooltip>
-
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <div className="flex items-center gap-0">
-                    <Button
-                      variant="ghost-foreground"
-                      href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
-                      hideExternalIndicator
-                    >
-                      <IconAtomicDesignTokens id="footer-icon-atomic-design-tokens" />
-                    </Button>
-                    Subatomic
-                  </div>
-                </TooltipTrigger>
-
-                <TooltipContent>
-                  <p>by Brad and Ian Frost</p>
-                  <p className="flex gap-3">
-                    <a
-                      href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
-                      className="mt-2 flex items-center gap-1"
-                      target="_blank"
-                    >
-                      See certificate <ArrowRightIcon className="size-3" />
-                    </a>
-
-                    <a
-                      href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
-                      className="mt-2 flex items-center gap-1"
-                      target="_blank"
-                    >
-                      See more <ArrowUpRightIcon className="size-3" />
-                    </a>
-                  </p>
-                </TooltipContent>
-              </Tooltip>
+              <Button
+                variant="ghost-foreground"
+                href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
+                size="small"
+                className="gap-1.5"
+              >
+                <IconAtomicDesignTokens id="footer-icon-atomic-design-tokens" />
+                <span>Subatomic</span>
+              </Button>
             </ButtonGroup>
           </div>
 

@@ -5,13 +5,10 @@ export function Why() {
   return (
     <div className="space-y-3">
       <Blockquote variant="foreground" className="my-0 mb-4">
-        It's simple, i love to build user interfaces!
-      </Blockquote>
-
-      <p>
         From concept to code – it is the whole spectrum that drives my passion
-        for this job. Here are some tags i associate with design engineering:
-      </p>
+        for this job. Here are some tags i associate with frontend & UX design
+        engineering.
+      </Blockquote>
 
       <div className="flex flex-wrap gap-2">
         <Badge>Design</Badge>

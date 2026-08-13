@@ -43,6 +43,7 @@ export type ThemeContextType = {
   setThemeFontSize: (themeFontSize: ThemeFontSize) => void;
   themeAppearance: ThemeAppearance;
   setThemeAppearance: (themeAppearance: ThemeAppearance) => void;
+  toggleThemeAppearance: () => void;
   themeAnimationSettings: ThemeAnimationSettings;
   setThemeAnimationSettings: Dispatch<SetStateAction<ThemeAnimationSettings>>;
   themeMode: ThemeMode | undefined;

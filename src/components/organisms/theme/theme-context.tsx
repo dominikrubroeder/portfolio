@@ -110,6 +110,20 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     []
   );
 
+  const toggleThemeAppearance = useCallback(() => {
+    setThemeAppearance((prevAppearance) => {
+      const nextAppearance: ThemeAppearance =
+        prevAppearance === 'light'
+          ? 'dark'
+          : prevAppearance === 'dark'
+            ? 'system'
+            : 'light';
+
+      localStorage.setItem(THEME_KEY_APPEARANCE, nextAppearance);
+      return nextAppearance;
+    });
+  }, []);
+
   const handleTheme = useCallback(
     (themeOption: ThemeOption) => {
       if (themeOption.key === 'default') {
@@ -319,6 +333,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     setThemeFontSize: handleThemeFontSize,
     themeAppearance: themeAppearance,
     setThemeAppearance: handleThemeAppearance,
+    toggleThemeAppearance,
     themeAnimationSettings,
     setThemeAnimationSettings,
     themeMode,

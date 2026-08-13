@@ -1,8 +1,13 @@
 import { Avatar } from '@/components/atoms/avatar';
 import { ExternalLink } from '@/components/atoms/external-link';
-import { ThemeColorSetting } from '@/components/organisms/theme';
+import {
+  ThemeColorSetting,
+  ThemeSidebarTrigger
+} from '@/components/organisms/theme';
 import { cn } from '@/lib/utils';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events';
+import { ThemeAppearanceSwitch } from '@/components/organisms/theme/theme-appearance-switch';
+import { ButtonGroup } from '@/components/molecules/button-group';
 
 export function Header() {
   return (
@@ -39,7 +44,12 @@ export function Header() {
         </h1>
       </div>
 
-      <div className="hidden xs:block">
+      <div className="hidden xs:flex xs:items-center xs:gap-1.5">
+        <ButtonGroup minimizeSpacing>
+          <ThemeAppearanceSwitch />
+          <ThemeSidebarTrigger />
+        </ButtonGroup>
+
         <ThemeColorSetting className="gap-1.5 sm:gap-2" />
       </div>
     </header>

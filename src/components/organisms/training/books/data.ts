@@ -66,7 +66,7 @@ export const books: LearningResource[] = [
     isCurrent: false,
     type: 'Book',
     releaseYear: 2023,
-    category: ['Design', 'Product']
+    category: ['Design', 'Communication']
   },
   {
     title: 'React Key Concepts, 2nd Edition',
@@ -88,7 +88,7 @@ export const books: LearningResource[] = [
     isCurrent: false,
     type: 'Book',
     releaseYear: 2015,
-    category: ['Design']
+    category: ['Design', 'Communication']
   },
   {
     title: 'Atomic Design',
@@ -150,7 +150,7 @@ export const books: LearningResource[] = [
     title:
       'Hack the Design System: Revolutionize the way your organization scales design',
     author: 'Pierre Henri Clouin, Sampo Jalasto, Elisa Pyrhönen',
-    cover: '/books/clouin-jalasto-pyrhöhnen-hack-the-design-system.jpg',
+    cover: '/books/pyroehnen-hack-the-design-system.jpeg',
     href: 'https://www.capgemini.com/us-en/solutions/hack-the-design-system-a-new-book-on-building-products-faster/',
     progress: 0,
     isCurrent: false,

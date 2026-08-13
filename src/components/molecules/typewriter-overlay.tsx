@@ -4,6 +4,14 @@ import { Typewriter, TypewriterProps } from '@/components/atoms/typewriter';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 
+/**
+ *       <TypewriterOverlay
+ *         phrases={['Hello, world!']}
+ *         deleteLastPhrase={false}
+ *         typeSpeed={60}
+ *         delay={4200}
+ *       />
+ * */
 export function TypewriterOverlay({ ...props }: TypewriterProps) {
   const [isVisible, setIsVisible] = useState(true);
 

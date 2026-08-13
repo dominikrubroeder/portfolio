@@ -21,7 +21,6 @@ export interface ButtonProps extends HTMLAttributes<
   className?: string;
   href?: string;
   target?: HTMLAttributeAnchorTarget;
-  circular?: boolean;
   download?: boolean;
   hideExternalIndicator?: boolean;
   children: ReactNode;

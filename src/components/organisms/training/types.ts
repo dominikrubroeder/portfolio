@@ -18,6 +18,7 @@ export interface LearningResource {
     | 'Product'
     | 'Research, Study and Data'
     | 'Learning'
+    | 'Communication'
   )[];
   isCurrent?: boolean;
   knowledge?: UsageLevel;

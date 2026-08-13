@@ -12,7 +12,6 @@ import { getResearch } from '@/components/organisms/training/research';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PageTemplate } from '@/components/templates/page-template';
-import { heroNavigation } from '@/components/molecules/hero-navigation';
 
 export const metadata: Metadata = {
   title: 'Resources | Dominik Rubröder, UX Design Engineer',
@@ -24,7 +23,6 @@ export default function ResourcesPage() {
   return (
     <PageTemplate
       h1="Resources"
-      heroIcon={heroNavigation.find((item) => item.href === '/resources')?.icon}
       heroBlockquote="Resources educate and help us grow in our expertise by leveraging the community knowledge, research findings and proven principles of the past that stood the test of time; letting us apply them to our daily work."
       heroNavigationHiddenLink="/resources"
     >
@@ -32,10 +30,10 @@ export default function ResourcesPage() {
         <Container as="section" size="container-readable">
           <H2 className="sticky-headline">Books</H2>
 
-          <Ul className="space-y-6">
+          <Ul className="mt-0 space-y-8">
             {getBooks({ sorting: 'A-Z' }).map((book) => (
               <li key={book.title}>
-                <div className="flex gap-3">
+                <div className="flex gap-8">
                   {book.cover && (
                     <Link
                       href={book.href}
@@ -43,41 +41,44 @@ export default function ResourcesPage() {
                       title={`Read more about ${book.title}`}
                       aria-label={`Click to read more about ${book.title} in an external tab`}
                       rel="noopener noreferrer"
+                      className="h-auto w-28 shrink-0"
                     >
                       <Image
                         src={book.cover}
                         width={200}
                         height={300}
-                        className="h-auto w-16 interactive object-contain"
+                        className="w-full"
                         alt={book.title}
                         draggable={false}
                       />
                     </Link>
                   )}
 
-                  <div>
-                    <div>
-                      <h4 className="mb-0">{book.title}</h4>
-                      <small className="flex flex-wrap items-center gap-2 font-normal">
-                        <span>{book.author}</span>
+                  <div className="space-y-3">
+                    <div className="space-y-2">
+                      <div>
+                        <h3 className="mb-0">{book.title}</h3>
+                        <small className="inline-flex flex-wrap items-center gap-2 font-normal">
+                          <span>{book.author}</span>
 
-                        {book.releaseYear && (
-                          <>
-                            <span className="size-1 rounded-full bg-muted-foreground" />
-                            <span>{book.releaseYear}</span>
-                          </>
-                        )}
+                          {book.releaseYear && (
+                            <>
+                              <span className="size-1 rounded-full bg-muted-foreground" />
+                              <span>{book.releaseYear}</span>
+                            </>
+                          )}
 
-                        {book.category && (
-                          <>
-                            <span className="size-1 rounded-full bg-muted-foreground" />
-                            <span>{book.category.join(', ')}</span>
-                          </>
-                        )}
-                      </small>
+                          {book.category && (
+                            <>
+                              <span className="size-1 rounded-full bg-muted-foreground" />
+                              <span>{book.category.join(', ')}</span>
+                            </>
+                          )}
+                        </small>
+                      </div>
+
+                      {book.description && <p>{book.description}</p>}
                     </div>
-
-                    {book.description && <p>{book.description}</p>}
 
                     <ExternalLink
                       href={book.href}
@@ -86,7 +87,7 @@ export default function ResourcesPage() {
                       title={`Read more about ${book.title}`}
                       aria-label={`Click to read more about ${book.title} in an external tab`}
                     >
-                      More on {book.title}
+                      <span>More on {book.title}</span>
                     </ExternalLink>
                   </div>
                 </div>

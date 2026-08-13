@@ -13,7 +13,6 @@ export function Button({
   size = 'medium',
   href,
   target,
-  rounded,
   download,
   hideExternalIndicator,
   className,
@@ -48,7 +47,6 @@ export function Button({
       'min-h-11 min-w-11 rounded-2xl hover:rounded-2xl text-base py-2 px-3 gap-2 [&>svg]:size-5',
     size === 'large' &&
       'min-h-11 min-w-11 rounded-2xl hover:rounded-2xl text-lg py-2 px-3.5 gap-2 [&>svg]:size-6',
-    rounded && 'rounded-full hover:rounded-full',
     className
   );
 
