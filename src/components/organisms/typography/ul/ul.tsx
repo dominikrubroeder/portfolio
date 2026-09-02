@@ -23,7 +23,7 @@ export function Ul({
   return (
     <div className={cn(containerClassName)}>
       {headline && (
-        <b className={cn('block text-current', headlineClassName)}>
+        <b className={cn('block text-foreground', headlineClassName)}>
           {headline}
         </b>
       )}

@@ -34,7 +34,7 @@ export function Blockquote({
     <blockquote
       {...rest}
       className={cn(
-        'font-bold text-foreground',
+        'text-foreground',
         variant === 'primary' && 'text-primary',
         variant === 'foreground' && 'text-foreground',
         variant === 'muted' && 'text-muted-foreground',

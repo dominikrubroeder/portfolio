@@ -7,12 +7,6 @@ export const heroNavigation: {
   hidden: boolean;
 }[] = [
   {
-    icon: 'user',
-    label: 'Introduction',
-    href: '/introduction',
-    hidden: false
-  },
-  {
     icon: 'chart-no-axes-gantt',
     label: 'Projects',
     href: '/projects',
@@ -40,18 +34,12 @@ export const heroNavigation: {
     icon: 'balloon',
     label: 'Playground',
     href: '/playground',
-    hidden: true
+    hidden: false
   },
   {
     icon: 'notebook-pen',
     label: 'Blog',
     href: '/blog',
     hidden: true
-  },
-  {
-    icon: 'sparkle',
-    label: 'Resources',
-    href: '/resources',
-    hidden: false
   }
 ];

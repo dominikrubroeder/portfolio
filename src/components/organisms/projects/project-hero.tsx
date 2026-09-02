@@ -8,6 +8,7 @@ import type { Project } from '@/components/organisms/projects';
 import { cn } from '@/lib/utils';
 import { H2, Ul } from '@/components/organisms/typography';
 import { Button } from '@/components/atoms/button';
+import { Hr } from '@/components/atoms/hr';
 
 export function ProjectHero({
   project,
@@ -17,12 +18,8 @@ export function ProjectHero({
   className?: string;
 }) {
   return (
-    <div className={cn('bg-primary py-12', className)}>
-      <Container
-        as="section"
-        size="container"
-        className="text-primary-foreground"
-      >
+    <div className={cn(className)}>
+      <Container as="section" size="container">
         {project.previewImage && (
           <Link
             href={project.url}
@@ -45,12 +42,9 @@ export function ProjectHero({
 
         <div className="mx-auto max-w-(--container-readable)">
           <div>
-            <H2 className="sticky-none mb-0 text-primary-foreground">
-              {project.title}
-            </H2>
-
-            <small className="flex flex-wrap items-center gap-2 text-primary-foreground">
-              <ul className="my-0 -mr-1 text-primary-foreground">
+            <H2 className="sticky-none mb-0">{project.title}</H2>
+            <small className="flex flex-wrap items-center gap-2">
+              <ul className="my-0 -mr-1">
                 {project.companies?.map((company) => (
                   <li key={`Project ${project.title} company ${company.label}`}>
                     {company.href ? (
@@ -58,7 +52,6 @@ export function ProjectHero({
                         variant="text"
                         href={company.href}
                         size="sm"
-                        color="primary-foreground"
                         className="mr-0 -ml-1"
                         showExternalIndicator={false}
                       >
@@ -84,18 +77,20 @@ export function ProjectHero({
             </small>
           </div>
 
+          <Hr className="my-3 w-4" />
+
           {project.description && <p>{project.description}</p>}
 
           <p>{project.subline}</p>
 
-          {project.aspects?.length && (
+          {project.responsibilities?.length && (
             <Ul
               headline="Responsibilities"
               listStyle="disc"
-              className="text-primary-foreground"
-              containerClassName="text-primary-foreground"
+              className=""
+              containerClassName=""
             >
-              {project.aspects.map((aspect) => (
+              {project.responsibilities.map((aspect) => (
                 <li key={aspect}>{aspect}</li>
               ))}
             </Ul>

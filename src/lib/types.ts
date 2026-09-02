@@ -46,8 +46,6 @@ export type SizeReducedProp = 'sm' | 'md' | 'lg';
 
 export type SizeProp = SizeReducedProp | 'xs' | 'xl';
 
-export type FilterProp = 'is-active' | 'is-current' | 'is-completed';
-
 // TODO: Use `ColorVariantProp` across the app
 export type ColorReducedProp = 'primary' | 'foreground' | 'muted';
 
@@ -56,4 +54,5 @@ export type ColorIntentionProp = 'success' | 'info' | 'warning' | 'destructive';
 export type ColorProp =
   | ColorReducedProp
   | ColorIntentionProp
-  | 'primary-foreground';
+  | 'primary-foreground'
+  | 'current';

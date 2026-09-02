@@ -911,7 +911,7 @@ const tools: Tools = [
     ]
   },
   {
-    group: 'Photo + Graphics',
+    group: 'Photo + Graphics + Layout',
     children: [
       {
         name: 'Adobe Illustrator',

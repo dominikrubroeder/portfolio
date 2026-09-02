@@ -34,6 +34,7 @@ export function ExternalLink({
           'text-primary-foreground hover:text-primary-hover',
         color === 'foreground' && 'text-foreground',
         color === 'muted' && 'text-muted-foreground hover:text-foreground',
+        color === 'current' && 'text-current',
         size === 'xs' && 'space-x-0.5 text-xs [&_img]:size-3 [&_svg]:size-3',
         size === 'sm' && 'space-x-0.5 text-sm [&_img]:size-3 [&_svg]:size-3',
         size === 'md' && 'space-x-1 text-base [&_img]:size-4 [&_svg]:size-4',

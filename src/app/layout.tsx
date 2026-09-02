@@ -1,7 +1,7 @@
 import './globals.css';
-import type { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
-import { Indie_Flower, JetBrains_Mono } from 'next/font/google';
+import { JetBrains_Mono, Outfit } from 'next/font/google';
 
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -27,21 +27,19 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono'
 });
 
-const indieFlower = Indie_Flower({
+const outfit = Outfit({
   subsets: ['latin'],
-  weight: '400',
-  variable: '--font-handwritten'
+  display: 'swap',
+  variable: '--font-outfit'
 });
 
 export const metadata: Metadata = {
-  title:
-    'Design with code, code by design | UX Design Engineer Dominik Rubröder',
+  title: 'Design with code, code by design | Dominik Rubröder, UX Engineer',
   description:
     'This is my motto since i started my career. I love to design, even more with code.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
-    title:
-      'Design with code, code by design | UX Design Engineer Dominik Rubröder',
+    title: 'Design with code, code by design | Dominik Rubröder, UX Engineer',
     description:
       'This is my motto since i started my career. I love to design, even more with code.',
     url: ROUTING_PUBLIC_DOMAIN,
@@ -65,7 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
+      className={`scroll-smooth bg-background ${jetbrainsMono.variable} ${outfit.variable}`}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
@@ -85,7 +83,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <Header />
 
               <main className="flex-1 space-y-8 pt-4 sm:space-y-12">
-                <ScrollToTop />
+                <Suspense>
+                  <ScrollToTop />
+                </Suspense>
 
                 {children}
                 <ThemeSidebar />

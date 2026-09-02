@@ -6,11 +6,17 @@ export function Divider({
   spacing = 'wider',
   className
 }: {
-  variant?: 'hr' | 'three-dotted';
+  variant?: 'hr' | 'three-dotted' | 'dot';
   indented?: boolean;
   spacing?: 'wider' | 'widest';
   className?: string;
 }) {
+  if (variant === 'dot') {
+    return (
+      <span className="size-1 shrink-0 rounded-full border-muted-foreground bg-muted-foreground" />
+    );
+  }
+
   if (variant === 'three-dotted') {
     return (
       <div

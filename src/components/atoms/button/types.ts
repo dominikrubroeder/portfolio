@@ -24,6 +24,7 @@ export interface ButtonProps extends HTMLAttributes<
   download?: boolean;
   hideExternalIndicator?: boolean;
   children: ReactNode;
+  customIcon?: boolean;
 }
 
 export interface ReducedButtonProps extends Omit<ButtonProps, 'children'> {

@@ -39,22 +39,29 @@ export function CodeBlock({
   return (
     <code
       className={cn(
-        'grid w-full gap-4 rounded border px-6 pt-6 font-mono',
+        'grid w-full rounded border p-6',
         borderless && 'border-none px-0',
         className
       )}
     >
-      <span className="max-h-[65svh] overflow-auto">
-        <Highlight
-          theme={themeAppearance === 'light' ? themes.vsLight : themes.vsDark}
-          code={code}
-          language={language}
-        >
+      <span className="flex items-center justify-between gap-4 bg-background">
+        <span>{fileName}</span>
+
+        <ButtonGroup>
+          <Button
+            variant="ghost-foreground"
+            onClick={() => handleCopyToClipboard()}
+          >
+            <span className="sr-only">Copy {fileName} code snippet</span>
+            {isCopied ? <CheckIcon /> : <ClipboardCopy />}
+          </Button>
+        </ButtonGroup>
+      </span>
+
+      <span className="overflow-auto font-mono">
+        <Highlight theme={themes.vsLight} code={code} language={language}>
           {({ className, style, tokens, getLineProps, getTokenProps }) => (
-            <pre
-              className={cn('rounded p-4 font-mono', className)}
-              style={style}
-            >
+            <pre className={cn('rounded font-mono', className)} style={style}>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({ line })}>
                   {showLineNumber && <span className="mr-6">{i + 1}</span>}
@@ -67,20 +74,6 @@ export function CodeBlock({
             </pre>
           )}
         </Highlight>
-      </span>
-
-      <span className="sticky bottom-0 flex items-center justify-between gap-4 border-t bg-background py-3">
-        <span className="font-mono">{fileName}</span>
-
-        <ButtonGroup>
-          <Button
-            variant="ghost-foreground"
-            onClick={() => handleCopyToClipboard()}
-          >
-            <span className="sr-only">Copy {fileName} code snippet</span>
-            {isCopied ? <CheckIcon /> : <ClipboardCopy />}
-          </Button>
-        </ButtonGroup>
       </span>
     </code>
   );

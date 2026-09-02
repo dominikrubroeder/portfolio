@@ -72,7 +72,7 @@ export function Footer() {
               size="xs"
               color="muted"
             >
-              <span>Next.js 16.3.0</span>
+              <span>Next.js 16.3.4</span>
             </ExternalLink>
 
             <span>|</span>
@@ -90,7 +90,7 @@ export function Footer() {
             <span>|</span>
 
             <ExternalLink
-              href="https://tailwindcss.com/docs"
+              href="https://tailwindcss.com"
               title="Open Tailwind CSS documentation"
               aria-label="Click to open external Tailwind CSS documentation"
               size="xs"

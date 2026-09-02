@@ -17,6 +17,7 @@ export function Button({
   hideExternalIndicator,
   className,
   children,
+  customIcon,
   ...rest
 }: ButtonProps) {
   const classNames = cn(
@@ -29,16 +30,16 @@ export function Button({
     variant === 'contained-muted' &&
       'bg-muted text-muted-foreground hover:bg-muted-hover hover:text-foreground',
     variant?.includes('ghost') &&
-      "relative rounded-2xl z-10 after:absolute after:inset-0 after:-z-10 after:motion-safe:scale-75 after:rounded after:bg-muted after:opacity-0 after:motion-safe:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 hover:after:rounded-2xl active:after:rounded-2xl active:after:opacity-100 hover:after:opacity-100 group-hover:text-foreground active:text-foreground group-hover:after:scale-100 group-hover:after:rounded-2xl group-hover:after:opacity-100",
+      "relative rounded-2xl z-10 after:absolute after:inset-0 after:-z-10 after:motion-safe:scale-75 after:rounded after:bg-muted after:opacity-0 after:motion-safe:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 hover:after:rounded-2xl active:after:rounded-2xl active:after:opacity-100 hover:after:opacity-100 active:text-foreground",
     variant === 'ghost-primary' && 'text-primary',
     variant === 'ghost-foreground' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground hover:text-foreground',
     variant === 'text-primary' &&
-      'text-primary hover:text-primary-hover [&>svg]:hover:text-primary-hover group-hover:[&>svg]:text-primary-hover',
+      'text-primary hover:text-primary-hover [&>svg]:hover:text-primary-hover',
     variant === 'text-foreground' &&
-      'text-foreground hover:text-primary [&>svg]:hover:text-primary group-hover:[&>svg]:text-primary',
+      'text-foreground hover:text-primary [&>svg]:hover:text-primary',
     variant === 'text-muted' &&
-      'text-muted-foreground hover:text-foreground [&>svg]:hover:text-foreground group-hover:[&>svg]:text-foreground',
+      'text-muted-foreground hover:text-foreground [&>svg]:hover:text-foreground',
     size === 'tiny' &&
       'min-h-6 min-w-6 rounded-2xl hover:rounded-2xl text-xs py-1 px-1 gap-1 [&>svg]:size-3.5',
     size === 'small' &&
@@ -112,7 +113,7 @@ export function Button({
         className={classNames}
       >
         {children}
-        {!hideExternalIndicator && <ArrowUpRightIcon />}
+        {!hideExternalIndicator && !customIcon && <ArrowUpRightIcon />}
       </a>
     );
 
@@ -132,7 +133,7 @@ export function Button({
       >
         {children}
 
-        {isExternal && (
+        {isExternal && !customIcon && (
           <ArrowUpRightIcon className="mr-4 size-5 text-current" />
         )}
       </Link>

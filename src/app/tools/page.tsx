@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import { PageTemplate } from '@/components/templates/page-template';
 
 export const metadata: Metadata = {
-  title: 'Tools | Dominik Rubröder, UX Design Engineer',
+  title: 'Tools | Dominik Rubröder, UX Engineer',
   description: 'Get things done and into the world with the right tools.'
 };
 
@@ -14,7 +14,7 @@ export default function ToolsPage() {
   return (
     <PageTemplate
       h1="Tools"
-      heroBlockquote="Tools get our ideas into the world, visualize them, save and refine them. They organize, optimize, analyse, share and help us get things done."
+      heroBlockquote="Tools bring our ideas into the world, visualize them, save and refine them. They organize, optimize, analyse, share and help us get things done."
       heroNavigationHiddenLink="/tools"
     >
       <Container
@@ -31,7 +31,7 @@ export default function ToolsPage() {
         size="container-readable"
         className="animate-in-to-left-240"
       >
-        <H2>Extended list, all tools</H2>
+        <H2>More tools I've worked with</H2>
         <Ul className="grid w-full gap-6 sm:gap-10">
           {tools
             .slice()
