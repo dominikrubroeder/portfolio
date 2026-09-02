@@ -11,18 +11,22 @@ import {
 } from 'react';
 import {
   Theme,
+  THEME_ANIMATION_SETTINGS_DEFAULT,
   THEME_APPEARANCE_DEFAULT,
+  THEME_BORDER_SETTINGS_DEFAULT,
   THEME_COLOR_DEFAULT,
+  THEME_FONT_SIZE_DEFAULT,
   THEME_KEY,
   THEME_KEY_APPEARANCE,
   THEME_KEY_COLOR,
   THEME_KEY_EVENT_WINTER,
   THEME_KEY_FONT_SIZE,
-  THEME_KEY_MODE,
+  THEME_KEY_PERSONA,
   THEME_OPTION_DEFAULT,
   THEME_OPTIONS,
   ThemeAnimationSettings,
   ThemeAppearance,
+  ThemeBorderSettings,
   ThemeColor,
   ThemeContextType,
   ThemeEvents,
@@ -35,24 +39,23 @@ import { capitalizeWords } from '@/lib/utils';
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [isInitialized, setIsInitialized] = useState(false);
   const [theme, setTheme] = useState<ThemeOption>(THEME_OPTION_DEFAULT);
   const [themeColor, setThemeColor] = useState<ThemeColor>(THEME_COLOR_DEFAULT);
   const [themeAppearance, setThemeAppearance] = useState<ThemeAppearance>(
     THEME_APPEARANCE_DEFAULT
   );
-  const [themeFontSize, setThemeFontSize] = useState<ThemeFontSize>('md');
+  const [themeFontSize, setThemeFontSize] = useState<ThemeFontSize>(
+    THEME_FONT_SIZE_DEFAULT
+  );
+  const [themeAnimationSettings, setThemeAnimationSettings] =
+    useState<ThemeAnimationSettings>(THEME_ANIMATION_SETTINGS_DEFAULT);
+  const [themeBorderSettings, setThemeBorderSettings] =
+    useState<ThemeBorderSettings>(THEME_BORDER_SETTINGS_DEFAULT);
   const [themeMode, setThemeMode] = useState<ThemeMode | undefined>(undefined);
   const [themeEvents, setThemeEvents] = useState<ThemeEvents>({
     isEventWinterEnabled: true
   });
-  const [isInitialized, setIsInitialized] = useState(false);
-  const [themeAnimationSettings, setThemeAnimationSettings] =
-    useState<ThemeAnimationSettings>({
-      disableAnimations: false,
-      delay: 0.24,
-      duration: 0.4,
-      type: 'spring'
-    });
 
   const applyThemeAppearance = useCallback((appearance: ThemeAppearance) => {
     const htmlElement = document.documentElement;
@@ -107,22 +110,43 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     []
   );
 
+  const toggleThemeAppearance = useCallback(() => {
+    setThemeAppearance((prevAppearance) => {
+      const nextAppearance: ThemeAppearance =
+        prevAppearance === 'light'
+          ? 'dark'
+          : prevAppearance === 'dark'
+            ? 'system'
+            : 'light';
+
+      localStorage.setItem(THEME_KEY_APPEARANCE, nextAppearance);
+      return nextAppearance;
+    });
+  }, []);
+
   const handleTheme = useCallback(
     (themeOption: ThemeOption) => {
-      setTheme(themeOption);
-      localStorage.setItem(THEME_KEY, themeOption.key);
-
-      if (themeOption.key === 'wireframe') {
-        handleThemeColor(undefined);
-      }
-
       if (themeOption.key === 'default') {
         handleThemeColor('primary');
+        setThemeAnimationSettings(THEME_ANIMATION_SETTINGS_DEFAULT);
+      }
+
+      if (themeOption.key === 'wireframe') {
+        handleThemeColor('foreground');
+        setThemeAnimationSettings({
+          isEnabled: false,
+          delay: 0,
+          duration: 0,
+          type: 'linear'
+        });
       }
 
       if (themeOption.key === 'notes') {
         handleThemeColor('orange');
       }
+
+      setTheme(themeOption);
+      localStorage.setItem(THEME_KEY, themeOption.key);
     },
     [handleThemeColor]
   );
@@ -209,7 +233,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const localThemeColor = localStorage.getItem(THEME_KEY_COLOR);
     const localThemeAppearance = localStorage.getItem(THEME_KEY_APPEARANCE);
     const localThemeFontSize = localStorage.getItem(THEME_KEY_FONT_SIZE);
-    const localThemeMode = localStorage.getItem(THEME_KEY_MODE);
+    const localThemeMode = localStorage.getItem(THEME_KEY_PERSONA);
     const localIsEventWinterEnabled = localStorage.getItem(
       THEME_KEY_EVENT_WINTER
     );
@@ -283,16 +307,16 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [theme]);
 
   const shouldAnimate = useMemo(
-    () => theme.key === 'default' && !themeAnimationSettings.disableAnimations,
-    [theme.key, themeAnimationSettings.disableAnimations]
+    () => theme.key === 'default' && !themeAnimationSettings.isEnabled,
+    [theme.key, themeAnimationSettings.isEnabled]
   );
 
   useEffect(() => {
     if (isInitialized) {
       if (themeMode) {
-        localStorage.setItem(THEME_KEY_MODE, themeMode);
+        localStorage.setItem(THEME_KEY_PERSONA, themeMode);
       } else {
-        localStorage.removeItem(THEME_KEY_MODE);
+        localStorage.removeItem(THEME_KEY_PERSONA);
       }
     }
   }, [themeMode, isInitialized]);
@@ -309,6 +333,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     setThemeFontSize: handleThemeFontSize,
     themeAppearance: themeAppearance,
     setThemeAppearance: handleThemeAppearance,
+    toggleThemeAppearance,
     themeAnimationSettings,
     setThemeAnimationSettings,
     themeMode,

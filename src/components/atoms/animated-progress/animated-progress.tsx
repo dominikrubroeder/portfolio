@@ -84,7 +84,7 @@ export function AnimatedProgress({
           <span
             className={cn('font-bold', color)}
             style={{
-              fontSize: `${progress === 100 ? 8 : size > 50 ? size / 6 : 9}px`
+              fontSize: `${progress === 100 ? 0.75 : size > 50 ? size / 80 : 0.75}rem`
             }}
             aria-hidden="true"
           >

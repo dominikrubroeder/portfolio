@@ -1,38 +1,29 @@
-import { Container } from '@/components/atoms/container';
-import { Animate } from '@/components/molecules/animate';
+import { Container } from '@/components/organisms/layout/container';
 import { BrandList } from '@/components/organisms/brand';
-import { Hr } from '@/components/atoms/hr';
 import { mainTechnologies } from '@/components/organisms/technologies';
 import type { Metadata } from 'next';
-import { Blockquote } from '@/components/atoms/blockquote';
+import { PageTemplate } from '@/components/templates/page-template';
 
 export const metadata: Metadata = {
-  title: 'Technologies | Dominik Rubröder, UX Design Engineer',
+  title: 'Technologies | Dominik Rubröder, UX Engineer',
   description:
     'Coding technologies; languages that bring design to life with code.'
 };
 
 export default function TechnologiesPage() {
   return (
-    <>
-      <Animate delay={0.1}>
-        <Container as="section" size="container-readable" className="space-y-2">
-          <h1>Technologies</h1>
-          <Blockquote className="mt-3 sm:mt-5">
-            Technologies; languages that bring design to life with code. There
-            is a wide array of frameworks out there, here is what i use for
-            daily coding tasks:
-          </Blockquote>
-        </Container>
-      </Animate>
-
-      <Animate delay={0.16}>
-        <Container as="section" size="container-readable">
-          <BrandList brands={mainTechnologies} />
-        </Container>
-      </Animate>
-
-      <Hr variant="container" />
-    </>
+    <PageTemplate
+      h1="Technologies"
+      heroBlockquote="Technologies are the foundation of writing production-ready code. There is a wide array of frameworks out there, this is what i use in daily coding:"
+      heroNavigationHiddenLink="/technologies"
+    >
+      <Container
+        as="section"
+        size="container-readable"
+        className="animate-in-to-left-160"
+      >
+        <BrandList brands={mainTechnologies} />
+      </Container>
+    </PageTemplate>
   );
 }

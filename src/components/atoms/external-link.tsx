@@ -27,30 +27,29 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'group relative font-normal',
+        'group relative items-center px-1 hover:bg-muted active:bg-muted [&_img]:inline-block [&_img]:align-middle [&_svg]:inline-block [&_svg]:align-text-top [&_svg:first-child]:mb-1 [&_svg:first-child]:align-middle [html[data-theme=default]_&]:rounded',
         variant === 'underline',
         color === 'primary' && 'text-primary hover:text-primary-hover',
+        color === 'primary-foreground' &&
+          'text-primary-foreground hover:text-primary-hover',
         color === 'foreground' && 'text-foreground',
         color === 'muted' && 'text-muted-foreground hover:text-foreground',
-        size === 'xs' && 'text-xs',
-        size === 'sm' && 'text-sm',
-        size === 'md' && 'text-base',
-        size === 'lg' && 'text-lg',
+        color === 'current' && 'text-current',
+        size === 'xs' && 'space-x-0.5 text-xs [&_img]:size-3 [&_svg]:size-3',
+        size === 'sm' && 'space-x-0.5 text-sm [&_img]:size-3 [&_svg]:size-3',
+        size === 'md' && 'space-x-1 text-base [&_img]:size-4 [&_svg]:size-4',
+        size === 'lg' && 'space-x-1 text-lg [&_img]:size-5 [&_svg]:size-5',
         className
       )}
       target="_blank"
       rel="noopener noreferrer"
+      title={rest.title || `View ${href}`}
+      aria-label={rest['aria-label'] || `Go to ${href} in an external tab`}
       {...rest}
     >
-      <span className="rounded px-1 hover:bg-muted active:bg-muted">
-        {children}
-      </span>
+      {children}
 
-      {showExternalIndicator && (
-        <ArrowUpRightIcon
-          className={cn('inline-block size-3.5 text-current')}
-        />
-      )}
+      {showExternalIndicator && <ArrowUpRightIcon />}
     </a>
   );
 }

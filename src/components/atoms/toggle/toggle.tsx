@@ -1,36 +1,32 @@
 'use client';
 
-import { useCallback, useState } from 'react';
-
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/components/organisms/theme';
 
 export function Toggle({
   label,
-  className,
-  enabled,
-  onClick
+  isEnabled,
+  onClick,
+  stretchWidth,
+  className
 }: {
   label?: string;
+  isEnabled: boolean;
+  onClick: () => void;
+  stretchWidth?: boolean;
   className?: string;
-  enabled?: boolean;
-  onClick?: () => void;
 }) {
-  const [isEnabled, setIsEnabled] = useState<boolean | undefined>(enabled);
   const { theme, shouldAnimate } = useTheme();
-
-  const handleOnClick = useCallback(() => {
-    setIsEnabled((previousState) => !previousState);
-    onClick ? onClick() : null;
-  }, [onClick]);
 
   return (
     <div
       className={cn(
         'flex cursor-pointer items-center gap-2 select-none',
+        !isEnabled && 'interactive',
+        stretchWidth && 'justify-between',
         className
       )}
-      onClick={handleOnClick}
+      onClick={onClick}
     >
       {label && <span className="text-foreground">{label}</span>}
 

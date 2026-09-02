@@ -10,7 +10,7 @@ export function ButtonScrollToTop({ className }: { className?: string }) {
   const { scrollToTop } = useScrollToTop();
 
   return (
-    <Button className={cn(className)} rounded onClick={() => scrollToTop()}>
+    <Button className={cn(className)} onClick={() => scrollToTop()}>
       <ArrowUpIcon />
       <span className="sr-only">Scroll to the top of the page</span>
     </Button>

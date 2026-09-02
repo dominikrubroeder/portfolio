@@ -26,7 +26,7 @@ import type { Brand } from '@/components/organisms/brand';
 export const mainTechnologies: Brand[] = [
   {
     name: 'React',
-    description: 'as user interface web library',
+    description: 'as web UI library',
     logo: <LogoReact id="technologies-react" className="size-12" />,
     href: 'https://react.dev/',
     usageLevel: 'Expert'
@@ -65,7 +65,7 @@ export const mainTechnologies: Brand[] = [
     name: 'Markdown',
     href: 'https://markdown.de/',
     logo: <LogoMarkdown id="technologies-markdown" className="size-12" />,
-    description: 'for documentation and AI communication',
+    description: 'for documentation',
     usageLevel: 'Expert'
   }
 ];

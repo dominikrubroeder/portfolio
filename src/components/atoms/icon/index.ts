@@ -3,3 +3,8 @@ export { IconAtom } from './icon-atom';
 export { IconMolecule } from './icon-molecule';
 export { OrganismnIcon } from './icon-organism';
 export { IconTemplate } from './icon-template';
+export { IconAtomicDesign } from './icon-atomic-design';
+export { IconAtomicDesignTokens } from './icon-atomic-design-tokens';
+export { IconAnimationsOnTheWeb } from './icon-animations-on-the-web';
+export { IconYinYang } from './icon-yin-yang';
+export { IconTheProductEngineeringSweetSpot } from './icon-the-product-engineering-sweet-spot';

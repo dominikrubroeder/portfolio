@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 
-import { BrandLogo } from '@/components/atoms/brand-logo';
-import { Button } from '@/components/atoms/button';
 import type { Brand } from '@/components/organisms/brand';
+import { BrandLogo } from '@/components/organisms/brand';
+import { Button } from '@/components/atoms/button';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
 
 export function BrandLink({
@@ -45,6 +45,7 @@ export function BrandLink({
         showLabel && 'gap-3',
         className
       )}
+      hideExternalIndicator
     >
       {!!brand.logo ? (
         brand.logo
@@ -68,7 +69,7 @@ export function BrandLink({
 
       <span
         className={cn(
-          'absolute -bottom-6 left-1/2 w-max max-w-18 -translate-x-1/2 truncate text-sm',
+          'absolute -bottom-6 left-1/2 w-max max-w-18 -translate-x-1/2 truncate text-sm font-normal text-muted-foreground group-hover:text-foreground',
           !showLabel && 'sr-only'
         )}
       >

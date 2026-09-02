@@ -21,9 +21,10 @@ export interface ButtonProps extends HTMLAttributes<
   className?: string;
   href?: string;
   target?: HTMLAttributeAnchorTarget;
-  rounded?: boolean;
   download?: boolean;
+  hideExternalIndicator?: boolean;
   children: ReactNode;
+  customIcon?: boolean;
 }
 
 export interface ReducedButtonProps extends Omit<ButtonProps, 'children'> {

@@ -22,7 +22,7 @@ export function ButtonContact({
     >
       {iconPosition === 'left' && <EnvelopeIcon className="size-5" />}
 
-      <span className={cn(withLabel ? '' : 'sr-only')}>Get in Touch</span>
+      <span className={cn(withLabel ? '' : 'sr-only')}>Contact</span>
 
       {iconPosition === 'right' && <EnvelopeIcon className="size-5" />}
     </Button>

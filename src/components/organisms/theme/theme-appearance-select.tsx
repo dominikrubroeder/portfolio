@@ -91,7 +91,7 @@ export function ThemeAppearanceSelect({
       {isOpen && (
         <div
           className={cn(
-            'absolute z-max rounded border bg-background px-3 shadow-xl motion-safe:animate-fade-up-1rem',
+            'absolute z-max rounded border bg-background px-3 shadow-xl [html[data-theme=default]_&]:motion-safe:animate-fade-up-1rem',
             menuPosition === 'bottom' &&
               'top-full left-1/2 mt-2 -translate-x-1/2',
             menuPosition === 'bottom-right' && 'top-full right-0 mt-2'
@@ -103,7 +103,7 @@ export function ThemeAppearanceSelect({
                 <Button
                   variant="ghost-foreground"
                   onClick={() => handleThemeChange(value as ThemeAppearance)}
-                  className="w-full"
+                  className="w-full font-normal"
                 >
                   {label}
                 </Button>

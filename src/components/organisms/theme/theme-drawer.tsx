@@ -23,8 +23,8 @@ import {
 
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { ThemeWinterToggle } from '@/components/organisms/events';
-import { ThemeDrawerSection } from '@/components/organisms/theme/theme-drawer-section';
-import { ThemeDrawerOption } from '@/components/organisms/theme/theme-drawer-option';
+import { ThemeSettingSection } from './theme-setting-section';
+import { ThemeSettingOption } from './theme-setting-option';
 import { ThemeSelect } from '@/components/organisms/theme/theme-select';
 import { ThemeAppearanceSelect } from '@/components/organisms/theme/theme-appearance-select';
 import { ThemeColorSetting } from '@/components/organisms/theme/theme-color-setting';
@@ -35,7 +35,7 @@ import { ThemeSpacingSectionBreakSetting } from '@/components/organisms/theme/th
 import { ArrowUturnLeftIcon, PlusIcon } from '@heroicons/react/16/solid';
 import { ThemeAnimationSetting } from '@/components/organisms/theme/theme-animation-setting';
 import { InformationCircleIcon } from '@heroicons/react/24/outline';
-import { useTheme } from '@/components/organisms/theme/theme-context';
+import { useTheme } from '@/components/organisms/theme';
 
 export function ThemeDrawer({
   trigger,
@@ -46,8 +46,8 @@ export function ThemeDrawer({
   buttonProps?: ReducedButtonProps;
   buttonIconOnly?: boolean;
 }) {
+  const { themeMode, setThemeMode } = useTheme();
   const [open, setOpen] = useState<boolean>(false);
-  const { theme } = useTheme();
   const isDesktop = useMediaQuery('(min-width: 768px)');
   const defaultTrigger = (
     <Button variant="text-foreground" {...buttonProps}>
@@ -72,84 +72,90 @@ export function ThemeDrawer({
 
   const content = (
     <div className="space-y-6 px-4 md:px-0">
-      <ThemeDrawerSection title="Theme">
-        <ThemeDrawerOption>
+      <ThemeSettingSection title="Theme">
+        <ThemeSettingOption>
           <div className="text-foreground">Theme</div>
           <ThemeSelect />
-        </ThemeDrawerOption>
+        </ThemeSettingOption>
 
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Appearance</div>
           <ThemeAppearanceSelect />
-        </ThemeDrawerOption>
+        </ThemeSettingOption>
 
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Color</div>
           <ThemeColorSetting />
-        </ThemeDrawerOption>
-      </ThemeDrawerSection>
+        </ThemeSettingOption>
+      </ThemeSettingSection>
 
-      <ThemeDrawerSection title="Font">
-        <ThemeDrawerOption>
+      <ThemeSettingSection title="Font">
+        <ThemeSettingOption>
           <div className="text-foreground">Size</div>
           <ThemeFontSizeSetting />
-        </ThemeDrawerOption>
-      </ThemeDrawerSection>
+        </ThemeSettingOption>
+      </ThemeSettingSection>
 
-      <ThemeDrawerSection title="Spacing">
-        <ThemeDrawerOption>
+      <ThemeSettingSection title="Spacing">
+        <ThemeSettingOption>
           <div className="text-foreground">Container Width</div>
           <ThemeSpacingContainerWidthSetting />
-        </ThemeDrawerOption>
+        </ThemeSettingOption>
 
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Section Break</div>
           <ThemeSpacingSectionBreakSetting />
-        </ThemeDrawerOption>
-      </ThemeDrawerSection>
+        </ThemeSettingOption>
+      </ThemeSettingSection>
 
       <ThemeAnimationSetting />
 
-      <ThemeDrawerSection title="Border">
-        <ThemeDrawerOption>
+      <ThemeSettingSection title="Border">
+        <ThemeSettingOption>
           <div className="text-foreground">Color</div>
           <ThemeColorSetting />
-        </ThemeDrawerOption>
+        </ThemeSettingOption>
 
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Radius</div>
           <ThemeColorSetting />
-        </ThemeDrawerOption>
+        </ThemeSettingOption>
 
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Width</div>
           <ThemeFontSizeSetting />
-        </ThemeDrawerOption>
+        </ThemeSettingOption>
 
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Style</div>
           <ThemeFontSizeSetting />
-        </ThemeDrawerOption>
-      </ThemeDrawerSection>
+        </ThemeSettingOption>
+      </ThemeSettingSection>
 
-      <ThemeDrawerSection title="Events">
-        <ThemeDrawerOption>
+      <ThemeSettingSection title="Events">
+        <ThemeSettingOption>
           <div className="text-foreground">Enable winter scene</div>
           <ThemeWinterToggle />
-        </ThemeDrawerOption>
-      </ThemeDrawerSection>
+        </ThemeSettingOption>
+      </ThemeSettingSection>
 
-      <ThemeDrawerSection title="Modes">
-        <ThemeDrawerOption>
+      <ThemeSettingSection title="Modes">
+        <ThemeSettingOption>
           <div className="text-foreground">Dev Mode</div>
-          <Toggle />
-        </ThemeDrawerOption>
+          <Toggle
+            isEnabled={themeMode === 'dev'}
+            onClick={() => setThemeMode('dev')}
+          />
+        </ThemeSettingOption>
 
-        <ThemeDrawerOption>
+        <ThemeSettingOption>
           <div className="text-foreground">Design Mode</div>
-          <Toggle />
-        </ThemeDrawerOption>
-      </ThemeDrawerSection>
+          <Toggle
+            isEnabled={themeMode === 'design'}
+            onClick={() => setThemeMode('design')}
+          />
+        </ThemeSettingOption>
+      </ThemeSettingSection>
     </div>
   );
 

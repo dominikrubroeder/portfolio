@@ -1,7 +1,7 @@
 import { Button } from '@/components/atoms/button';
 import Link from 'next/link';
 import type { Brand } from '@/components/organisms/brand';
-import { BrandLogo } from '@/components/atoms/brand-logo';
+import { BrandLogo } from '@/components/organisms/brand';
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 import { cn } from '@/lib/utils';
 
@@ -22,7 +22,7 @@ export function BrandRow({
       title={`Go to external ${brand.name} website`}
       aria-label={`Click to go to external ${brand.name} website`}
       target="_blank"
-      className="group relative flex items-center justify-between gap-3 rounded p-2 hover:bg-muted motion-safe:transition xs:gap-4 xl:gap-8"
+      className="group relative flex items-center justify-between gap-3 rounded-2xl p-2 hover:bg-muted motion-safe:transition xs:gap-4 xl:gap-8"
     >
       <div className="flex items-center gap-3 sm:gap-8">
         <BrandLogo

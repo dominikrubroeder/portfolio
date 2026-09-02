@@ -1,6 +1,9 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 
 import type { BadgeProps } from '@/components/atoms/badge';
+import { useTheme } from '@/components/organisms/theme';
 
 export function Badge({
   variant = 'primary',
@@ -9,6 +12,8 @@ export function Badge({
   children,
   ...rest
 }: BadgeProps & React.HTMLAttributes<HTMLDivElement>) {
+  const { theme } = useTheme();
+
   return (
     <div
       className={cn(
@@ -20,6 +25,7 @@ export function Badge({
         size === 'sm' && 'px-2 py-0.5 text-sm',
         size === 'md' && 'px-3 py-1 text-base',
         size === 'lg' && 'text-md px-3 py-2',
+        theme.key === 'wireframe' && 'rounded-none',
         className
       )}
       {...rest}

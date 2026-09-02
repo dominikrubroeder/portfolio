@@ -15,7 +15,7 @@ export function ToggleAutoMode({ className }: { className?: string }) {
         setThemeAppearance('system');
       }}
       className={cn('shrink-0 rounded border p-4', className)}
-      enabled={themeAppearance === 'system'}
+      isEnabled={themeAppearance === 'system'}
     />
   );
 }

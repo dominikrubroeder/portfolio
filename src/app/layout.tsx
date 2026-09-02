@@ -1,7 +1,7 @@
 import './globals.css';
-import type { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
-import { Indie_Flower, JetBrains_Mono } from 'next/font/google';
+import { JetBrains_Mono, Outfit } from 'next/font/google';
 
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -10,14 +10,16 @@ import { Footer } from '@/components/organisms/footer';
 import { Header } from '@/components/organisms/header';
 import {
   themeInitializationScript,
-  ThemeProvider
+  ThemeProvider,
+  ThemeSidebar
 } from '@/components/organisms/theme';
 
 import type { Metadata } from 'next';
 import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
-import { TooltipProvider } from '@/components/atoms/tooltip/shadcnui/tooltip';
-import { PageTemplate } from '@/components/templates/page-template';
+import { TooltipProvider } from '@/components/atoms/tooltip';
+import { SidebarProvider } from '@/components/organisms/sidebar';
+import { ScrollToTop } from '@/components/atoms/scroll-to-top';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -25,19 +27,21 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono'
 });
 
-const indieFlower = Indie_Flower({
+const outfit = Outfit({
   subsets: ['latin'],
-  weight: '400',
-  variable: '--font-handwritten'
+  display: 'swap',
+  variable: '--font-outfit'
 });
 
 export const metadata: Metadata = {
-  title: 'Dominik Rubröder, UX Design Engineer',
-  description: 'Design the thing. All the way through.',
+  title: 'Design with code, code by design | Dominik Rubröder, UX Engineer',
+  description:
+    'This is my motto since i started my career. I love to design, even more with code.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
-    title: 'Dominik Rubröder, UX Design Engineer',
-    description: 'Design the thing. All the way through.',
+    title: 'Design with code, code by design | Dominik Rubröder, UX Engineer',
+    description:
+      'This is my motto since i started my career. I love to design, even more with code.',
     url: ROUTING_PUBLIC_DOMAIN,
     siteName: ROUTING_PUBLIC_DOMAIN.replace('https://www.', ''),
     images: [
@@ -59,31 +63,41 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`scroll-smooth bg-background ${indieFlower.variable} ${jetbrainsMono.variable}`}
+      className={`scroll-smooth bg-background ${jetbrainsMono.variable} ${outfit.variable}`}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <body>
+      <body className="flex min-h-screen flex-col">
         <ThemeProvider>
-          <script
-            id="theme-initializer"
-            dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          />
+          <TooltipProvider>
+            <SidebarProvider>
+              <script
+                id="theme-initializer"
+                dangerouslySetInnerHTML={{ __html: themeInitializationScript }}
+              />
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+              />
 
-          <Header />
+              <Header />
 
-          <PageTemplate>
-            <TooltipProvider>{children}</TooltipProvider>
-          </PageTemplate>
+              <main className="flex-1 space-y-8 pt-4 sm:space-y-12">
+                <Suspense>
+                  <ScrollToTop />
+                </Suspense>
 
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
+                {children}
+                <ThemeSidebar />
+              </main>
+
+              <Footer />
+            </SidebarProvider>
+          </TooltipProvider>
         </ThemeProvider>
+
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

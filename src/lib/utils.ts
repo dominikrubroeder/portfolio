@@ -21,7 +21,7 @@ export function capitalizeWords(input: string): string {
 
 export function formatDate({
   dateString,
-  format = 'Month Day, Year at Time',
+  format = 'Month Day, Year',
   options
 }: {
   dateString: string;

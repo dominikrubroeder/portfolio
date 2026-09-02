@@ -862,7 +862,7 @@ const tools: Tools = [
       }
     ],
     description:
-      "In case you can't find a popular package, reach out and get in touch to clarify my experience with it."
+      "In case you can't find a popular package, please get in touch to clarify my experience with it."
   },
   {
     group: 'Payment',
@@ -911,7 +911,7 @@ const tools: Tools = [
     ]
   },
   {
-    group: 'Photo + Graphics',
+    group: 'Photo + Graphics + Layout',
     children: [
       {
         name: 'Adobe Illustrator',
@@ -1114,6 +1114,14 @@ const tools: Tools = [
         href: 'https://headlessui.com',
         logo: '',
         usageLevel: 'Applied'
+      },
+      {
+        name: 'HeroUI',
+        description:
+          'Beautiful, accessible React UI components built on React Aria and Tailwind CSS',
+        href: 'https://heroui.com',
+        logo: '',
+        usageLevel: 'Aware'
       },
       {
         name: 'Material UI',

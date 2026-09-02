@@ -6,7 +6,7 @@
 
 Mission: Make others easily aware of my background, skill set and drivers
 
-Vision: Combine design and code into one craft. Design at the core, code in execution.
+Vision: Combine design and code into one craft. Design at the core, code in the execution.
 
 Goals:
 
@@ -23,8 +23,8 @@ Goals:
 
 ## ⚛️ Tech-Stack
 
-- `next` version 16.2.0
-- `react` version 19.2.4
+- `next` version 16.2+
+- `react` version 19.2.4+
 - `tailwindcss` version 4+
 - `typescript` version 5+
 - `motion` version 12+
@@ -33,6 +33,7 @@ Goals:
 
 Before you write any code, those rules have to be followed for all concepts and implementations:
 
+- Always use the `./DESIGN.md` file for user interface and texting related tasks
 - Make yourself aware of the `Foundation` in this file
 - Make yourself aware of the `Tech-Stack` in this file
 - Make yourself aware and use of all files and folders in the `docs` directory to enhance your knowledge
@@ -129,7 +130,7 @@ Atomic Design approach by Brad Frost, enhanced with the Subatomic approach inclu
 ### Motion
 
 - Use CSS animation whenever possible
-- Use `motion` when the animation requires JavaScript to achieve the desired goal
+- Use the `motion` library when the animation requires JavaScript to achieve the desired goal
 - Always be performance-sensitive, optimize accordingly
 - Target hardware acceleration for the most important animations
 

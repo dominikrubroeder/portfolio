@@ -13,7 +13,7 @@ export interface Project {
   timeframe?: string;
   logo: ReactNode | undefined;
   role: string[] | undefined;
-  aspects: string[] | undefined;
+  responsibilities: string[] | undefined;
   tools: Brand[] | undefined;
   technologies: Brand[] | undefined;
   companies:
@@ -22,7 +22,6 @@ export interface Project {
         label: 'mediawave commerce GmbH' | 'Loy GmbH' | 'Private';
       }[]
     | undefined;
-  caseStudyUrls: string[] | undefined;
   demoUrls: { label: string; src: string }[] | undefined;
   previewImage?: string;
   previewImageTimestamp?: string;
