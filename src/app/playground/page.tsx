@@ -19,7 +19,7 @@ export default function PlaygroundPage() {
       heroNavigationHiddenLink="/playground"
     >
       <div className="animate-in-to-left-160">
-        <Container className="grid grid-cols-2 gap-4">
+        <Container className="grid gap-4 sm:grid-cols-2">
           {playgroundComponents.map((component) => (
             <PlaygroundBox key={component.id} playgroundComponent={component} />
           ))}
