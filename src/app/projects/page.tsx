@@ -35,7 +35,7 @@ export default function ProjectsPage() {
         <Container
           as="section"
           size="container"
-          className="animate-in-to-left-160"
+          className="animate-in-to-left-160 space-y-5"
         >
           {heroProject.previewImage && (
             <Link
@@ -43,17 +43,28 @@ export default function ProjectsPage() {
               title={`Open ${heroProject.title} in external tab`}
               aria-label={`Click to open ${heroProject.title} in an external tab`}
               target="_blank"
-              className="relative"
+              className="relative block space-y-2 sm:space-y-0"
             >
               <Image
                 src={heroProject.previewImage}
                 alt={`${heroProject.title} preview image`}
                 width={1920}
                 height={630}
-                className="max-w-panorama w-full"
+                className="max-w-panorama w-full scale-105 sm:scale-100"
                 draggable={false}
                 preload={true}
               />
+
+              {heroProject.previewImageTimestamp && (
+                <small className="block text-center">
+                  Screenshot taken on
+                  <span className="ml-1">
+                    {formatDate({
+                      dateString: heroProject.previewImageTimestamp
+                    })}
+                  </span>
+                </small>
+              )}
             </Link>
           )}
 
@@ -149,7 +160,7 @@ export default function ProjectsPage() {
                           alt={`${project.title} preview image`}
                           width={800}
                           height={600}
-                          className="w-full scale-105"
+                          className="block w-full scale-105"
                           draggable={false}
                           preload={true}
                         />
