@@ -32,7 +32,7 @@ export default async function HomePage() {
           Composing the frontend, its architecture, the user experience, the
           components, design systems, patterns, principles is my home to work
           with. Whether it's working in a design tool like Figma, or writing the
-          components in code is the same language it is originated from: a idea
+          components in code is the same language it is originated from: an idea
           from the mind and heart. Now, bringing this together with the
           requirements from the project is a powerful combination that drives my
           contribution to the frontend experience and when working in motivated
