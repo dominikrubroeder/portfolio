@@ -10,7 +10,10 @@ import { Container } from '@/components/organisms/layout';
 export function Header() {
   return (
     <header className="sticky top-0 z-100 border-b bg-background lg:relative lg:h-24 lg:border-none">
-      <Container className="flex items-center justify-between gap-2 py-4 xs:gap-4">
+      <Container
+        className="flex items-center justify-between gap-2 py-4 xs:gap-0"
+        as="div"
+      >
         <div className="flex items-center gap-2 xs:gap-3">
           <Avatar
             className={cn(
@@ -22,13 +25,12 @@ export function Header() {
             as="Link"
           />
 
-          <h1 className="mb-0 w-max">
-            <span className="block w-max text-base leading-snug">
-              Dominik Rubröder
-            </span>
-            <span className="block text-sm font-normal text-muted-foreground">
+          <div className="shrink-0">
+            <div className="leading-tight font-bold">Dominik Rubröder</div>
+
+            <div className="flex flex-nowrap text-sm font-normal text-muted-foreground">
               <span>UX Engineer</span>
-              <span className="ml-0.5 hidden sm:inline-block">@</span>
+              <span className="ml-0.5">@</span>
               <ExternalLink
                 href="https://www.mediawave.de"
                 color="muted"
@@ -38,12 +40,12 @@ export function Header() {
               >
                 <span>mediawave</span>
               </ExternalLink>
-            </span>
-          </h1>
+            </div>
+          </div>
         </div>
 
         <div className="hidden xs:flex xs:items-center xs:gap-1.5">
-          <ButtonGroup minimizeSpacing>
+          <ButtonGroup minimizeSpacing className="hidden sm:flex">
             <ThemeAppearanceSwitch />
           </ButtonGroup>
 

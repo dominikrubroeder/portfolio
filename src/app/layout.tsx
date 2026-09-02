@@ -36,7 +36,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: 'Design with code, code by design | Dominik Rubröder, UX Engineer',
   description:
-    'This is my motto since i started my career. I love to design, even more with code.',
+    'Composing the frontend, its architecture, the user experience, the components, design systems, patterns, principles is my home to work with.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
     title: 'Design with code, code by design | Dominik Rubröder, UX Engineer',

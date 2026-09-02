@@ -10,6 +10,7 @@ import {
   IconAtomicDesignTokens
 } from '@/components/atoms/icon';
 import { ButtonGroup } from '@/components/molecules/button-group';
+import { ThemeAppearanceSwitch } from '@/components/organisms/theme/theme-appearance-switch';
 
 export function Footer() {
   return (
@@ -30,6 +31,10 @@ export function Footer() {
                 </li>
               ))}
             </Ul>
+          </div>
+
+          <div>
+            <ThemeAppearanceSwitch className="sm:hidden" />
           </div>
 
           <div className="max-w-container mx-auto space-y-1 pt-2 pb-1.5">
