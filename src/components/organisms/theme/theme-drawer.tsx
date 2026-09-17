@@ -162,13 +162,13 @@ export function ThemeDrawer({
   const footer = (
     <DrawerFooter className="pt-2">
       <div className="grid gap-1">
-        <DrawerClose asChild>
+        <DrawerClose>
           <Button variant="ghost-foreground">
             <ArrowUturnLeftIcon /> Reset to default
           </Button>
         </DrawerClose>
 
-        <DrawerClose asChild>
+        <DrawerClose>
           <Button variant="ghost-foreground">Close</Button>
         </DrawerClose>
       </div>
@@ -183,7 +183,7 @@ export function ThemeDrawer({
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>{trigger ?? defaultTrigger}</DialogTrigger>
+        <DialogTrigger>{trigger ?? defaultTrigger}</DialogTrigger>
 
         <DialogContent>
           {header}
@@ -198,7 +198,7 @@ export function ThemeDrawer({
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>{trigger ?? defaultTrigger}</DrawerTrigger>
+      <DrawerTrigger>{trigger ?? defaultTrigger}</DrawerTrigger>
 
       <DrawerContent>
         <div className="space-y-6 overflow-y-auto">

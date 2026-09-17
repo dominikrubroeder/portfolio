@@ -4,6 +4,8 @@ import { PlaygroundBox } from '@/components/organisms/playground';
 import { PageTemplate } from '@/components/templates/page-template';
 import { playgroundComponents } from '@/components/organisms/playground/data';
 
+export const instant = false;
+
 export const metadata: Metadata = {
   title: 'Playground | Dominik Rubröder, UX Engineer',
   description: 'A free space for experimenting and testing component concepts'
@@ -16,7 +18,6 @@ export default function PlaygroundPage() {
       heroBlockquote={
         <>A free space for experimenting and testing component concepts</>
       }
-      heroNavigationHiddenLink="/playground"
     >
       <div className="animate-in-to-left-160">
         <Container className="grid gap-4 sm:grid-cols-2">

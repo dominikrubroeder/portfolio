@@ -7,6 +7,8 @@ import { Container } from '@/components/organisms/layout';
 import { Button } from '@/components/atoms/button';
 import { ArrowLeft } from 'lucide-react';
 
+export const instant = false;
+
 export default function PlaygroundDetailPage({
   params
 }: {

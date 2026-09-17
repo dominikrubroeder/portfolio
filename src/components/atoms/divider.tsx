@@ -25,9 +25,9 @@ export function Divider({
           className
         )}
       >
-        <span className="size-2 shrink-0 rounded-full border bg-muted" />
-        <span className="size-2 shrink-0 rounded-full border bg-muted" />
-        <span className="size-2 shrink-0 rounded-full border bg-muted" />
+        <span className="size-2 shrink-0 rounded-full border-primary bg-primary" />
+        <span className="size-2 shrink-0 rounded-full border-primary bg-primary" />
+        <span className="size-2 shrink-0 rounded-full border-primary bg-primary" />
       </div>
     );
   }

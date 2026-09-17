@@ -4,34 +4,25 @@ import { Typewriter, TypewriterProps } from '@/components/atoms/typewriter';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 
-/**
- *       <TypewriterOverlay
- *         phrases={['Hello, world!']}
- *         deleteLastPhrase={false}
- *         typeSpeed={60}
- *         delay={4200}
- *       />
- * */
-export function TypewriterOverlay({ ...props }: TypewriterProps) {
+export interface TypewriterOverlayProps extends TypewriterProps {
+  /** Called once the overlay has fully finished its exit animation. */
+  onExitComplete?: () => void;
+}
+
+export function TypewriterOverlay({
+  onExitComplete,
+  ...props
+}: TypewriterOverlayProps) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    if (document) {
-      document.body.classList.toggle('overflow-hidden');
-    }
-  }, []);
-
-  useEffect(() => {
-    const time = setTimeout(() => {
-      setIsVisible(false);
-      document.body.classList.remove('overflow-hidden');
-    }, props.delay ?? 6200);
-
-    return () => clearTimeout(time);
+    if (!isVisible) return;
+    document.body.classList.add('overflow-hidden');
+    return () => document.body.classList.remove('overflow-hidden');
   }, [isVisible]);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={onExitComplete}>
       {isVisible && (
         <motion.div
           key="typewriter-overlay"
@@ -62,7 +53,14 @@ export function TypewriterOverlay({ ...props }: TypewriterProps) {
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
               className="absolute -right-1 -bottom-1 size-2 border border-primary bg-primary"
             />
-            <Typewriter {...props} />
+
+            <Typewriter
+              {...props}
+              onComplete={() => {
+                props.onComplete?.();
+                setIsVisible(false);
+              }}
+            />
           </motion.div>
         </motion.div>
       )}

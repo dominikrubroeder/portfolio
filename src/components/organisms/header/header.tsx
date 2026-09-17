@@ -1,19 +1,14 @@
 import { Avatar } from '@/components/atoms/avatar';
-import { ExternalLink } from '@/components/atoms/external-link';
 import { ThemeColorSetting } from '@/components/organisms/theme';
 import { cn } from '@/lib/utils';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/organisms/events';
 import { ThemeAppearanceSwitch } from '@/components/organisms/theme/theme-appearance-switch';
 import { ButtonGroup } from '@/components/molecules/button-group';
-import { Container } from '@/components/organisms/layout';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-100 border-b bg-background lg:relative lg:h-24 lg:border-none">
-      <Container
-        className="flex items-center justify-between gap-2 py-4 xs:gap-0"
-        as="div"
-      >
+    <header className="sticky top-0 z-50 border-b bg-background lg:relative lg:z-0 lg:h-24 lg:border-none">
+      <div className="mx-auto flex max-w-(--container-readable) items-center justify-between gap-2 px-4 py-4 xs:gap-0">
         <div className="flex items-center gap-2 xs:gap-3">
           <Avatar
             className={cn(
@@ -29,17 +24,7 @@ export function Header() {
             <div className="leading-tight font-bold">Dominik Rubröder</div>
 
             <div className="flex flex-nowrap text-sm font-normal text-muted-foreground">
-              <span>UX Engineer</span>
-              <span className="ml-0.5">@</span>
-              <ExternalLink
-                href="https://www.mediawave.de"
-                color="muted"
-                size="sm"
-                title="Open mediawave commerce GmbH website"
-                aria-label="Open mediawave commerce GmbH website"
-              >
-                <span>mediawave</span>
-              </ExternalLink>
+              UX Engineer
             </div>
           </div>
         </div>
@@ -51,7 +36,7 @@ export function Header() {
 
           <ThemeColorSetting className="gap-1.5 sm:gap-2" />
         </div>
-      </Container>
+      </div>
     </header>
   );
 }

@@ -19,7 +19,7 @@ export function ProjectListSection({
     <>
       <Hr variant="container-readable" />
       <Container as="section">
-        <Ul className="space-y-5 sm:space-y-12 md:-mx-6">
+        <Ul className="space-y-5 sm:space-y-12">
           {projects
             .filter((project) => project.title !== projectHeroTitle)
             .map((project, index, array) => (

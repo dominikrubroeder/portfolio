@@ -27,7 +27,7 @@ export function Avatar({
         height={height}
         className={cn('shrink-0 rounded-full border-2 grayscale-0', className)}
         draggable={false}
-        priority
+        loading="eager"
       />
     );
 
@@ -49,7 +49,7 @@ export function Avatar({
         height={height}
         className={cn('shrink-0 rounded-full border-2 grayscale-0', className)}
         draggable={false}
-        priority
+        loading="eager"
       />
     </Link>
   );

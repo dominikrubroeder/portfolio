@@ -33,9 +33,9 @@ export function BrandLink({
       title={title || `Open ${brand.name} website`}
       aria-label={ariaLabel || `Open ${brand.name} website`}
       className={cn(
-        'group relative [&>img]:block [&>svg]:block',
+        'group relative [&>img]:block [&>img]:will-change-transform [&>svg]:block [&>svg]:will-change-transform',
         size === 'small' && 'h-11 w-11 p-1 [&>img]:size-6 [&>svg]:size-6',
-        size === 'medium' && 'h-17 w-18 p-2 [&>img]:size-12 [&>svg]:size-12',
+        size === 'medium' && 'h-17 w-18 p-2 [&>img]:size-11 [&>svg]:size-11',
         showLabel &&
           (labelPosition === 'top' || labelPosition === 'bottom') &&
           'grid items-center justify-center text-center [&>img]:mx-auto [&>svg]:mx-auto',
@@ -69,7 +69,7 @@ export function BrandLink({
 
       <span
         className={cn(
-          'absolute -bottom-6 left-1/2 w-max max-w-18 -translate-x-1/2 truncate text-sm font-normal text-muted-foreground group-hover:text-foreground',
+          'absolute -bottom-5 left-1/2 w-max -translate-x-1/2 text-sm font-semibold text-foreground group-hover:text-foreground',
           !showLabel && 'sr-only'
         )}
       >

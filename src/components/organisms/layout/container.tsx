@@ -6,7 +6,6 @@ import { cn } from '@/lib/utils';
 export function Container({
   as = 'section',
   size = 'container-readable',
-  horizontalPadding,
   animateIn,
   className,
   children,
@@ -14,8 +13,7 @@ export function Container({
   ...rest
 }: {
   as?: HTMLTag;
-  size?: 'container' | 'container-readable';
-  horizontalPadding?: boolean;
+  size?: 'container' | 'container-readable' | 'full-width';
   animateIn?: boolean;
   className?: string;
   children: ReactNode;
@@ -27,11 +25,11 @@ export function Container({
     <Comp
       ref={ref}
       className={cn(
-        'mx-auto scroll-mt-responsive px-4',
-        horizontalPadding && 'px-4 lg:px-0',
+        'relative z-20 mx-auto scroll-mt-responsive',
+        size === 'container' && 'max-w-(--container) px-4',
+        size === 'container-readable' && 'max-w-(--container-readable) px-4',
+        size === 'full-width' && 'w-full',
         animateIn && 'motion-safe:animate-fade-up-1rem',
-        size === 'container' && 'max-w-(--container)',
-        size === 'container-readable' && 'max-w-(--container-readable)',
         className
       )}
       {...rest}

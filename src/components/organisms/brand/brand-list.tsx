@@ -12,22 +12,20 @@ export function BrandList({
   className?: string;
 }) {
   return (
-    <Ul className={cn('-ml-1.5 md:-ml-2.5', className)}>
+    <Ul
+      className={cn(
+        'grid grid-cols-3 gap-4 gap-y-10 sm:grid-cols-4 md:-ml-1.5 md:-ml-2.5 md:flex md:flex-wrap',
+        className
+      )}
+    >
       {brands.map((brand, index) => (
         <li key={`brand-link-${brand.name}-${index}`}>
-          <div className="inline-flex items-center gap-2 lg:gap-4">
-            <BrandLink
-              brandLogoId={`brand-link-${brand.name}-${index}`}
-              brand={brand}
-            />
-
-            <div className="space-x-1 leading-normal">
-              <b>{brand.name}</b>
-              <span className="font-normal text-muted-foreground">
-                {brand.description}
-              </span>
-            </div>
-          </div>
+          <BrandLink
+            brandLogoId={`brand-link-${brand.name}-${index}`}
+            brand={brand}
+            labelPosition="bottom"
+            showLabel
+          />
         </li>
       ))}
     </Ul>

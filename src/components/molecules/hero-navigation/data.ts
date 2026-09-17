@@ -7,6 +7,12 @@ export const heroNavigation: {
   hidden: boolean;
 }[] = [
   {
+    icon: 'avatar',
+    label: 'Introduction',
+    href: '/',
+    hidden: false
+  },
+  {
     icon: 'chart-no-axes-gantt',
     label: 'Projects',
     href: '/projects',
@@ -14,32 +20,14 @@ export const heroNavigation: {
   },
   {
     icon: 'wrench',
-    label: 'Tools',
-    href: '/tools',
+    label: 'Tools and Technologies',
+    href: '/tools-and-technologies',
     hidden: false
-  },
-  {
-    icon: 'code',
-    label: 'Technologies',
-    href: '/technologies',
-    hidden: false
-  },
-  {
-    icon: '',
-    label: 'Showcase',
-    href: '/showcase',
-    hidden: true
   },
   {
     icon: 'balloon',
     label: 'Playground',
     href: '/playground',
     hidden: false
-  },
-  {
-    icon: 'notebook-pen',
-    label: 'Blog',
-    href: '/blog',
-    hidden: true
   }
 ];
