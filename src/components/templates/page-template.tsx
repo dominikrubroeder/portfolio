@@ -3,6 +3,7 @@ import { Blockquote } from '@/components/atoms/blockquote';
 import { Container } from '@/components/organisms/layout';
 import { H1 } from '@/components/organisms/typography';
 import { IconLucide } from '@/components/atoms/icon/icon-lucide';
+import { ScrollToTop } from '@/components/atoms/scroll-to-top';
 
 export function PageTemplate({
   h1,
@@ -19,6 +20,8 @@ export function PageTemplate({
 }) {
   return (
     <>
+      <ScrollToTop />
+
       <Container
         as="section"
         size="container-readable"

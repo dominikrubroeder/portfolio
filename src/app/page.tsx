@@ -21,10 +21,15 @@ import { DrawerTools } from '@/components/molecules/drawer/drawer-tools';
 import { Animate } from '@/components/molecules/animate';
 import { DrawerTechnologies } from '@/components/molecules/drawer/drawer-technologies';
 import { Divider } from '@/components/atoms/divider';
+import { ScrollToTop } from '@/components/atoms/scroll-to-top';
+
+export const instant = false;
 
 export default async function HomePage() {
   return (
     <>
+      <ScrollToTop />
+
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
 
       <ThemeNotesBackgroundCornellNotes />
@@ -72,9 +77,14 @@ export default async function HomePage() {
         </Container>
       </Animate>
 
-      <Animate direction="up" className="mb-0">
+      <Animate
+        direction="up"
+        className="mb-0"
+        viewport={{ once: true, margin: '-16px' }}
+      >
         <Container as="section">
           <Divider variant="three-dotted" />
+          <span className="block h-2" />
           <h3 className="text-4xl leading-[1.1] text-balance xs:text-5xl sm:text-7xl">
             I connect the worlds of design and code
           </h3>

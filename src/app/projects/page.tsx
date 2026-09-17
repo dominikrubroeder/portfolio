@@ -16,9 +16,11 @@ import { Animate } from '@/components/molecules/animate';
 import { Avatar } from '@/components/atoms/avatar';
 import { ButtonBack } from '@/components/atoms/button/button-back';
 
+export const instant = false;
+
 export const metadata: Metadata = {
   title: 'Projects | Dominik Rubröder, UX Engineer',
-  description: 'Contributed projects from 2016 to 2026.'
+  description: 'Project contributions from 2016 to 2026'
 };
 
 export default function ProjectsPage() {

@@ -4,6 +4,8 @@ import { PlaygroundBox } from '@/components/organisms/playground';
 import { PageTemplate } from '@/components/templates/page-template';
 import { playgroundComponents } from '@/components/organisms/playground/data';
 
+export const instant = false;
+
 export const metadata: Metadata = {
   title: 'Playground | Dominik Rubröder, UX Engineer',
   description: 'A free space for experimenting and testing component concepts'

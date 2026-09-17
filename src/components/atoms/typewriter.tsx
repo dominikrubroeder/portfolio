@@ -15,6 +15,8 @@ export interface TypewriterProps {
   loop?: boolean;
   showCursor?: boolean;
   className?: string;
+  /** Extra delay (ms) to keep the final phrase visible before it completes. */
+  endHoldDuration?: number;
   /** Called once, when typing (and deleting, if enabled) has finished. */
   onComplete?: () => void;
 }
@@ -31,6 +33,7 @@ export function Typewriter({
   startDelay = 1200,
   loop = true,
   showCursor = true,
+  endHoldDuration = 0,
   onComplete
 }: TypewriterProps) {
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -86,8 +89,10 @@ export function Typewriter({
         const isLastPhrase = phraseIndex === phrases.length - 1;
 
         if (isLastPhrase && !deleteLastPhrase) {
-          setIsComplete(true);
-          return;
+          const timeout = setTimeout(() => {
+            setIsComplete(true);
+          }, endHoldDuration);
+          return () => clearTimeout(timeout);
         }
 
         if (phrases.length > 1 || loop) {
@@ -109,7 +114,8 @@ export function Typewriter({
     loop,
     isComplete,
     hasStarted,
-    deleteLastPhrase
+    deleteLastPhrase,
+    endHoldDuration
   ]);
 
   return (

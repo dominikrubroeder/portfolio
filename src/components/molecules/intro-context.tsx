@@ -22,12 +22,13 @@ export function IntroProvider({ children }: { children: ReactNode }) {
     <IntroContext.Provider value={value}>
       {isPlaying ? (
         <TypewriterOverlay
-          phrases={['Hello World! :)']}
+          phrases={['Hello World!']}
           loop={false}
           deleteLastPhrase={false}
           onExitComplete={() => {
             setIsPlaying(false);
           }}
+          endHoldDuration={800}
         />
       ) : (
         children

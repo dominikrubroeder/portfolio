@@ -39,7 +39,7 @@ export function Footer() {
             <ButtonGroup className="mx-auto inline-flex">
               <Button
                 variant="ghost-foreground"
-                href="/certificates/Atomic-Design-Certificate-Dominik-Rubröder.pdf"
+                href="/certificates/atomic-design.pdf"
                 size="small"
                 className="gap-1.5"
               >
@@ -49,7 +49,7 @@ export function Footer() {
 
               <Button
                 variant="ghost-foreground"
-                href="/certificates/subatomic-brad-ian-frost-dominik-rubröder-2025-11-25-certificate.pdf"
+                href="/certificates/subatomic.pdf"
                 size="small"
                 className="gap-1.5"
               >
