@@ -25,7 +25,7 @@ export function BrandRow({
         <BrandLogo
           id={`brand-row-${brand.name}-${index}`}
           brand={brand.name}
-          className="size-8 xs:size-11 sm:size-12 [&>svg]:size-8 xs:[&>svg]:size-11"
+          className="size-8 shrink-0 xs:size-11 sm:size-12 [&>svg]:size-8 xs:[&>svg]:size-11"
         />
 
         <div className="break-words">
