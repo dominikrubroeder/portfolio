@@ -12,10 +12,11 @@ export interface TypewriterProps {
   deleteLastPhrase?: boolean;
   pauseDuration?: number;
   startDelay?: number;
-  delay?: number;
   loop?: boolean;
   showCursor?: boolean;
   className?: string;
+  /** Called once, when typing (and deleting, if enabled) has finished. */
+  onComplete?: () => void;
 }
 
 /** https://v0.app/chat/typewriter-effect-h76EGSmTotJ?ref=CD1BRV */
@@ -28,9 +29,9 @@ export function Typewriter({
   deleteLastPhrase = true,
   pauseDuration = 2000,
   startDelay = 1200,
-  delay = 0,
   loop = true,
-  showCursor = true
+  showCursor = true,
+  onComplete
 }: TypewriterProps) {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
@@ -44,6 +45,12 @@ export function Typewriter({
     }, startDelay);
     return () => clearTimeout(timeout);
   }, [startDelay]);
+
+  useEffect(() => {
+    if (isComplete) onComplete?.();
+    // Fire exactly once per completion, not on every `onComplete` identity change.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isComplete]);
 
   useEffect(() => {
     if (isComplete || !hasStarted) return;
@@ -124,114 +131,6 @@ export function Typewriter({
           }}
         />
       )}
-    </span>
-  );
-}
-
-interface CharacterTypewriterProps {
-  text: string;
-  className?: string;
-  charClassName?: string;
-  delay?: number;
-  staggerDelay?: number;
-}
-
-export function CharacterTypewriter({
-  text,
-  className,
-  charClassName,
-  delay = 0,
-  staggerDelay = 0.05
-}: CharacterTypewriterProps) {
-  const characters = text.split('');
-
-  return (
-    <span className={cn('inline-flex flex-wrap', className)}>
-      {characters.map((char, index) => (
-        <motion.span
-          key={`${char}-${index}`}
-          className={cn(charClassName)}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.1,
-            delay: delay + index * staggerDelay,
-            ease: 'easeOut'
-          }}
-        >
-          {char === ' ' ? '\u00A0' : char}
-        </motion.span>
-      ))}
-    </span>
-  );
-}
-
-interface WordTypewriterProps {
-  text: string;
-  className?: string;
-  wordClassName?: string;
-  delay?: number;
-  staggerDelay?: number;
-}
-
-export function WordTypewriter({
-  text,
-  className,
-  wordClassName,
-  delay = 0,
-  staggerDelay = 0.15
-}: WordTypewriterProps) {
-  const words = text.split(' ');
-
-  return (
-    <span className={cn('inline-flex flex-wrap gap-x-2', className)}>
-      {words.map((word, index) => (
-        <motion.span
-          key={`${word}-${index}`}
-          className={cn(wordClassName)}
-          initial={{ opacity: 0, filter: 'blur(4px)' }}
-          animate={{ opacity: 1, filter: 'blur(0px)' }}
-          transition={{
-            duration: 0.3,
-            delay: delay + index * staggerDelay,
-            ease: 'easeOut'
-          }}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </span>
-  );
-}
-
-interface RevealTypewriterProps {
-  text: string;
-  className?: string;
-  delay?: number;
-  duration?: number;
-}
-
-export function RevealTypewriter({
-  text,
-  className,
-  delay = 0,
-  duration = 2
-}: RevealTypewriterProps) {
-  return (
-    <span className={cn('relative inline-block overflow-hidden', className)}>
-      <span className="invisible">{text}</span>
-      <motion.span
-        className="absolute inset-0"
-        initial={{ clipPath: 'inset(0 100% 0 0)' }}
-        animate={{ clipPath: 'inset(0 0% 0 0)' }}
-        transition={{
-          duration,
-          delay,
-          ease: [0.65, 0, 0.35, 1]
-        }}
-      >
-        {text}
-      </motion.span>
     </span>
   );
 }

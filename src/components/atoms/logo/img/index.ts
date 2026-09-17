@@ -7,7 +7,8 @@ export { LogoProcreate } from './logo-procreate';
 export { LogoPnpm } from './logo-pnpm';
 export { LogoTanStack } from './logo-tanstack';
 export { LogoZod } from './logo-zod';
-export { LogoNueJs } from './logo-nue-js';
 export { LogoSwiftUi } from './logo-swift-ui';
+export { LogoCodex } from './logo-codex';
+export { LogoPen } from './logo-pen';
 
 export * from './config';

@@ -2,32 +2,20 @@ import { cn } from '@/lib/utils';
 
 import {
   LogoAdobe,
-  LogoAdobeIllustrator,
-  LogoAdobeInDesign,
-  LogoAdobePhotoshop,
-  LogoAdobeXd,
   LogoAlgolia,
-  LogoAngular,
   LogoApple,
-  LogoArc,
   LogoAstro,
   LogoAuthjs,
   LogoAws,
-  LogoAxios,
   LogoBaseUi,
   LogoBaymardInstitute,
   LogoBetterAuth,
-  LogoBrave,
   LogoBruno,
   LogoBun,
-  LogoCanva,
   LogoChatgpt,
   LogoChrome,
-  LogoClassVarianceAuthority,
   LogoClaudeAi,
-  LogoClerk,
-  LogoColorDesigner,
-  LogoContentserv,
+  LogoCodex,
   LogoCookiehub,
   LogoCraft,
   LogoCss,
@@ -36,8 +24,6 @@ import {
   LogoDailydev,
   LogoDeno,
   LogoDribbble,
-  LogoElasticsearch,
-  LogoEslint,
   LogoFactFinder,
   LogoFigma,
   LogoFirefox,
@@ -61,31 +47,30 @@ import {
   LogoJira,
   LogoJitter,
   LogoJunie,
-  LogoKlarna,
   LogoLighthouse,
   LogoLinkedin,
   LogoLottieFiles,
+  LogoLucide,
   LogoMarkdown,
   LogoMaterialIcons,
   LogoMaterialUi,
   LogoMeilisearch,
-  LogoMidjourney,
   LogoMiro,
   LogoMobbin,
   LogoMotion,
-  LogoN8n,
   LogoNetlify,
   LogoNextjs,
   LogoNielsenNormanGroup,
   LogoNodeJs,
   LogoNotes,
   LogoNpm,
-  LogoNueJs,
   LogoNuxt,
   LogoPa11y,
+  LogoPandaCss,
   LogoPaper,
   LogoPayone,
   LogoPayPal,
+  LogoPen,
   LogoPinterest,
   LogoPlaywright,
   LogoPnpm,
@@ -100,15 +85,12 @@ import {
   LogoSafari,
   LogoSass,
   LogoShadcnUi,
-  LogoShopify,
   LogoShopware,
   LogoSketch,
   LogoSlack,
   LogoStatista,
   LogoStoryblok,
   LogoStorybook,
-  LogoStripe,
-  LogoSublimeText,
   LogoSvelte,
   LogoSwift,
   LogoSwiftUi,
@@ -121,10 +103,7 @@ import {
   LogoTrello,
   LogoTwig,
   LogoTypescript,
-  LogoTypo3,
-  LogoUiColors,
   LogoUnsplash,
-  LogoUpsun,
   LogoUsercentrics,
   LogoV0,
   LogoVercel,
@@ -139,6 +118,7 @@ import {
   LogoZed,
   LogoZod
 } from '@/components/atoms/logo';
+import { LogoPhosphorIcons } from '@/components/atoms/logo/logo-phosphor-icons';
 
 interface BrandLogoProps extends LogoProps {
   brand: string;
@@ -225,14 +205,6 @@ export function BrandLogo({
     return <LogoVisualStudioCode id={id} className={className} />;
   }
 
-  if (brand.includes('Photoshop')) {
-    return <LogoAdobePhotoshop id={id} className={className} />;
-  }
-
-  if (brand.includes('Illustrator')) {
-    return <LogoAdobeIllustrator id={id} className={className} />;
-  }
-
   if (lowerCaseBrand.includes('baymard')) {
     return <LogoBaymardInstitute id={id} className={className} />;
   }
@@ -245,16 +217,12 @@ export function BrandLogo({
     return <LogoNielsenNormanGroup id={id} className={className} />;
   }
 
-  if (lowerCaseBrand.includes('chatgpt') || lowerCaseBrand.includes('dall')) {
+  if (lowerCaseBrand.includes('chatgpt') || lowerCaseBrand.includes('codex')) {
     return <LogoChatgpt id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('procreate')) {
     return <LogoProcreate id={id} className={className} />;
-  }
-
-  if (lowerCaseBrand.includes('eslint')) {
-    return <LogoEslint id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('tanstack')) {
@@ -263,18 +231,6 @@ export function BrandLogo({
 
   if (lowerCaseBrand.includes('paypal')) {
     return <LogoPayPal id={id} className={className} />;
-  }
-
-  if (lowerCaseBrand.includes('stripe')) {
-    return <LogoStripe id={id} className={className} />;
-  }
-
-  if (lowerCaseBrand.includes('indesign')) {
-    return <LogoAdobeInDesign id={id} className={className} />;
-  }
-
-  if (lowerCaseBrand.includes('elasticsearch')) {
-    return <LogoElasticsearch id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('factfinder')) {
@@ -286,10 +242,6 @@ export function BrandLogo({
     lowerCaseBrand.includes('adobe commerce')
   ) {
     return <LogoAdobe id={id} className={className} />;
-  }
-
-  if (lowerCaseBrand.includes('shopify')) {
-    return <LogoShopify id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('cypress')) {
@@ -323,8 +275,16 @@ export function BrandLogo({
     return <LogoVueJs id={id} className={className} />;
   }
 
-  if (lowerCaseBrand.includes('angular')) {
-    return <LogoAngular id={id} className={className} />;
+  if (lowerCaseBrand.includes('panda')) {
+    return <LogoPandaCss id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('lucide')) {
+    return <LogoLucide id={id} className={className} />;
+  }
+
+  if (lowerCaseBrand.includes('phosphor')) {
+    return <LogoPhosphorIcons id={id} className={className} />;
   }
 
   switch (group) {
@@ -438,35 +398,11 @@ export function BrandLogo({
     case 'Google Tag Manager':
       return <LogoGoogleTagManager id={id} className={className} />;
 
-    case 'Axios':
-      return <LogoAxios id={id} className={className} />;
-
     case 'Bruno':
       return <LogoBruno id={id} className={className} />;
 
     case 'Postman':
       return <LogoPostman id={id} className={className} />;
-
-    case 'Clerk':
-      return <LogoClerk id={id} className={className} />;
-
-    case 'Arc':
-      return <LogoArc id={id} className={className} />;
-
-    case 'Brave':
-      return <LogoBrave id={id} className={className} />;
-
-    case 'Contentserv':
-      return <LogoContentserv id={id} className={className} />;
-
-    case 'Typo3':
-      return <LogoTypo3 id={id} className={className} />;
-
-    case 'Color Designer':
-      return <LogoColorDesigner id={id} className={className} />;
-
-    case 'uicolors':
-      return <LogoUiColors id={id} className={className} />;
 
     case 'CookieHub':
       return <LogoCookiehub id={id} className={className} />;
@@ -486,9 +422,6 @@ export function BrandLogo({
     case 'Sass':
       return <LogoSass id={id} className={className} />;
 
-    case 'Adobe XD (deprecated)':
-      return <LogoAdobeXd id={id} className={className} />;
-
     case 'AWS Amplify':
       return <LogoAws id={id} className={className} />;
 
@@ -497,9 +430,6 @@ export function BrandLogo({
 
     case 'Sketch':
       return <LogoSketch id={id} className={className} />;
-
-    case 'Canva':
-      return <LogoCanva id={id} className={className} />;
 
     case 'Vite':
       return <LogoViteJs id={id} className={className} />;
@@ -540,26 +470,17 @@ export function BrandLogo({
     case 'Toolfolio':
       return <LogoToolfolio id={id} className={className} />;
 
-    case 'upsun':
-      return <LogoUpsun id={id} className={className} />;
-
     case 'Material Icons':
       return <LogoMaterialIcons id={id} className={className} />;
 
     case 'Cursor':
       return <LogoCursor id={id} className={className} />;
 
-    case 'Sublime Text':
-      return <LogoSublimeText id={id} className={className} />;
-
     case 'Windsurf':
       return <LogoWindsurf id={id} className={className} />;
 
     case 'zed':
       return <LogoZed id={id} className={className} />;
-
-    case 'Midjourney':
-      return <LogoMidjourney id={id} className={className} />;
 
     case 'Unsplash':
       return <LogoUnsplash id={id} className={className} />;
@@ -582,12 +503,6 @@ export function BrandLogo({
     case 'pnpm':
       return <LogoPnpm id={id} className={className} />;
 
-    case 'class-variance-authority':
-      return <LogoClassVarianceAuthority id={id} className={className} />;
-
-    case 'n8n':
-      return <LogoN8n id={id} className={className} />;
-
     case 'Junie':
       return <LogoJunie id={id} className={className} />;
 
@@ -597,9 +512,6 @@ export function BrandLogo({
     case 'zod':
       return <LogoZod id={id} className={className} />;
 
-    case 'Klarna':
-      return <LogoKlarna id={id} className={className} />;
-
     case 'PAYONE':
       return <LogoPayone id={id} className={className} />;
 
@@ -608,9 +520,6 @@ export function BrandLogo({
 
     case 'Trello':
       return <LogoTrello id={id} className={className} />;
-
-    case 'Nue.js':
-      return <LogoNueJs id={id} className={className} />;
 
     case 'Astro':
       return <LogoAstro id={id} className={className} />;
@@ -635,6 +544,12 @@ export function BrandLogo({
 
     case 'HeroUI':
       return <LogoHeroUi id={id} className={className} />;
+
+    case 'Codex':
+      return <LogoCodex id={id} className={className} />;
+
+    case 'pen':
+      return <LogoPen id={id} className={className} />;
 
     default:
       return DefaultLogo;

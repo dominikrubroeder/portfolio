@@ -12,8 +12,15 @@ import {
   ButtonLinkedin
 } from '@/components/atoms/button';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
-import { HeroNavigation } from '@/components/molecules/hero-navigation/hero-navigation';
+import { Blockquote } from '@/components/atoms/blockquote';
 import { H2 } from '@/components/organisms/typography';
+import { BrandList } from '@/components/organisms/brand';
+import { mainTools } from '@/components/organisms/tools';
+import { mainTechnologies } from '@/components/organisms/technologies';
+import { DrawerTools } from '@/components/molecules/drawer/drawer-tools';
+import { Animate } from '@/components/molecules/animate';
+import { DrawerTechnologies } from '@/components/molecules/drawer/drawer-technologies';
+import { Divider } from '@/components/atoms/divider';
 
 export default async function HomePage() {
   return (
@@ -22,66 +29,77 @@ export default async function HomePage() {
 
       <ThemeNotesBackgroundCornellNotes />
 
-      <Container className="animate-in-to-top-100 space-y-3">
-        <h1>
-          Design with code, <br />
-          code by design
-        </h1>
+      <Animate direction="up" delay={0.16}>
+        <Container className="space-y-3">
+          <h1>Hands-on: User Interfaces for the Web</h1>
 
-        <p>
-          Composing the frontend, its architecture, the user experience, the
-          components, design systems, patterns, principles is my home to work
-          with. Whether it's working in a design tool like Figma, or writing the
-          components in code is the same language it is originated from: an idea
-          from the mind and heart. Now, bringing this together with the
-          requirements from the project is a powerful combination that drives my
-          contribution to the frontend experience and when working in motivated
-          teams.
-        </p>
+          <div className="text-foreground">
+            <Blockquote className="mt-0 mb-3">
+              <p>
+                I'm a multi-discipline interface engineer, driven by design and
+                component systems and their user experience.
+              </p>
+            </Blockquote>
 
-        <ButtonGroup stretchButtons>
-          <Button
-            href="/projects"
-            className="bg-primary text-primary-foreground"
-          >
-            Projects
-            <ArrowRightIcon />
-          </Button>
+            <p>
+              Together with today's tools and technologies we build
+              user/business-need orientated and scalable user interfaces.
+            </p>
 
-          <div className="flex">
-            <ButtonFigma className="hidden" />
-            <ButtonGithub id="header-github" />
-            <ButtonLinkedin id="header-linkedin" />
+            <p>
+              The user experience is the leading factor how well a UI is
+              perceived and consumed by the user. It is the winning factor of
+              how satisfied users are interacting with (digital) products and
+              services.
+            </p>
           </div>
-        </ButtonGroup>
-      </Container>
 
-      <Container className="animate-in-to-top-160">
-        <H2>About the users experience</H2>
+          <ButtonGroup stretchButtons>
+            <Button
+              href="/projects"
+              className="bg-primary text-primary-foreground"
+            >
+              Projects
+              <ArrowRightIcon />
+            </Button>
 
-        <p>
-          The user experience has many touchpoints: before, while and after the
-          interaction of a user with a product or service. It is the overall
-          satisfaction of the user about this interaction, what gets remembered
-          and felt about the usage, consciously and unconsciously, physically
-          and mentally, joyful or frustrating. It is our job as interface and
-          experience designers to build a great experience, and to build up the
-          details that make this experience a delightful and easy to use one.
-        </p>
+            <div className="flex">
+              <ButtonFigma id="hero-figma" className="hidden" />
+              <ButtonGithub id="header-github" />
+              <ButtonLinkedin id="header-linkedin" />
+            </div>
+          </ButtonGroup>
+        </Container>
+      </Animate>
 
-        <p>
-          And there are more types of "users" than the regular user on websites,
-          apps and ecommerce shops. Also the developer is a user, a user of the
-          codebase. The marketer is a user, a user of a content management
-          system, preparing a new landing page. The CEO is a user, a user of a
-          concept that is provided to him when evaluating a new feature. In all
-          of these areas, it is again the job for us designers to make a great
-          interaction possible, provide good, understandable, comprehensive and
-          justified concepts for these integrations.
-        </p>
-      </Container>
+      <Animate direction="up" className="mb-0">
+        <Container as="section">
+          <Divider variant="three-dotted" />
+          <h3 className="text-4xl leading-[1.1] text-balance xs:text-5xl sm:text-7xl">
+            I connect the worlds of design and code
+          </h3>
+          <span className="block h-2" />
+          <Divider variant="three-dotted" />
+        </Container>
+      </Animate>
 
-      <HeroNavigation hiddenLink="/projects" />
+      <Animate direction="up">
+        <Container as="section">
+          <H2 className="flex items-center justify-between gap-4">
+            Main tools <DrawerTools />
+          </H2>
+          <BrandList brands={mainTools} />
+        </Container>
+      </Animate>
+
+      <Animate direction="up" delay={0.44}>
+        <Container as="section">
+          <H2 className="flex items-center justify-between gap-4">
+            Main technologies <DrawerTechnologies />
+          </H2>
+          <BrandList brands={mainTechnologies} />
+        </Container>
+      </Animate>
     </>
   );
 }

@@ -1,9 +1,5 @@
 export type HeroNavigationPathname =
-  | '/introduction'
+  | '/'
   | '/projects'
-  | '/tools'
-  | '/technologies'
-  | '/showcase'
-  | '/playground'
-  | '/blog'
-  | '/resources';
+  | '/tools-and-technologies'
+  | '/playground';

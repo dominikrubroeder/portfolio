@@ -21,7 +21,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const classNames = cn(
-    'interactive select-none group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center motion-safe:transition-all',
+    'interactive select-none group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center motion-safe:transition-colors',
     variant.includes('contained') && '',
     variant === 'contained-primary' &&
       'bg-primary text-primary-foreground hover:bg-primary-hover',
@@ -30,24 +30,29 @@ export function Button({
     variant === 'contained-muted' &&
       'bg-muted text-muted-foreground hover:bg-muted-hover hover:text-foreground',
     variant?.includes('ghost') &&
-      "relative rounded-2xl z-10 after:absolute after:inset-0 after:-z-10 after:motion-safe:scale-75 after:rounded after:bg-muted after:opacity-0 after:motion-safe:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 hover:after:rounded-2xl active:after:rounded-2xl active:after:opacity-100 hover:after:opacity-100 active:text-foreground",
+      "relative rounded-2xl z-10 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:will-change-transform after:motion-safe:scale-80 after:bg-muted after:opacity-0 after:motion-safe:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 active:after:opacity-100 hover:after:opacity-100 active:text-foreground",
     variant === 'ghost-primary' && 'text-primary',
     variant === 'ghost-foreground' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground hover:text-foreground',
+    variant.includes('text') && 'p-0! min-h-0!',
     variant === 'text-primary' &&
       'text-primary hover:text-primary-hover [&>svg]:hover:text-primary-hover',
     variant === 'text-foreground' &&
       'text-foreground hover:text-primary [&>svg]:hover:text-primary',
     variant === 'text-muted' &&
       'text-muted-foreground hover:text-foreground [&>svg]:hover:text-foreground',
+    variant.includes('link') && 'underline p-0! min-h-0!',
+    variant === 'link-muted' && 'text-muted-foreground hover:text-foreground',
+    variant === 'link-foreground' && 'text-foreground hover:text-primary',
+    variant === 'link-primary' && 'text-primary hover:text-primary-hover',
     size === 'tiny' &&
-      'min-h-6 min-w-6 rounded-2xl hover:rounded-2xl text-xs py-1 px-1 gap-1 [&>svg]:size-3.5',
+      'min-h-6 min-w-6 rounded-2xl hover:rounded-xl text-xs py-1 px-1 gap-1 [&>svg]:size-3.5',
     size === 'small' &&
-      ' min-h-8 min-w-8 rounded-2xl hover:rounded-2xl text-sm py-1 px-2 gap-1 [&>svg]:size-3.5',
+      ' min-h-8 min-w-8 rounded-2xl hover:rounded-xl text-sm py-1 px-2 gap-1 [&>svg]:size-3.5',
     size === 'medium' &&
-      'min-h-11 min-w-11 rounded-2xl hover:rounded-2xl text-base py-2 px-3 gap-2 [&>svg]:size-5',
+      'min-h-11 min-w-11 rounded-2xl hover:rounded-xl text-base py-2 px-3 gap-2 [&>svg]:size-5',
     size === 'large' &&
-      'min-h-11 min-w-11 rounded-2xl hover:rounded-2xl text-lg py-2 px-3.5 gap-2 [&>svg]:size-6',
+      'min-h-11 min-w-11 rounded-2xl hover:rounded-xl text-lg py-2 px-3.5 gap-2 [&>svg]:size-6',
     className
   );
 

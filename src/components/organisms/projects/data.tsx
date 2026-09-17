@@ -13,15 +13,17 @@ export const projects: Project[] = [
   {
     title: 'Uvex',
     category: ['Headless', 'B2C', 'Ecommerce'],
-    url: 'https://uvex-group.shop',
+    url: 'https://www.uvex-group.com/de/',
     isCurrent: false,
     isActive: false,
     description:
-      'Protecting People – The mission of the Uvex brand with its vision and products',
+      '"Protecting People" – The mission of the Uvex brand with its vision and products',
     timeframe: '2025 – May 2026',
     logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
     role: ['Design Engineer'],
-    responsibilities: ['Set up a new CMS component system in Storyblok'],
+    responsibilities: [
+      'Plan and implement a new CMS component system in Storyblok'
+    ],
     tools: getTools({
       names: [
         'Figma',
@@ -54,7 +56,7 @@ export const projects: Project[] = [
   {
     title: 'sautershop',
     category: ['Headless', 'B2C', 'Ecommerce'],
-    url: 'https://www.sautershop.com/en',
+    url: 'https://www.sautershop.de',
     isCurrent: false,
     isActive: false,
     description: 'Quality woodworking tools and accessorizes for DIY projects',
@@ -62,8 +64,8 @@ export const projects: Project[] = [
     logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     responsibilities: [
-      'Consult in designing for a 3D configurator',
-      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and the React Instant Search'
+      'Consult in designing a 3D configurator',
+      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and React Instant Search'
     ],
     tools: getTools({
       names: [
@@ -101,7 +103,7 @@ export const projects: Project[] = [
     category: ['Headless', 'B2B', 'B2C', 'Ecommerce'],
     url: 'https://www.mediawave.de/accelerators',
     description:
-      'Kickstart in your headless ecommerce project with the mediawave Value Booster',
+      'Kickstart in your headless ecommerce experience with the mediawave Value Booster',
     isCurrent: true,
     isActive: true,
     timeframe: '2024',
@@ -110,10 +112,11 @@ export const projects: Project[] = [
     responsibilities: [
       'Create and maintain a CMS component system in Storyblok',
       'Create and maintain a design system in Figma',
-      'Create, provide and document design concepts and UI prototypes for project pitches',
-      'Build the headless frontend in Next.js with the focus on blueprinting the frontend framework as starting point for new projects',
-      'Create templates: Home Page, Category Page, Product Page, Cart Page, Checkout Page, Account Pages',
-      'Compose the frontend architecture with its libraries'
+      'Create, provide and document feature concepts and UI prototypes for project pitches',
+      'Participate in project pitches and communicate design decisions',
+      'Build the headless frontend in Next.js',
+      'Create page templates: Home Page, Category Page, Product Page, Cart Page, Checkout Page, Account Page',
+      'Compose the frontend libraries and dependencies'
     ],
     tools: getTools({
       names: [
@@ -145,7 +148,7 @@ export const projects: Project[] = [
 
     demoUrls: undefined,
     previewImage: '/projects/project-value-booster-preview-wallpaper.png',
-    previewImageTimestamp: '2026-01-06'
+    previewImageTimestamp: '2026-09-16'
   },
   {
     title: 'HD+',
@@ -159,8 +162,8 @@ export const projects: Project[] = [
     logo: <LogoHdPlus id="projects-hd-plus" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer'],
     responsibilities: [
-      'Design the user interface in Figma',
-      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and the React Instant Search'
+      'Design the UI in Figma',
+      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and React Instant Search'
     ],
     tools: getTools({
       names: [
@@ -241,7 +244,7 @@ export const projects: Project[] = [
     title: 'alles.auto Service Portal',
     category: ['B2B'],
     url: 'https://www.alles.auto',
-    description: 'Online selling, re-selling and car service platform',
+    description: 'Car service platform',
     isCurrent: false,
     isActive: false,
     timeframe: '2021',
@@ -279,7 +282,7 @@ export const projects: Project[] = [
     title: 'Locaboo',
     category: ['App', 'B2C'],
     url: 'https://www.locaboo.com',
-    description: 'Location booking made digital',
+    description: 'Location booking platform for cities and municipalities',
     isCurrent: false,
     isActive: false,
     timeframe: '2016 – 2021',
@@ -312,7 +315,7 @@ export const projects: Project[] = [
     logo: undefined,
     role: ['Frontend Developer'],
     responsibilities: [
-      'Design the user interface in Adobe XD and Photoshop',
+      'Design the UI in Adobe XD and Photoshop',
       'Build the frontend in Twig and SCSS with Shopware 5'
     ],
     tools: [],
@@ -337,9 +340,7 @@ export const projects: Project[] = [
     timeframe: '2017',
     logo: undefined,
     role: ['Frontend Developer'],
-    responsibilities: [
-      'Build the user interface in Twig and SCSS with Shopware 5'
-    ],
+    responsibilities: ['Build the UI in Twig and SCSS with Shopware 5'],
     tools: [],
     technologies: [],
     companies: [

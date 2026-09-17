@@ -10,34 +10,30 @@ import {
   IconAtomicDesignTokens
 } from '@/components/atoms/icon';
 import { ButtonGroup } from '@/components/molecules/button-group';
-import { ThemeAppearanceSwitch } from '@/components/organisms/theme/theme-appearance-switch';
+import { Container } from '@/components/organisms/layout';
 
 export function Footer() {
   return (
     <>
-      <footer className="relative z-10 mt-8 space-y-3 border-t bg-background px-4 py-6 text-center text-xs">
+      <footer className="relative z-10 mt-8 space-y-4 border-t bg-background px-4 py-8 text-xs">
         <ButtonScrollToTop className="absolute top-5 right-4" />
 
-        <div className="space-y-1">
-          <div className="flex items-center justify-center gap-1">
-            <Ul className={cn('my-0 mb-0 inline-flex w-auto')}>
-              {socials.map((brand, index) => (
-                <li key={`brand-link-${brand.name}-${index}`} className="mb-0">
-                  <BrandLink
-                    brandLogoId={`brand-link-${brand.name}-${index}`}
-                    brand={brand}
-                    size="small"
-                  />
-                </li>
-              ))}
-            </Ul>
-          </div>
+        <Container as="div" className="text-center">
+          <Ul className={cn('my-0 mb-0 inline-flex w-auto')}>
+            {socials.map((brand, index) => (
+              <li key={`brand-link-${brand.name}-${index}`} className="mb-0">
+                <BrandLink
+                  brandLogoId={`brand-link-${brand.name}-${index}`}
+                  brand={brand}
+                  size="small"
+                />
+              </li>
+            ))}
+          </Ul>
+        </Container>
 
-          <div>
-            <ThemeAppearanceSwitch className="sm:hidden" />
-          </div>
-
-          <div className="max-w-container mx-auto space-y-1 pt-2 pb-1.5">
+        <Container as="div">
+          <div className="max-w-container mx-auto space-y-1 text-center">
             <span className="block">Certified in:</span>
 
             <ButtonGroup className="mx-auto inline-flex">
@@ -62,13 +58,9 @@ export function Footer() {
               </Button>
             </ButtonGroup>
           </div>
+        </Container>
 
-          <p className="mx-auto max-w-sm">
-            Design your vision. Live your balance.
-          </p>
-        </div>
-
-        <div>
+        <Container as="div" className="text-center">
           <p className="flex flex-wrap items-center justify-center gap-2">
             <ExternalLink
               href="https://nextjs.org"
@@ -77,7 +69,7 @@ export function Footer() {
               size="xs"
               color="muted"
             >
-              <span>Next.js 16.3.4</span>
+              <span>Next.js 16.3.5</span>
             </ExternalLink>
 
             <span>|</span>
@@ -89,7 +81,7 @@ export function Footer() {
               size="xs"
               color="muted"
             >
-              <span>React 19.2.8</span>
+              <span>React 19.3</span>
             </ExternalLink>
 
             <span>|</span>
@@ -105,22 +97,11 @@ export function Footer() {
             </ExternalLink>
           </p>
 
-          <p className="space-x-0.5">
-            <span>Contact:</span>
-            <a
-              href="mailto:dominik.rubroeder@icloud.com?subject=I want to write you about..."
-              title="Send mail to dominik.rubroeder@icloud.com"
-              aria-label="Send mail to dominik.rubroeder@icloud.com"
-            >
-              dominik.rubroeder@icloud.com
-            </a>
-          </p>
-
           <p>
             &copy; 2026
             <span className="ml-1.5">Dominik Rubröder</span>
           </p>
-        </div>
+        </Container>
 
         {EVENTS_WINTER_SCENE_ENABLED && (
           <p>

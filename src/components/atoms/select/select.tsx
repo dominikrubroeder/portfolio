@@ -33,7 +33,7 @@ export function Select({
       </Button>
 
       {isOpen && (
-        <div className="absolute top-14 right-0 z-max rounded border bg-background px-3 py-2 [html[data-theme=default]_&]:motion-safe:animate-fade-up-1rem">
+        <div className="[html[data-theme=default]_&]:motion-safe:animate-fade-up-1rem absolute top-14 right-0 z-max rounded border bg-background px-3 py-2">
           {options.map((option) => (
             <Button
               key={option.key}

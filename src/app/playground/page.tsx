@@ -16,7 +16,6 @@ export default function PlaygroundPage() {
       heroBlockquote={
         <>A free space for experimenting and testing component concepts</>
       }
-      heroNavigationHiddenLink="/playground"
     >
       <div className="animate-in-to-left-160">
         <Container className="grid gap-4 sm:grid-cols-2">

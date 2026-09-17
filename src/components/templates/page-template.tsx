@@ -2,11 +2,6 @@ import { ReactNode } from 'react';
 import { Blockquote } from '@/components/atoms/blockquote';
 import { Container } from '@/components/organisms/layout';
 import { H1 } from '@/components/organisms/typography';
-import {
-  HeroNavigation,
-  HeroNavigationPathname
-} from '@/components/molecules/hero-navigation';
-import { Hr } from '@/components/atoms/hr';
 import { IconLucide } from '@/components/atoms/icon/icon-lucide';
 
 export function PageTemplate({
@@ -14,14 +9,12 @@ export function PageTemplate({
   heroIcon,
   heroBlockquote,
   heroDescription,
-  heroNavigationHiddenLink,
   children
 }: {
   h1: string;
   heroIcon?: string;
   heroBlockquote?: ReactNode;
   heroDescription?: ReactNode;
-  heroNavigationHiddenLink?: HeroNavigationPathname;
   children: ReactNode;
 }) {
   return (
@@ -46,10 +39,6 @@ export function PageTemplate({
       </Container>
 
       {children}
-
-      <Hr />
-
-      <HeroNavigation hiddenLink={heroNavigationHiddenLink} />
     </>
   );
 }

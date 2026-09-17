@@ -16,7 +16,10 @@ export interface ButtonProps extends HTMLAttributes<
     | 'ghost-muted'
     | 'text-primary'
     | 'text-foreground'
-    | 'text-muted';
+    | 'text-muted'
+    | 'link-primary'
+    | 'link-foreground'
+    | 'link-muted';
   size?: 'tiny' | 'small' | 'medium' | 'large';
   className?: string;
   href?: string;

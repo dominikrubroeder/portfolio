@@ -4,8 +4,8 @@ import type { UsageLevel } from '@/components/organisms/tools';
 
 export interface Brand {
   name: string;
-  description: string | undefined;
+  description?: string | undefined;
   href: string;
-  logo: ReactNode;
-  usageLevel: UsageLevel | undefined;
+  logo?: ReactNode;
+  usageLevel?: UsageLevel | undefined;
 }
