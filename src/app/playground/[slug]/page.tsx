@@ -1,11 +1,14 @@
+import { Suspense } from 'react';
+
+import { ArrowLeft } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
+import { Container } from '@/components/ui/container';
+
 import {
   PlaygroundDetailDetails,
   PlaygroundDetailHero
-} from '@/components/organisms/playground';
-import { Suspense } from 'react';
-import { Container } from '@/components/organisms/layout';
-import { Button } from '@/components/atoms/button';
-import { ArrowLeft } from 'lucide-react';
+} from '@/components/feature/playground';
 
 export const instant = false;
 

@@ -1,6 +1,8 @@
-import type { Preview } from '@storybook/nextjs-vite';
+import { ThemeProvider } from '../src/components/feature/theme';
+
 import '../src/app/globals.css';
-import { ThemeProvider } from '../src/components/organisms/theme';
+
+import type { Preview } from '@storybook/nextjs-vite';
 
 const preview: Preview = {
   parameters: {

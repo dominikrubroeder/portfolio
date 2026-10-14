@@ -1,20 +1,24 @@
-import type { Metadata } from 'next';
-import { getProject } from '@/components/organisms/projects';
-import { projects } from '@/components/organisms/projects/data';
-import { PageTemplate } from '@/components/templates/page-template';
-import { Hr } from '@/components/atoms/hr';
-import { Container } from '@/components/organisms/layout';
-import { H2, Ul } from '@/components/organisms/typography';
 import { Fragment } from 'react';
-import Link from 'next/link';
+
+import type { Metadata } from 'next';
+
 import Image from 'next/image';
-import { ExternalLink } from '@/components/atoms/external-link';
-import { Badge } from '@/components/atoms/badge';
-import { Button } from '@/components/atoms/button';
-import { Divider } from '@/components/atoms/divider';
-import { Animate } from '@/components/molecules/animate';
-import { Avatar } from '@/components/atoms/avatar';
-import { ButtonBack } from '@/components/atoms/button/button-back';
+import Link from 'next/link';
+
+import { Animate } from '@/components/ui/animate';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { ButtonBack } from '@/components/ui/button/button-back';
+import { Container } from '@/components/ui/container';
+import { Divider } from '@/components/ui/divider';
+import { ExternalLink } from '@/components/ui/external-link';
+import { Hr } from '@/components/ui/hr';
+import { PageTemplate } from '@/components/ui/page-template';
+
+import { Avatar } from '@/components/feature/avatar';
+import { getProject } from '@/components/feature/projects';
+import { projects } from '@/components/feature/projects/projects-data';
+import { H2, Ul } from '@/components/feature/typography';
 
 export const instant = false;
 
@@ -29,16 +33,19 @@ export default function ProjectsPage() {
   return (
     <PageTemplate
       h1="Projects"
-      heroBlockquote="I contributed as Frontend Designer and Frontend Engineer to the following projects. In the later projects starting around 2021, my role merged into a unified role as UX Engineer for headless frontends."
-      heroDescription={
-        <p>Only projects with a longer period than 3 months are listed.</p>
-      }
+      heroBlockquote="Roles are changing. During the last year, roles and job descriptions were more distinct and self-contained. Now the lines are blurring more and more. In my first years, I contributed as Frontend Designer or Frontend Engineer, then as Frontend Designer and Frontend Engineer. This merged into a unified role as UX Engineer, especially for headless frontends and UX concepts, now everything moves more onto holistic product UI thinking and execution – Product Design Engineer."
     >
+      <Animate>
+        <div className="relative flex h-24 items-center justify-center">
+          <span className="absolute top-0 left-1/2 block -translate-x-1/2 rotate-90 text-9xl text-primary">{`}`}</span>
+        </div>
+      </Animate>
+
       {heroProject && (
         <Container
           as="section"
-          size="container"
-          className="animate-in-to-left-160 space-y-5"
+          size="full-width"
+          className="animate-in-to-left-100 space-y-5 bg-primary py-12"
         >
           {heroProject.previewImage && (
             <Link
@@ -46,23 +53,25 @@ export default function ProjectsPage() {
               title={`Open ${heroProject.title} in external tab`}
               aria-label={`Click to open ${heroProject.title} in an external tab`}
               target="_blank"
-              className="relative block space-y-2 sm:space-y-0"
+              className="relative mx-auto block max-w-container-panorama space-y-2 sm:space-y-0"
             >
               <Image
                 src={heroProject.previewImage}
                 alt={`${heroProject.title} preview image`}
                 width={1920}
                 height={630}
-                className="max-w-panorama w-full scale-105 sm:scale-100"
                 draggable={false}
-                preload={true}
+                preload
               />
             </Link>
           )}
 
-          <div className="mx-auto max-w-(--container-readable)">
+          <div className="mx-auto max-w-(--container-readable) px-4 xl:px-0">
             <div>
-              <H2 className="sticky-none mb-0">{heroProject.title}</H2>
+              <H2 className="sticky-none mb-0 text-primary-foreground">
+                {heroProject.title}
+              </H2>
+
               <small className="flex flex-wrap items-center gap-2">
                 <ul className="my-0 -mr-1">
                   {heroProject.companies?.map((company) => (
@@ -74,43 +83,54 @@ export default function ProjectsPage() {
                           href={company.href}
                           size="sm"
                           className="mr-0 -ml-1"
-                          color="muted"
+                          color="primary-foreground"
                         >
                           <span>{company.label}</span>
                         </ExternalLink>
                       ) : (
-                        <span>{company.label}</span>
+                        <span className="text-primary-foreground">
+                          {company.label}
+                        </span>
                       )}
                     </li>
                   ))}
                 </ul>
 
-                <Divider variant="dot" />
+                <Divider variant="dot" className="bg-white" />
 
                 {heroProject.isActive ? (
-                  <span>
-                    <span>{heroProject.timeframe} – </span>
-                    <Badge size="sm">Ongoing</Badge>
+                  <span className="text-primary-foreground">
+                    <span className="text-primary-foreground">
+                      {heroProject.timeframe} –{' '}
+                    </span>
+                    <Badge size="sm" variant="white">
+                      Ongoing
+                    </Badge>
                   </span>
                 ) : (
-                  <span>{heroProject.timeframe}</span>
+                  <span className="text-primary-foreground">
+                    {heroProject.timeframe}
+                  </span>
                 )}
               </small>
             </div>
 
             {heroProject.description && (
-              <p className="mt-2">{heroProject.description}</p>
+              <p className="mt-2 text-primary-foreground">
+                {heroProject.description}
+              </p>
             )}
 
             <p className="mt-2">{heroProject.subline}</p>
 
-            <Hr className="my-3 w-4" />
+            <Hr className="my-3 w-4 border-primary-foreground/16" />
 
             {heroProject.responsibilities?.length && (
               <Ul
-                headline="Responsibilities"
+                headline="Fields"
                 listStyle="disc"
-                className="text-foreground"
+                className="text-primary-foreground"
+                headlineClassName="text-primary-foreground"
               >
                 {heroProject.responsibilities.map((aspect) => (
                   <li key={aspect}>{aspect}</li>
@@ -119,6 +139,7 @@ export default function ProjectsPage() {
             )}
 
             <Button
+              variant="contained-white"
               href={heroProject.url}
               title={`View ${heroProject.title}`}
               aria-label={`Click to view ${heroProject.title} in a new tab`}
@@ -128,8 +149,6 @@ export default function ProjectsPage() {
           </div>
         </Container>
       )}
-
-      <Hr variant="container-readable" />
 
       <Container as="section">
         <Ul className="space-y-5 sm:space-y-12">
@@ -205,19 +224,17 @@ export default function ProjectsPage() {
                             </small>
                           </div>
 
-                          <p className="text-muted-foreground">
+                          <p className="text-foreground">
                             {project.description}
                           </p>
 
-                          <p className="text-muted-foreground">
-                            {project.subline}
-                          </p>
+                          <p className="text-foreground">{project.subline}</p>
 
                           <Hr className="my-3 w-4" />
 
                           {project.responsibilities?.length && (
                             <Ul
-                              headline="Responsibilities"
+                              headline="Fields"
                               listStyle="disc"
                               className="text-foreground"
                             >

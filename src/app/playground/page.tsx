@@ -1,8 +1,10 @@
-import { Container } from '@/components/organisms/layout';
 import type { Metadata } from 'next';
-import { PlaygroundBox } from '@/components/organisms/playground';
-import { PageTemplate } from '@/components/templates/page-template';
-import { playgroundComponents } from '@/components/organisms/playground/data';
+
+import { Container } from '@/components/ui/container';
+import { PageTemplate } from '@/components/ui/page-template';
+
+import { PlaygroundBox } from '@/components/feature/playground';
+import { playgroundComponents } from '@/components/feature/playground/playground-data';
 
 export const instant = false;
 

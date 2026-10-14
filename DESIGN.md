@@ -1,885 +1,335 @@
 # DESIGN.md
 
-## Design Vision
+Design language of the portfolio of Dominik Rubröder, UX Engineer. This file is the source of truth for **how the app
+looks**. For **how it behaves**, see [UX_PRINCIPLES.md](./UX_PRINCIPLES.md).
 
-Create a bold, modern, emotionally engaging web design engineer portfolio that communicates technical excellence, design
-maturity, and frontend craftsmanship.
+> Token values live in `src/app/globals.css`. If this document and the CSS disagree, the CSS wins — then fix this
+> document.
+
+## 1. Vision
 
-The experience should feel:
+> "I connect the worlds of design and code."
 
-- Confident
-- Fast
-- Elegant
-- Intentional
-- Highly structured
-- Technically precise
-- Visually vibrant without becoming overwhelming
+The portfolio is itself the proof of the claim: a UI built like a product, with a design system, themes, tokens and
+documented decisions. It should feel:
 
-The portfolio should reflect modern frontend engineering culture using:
+- Confident — big type, few elements, clear hierarchy
+- Intentional — every element has a reason; nothing decorative for its own sake
+- Fast — responsive, no layout shift, motion that never blocks reading
+- Personal — handwritten accents (`Patrick Hand`), playful intro phrases, a seasonal winter scene
+- Systematic — composed from `ui` building blocks and `feature` modules
 
-- React
-- Next.js
-- shadcn/ui
-- Tailwind CSS
-- Motion design systems
-- Design tokens
-- Component-driven architecture
-- Atomic + Subatomic Design principles by Brad Frost
+Hierarchy of what a visitor must grasp, in order: **identity → expertise → selected work → technical depth → contact**.
 
-The visual language should prioritize clarity, hierarchy, readability, and delightful interaction.
+## 2. Principles
 
----
+1. **Bold minimalism.** Large type, generous whitespace, one strong accent color. No gradients, no glass effects, no
+   shadows for decoration.
+2. **Token-first.** Colors, radii, fonts, widths and motion come from tokens. Components reference semantic tokens
+   (`bg-primary`, `text-muted-foreground`), never raw values.
+3. **Theme-ready.** Every component works in every theme, appearance (light/dark/system) and accent color. Themes change
+   token values and a few structural flags — never component logic.
+4. **Composition over configuration.** Build pages from small reusable parts (`ui` + `feature` split, tokens first).
+5. **Content is the interface.** Statements, project work and reasoning are the hero. Chrome stays quiet.
+6. **Accessible by default.** Contrast, focus, keyboard, reduced motion and semantic HTML are requirements, not polish.
 
-# Core Design Principles
+## 3. Stack
 
-## 1. Bold Minimalism
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 (CSS-first config in `globals.css`) · shadcn/ui
+patterns on top of Base UI (`@base-ui/react`) and Radix · `motion` for animation · `class-variance-authority` +
+`cn()` for variants · Lucide and Heroicons for icons · Storybook for `ui` components · Vercel Analytics + Speed Insights.
 
-Use strong typography, large spacing systems, expressive color contrast, and deliberate layout rhythm.
+> Next.js in this repo has breaking changes against common knowledge. Read `node_modules/next/dist/docs/` before
+> writing framework code (see `AGENTS.md`).
 
-Avoid:
+## 4. Color
 
-- Decorative clutter
-- Excessive gradients
-- Heavy glassmorphism
-- Animation overload
-- Unnecessary visual noise
+Colors are OKLCH tokens defined as CSS variables in `:root`, remapped into Tailwind through `@theme inline`.
 
-Favor:
+### 4.1 Semantic tokens
 
-- Clear hierarchy
-- Large intentional whitespace
-- Sharp alignment
-- Strong typography
-- Structured composition
-- Precision spacing
+| Token                             | Role                                                  |
+| --------------------------------- | ----------------------------------------------------- |
+| `background` / `foreground`       | Page surface and primary text                         |
+| `primary` / `primary-foreground`  | Accent: CTAs, links on hover, active states, dividers |
+| `primary-hover`, `primary-border` | Interaction states of the accent                      |
+| `muted` / `muted-foreground`      | Secondary surfaces and body/supporting text           |
+| `muted-hover`, `hover`            | Hover surfaces                                        |
+| `border`                          | All borders and `hr` (set globally on `*`)            |
+| `popover` / `popover-foreground`  | Drawers, dialogs, floating surfaces                   |
+| `signal-yellow`                   | Rare highlight (event/attention moments)              |
 
----
+Body text is `text-muted-foreground`; headings, emphasis and interactive labels are `text-foreground`. This two-step
+text hierarchy is deliberate — do not flatten it.
 
-## 2. Design-to-Code Parity
+### 4.2 Accent colors
 
-The design system must maintain a close relationship between:
+The user can pick the accent color at runtime (`data-theme-color`): **blue** (default), **violett**, **orange**,
+plus the plain `primary` value (violet-leaning) and `foreground` (used by the wireframe theme). Each accent defines
+`-foreground`, `-hover` and `-border` siblings. Adding an accent means adding the full set and mapping it in the three
+places in `globals.css` (`:root`, `@media (prefers-color-scheme: dark)`, `@theme inline`).
 
-- Figma variables
-- Design tokens
-- CSS variables
-- Tailwind tokens
-- shadcn/ui theme values
-- Motion timing values
-- Border radius scales
-- Typography scales
-- Spacing systems
+### 4.3 Appearance
 
-Every design token should exist as a single source of truth.
+`light`, `dark` and `system`. Dark mode is applied by the `.theme-appearance-dark` class / `data-theme-appearance`
+attribute on `<html>` (custom Tailwind `dark:` variant), not by the media query alone. Dark mode only overrides neutral
+tokens (`background`, `foreground`, `muted*`, `border`); accents are shared.
 
-Never hardcode values directly inside components unless necessary.
+### 4.4 60 / 30 / 10
 
-All colors, spacing, typography, radii, shadows, motion curves, and durations should reference shared semantic tokens.
+- **60 %** `background` — calm foundation.
+- **30 %** `muted`, `border` — structure, grouping, hover surfaces.
+- **10 %** `primary` — energy. One full-bleed `bg-primary` band per page is the ceiling (see the home statement
+  "We compose, direct and oversee", and the hero project on `/projects`).
 
----
+## 5. Typography
 
-## 3. Theme-First Architecture
+| Role     | Font           | Token / utility |
+| -------- | -------------- | --------------- |
+| Headline | Outfit         | `font-heading`  |
+| Body     | Outfit         | `font-body`     |
+| Sketch   | Patrick Hand   | `font-sketch`   |
+| Code     | JetBrains Mono | `font-code`     |
 
-The system must be built for multi-theme support from the beginning.
+- Outfit is loaded through `next/font/google` (`display: swap`, CSS variable `--font-outfit`).
+- Base text size is `1.125rem` (`--text-base`). The user can scale the whole UI via root font size: small 90 %,
+  medium 100 %, large 110 %. **Always size with `rem`/Tailwind classes** so this scaling works.
+- Element defaults live in `globals.css` (`@layer base`). Use bare `h1`–`h6`, `p`, `ul`, `ol`, `small`, `b` when
+  possible; use the typography components (`H1`–`H6`, `Ul`, `Ol`) when you need props.
 
-Default appearance:
+| Level           | Size (mobile → desktop)                                                     | Weight   |
+| --------------- | --------------------------------------------------------------------------- | -------- |
+| Statement       | `text-4xl` → `xs:text-5xl` → `sm:text-7xl`, `leading-[1.1]`, `text-balance` | semibold |
+| `h1`            | `text-4xl` → `xs:text-5xl` → `sm:text-6xl`                                  | semibold |
+| `h2`            | `text-3xl` → `xs:text-4xl`                                                  | semibold |
+| `h3` / `.title` | `text-2xl`                                                                  | semibold |
+| Body            | `text-base` (1.125 rem)                                                     | normal   |
+| `small`         | `text-sm`, muted                                                            | normal   |
 
-- Light mode
+Rules: sentence case everywhere; `text-balance` on large statements; headings are `font-heading`; no more than two
+weights on a screen (normal, semibold/bold).
 
-Secondary themes:
+## 6. Layout and spacing
 
-- Dark mode
-- Experimental accent themes
-- Seasonal or branded palettes
+### 6.1 Containers
 
-Themes must reuse the same semantic token structure.
+Use `<Container>` (`ui/container`). Never hand-roll `max-w-*` on page sections.
 
-Only primitive token values should change between themes.
+| `size`               | Width              | Use                                  |
+| -------------------- | ------------------ | ------------------------------------ |
+| `container-readable` | `44rem` (default)  | Text, lists, most sections           |
+| `container`          | `90rem` (+ `px-4`) | Wide grids and galleries             |
+| `full-width`         | 100 %              | Full-bleed bands (e.g. primary hero) |
+| (panorama token)     | `120rem`           | Large preview imagery on `/projects` |
 
-Component logic and semantic naming must remain identical.
+The reading column is intentionally narrow (≈ 44rem). It is the signature of the layout: one column, centered,
+scannable.
 
-Example:
+### 6.2 Rhythm
+
+- `main` stacks sections with `space-y-8` (mobile) and `space-y-12` (`sm`+).
+- Sections are separated by `<Divider variant="three-dotted" />` (three `primary` dots) or an `hr` (`my-8`).
+- Headings: `h3`/`h4` get `mt-8 mb-3`; paragraphs `mb-3`; lists `my-4 space-y-2`.
+- Spacing follows the Tailwind 4 px scale (1 unit = 0.25rem). Prefer even steps (2, 3, 4, 6, 8, 12).
+- Breakpoints: Tailwind defaults plus `xs: 375px`.
+- Page order puts the highest-impact content first and goes deeper toward the bottom.
 
-```txt
---background
---foreground
---primary
---secondary
---muted
---accent
---card
---border
---ring
-```
+### 6.3 Z-index
 
-Do not use theme-specific names like:
+`z-20` content containers · `z-50` header and sticky bars · `z-100` (`z-index-100`) sidebar scrim · `z-max` (250)
+sidebar panel. Do not invent other layers.
 
-```txt
---blue-primary
---light-bg
-```
+## 7. Shape
 
-Prefer semantic abstraction.
+- Base radius token: `--radius: 6px`; derived `sm`, `md`, `lg`, `xl` (×1.4), `2xl` (×1.8), `3xl`, `4xl`.
+- Interactive controls (buttons, tabs) use `rounded-2xl` and tighten to `rounded-xl` on hover.
+- Panels (sidebar) use `rounded-2xl`; badges are `rounded-full`.
+- Use `rounded-theme-*` utilities when the radius must only apply in the **default** theme. The **wireframe** theme
+  removes rounding (`rounded-none`).
+- Borders are 1 px, `border` token, solid. Depth comes from borders and surface tone, not shadows.
 
----
+## 8. Motion
 
-# Color System
+Library: `motion`. Wrapper: `<Animate>` (`ui/animate`).
 
-## Color Philosophy
+Motion principles and behavior rules (including "Native CSS first") live in
+[UX_PRINCIPLES.md](./UX_PRINCIPLES.md#motion). This section lists the visual specs only.
 
-The portfolio should use intensive, vibrant primary colors balanced by calm neutrals.
+- Reveal on scroll: `direction` `up | left | right | down | scaleUp`, `once: true`, viewport margin `-100px`. Use
+  `direction="up"` for vertical page content, stagger via `delay` (0.16, 0.32, 0.44).
+- Page-load entrance utilities: `animate-in-to-top-{ms}` / `animate-in-to-left-{ms}` (1.1 s,
+  `cubic-bezier(0.22, 1, 0.36, 1)`, 1.6 rem travel). They run only in the **default** theme and only under
+  `prefers-reduced-motion: no-preference`.
+- Drawers and sidebar: ≈ 300–450 ms, easing `cubic-bezier(0.22, 1, 0.36, 1)` / `(0.32, 0.72, 0, 1)`.
+- `Divider variant="three-dotted"`: the dots bounce in sequence (`animate-dot-bounce-{ms}`, 2.1 s `ease-in-out` loop, 250 ms stagger,
+  scale 1 → 1.3 → 0.85 plus 0.3 rem lift). Default theme and `prefers-reduced-motion: no-preference` only.
+- Hover/press: `interactive` utility (`transition`, `active:scale-95`); ghost buttons grow a tinted `primary/10` pill
+  from `scale-80`.
+- Default animation setting: enabled, spring, 0.24 s delay, 0.4 s duration. Users can disable animations; the wireframe
+  theme disables them by default.
+- `<MotionConfig reducedMotion="user">` wraps every reveal. Never bypass it.
 
-The experience should feel energetic and premium.
+Motion exists to guide attention and confirm interaction. Never for decoration, never looping in content areas (the
+winter snowfall and the three-dot divider bounce are the sanctioned ambient effects).
 
-Primary colors should create:
+## 9. Themes
 
-- Focus
-- Direction
-- Energy
-- Brand memorability
-
-Neutrals should preserve:
-
-- Readability
-- Sophistication
-- Structure
-- Breathing room
-
----
-
-# 60/30/10 Color Rule
-
-## 60% — Dominant Foundation
-
-Use neutral light backgrounds and structural surfaces.
-
-Purpose:
-
-- Readability
-- Layout clarity
-- Spatial rhythm
-- Calmness
-
-Recommended:
-
-```txt
-Backgrounds
-Surface layers
-Cards
-Sections
-Grid structure
-```
-
-Suggested tones:
-
-```txt
-White
-Off-white
-Soft gray
-Warm neutral
-Light brown
-```
-
----
-
-## 30% — Secondary Structure
-
-Use secondary colors for layout grouping and visual hierarchy.
-
-Purpose:
-
-- Section separation
-- Navigation structure
-- Interface organization
-- Supporting surfaces
-
-Recommended:
-
-```txt
-Muted surfaces
-Sidebar layers
-Borders
-Secondary cards
-Hover surfaces
-```
-
-Suggested tones:
-
-```txt
-Slate
-Neutral gray
-Cool gray
-Muted desaturated tones
-```
-
----
-
-## 10% — Accent Energy
-
-Use vibrant accent colors intentionally.
-
-Purpose:
-
-- CTA focus
-- Interaction feedback
-- Motion highlights
-- Key portfolio moments
-- Links
-- Active states
-- Interactive emphasis
-
-Accent colors should feel:
-
-- Electric
-- Modern
-- Intentional
-- High-contrast
-- Memorable
-
-Recommended vibrant accent directions:
-
-```txt
-Electric blue
-Ocean hue blue
-Flower power violett
-Firered
-Hyper orange
-Bright lime
-Digital magenta
-```
-
-Accent colors should never dominate large surfaces.
-
-Default primary color:
-
-- Ocean hue blue
-
----
-
-# Typography System
-
-## Typography Philosophy
-
-Typography should communicate engineering precision and modern product design maturity.
-
-The typography system should feel:
-
-- Structured
-- Confident
-- Technical
-- Clean
-- Spacious
-
----
-
-## Recommended Font Pairing
-
-### Primary Sans
-
-Use modern geometric or neo-grotesk fonts.
-
-Recommended:
-
-```txt
-Inter
-Geist
-Satoshi
-Manrope
-General Sans
-```
-
-### Monospace
-
-Use monospace fonts sparingly for:
-
-- Code snippets
-- Technical labels
-- Metadata
-- Motion timing displays
-- Component references
-
-Recommended:
-
-```txt
-JetBrains Mono
-Geist Mono
-IBM Plex Mono
-```
-
----
-
-# Typography Scale
-
-The typography styling references the Tailwind CSS typescale
-approach: [https://tailwindcss.com/docs/font-size](https://tailwindcss.com/docs/font-size)
-
-## Available
-
-```txt
-Hero       : `text-8xl`
-H1         : 40–56px
-H2         : 32–40px
-H3         : 24–32px
-H4         : 24–32px
-H5         : 24–32px
-H6         : 24–32px
-Body Large : 18–20px
-Body       : 16px
-Small      : 14px
-Caption    : 12px
-```
-
-Use consistent line-height ratios.
-
-Recommended:
-
-```txt
-Display : 0.95–1.0
-Headers : 1.05–1.2
-Body    : 1.5–1.7
-```
-
----
-
-# Layout System
-
-## Grid Philosophy
-
-The layout should feel engineered rather than decorative.
-
-Recommended:
-
-```txt
-Max-width containers
-Consistent vertical rhythm, with highest impact sections at the top of the page – getting more into detail the larger the page is to the bottom
-```
-
----
-
-## Spacing Scale
-
-The spacing references the Tailwind CSS spacing system
-approach: [https://tailwindcss.com/docs/installation/using-vite](https://tailwindcss.com/docs/installation/using-vite)
-
-Which means, predefined spacing values in a 16px = 1rem system.
-
-Spacing should create:
-
-- Rhythm
-- Separation
-- Focus
-- Scanability
-
-Avoid cramped layouts.
-
----
-
-# Motion Design Guidelines
-
-## Motion Philosophy
-
-Animations should be:
-
-- Subtle
-- Smooth
-- Intentional
-- Elegant
-- Performance-focused
-- Emotionally pleasant
-- Never intrusive
-
-Motion exists to:
-
-- Guide attention
-- Clarify hierarchy
-- Reinforce interactions
-- Improve spatial understanding
-- Add delight carefully
-
-Motion should never distract from content.
-
----
-
-# Motion Principles
-
-## Use Motion For
-
-```txt
-Hover transitions
-Content reveals
-Page transitions
-Scroll-triggered emphasis
-Micro-interactions
-Focus guidance
-State changes
-Loading transitions
-```
-
-## Avoid
-
-```txt
-Excessive bouncing
-Aggressive parallax
-Constant movement
-Long dramatic transitions
-Animation spam
-Overly elastic motion
-```
-
----
-
-# Motion Timing
-
-## Recommended Durations
-
-```txt
-Fast    : 120ms
-Normal  : 180ms
-Medium  : 240ms
-Slow    : 320ms
-Page    : 400–600ms
-```
-
-## Recommended Easings
-
-```txt
-Ease Out
-Ease In-Out
-Cubic Bezier:
-0.16, 1, 0.3, 1
-```
-
----
-
-# Interaction Design
-
-## Hover Behavior
-
-Hover states should feel refined and tactile.
-
-Recommended:
-
-```txt
-Soft elevation
-Subtle color shifts
-Border emphasis
-Gentle scaling
-Opacity transitions
-```
-
-Avoid dramatic transforms.
-
----
-
-# Component Architecture
-
-## Foundation
-
-Use Atomic + Subatomic Design principles inspired by Brad Frost.
-
----
-
-# Subatomic Layer
-
-## Design Tokens
-
-Primitive token layer.
-
-Examples:
-
-```txt
-Colors
-Spacing
-Typography
-Shadows
-Radii
-Motion curves
-Motion durations
-Opacity values
-Z-index scales
-```
-
-These should map directly to:
-
-- Figma Variables
-- CSS Variables
-- Tailwind Config
-- shadcn/ui Tokens
-
----
-
-# Atomic Layer
-
-## Atoms
-
-Smallest reusable UI elements.
-
-Examples:
-
-```txt
-Button
-Input
-Label
-Icon
-Avatar
-Badge
-Tooltip
-Spinner
-```
-
-Atoms should:
-
-- Be highly reusable
-- Avoid layout assumptions
-- Be token-driven
-- Remain accessible
-
----
-
-# Molecular Layer
-
-## Molecules
-
-Combinations of atoms.
-
-Examples:
-
-```txt
-Search Bar
-Navigation Item
-Project Card Header
-Form Field
-Social Link Row
-```
-
-Molecules should express:
-
-- Interaction logic
-- Small compositional structure
-- Consistent spacing patterns
-
----
-
-# Organisms
-
-## Organisms
-
-Complex composed sections.
-
-Examples:
-
-```txt
-Hero Section
-Project Grid
-Experience Timeline
-Navigation Bar
-Footer
-Case Study Section
-```
-
-Organisms define major layout structure.
-
----
-
-# Templates
-
-## Templates
-
-Structural page arrangements.
-
-Examples:
-
-```txt
-Portfolio Home
-Project Detail
-Blog Layout
-About Layout
-Contact Layout
-```
-
-Templates should prioritize consistency.
-
----
-
-# Accessibility Standards
-
-## Accessibility Requirements
-
-Accessibility is mandatory.
-
-Ensure:
-
-```txt
-WCAG AA contrast minimums
-Visible focus states
-Keyboard navigation
-Reduced motion support
-Semantic HTML
-Screen reader compatibility
-Accessible form states
-```
-
----
-
-# Reduced Motion
-
-Support:
-
-```css
-prefers-reduced-motion
-```
-
-Reduced motion mode should:
-
-- Remove non-essential transitions
-- Minimize transform movement
-- Preserve usability
-- Preserve hierarchy clarity
-
----
-
-# Border Radius System
-
-## Radius Philosophy
-
-Use modern rounded geometry.
-
-Recommended:
-
-```txt
-sm  = 6px
-md  = 10px
-lg  = 14px
-xl  = 18px
-2xl = 24px
-```
-
-Maintain consistency across all components.
-
----
-
-# Design Tokens
-
-## Token Naming Strategy
-
-Use modern React/Next.js/shadcn-ui naming conventions.
-
-Examples:
-
-```txt
---background
---foreground
---card
---card-foreground
---popover
---primary
---primary-foreground
---secondary
---secondary-foreground
---muted
---accent
---destructive
---border
---input
---ring
-```
-
----
-
-# Token Synchronization
-
-## Required Synchronization
-
-The following systems must stay aligned:
-
-```txt
-Figma Variables
-Tailwind Theme
-CSS Variables
-Motion Tokens
-shadcn/ui Tokens
-```
-
-Never allow visual drift between design and implementation.
-
----
-
-# Tailwind + shadcn/ui Integration
-
-## Design Requirements
-
-Design components should map directly to:
-
-```txt
-shadcn/ui primitives
-Tailwind utility patterns
-Radix UI accessibility patterns
-```
-
-Favor composability over rigid page-specific components.
-
----
-
-# Portfolio UX Direction
-
-## Portfolio Personality
-
-The portfolio should feel like:
-
-```txt
-A modern frontend product experience
-A polished engineering showcase
-A premium developer brand
-A creative systems portfolio
-```
-
-The experience should communicate:
-
-- Design engineering capability
-- Systems thinking
-- Frontend craftsmanship
-- Motion sensitivity
-- Accessibility awareness
-- Technical precision
-
----
-
-# Content Presentation
-
-## Case Studies
-
-Project presentations should emphasize:
-
-```txt
-Problem solving
-Architecture
-UI decisions
-Design systems
-Performance
-Accessibility
-Motion rationale
-Technical implementation
-```
-
-Avoid purely decorative showcases.
-
-Explain reasoning.
-
----
-
-# Visual Hierarchy
-
-## Priority Rules
-
-Users should immediately identify:
-
-1. Identity
-2. Expertise
-3. Selected work
-4. Technical depth
-5. Contact pathways
-
-Primary CTAs should always remain visually obvious.
-
----
-
-# Image & Media Guidelines
-
-## Media Usage
-
-Use:
-
-```txt
-High-quality mockups
-Clean screenshots
-Structured diagrams
-Short subtle motion previews
-```
-
-Avoid:
-
-```txt
-Visual clutter
-Low-quality imagery
-Overly compressed screenshots
-Stock-photo aesthetics
-```
-
----
-
-# Performance Philosophy
-
-## Performance Requirements
-
-The experience should feel extremely responsive.
-
-Prioritize:
-
-```txt
-Fast rendering
-Minimal layout shift
-Optimized animations
-Efficient hydration
-Lazy-loaded media
-GPU-friendly transforms
-```
-
-Motion should never harm performance.
-
----
-
-# Responsive Design
-
-## Responsive Philosophy
-
-The portfolio must feel premium across:
-
-```txt
-Desktop
-Laptop
-Tablet
-Mobile
-Ultrawide displays
-```
-
-Mobile layouts should preserve hierarchy and visual confidence.
-
-Never treat mobile as a simplified afterthought.
-
----
-
-# Implementation Notes
-
-## Preferred Stack
-
-Recommended implementation stack:
-
-```txt
-Next.js
-React
-TypeScript
-Tailwind CSS
-shadcn/ui
-Motion
-```
-
-Web UI frameworks like Radix UI or Base UI should be used based on the fact that they fulfill the desired task and
-requirements of a solid, functional- and developer-friendly experience with awareness of visual appeal.
-
----
-
-# Final Experience Goals
-
-The final portfolio should feel:
-
-```txt
-Fast
-Elegant
-Confident
-Modern
-Intentional
-Technically excellent
-Visually memorable
-Accessible
-Systematic
-Premium
-```
+A theme is a combination of **style** × **appearance** × **accent color** × **font size**, persisted in `localStorage`
+(`dr-theme*` keys) and applied as classes and `data-*` attributes on `<html>` before first paint
+(`themeInitializationScript`).
+
+| Style       | Character                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------ |
+| `default`   | Rounded, colored, animated. The reference experience.                                      |
+| `wireframe` | Black/white, square corners, no animation, accent = foreground. Shows the structure naked. |
+
+Other values exist in types (`crazy-color`, `notes`) but are not offered in `THEME_OPTIONS`; the Cornell-notes
+background is a decorative layer on the home page.
+
+Rules:
+
+- Structure differs by tokens and `html[data-theme=…]` selectors, not by forking components.
+- A component may read `useTheme()` for small structural flags (e.g. `Badge` squares off in wireframe) — keep these
+  minimal.
+- Persona/`ThemeMode` (`design` | `dev`) is stored but currently has no visible effect.
+
+## 10. Components
+
+Architecture: `src/components/{ui,feature}`. See the READMEs in [`ui`](./src/components/ui/README.md) and
+[`feature`](./src/components/feature/README.md). One folder per component with `index.ts`, `types.ts` and `stories/`
+where applicable. Imports use the `@/` alias and are grouped ui → feature → lib. Pages in `src/app` compose feature and
+ui components.
+
+Dependency rule: `feature` consumes `ui`; `ui` never imports from `feature`. ESLint enforces the dependency rule, the
+layer order of imports and the feature file prefix (`npm run lint`, `npm run format`).
+
+### UI (`src/components/ui`)
+
+Baseline, domain-free components: `Button`, `Badge`, `Divider`, `Hr`, `Blockquote`, `Codeblock`, `ExternalLink`,
+`Icon*`, `Select`, `Toggle`, `Tooltip`, `Typewriter`, `TypewriterOverlay`, `Animate`, `ButtonGroup`, `Drawer`,
+`Dialog`, `Tabs`, `BadgeHr`, `Container`, `Sidebar` and `PageTemplate` (h1, hero blockquote and content slot used by
+inner pages).
+
+- **Button** — `variant` = `{contained|ghost|text|link}-{primary|foreground|muted}` (+ `contained-white`), `size` =
+  `tiny | small | medium | large`. Minimum touch target 44 px for `medium`/`large`. The component picks `a`, `Link` or
+  `button`, adds the external-link arrow, `rel`, `aria-label` and `title` automatically for `https`, `mailto:`, `tel:`
+  and downloads.
+- **Tooltip** — Base UI popup, `bg-popover` with a `ring-foreground/10` border, `text-sm`, `rounded-xl`, `z-max`, 150 ms
+  opacity fade (`motion-safe:`). Used for `Button` with `iconOnly` + `label`.
+- **Badge** — `primary | foreground | muted | white`; `sm | md | lg`; pill-shaped.
+- **Divider** — `hr`, `dot`, `three-dotted`.
+
+### Feature (`src/components/feature`)
+
+Domain and feature components, one folder per feature: `header`, `footer`, `avatar`, `profile-links` (`ButtonGithub`,
+`ButtonLinkedin`, `ButtonFigma`), `brand`, `tools`, `technologies`, `projects`, `playground`, `philosophy`,
+`principles`, `socials`, `education`, `ux`, `hero-navigation`, `intro`, `theme` (provider, `useTheme`, tokens and
+settings UI), `typography` (`H1`–`H6`, `Ul`, `Ol`), `logo` (`Logo*`), `iOS`, `animated-progress`, `events` (winter
+scene).
+
+File naming: every file in a feature directory is prefixed with the directory name (`tools/tools-data.ts`). Only
+`index.ts` is exempt.
+
+- **Avatar** — round photo; `variant` = `default | lightbox`. `lightbox` opens the photo centered on a
+  `background/90` scrim (`z-100`, photo at `z-max`) with a 250 ms scale-and-fade, no shadow.
+
+### Variants
+
+Use `cva` + `cn` for variants. Prefer an explicit `variant`/`size` prop over free-form class overrides. `className`
+passthrough is for layout (margin, width), not for restyling.
+
+## 11. Imagery and iconography
+
+- Project previews are wide wallpapers (`public/projects/*`), shown unframed; `width`/`height` always set; alt text
+  `"<Title> preview image"`. Hero imagery uses `preload`.
+- Logos are SVG components in `feature/logo`; raster fallbacks sit in `feature/logo/img`. Logos must work in dark mode
+  (use `currentColor` or provide a dark variant).
+- Icons: Lucide for UI icons (`IconLucide`), Heroicons 16/solid for inline arrows. Size via the button (`size-5` at
+  medium). Custom conceptual icons (Atomic Design, Flower of Product Engineering, …) are bespoke SVG `ui` components.
+- Decorative SVG shapes (`SvgShapes`) are four corner crop marks of the page, desktop-only (`lg:block`), `pointer-events-none`, `z-10`.
+
+## 12. Accessibility
+
+- WCAG AA contrast for text in every theme/accent. Check `primary-foreground` on every accent when adding one.
+- Visible focus on all interactive elements (do not remove outlines; Base UI/shadcn patterns use `focus-visible:ring`).
+- Everything operable by keyboard; overlays trap focus and close on `Esc` (provided by Base UI primitives).
+- Semantic landmarks: `header`, `main`, `footer`, `aside`, `section` + headings in order.
+- Icon-only controls get `aria-label`; links that open a new tab say so in `aria-label`/`title`.
+- Reduced motion honored via `motion-safe:`, `prefers-reduced-motion` and `MotionConfig`.
+- Storybook runs `addon-a11y` (`test: 'todo'`); treat reported violations as bugs.
+
+## 13. Dos and don'ts
+
+**Do**
+
+- Use semantic tokens and Tailwind utilities that resolve to them.
+- Wrap page sections in `Container`; reveal them with `Animate`.
+- Start new UI as a `ui` component with a story when it is reusable.
+- Test in light, dark, all three accents, wireframe, and 90 / 110 % font size.
+- Keep one primary action per view visually dominant (`contained-primary`).
+- Write short, declarative copy in sentence case.
+- Keep `rem`-based sizing so font-size settings scale everything.
+
+**Don't**
+
+- Hard-code hex/rgb/oklch values or px font sizes in components.
+- Use theme-specific names (`--blue-bg`); name by role.
+- Add shadows, gradients, glass or parallax.
+- Stack more than one `bg-primary` full-bleed band on a page.
+- Add looping or autoplay motion to content.
+- Fork a component per theme; use tokens and `html[data-theme=…]` selectors.
+- Put body copy in `text-foreground` — reserve it for emphasis, headings and labels.
+- Use `div` + `onClick` for something that navigates or acts; use `Button`/`Link`.
+- Style with inline `style` unless a value is genuinely dynamic.
+
+## 14. Rules (enforced in review)
+
+1. New color, radius, font, duration or width ⇒ add a token in `globals.css` first.
+2. New accent ⇒ full `-foreground/-hover/-border` set, mapped in all three places, contrast verified.
+3. New component ⇒ correct layer (`ui` or `feature`), `index.ts` barrel, typed props, a story for `ui` components, works in wireframe.
+4. New page ⇒ `PageTemplate` (or `Container` sections), `metadata` with the `… | Dominik Rubröder, UX Engineer` title
+   pattern, `HeroNavigation` entry if it is top-level.
+5. Interactive elements ≥ 44 px (`medium`+) on touch layouts; `tiny`/`small` only inside dense, non-primary contexts.
+6. Run `npm run format` (Prettier incl. Tailwind class sorting) and `npm run lint` before committing.
+7. Every visual decision of lasting effect gets a line in the decision log below.
+
+## 15. Decision log
+
+Newest last. Derived from release history (`Release UI x.y.z`) and the current code.
+
+| When / version   | Decision                                                                                               | Why                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| Early (≤ 2.0)    | Move to Atomic Design architecture (`atoms → templates`)                                               | Make the portfolio demonstrate system thinking; predictable place for every component.   |
+| Early            | Next.js 15 → 16, `framer-motion` → `motion`                                                            | Stay current; smaller, maintained animation package.                                     |
+| UI2              | Single narrow reading column (44rem) as default layout                                                 | Readability and a distinctive, calm rhythm; wide layouts only where imagery needs it.    |
+| UI2              | Outfit as the single UI typeface; Patrick Hand for sketch accents; JetBrains Mono for code             | One geometric family keeps hierarchy via size/weight only; handwriting adds personality. |
+| UI2              | OKLCH tokens + runtime accent switching (blue / violett / orange)                                      | Perceptually even colors; visitors can personalize; proves token architecture live.      |
+| UI2              | Appearance = light / dark / **system**, class-based dark variant                                       | Respect OS preference while allowing manual override and no-flash init script.           |
+| Projects release | Project showcase with one full-bleed `bg-primary` hero project, others in a quiet list                 | One story first, the rest scannable; limits accent to ≈ 10 %.                            |
+| 2.x              | Wireframe theme                                                                                        | Shows the structure beneath the skin; doubles as a high-contrast, no-motion mode.        |
+| 2.x              | Theme settings in a side panel ("Modify") and header quick controls                                    | Quick toggles for common needs; full control without leaving the page.                   |
+| 2.x              | Base UI `Drawer`/`Tabs` wrapped in shadcn-style components                                             | Accessible, unstyled primitives; styling stays token-driven.                             |
+| 2.x              | Seasonal winter scene (snowfall, Santa cap) behind a toggle                                            | Personality and delight; optional so it never costs usability.                           |
+| 3.0              | Home page as a sequence of large statements separated by three dots                                    | Lead with the philosophy ("design and code") before any detail; strong first impression. |
+| 3.0              | "Agents are about orchestration and execution" statement; accent band "We compose, direct and oversee" | Reflects the current working model with AI agents; accent band marks the turning point.  |
+| 3.0.x            | Button system `contained / ghost / text / link × primary / foreground / muted`                         | Small, orthogonal matrix instead of one-off buttons.                                     |
+| 3.0.x            | `Animate` supports a controlled `active` mode besides viewport reveal                                  | Lets intro/typewriter sequences orchestrate the first reveal.                            |
+| 3.0.x            | Intro typewriter overlay with a random phrase                                                          | Memorable first moment; communicates curiosity and craft.                                |
+| 3.0.x            | Docs, `CLAUDE.md`/`AGENTS.md`, `DESIGN.md`, `UX_PRINCIPLES.md` at repo root                            | Give humans and coding agents the same design source of truth.                           |
+
+| 3.0.6 | Three-dotted divider dots bounce one after another, infinite | Small living punctuation between statements; sequential so it reads as a rhythm, not a flash. |
+| 3.0.6 | Avatar `lightbox` variant: zoom to centered round photo on a flat scrim | Lets visitors see the person behind the portfolio; no frame, shadow or caption added. |
+| 3.0.6 | Philosophy core "UI" center pulses (`animate-core-pulse`, scale 1 → 1.12 → 0.96, 2.1 s loop) | Same rhythm as the three-dot divider; the shared center of the diagram reads as the living part. |
+| 3.0.6 | Icon-only buttons use `iconOnly` + `label`: accessible name and `Tooltip` text, no native `title` | Native `title` is unreachable by keyboard and touch; one source for name and explanation. |
+| 3.0.6 | Components split into `ui` (baseline, domain-free) and `feature` (domain-specific); `feature` consumes `ui`, never the reverse | Replaces the four Atomic Design layers. Clear ownership: a feature keeps all its parts in one folder; `ui` stays reusable. |
+| 3.0.6 | Decorative `SvgShapes` become crop marks in the four corners of `main` (accent color, static, `lg`+; wireframe background uses `xl`+) | Quiet drafting frame that fits the design-and-code story; replaces the scattered shapes and keeps the reading column clear. |
+
+> When you make a lasting design decision, add a row: _version · decision · why_.
+
+## 16. Known gaps
+
+- Border settings (radius / style / width) appear in the Modify panel but are placeholders wired to the animation
+  toggle; the context holds `THEME_BORDER_SETTINGS_DEFAULT` but does not apply it.
+- `THEME_COLOR_DEFAULT` is `blue`, but choosing the `default` style resets the accent to `primary`.
+- `crazy-color` and `notes` themes exist in types only.
+- `todos.md`: "Background off" and "Focus mode" are planned.

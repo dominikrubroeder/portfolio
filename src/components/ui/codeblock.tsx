@@ -1,0 +1,78 @@
+'use client';
+
+import { useCallback } from 'react';
+
+import { CheckIcon } from '@heroicons/react/16/solid';
+import { ClipboardCopy } from 'lucide-react';
+import { Highlight, themes } from 'prism-react-renderer';
+
+import { Button } from '@/components/ui/button';
+import { ButtonGroup } from '@/components/ui/button-group';
+
+import { useClipboard } from '@/hooks/use-clipboard';
+import { cn } from '@/lib/utils';
+
+export function CodeBlock({
+  code,
+  fileName,
+  language = 'tsx',
+  showLineNumber,
+  borderless,
+  className
+}: {
+  code: string;
+  fileName: string;
+  language?: 'jsx' | 'tsx' | 'css' | 'html';
+  showLineNumber?: boolean;
+  borderless?: boolean;
+  className?: string;
+}) {
+  const { isCopied, copyToClipboard } = useClipboard({ timeout: 2000 });
+
+  const handleCopyToClipboard = useCallback(async () => {
+    await copyToClipboard(code);
+  }, [code, copyToClipboard]);
+
+  return (
+    <code
+      className={cn(
+        'grid w-full rounded border p-6',
+        borderless && 'border-none px-0',
+        className
+      )}
+    >
+      <span className="flex items-center justify-between gap-4 bg-background">
+        <span>{fileName}</span>
+
+        <ButtonGroup>
+          <Button
+            variant="ghost-foreground"
+            iconOnly
+            label={isCopied ? 'Copied' : `Copy ${fileName} code snippet`}
+            onClick={() => handleCopyToClipboard()}
+          >
+            {isCopied ? <CheckIcon /> : <ClipboardCopy />}
+          </Button>
+        </ButtonGroup>
+      </span>
+
+      <span className="overflow-auto font-mono">
+        <Highlight theme={themes.vsLight} code={code} language={language}>
+          {({ className, style, tokens, getLineProps, getTokenProps }) => (
+            <pre className={cn('rounded font-mono', className)} style={style}>
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line })}>
+                  {showLineNumber && <span className="mr-6">{i + 1}</span>}
+
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token })} />
+                  ))}
+                </div>
+              ))}
+            </pre>
+          )}
+        </Highlight>
+      </span>
+    </code>
+  );
+}

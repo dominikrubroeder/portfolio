@@ -1,7 +1,8 @@
 'use client';
 
 import { useCallback } from 'react';
-import { useTheme } from '@/components/organisms/theme';
+
+import { useTheme } from '@/components/feature/theme';
 
 export const useScrollToTop = () => {
   const { theme } = useTheme();

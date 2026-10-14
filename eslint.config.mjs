@@ -1,101 +1,110 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-import storybook from 'eslint-plugin-storybook';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
+import importPlugin from 'eslint-plugin-import';
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import localPlugin from './eslint-rules/index.mjs';
 
-import { FlatCompat } from '@eslint/eslintrc';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname
-});
-
-const eslintConfig = [
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
   {
-    ignores: [
-      'node_modules/**',
-      '.next/**',
-      'out/**',
-      'build/**',
-      'dist/**',
-      'coverage/**',
-      '.env*',
-      '*.config.js',
-      'public/sw.js',
-      'public/workbox-*.js',
-      '**/*.min.js',
-      '**/vendor/**'
-    ]
-  },
-  ...compat.config({
-    extends: ['next/core-web-vitals', 'next/typescript'],
-    plugins: ['import'],
+    plugins: {
+      import: importPlugin,
+      local: localPlugin
+    },
+    settings: {
+      'import/resolver': {
+        typescript: true
+      }
+    },
     rules: {
-      // Enforce consistent type imports
+      'local/component-layer-order': 'error',
+      'local/component-structure': 'error',
       '@typescript-eslint/consistent-type-imports': [
         'error',
+        { prefer: 'type-imports' }
+      ],
+      'no-restricted-syntax': [
+        'error',
         {
-          prefer: 'type-imports',
-          disallowTypeAnnotations: false,
-          fixStyle: 'separate-type-imports'
+          selector: 'Literal[value=/-\\[(#|rgba?\\(|hsla?\\()/]',
+          message:
+            'No arbitrary color values (hex/rgb/hsl) in Tailwind classes — add a design token to globals.css and use that instead.'
+        },
+        {
+          selector: 'TemplateElement[value.raw=/-\\[(#|rgba?\\(|hsla?\\()/]',
+          message:
+            'No arbitrary color values (hex/rgb/hsl) in Tailwind classes — add a design token to globals.css and use that instead.'
         }
       ],
-      '@typescript-eslint/no-unused-expressions': 'off',
       'import/order': [
         'error',
         {
           groups: [
-            'builtin', // Node.js built-in modules
-            'external', // External packages
-            'internal', // Internal modules
-            ['parent', 'sibling'], // Parent and sibling imports
-            'index', // Index imports
-            'type' // Type imports
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'unknown',
+            'type'
           ],
-          'newlines-between': 'always',
-          alphabetize: {
-            order: 'asc',
-            caseInsensitive: true
-          },
           pathGroups: [
+            { pattern: 'react', group: 'external', position: 'before' },
+            { pattern: 'react/**', group: 'external', position: 'before' },
+            { pattern: 'next', group: 'external', position: 'before' },
+            { pattern: 'next/**', group: 'external', position: 'before' },
             {
-              pattern: 'react',
-              group: 'external',
-              position: 'before'
-            },
-            {
-              pattern: 'next/**',
-              group: 'external',
-              position: 'before'
-            },
-            {
-              pattern: '@/lib/**',
+              pattern: '@/components/ui/**',
               group: 'internal',
               position: 'before'
             },
             {
-              pattern: '@/components/**',
+              pattern: '@/components/feature/**',
               group: 'internal',
-              position: 'after'
+              position: 'before'
             },
-            {
-              pattern: '@/**',
-              group: 'internal',
-              position: 'after'
-            }
+            { pattern: '**/*.css', group: 'unknown', position: 'after' }
           ],
-          pathGroupsExcludedImportTypes: ['react', 'next']
+          pathGroupsExcludedImportTypes: ['react', 'next'],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc', caseInsensitive: true }
         }
-      ],
-      'import/first': 'error',
-      'import/no-duplicates': 'error',
-      'import/newline-after-import': 'error'
+      ]
     }
-  }),
-  ...storybook.configs['flat/recommended']
-];
+  },
+  {
+    files: ['src/components/ui/**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['@/components/feature', '@/components/feature/**'],
+              message:
+                'ui components must not import feature components. Features consume ui, never the other way around.'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    // Brand logos carry the colors of the brands they depict.
+    files: ['src/components/feature/logo/**/*.{ts,tsx}'],
+    rules: { 'no-restricted-syntax': 'off' }
+  },
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts'
+  ])
+]);
 
 export default eslintConfig;
