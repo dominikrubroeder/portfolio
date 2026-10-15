@@ -2,7 +2,7 @@ import type { LogoProps } from '@/components/feature/logo/logo-types';
 
 import { cn } from '@/lib/utils';
 
-export function LogoHdPlus({ id, className, ...restProps }: LogoProps) {
+export function LogoHdPlus({ className, ...restProps }: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

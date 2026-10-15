@@ -2,20 +2,21 @@ import { Fragment } from 'react';
 
 import type { Metadata } from 'next';
 
-import Image from 'next/image';
+import Image, { getImageProps } from 'next/image';
 import Link from 'next/link';
+
+import { preload } from 'react-dom';
 
 import { Animate } from '@/components/ui/animate';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ButtonBack } from '@/components/ui/button/button-back';
 import { Container } from '@/components/ui/container';
 import { Divider } from '@/components/ui/divider';
+import { DotsDivider } from '@/components/ui/dots-divider';
 import { ExternalLink } from '@/components/ui/external-link';
 import { Hr } from '@/components/ui/hr';
 import { PageTemplate } from '@/components/ui/page-template';
 
-import { Avatar } from '@/components/feature/avatar';
 import { getProject } from '@/components/feature/projects';
 import { projects } from '@/components/feature/projects/projects-data';
 import { H2, Ul } from '@/components/feature/typography';
@@ -27,131 +28,174 @@ export const metadata: Metadata = {
   description: 'Project contributions from 2016 to 2026'
 };
 
+const HERO_PROJECT_TITLE = 'Value Booster';
+
+// Number of list images (after the hero) preloaded in the server HTML.
+// The rest load lazily, so the 3-6 MB wallpapers do not compete with the hero.
+const PRELOADED_LIST_IMAGES = 1;
+
+// The images render inside client reveal wrappers, so `preload` on <Image>
+// emits no <link> in the server HTML. Preload the above-the-fold ones here.
+function preloadProjectImages() {
+  const listProjects = projects.filter(
+    (project) => project.title !== HERO_PROJECT_TITLE && project.previewImage
+  );
+  const heroProject = getProject({ title: HERO_PROJECT_TITLE });
+
+  const targets = [
+    ...(heroProject?.previewImage
+      ? [{ project: heroProject, isHero: true }]
+      : []),
+    ...listProjects
+      .slice(0, PRELOADED_LIST_IMAGES)
+      .map((project) => ({ project, isHero: false }))
+  ];
+
+  for (const { project, isHero } of targets) {
+    if (!project.previewImage) continue;
+
+    const { props } = getImageProps({
+      src: project.previewImage,
+      alt: '',
+      width: isHero ? 1920 : 800,
+      height: isHero ? 630 : 600
+    });
+
+    preload(props.src, {
+      as: 'image',
+      imageSrcSet: props.srcSet,
+      imageSizes: props.sizes,
+      fetchPriority: isHero ? 'high' : 'auto'
+    });
+  }
+}
+
 export default function ProjectsPage() {
-  const heroProject = getProject({ title: 'Value Booster' });
+  preloadProjectImages();
+
+  const heroProject = getProject({ title: HERO_PROJECT_TITLE });
 
   return (
     <PageTemplate
       h1="Projects"
       heroBlockquote="Roles are changing. During the last year, roles and job descriptions were more distinct and self-contained. Now the lines are blurring more and more. In my first years, I contributed as Frontend Designer or Frontend Engineer, then as Frontend Designer and Frontend Engineer. This merged into a unified role as UX Engineer, especially for headless frontends and UX concepts, now everything moves more onto holistic product UI thinking and execution – Product Design Engineer."
     >
-      <Animate>
-        <div className="relative flex h-24 items-center justify-center">
-          <span className="absolute top-0 left-1/2 block -translate-x-1/2 rotate-90 text-9xl text-primary">{`}`}</span>
-        </div>
-      </Animate>
+      <DotsDivider />
 
       {heroProject && (
-        <Container
-          as="section"
-          size="full-width"
-          className="animate-in-to-left-100 space-y-5 bg-primary py-12"
-        >
-          {heroProject.previewImage && (
-            <Link
-              href={heroProject.url}
-              title={`Open ${heroProject.title} in external tab`}
-              aria-label={`Click to open ${heroProject.title} in an external tab`}
-              target="_blank"
-              className="relative mx-auto block max-w-container-panorama space-y-2 sm:space-y-0"
-            >
-              <Image
-                src={heroProject.previewImage}
-                alt={`${heroProject.title} preview image`}
-                width={1920}
-                height={630}
-                draggable={false}
-                preload
-              />
-            </Link>
-          )}
-
-          <div className="mx-auto max-w-(--container-readable) px-4 xl:px-0">
-            <div>
-              <H2 className="sticky-none mb-0 text-primary-foreground">
-                {heroProject.title}
-              </H2>
-
-              <small className="flex flex-wrap items-center gap-2">
-                <ul className="my-0 -mr-1">
-                  {heroProject.companies?.map((company) => (
-                    <li
-                      key={`Project ${heroProject.title} company ${company.label}`}
-                    >
-                      {company.href ? (
-                        <ExternalLink
-                          href={company.href}
-                          size="sm"
-                          className="mr-0 -ml-1"
-                          color="primary-foreground"
-                        >
-                          <span>{company.label}</span>
-                        </ExternalLink>
-                      ) : (
-                        <span className="text-primary-foreground">
-                          {company.label}
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-
-                <Divider variant="dot" className="bg-white" />
-
-                {heroProject.isActive ? (
-                  <span className="text-primary-foreground">
-                    <span className="text-primary-foreground">
-                      {heroProject.timeframe} –{' '}
-                    </span>
-                    <Badge size="sm" variant="white">
-                      Ongoing
-                    </Badge>
-                  </span>
-                ) : (
-                  <span className="text-primary-foreground">
-                    {heroProject.timeframe}
-                  </span>
-                )}
-              </small>
-            </div>
-
-            {heroProject.description && (
-              <p className="mt-2 text-primary-foreground">
-                {heroProject.description}
-              </p>
-            )}
-
-            <p className="mt-2">{heroProject.subline}</p>
-
-            <Hr className="my-3 w-4 border-primary-foreground/16" />
-
-            {heroProject.responsibilities?.length && (
-              <Ul
-                headline="Fields"
-                listStyle="disc"
-                className="text-primary-foreground"
-                headlineClassName="text-primary-foreground"
+        <Animate>
+          <Container
+            as="section"
+            size="full-width"
+            className="z-100 animate-in-to-left-100 space-y-5 bg-primary py-12"
+          >
+            {heroProject.previewImage && (
+              <Link
+                href={heroProject.url}
+                title={`Open ${heroProject.title} in external tab`}
+                aria-label={`Click to open ${heroProject.title} in an external tab`}
+                target="_blank"
+                className="relative mx-auto block max-w-container-panorama space-y-2 sm:space-y-0"
               >
-                {heroProject.responsibilities.map((aspect) => (
-                  <li key={aspect}>{aspect}</li>
-                ))}
-              </Ul>
+                <Image
+                  src={heroProject.previewImage}
+                  alt={`${heroProject.title} preview image`}
+                  width={1920}
+                  height={630}
+                  draggable={false}
+                  placeholder="blur"
+                  preload
+                />
+              </Link>
             )}
 
-            <Button
-              variant="contained-white"
-              href={heroProject.url}
-              title={`View ${heroProject.title}`}
-              aria-label={`Click to view ${heroProject.title} in a new tab`}
-            >
-              View {heroProject.title}
-            </Button>
-          </div>
-        </Container>
+            <div className="mx-auto max-w-(--container-readable) px-4 xl:px-0">
+              <div>
+                <H2 className="sticky-none mb-0 text-primary-foreground">
+                  {heroProject.title}
+                </H2>
+
+                <small className="flex flex-wrap items-center gap-2">
+                  <ul className="my-0 -mr-1">
+                    {heroProject.companies?.map((company) => (
+                      <li
+                        key={`Project ${heroProject.title} company ${company.label}`}
+                      >
+                        {company.href ? (
+                          <ExternalLink
+                            href={company.href}
+                            size="sm"
+                            className="mr-0 -ml-1"
+                            color="primary-foreground"
+                          >
+                            <span>{company.label}</span>
+                          </ExternalLink>
+                        ) : (
+                          <span className="text-primary-foreground">
+                            {company.label}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Divider variant="dot" className="bg-white" />
+
+                  {heroProject.isActive ? (
+                    <span className="text-primary-foreground">
+                      <span className="text-primary-foreground">
+                        {heroProject.timeframe} –{' '}
+                      </span>
+                      <Badge size="sm" variant="white">
+                        Ongoing
+                      </Badge>
+                    </span>
+                  ) : (
+                    <span className="text-primary-foreground">
+                      {heroProject.timeframe}
+                    </span>
+                  )}
+                </small>
+              </div>
+
+              {heroProject.description && (
+                <p className="mt-2 text-primary-foreground">
+                  {heroProject.description}
+                </p>
+              )}
+
+              <p className="mt-2">{heroProject.subline}</p>
+
+              <Hr className="my-3 w-4 border-primary-foreground/16" />
+
+              {heroProject.responsibilities?.length && (
+                <Ul
+                  headline="Fields"
+                  listStyle="disc"
+                  className="text-primary-foreground"
+                  headlineClassName="text-primary-foreground"
+                >
+                  {heroProject.responsibilities.map((aspect) => (
+                    <li key={aspect}>{aspect}</li>
+                  ))}
+                </Ul>
+              )}
+
+              <Button
+                variant="contained-white"
+                href={heroProject.url}
+                title={`View ${heroProject.title}`}
+                aria-label={`Click to view ${heroProject.title} in a new tab`}
+              >
+                View {heroProject.title}
+              </Button>
+            </div>
+          </Container>
+        </Animate>
       )}
 
       <Container as="section">
-        <Ul className="space-y-5 sm:space-y-12">
+        <Ul className="space-y-10 sm:space-y-12">
           {projects
             .filter((project) => project.title !== heroProject?.title)
             .map((project, index, array) => (
@@ -174,7 +218,7 @@ export default function ProjectsPage() {
                             height={600}
                             className="block w-full scale-105"
                             draggable={false}
-                            preload={true}
+                            placeholder="blur"
                           />
                         ) : (
                           <div className="flex h-44 w-full items-center justify-center [&>svg]:max-h-32 [&>svg]:max-w-60">
@@ -261,29 +305,16 @@ export default function ProjectsPage() {
                 </li>
 
                 {index + 1 !== array.length && (
-                  <li key={`${project.title}-divider-${index + 1}`}>
-                    <Hr />
+                  <li
+                    key={`${project.title}-divider-${index + 1}`}
+                    role="separator"
+                  >
+                    <DotsDivider />
                   </li>
                 )}
               </Fragment>
             ))}
         </Ul>
-      </Container>
-
-      <Container className="mb-0">
-        <Hr />
-
-        <ButtonBack
-          buttonProps={{
-            variant: 'ghost-foreground',
-            className: 'xl:-ml-2 gap-4'
-          }}
-        >
-          <div className="flex items-center gap-2">
-            <Avatar width={24} height={24} as="Image" />
-            Home
-          </div>
-        </ButtonBack>
       </Container>
     </PageTemplate>
   );

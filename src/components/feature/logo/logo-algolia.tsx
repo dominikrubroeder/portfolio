@@ -3,7 +3,7 @@ import type { LogoProps } from '@/components/feature/logo';
 
 import { cn } from '@/lib/utils';
 
-export function LogoAlgolia({ id, className }: LogoProps) {
+export function LogoAlgolia({ className }: LogoProps) {
   return (
     <svg
       width="128"

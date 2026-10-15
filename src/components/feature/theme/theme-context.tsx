@@ -13,7 +13,6 @@ import type { ReactNode } from 'react';
 import {
   THEME_ANIMATION_SETTINGS_DEFAULT,
   THEME_APPEARANCE_DEFAULT,
-  THEME_BORDER_SETTINGS_DEFAULT,
   THEME_COLOR_DEFAULT,
   THEME_FONT_SIZE_DEFAULT,
   THEME_KEY,
@@ -29,7 +28,6 @@ import type {
   Theme,
   ThemeAnimationSettings,
   ThemeAppearance,
-  ThemeBorderSettings,
   ThemeColor,
   ThemeContextType,
   ThemeEvents,
@@ -54,8 +52,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   );
   const [themeAnimationSettings, setThemeAnimationSettings] =
     useState<ThemeAnimationSettings>(THEME_ANIMATION_SETTINGS_DEFAULT);
-  const [themeBorderSettings, setThemeBorderSettings] =
-    useState<ThemeBorderSettings>(THEME_BORDER_SETTINGS_DEFAULT);
   const [themeMode, setThemeMode] = useState<ThemeMode | undefined>(undefined);
   const [themeEvents, setThemeEvents] = useState<ThemeEvents>({
     isEventWinterEnabled: true
@@ -94,7 +90,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       mediaQuery.addEventListener('change', handleChange);
       return () => mediaQuery.removeEventListener('change', handleChange);
     }
-  }, [themeAppearance, applyThemeAppearance]);
+  }, [themeAppearance, applyThemeAppearance, isInitialized]);
 
   const handleThemeColor = useCallback((themeColor: ThemeColor) => {
     setThemeColor(themeColor);
@@ -174,7 +170,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     htmlTag.classList.add(`theme-style-${themeOptionKey}`);
     htmlTag.dataset.theme = themeOptionKey;
-  }, [theme.key]);
+  }, [theme.key, isInitialized]);
 
   useEffect(() => {
     if (!isInitialized) return;
@@ -192,7 +188,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     if (themeColor) {
       htmlTag.classList.add(`theme-color-${themeColor}`);
     }
-  }, [themeColor]);
+  }, [themeColor, isInitialized]);
 
   useEffect(() => {
     if (!isInitialized) return;
@@ -217,7 +213,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     htmlTag.classList.add(themeFontSizeKey);
     htmlTag.dataset.themeFontSize = themeFontSize;
-  }, [themeFontSize]);
+  }, [themeFontSize, isInitialized]);
 
   const handleIsEventWinterEnabled = useCallback(
     (isEventWinterEnabled: boolean) => {
@@ -284,7 +280,6 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     setIsInitialized(true);
   }, [
-    handleTheme,
     handleThemeAppearance,
     handleThemeColor,
     handleThemeFontSize,
@@ -308,7 +303,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     } else {
       handleTheme(THEME_OPTIONS[randomIndex]);
     }
-  }, [theme]);
+  }, [theme, handleTheme]);
 
   const shouldAnimate = useMemo(
     () => theme.key === 'default' && !themeAnimationSettings.isEnabled,
@@ -332,7 +327,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [themeMode, isInitialized]);
 
   // eslint-disable-next-line react-hooks/set-state-in-effect -- read persisted settings after hydration
-  useEffect(() => initTheme(), []);
+  useEffect(() => initTheme(), [initTheme]);
 
   const value: ThemeContextType | null = {
     theme,

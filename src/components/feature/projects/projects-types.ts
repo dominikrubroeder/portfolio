@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import type { StaticImageData } from 'next/image';
+
 import type { Brand } from '@/components/feature/brand';
 
 export interface Project {
@@ -23,6 +25,6 @@ export interface Project {
       }[]
     | undefined;
   demoUrls: { label: string; src: string }[] | undefined;
-  previewImage?: string;
+  previewImage?: StaticImageData;
   previewImageTimestamp?: string;
 }

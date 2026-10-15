@@ -3,7 +3,7 @@ import type { LogoProps } from '@/components/feature/logo/logo-types';
 
 import { cn } from '@/lib/utils';
 
-export function LogoHotjar({ id, className }: LogoProps) {
+export function LogoHotjar({ className }: LogoProps) {
   return (
     <svg
       width="128"

@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-background lg:relative lg:z-0 lg:h-24">
+    <header className="sticky top-0 z-200 bg-background lg:relative lg:z-0 lg:h-24">
       <div className="mx-auto flex max-w-container-readable items-center justify-between gap-2 px-4 py-4 xs:gap-0">
         <div className="flex items-center gap-2 xs:gap-3">
           <Avatar

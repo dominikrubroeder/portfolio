@@ -9,7 +9,7 @@ import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/feature/events/winter/
 export function Footer() {
   return (
     <>
-      <footer className="relative z-10 mt-8 space-y-4 border-t bg-background px-4 py-8 text-xs">
+      <footer className="relative z-200 space-y-4 border-t bg-background px-4 py-8 text-xs">
         <Container as="div">
           <div className="mx-auto max-w-container space-y-1 text-center">
             <span className="block">Certified in:</span>

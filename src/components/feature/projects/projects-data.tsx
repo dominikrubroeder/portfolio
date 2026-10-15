@@ -9,6 +9,15 @@ import type { Project } from '@/components/feature/projects/projects-types';
 import { getTechnologies } from '@/components/feature/technologies';
 import { getTools } from '@/components/feature/tools';
 
+import previewHdPlus from '../../../../public/projects/project-hd-plus-preview-wallpaper.png';
+import previewLocaboo from '../../../../public/projects/project-locaboo-preview-wallpaper.png';
+import previewSautershop from '../../../../public/projects/project-sautershop-preview-wallpaper.png';
+import previewSegmueller from '../../../../public/projects/project-segmueller-preview-wallpaper.png';
+import previewUvex from '../../../../public/projects/project-uvex-preview-wallpaper.png';
+import previewValueBooster from '../../../../public/projects/project-value-booster-preview-wallpaper.png';
+import previewVariasophia from '../../../../public/projects/project-variasophia-preview-wallpaper.png';
+import previewWelleat from '../../../../public/projects/project-welleat-preview-wallpaper.png';
+
 export const projects: Project[] = [
   {
     title: 'Uvex',
@@ -50,7 +59,7 @@ export const projects: Project[] = [
       }
     ],
     demoUrls: undefined,
-    previewImage: '/projects/project-uvex-preview-wallpaper.png',
+    previewImage: previewUvex,
     previewImageTimestamp: '2026-02-27'
   },
   {
@@ -95,7 +104,7 @@ export const projects: Project[] = [
     ],
 
     demoUrls: undefined,
-    previewImage: '/projects/project-sautershop-preview-wallpaper.png',
+    previewImage: previewSautershop,
     previewImageTimestamp: '2026-01-06'
   },
   {
@@ -147,7 +156,7 @@ export const projects: Project[] = [
     ],
 
     demoUrls: undefined,
-    previewImage: '/projects/project-value-booster-preview-wallpaper.png',
+    previewImage: previewValueBooster,
     previewImageTimestamp: '2026-09-16'
   },
   {
@@ -195,7 +204,7 @@ export const projects: Project[] = [
     demoUrls: [
       { label: 'https://www.hd-plus.de', src: 'https://www.hd-plus.de' }
     ],
-    previewImage: '/projects/project-hd-plus-preview-wallpaper.png',
+    previewImage: previewHdPlus,
     previewImageTimestamp: '2026-01-06'
   },
   {
@@ -237,7 +246,7 @@ export const projects: Project[] = [
         src: 'https://www.segmueller.de'
       }
     ],
-    previewImage: '/projects/project-segmueller-preview-wallpaper.png',
+    previewImage: previewSegmueller,
     previewImageTimestamp: '2026-01-06'
   },
   {
@@ -301,7 +310,7 @@ export const projects: Project[] = [
       }
     ],
     demoUrls: [],
-    previewImage: '/projects/project-locaboo-preview-wallpaper.png',
+    previewImage: previewLocaboo,
     previewImageTimestamp: '2026-01-06'
   },
   {
@@ -327,7 +336,7 @@ export const projects: Project[] = [
       }
     ],
     demoUrls: [],
-    previewImage: '/projects/project-welleat-preview-wallpaper.png',
+    previewImage: previewWelleat,
     previewImageTimestamp: '2026-04-11'
   },
   {
@@ -350,7 +359,7 @@ export const projects: Project[] = [
       }
     ],
     demoUrls: [],
-    previewImage: '/projects/project-variasophia-preview-wallpaper.png',
+    previewImage: previewVariasophia,
     previewImageTimestamp: '2026-04-11'
   }
 ];

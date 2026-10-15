@@ -3,7 +3,7 @@ import type { LogoProps } from '@/components/feature/logo/logo-types';
 
 import { cn } from '@/lib/utils';
 
-export function LogoReact({ id, className }: LogoProps) {
+export function LogoReact({ className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 128"

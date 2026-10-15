@@ -3,7 +3,7 @@ import type { LogoProps } from '@/components/feature/logo/logo-types';
 
 import { cn } from '@/lib/utils';
 
-export function LogoClaudeAi({ id, className }: LogoProps) {
+export function LogoClaudeAi({ className }: LogoProps) {
   return (
     <svg
       width="128"

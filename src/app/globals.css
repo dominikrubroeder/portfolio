@@ -15,8 +15,8 @@
   --animate-core-pulse: core-pulse 2.1s ease-in-out infinite;
 
   --spacing-container: 90rem;
-  --spacing-container-readable: 44rem;
-  --spacing-container-panorama: 120rem;
+  --spacing-container-readable: 40rem;
+  --spacing-container-panorama: 82rem;
 
   @keyframes to-left {
     0% {
@@ -282,7 +282,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   --z-index-100: 100;
-  --z-index-max: 250;
+  --z-index-max: 1000;
 
   --breakpoint-xs: 375px;
 
@@ -505,7 +505,7 @@
 }
 
 @utility sticky-headline {
-  @apply sticky top-18 z-20 bg-background py-4 sm:top-0 sm:mb-2;
+  @apply sticky top-18 z-20 bg-background pt-5 pb-4 sm:top-0 sm:mb-2;
 }
 
 /* ============================================

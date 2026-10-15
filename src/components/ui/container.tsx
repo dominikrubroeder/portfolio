@@ -25,8 +25,9 @@ export function Container({
       ref={ref}
       className={cn(
         'relative z-20 mx-auto scroll-mt-responsive',
-        size === 'container' && 'max-w-container px-4',
-        size === 'container-readable' && 'max-w-container-readable px-12',
+        size === 'container' && 'max-w-container px-4 xl:px-0',
+        size === 'container-readable' &&
+          'max-w-container-readable px-12 xl:px-0',
         size === 'full-width' && 'w-full',
         className
       )}

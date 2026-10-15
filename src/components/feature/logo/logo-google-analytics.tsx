@@ -3,7 +3,7 @@ import type { LogoProps } from '@/components/feature/logo/logo-types';
 
 import { cn } from '@/lib/utils';
 
-export function LogoGoogleAnalytics({ id, className }: LogoProps) {
+export function LogoGoogleAnalytics({ className }: LogoProps) {
   return (
     <svg
       width="128"

@@ -14,7 +14,6 @@ export function Blockquote({
   author,
   horizontalOffset = true,
   withBackground,
-  isHighlight,
   className,
   children,
   ...rest
@@ -27,7 +26,6 @@ export function Blockquote({
   author?: ReactNode;
   horizontalOffset?: boolean;
   withBackground?: boolean;
-  isHighlight?: boolean;
   className?: string;
   children?: ReactNode;
 } & React.HTMLAttributes<HTMLElement>) {

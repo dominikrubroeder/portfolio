@@ -1,3 +1,5 @@
+import { DotsDivider } from '@/components/ui/dots-divider';
+
 import { cn } from '@/lib/utils';
 
 export function Divider({
@@ -25,26 +27,7 @@ export function Divider({
   }
 
   if (variant === 'three-dotted') {
-    return (
-      <div
-        className={cn(
-          'my-6 flex w-full items-center justify-center gap-3',
-          className
-        )}
-      >
-        {[0, 250, 500].map((delay) => (
-          <span
-            key={delay}
-            className={cn(
-              'size-2 shrink-0 rounded-full border-primary bg-primary',
-              animate && delay === 0 && 'animate-dot-bounce-0',
-              animate && delay === 250 && 'animate-dot-bounce-250',
-              animate && delay === 500 && 'animate-dot-bounce-500'
-            )}
-          />
-        ))}
-      </div>
-    );
+    return <DotsDivider className={className} animate={animate} />;
   }
 
   return (

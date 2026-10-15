@@ -1,4 +1,5 @@
 import './globals.css';
+import './cursor.css';
 import type { ReactNode } from 'react';
 import { Suspense } from 'react';
 
@@ -6,21 +7,16 @@ import type { Metadata } from 'next';
 
 import { Outfit, Patrick_Hand } from 'next/font/google';
 
-import { ArrowRightIcon } from '@heroicons/react/16/solid';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import { Button } from '@/components/ui/button';
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
 
 import { Footer } from '@/components/feature/footer';
-import { Frame } from '@/components/feature/frame';
 import { Header } from '@/components/feature/header';
 import { IntroProvider } from '@/components/feature/intro/intro-context';
-import {
-  ButtonGithub,
-  ButtonLinkedin
-} from '@/components/feature/profile-links';
+import { PageFrame } from '@/components/feature/page-frame';
+import { PageNavigationBar } from '@/components/feature/page-navigation-bar';
 import {
   themeInitializationScript,
   ThemeProvider
@@ -45,13 +41,15 @@ const patrickHand = Patrick_Hand({
 
 export const metadata: Metadata = {
   title:
-    'Hands-on: User Interfaces for the Web | Dominik Rubröder, UX Engineer',
-  description: 'I connect the worlds of design and code',
+    'Design and code speak the same language | Dominik Rubröder, UX Engineer',
+  description:
+    'Design and code speak the same language. I connect the worlds of design and code as a UX Engineer.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
     title:
-      'Hands-on: User Interfaces for the Web | Dominik Rubröder, UX Engineer',
-    description: 'I connect the worlds of design and code',
+      'Design and code speak the same language | Dominik Rubröder, UX Engineer',
+    description:
+      'Design and code speak the same language. I connect the worlds of design and code as a UX Engineer.',
     url: ROUTING_PUBLIC_DOMAIN,
     siteName: ROUTING_PUBLIC_DOMAIN.replace('https://www.', ''),
     images: [
@@ -81,7 +79,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-background font-body text-base leading-normal font-normal text-muted-foreground selection:bg-primary selection:text-primary-foreground">
+      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-background font-body text-base leading-normal font-normal selection:bg-primary selection:text-primary-foreground">
         <ThemeProvider>
           <script
             id="theme-initializer"
@@ -95,8 +93,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <IntroProvider>
             <Header />
 
-            <main className="relative flex-1 space-y-8 pt-4 sm:space-y-12">
-              <Frame className="fixed inset-0 z-50" />
+            <main className="relative flex-1 space-y-8 pt-8 sm:space-y-12">
+              <PageFrame className="fixed inset-0 z-50" />
 
               <Suspense>
                 <ScrollToTop />
@@ -105,19 +103,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               {children}
             </main>
 
-            <div className="sticky bottom-0 z-50 mt-8 bg-background py-4">
-              <div className="mx-auto flex max-w-container-readable items-center gap-3 px-4">
-                <Button href="/projects" className="flex-1 sm:flex-none">
-                  Selected work
-                  <ArrowRightIcon />
-                </Button>
-
-                <div className="flex">
-                  <ButtonGithub id="header-github" />
-                  <ButtonLinkedin id="header-linkedin" />
-                </div>
-              </div>
-            </div>
+            <PageNavigationBar />
 
             <Footer />
           </IntroProvider>

@@ -1,9 +1,16 @@
 'use client';
 
-import type { AnimationGeneratorType, Variants } from 'motion';
+import type { AnimationGeneratorType, Transition, Variants } from 'motion';
+
+// Expo-out: quick first frames, very long soft landing, so the motion never visibly stops.
+const EASE_OUT_SOFT = [0.16, 1, 0.3, 1] as const;
+// Opacity eases in gently and finishes before the travel does.
+const EASE_OPACITY = [0.25, 0.1, 0.25, 1] as const;
+
+const DISTANCE = 20;
 
 export const useAnimate = ({
-  duration,
+  duration = 1.8,
   delay,
   type
 }: {
@@ -11,87 +18,29 @@ export const useAnimate = ({
   delay: number | undefined;
   type?: AnimationGeneratorType;
 }) => {
-  const fadeInUp: Variants = {
-    hidden: {
-      opacity: 0,
-      y: 24
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration,
-        delay,
-        type: 'spring'
-      }
-    }
-  };
+  // Travel and scale glide on the soft ease, with no spring overshoot. Opacity finishes earlier
+  // on a plain ease-out, so the content is fully visible while it is still settling into place.
+  const transition = (): Transition => ({
+    delay,
+    ...(type === 'spring'
+      ? { type: 'spring', duration, bounce: 0 }
+      : { duration, ease: EASE_OUT_SOFT }),
+    opacity: { duration: duration * 0.75, ease: EASE_OPACITY, delay }
+  });
 
-  const fadeInDown: Variants = {
-    hidden: {
-      opacity: 0,
-      y: -24
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration,
-        ease: 'easeOut',
-        delay
-      }
-    }
-  };
+  const fadeY = (from: number): Variants => ({
+    hidden: { opacity: 0, y: from },
+    visible: { opacity: 1, y: 0, transition: transition() }
+  });
 
-  const fadeInLeft: Variants = {
-    hidden: {
-      opacity: 0,
-      x: -24
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration,
-        delay,
-        type: 'spring'
-      }
-    }
-  };
-
-  const fadeInRight: Variants = {
-    hidden: {
-      opacity: 0,
-      x: 24
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration,
-        delay,
-        type: 'spring'
-      }
-    }
-  };
+  const fadeX = (from: number): Variants => ({
+    hidden: { opacity: 0, x: from },
+    visible: { opacity: 1, x: 0, transition: transition() }
+  });
 
   const scaleUp: Variants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.94
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration,
-        ease: type === 'spring' ? undefined : 'easeOut',
-        delay,
-        type: 'spring',
-        stiffness: 600,
-        damping: 20
-      }
-    }
+    hidden: { opacity: 0, scale: 0.94 },
+    visible: { opacity: 1, scale: 1, transition: transition() }
   };
 
   const disabledAnimations: Variants = {
@@ -100,11 +49,11 @@ export const useAnimate = ({
   };
 
   const variants = {
-    up: fadeInUp,
-    down: fadeInDown,
-    left: fadeInLeft,
-    right: fadeInRight,
-    scaleUp: scaleUp,
+    up: fadeY(DISTANCE),
+    down: fadeY(-DISTANCE),
+    left: fadeX(-DISTANCE),
+    right: fadeX(DISTANCE),
+    scaleUp,
     disabledAnimations
   };
 

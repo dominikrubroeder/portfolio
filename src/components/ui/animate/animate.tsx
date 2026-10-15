@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import type { AnimationGeneratorType, ViewportOptions } from 'motion';
 
 export function Animate({
-  direction = 'right',
+  direction = 'up',
   delay = 0.32,
   duration = 1.6,
   type,

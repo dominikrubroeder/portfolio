@@ -20,6 +20,7 @@ export function InViewAction({
   children: ReactNode;
   className?: string;
 }) {
+  const actionRef = useRef(action);
   const isInViewContainer = useRef(null);
   const isInViewRef = useRef(null);
   const isInView = useInView(isInViewRef, {
@@ -28,10 +29,12 @@ export function InViewAction({
   });
 
   useEffect(() => {
-    console.log('isInView', isInView);
+    actionRef.current = action;
+  });
 
+  useEffect(() => {
     if (isInView) {
-      action();
+      actionRef.current();
     }
   }, [isInView]);
 

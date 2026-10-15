@@ -9,7 +9,7 @@ see [DESIGN.md](./DESIGN.md).
 
 1. **Content first, chrome second.** The reading column, statements and project work lead. Controls stay small and
    peripheral.
-2. **One clear next step.** Each view has one dominant action. Home: "Selected work" (sticky bottom bar). Project cards:
+2. **One clear next step.** Each view has one dominant action. Home: "Selected work"; `/projects`: "Home" (sticky bottom bar). Project cards:
    "View <project>".
 3. **The visitor is in control.** Appearance, accent color, font size and animation are user settings, remembered and
    never forced. Respect OS preferences by default (`system`, reduced motion).
@@ -64,7 +64,7 @@ This keeps context on long pages. Opt out with the `sticky-none` class where the
 
 ### Sticky call to action
 
-On home, a bottom bar (`sticky bottom-0`) holds "Selected work" and social links. One bar per page, max.
+`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and the social links. The link is "Selected work"; on `/projects` it swaps to "Home" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
 
 ### Intro
 
@@ -121,8 +121,8 @@ Use `ExternalLink` for inline links to other sites.
 Used for secondary content (tools, technologies, philosophy, education, UX).
 
 - Opens from a trigger button placed next to the section heading (e.g. "Main tools" ⟶ drawer button).
-- Mobile: bottom sheet, swipe down to dismiss, optional swipe handle. Large screens (≥ 1280 px): side panel from the
-  right, swipe right to dismiss.
+- Mobile: floating bottom sheet, inset from left, right and bottom, rounded corners, swipe down to dismiss, optional swipe
+  handle. Large screens (≥ 1280 px): floating side panel from the right, inset from the edges, swipe right to dismiss.
 - Modal: backdrop dims content (transparent on `xl`), focus is trapped, `Esc` and backdrop click close it, scroll is
   contained inside.
 - Content is capped to the readable width; header and footer stay visible.
@@ -171,8 +171,8 @@ current value visible. Appearance cycles **light → dark → system** on repeat
 
 ### Divider
 
-Visual rhythm only — `hr`, `dot` (meta separators like "Company · 2021–2024"), `three-dotted` (section break). Hidden
-from assistive tech or semantically plain; never carries meaning alone.
+Visual rhythm only — `hr`, `dot` (meta separators like "Company · 2021–2024"), `three-dotted` (section break, rendered by `DotsDivider`, also separating projects on `/projects`). Hidden
+from assistive tech or semantically plain; never carries meaning alone. `DotsDivider` stacks vertically by default; `alignment="horizontal"` lays the dots in a row; `animate={false}` keeps them still.
 
 ### Typewriter
 
@@ -182,6 +182,20 @@ Types phrase character by character; shows full text immediately when reduced mo
 
 Grid of tools and technologies; each entry may link out. Logos inherit color tokens so they remain visible in dark and
 wireframe themes.
+
+### Cursor
+
+Accent-colored dot instead of the system arrow, on devices with a fine pointer (`hover: hover`, `pointer: fine`).
+
+- Clickable elements: the dot grows. Press (`:active`): the dot shrinks. Together they confirm "this is clickable" and
+  "this registered".
+- Unavailable (`:disabled`, `aria-disabled`, `data-disabled`, `.cursor-not-allowed`): the dot becomes a faded
+  rounded rectangle with a bar. Shape, not only opacity, says "not available".
+- Text fields: vertical pill, so the insertion point stays precise. Zoom, grab and busy states have their own shapes.
+- Not applied under forced colors (system cursor stays) or on touch.
+- Opt out with `data-theme-cursor='system'` on `<html>`. There is no settings control for it yet.
+- Never rely on cursor shape alone: states are also shown in the element (focus ring, disabled styling, labels).
+- Use `cursor-*` Tailwind classes as before; `cursor.css` maps them to the images.
 
 ### Snowfall (winter event)
 

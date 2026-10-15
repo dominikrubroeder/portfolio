@@ -31,7 +31,6 @@ export function DrawerTools({
             variant="ghost-foreground"
             iconOnly={!drawerTriggerLabel}
             label="Open more tools"
-            className="mr-4"
           >
             {drawerTriggerLabel || <PlusIcon />}
           </Button>

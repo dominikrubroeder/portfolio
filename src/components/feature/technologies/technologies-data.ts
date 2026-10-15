@@ -74,10 +74,6 @@ export const technologies: { group: string; children: Brand[] }[] = [
         href: 'https://remix.run/'
       },
       {
-        name: 'Nuxt',
-        href: 'https://nuxt.com'
-      },
-      {
         name: 'React Router',
         href: 'https://reactrouter.com'
       }

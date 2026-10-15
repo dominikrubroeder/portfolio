@@ -17,7 +17,7 @@ export function ThemeSidebarTrigger({
   showThemeValue?: boolean;
   showLabel?: boolean;
 }) {
-  const { toggle, isOpen } = useSidebar();
+  const { toggle } = useSidebar();
   const { theme } = useTheme();
 
   return (

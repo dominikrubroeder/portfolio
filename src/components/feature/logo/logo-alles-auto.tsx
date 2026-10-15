@@ -3,7 +3,7 @@ import type { LogoProps } from '@/components/feature/logo';
 
 import { cn } from '@/lib/utils';
 
-export function LogoAllesAuto({ id, className }: LogoProps) {
+export function LogoAllesAuto({ className }: LogoProps) {
   return (
     <svg
       viewBox="0 0 128 13"

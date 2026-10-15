@@ -18,7 +18,7 @@ export const useSelect = ({
     (option: SelectOption) => {
       setValue(option.value);
       setIsOpen(false);
-      onValueChange ? onValueChange(option) : null;
+      onValueChange?.(option);
     },
     [onValueChange]
   );

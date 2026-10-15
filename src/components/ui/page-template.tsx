@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { Animate } from '@/components/ui/animate';
 import { Blockquote } from '@/components/ui/blockquote';
 import { Container } from '@/components/ui/container';
 import { IconLucide } from '@/components/ui/icon/icon-lucide';
@@ -22,24 +23,24 @@ export function PageTemplate({
     <>
       <ScrollToTop />
 
-      <Container
-        as="section"
-        size="container-readable"
-        className="animate-in-to-left-100"
-      >
-        <div className="flex items-center gap-3">
-          {heroIcon && <IconLucide name={heroIcon} className="text-primary" />}
-          <h1>{h1}</h1>
-        </div>
+      <Animate delay={0.16}>
+        <Container as="section" size="container-readable">
+          <div className="flex items-center gap-3">
+            {heroIcon && (
+              <IconLucide name={heroIcon} className="text-primary" />
+            )}
+            <h1>{h1}</h1>
+          </div>
 
-        {heroBlockquote && (
-          <Blockquote className="mt-3 sm:mt-5">{heroBlockquote}</Blockquote>
-        )}
+          {heroBlockquote && (
+            <Blockquote className="mt-4 sm:mt-5">{heroBlockquote}</Blockquote>
+          )}
 
-        {heroDescription && (
-          <div className="mt-4 animate-in-to-left-160">{heroDescription}</div>
-        )}
-      </Container>
+          {heroDescription && (
+            <div className="mt-4 animate-in-to-left-160">{heroDescription}</div>
+          )}
+        </Container>
+      </Animate>
 
       {children}
     </>

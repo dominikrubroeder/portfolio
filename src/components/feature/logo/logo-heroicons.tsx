@@ -3,7 +3,7 @@ import type { LogoProps } from '@/components/feature/logo';
 
 import { cn } from '@/lib/utils';
 
-export function LogoHeroicons({ id, className }: LogoProps) {
+export function LogoHeroicons({ className }: LogoProps) {
   return (
     <svg
       width="128"

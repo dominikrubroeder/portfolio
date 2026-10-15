@@ -52,6 +52,8 @@ const HOLISTIC_PETALS: {
   { label: 'UX', position: 'top-[calc(50%-4.6rem)] left-[calc(50%-4.6rem)]' }
 ];
 
+const PANEL_CLASS = 'col-start-1 row-start-1 data-hidden:invisible';
+
 const PETAL_STEP = 0.1;
 const PETAL_EASE = [0.4, 0, 0.2, 1] as const;
 
@@ -141,66 +143,70 @@ export function PhilosophyCore() {
         onValueChange={setActiveTab}
         className="gap-6 py-8"
       >
-        <TabsContent value="Core product UI">
-          <div
-            data-petal-root
-            className="relative mx-auto grid size-96 items-center justify-center"
-          >
-            <div className="flex">
-              <Petal
-                step={0}
-                className="flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
-              >
-                Design
-              </Petal>
-              <Petal
-                step={1}
-                className="-ml-10 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
-              >
-                Code
-              </Petal>
-            </div>
-            <Petal
-              step={2}
-              className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
+        {/* Panels share one grid cell: while Base UI keeps the leaving panel
+            mounted for a frame, the layout height stays one panel high. */}
+        <div className="grid">
+          <TabsContent value="Core product UI" className={PANEL_CLASS}>
+            <div
+              data-petal-root
+              className="relative mx-auto grid size-96 items-center justify-center"
             >
-              UX
-            </Petal>
-            <div className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground">
-              UI
-            </div>
-          </div>
-        </TabsContent>
-        <TabsContent value="Holistic product UI">
-          <div
-            data-petal-root
-            className="relative mx-auto grid size-96 items-center justify-center"
-          >
-            {/* Same -mt-6 lift as the core in the other tab, so "UI" stays put. */}
-            <div className="absolute inset-0 -translate-y-6">
-              {HOLISTIC_PETALS.map(({ label, position, className }, step) => (
+              <div className="flex">
                 <Petal
-                  key={label}
-                  step={step}
-                  className={cn(
-                    'absolute flex size-44 -translate-1/2 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground',
-                    position,
-                    className
-                  )}
+                  step={0}
+                  className="flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
                 >
-                  {label}
+                  Design
                 </Petal>
-              ))}
+                <Petal
+                  step={1}
+                  className="-ml-10 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
+                >
+                  Code
+                </Petal>
+              </div>
+              <Petal
+                step={2}
+                className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
+              >
+                UX
+              </Petal>
+              <div className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground">
+                UI
+              </div>
             </div>
-
-            <InViewAction
-              action={() => console.log('Log')}
-              className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground"
+          </TabsContent>
+          <TabsContent value="Holistic product UI" className={PANEL_CLASS}>
+            <div
+              data-petal-root
+              className="relative mx-auto grid size-96 items-center justify-center"
             >
-              UI
-            </InViewAction>
-          </div>
-        </TabsContent>
+              {/* Same -mt-6 lift as the core in the other tab, so "UI" stays put. */}
+              <div className="absolute inset-0 -translate-y-6">
+                {HOLISTIC_PETALS.map(({ label, position, className }, step) => (
+                  <Petal
+                    key={label}
+                    step={step}
+                    className={cn(
+                      'absolute flex size-44 -translate-1/2 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground',
+                      position,
+                      className
+                    )}
+                  >
+                    {label}
+                  </Petal>
+                ))}
+              </div>
+
+              <InViewAction
+                action={() => console.log('Log')}
+                className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground"
+              >
+                UI
+              </InViewAction>
+            </div>
+          </TabsContent>
+        </div>
 
         <TabsList className="mx-auto">
           <TabsTrigger value="Core product UI">Core product UI</TabsTrigger>

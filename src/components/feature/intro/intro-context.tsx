@@ -1,6 +1,12 @@
 'use client';
 
-import React, { createContext, Suspense, use, useState } from 'react';
+import React, {
+  createContext,
+  Suspense,
+  use,
+  useEffect,
+  useState
+} from 'react';
 import type { ReactNode } from 'react';
 
 import { TypewriterOverlay } from '@/components/ui/typewriter-overlay';
@@ -26,12 +32,13 @@ const phrases = [
 
 export function IntroProvider({ children }: { children: ReactNode }) {
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
-  const [currentPhrase] = useState<string[]>(() => {
-    const max = phrases.length - 1;
-    const min = 0;
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    return phrases[randomNumber];
-  });
+  const [currentPhrase, setCurrentPhrase] = useState<string[] | null>(null);
+
+  // Random phrase is picked after mount: Math.random() must not run during prerender
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- pick random phrase after hydration
+    setCurrentPhrase(phrases[Math.floor(Math.random() * phrases.length)]);
+  }, []);
 
   const value: IntroContextType | null = {
     isPlaying,
@@ -42,15 +49,17 @@ export function IntroProvider({ children }: { children: ReactNode }) {
     <IntroContext.Provider value={value}>
       {isPlaying ? (
         <Suspense>
-          <TypewriterOverlay
-            phrases={currentPhrase}
-            loop={false}
-            deleteLastPhrase={false}
-            onExitComplete={() => {
-              setIsPlaying(false);
-            }}
-            endHoldDuration={1200}
-          />
+          {currentPhrase && (
+            <TypewriterOverlay
+              phrases={currentPhrase}
+              loop={false}
+              deleteLastPhrase={false}
+              onExitComplete={() => {
+                setIsPlaying(false);
+              }}
+              endHoldDuration={1200}
+            />
+          )}
         </Suspense>
       ) : (
         children

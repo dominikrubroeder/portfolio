@@ -3,7 +3,7 @@ import type { LogoProps } from '@/components/feature/logo/logo-types';
 
 import { cn } from '@/lib/utils';
 
-export function LogoBruno({ id, className }: LogoProps) {
+export function LogoBruno({ className }: LogoProps) {
   return (
     <svg
       width="133"
