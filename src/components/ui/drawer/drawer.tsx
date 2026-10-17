@@ -137,7 +137,7 @@ function DrawerContent({
           data-snap-points={hasSnapPoints ? '' : undefined}
           className={cn(
             // Base.
-            'group/drawer-popup pointer-events-auto fixed z-max flex h-(--drawer-content-height) max-h-(--drawer-content-max-height,none) min-h-0 w-(--drawer-content-width,auto) transform-[translate3d(var(--translate-x,0px),var(--translate-y,0px),0)_scale(var(--stack-scale))] flex-col rounded-theme-2xl border bg-popover text-popover-foreground transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] will-change-transform outline-none select-none [--drawer-inset:0.75rem] [interpolate-size:allow-keywords] data-nested-drawer-open:transition-[transform,height,opacity,filter] motion-reduce:transition-none sm:[--drawer-inset:1rem] xl:[--drawer-inset:0.25rem]',
+            'group/drawer-popup pointer-events-auto fixed z-max flex h-(--drawer-content-height) max-h-(--drawer-content-max-height,none) min-h-0 w-(--drawer-content-width,auto) transform-[translate3d(var(--translate-x,0px),var(--translate-y,0px),0)_scale(var(--stack-scale))] flex-col rounded-theme-2xl border bg-popover text-popover-foreground transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] will-change-transform outline-none select-none [--drawer-inset:0.75rem] [interpolate-size:allow-keywords] data-nested-drawer-open:transition-[transform,height,opacity,filter] motion-reduce:transition-none sm:[--drawer-inset:1rem]',
             // Nested.
             'data-nested-drawer-open:overflow-hidden data-nested-drawer-open:brightness-95',
             // Sizing.
@@ -207,7 +207,10 @@ function DrawerTitle({ className, ...props }: DrawerPrimitive.Title.Props) {
   return (
     <DrawerPrimitive.Title
       data-slot="drawer-title"
-      className={cn('title font-heading text-foreground', className)}
+      className={cn(
+        'title mb-0 font-heading text-foreground xl:mb-4',
+        className
+      )}
       {...props}
     />
   );

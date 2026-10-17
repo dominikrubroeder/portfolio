@@ -58,7 +58,7 @@ export function DrawerTechnologies({
                     </div>
 
                     <div className="space-y-2">
-                      <Ul className="mb-0 space-y-5 rounded border bg-background p-4 sm:-ml-2 sm:space-y-3 sm:border-none sm:p-0">
+                      <Ul className="mb-0 space-y-5 rounded border bg-background p-4">
                         {item.children
                           .slice()
                           .sort((a, b) => a.name.localeCompare(b.name))

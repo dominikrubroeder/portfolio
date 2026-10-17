@@ -205,9 +205,9 @@ layer order of imports and the feature file prefix (`npm run lint`, `npm run for
 
 ### UI (`src/components/ui`)
 
-Baseline, domain-free components: `Button`, `Badge`, `Divider`, `Hr`, `Blockquote`, `Codeblock`, `ExternalLink`,
+Baseline, domain-free components: `Button`, `Badge`, `Divider`, `Hr`, `Blockquote`, `ExternalLink`,
 `Icon*`, `Select`, `Toggle`, `Tooltip`, `DotsDivider`, `Typewriter`, `TypewriterOverlay`, `Animate`, `ButtonGroup`, `Drawer`,
-`Dialog`, `Tabs`, `BadgeHr`, `Container`, `Sidebar` and `PageTemplate` (h1, hero blockquote and content slot used by
+`Dialog`, `Tabs`, `Container`, `Sidebar` and `PageTemplate` (h1, hero blockquote and content slot used by
 inner pages).
 
 - **Button** — `variant` = `{contained|ghost|text|link}-{primary|foreground|muted}` (+ `contained-white`), `size` =
@@ -223,9 +223,8 @@ inner pages).
 ### Feature (`src/components/feature`)
 
 Domain and feature components, one folder per feature: `header`, `footer`, `page-navigation-bar`, `page-frame`, `avatar`, `profile-links` (`ButtonGithub`,
-`ButtonLinkedin`, `ButtonFigma`), `brand`, `tools`, `technologies`, `projects`, `playground`, `philosophy`,
-`principles`, `socials`, `education`, `ux`, `hero-navigation`, `intro`, `theme` (provider, `useTheme`, tokens and
-settings UI), `typography` (`H1`–`H6`, `Ul`, `Ol`), `logo` (`Logo*`), `iOS`, `animated-progress`, `events` (winter
+`ButtonLinkedin`), `brand`, `tools`, `technologies`, `projects`, `philosophy`, `socials`, `intro`, `theme`
+(provider, `useTheme`, tokens and settings UI), `typography` (`H2`, `Ul`, `Ol`), `logo` (`Logo*`), `events` (winter
 scene).
 
 File naming: every file in a feature directory is prefixed with the directory name (`tools/tools-data.ts`). Only
@@ -353,7 +352,7 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | `Drawer` enters like the `Sidebar`: 300 ms `ease-in-out`, slide + scale 0.95 → 1 + opacity 0.75 → 1 | Two side panels, one entrance. Replaces the 450 ms custom curve on the drawer. |
 | 3.0.6 | Drawer bottom sheet (mobile) slides in 700 ms with `cubic-bezier(0.32, 0.72, 0, 1)`, without scale or fade; height is no longer transitioned | Scaling and fading a full-width sheet looked jittery, and animating `height` re-lays out every frame. A plain long slide reads smooth. |
 | 3.0.6 | Drawer side panel (`xl`+) slides without scale or fade, like the bottom sheet | The 0.95 → 1 scale made the close button jiggle while opening; a pure slide keeps every control on whole pixels. |
-| 3.0.6 | `Drawer` floats: `--drawer-inset` (0.75 rem, 1 rem from `sm`, 0.25 rem from `xl`) offsets it from the viewport edges on all open sides; rounded `2xl` (`rounded-theme-2xl`, square in wireframe), full 1 px border, no edge bleed | A detached card reads as a layer above the page, matching the rounded controls; the offset keeps the page visible around it. |
+| 3.0.6 | `Drawer` floats: `--drawer-inset` (0.75 rem, 1 rem from `sm`) offsets it from the viewport edges on all open sides; rounded `2xl` (`rounded-theme-2xl`, square in wireframe), full 1 px border, no edge bleed | A detached card reads as a layer above the page, matching the rounded controls; the offset keeps the page visible around it. |
 | 3.0.6 | Decorative `SvgShapes` become crop marks in the four corners of `main` (accent color, static, `lg`+; wireframe background uses `xl`+) | Quiet drafting frame that fits the design-and-code story; replaces the scattered shapes and keeps the reading column clear. |
 | 3.0.6 | Home page gets a visually hidden `h1` ("Design and code speak the same language", `sr-only`); the big statements stay `div`s | The page needs one `h1` for SEO and screen readers; the statement sequence keeps its look without becoming a heading outline. |
 | 3.0.6 | Custom cursor: accent dot with paper ring and accent outer ring, native CSS images, shape morphs per state (grow on clickable, shrink on press, rounded bar-rectangle at 60 % when disabled) | Brand-colored pointer (accent core and outer ring, page-background ring between) that stays legible on every surface. Native images avoid a JS follower: no lag, no hydration, no extra motion. Shape carries state, not color. |

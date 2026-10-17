@@ -179,8 +179,8 @@ export default async function HomePage() {
               background
             </li>
             <li>
-              Design sustainable — make maintainable systems that can be
-              upgraded, updated, exchanged and expanded
+              Design sustainable — make maintainable systems that are
+              upgradable, testable and documented
             </li>
             <li>
               Design the experience — make it enjoyable, with a satisfying,

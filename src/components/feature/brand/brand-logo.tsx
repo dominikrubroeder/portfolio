@@ -2,7 +2,6 @@ import {
   LogoAdobe,
   LogoAlgolia,
   LogoApple,
-  LogoAstro,
   LogoAuthjs,
   LogoAws,
   LogoBaseUi,
@@ -520,9 +519,6 @@ export function BrandLogo({
 
     case 'Trello':
       return <LogoTrello id={id} className={className} />;
-
-    case 'Astro':
-      return <LogoAstro id={id} className={className} />;
 
     case 'Nuxt':
       return <LogoNuxt id={id} className={className} />;

@@ -62,10 +62,6 @@ export const technologies: { group: string; children: Brand[] }[] = [
     group: 'Full-Stack Framework',
     children: [
       {
-        name: 'Astro',
-        href: 'https://astro.build/'
-      },
-      {
         name: 'Next.js',
         href: 'https://nextjs.org/'
       },
