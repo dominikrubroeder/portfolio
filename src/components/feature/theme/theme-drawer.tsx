@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 
+import { MinusIcon } from '@heroicons/react/16/solid';
+
 import { Button } from '@/components/ui/button';
 import {
   Drawer,
@@ -50,7 +52,14 @@ export function ThemeDrawer({
         </div>
 
         <DrawerFooter>
-          <DrawerClose className="w-full" render={<Button>Done</Button>} />
+          <DrawerClose
+            className="w-full"
+            render={
+              <Button variant="text-muted" aria-label="Close" title="close">
+                <MinusIcon />
+              </Button>
+            }
+          />
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

@@ -159,7 +159,7 @@ export default async function HomePage() {
 
           <Ol>
             <li>
-              Design in context — to the environment, to the people, to the
+              Design in context — of the environment, of the people, of the
               brand
             </li>
             <li>
@@ -172,12 +172,12 @@ export default async function HomePage() {
             </li>
             <li>
               Design business-aware — cover business cases the company and its
-              users are about, to root your design into a economically supported
+              users are about, to root your design in a economically supported
               background
             </li>
             <li>
-              Design sustainable — make maintainable systems that are
-              upgradable, testable and documented
+              Design sustainable — make maintainable systems that can be
+              upgraded, updated, expanded and are documented
             </li>
             <li>
               Design the experience — make it enjoyable, with a satisfying,

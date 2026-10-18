@@ -77,7 +77,6 @@ import {
   LogoProcreate,
   LogoRadixUi,
   LogoReact,
-  LogoRemix,
   LogoSafari,
   LogoSass,
   LogoShadcnUi,
@@ -87,7 +86,6 @@ import {
   LogoStatista,
   LogoStoryblok,
   LogoStorybook,
-  LogoSvelte,
   LogoSwift,
   LogoSwiftUi,
   LogoTailwindCss,
@@ -260,10 +258,6 @@ export function BrandLogo({
 
   if (lowerCaseBrand.includes('playwright')) {
     return <LogoPlaywright id={id} className={className} />;
-  }
-
-  if (lowerCaseBrand.includes('svelte')) {
-    return <LogoSvelte id={id} className={className} />;
   }
 
   if (lowerCaseBrand.includes('swiftui')) {
@@ -522,9 +516,6 @@ export function BrandLogo({
 
     case 'Nuxt':
       return <LogoNuxt id={id} className={className} />;
-
-    case 'Remix':
-      return <LogoRemix id={id} className={className} />;
 
     case 'Swift':
       return <LogoSwift id={id} className={className} />;

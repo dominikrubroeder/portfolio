@@ -49,10 +49,6 @@ export const technologies: { group: string; children: Brand[] }[] = [
         href: 'https://vuejs.org'
       },
       {
-        name: 'Svelte',
-        href: 'https://svelte.dev/'
-      },
-      {
         name: 'SwiftUI',
         href: 'https://developer.apple.com/swiftui/'
       }
@@ -64,14 +60,6 @@ export const technologies: { group: string; children: Brand[] }[] = [
       {
         name: 'Next.js',
         href: 'https://nextjs.org/'
-      },
-      {
-        name: 'Remix',
-        href: 'https://remix.run/'
-      },
-      {
-        name: 'React Router',
-        href: 'https://reactrouter.com'
       }
     ]
   },

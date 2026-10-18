@@ -3,8 +3,8 @@
 import { Select as SelectPrimitive } from '@base-ui/react/select';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/16/solid';
 
-import { Button } from '@/components/ui/button';
 import type { ButtonProps } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import type { SelectOption } from '@/components/ui/select';
 
 export function Select({
@@ -63,7 +63,7 @@ export function Select({
           align="end"
           sideOffset={8}
           alignItemWithTrigger={false}
-          className="z-max"
+          className="z-1100"
         >
           <SelectPrimitive.Popup className="min-w-(--anchor-width) rounded-theme-md border bg-background px-3 py-2 outline-none data-ending-style:opacity-0 data-starting-style:opacity-0 [html[data-theme-animations=on]_&]:motion-safe:transition-opacity [html[data-theme-animations=on]_&]:motion-safe:duration-150">
             <SelectPrimitive.List>

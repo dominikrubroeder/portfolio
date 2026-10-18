@@ -195,7 +195,7 @@ function DrawerFooter({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot="drawer-footer"
       className={cn(
-        'sticky bottom-0 mt-auto flex shrink-0 flex-col gap-2 bg-popover p-4 xl:px-6 xl:py-2',
+        'sticky bottom-0 z-20 mt-auto flex shrink-0 flex-col gap-2 bg-popover p-4 xl:px-6 xl:py-2',
         className
       )}
       {...props}
