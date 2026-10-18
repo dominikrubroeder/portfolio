@@ -16,6 +16,14 @@ Dedicated feature and domain related components, for example `tools`, `technolog
 > Tip: Once a component is referenced from two different features, this is a sign to make it generic, name it and move
 > it to `ui`.
 
+## Content modules and agent view
+
+Copy that appears on a page lives in a data or content file of its feature (`home/home-content.ts`,
+`projects/projects-content.ts`, `philosophy/philosophy-data.ts`, `footer/footer-content.ts`,
+`header/header-content.ts`, plus the existing `*-data` files). Pages and `agent-view/agent-view-markdown.ts` both read
+them, so the `/agent-view` markdown cannot drift from the pages. Inline copy in a page that agent view should show moves
+to a content module first.
+
 ## Theme registry
 
 Themes are listed once in `theme/theme-definitions.ts`: id, label, a one-phrase `description` (shown in the theme select) and the defaults a theme applies when selected (accent,

@@ -1,9 +1,9 @@
 <!--
 Sync Impact Report
-- Version change: 1.2.0 → 1.3.0
-- Modified principles: IV renamed "Accessible, Semantic and Reduced-Motion Aware" → "Accessible by Default, Verified Every Time"
-  (existing rules kept, expanded)
-- Added sections: workflow gate for accessibility checks
+- Version change: 1.4.0 → 1.5.0
+- Modified principles: none renamed or removed
+- Added principles: VIII. Agent View Parity
+- Added rules: feature plans and task lists MUST include agent view tasks when page content changes
 - Removed sections: none
 - Follow-up TODOs: none
 -->
@@ -110,6 +110,24 @@ does not deliver. When a feature changes, its `STORY.md` MUST change with it.
 Rationale: the portfolio is itself the proof of its claim. Current documentation and a plain story of why each feature
 exists keep humans and coding agents aligned, and make the value of every feature easy to explain.
 
+### VIII. Agent View Parity
+
+`/agent-view` (see `specs/002-agent-view/`) is the plain-markdown twin of the site content. Whenever a feature adds,
+changes or removes content on a page that agent view covers (today `/` and `/projects`, including content shown only
+through drawers and tabs), it MUST update agent view in the same change:
+
+- The copy MUST live in a shared content or data module (for example `home-content.ts`, `projects-data.tsx`,
+  `tools-data.ts`) that both the page and `buildAgentViewMarkdown()` read. Copy written inline in a page that agent view
+  should show MUST first move to such a module.
+- New content types MUST get an output rule in the builder and in
+  `specs/002-agent-view/contracts/agent-view-markdown-contract.md`, and the builder's unit test MUST cover them.
+- A new top-level page MUST record in its plan whether agent view includes it; if it does, the page's content follows
+  the rules above.
+- Agent view MUST stay plain: no HTML, no styling, no script, no theme dependence.
+
+Rationale: agent view exists so that people and AI tools get the full portfolio from one address. A page change that
+skips it leaves a stale or incomplete document without anyone noticing.
+
 ## Technical Constraints
 
 - Stack: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4 (CSS-first config), Base UI and Radix
@@ -119,6 +137,9 @@ exists keep humans and coding agents aligned, and make the value of every featur
 - A new `'use client'` file MUST be justified in the plan or the task (state, effect, event handler or browser API).
 - Variants MUST use `cva` + `cn`; prefer explicit `variant`/`size` props over class overrides.
 - Theme differences MUST use tokens and `html[data-theme=…]` selectors, not forked components.
+- Tailwind scans every file in the repository for class names. Planning documents (`specs/`, `.specify/`) are excluded
+  in `src/app/globals.css` (`@source not`), and documents MUST NOT quote placeholder class names (for example with an
+  ellipsis) anywhere else, because a malformed candidate makes `next dev` warn or fail while `next build` still passes.
 - Accent changes MUST update `globals.css` in all three places and, for cursor images,
   `scripts/generate-cursor-tokens.mjs` followed by `npm run cursors`.
 
@@ -131,6 +152,16 @@ exists keep humans and coding agents aligned, and make the value of every featur
   focus visible, `Esc` on overlays); new or changed components MUST also be checked for name, role and state.
 - Every feature plan and task list MUST include accessibility checks for the UI it adds.
 - Changes that add client components or JS-driven visuals MUST show why a server component or CSS could not do it.
+- Every feature plan and task list MUST state whether the feature changes content covered by agent view; if it does, the
+  tasks MUST include the shared-module change, the builder and contract update, the unit test, and a check that
+  `/agent-view` shows the change (principle VIII).
+- After a feature is implemented, `next dev` and the production bundle MUST both work, and the result MUST be recorded
+  in the feature's `quickstart.md`. The dev check: start `next dev` from a clean `.next`, request every route the
+  feature adds or touches, and confirm HTTP 200, no warning or error in the terminal log (including CSS parse
+  warnings), no console error in the browser, and that a hot-reload edit shows up and reverts cleanly. The production
+  check: `npm run build` has no warnings, new routes are listed with the expected static or dynamic mode, `next start`
+  serves them, and the browser console is clean. A passing `next build` alone is not enough: the two runtimes parse
+  CSS and render differently.
 - Reviews MUST verify compliance with this constitution; deviations MUST be justified in the change description.
 - Commit messages follow the Conventional Commits style used in the repository history.
 
@@ -145,4 +176,4 @@ message. Versioning follows semantic versioning: MAJOR for removed or redefined 
 or materially expanded guidance, PATCH for clarifications. Compliance is reviewed on every feature plan (the
 Constitution Check) and on every pull request.
 
-**Version**: 1.3.0 | **Ratified**: 2026-10-17 | **Last Amended**: 2026-10-18
+**Version**: 1.5.0 | **Ratified**: 2026-10-17 | **Last Amended**: 2026-10-18

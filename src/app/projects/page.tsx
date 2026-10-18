@@ -17,7 +17,11 @@ import { ExternalLink } from '@/components/ui/external-link';
 import { Hr } from '@/components/ui/hr';
 import { PageTemplate } from '@/components/ui/page-template';
 
-import { getProject } from '@/components/feature/projects';
+import {
+  getProject,
+  HERO_PROJECT_TITLE,
+  projectsHeroBlockquote
+} from '@/components/feature/projects';
 import { projects } from '@/components/feature/projects/projects-data';
 import { H2, Ul } from '@/components/feature/typography';
 
@@ -27,8 +31,6 @@ export const metadata: Metadata = {
   title: 'Projects | Dominik Rubröder, UX Engineer',
   description: 'Project contributions from 2016 to 2026'
 };
-
-const HERO_PROJECT_TITLE = 'Value Booster';
 
 // Number of list images (after the hero) preloaded in the server HTML.
 // The rest load lazily, so the 3-6 MB wallpapers do not compete with the hero.
@@ -76,10 +78,7 @@ export default function ProjectsPage() {
   const heroProject = getProject({ title: HERO_PROJECT_TITLE });
 
   return (
-    <PageTemplate
-      h1="Projects"
-      heroBlockquote="Roles are changing. During the last year, roles and job descriptions were more distinct and self-contained. Now the lines are blurring more and more. In my first years, I contributed as Frontend Designer or Frontend Engineer, then as Frontend Designer and Frontend Engineer. This merged into a unified role as UX Engineer, especially for headless frontends and UX concepts, now everything moves more onto holistic product UI thinking and execution – Product Design Engineer."
-    >
+    <PageTemplate h1="Projects" heroBlockquote={projectsHeroBlockquote}>
       <DotsDivider />
 
       {heroProject && (

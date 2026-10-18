@@ -17,6 +17,7 @@ export default defineConfig({
       {
         // Pure logic (theme registry, validators). Runs in node, no browser needed.
         extends: true,
+        resolve: { alias: { '@': path.join(dirname, 'src') } },
         test: {
           name: 'unit',
           environment: 'node',

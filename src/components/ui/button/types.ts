@@ -36,6 +36,8 @@ export interface ButtonProps extends HTMLAttributes<
   iconOnly?: boolean;
   /** Short description of what the action does. Used when `iconOnly`. */
   label?: string;
+  /** Next.js `Link` prefetch. Pass `false` for targets that are not pages. */
+  prefetch?: boolean;
 }
 
 export interface ReducedButtonProps extends Omit<ButtonProps, 'children'> {

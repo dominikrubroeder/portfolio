@@ -37,6 +37,7 @@ see [DESIGN.md](./DESIGN.md).
 /tools-and-technologies Stack overview (also reachable via drawers on home)
 /playground             Experiments and concepts
 /playground/[slug]      One experiment in detail
+/agent-view             The home and projects content as plain markdown (no styling)
 ```
 
 - Navigation is **content-led**: `HeroNavigation` ("More" list at the end of a page) links to the other top-level pages
@@ -44,6 +45,7 @@ see [DESIGN.md](./DESIGN.md).
 - The header carries identity (avatar, name, role), the theme settings
   trigger (a palette icon, labelled "Theme settings", visible at every width) and, from `sm` up, three accent swatches
   (blue, violett, orange). Appearance lives in the theme drawer.
+- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the home content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the projects, then the certifications. It is not part of `HeroNavigation`; the link lives in the header (from `lg`, absolute at the right edge, when it covers no other control) or in the footer, on its own line above the copyright line. It is a small text link, not a button. Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
 - Deep links to sections use `scroll-mt-responsive` so sticky bars never cover the target.
 - `ScrollToTop` resets the scroll position on route change; `ButtonScrollToTop` is available for long pages.
 
@@ -94,6 +96,8 @@ Big statements separated by three-dotted dividers create a read-and-scroll rhyth
 - Visible text is the accessible name. Do not override it with `aria-label`.
 - Links that open a new tab add a visually hidden "(opens in a new tab)" (icon-only: appended to the `aria-label`).
 - Min target: 44 px (`medium`, `large`).
+- `prefetch={false}` on an internal `href` turns off Next.js prefetching. Use it for targets that are not pages (for
+  example `/agent-view`, a plain text document).
 
 #### Button state
 

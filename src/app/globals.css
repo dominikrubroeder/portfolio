@@ -2,6 +2,10 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+/* Planning documents quote class names as prose; they must never generate CSS. */
+@source not '../../specs';
+@source not '../../.specify';
+
 @custom-variant dark (&:where(.theme-appearance-dark, .theme-appearance-dark *, [data-theme-appearance=dark], [data-theme-appearance=dark] *));
 
 /* ============================================

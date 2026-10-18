@@ -236,7 +236,8 @@ inner pages).
 - **Button** — `variant` = `{contained|ghost|text|link}-{primary|foreground|muted}` (+ `contained-white`), `size` =
   `tiny | small | medium | large`. Minimum touch target 44 px for `medium`/`large`. The component picks `a`, `Link` or
   `button`, adds the external-link arrow, `rel`, `aria-label` and `title` automatically for `https`, `mailto:`, `tel:`
-  and downloads.
+  and downloads. `prefetch={false}` (internal `href` only) stops Next.js from prefetching a target that is not a
+  page, such as `/agent-view`; the prop goes to `Link` and never to the DOM.
 - **Tooltip** — Base UI popup, `bg-popover` with a `ring-foreground/10` border, `text-sm`, `rounded-xl`, `z-max`, 150 ms
   opacity fade (`motion-safe:`). Used for `Button` with `iconOnly` + `label`.
 - **Badge** — `primary | foreground | muted | white`; `sm | md | lg`; pill-shaped.
@@ -248,13 +249,24 @@ inner pages).
 Domain and feature components, one folder per feature: `header`, `footer`, `page-navigation-bar`, `page-frame`, `avatar`, `profile-links` (`ButtonGithub`,
 `ButtonLinkedin`), `brand`, `tools`, `technologies`, `projects`, `philosophy`, `socials`, `intro`, `theme`
 (registry, store, hooks, tokens and settings UI), `typography` (`H2`, `Ul`, `Ol`), `logo` (`Logo*`), `events` (winter
-scene).
+scene), `home` (home page copy), `agent-view` (`AgentViewLink`, markdown builder for `/agent-view`).
 
 File naming: every file in a feature directory is prefixed with the directory name (`tools/tools-data.ts`). Only
 `index.ts` is exempt.
 
 - **Avatar** — round photo; `variant` = `default | lightbox`. `lightbox` opens the photo centered on a
   `background/90` scrim (`z-100`, photo at `z-max`) with a 250 ms scale-and-fade, no shadow.
+
+### Agent view
+
+`/agent-view` is a route handler, not a styled page: it returns the home and projects content as raw markdown
+(`text/plain`) with no layout, theme, CSS or script. Its text comes from the same content modules as the pages
+(`home-content.ts`, `projects-content.ts`, `philosophy-data.ts`, the data files), so a copy edit shows in both.
+
+`AgentViewLink` (`link-muted`, `small`: a quiet text link, about 69 × 20 px at 100 % text size) is the entry point. It is `small` on purpose: a standalone link in a dense, non-primary context (rule 5); no other target sits within 24 px of it. In the header it sits
+absolute, `right-4`, vertically centered, from `lg`; it never covers another control. With the default column it fits
+from `lg`; with container width "wide" it shows from `83rem`, with "full" from `112rem` (measured, with room for the
+110 % text size, because media queries use the browser's base font size). Everywhere else it sits in the footer on its own line directly above the copyright line. The footer no longer shows the framework-version line (Next.js, React, Tailwind CSS) and uses `py-6` / `space-y-4` (was `py-12` / `space-y-6`). CSS shows exactly one of the two instances.
 
 ### Variants
 
@@ -336,7 +348,9 @@ do not apply to custom images.
 2. New accent ⇒ full `-foreground/-hover/-border` set, mapped in all three places, contrast verified.
 3. New component ⇒ correct layer (`ui` or `feature`), `index.ts` barrel, typed props, a story for `ui` components, works in wireframe.
 4. New page ⇒ `PageTemplate` (or `Container` sections), `metadata` with the `… | Dominik Rubröder, UX Engineer` title
-   pattern, `HeroNavigation` entry if it is top-level.
+   pattern, `HeroNavigation` entry if it is top-level. Exception: `/agent-view` is a route handler returning plain
+   markdown, so it has no `PageTemplate`, `metadata` or `HeroNavigation` entry (no layout, no `<head>`); its link lives in
+   the header and footer.
 5. Interactive elements ≥ 44 px (`medium`+) on touch layouts; `tiny`/`small` only inside dense, non-primary contexts.
 6. Run `npm run format` (Prettier incl. Tailwind class sorting) and `npm run lint` before committing.
 7. Every visual decision of lasting effect gets a line in the decision log below.
@@ -395,6 +409,7 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | Drawer groups: Base, Typography, Animation, Border (radius), Layout (container width) | Settings are named by what they change. |
 | 3.0.6 | Wireframe is a "Sketch-based UI": Patrick Hand for headings and body, every image and SVG grayscale (one CSS filter rule), Default described as "Intense accent UI"; each theme carries a one-phrase description shown in the theme select | The theme reads as a sketch, not only as black and white; the accent stays on text, buttons and links. All CSS and registry data, no new client code. |
 | 3.0.6 | Orange accent darkened to `oklch(0.58 0.237 31.3)` (hover 0.555, border 0.52) | White text on the old orange measured 3.85 : 1; the darker value reaches 4.8 : 1 and keeps the hue. |
+| 3.0.6 | Agent view: `/agent-view` is a route handler returning raw markdown (`text/plain`), not a styled page; entry link is a small text link in the header (absolute, right edge) or in the footer above the © line, chosen by CSS so it never overlaps a control; footer drops the framework-version line and gets `py-6` | No theme, CSS or script can reach it, so it stays plain by construction. Page copy lives in shared content modules, so pages and agent view cannot drift. |
 | 3.0.6 | Drawer swatches and the animation switch get a 44 px hit area (transparent `::after`, `min-h-11`) | Touch target without changing the look. |
 
 > When you make a lasting design decision, add a row: _version · decision · why_.

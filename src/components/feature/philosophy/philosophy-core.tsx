@@ -15,42 +15,36 @@ import {
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
+import {
+  philosophyCoreLabel,
+  philosophyCoreTabLabels,
+  philosophyHolisticLabels
+} from '@/components/feature/philosophy/philosophy-data';
+
 import { InViewAction } from '@/hooks/in-view-action';
 
 /**
  * Eight circles on a ring of 6.5rem around the core, every 45° clockwise from
  * the top. Order here is the order of appearance.
  */
-const HOLISTIC_PETALS: {
-  label: string;
-  position: string;
-  className?: string;
-}[] = [
-  { label: 'Design', position: 'top-[calc(50%-6.5rem)] left-1/2' },
+const HOLISTIC_PETAL_LAYOUT: { position: string; className?: string }[] = [
+  { position: 'top-[calc(50%-6.5rem)] left-1/2' },
+  { position: 'top-[calc(50%-4.6rem)] left-[calc(50%+4.6rem)]' },
+  { position: 'top-1/2 left-[calc(50%+6.5rem)]' },
+  { position: 'top-[calc(50%+4.6rem)] left-[calc(50%+4.6rem)]' },
+  { position: 'top-[calc(50%+6.5rem)] left-1/2' },
   {
-    label: 'Code',
-    position: 'top-[calc(50%-4.6rem)] left-[calc(50%+4.6rem)]'
-  },
-  {
-    label: 'Marketing',
-    position: 'top-1/2 left-[calc(50%+6.5rem)]'
-  },
-  {
-    label: 'Sales',
-    position: 'top-[calc(50%+4.6rem)] left-[calc(50%+4.6rem)]'
-  },
-  { label: 'Business', position: 'top-[calc(50%+6.5rem)] left-1/2' },
-  {
-    label: 'Analytics',
     position: 'top-[calc(50%+4.6rem)] left-[calc(50%-4.6rem)]',
     className: 'text-center whitespace-pre-line'
   },
-  {
-    label: 'Consulting',
-    position: 'top-1/2 left-[calc(50%-6.5rem)]'
-  },
-  { label: 'UX', position: 'top-[calc(50%-4.6rem)] left-[calc(50%-4.6rem)]' }
+  { position: 'top-1/2 left-[calc(50%-6.5rem)]' },
+  { position: 'top-[calc(50%-4.6rem)] left-[calc(50%-4.6rem)]' }
 ];
+
+const HOLISTIC_PETALS = philosophyHolisticLabels.map((label, index) => ({
+  label,
+  ...HOLISTIC_PETAL_LAYOUT[index]
+}));
 
 const PANEL_CLASS = 'col-start-1 row-start-1 data-hidden:invisible';
 
@@ -156,23 +150,23 @@ export function PhilosophyCore() {
                   step={0}
                   className="flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
                 >
-                  Design
+                  {philosophyCoreTabLabels[0]}
                 </Petal>
                 <Petal
                   step={1}
                   className="-ml-10 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
                 >
-                  Code
+                  {philosophyCoreTabLabels[1]}
                 </Petal>
               </div>
               <Petal
                 step={2}
                 className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
               >
-                UX
+                {philosophyCoreTabLabels[2]}
               </Petal>
               <div className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground">
-                UI
+                {philosophyCoreLabel}
               </div>
             </div>
           </TabsContent>
@@ -202,7 +196,7 @@ export function PhilosophyCore() {
                 action={() => console.log('Log')}
                 className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground"
               >
-                UI
+                {philosophyCoreLabel}
               </InViewAction>
             </div>
           </TabsContent>

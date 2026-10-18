@@ -23,6 +23,7 @@ export function Button({
   customIcon,
   iconOnly,
   label,
+  prefetch,
   ...rest
 }: ButtonProps) {
   const classNames = cn(
@@ -148,6 +149,7 @@ export function Button({
       <Link
         {...rest}
         href={href}
+        prefetch={prefetch}
         aria-label={iconLabel ?? rest['aria-label']}
         target={target}
         className={classNames}
