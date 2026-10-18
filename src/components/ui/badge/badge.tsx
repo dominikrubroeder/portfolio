@@ -22,7 +22,7 @@ export function Badge({
         size === 'sm' && 'px-2 py-0.5 text-sm',
         size === 'md' && 'px-3 py-1 text-base',
         size === 'lg' && 'text-md px-3 py-2',
-        'in-data-[theme=wireframe]:rounded-none',
+        'in-data-[theme=wireframe]:rounded-md',
         className
       )}
       {...rest}

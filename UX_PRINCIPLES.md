@@ -41,7 +41,9 @@ see [DESIGN.md](./DESIGN.md).
 
 - Navigation is **content-led**: `HeroNavigation` ("More" list at the end of a page) links to the other top-level pages
   and hides the current page. There is no persistent main menu.
-- The header carries identity (avatar, name, role) and quick settings only.
+- The header carries identity (avatar, name, role), the theme settings
+  trigger (a palette icon, labelled "Theme settings", visible at every width) and, from `sm` up, three accent swatches
+  (blue, violett, orange). Appearance lives in the theme drawer.
 - Deep links to sections use `scroll-mt-responsive` so sticky bars never cover the target.
 - `ScrollToTop` resets the scroll position on route change; `ButtonScrollToTop` is available for long pages.
 
@@ -127,14 +129,20 @@ Used for secondary content (tools, technologies, philosophy, education, UX).
   contained inside.
 - Content is capped to the readable width; header and footer stay visible.
 
-### Sidebar ("Modify")
+### Theme drawer ("Theme settings")
 
-Theme settings panel. Bottom sheet on mobile, right-hand panel on `sm`+.
+The theme settings open in a `Drawer`: floating bottom sheet below `xl`, side panel from `xl`, like every other drawer.
 
-- Open via the theme trigger; close via **Done**, scrim click, or `Esc`-equivalent close handler.
-- Scrim sits at `z-100`, panel at `z-max`; page behind stays visible but inert.
-- Changes apply live; the panel only groups them: Base (theme, appearance, color), Typography (font size), Animation,
-  Border.
+- Open via the header trigger (first control in the header). Close via **Done**, scrim click, `Esc` or swipe. Focus moves
+  in, stays inside, and returns to the trigger on close; the page behind is inert.
+- Loads on first open: pages whose visitor never opens it do not load its controls. The first open slides in like later
+  opens.
+- Standard scrim (dim below `xl`, transparent from `xl`, where the live change is visible behind the drawer).
+- Changes apply live; the drawer only groups them: Base (theme, appearance, color with the neutral swatch), Typography
+  (font size), Animation (one "Enable animations" switch), Border (radius), Layout (container width). Each control shows
+  its current value, also when the setting changed elsewhere (a header swatch or a theme switch).
+- Selects are listboxes: arrow keys, typeahead, `Esc` closes the open list first and the drawer on the next press.
+- A polite live region announces the changed setting ("Radius: Large") for screen readers.
 - **Done** is always visible (sticky footer).
 
 ### Tabs
@@ -165,9 +173,10 @@ Non-interactive status label ("Ongoing"). Never a button.
 
 ### Toggle / Select
 
-Binary options use `Toggle` with a visible label. Multi-option settings use `Select` or segmented controls with the
-current value visible. Appearance cycles **light → dark → system** on repeated press and shows the matching icon
-(sun, moon, sun-moon).
+Binary options use `Toggle` with a visible label. It renders a `button` with `role="switch"` and `aria-checked`, so it works with keyboard and screen readers; without a visible label pass `ariaLabel`. `Select` is a Base UI listbox (arrow keys, typeahead, `Esc` closes the list and returns focus to the trigger). Options may carry an icon and a short description (shown under the label in the open list, not in the trigger). It can be
+controlled (`value`, an option `key`) so it follows a setting that changed elsewhere, and its name includes the setting
+("Radius: Medium"). Multi-option settings use `Select` or segmented controls with the current value visible. Appearance is
+a `Select` in the theme drawer with sun, moon and sparkles icons (Light, Dark, Auto).
 
 ### Divider
 
@@ -205,18 +214,25 @@ Ambient decoration in the winter season only; can be turned off, remembered per 
 
 ### Settings persistence
 
-Appearance, accent, theme, font size, persona and winter toggle are saved to `localStorage` (`dr-theme*`). An inline
-script applies them before first paint to avoid a flash. Invalid or missing values fall back to defaults. Settings
-are never sent to a server.
+Theme, appearance, accent, font size, animations, radius, container width, persona and winter toggle are saved to
+`localStorage` (`dr-theme*`). An inline script applies them before first paint (as `data-theme-*` attributes on `<html>`)
+to avoid a flash. Invalid or missing values fall back to the saved theme's defaults; an unknown theme falls back to
+Default. If storage is unavailable (private window, blocked site data) a change still applies for the session and
+defaults return on the next load. Settings are never sent to a server.
 
 ### Theme switching
 
-- **Appearance**: light / dark / system. `system` follows OS changes live.
-- **Accent**: blue, violett, orange. Applies instantly.
-- **Theme (style)**: default / wireframe. Choosing wireframe also turns animation off and sets a monochrome accent;
-  choosing default restores animation defaults.
+- **Appearance**: light / dark / system, set in the theme drawer. `system` follows OS changes live.
+- **Accent**: neutral (black/white), blue, violett, orange. Applies instantly.
+- **Theme (style)**: Default ("Intense accent UI") / Wireframe ("Sketch-based UI"); the open list shows each phrase under
+  the name. Wireframe uses a handwritten font and grayscale images, icons and logos. Selecting a theme applies its defaults for accent, animations, radius and
+  container width (Wireframe: neutral accent, animations off, square corners; Default: blue, animations on, 6px). The
+  visitor's own tweaks in the previous theme are replaced; appearance and font size stay.
+- **Radius**: none / small / medium / large. Applies instantly to every rounded element.
+- **Container width**: default / wide / full. Applies instantly to the reading column.
+- **Animations**: one switch, in every theme. Off: content appears at once (no reveal, intro typing, bounce, pulse or
+  snowfall). Turning it on later never replays the intro.
 - **Font size**: small / medium / large scales the whole page from the root.
-- "Shuffle" picks another theme at random, never the current one.
 
 ### Motion
 
@@ -239,7 +255,9 @@ or animating values that CSS cannot interpolate.
 - With reduced motion enabled (OS) or animations disabled (in-app), content appears without movement and keeps its
   order and hierarchy.
 - Nothing animates infinitely inside reading areas, except the three-dotted divider (small, sequential bounce; static
-  in wireframe theme and with reduced motion).
+  when animations are off and with reduced motion).
+- The in-app animation switch (`data-theme-animations`) and the OS reduced-motion setting both end motion; either one is
+  enough. Wireframe starts with animations off.
 
 ### Navigation
 
@@ -270,13 +288,13 @@ not the mechanism ("Click here", "Submit").
 
 ## 6. Responsive behavior
 
-| Width         | Behavior                                                                                              |
-| ------------- | ----------------------------------------------------------------------------------------------------- |
-| `< xs` (375)  | Single column, tightest gaps, statements `text-4xl`                                                   |
-| `xs` – `sm`   | Header shows quick accent control; statements `text-5xl`                                              |
-| `sm` (640) +  | Appearance switch in header; button groups inline; sidebar becomes right panel; `text-7xl` statements |
-| `lg` (1024) + | Header becomes non-sticky; decorative SVG shapes appear; section scroll offsets reset                 |
-| `xl` (1280) + | Drawers become side panels; scrim becomes transparent                                                 |
+| Width         | Behavior                                                                              |
+| ------------- | ------------------------------------------------------------------------------------- |
+| `< xs` (375)  | Single column, tightest gaps, statements `text-4xl`                                   |
+| `xs` – `sm`   | Header shows only the theme trigger; statements `text-5xl`                            |
+| `sm` (640) +  | Accent swatches in header; button groups inline; `text-7xl` statements                |
+| `lg` (1024) + | Header becomes non-sticky; decorative SVG shapes appear; section scroll offsets reset |
+| `xl` (1280) + | Drawers become side panels; scrim becomes transparent                                 |
 
 Rules: no horizontal scroll (`overflow-x-hidden` on body is a safety net, not a design tool); touch targets ≥ 44 px;
 primary action reachable with one thumb (bottom bar).
@@ -305,7 +323,7 @@ primary action reachable with one thumb (bottom bar).
 **Don't**
 
 - Hide essential content or actions behind hover.
-- Auto-open drawers, dialogs or sidebars.
+- Auto-open drawers or dialogs.
 - Hijack scroll or snap pages.
 - Stack sticky bars (header + one bottom bar is the maximum).
 - Add a second primary CTA to a view.

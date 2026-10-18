@@ -1,21 +1,11 @@
 export { ThemeColorSetting } from './theme-color-setting';
-export { ThemeFontSizeSetting } from './theme-font-size-setting';
-export { ThemeAppearanceSelect } from './theme-appearance-select';
-export { ThemeDrawer } from './theme-drawer';
-export { ThemeSettingSection } from './theme-setting-section';
-export { ThemeSettingOption } from './theme-setting-option';
-export { ThemeSelect } from './theme-select';
-export { ThemeSpacingContainerWidthSetting } from './theme-spacing-container-width-setting';
-export { ThemeAnimationSetting } from './theme-animation-setting';
-export { ThemeShuffleButton } from './theme-shuffle-button';
-export { ThemeNotesBackgroundCornellNotes } from './theme-notes-background-cornell-notes';
-export { ThemeSidebar } from './theme-sidebar';
-export { ThemeSidebarTrigger } from './theme-sidebar-trigger';
-export { ThemeAnimationEnabledToggle } from './theme-animation-enabled-toggle';
+export { ThemeDrawerTrigger } from './theme-drawer-trigger';
 
-export { ThemeQuickSettings } from './theme-quick-settings';
 export * from './theme-context';
+export * from './theme-hooks';
+export { ThemeAnimationsBridge } from './theme-animations-bridge';
 export { themeInitializationScript } from './theme-helper';
 
 export * from './theme-types';
 export * from './theme-constants';
+export * from './theme-definitions';

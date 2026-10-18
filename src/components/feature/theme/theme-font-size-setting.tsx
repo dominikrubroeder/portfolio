@@ -3,12 +3,13 @@
 import { Button } from '@/components/ui/button';
 import { ButtonGroup } from '@/components/ui/button-group';
 
-import { useTheme } from '@/components/feature/theme';
+import { useThemeActions, useThemeSetting } from '@/components/feature/theme';
 
 import { cn } from '@/lib/utils';
 
 export function ThemeFontSizeSetting({ className }: { className?: string }) {
-  const { themeFontSize, setThemeFontSize } = useTheme();
+  const themeFontSize = useThemeSetting('themeFontSize');
+  const { setThemeFontSize } = useThemeActions();
 
   return (
     <ButtonGroup className={cn('gap-0', className)} minimizeSpacing>

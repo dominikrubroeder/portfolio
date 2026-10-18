@@ -3,34 +3,29 @@
 import { Select } from '@/components/ui/select';
 import type { SelectOption } from '@/components/ui/select';
 
-import { useTheme } from '@/components/feature/theme';
-import type { ThemeOption } from '@/components/feature/theme';
+import { useThemeActions, useThemeSetting } from '@/components/feature/theme';
+import type { ThemeContainerWidth } from '@/components/feature/theme';
 
 const THEME_SPACING_CONTAINER_WIDTH_OPTIONS: SelectOption[] = [
-  {
-    key: '768',
-    value: '48rem (768 px)'
-  },
-  {
-    key: '1024',
-    value: '64rem (1024 px)'
-  },
-  {
-    key: '1440',
-    value: '90rem (1440 px)'
-  }
+  { key: 'default', value: 'Default' },
+  { key: 'wide', value: 'Wide (64 rem)' },
+  { key: 'full', value: 'Full (90 rem)' }
 ];
 
 export function ThemeSpacingContainerWidthSetting() {
-  const { setTheme } = useTheme();
+  const themeContainerWidth = useThemeSetting('themeContainerWidth');
+  const { setThemeContainerWidth } = useThemeActions();
 
   return (
     <Select
       trigger={{ variant: 'ghost-foreground' }}
-      initialValue={THEME_SPACING_CONTAINER_WIDTH_OPTIONS[0].value}
+      value={themeContainerWidth}
+      label="Container width"
       placeholder="Select a width"
       options={THEME_SPACING_CONTAINER_WIDTH_OPTIONS}
-      onValueChange={(themeOption) => setTheme(themeOption as ThemeOption)}
+      onValueChange={(option) =>
+        setThemeContainerWidth(option.key as ThemeContainerWidth)
+      }
     />
   );
 }

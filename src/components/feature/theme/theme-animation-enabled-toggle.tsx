@@ -2,13 +2,15 @@
 
 import { Toggle } from '@/components/ui/toggle';
 
-import { useTheme } from '@/components/feature/theme';
+import { useThemeActions, useThemeSetting } from '@/components/feature/theme';
 
 export function ThemeAnimationEnabledToggle() {
-  const { themeAnimationSettings, setThemeAnimationSettings } = useTheme();
+  const themeAnimationSettings = useThemeSetting('themeAnimationSettings');
+  const { setThemeAnimationSettings } = useThemeActions();
 
   return (
     <Toggle
+      ariaLabel="Enable animations"
       onClick={() =>
         setThemeAnimationSettings((prevState) => {
           return { ...prevState, isEnabled: !prevState.isEnabled };

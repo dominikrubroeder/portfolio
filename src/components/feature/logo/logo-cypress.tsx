@@ -2,12 +2,12 @@
 
 import { defaultLogoSquareSize } from '@/components/feature/logo/logo-config';
 import type { LogoProps } from '@/components/feature/logo/logo-types';
-import { useTheme } from '@/components/feature/theme';
+import { useThemeSetting } from '@/components/feature/theme';
 
 import { cn } from '@/lib/utils';
 
 export function LogoCypress({ id, className }: LogoProps) {
-  const { themeAppearance } = useTheme();
+  const themeAppearance = useThemeSetting('themeAppearance');
 
   if (themeAppearance === 'dark') {
     return (

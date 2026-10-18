@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { motion } from 'motion/react';
 
+import { useAnimationsEnabled } from '@/components/ui/animate';
+
 import { cn } from '@/lib/utils';
 
 export interface TypewriterProps {
@@ -42,6 +44,7 @@ export function Typewriter({
   const [isDeleting, setIsDeleting] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const enabled = useAnimationsEnabled();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -50,6 +53,13 @@ export function Typewriter({
     return () => clearTimeout(timeout);
   }, [startDelay]);
 
+  // Animations off: show the phrase at once and finish without typing.
+  useEffect(() => {
+    if (enabled) return;
+    onComplete?.();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [enabled]);
+
   useEffect(() => {
     if (isComplete) onComplete?.();
     // Fire exactly once per completion, not on every `onComplete` identity change.
@@ -57,7 +67,7 @@ export function Typewriter({
   }, [isComplete]);
 
   useEffect(() => {
-    if (isComplete || !hasStarted) return;
+    if (!enabled || isComplete || !hasStarted) return;
 
     const currentPhrase = phrases[phraseIndex] || '';
 
@@ -116,9 +126,20 @@ export function Typewriter({
     loop,
     isComplete,
     hasStarted,
+    enabled,
     deleteLastPhrase,
     endHoldDuration
   ]);
+
+  if (!enabled) {
+    return (
+      <span className={cn('inline-flex items-baseline', className)}>
+        <span className="whitespace-pre-wrap text-foreground">
+          {phrases[0]}
+        </span>
+      </span>
+    );
+  }
 
   return (
     <span className={cn('inline-flex items-baseline', className)}>

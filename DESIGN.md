@@ -64,16 +64,19 @@ text hierarchy is deliberate — do not flatten it.
 
 ### 4.2 Accent colors
 
-The user can pick the accent color at runtime (`data-theme-color`): **blue** (default), **violett**, **orange**,
-plus the plain `primary` value (violet-leaning) and `foreground` (used by the wireframe theme). Each accent defines
-`-foreground`, `-hover` and `-border` siblings. Adding an accent means adding the full set and mapping it in the three
-places in `globals.css` (`:root`, `@media (prefers-color-scheme: dark)`, `@theme inline`).
+The user can pick the accent color at runtime (`data-theme-color`): **blue** (Default theme start), **violett**,
+**orange** and the neutral **foreground** (Wireframe start: black on light, white on dark). A saved legacy `primary`
+reads as `violett`. Each color accent defines `-foreground`, `-hover` and `-border` siblings; the neutral accent is
+derived from `foreground` and `background`. Adding an accent means adding the full set and mapping it in the three
+places in `globals.css` (`:root`, `@media (prefers-color-scheme: dark)`, `@theme inline`). Orange (`oklch(0.58 0.237 31.3)`) with white text
+measures 4.8 : 1; every accent passes AA with its foreground text.
 
 ### 4.3 Appearance
 
 `light`, `dark` and `system`. Dark mode is applied by the `.theme-appearance-dark` class / `data-theme-appearance`
 attribute on `<html>` (custom Tailwind `dark:` variant), not by the media query alone. Dark mode only overrides neutral
-tokens (`background`, `foreground`, `muted*`, `border`); accents are shared.
+tokens (`background`, `foreground`, `muted*`, `border`); accents are shared. Wireframe has its own neutral set for
+both appearances (pure white / pure black, gray tone steps).
 
 ### 4.4 60 / 30 / 10
 
@@ -92,6 +95,9 @@ tokens (`background`, `foreground`, `muted*`, `border`); accents are shared.
 | Code     | JetBrains Mono | `font-code`     |
 
 - Outfit is loaded through `next/font/google` (`display: swap`, CSS variable `--font-outfit`).
+- `font-heading` and `font-body` read the runtime role tokens `--font-role-heading` and `--font-role-body`. Default maps
+  both to Outfit; Wireframe maps both to Patrick Hand (`--font-sketch`, weight 400 only, so bold is synthesized). Code
+  keeps JetBrains Mono. Patrick Hand is already loaded for the sketch accents, so the switch adds no font request.
 - Base text size is `1.125rem` (`--text-base`). The user can scale the whole UI via root font size: small 90 %,
   medium 100 %, large 110 %. **Always size with `rem`/Tailwind classes** so this scaling works.
 - Element defaults live in `globals.css` (`@layer base`). Use bare `h1`–`h6`, `p`, `ul`, `ol`, `small`, `b` when
@@ -117,12 +123,13 @@ Use `<Container>` (`ui/container`). Never hand-roll `max-w-*` on page sections.
 
 | `size`               | Width              | Use                                  |
 | -------------------- | ------------------ | ------------------------------------ |
-| `container-readable` | `44rem` (default)  | Text, lists, most sections           |
+| `container-readable` | `40rem` (default)  | Text, lists, most sections           |
 | `container`          | `90rem` (+ `px-4`) | Wide grids and galleries             |
 | `full-width`         | 100 %              | Full-bleed bands (e.g. primary hero) |
 | (panorama token)     | `120rem`           | Large preview imagery on `/projects` |
 
-The reading column is intentionally narrow (≈ 44rem). It is the signature of the layout: one column, centered,
+The reading column is intentionally narrow (40rem by default). The visitor can widen it in the theme settings
+(`data-theme-container-width`: default 40rem, wide 64rem, full 90rem; it overrides `--spacing-container-readable`). It is the signature of the layout: one column, centered,
 scannable.
 
 ### 6.2 Rhythm
@@ -136,16 +143,17 @@ scannable.
 
 ### 6.3 Z-index
 
-`z-20` content containers · `z-50` header and sticky bars · `z-100` (`z-index-100`) sidebar scrim · `z-max` (250)
-sidebar panel. Do not invent other layers.
+`z-20` content containers · `z-50` header and sticky bars · `z-100` (`z-index-100`) avatar lightbox scrim · `z-max` (250)
+drawer panels, popups and lightbox photo. Do not invent other layers.
 
 ## 7. Shape
 
-- Base radius token: `--radius: 6px`; derived `sm`, `md`, `lg`, `xl` (×1.4), `2xl` (×1.8), `3xl`, `4xl`.
+- Base radius token: `--radius` (6px at the default `md` setting); derived `sm`, `md` (clamped at 0), `lg`, `xl` (×1.4), `2xl` (×1.8), `3xl`, `4xl`.
+- The visitor sets the radius (`data-theme-radius`: none 0, sm 4px, md 6px, lg 10px). One variable drives every `rounded-*`
+  utility, so the whole UI follows live. Default starts at `md`, Wireframe at `none`.
 - Interactive controls (buttons, tabs) use `rounded-2xl` and tighten to `rounded-xl` on hover.
-- Panels (sidebar) use `rounded-2xl`; badges are `rounded-full`.
-- Use `rounded-theme-*` utilities when the radius must only apply in the **default** theme. The **wireframe** theme
-  removes rounding (`rounded-none`).
+- Panels (drawers) use `rounded-2xl`; badges are `rounded-full` (in Wireframe they follow the radius token, `rounded-md`).
+- `rounded-theme-*` utilities are plain aliases of `rounded-*` and follow the radius setting in every theme.
 - Borders are 1 px, `border` token, solid. Depth comes from borders and surface tone, not shadows.
 
 ## 8. Motion
@@ -159,14 +167,16 @@ Motion principles and behavior rules (including "Native CSS first") live in
   `direction="up"` for vertical page content, stagger via `delay` (0.16, 0.32, 0.44).
 - Reveal motion is a glide, not a spring: 1.8 s, expo-out `cubic-bezier(0.16, 1, 0.3, 1)`, 20 px travel, no overshoot. Opacity finishes earlier (0.75 × duration, `ease`) so content is readable while it settles.
 - Page-load entrance utilities: `animate-in-to-top-{ms}` / `animate-in-to-left-{ms}` (1.1 s,
-  `cubic-bezier(0.22, 1, 0.36, 1)`, 1.6 rem travel). They run only in the **default** theme and only under
-  `prefers-reduced-motion: no-preference`.
-- Sidebar: 300 ms `ease-in-out`, sliding in from the edge while scaling 0.95 → 1 and fading 0.75 → 1.
+  `cubic-bezier(0.22, 1, 0.36, 1)`, 1.6 rem travel). They run only while animations are on
+  (`html[data-theme-animations='on']`) and under `prefers-reduced-motion: no-preference`.
 - Drawer (floating bottom sheet and `xl`+ floating side panel): pure slide from its edge, 700 ms `cubic-bezier(0.32, 0.72, 0, 1)`; the backdrop fades with it. No scale or fade on the panel itself: scaling a panel that holds small controls (the close icon) makes them shimmer and jump while it settles. Swipe-to-dismiss keeps its own velocity-based timing.
 - Hover/press: `interactive` utility (`transition`, `active:scale-95`); ghost buttons grow a tinted `primary/10` pill
   from `scale-80`.
-- Default animation setting: enabled, spring, 0.24 s delay, 0.4 s duration. Users can disable animations; the wireframe
-  theme disables them by default.
+- Default animation setting: enabled (Default theme), spring, 0.24 s delay, 0.4 s duration. Users can switch animations
+  off or on in every theme; the Wireframe theme starts with them off. Off means no reveal, no typewriter intro, no
+  bounce or pulse, no snowfall and no hover transitions. CSS (`html[data-theme-animations='off'] [data-animate]`) shows
+  reveal content in its final state before and after hydration; `AnimationsProvider` is only the JS fallback that
+  stops `motion` from running.
 - `<MotionConfig reducedMotion="user">` wraps every reveal. Never bypass it.
 
 Motion exists to guide attention and confirm interaction. Never for decoration, never looping in content areas (the
@@ -178,20 +188,33 @@ A theme is a combination of **style** × **appearance** × **accent color** × *
 (`dr-theme*` keys) and applied as classes and `data-*` attributes on `<html>` before first paint
 (`themeInitializationScript`).
 
-| Style       | Character                                                                                  |
-| ----------- | ------------------------------------------------------------------------------------------ |
-| `default`   | Rounded, colored, animated. The reference experience.                                      |
-| `wireframe` | Black/white, square corners, no animation, accent = foreground. Shows the structure naked. |
+| Style       | Character                                                                                                 |
+| ----------- | --------------------------------------------------------------------------------------------------------- |
+| `default`   | "Intense accent UI": rounded, colored, animated. The reference experience.                                |
+| `wireframe` | "Sketch-based UI": black/white, handwritten type, square corners, no animation, no shadows. Same content. |
 
-Other values exist in types (`crazy-color`, `notes`) but are not offered in `THEME_OPTIONS`; the Cornell-notes
-background is a decorative layer on the home page.
+Themes are listed once, in `feature/theme/theme-definitions.ts` (id, label, a one-phrase description and the defaults for accent, animations,
+radius and container width). The selector, the switch, persistence and the pre-paint script read that list; a new theme
+is a new entry plus its token block in `globals.css`. Selecting a theme applies its defaults (accent, animations, radius,
+container width); appearance and font size stay. The styles `crazy-color` and `notes` and the Cornell-notes background
+were removed.
 
 Rules:
 
+- Wireframe media: every `img` and `svg` (photos, project previews, logos, interface icons, crop marks) is grayscale
+  through one filter rule in `globals.css`. The accent shows only on text, buttons and links. Never use `grayscale-0` or
+  another filter utility on an image: a utility beats the base rule.
 - Structure differs by tokens and `html[data-theme=…]` selectors, not by forking components.
-- A component may read `useTheme()` for small structural flags (e.g. `Badge` squares off in wireframe) — keep these
-  minimal.
+- Wireframe: `--border` is a faint hairline kept only where a control needs an edge (toggle outlines use `foreground`);
+  groupings read as tone (`muted`), not lines. Drop shadows are off (`--tw-shadow` is zeroed); focus rings stay.
+- Every setting is mirrored to a `data-theme-*` attribute on `<html>` before first paint and on every change; CSS reacts
+  in the same frame. Tokens never transition on a theme or setting change.
+- Prefer CSS for theme differences (`in-data-[theme=wireframe]:…`, `html[data-theme=…]` selectors). A component may read
+  one setting with `useThemeSetting(name)` only when CSS cannot express the difference (for example the intro skips
+  typing when animations are off) — keep these minimal.
 - Persona/`ThemeMode` (`design` | `dev`) is stored but currently has no visible effect.
+- State lives in `feature/theme/theme-store.ts`, outside React. Read one value with `useThemeSetting(name)` (re-renders only
+  on that value), setters with `useThemeActions()`. `useTheme()` returns everything and re-renders on any change.
 
 ## 10. Components
 
@@ -206,8 +229,8 @@ layer order of imports and the feature file prefix (`npm run lint`, `npm run for
 ### UI (`src/components/ui`)
 
 Baseline, domain-free components: `Button`, `Badge`, `Divider`, `Hr`, `Blockquote`, `ExternalLink`,
-`Icon*`, `Select`, `Toggle`, `Tooltip`, `DotsDivider`, `Typewriter`, `TypewriterOverlay`, `Animate`, `ButtonGroup`, `Drawer`,
-`Dialog`, `Tabs`, `Container`, `Sidebar` and `PageTemplate` (h1, hero blockquote and content slot used by
+`Icon*`, `Select` (Base UI listbox: `Button` trigger with chevron, `bg-background` popup with a 1 px border, check mark on the chosen row; options may carry an icon), `Toggle`, `Tooltip`, `DotsDivider`, `Typewriter`, `TypewriterOverlay`, `Animate`, `ButtonGroup`, `Drawer`,
+`Dialog`, `Tabs`, `Container` and `PageTemplate` (h1, hero blockquote and content slot used by
 inner pages).
 
 - **Button** — `variant` = `{contained|ghost|text|link}-{primary|foreground|muted}` (+ `contained-white`), `size` =
@@ -224,7 +247,7 @@ inner pages).
 
 Domain and feature components, one folder per feature: `header`, `footer`, `page-navigation-bar`, `page-frame`, `avatar`, `profile-links` (`ButtonGithub`,
 `ButtonLinkedin`), `brand`, `tools`, `technologies`, `projects`, `philosophy`, `socials`, `intro`, `theme`
-(provider, `useTheme`, tokens and settings UI), `typography` (`H2`, `Ul`, `Ol`), `logo` (`Logo*`), `events` (winter
+(registry, store, hooks, tokens and settings UI), `typography` (`H2`, `Ul`, `Ol`), `logo` (`Logo*`), `events` (winter
 scene).
 
 File naming: every file in a feature directory is prefixed with the directory name (`tools/tools-data.ts`). Only
@@ -242,6 +265,7 @@ passthrough is for layout (margin, width), not for restyling.
 
 - Project previews are wide wallpapers (`public/projects/*`), shown unframed; `width`/`height` always set; alt text
   `"<Title> preview image"`. Hero imagery uses `preload`.
+- In Wireframe all images and SVGs render grayscale (see §9). Do not rely on hue alone to tell logos apart.
 - Logos are SVG components in `feature/logo`; raster fallbacks sit in `feature/logo/img`. Logos must work in dark mode
   (use `currentColor` or provide a dark variant).
 - Icons: Lucide for UI icons (`IconLucide`), Heroicons 16/solid for inline arrows. Size via the button (`size-5` at
@@ -278,6 +302,7 @@ do not apply to custom images.
 - Everything operable by keyboard; overlays trap focus and close on `Esc` (provided by Base UI primitives).
 - Semantic landmarks: `header`, `main`, `footer`, `aside`, `section` + headings in order.
 - Icon-only controls get `aria-label`; links that open a new tab say so in `aria-label`/`title`.
+- Theme setting changes are announced to screen readers through a polite live region (`ThemeSettingsAnnouncer`) inside the drawer.
 - Reduced motion honored via `motion-safe:`, `prefers-reduced-motion` and `MotionConfig`.
 - Storybook runs `addon-a11y` (`test: 'todo'`); treat reported violations as bugs.
 
@@ -357,13 +382,32 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | Home page gets a visually hidden `h1` ("Design and code speak the same language", `sr-only`); the big statements stay `div`s | The page needs one `h1` for SEO and screen readers; the statement sequence keeps its look without becoming a heading outline. |
 | 3.0.6 | Custom cursor: accent dot with paper ring and accent outer ring, native CSS images, shape morphs per state (grow on clickable, shrink on press, rounded bar-rectangle at 60 % when disabled) | Brand-colored pointer (accent core and outer ring, page-background ring between) that stays legible on every surface. Native images avoid a JS follower: no lag, no hydration, no extra motion. Shape carries state, not color. |
 | 3.0.6 | Philosophy tab panels share one grid cell (`col-start-1 row-start-1`) | Base UI keeps the leaving panel mounted for a frame; stacked panels doubled the height, pushed the tab list down 400 px and shifted scroll. One cell keeps layout and scroll still. |
+| 3.0.6 | Themes come from one registry (`theme-definitions.ts`): id, label and defaults for accent, animations, radius and container width; selecting a theme applies its defaults, appearance and font size stay | A new theme is one entry, not scattered `if (theme === …)` branches; a switch always starts from a known state. |
+| 3.0.6 | Every theme setting is mirrored to a `data-theme-*` attribute on `<html>` (theme, appearance, color, font size, radius, container width, animations); state lives in an external store, not a React context | CSS restyles the page in the same frame and only the control that shows a setting re-renders; the page tree never re-renders on a switch. |
+| 3.0.6 | Wireframe is a black-and-white theme: gray tone steps instead of lines, faint `--border`, no shadows, square corners, neutral accent (`foreground`) with optional color accents; the old full-contrast tokens (text = headings, borders = foreground) are gone | "Non-border" structure that keeps the two-step text hierarchy; contrast stays AA. |
+| 3.0.6 | Animations are one switch (`data-theme-animations`) that works in every theme; Wireframe starts off; off shows reveal content at once via CSS, skips the intro and mounts no snowfall | Static by default but never locked: the visitor can turn motion on on purpose. CSS is the source of truth, JS is the fallback. |
+| 3.0.6 | Radius (none, small, medium, large) and container width (default, wide, full) are visitor settings in every theme; radius drives `--radius`, width overrides `--spacing-container-readable` | Personal control without per-component work: one variable each. |
+| 3.0.6 | Header gets a theme settings trigger; the panel is titled "Theme settings" and loads on first open (now a drawer, see below) | Settings are one click from anywhere; pages that never open them pay no script cost. |
+| 3.0.6 | Accent control gains a neutral swatch; `crazy-color`, `notes` and the Cornell-notes background are removed; the Border placeholder section becomes "Shape" | Black and white is a real choice; no dead theme styles or placeholder controls. |
+| 3.0.6 | Theme settings open in the site's `Drawer` (bottom sheet below `xl`, side panel from `xl`, standard scrim); the custom `Sidebar` is removed | One panel pattern. Base UI supplies focus trap, focus return, `Esc` and inert background that the sidebar lacked. |
+| 3.0.6 | Appearance (light, dark, auto) lives in the theme drawer only; the header shows the settings trigger first, then the blue, violett and orange swatches (from `sm`); the neutral swatch is drawer-only | Quiet header; neutral is a theme default, not a quick pick. |
+| 3.0.6 | `Select` is rebuilt on the Base UI select with the same look; values are option keys, options can carry an icon | Listbox roles, arrow keys, typeahead and `Esc` for free; one dropdown implementation. |
+| 3.0.6 | Drawer groups: Base, Typography, Animation, Border (radius), Layout (container width) | Settings are named by what they change. |
+| 3.0.6 | Wireframe is a "Sketch-based UI": Patrick Hand for headings and body, every image and SVG grayscale (one CSS filter rule), Default described as "Intense accent UI"; each theme carries a one-phrase description shown in the theme select | The theme reads as a sketch, not only as black and white; the accent stays on text, buttons and links. All CSS and registry data, no new client code. |
+| 3.0.6 | Orange accent darkened to `oklch(0.58 0.237 31.3)` (hover 0.555, border 0.52) | White text on the old orange measured 3.85 : 1; the darker value reaches 4.8 : 1 and keeps the hue. |
+| 3.0.6 | Drawer swatches and the animation switch get a 44 px hit area (transparent `::after`, `min-h-11`) | Touch target without changing the look. |
 
 > When you make a lasting design decision, add a row: _version · decision · why_.
 
 ## 16. Known gaps
 
-- Border settings (radius / style / width) appear in the Modify panel but are placeholders wired to the animation
-  toggle; the context holds no border state yet (`THEME_BORDER_SETTINGS_DEFAULT` exists in `theme-constants.ts`, unused).
-- `THEME_COLOR_DEFAULT` is `blue`, but choosing the `default` style resets the accent to `primary`.
-- `crazy-color` and `notes` themes exist in types only.
 - `todos.md`: "Background off" and "Focus mode" are planned.
+- Persona/`ThemeMode` is stored but has no visible effect.
+- Theme drawer: swatches have a 44 px high hit area but are only about 34 px wide (the 8 px gap limits it). Changes are announced
+  through a polite live region, not by moving focus.
+- Switching to Wireframe changes the font, so text reflows once (about 0.14 layout-shift score on `/`, 0.05 on `/projects`
+  measured with synthetic clicks). The browser metric excludes it after a real click.
+- axe (best practice): `region` on the portaled select list and the bottom bar, `list` (separator inside the projects `ul`)
+  and accent text on dark (`color-contrast`, 3.5–3.8 : 1 for blue and orange on `/projects` links). All predate this feature.
+- Wireframe cursor stays black or white even when the
+  visitor picks a color accent.

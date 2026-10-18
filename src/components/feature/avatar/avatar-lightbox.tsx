@@ -29,10 +29,7 @@ export function AvatarLightbox({
           alt={AVATAR_ALT}
           width={width}
           height={height}
-          className={cn(
-            'shrink-0 rounded-full border-2 grayscale-0',
-            className
-          )}
+          className={cn('shrink-0 rounded-full border-2', className)}
           draggable={false}
           loading="eager"
         />
@@ -53,7 +50,7 @@ export function AvatarLightbox({
               alt={AVATAR_ALT}
               width={500}
               height={500}
-              className="size-full max-w-none rounded-full border-2 grayscale-0"
+              className="size-full max-w-none rounded-full border-2"
               draggable={false}
             />
           </Dialog.Close>

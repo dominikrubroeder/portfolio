@@ -28,7 +28,7 @@ export function ExternalLink({
     <a
       href={href}
       className={cn(
-        'group relative items-center px-1 hover:bg-muted active:bg-muted [&_img]:inline-block [&_img]:align-middle [&_svg]:inline-block [&_svg]:align-text-top [&_svg:first-child]:mb-1 [&_svg:first-child]:align-middle [html[data-theme=default]_&]:rounded',
+        'group relative items-center rounded px-1 hover:bg-muted active:bg-muted [&_img]:inline-block [&_img]:align-middle [&_svg]:inline-block [&_svg]:align-text-top [&_svg:first-child]:mb-1 [&_svg:first-child]:align-middle',
         variant === 'underline',
         color === 'primary' && 'text-primary hover:text-primary-hover',
         color === 'primary-foreground' &&

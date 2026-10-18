@@ -36,7 +36,7 @@ export function Avatar({
         alt="Image of Dominik Rubröder"
         width={width}
         height={height}
-        className={cn('shrink-0 rounded-full border-2 grayscale-0', className)}
+        className={cn('shrink-0 rounded-full border-2', className)}
         draggable={false}
         loading="eager"
       />
@@ -58,7 +58,7 @@ export function Avatar({
         alt="Image of Dominik Rubröder"
         width={width}
         height={height}
-        className={cn('shrink-0 rounded-full border-2 grayscale-0', className)}
+        className={cn('shrink-0 rounded-full border-2', className)}
         draggable={false}
         loading="eager"
       />

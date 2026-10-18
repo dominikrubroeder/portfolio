@@ -1,9 +1,9 @@
-import { ButtonGroup } from '@/components/ui/button-group';
-
 import { Avatar } from '@/components/feature/avatar';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/feature/events';
-import { ThemeColorSetting } from '@/components/feature/theme';
-import { ThemeAppearanceSwitch } from '@/components/feature/theme/theme-appearance-switch';
+import {
+  ThemeColorSetting,
+  ThemeDrawerTrigger
+} from '@/components/feature/theme';
 
 import { cn } from '@/lib/utils';
 
@@ -31,12 +31,13 @@ export function Header() {
           </div>
         </div>
 
-        <div className="hidden xs:flex xs:items-center xs:gap-1.5">
-          <ButtonGroup minimizeSpacing className="hidden sm:flex">
-            <ThemeAppearanceSwitch />
-          </ButtonGroup>
+        <div className="flex items-center gap-1.5">
+          <ThemeDrawerTrigger />
 
-          <ThemeColorSetting className="gap-1.5 sm:gap-2" />
+          <ThemeColorSetting
+            includeNeutral={false}
+            className="hidden gap-1.5 sm:flex sm:gap-2"
+          />
         </div>
       </div>
     </header>

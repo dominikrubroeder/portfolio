@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import React, {
   createContext,
   Suspense,
@@ -7,9 +8,10 @@ import React, {
   useEffect,
   useState
 } from 'react';
-import type { ReactNode } from 'react';
 
 import { TypewriterOverlay } from '@/components/ui/typewriter-overlay';
+
+import { useThemeSetting } from '@/components/feature/theme';
 
 type IntroContextType = {
   isPlaying: boolean;
@@ -27,12 +29,22 @@ const phrases = [
   ['Connecting to the world ...'],
   ['For the user!'],
   ['What you do today matters most'],
-  ['There are no coincidences']
+  ['There are no coincidences'],
+  ['Happy coding!'],
+  ['Designing ...'],
+  ['Setting up the environment ...'],
+  ['Applying color, typography and layout ...']
 ];
 
 export function IntroProvider({ children }: { children: ReactNode }) {
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [currentPhrase, setCurrentPhrase] = useState<string[] | null>(null);
+  const { isEnabled } = useThemeSetting('themeAnimationSettings');
+  const isInitialized = useThemeSetting('isInitialized');
+
+  // Animations off when the saved settings arrive: no typing intro, the content is there at
+  // once. Decided once: turning animations on later never brings the intro back.
+  if (isPlaying && isInitialized && !isEnabled) setIsPlaying(false);
 
   // Random phrase is picked after mount: Math.random() must not run during prerender
   useEffect(() => {

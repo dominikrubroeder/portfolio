@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 
 import { motion, MotionConfig } from 'motion/react';
 
-import { useAnimate } from '@/components/ui/animate';
+import { useAnimate, useAnimationsEnabled } from '@/components/ui/animate';
 
 import { cn } from '@/lib/utils';
 
@@ -36,10 +36,14 @@ export function Animate({
   children: ReactNode;
   ref?: React.Ref<HTMLDivElement>;
 }) {
+  const enabled = useAnimationsEnabled();
   const { variants } = useAnimate({ delay, duration, type });
 
-  const trigger =
-    active === undefined
+  // Animations off: render the final state at once. CSS (`[data-animate]` under
+  // `html[data-theme-animations='off']`) guarantees the same before hydration.
+  const trigger = !enabled
+    ? { animate: 'visible' as const }
+    : active === undefined
       ? { whileInView: 'visible' as const, viewport }
       : { animate: active ? ('visible' as const) : 'hidden' };
 
@@ -47,8 +51,9 @@ export function Animate({
     <MotionConfig reducedMotion="user">
       <motion.div
         ref={ref}
-        variants={variants[direction]}
-        initial="hidden"
+        variants={enabled ? variants[direction] : variants.disabledAnimations}
+        initial={enabled ? 'hidden' : 'visible'}
+        data-animate=""
         className={cn(className)}
         {...trigger}
       >

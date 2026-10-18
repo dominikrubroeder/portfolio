@@ -16,7 +16,7 @@ const ACCENTS = {
   primary: [0.582, 0.231, 288.6],
   blue: [0.546, 0.245, 262.9],
   violett: [0.543, 0.252, 285.9],
-  orange: [0.634, 0.237, 31.3],
+  orange: [0.58, 0.237, 31.3],
   wireframe: [0, 0, 0]
 };
 
@@ -25,6 +25,12 @@ const ACCENTS = {
 const BACKGROUNDS = {
   light: [1, 0, 0],
   dark: [0.193, 0, 0]
+};
+
+// Wireframe is pure black and white (see :root[data-theme='wireframe'] in globals.css).
+const WIREFRAME_BACKGROUNDS = {
+  light: [1, 0, 0],
+  dark: [0, 0, 0]
 };
 
 const SELECTORS = {
@@ -141,7 +147,9 @@ function toUrl(body) {
 
 function block(name, appearance) {
   const isWireframe = name === 'wireframe';
-  const background = oklchToHex(BACKGROUNDS[appearance]);
+  const background = oklchToHex(
+    (isWireframe ? WIREFRAME_BACKGROUNDS : BACKGROUNDS)[appearance]
+  );
   // Wireframe accent is the foreground: black on light, white on dark.
   const accent = isWireframe
     ? appearance === 'dark'

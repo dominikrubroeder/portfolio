@@ -1,13 +1,13 @@
 'use client';
 
-import { useTheme } from '@/components/feature/theme';
+import { useThemeSetting } from '@/components/feature/theme';
 
 import { cn } from '@/lib/utils';
 
 import type { BaseComponentProps } from '@/lib/types';
 
 export function SantasCap({ className }: BaseComponentProps) {
-  const { isEventWinterEnabled } = useTheme();
+  const isEventWinterEnabled = useThemeSetting('isEventWinterEnabled');
 
   if (!isEventWinterEnabled) return null;
 

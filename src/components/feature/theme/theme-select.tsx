@@ -3,22 +3,21 @@
 import { Select } from '@/components/ui/select';
 
 import {
-  THEME_OPTION_DEFAULT,
   THEME_OPTIONS,
-  useTheme
+  useThemeActions,
+  useThemeSetting
 } from '@/components/feature/theme';
 import type { ThemeOption } from '@/components/feature/theme';
 
 export function ThemeSelect() {
-  const { theme, setTheme } = useTheme();
+  const theme = useThemeSetting('theme');
+  const { setTheme } = useThemeActions();
 
   return (
     <Select
       trigger={{ variant: 'contained-primary' }}
-      initialValue={
-        THEME_OPTIONS.find((availableTheme) => availableTheme.key === theme.key)
-          ?.value || THEME_OPTION_DEFAULT.value
-      }
+      value={theme.key}
+      label="Theme"
       placeholder="Select a theme"
       options={THEME_OPTIONS}
       onValueChange={(themeOption) => setTheme(themeOption as ThemeOption)}

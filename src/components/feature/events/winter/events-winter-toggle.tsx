@@ -2,10 +2,11 @@
 
 import { Toggle } from '@/components/ui/toggle';
 
-import { useTheme } from '@/components/feature/theme';
+import { useThemeActions, useThemeSetting } from '@/components/feature/theme';
 
 export function ThemeWinterToggle() {
-  const { setIsEventWinterEnabled, isEventWinterEnabled } = useTheme();
+  const isEventWinterEnabled = useThemeSetting('isEventWinterEnabled');
+  const { setIsEventWinterEnabled } = useThemeActions();
 
   return (
     <Toggle

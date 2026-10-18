@@ -1,119 +1,33 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { MoonIcon, SparklesIcon, SunIcon } from '@heroicons/react/24/solid';
 
-import { MoonIcon, SparklesIcon, SunIcon } from '@heroicons/react/24/outline';
-import {
-  ChevronDownIcon,
-  MoonIcon as MoonIconSolid,
-  SparklesIcon as SparklesIconSolid,
-  SunIcon as SunIconSolid
-} from '@heroicons/react/24/solid';
+import { Select } from '@/components/ui/select';
+import type { SelectOption } from '@/components/ui/select';
 
-import { Button } from '@/components/ui/button';
-
-import { useTheme } from '@/components/feature/theme';
+import { useThemeActions, useThemeSetting } from '@/components/feature/theme';
 import type { ThemeAppearance } from '@/components/feature/theme';
 
-import { cn } from '@/lib/utils';
-
-import type { BaseComponentProps, PositionProp } from '@/lib/types';
-
-const options = [
-  {
-    value: 'light',
-    label: (
-      <div className="flex items-center gap-2">
-        <SunIcon className="size-5" /> <span>Light</span>
-      </div>
-    )
-  },
-  {
-    value: 'dark',
-    label: (
-      <div className="flex items-center gap-2">
-        <MoonIcon className="size-5" /> <span>Dark</span>
-      </div>
-    )
-  },
-  {
-    value: 'system',
-    label: (
-      <div className="flex items-center gap-2">
-        <SparklesIcon className="size-5" /> <span>Auto</span>
-      </div>
-    )
-  }
+const THEME_APPEARANCE_OPTIONS: SelectOption[] = [
+  { key: 'light', value: 'Light', icon: <SunIcon className="size-5" /> },
+  { key: 'dark', value: 'Dark', icon: <MoonIcon className="size-5" /> },
+  { key: 'system', value: 'Auto', icon: <SparklesIcon className="size-5" /> }
 ];
 
-export function ThemeAppearanceSelect({
-  menuPosition = 'bottom',
-  className
-}: {
-  menuPosition?: PositionProp;
-} & BaseComponentProps) {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { theme, themeAppearance, setThemeAppearance } = useTheme();
-
-  const handleThemeChange = useCallback(
-    (value: ThemeAppearance) => {
-      setIsOpen(false);
-      setThemeAppearance(value);
-    },
-    [setThemeAppearance]
-  );
+export function ThemeAppearanceSelect() {
+  const themeAppearance = useThemeSetting('themeAppearance');
+  const { setThemeAppearance } = useThemeActions();
 
   return (
-    <div className={cn('relative inline-flex', className)}>
-      <Button
-        variant="ghost-foreground"
-        onClick={() => setIsOpen((prevState) => !prevState)}
-        className={cn(isOpen && 'bg-muted')}
-      >
-        {themeAppearance === 'light' && (
-          <>
-            <SunIconSolid className="size-5" /> Light
-          </>
-        )}
-
-        {themeAppearance === 'dark' && (
-          <>
-            <MoonIconSolid className="size-5" /> Dark
-          </>
-        )}
-
-        {themeAppearance === 'system' && (
-          <>
-            <SparklesIconSolid className="size-5" /> Auto
-          </>
-        )}
-        <ChevronDownIcon className="size-4" />
-      </Button>
-
-      {isOpen && (
-        <div
-          className={cn(
-            '[html[data-theme=default]_&]:motion-safe:animate-fade-up-1rem absolute z-max rounded border bg-background px-3 shadow-xl',
-            menuPosition === 'bottom' &&
-              'top-full left-1/2 mt-2 -translate-x-1/2',
-            menuPosition === 'bottom-right' && 'top-full right-0 mt-2'
-          )}
-        >
-          <ul className={cn(theme.key === 'wireframe' && 'space-y-2')}>
-            {options.map(({ value, label }) => (
-              <li key={value}>
-                <Button
-                  variant="ghost-foreground"
-                  onClick={() => handleThemeChange(value as ThemeAppearance)}
-                  className="w-full font-normal"
-                >
-                  {label}
-                </Button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+    <Select
+      trigger={{ variant: 'ghost-foreground' }}
+      value={themeAppearance ?? 'system'}
+      label="Appearance"
+      placeholder="Select an appearance"
+      options={THEME_APPEARANCE_OPTIONS}
+      onValueChange={(option) =>
+        setThemeAppearance(option.key as ThemeAppearance)
+      }
+    />
   );
 }

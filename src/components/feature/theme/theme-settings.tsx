@@ -2,9 +2,11 @@ import { ThemeAnimationEnabledToggle } from '@/components/feature/theme/theme-an
 import { ThemeAppearanceSelect } from '@/components/feature/theme/theme-appearance-select';
 import { ThemeColorSetting } from '@/components/feature/theme/theme-color-setting';
 import { ThemeFontSizeSetting } from '@/components/feature/theme/theme-font-size-setting';
+import { ThemeRadiusSetting } from '@/components/feature/theme/theme-radius-setting';
 import { ThemeSelect } from '@/components/feature/theme/theme-select';
 import { ThemeSettingOption } from '@/components/feature/theme/theme-setting-option';
 import { ThemeSettingSection } from '@/components/feature/theme/theme-setting-section';
+import { ThemeSpacingContainerWidthSetting } from '@/components/feature/theme/theme-spacing-container-width-setting';
 
 export function ThemeSettings() {
   return (
@@ -28,14 +30,14 @@ export function ThemeSettings() {
 
       <ThemeSettingSection title="Typography">
         <ThemeSettingOption>
-          <div className="text-foreground">Font Size</div>
+          <div className="text-foreground">Font size</div>
           <ThemeFontSizeSetting />
         </ThemeSettingOption>
       </ThemeSettingSection>
 
       <ThemeSettingSection title="Animation">
         <ThemeSettingOption>
-          <div className="text-foreground">Enable Animations</div>
+          <div className="text-foreground">Enable animations</div>
           <ThemeAnimationEnabledToggle />
         </ThemeSettingOption>
       </ThemeSettingSection>
@@ -43,17 +45,14 @@ export function ThemeSettings() {
       <ThemeSettingSection title="Border">
         <ThemeSettingOption>
           <div className="text-foreground">Radius</div>
-          <ThemeAnimationEnabledToggle />
+          <ThemeRadiusSetting />
         </ThemeSettingOption>
+      </ThemeSettingSection>
 
+      <ThemeSettingSection title="Layout">
         <ThemeSettingOption>
-          <div className="text-foreground">Style</div>
-          <ThemeAnimationEnabledToggle />
-        </ThemeSettingOption>
-
-        <ThemeSettingOption>
-          <div className="text-foreground">Width</div>
-          <ThemeAnimationEnabledToggle />
+          <div className="text-foreground">Container width</div>
+          <ThemeSpacingContainerWidthSetting />
         </ThemeSettingOption>
       </ThemeSettingSection>
     </>

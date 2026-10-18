@@ -12,7 +12,6 @@ import {
 import { PhilosophyCore } from '@/components/feature/philosophy';
 import { mainTechnologies } from '@/components/feature/technologies';
 import { DrawerTechnologies } from '@/components/feature/technologies/technologies-drawer';
-import { ThemeNotesBackgroundCornellNotes } from '@/components/feature/theme';
 import { mainTools } from '@/components/feature/tools';
 import { DrawerTools } from '@/components/feature/tools/tools-drawer';
 import { H2, Ol } from '@/components/feature/typography';
@@ -25,8 +24,6 @@ export default async function HomePage() {
       <ScrollToTop />
 
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
-
-      <ThemeNotesBackgroundCornellNotes />
 
       <h1 className="sr-only">Design and code speak the same language</h1>
 

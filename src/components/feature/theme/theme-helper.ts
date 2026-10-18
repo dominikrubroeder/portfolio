@@ -1,70 +1,86 @@
 import {
-  THEME_APPEARANCE_DEFAULT,
-  THEME_COLOR_DEFAULT,
-  THEME_DEFAULT,
   THEME_KEY,
+  THEME_KEY_ANIMATION,
   THEME_KEY_APPEARANCE,
   THEME_KEY_COLOR,
-  THEME_KEY_FONT_SIZE
-} from '@/components/feature/theme';
+  THEME_KEY_CONTAINER_WIDTH,
+  THEME_KEY_FONT_SIZE,
+  THEME_KEY_RADIUS
+} from './theme-constants';
+import {
+  THEME_DEFINITIONS,
+  THEME_VALUES_APPEARANCE,
+  THEME_VALUES_COLOR,
+  THEME_VALUES_CONTAINER_WIDTH,
+  THEME_VALUES_FONT_SIZE,
+  THEME_VALUES_RADIUS
+} from './theme-definitions';
 
+/**
+ * Runs before first paint (inline in <head>). Reads the saved settings, validates them against
+ * the theme registry and writes the `data-theme-*` attributes, so the page never flashes the
+ * wrong look. Storage can throw (private windows): then every attribute still gets the theme's
+ * defaults. Keep in sync with `theme-store.ts`.
+ */
 export const themeInitializationScript = `
   (function() {
-    try {
-      const appearance = localStorage.getItem('${THEME_KEY_APPEARANCE}') || '${THEME_APPEARANCE_DEFAULT}';
-      const theme = localStorage.getItem('${THEME_KEY}') || '${THEME_DEFAULT}';
-      const color = localStorage.getItem('${THEME_KEY_COLOR}') || '${THEME_COLOR_DEFAULT}';
-      const fontSize = localStorage.getItem('${THEME_KEY_FONT_SIZE}') || 'md';
+    var html = document.documentElement;
+    var defs = ${JSON.stringify(THEME_DEFINITIONS)};
+    var values = {
+      appearance: ${JSON.stringify(THEME_VALUES_APPEARANCE)},
+      color: ${JSON.stringify(THEME_VALUES_COLOR)},
+      fontSize: ${JSON.stringify(THEME_VALUES_FONT_SIZE)},
+      radius: ${JSON.stringify(THEME_VALUES_RADIUS)},
+      containerWidth: ${JSON.stringify(THEME_VALUES_CONTAINER_WIDTH)}
+    };
 
-      const html = document.documentElement;
-
-      // Appearance
-      let resolvedAppearance = appearance;
-      if (appearance === 'system') {
-        resolvedAppearance = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      
-      html.classList.forEach((className) => {
-        if (className.startsWith('theme-appearance-')) {
-          html.classList.remove(className);
-        }
+    function read(key) {
+      try { return localStorage.getItem(key); } catch (e) { return null; }
+    }
+    function pick(list, value, fallback) {
+      return list.indexOf(value) === -1 ? fallback : value;
+    }
+    function setClass(prefix, value) {
+      html.classList.forEach(function(name) {
+        if (name.indexOf(prefix) === 0) html.classList.remove(name);
       });
-      html.classList.add('theme-appearance-' + resolvedAppearance);
-      html.setAttribute('data-theme-appearance', appearance);
+      html.classList.add(prefix + value);
+    }
 
-      // Theme Style
-      html.classList.forEach((className) => {
-        if (className.startsWith('theme-style-')) {
-          html.classList.remove(className);
-        }
-      });
-      html.classList.add('theme-style-' + theme);
-      html.setAttribute('data-theme', theme);
+    var themeId = read('${THEME_KEY}');
+    var def = defs[0];
+    for (var i = 0; i < defs.length; i++) if (defs[i].id === themeId) def = defs[i];
 
-      // Color
-      if (color) {
-        html.classList.forEach((className) => {
-          if (className.startsWith('theme-color-')) {
-            html.classList.remove(className);
-          }
-        });
-        html.classList.add('theme-color-' + color);
-        html.setAttribute('data-theme-color', color);
-      }
+    var appearance = pick(values.appearance, read('${THEME_KEY_APPEARANCE}'), 'light');
+    var storedColor = read('${THEME_KEY_COLOR}');
+    if (storedColor === 'primary') storedColor = 'violett';
+    var color = pick(values.color, storedColor, def.defaults.color);
+    var fontSize = pick(values.fontSize, read('${THEME_KEY_FONT_SIZE}'), 'md');
+    var radius = pick(values.radius, read('${THEME_KEY_RADIUS}'), def.defaults.radius);
+    var containerWidth = pick(values.containerWidth, read('${THEME_KEY_CONTAINER_WIDTH}'), def.defaults.containerWidth);
+    var storedAnimation = read('${THEME_KEY_ANIMATION}');
+    var animations = storedAnimation === 'true' ? true : storedAnimation === 'false' ? false : def.defaults.animationsEnabled;
 
-      // Font Size
-      html.classList.forEach((className) => {
-        if (className.startsWith('theme-font-size-')) {
-          html.classList.remove(className);
-        }
-      });
-      html.classList.add('theme-font-size-' + fontSize);
-      html.setAttribute('data-theme-font-size', fontSize);
-      
-      if (fontSize === 'sm') html.style.fontSize = '90%';
-      else if (fontSize === 'md') html.style.fontSize = '100%';
-      else if (fontSize === 'lg') html.style.fontSize = '110%';
+    var resolvedAppearance = appearance;
+    if (appearance === 'system') {
+      resolvedAppearance = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
 
-    } catch (e) {}
+    setClass('theme-appearance-', resolvedAppearance);
+    html.setAttribute('data-theme-appearance', appearance);
+
+    setClass('theme-style-', def.id);
+    html.setAttribute('data-theme', def.id);
+
+    setClass('theme-color-', color);
+    html.setAttribute('data-theme-color', color);
+
+    setClass('theme-font-size-', fontSize);
+    html.setAttribute('data-theme-font-size', fontSize);
+    html.style.fontSize = fontSize === 'sm' ? '90%' : fontSize === 'lg' ? '110%' : '100%';
+
+    html.setAttribute('data-theme-radius', radius);
+    html.setAttribute('data-theme-container-width', containerWidth);
+    html.setAttribute('data-theme-animations', animations ? 'on' : 'off');
   })();
 `;

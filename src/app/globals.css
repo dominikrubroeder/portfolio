@@ -90,6 +90,10 @@
     --font-sketch: var(--font-patrick-hand), 'Patrick Hand', cursive;
     --font-code: 'JetBrains Mono';
 
+    /* Text font roles. A theme remaps them (Wireframe: sketch); `font-heading` and `font-body` read them. */
+    --font-role-heading: var(--font-outfit);
+    --font-role-body: var(--font-outfit);
+
     --black: oklch(0 0 0);
     --white: oklch(1 0 0);
 
@@ -111,10 +115,10 @@
     --violett-hover: oklch(0.51 0.269 282.7);
     --violett-border: oklch(0.483 0.281 279);
 
-    --orange: oklch(0.634 0.237 31.3);
+    --orange: oklch(0.58 0.237 31.3);
     --orange-foreground: oklch(1 0 0);
-    --orange-hover: oklch(0.609 0.234 31);
-    --orange-border: oklch(0.571 0.219 31.1);
+    --orange-hover: oklch(0.555 0.234 31);
+    --orange-border: oklch(0.52 0.219 31.1);
 
     --muted: oklch(0.963 0.007 286.3);
     --muted-foreground: oklch(0.539 0.008 286.1);
@@ -125,8 +129,8 @@
     --hover: oklch(0.963 0.007 286.3);
 
     --radius: 6px;
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: max(0px, calc(var(--radius) - 2px));
+    --radius-sm: max(0px, calc(var(--radius) - 4px));
 
     --container: 108rem;
     --container-readable: 44rem;
@@ -167,6 +171,75 @@
     --primary-foreground: var(--orange-foreground);
     --primary-hover: var(--orange-hover);
   }
+
+  :root[data-theme-color='foreground'] {
+    --primary: var(--foreground);
+    --primary-foreground: var(--background);
+    --primary-hover: color-mix(
+      in oklch,
+      var(--foreground) 82%,
+      var(--background)
+    );
+    --primary-border: var(--foreground);
+  }
+
+  /* Wireframe: black and white. Structure comes from surface tone and type, not from lines, so
+     --border is a faint hairline kept only where a control needs an edge. */
+  :root[data-theme='wireframe'] {
+    --font-role-heading: var(--font-sketch);
+    --font-role-body: var(--font-sketch);
+
+    --background: oklch(1 0 0);
+    --foreground: oklch(0 0 0);
+
+    --muted: oklch(0.96 0 0);
+    --muted-foreground: oklch(0.4 0 0);
+    --muted-hover: oklch(0.92 0 0);
+
+    --hover: oklch(0.96 0 0);
+
+    --border: oklch(0.88 0 0);
+  }
+
+  :root[data-theme='wireframe'].theme-appearance-dark,
+  :root[data-theme='wireframe'][data-theme-appearance='dark'] {
+    --background: oklch(0 0 0);
+    --foreground: oklch(1 0 0);
+
+    --muted: oklch(0.18 0 0);
+    --muted-foreground: oklch(0.75 0 0);
+    --muted-hover: oklch(0.24 0 0);
+
+    --hover: oklch(0.18 0 0);
+
+    --border: oklch(0.28 0 0);
+  }
+
+  /* Radius setting (data-theme-radius). One variable drives every rounded-* utility. */
+  :root[data-theme-radius='none'] {
+    --radius: 0px;
+  }
+
+  :root[data-theme-radius='sm'] {
+    --radius: 4px;
+  }
+
+  :root[data-theme-radius='md'] {
+    --radius: 6px;
+  }
+
+  :root[data-theme-radius='lg'] {
+    --radius: 10px;
+  }
+
+  /* Container width setting (data-theme-container-width). 'default' keeps the theme value. */
+  :root[data-theme-container-width='wide'] {
+    --spacing-container-readable: 64rem;
+  }
+
+  :root[data-theme-container-width='full'] {
+    --spacing-container-readable: 90rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -188,6 +261,17 @@
     --primary-hover: var(--orange-hover);
   }
 
+  :root[data-theme-color='foreground'] {
+    --primary: var(--foreground);
+    --primary-foreground: var(--background);
+    --primary-hover: color-mix(
+      in oklch,
+      var(--foreground) 82%,
+      var(--background)
+    );
+    --primary-border: var(--foreground);
+  }
+
   :root[data-theme='default'][data-theme-appearance='dark'] {
     --background: oklch(0.193 0 0);
     --foreground: oklch(1 0 0);
@@ -196,33 +280,6 @@
   :root[data-theme='default'][data-theme-appearance='light'] {
     --background: oklch(0.97 0 0);
     --foreground: oklch(0 0 0);
-  }
-
-  :root[data-theme='wireframe'][data-theme-appearance='light'] {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0 0 0);
-
-    --muted: oklch(0 0 0);
-    --muted-foreground: oklch(0 0 0);
-
-    --border: oklch(0 0 0);
-  }
-
-  :root[data-theme='wireframe'][data-theme-appearance='dark'] {
-    --background: oklch(0 0 0);
-    --foreground: oklch(1 0 0);
-
-    --muted: oklch(1 0 0);
-    --muted-foreground: oklch(1 0 0);
-
-    --border: oklch(1 0 0);
-  }
-
-  :root[data-theme='wireframe'],
-  [data-theme-appearance='dark'] {
-    --primary: oklch(1 0 0);
-    --primary-foreground: oklch(0 0 0);
-    --primary-hover: oklch(0.97 0 0);
   }
 }
 
@@ -234,8 +291,8 @@
   --font-outfit: var(--font-outfit);
   --font-patrick-hand: var(--font-patrick-hand);
 
-  --font-heading: var(--font-outfit);
-  --font-body: var(--font-outfit);
+  --font-heading: var(--font-role-heading);
+  --font-body: var(--font-role-body);
   --font-sketch: var(--font-sketch);
   --font-code: var(--font-jetbrains-mono);
 
@@ -429,6 +486,27 @@
 }
 
 /* ============================================
+   Wireframe structure (html[data-theme='wireframe'] only, never a component fork)
+   ============================================ */
+
+@layer base {
+  /* No drop shadows. Focus rings use the ring variables and stay. Depth is tone and one faint
+     hairline, never a shadow. */
+  html[data-theme='wireframe'] * {
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+  }
+
+  /* Sketch look: every image and SVG (photos, previews, logos, icons, crop marks) loses its hue.
+     A filter keeps the artwork intact, so Default shows the colors again in the same frame. */
+  html[data-theme='wireframe'] :is(img, svg) {
+    filter: grayscale(1);
+  }
+
+  /* A theme or setting change renders in one frame: tokens never transition. */
+}
+
+/* ============================================
    Utilities
    ============================================ */
 
@@ -448,8 +526,17 @@
   word-break: break-word;
 }
 
+/* Animation switch (data-theme-animations). 'off' shows reveal content in its final state, also
+   before hydration, so nothing flickers in. The keyframe utilities below run only when 'on'. */
+@layer base {
+  html[data-theme-animations='off'] [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 @utility animate-in-to-top-* {
-  html[data-theme='default'] & {
+  html[data-theme-animations='on'] & {
     @media (prefers-reduced-motion: no-preference) {
       animation: var(--animate-to-top);
       animation-delay: calc(--value(integer) * 1ms);
@@ -458,7 +545,7 @@
 }
 
 @utility animate-in-to-left-* {
-  html[data-theme='default'] & {
+  html[data-theme-animations='on'] & {
     @media (prefers-reduced-motion: no-preference) {
       animation: var(--animate-to-left);
       animation-delay: calc(--value(integer) * 1ms);
@@ -467,7 +554,7 @@
 }
 
 @utility animate-dot-bounce-* {
-  html[data-theme='default'] & {
+  html[data-theme-animations='on'] & {
     @media (prefers-reduced-motion: no-preference) {
       animation: var(--animate-dot-bounce);
       animation-delay: calc(--value(integer) * 1ms);
@@ -476,7 +563,7 @@
 }
 
 @utility animate-core-pulse {
-  html[data-theme='default'] & {
+  html[data-theme-animations='on'] & {
     @media (prefers-reduced-motion: no-preference) {
       animation: var(--animate-core-pulse);
       animation-delay: 1100ms;
@@ -485,23 +572,23 @@
 }
 
 @utility rounded-theme-sm {
-  @apply [html[data-theme=default]_&]:rounded-sm;
+  @apply rounded-sm;
 }
 
 @utility rounded-theme-md {
-  @apply [html[data-theme=default]_&]:rounded-md;
+  @apply rounded-md;
 }
 
 @utility rounded-theme-lg {
-  @apply [html[data-theme=default]_&]:rounded-lg;
+  @apply rounded-lg;
 }
 
 @utility rounded-theme-xl {
-  @apply [html[data-theme=default]_&]:rounded-xl;
+  @apply rounded-xl;
 }
 
 @utility rounded-theme-2xl {
-  @apply [html[data-theme=default]_&]:rounded-2xl;
+  @apply rounded-2xl;
 }
 
 @utility sticky-headline {

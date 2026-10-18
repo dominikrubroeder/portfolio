@@ -1,17 +1,13 @@
 import type { Dispatch, SetStateAction } from 'react';
 
-export type Theme = 'default' | 'crazy-color' | 'notes' | 'wireframe';
-export type ThemeOption = { key: Theme; value: string };
-export type ThemeColor =
-  | 'primary'
-  | 'violett'
-  | 'blue'
-  | 'orange'
-  | 'foreground'
-  | undefined;
+export type Theme = 'default' | 'wireframe';
+export type ThemeOption = { key: Theme; value: string; description?: string };
+export type ThemeColor = 'violett' | 'blue' | 'orange' | 'foreground';
 export type ThemeMode = 'design' | 'dev';
 export type ThemeFontSize = 'sm' | 'md' | 'lg';
 export type ThemeAppearance = 'light' | 'dark' | 'system';
+export type ThemeRadius = 'none' | 'sm' | 'md' | 'lg';
+export type ThemeContainerWidth = 'default' | 'wide' | 'full';
 export type ThemeEvents = {
   isEventWinterEnabled: boolean;
 };
@@ -24,31 +20,46 @@ export type ThemeAnimationSettings = {
   delay: ThemeAnimationDelay;
   type: ThemeAnimationType;
 };
-export type ThemeBorderSettingRadius = 'sm' | 'md' | 'lg';
-export type ThemeBorderSettingStyle = 'solid' | 'dashed' | 'dotted';
-export type ThemeBorderSettingWidth = 'sm' | 'md' | 'lg';
-export type ThemeBorderSettings = {
-  radius: ThemeBorderSettingRadius;
-  style: ThemeBorderSettingStyle;
-  width: ThemeBorderSettingWidth;
+
+/** Starting values a theme applies whenever it is selected. */
+export type ThemeDefinition = {
+  id: Theme;
+  label: string;
+  /** One short phrase that says what the theme is. */
+  description: string;
+  defaults: {
+    color: ThemeColor;
+    animationsEnabled: boolean;
+    radius: ThemeRadius;
+    containerWidth: ThemeContainerWidth;
+  };
 };
 
-export type ThemeContextType = {
+/** Everything the visitor can set. Read one value with `useThemeSetting`. */
+export type ThemeState = {
   theme: ThemeOption;
-  setTheme: (themeOption: ThemeOption) => void;
-  shuffleTheme: () => void;
   themeColor: ThemeColor;
-  setThemeColor: (themeColor: ThemeColor) => void;
   themeFontSize: ThemeFontSize;
-  setThemeFontSize: (themeFontSize: ThemeFontSize) => void;
   themeAppearance: ThemeAppearance;
-  setThemeAppearance: (themeAppearance: ThemeAppearance) => void;
-  toggleThemeAppearance: () => void;
   themeAnimationSettings: ThemeAnimationSettings;
-  setThemeAnimationSettings: Dispatch<SetStateAction<ThemeAnimationSettings>>;
+  themeRadius: ThemeRadius;
+  themeContainerWidth: ThemeContainerWidth;
   themeMode: ThemeMode | undefined;
-  setThemeMode: Dispatch<SetStateAction<ThemeMode | undefined>>;
-  setIsEventWinterEnabled: (isEventWinterEnabled: boolean) => void;
-  shouldAnimate: boolean;
   isInitialized: boolean;
 } & ThemeEvents;
+
+/** Setters. One stable object, see `useThemeActions`. */
+export type ThemeActions = {
+  setTheme: (themeOption: ThemeOption) => void;
+  setThemeColor: (themeColor: ThemeColor) => void;
+  setThemeFontSize: (themeFontSize: ThemeFontSize) => void;
+  setThemeAppearance: (themeAppearance: ThemeAppearance) => void;
+  toggleThemeAppearance: () => void;
+  setThemeAnimationSettings: Dispatch<SetStateAction<ThemeAnimationSettings>>;
+  setThemeRadius: (themeRadius: ThemeRadius) => void;
+  setThemeContainerWidth: (themeContainerWidth: ThemeContainerWidth) => void;
+  setThemeMode: Dispatch<SetStateAction<ThemeMode | undefined>>;
+  setIsEventWinterEnabled: (isEventWinterEnabled: boolean) => void;
+};
+
+export type ThemeContextType = ThemeState & ThemeActions;
