@@ -16,7 +16,7 @@
   --animate-to-left: to-left 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-to-top: to-top 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-dot-bounce: dot-bounce 2.1s ease-in-out infinite;
-  --animate-core-pulse: core-pulse 2.1s ease-in-out infinite;
+  --core-pulse-animation: core-pulse 2.1s ease-in-out infinite;
 
   --spacing-container: 90rem;
   --spacing-container-readable: 40rem;
@@ -501,10 +501,17 @@
     --tw-shadow-colored: 0 0 #0000;
   }
 
-  /* Sketch look: every image and SVG (photos, previews, logos, icons, crop marks) loses its hue.
+  /* Sketch look: every image and SVG (photos, previews, logos, icons) loses its hue. The page-frame crop marks opt out (`filter-none`) so a picked accent shows.
      A filter keeps the artwork intact, so Default shows the colors again in the same frame. */
   html[data-theme='wireframe'] :is(img, svg) {
     filter: grayscale(1);
+  }
+
+  /* Hand-drawn page frame: uneven corner radii make a plain border read as a pencil outline.
+     Independent of the radius setting on purpose. */
+  html[data-theme='wireframe'] .sketch-frame {
+    border-radius: 1.5rem 0.25rem 1.25rem 0.25rem / 0.25rem 1.25rem 0.25rem
+      1.5rem;
   }
 
   /* A theme or setting change renders in one frame: tokens never transition. */
@@ -569,7 +576,7 @@
 @utility animate-core-pulse {
   html[data-theme-animations='on'] & {
     @media (prefers-reduced-motion: no-preference) {
-      animation: var(--animate-core-pulse);
+      animation: var(--core-pulse-animation);
       animation-delay: 1100ms;
     }
   }

@@ -121,7 +121,7 @@ export default async function HomePage() {
 
       <Animate>
         <Container as="section">
-          <div className="text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="mb-5 text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
             {homeStatements[8]}
           </div>
 

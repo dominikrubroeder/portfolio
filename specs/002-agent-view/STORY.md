@@ -13,8 +13,8 @@ content, with no design at all. Anyone, or any AI tool, can read everything in o
   off.
 - **Nothing hidden.** What is tucked away in drawers and tabs on the normal pages is written out in full.
 - **Always in sync.** The text comes from the same place as the normal pages. Change a sentence once and both update.
-- **Easy to find.** A quiet "Agent view" text link sits in the header on wide screens and just above the copyright line in
-  the footer everywhere else. It never covers another control.
+- **Easy to find.** A quiet "Agent view" text link sits in the footer, centered just above the copyright line.
+  It never covers another control.
 
 ## Why it helps
 

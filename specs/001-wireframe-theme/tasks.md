@@ -206,3 +206,19 @@ description: 'Task list for the Wireframe theme and theme-ready app'
 
 - T065 is independent of T064 (it adds the `SelectOption.description` type; T064 adds the registry data); T066 needs both. T067 blocks T068. T069 and T070 are independent files but both must land before the check in T070. T071 needs T066, T068 and T070. T072–T074 run last.
 - Same-file sequencing: `src/app/globals.css` (T059, T067, T068, T070 in that order); `avatar.tsx` and `avatar-lightbox.tsx` (T069 only), `src/components/ui/select/select.tsx` (T065 only), `theme-definitions.ts` (T064 only).
+
+## Revision 3 (2026-10-22): sketch frame, leaner drawer
+
+**Purpose**: Seven manual edits from `spec.md` "Manuel edits 2026-10-22". Decisions: research D25–D31; quickstart 23–30.
+
+**Order**: T075, T076, T077 are independent (different files); T078 before T079 (both in `ui/select` and the radius setting); T080 after T078; T081 after all; T082 last.
+
+- [x] T075 [P] [US1] Sketch border (D25): in `src/components/feature/page-frame/page-frame.tsx` add a `pointer-events-none` `aria-hidden` child shown only in Wireframe (`hidden in-data-[theme=wireframe]:lg:block`) with `border-2 border-foreground` and the named uneven-radius rule from `src/app/globals.css`; add that rule under the Wireframe block
+- [x] T076 [P] [US1] Avatar border (D27): add `in-data-[theme=wireframe]:border-foreground` to the photo in `src/components/feature/avatar/avatar.tsx` (both instances) and `avatar-lightbox.tsx` (thumbnail and enlarged photo)
+- [x] T077 [P] [US4] Toggle and groups (D30, D31): in `src/components/ui/toggle/toggle.tsx` make the enabled knob `bg-background` in Wireframe (replace `bg-primary`); in `src/components/feature/theme/theme-setting-section.tsx` replace the invalid `rounded-2xl-xl` with `rounded-xl`
+- [x] T078 [US4] Remove the theme description (D26): delete `description` from `ThemeDefinition`, `ThemeOption`, `theme-definitions.ts` (both entries and the `THEME_OPTIONS` mapping), `theme-definitions.test.ts`, and the description rendering in `src/components/ui/select/select.tsx` and `types.ts` unless T079 needs it; update the Select story
+- [x] T079 [US4] Default marker (D28): add `isDefault?: boolean` to `SelectOption`, render a muted "Default" tag in the open list and add it to the option's accessible name in `select.tsx`; in `theme-radius-setting.tsx` mark the option equal to `getThemeDefinition(theme).defaults.radius` (read `theme` with `useThemeSetting('theme')`); add a story
+- [x] T080 [US4] Remove the Layout group (D29): delete the "Layout" `ThemeSettingSection` and the container-width import from `src/components/feature/theme/theme-settings.tsx`; keep store, attribute, persistence and CSS; confirm with the owner whether `theme-spacing-container-width-setting.tsx` is deleted; update the announcer only if it names the group
+- [x] T081 Update documentation (Constitution VII): `DESIGN.md` (§6.1 width wording, §7, §9 table and rules, §10 Select/Toggle/Avatar notes, §15 decision-log rows), `UX_PRINCIPLES.md` (§4 Theme drawer groups and Toggle/Select, §5 theme switching and container width), `STORY.md`; mark FR-026 (Layout part) and FR-030 superseded in `spec.md` notes only through the owner's spec edit
+- [x] T082 Run `npm run format`, `npm run lint`, `npm run test`, `npm run build`; run quickstart scenarios 23–30 on the production build, including axe on the open drawer in Wireframe light and dark, and log the results in `quickstart.md`
+- [x] T083 [US1] Keep the accent on the crop marks in Wireframe (FR-034, D32): add `filter-none` to the `CropMark` svg in `src/components/feature/page-frame/page-frame.tsx`; update the grayscale rule comment in `src/app/globals.css`, `DESIGN.md` §9 and its decision log; verify quickstart 31

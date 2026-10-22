@@ -20,6 +20,7 @@ import {
   philosophyCoreTabLabels,
   philosophyHolisticLabels
 } from '@/components/feature/philosophy/philosophy-data';
+import { useThemeSetting } from '@/components/feature/theme';
 
 import { InViewAction } from '@/hooks/in-view-action';
 
@@ -71,6 +72,9 @@ function Petal({
   const scale = useMotionValue(0);
   const opacity = useMotionValue(0);
   const reducedMotion = useReducedMotion();
+  const { isEnabled: animationsEnabled } = useThemeSetting(
+    'themeAnimationSettings'
+  );
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   useLayoutEffect(() => {
@@ -91,7 +95,7 @@ function Petal({
   useEffect(() => {
     if (!isInView) return;
 
-    if (reducedMotion) {
+    if (reducedMotion || !animationsEnabled) {
       x.set(0);
       y.set(0);
       scale.set(1);
@@ -112,7 +116,7 @@ function Petal({
     );
 
     return () => controls.forEach((control) => control.stop());
-  }, [isInView, reducedMotion, step, x, y, scale, opacity]);
+  }, [isInView, reducedMotion, animationsEnabled, step, x, y, scale, opacity]);
 
   return (
     <motion.div
@@ -148,20 +152,20 @@ export function PhilosophyCore() {
               <div className="flex">
                 <Petal
                   step={0}
-                  className="flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
+                  className="flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
                 >
                   {philosophyCoreTabLabels[0]}
                 </Petal>
                 <Petal
                   step={1}
-                  className="-ml-10 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
+                  className="-ml-10 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
                 >
                   {philosophyCoreTabLabels[1]}
                 </Petal>
               </div>
               <Petal
                 step={2}
-                className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground"
+                className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
               >
                 {philosophyCoreTabLabels[2]}
               </Petal>
@@ -182,7 +186,7 @@ export function PhilosophyCore() {
                     key={label}
                     step={step}
                     className={cn(
-                      'absolute flex size-44 -translate-1/2 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors hover:z-10 hover:bg-primary hover:text-primary-foreground',
+                      'absolute flex size-44 -translate-1/2 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors',
                       position,
                       className
                     )}

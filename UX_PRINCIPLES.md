@@ -45,7 +45,7 @@ see [DESIGN.md](./DESIGN.md).
 - The header carries identity (avatar, name, role), the theme settings
   trigger (a palette icon, labelled "Theme settings", visible at every width) and, from `sm` up, three accent swatches
   (blue, violett, orange). Appearance lives in the theme drawer.
-- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the home content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the projects, then the certifications. It is not part of `HeroNavigation`; the link lives in the header (from `lg`, absolute at the right edge, when it covers no other control) or in the footer, on its own line above the copyright line. It is a small text link, not a button. Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
+- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the home content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the projects, then the certifications. It is not part of `HeroNavigation`; the only link lives in the footer, centered on its own line above the copyright line, at every width. It is a small `text-foreground` button (renders as an anchor). Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
 - Deep links to sections use `scroll-mt-responsive` so sticky bars never cover the target.
 - `ScrollToTop` resets the scroll position on route change; `ButtonScrollToTop` is available for long pages.
 
@@ -143,7 +143,7 @@ The theme settings open in a `Drawer`: floating bottom sheet below `xl`, side pa
   opens.
 - Standard scrim (dim below `xl`, transparent from `xl`, where the live change is visible behind the drawer).
 - Changes apply live; the drawer only groups them: Base (theme, appearance, color with the neutral swatch), Typography
-  (font size), Animation (one "Enable animations" switch), Border (radius), Layout (container width). Each control shows
+  (font size), Animation (one "Enable animations" switch), Border (radius). Each control shows
   its current value, also when the setting changed elsewhere (a header swatch or a theme switch).
 - Selects are listboxes: arrow keys, typeahead, `Esc` closes the open list first and the drawer on the next press.
 - A polite live region announces the changed setting ("Radius: Large") for screen readers.
@@ -177,7 +177,7 @@ Non-interactive status label ("Ongoing"). Never a button.
 
 ### Toggle / Select
 
-Binary options use `Toggle` with a visible label. It renders a `button` with `role="switch"` and `aria-checked`, so it works with keyboard and screen readers; without a visible label pass `ariaLabel`. `Select` is a Base UI listbox (arrow keys, typeahead, `Esc` closes the list and returns focus to the trigger). Options may carry an icon and a short description (shown under the label in the open list, not in the trigger). It can be
+Binary options use `Toggle` with a visible label. It renders a `button` with `role="switch"` and `aria-checked`, so it works with keyboard and screen readers; without a visible label pass `ariaLabel`. `Select` is a Base UI listbox (arrow keys, typeahead, `Esc` closes the list and returns focus to the trigger). Options may carry an icon and a "Default" tag (`isDefault`: the option equal to the active theme's default, shown in the open list and read as "Medium, Default", not in the trigger). It can be
 controlled (`value`, an option `key`) so it follows a setting that changed elsewhere, and its name includes the setting
 ("Radius: Medium"). Multi-option settings use `Select` or segmented controls with the current value visible. Appearance is
 a `Select` in the theme drawer with sun, moon and sparkles icons (Light, Dark, Auto).
@@ -228,12 +228,11 @@ defaults return on the next load. Settings are never sent to a server.
 
 - **Appearance**: light / dark / system, set in the theme drawer. `system` follows OS changes live.
 - **Accent**: neutral (black/white), blue, violett, orange. Applies instantly.
-- **Theme (style)**: Default ("Intense accent UI") / Wireframe ("Sketch-based UI"); the open list shows each phrase under
-  the name. Wireframe uses a handwritten font and grayscale images, icons and logos. Selecting a theme applies its defaults for accent, animations, radius and
+- **Theme (style)**: Default ("Intense accent UI") / Wireframe ("Sketch-based UI"); the open list shows the two names only. Wireframe uses a handwritten font and grayscale images, icons and logos. Selecting a theme applies its defaults for accent, animations, radius and
   container width (Wireframe: neutral accent, animations off, square corners; Default: blue, animations on, 6px). The
   visitor's own tweaks in the previous theme are replaced; appearance and font size stay.
 - **Radius**: none / small / medium / large. Applies instantly to every rounded element.
-- **Container width**: default / wide / full. Applies instantly to the reading column.
+- **Container width**: default / wide / full. No control in the theme drawer (removed 2026-10-22); a saved value still applies to the reading column.
 - **Animations**: one switch, in every theme. Off: content appears at once (no reveal, intro typing, bounce, pulse or
   snowfall). Turning it on later never replays the intro.
 - **Font size**: small / medium / large scales the whole page from the root.

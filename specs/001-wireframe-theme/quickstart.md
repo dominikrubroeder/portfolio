@@ -136,3 +136,27 @@ the session and defaults on the next load, with no errors in the console. Change
   this feature (same result with the select markup reverted).
 - **Storybook tests** (T061): `npx vitest run` with Chromium installed: 21 files, 50 tests pass. `addon-a11y` runs with
   `test: 'todo'`, so it reports but does not fail.
+
+## Revision 2026-10-22 scenarios
+
+23. **Sketch page frame** (D25): at 1440 px in Wireframe, a hand-drawn `foreground` border runs around the page frame with the four crop marks in its corners; in Default there is none; it never blocks clicks (`pointer-events: none`); light and dark.
+24. **No theme description** (D26): open the theme select: two rows, "Default" and "Wireframe", no second line; the accessible names are the labels only.
+25. **Avatar border** (D27): in Wireframe the header avatar and the lightbox photo show a clear round `foreground` outline (grayscale photo); Default is unchanged.
+26. **Default marker** (D28): open the radius select in Default: "Medium" carries "Default"; switch to Wireframe: "None" carries it; choose another value and the marker stays on the theme's default row. Screen reader reads "Medium, Default".
+27. **No Layout group** (D29): the drawer shows Base, Typography, Animation, Border only. A previously saved container width still applies on load (set `dr-theme-container-width` to `wide`, reload).
+28. **Toggle indicator** (D30): in Wireframe, enabled: the knob is `background` colored on the right with a visible border; disabled: left. Check light, dark, and that the state is clear without color.
+29. **Rounded groups** (D31): every drawer group box has rounded corners at radius small, medium, large and square at none; compare with the tools drawer lists.
+30. **Gate**: `npm run format`, `npm run lint`, `npm run test`, `npm run build`; axe on the open drawer in Wireframe light and dark (border and knob contrast).
+
+### Verification log (2026-10-22, Chromium via Playwright, production build)
+
+- **23 Sketch frame:** at 1440 px in Wireframe the frame border is 2 px `foreground` (black on light) with small uneven radii, `pointer-events: none`; in Default it is `display: none`.
+- **24 Theme list:** no description line is rendered or in the registry.
+- **25 Avatar:** border color is `foreground` in Wireframe (black) and the faint `border` token in Default.
+- **26 Default marker:** radius select: Default theme marks "Medium", Wireframe marks "None" (read as "None, Default").
+- **27 Groups:** the drawer shows Base, Typography, Animation, Border. Group radius 8.4 px in Default, 0 in Wireframe (radius none).
+- **28 Toggle, 29 groups:** seen in the Wireframe screenshot (knob with border, rounded groups follow the radius). Not measured: axe contrast of the enabled knob in dark, 110 % text, theme select open list (checked by code only: label-only rows).
+- **30 Gate:** `npm run lint`, `npm run test` (17 pass) and `npm run build` pass.
+- **Cleanup:** `theme-spacing-container-width-setting.tsx` deleted on 2026-10-22 (owner request); `tsc` and lint pass.
+
+31. **Crop marks accent** (D32): in Wireframe pick blue, violett and orange: the four corner crop marks take that color; with the neutral swatch they are black (light) or white (dark); all other images and icons stay grayscale.

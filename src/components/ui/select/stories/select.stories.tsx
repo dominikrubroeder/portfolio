@@ -37,14 +37,14 @@ export const Controlled: Story = {
   args: { value: 'lg' }
 };
 
-export const WithDescriptions: Story = {
+export const WithDefault: Story = {
   args: {
     label: 'Theme',
     placeholder: 'Select a theme',
     initialValue: 'wireframe',
     options: [
-      { key: 'default', value: 'Default', description: 'Intense accent UI' },
-      { key: 'wireframe', value: 'Wireframe', description: 'Sketch-based UI' }
+      { key: 'default', value: 'Default', isDefault: true },
+      { key: 'wireframe', value: 'Wireframe' }
     ]
   }
 };

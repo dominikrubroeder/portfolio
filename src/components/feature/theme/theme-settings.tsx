@@ -6,7 +6,6 @@ import { ThemeRadiusSetting } from '@/components/feature/theme/theme-radius-sett
 import { ThemeSelect } from '@/components/feature/theme/theme-select';
 import { ThemeSettingOption } from '@/components/feature/theme/theme-setting-option';
 import { ThemeSettingSection } from '@/components/feature/theme/theme-setting-section';
-import { ThemeSpacingContainerWidthSetting } from '@/components/feature/theme/theme-spacing-container-width-setting';
 
 export function ThemeSettings() {
   return (
@@ -46,13 +45,6 @@ export function ThemeSettings() {
         <ThemeSettingOption>
           <div className="text-foreground">Radius</div>
           <ThemeRadiusSetting />
-        </ThemeSettingOption>
-      </ThemeSettingSection>
-
-      <ThemeSettingSection title="Layout">
-        <ThemeSettingOption>
-          <div className="text-foreground">Container width</div>
-          <ThemeSpacingContainerWidthSetting />
         </ThemeSettingOption>
       </ThemeSettingSection>
     </>

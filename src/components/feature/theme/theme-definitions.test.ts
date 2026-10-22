@@ -36,15 +36,6 @@ describe('theme registry', () => {
     });
   });
 
-  it('describes every theme in one short phrase', () => {
-    for (const definition of THEME_DEFINITIONS) {
-      expect(definition.description.length).toBeGreaterThan(0);
-      expect(definition.description.endsWith('.')).toBe(false);
-    }
-    expect(getThemeDefinition('wireframe').description).toBe('Sketch-based UI');
-    expect(getThemeDefinition('default').description).toBe('Intense accent UI');
-  });
-
   it('falls back to the default theme for unknown ids', () => {
     expect(getThemeDefinition('crazy-color').id).toBe('default');
     expect(getThemeDefinition(null).id).toBe('default');
@@ -60,10 +51,6 @@ describe('theme options', () => {
     expect(THEME_OPTIONS.map((option) => option.value)).toEqual([
       'Default',
       'Wireframe'
-    ]);
-    expect(THEME_OPTIONS.map((option) => option.description)).toEqual([
-      'Intense accent UI',
-      'Sketch-based UI'
     ]);
   });
 });

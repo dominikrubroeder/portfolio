@@ -22,6 +22,12 @@ Base, Typography, Animation, Border (radius) and Layout (container width). See r
 images and SVGs (logos, icons, crop marks), the Patrick Hand font for text, and a one-phrase description per theme in the registry. All
 three are CSS and registry changes, no new client code. See research D21–D24.
 
+**Revision 2026-10-22** (spec "Manuel edits 2026-10-22"): seven polish items for the Wireframe look and the drawer. A
+hand-drawn (sketch) border on the page frame in Wireframe, no description line in the theme list, a visible border on
+the avatar in Wireframe, a "Default" marker on the option that equals the active theme's default, no "Layout" group in
+the drawer, a `background`-colored enabled indicator on the toggle, and rounded drawer groups. All are CSS, class or
+registry changes; no new client code, no dependency. See research D25–D31.
+
 ## Technical Context
 
 **Language/Version**: TypeScript 5, React 19.3, Next.js 16.4 (App Router; read `node_modules/next/dist/docs/` before framework code)
@@ -56,6 +62,8 @@ _GATE: passed before Phase 0; re-checked after Phase 1 design and again for the 
 | VI. Server-First and CSS-First       | Pass           | Every theme effect is CSS driven by `<html>` `data-*` attributes (revision 2 adds no client code: font and monochrome images are CSS, the description is registry data); `layout.tsx`, `header.tsx`, `Container` and `DotsDivider` stay server components; per-setting subscriptions keep re-renders to the readers of a setting; the settings panel loads on demand (D11). New client files and why: `ui/animate/animate-context.tsx` (React context for the JS fallback), `feature/theme/theme-radius-setting.tsx` (event handler), `feature/theme/theme-drawer.tsx` (the Base UI drawer, loaded on first open), `feature/theme/theme-settings-announcer.tsx` (polite live region for FR-027, needs a store subscription), `feature/theme/theme-drawer-trigger.tsx` (`next/dynamic` with `ssr: false` needs a client component; revision D16), `feature/theme/theme-animations-bridge.tsx` (store subscription so `ThemeProvider` itself does not re-render). Existing client files are only edited |
 | VII. Documentation and Feature Story | Pass           | Tasks update `DESIGN.md`, `UX_PRINCIPLES.md`, the `ui` and `feature` READMEs, and create and finalize `specs/001-wireframe-theme/STORY.md`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
+Revision 2026-10-22 re-check: pass. I (tokens and `DESIGN.md` §5–§7, §9, §10, §15 and `UX_PRINCIPLES.md` §4–§5 updated in the same change; the sketch border adds one named rule, no raw values in components), II (edits stay in `page-frame`, `avatar`, `ui/toggle`, `ui/select`, `feature/theme`), IV (borders and indicator keep AA/3 : 1 non-text contrast, checked in the a11y task), VI (CSS only; no new client file; `ui/select` stays a client file that already exists).
+
 No violations; Complexity Tracking not needed.
 
 ## Project Structure
@@ -86,13 +94,16 @@ src/
 │   └── layout.tsx                        # unchanged shape; init script gets new attributes
 ├── components/
 │   ├── ui/
-│   │   ├── select/                       # REVISED: Base UI select, same look; options may show a description (D24)
+│   │   ├── select/                       # REVISED: Base UI select, same look; options may show a description (D24); rev. 3: `isDefault` marker (D28)
+│   │   ├── toggle/toggle.tsx             # REV. 3: enabled indicator is `bg-background` in Wireframe (D30)
 │   │   ├── sidebar/                      # REMOVED (replaced by ui/drawer)
 │   │   ├── animate/                      # animation switch (context + off state), no feature import
 │   │   ├── container.tsx                 # reads width token (no change if token-driven)
 │   │   ├── typewriter*.tsx               # client (needs JS); respect switch
 │   │   └── dots-divider.tsx              # stays a server component; CSS-only switch
 │   └── feature/
+│       ├── page-frame/page-frame.tsx     # REV. 3: sketch border in Wireframe, CSS only (D25)
+│       ├── avatar/avatar.tsx (+ avatar-lightbox.tsx)  # REV. 3: visible `foreground` border in Wireframe (D27)
 │       ├── header/header.tsx             # REVISED: trigger, then 3 swatches; no appearance switch
 │       ├── intro/                        # skip intro typing when animations are off
 │       └── theme/
@@ -107,7 +118,7 @@ src/
 │           ├── theme-appearance-select.tsx  # REVISED: Base UI select, lives in the drawer
 │           ├── theme-animations-bridge.tsx  # NEW client bridge: animation setting → AnimationsProvider
 │           ├── theme-radius-setting.tsx  # NEW
-│           ├── theme-spacing-container-width-setting.tsx  # fix (currently calls setTheme)
+│           ├── theme-spacing-container-width-setting.tsx  # fixed in rev. 1; DELETED 2026-10-22 (control removed, D29)
 │           ├── theme-color-setting.tsx   # add neutral swatch, token-based classes
 │           └── theme-definitions.test.ts # NEW unit tests (run by a new `unit` Vitest project)
 ```

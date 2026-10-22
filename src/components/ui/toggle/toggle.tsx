@@ -47,8 +47,10 @@ export function Toggle({
             'absolute size-6 interactive rounded-full bg-primary-foreground',
             'transition in-data-[theme-animations=off]:transition-none',
             isEnabled ? 'translate-x-full' : 'translate-x-0',
-            'in-data-[theme=wireframe]:border in-data-[theme=wireframe]:border-foreground in-data-[theme=wireframe]:bg-muted',
-            isEnabled && 'in-data-[theme=wireframe]:bg-primary'
+            'in-data-[theme=wireframe]:border',
+            isEnabled
+              ? 'in-data-[theme=wireframe]:border-primary in-data-[theme=wireframe]:bg-primary'
+              : 'in-data-[theme=wireframe]:border-foreground in-data-[theme=wireframe]:bg-muted'
           )}
         />
       </div>

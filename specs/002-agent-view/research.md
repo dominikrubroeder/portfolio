@@ -37,33 +37,26 @@
 
 ## R5. Entry link
 
-- **Decision**: Server-rendered `Link` (via `Button` `variant="link-muted"`, size `small`: a plain underlined text link at
-  `text-sm`, no button background) with `href="/agent-view"`, label "Agent view", `prefetch={false}`. Changed from
-  `ghost-muted` `medium` on 2026-10-18 (user request).
-- **Header (from `lg`)**: absolute inside `header`: `right-4` (1 rem), vertically centered (`top-1/2 -translate-y-1/2`).
-  `header` is already `sticky`/`relative`, so it is the positioning context. The link is out of the flow of the inner
-  flex row, so the avatar, name and theme controls keep their layout. "Horizontally centered" with `right: 1rem` is read
-  as centered between the header's top and bottom edge.
-- **Footer (everywhere else)**: a block directly above the copyright line ("© 2026 Dominik Rubröder"), centered. The
-  framework-version line (Next.js, React, Tailwind CSS) is removed and the footer padding is `py-6` (was `py-12`) with
-  `space-y-4` (was `space-y-6`).
-- **No prefetch**: the target is a static text document, not a page. `prefetch={false}` avoids a pointless request.
-  `Button` forwards the prop to `Link` only.
-- **Overlap rule**: the header controls end `(vw − W) / 2 + 1 rem` from the right edge (W = column width: 40, 64 or
-  90 rem). The link needs its width plus its 1 rem inset plus a margin. It clears when `vw ≥ W + 2 × (link width + margin)`.
-  Measured (Chromium): link 69 × 20 px at 100 %, 76 × 22 px at 110 %. Values set in CSS with room for 110 %: default
-  from `lg`; "wide" from `83rem`; "full" from `112rem`. Below those widths the footer link shows. Media queries use the
-  browser's initial font size, not the root font-size setting, so 90 % and 110 % text size were checked.
-- **One at a time**: both instances are the same component; CSS shows one per width (`hidden lg:inline-flex` in the
-  header with a `max-[83rem]` or `max-[112rem]` hidden override per container width, the inverse in the footer). The hidden one is `display: none`, so
-  it is out of Tab order and the accessibility tree.
-- **Accessibility**: visible text is the accessible name; focus ring from `Button`. `small` is allowed for dense,
-  non-primary contexts (DESIGN.md rule 5). The link is about 20 px high (below 24 px), so it relies on the WCAG 2.2
-  target-size spacing exception: no other target within 24 px of it. Keyboard order follows DOM order: the header link
-  comes after the theme controls, the footer link sits before the copyright line.
-- **Alternatives**: ghost button `medium` (first version; replaced because the user wants a quiet text link); link inside
-  the right flex group below `lg` (rejected in favor of footer); absolute at all widths (overlaps theme controls);
-  icon-only (spec says text "Agent view").
+- **Decision (2026-10-22, user change request)**: server-rendered `Link` via `Button` `variant="text-foreground"`,
+  size `small`, `href="/agent-view"`, label "Agent view", `prefetch={false}`. It sits only in the footer, centered on its
+  own line directly above the copyright line ("© 2026 Dominik Rubröder"). The header link is removed.
+- **Why this supersedes the header placement**: one instance and one place remove the overlap rule, the measured
+  thresholds (`lg`, `83rem`, `112rem`) and the CSS show/hide pairs. Fewer layout states, no risk of covering the theme
+  controls, no dependence on container width or text size.
+- **Variant**: `text-foreground` is an existing `Button` variant (`text-foreground hover:text-primary`). It replaces
+  `link-muted` (muted text, underline-free hover to foreground). Body text stays muted, so this link reads as a
+  deliberate action in the footer. Contrast: `foreground` on `background` passes AA in every theme.
+- **Size**: unchanged (`small`, `text-sm`, about 20 px high). The change request names only the variant. Footer is a
+  dense, non-primary context (DESIGN.md rule 5); WCAG 2.2 target-size spacing exception needs no other target within
+  24 px, to be re-verified with the certification buttons above and the © line below.
+- **Footer** (unchanged from 2026-10-18): framework-version line removed, padding `py-6`, `space-y-4`.
+- **No prefetch**: the target is a static text document, not a page. `Button` forwards `prefetch` to `Link` only.
+- **Accessibility**: visible text is the accessible name; focus ring from `Button`. DOM order: certifications, link,
+  copyright.
+- **Superseded (2026-10-18)**: header link from `lg` (absolute, `right-4`) with footer fallback and measured overlap
+  thresholds (default `lg`, wide `83rem`, full `112rem`); `link-muted`; before that `ghost-muted` `medium`.
+- **Alternatives**: keep both header and footer (rejected by request); `text-muted` or `link-foreground` variants (not
+  requested); `medium` size (44 px target, heavier than a quiet footer link wants).
 
 ## R6. Static output and caching
 

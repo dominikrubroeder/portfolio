@@ -28,7 +28,8 @@ container max-width and re-enable animations on purpose. Settings changes always
   previews, logos, interface icons and the corner crop marks. The accent shows only on text, buttons and links.
 - Q: Should black-and-white images be grayscale or strict two-tone? → A: Grayscale (all gray shades kept), so photos
   stay readable.
-- Q: What phrase describes the Default theme? → A: "Intense accent UI".
+- Q: What phrase describes the Default theme? → A: "Intense accent UI". (No longer shown in the theme list since
+  2026-10-22.)
 
 ## User Scenarios & Testing _(mandatory)_
 
@@ -80,7 +81,7 @@ settings: motion appears. Switch to "Default": animations follow the Default set
 
 ### User Story 3 - Fine-tune the theme (Priority: P2)
 
-A visitor adjusts border radius, container max-width and accent color. Wireframe starts black and white; the visitor may
+A visitor adjusts border radius and accent color. Wireframe starts black and white; the visitor may
 choose an accent color. All adjustments apply live.
 
 **Why this priority**: Personal control is a core principle of the product, but the theme is useful without it.
@@ -96,8 +97,9 @@ choose an accent color. All adjustments apply live.
    immediately.
 3. **Given** the visitor changes border radius, **When** they move to another value, **Then** all rounded elements
    follow immediately.
-4. **Given** the visitor changes container max-width, **When** they pick another width, **Then** the content column
-   resizes immediately.
+4. ~~**Given** the visitor changes container max-width, **When** they pick another width, **Then** the content column
+   resizes immediately.~~ _Superseded 2026-10-22: the theme drawer has no container width control. A saved width still
+   applies to the content column on load._
 5. **Given** "Wireframe" is selected, **When** the visitor has not changed the radius, **Then** corners are square.
 
 ---
@@ -149,8 +151,9 @@ no element that keeps the other theme's look.
   settings.
 - **FR-003**: Users MUST be able to select a theme from the theme settings.
 - **FR-004**: Selecting a theme MUST update the whole UI immediately, with no reload and no confirm step.
-- **FR-005**: Every setting in the theme settings (theme, appearance, accent color, font size, animation, border radius,
-  container max-width) MUST update the UI immediately.
+- **FR-005**: Every setting in the theme settings (theme, appearance, accent color, font size, animation, border radius)
+  MUST update the UI immediately. (Container max-width is no longer a theme drawer setting since 2026-10-22, see
+  FR-026.)
 - **FR-006**: "Wireframe" MUST show the same content, order and navigation as "Default"; only appearance differs.
 - **FR-007**: "Wireframe" MUST be black and white initially and MUST NOT show an accent color until the user picks one.
 - **FR-008**: Users MUST be able to choose an accent color in "Wireframe".
@@ -159,7 +162,8 @@ no element that keeps the other theme's look.
 - **FR-010**: Animations MUST be off by default in "Wireframe": no fade-in, slide-in, scroll reveal, typewriter, bounce
   or looping effect.
 - **FR-011**: Users MUST be able to turn animations on in "Wireframe" and the choice MUST take effect immediately.
-- **FR-012**: Users MUST be able to change border radius and container max-width in every theme.
+- **FR-012**: Users MUST be able to change border radius in every theme. _(Container max-width removed from the visitor
+  controls 2026-10-22, see FR-026.)_
 - **FR-013**: "Wireframe" MUST start with square corners; user changes to radius MUST override this.
 - **FR-014**: Switching theme MUST reset animation, accent color, border radius and container max-width to that theme's
   defaults. Appearance (light/dark/system) and font size MUST stay unchanged.
@@ -186,24 +190,34 @@ no element that keeps the other theme's look.
   closes the list first and the drawer
   only on a second press) and keep today's appearance. _(The user asked for the Base UI primitive; see plan D18.)_ _(
   Manual edit)_
-- **FR-026**: The drawer MUST group the radius setting under "Border" and the container width setting under "Layout". _(
-  Manual edit)_
+- **FR-026**: The drawer MUST group the radius setting under "Border". It MUST NOT show a "Layout" group or a container
+  width control. The container width setting stays in the store, the `data-theme-container-width` attribute, persistence
+  and theme defaults, so a saved value still applies. _(Manual edit; "Layout" group removed by manual edit 2026-10-22)_
 - **FR-027**: Changing a setting in the theme drawer SHOULD be announced to screen readers (for example "Radius:
   Large"),
   because the result may be out of view. _(Optional enhancement, plan D20.)_
 - **FR-028**: In "Wireframe", every image and SVG graphic (photos, project previews, brand logos, logo SVGs,
-  interface icons and the corner crop marks) MUST show in black and white (no hue, gray shades kept: grayscale, not two-tone). The visitor's accent color shows
-  only on text, buttons and links. _(Manual edit 2026-10-18 – 2; clarified 2026-10-18)_
+  interface icons) MUST show in black and white (no hue, gray shades kept: grayscale, not
+  two-tone). The visitor's accent color shows
+  only on text, buttons, links and the page-frame corner crop marks (FR-034). _(Manual edit 2026-10-18 – 2; clarified 2026-10-18; crop marks excepted 2026-10-22)_
 - **FR-029**: "Wireframe" MUST use the "Patrick Hand" font family for headings and body text; code keeps its monospace
   font. Default keeps its current fonts. _(Manual edit 2)_
-- **FR-030**: The theme list MUST describe each theme in one short phrase; "Wireframe" is described as "Sketch-based
-  UI" and "Default" as "Intense accent UI". _(Manual edit 2)_
+- **FR-030**: ~~The theme list MUST describe each theme in one short phrase.~~ _Superseded 2026-10-22: the theme list
+  shows only the theme names, with no description line. "Wireframe" is still called a "Sketch-based UI" and "Default"
+  an "Intense accent UI" in the documentation._ _(Manual edit 2; removed by manual edit 2026-10-22)_
+- **FR-031**: In "Wireframe", the page frame MUST have a hand-drawn (sketch-style) border, and the avatar MUST show a
+  visible round border. Default is unchanged. _(Manual edit 2026-10-22)_
+- **FR-032**: A select option that equals the active theme's default value for that setting MUST be marked "Default"
+  in the open list (today: the radius select). _(Manual edit 2026-10-22)_
+- **FR-034**: In "Wireframe", when the visitor has picked an accent color, the page-frame corner crop marks MUST show that color (not grayscale). With the neutral accent they stay black or white. _(Manual edit 2026-10-22)_
+- **FR-033**: Theme drawer groups MUST have rounded corners that follow the radius setting, and the enabled indicator of
+  the toggle MUST use the `background` color in "Wireframe". _(Manual edit 2026-10-22)_
 
 ### Key Entities
 
 - **Theme**: A named look and feel (id, label, default settings). Two exist: Default, Wireframe.
 - **Theme settings**: The visitor's current choices: theme, appearance, accent color, font size, animation on/off,
-  border radius, container max-width.
+  border radius (container max-width is stored but has no control since 2026-10-22).
 - **Theme defaults**: Per-theme starting values applied when a theme is selected.
 
 ## Success Criteria _(mandatory)_
@@ -235,8 +249,8 @@ no element that keeps the other theme's look.
   panel). This feature completes, corrects and verifies it rather than starting from zero.
 - The theme settings live in a theme drawer (revised 2026-10-18; the earlier sidebar panel is retired); the header
   trigger opens it.
-- Border radius and container max-width controls exist as placeholders or partial controls today and become fully
-  working.
+- The border radius control exists as a placeholder or partial control today and becomes fully working. The container
+  max-width control was built and then removed from the drawer on 2026-10-22.
 - Unused theme values (`crazy-color`, `notes`) are not offered to visitors.
 - "Border" in the user's request means shape settings (radius), not a new border-style editor.
 - Settings are stored locally on the device only; no accounts or sync.
@@ -261,3 +275,20 @@ no element that keeps the other theme's look.
 - For the wireframe theme, svgs and images are black/white
 - For the wireframe theme, another font family is implemented and used „Patrick Hand“
 - Wireframe theme UI appearance is described as „Sketch-based UI“
+
+## Manuel edits 2026-10-22
+
+- Make a border of page frame src/components/feature/page-frame/page-frame.tsx also in sketch style, when the wireframe
+  theme  
+  is active
+- Remove the additional description line of the themes during theme selection in the theme drawer
+- For the avatar src/components/feature/avatar/avatar.tsx, make a rounded border when the wireframe theme is active
+- Always provide a theme "Default" setting value to theme select options
+- Remove the "Layout" theme setting group
+- Make the toggle component src/components/ui/toggle/toggle.tsx pure `background` color for the enabled indicator
+- Make rounded corners for theme drawer groups, like for the tools and technologies drawer
+
+## Manuel edits 2026-10-22
+
+- When in wireframe theme, and user has selected an accent color – make the
+  src/components/feature/page-frame/page-frame.tsx ``

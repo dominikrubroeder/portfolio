@@ -1,4 +1,3 @@
-import { AgentViewLink } from '@/components/feature/agent-view';
 import { Avatar } from '@/components/feature/avatar';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/feature/events';
 import { headerIdentity } from '@/components/feature/header/header-content';
@@ -42,8 +41,6 @@ export function Header() {
           />
         </div>
       </div>
-
-      <AgentViewLink className="absolute top-1/2 right-4 hidden -translate-y-1/2 in-data-[theme-container-width=full]:max-[112rem]:hidden! in-data-[theme-container-width=wide]:max-[83rem]:hidden! lg:inline-flex" />
     </header>
   );
 }

@@ -128,7 +128,7 @@ Use `<Container>` (`ui/container`). Never hand-roll `max-w-*` on page sections.
 | `full-width`         | 100 %              | Full-bleed bands (e.g. primary hero) |
 | (panorama token)     | `120rem`           | Large preview imagery on `/projects` |
 
-The reading column is intentionally narrow (40rem by default). The visitor can widen it in the theme settings
+The reading column is intentionally narrow (40rem by default). A saved setting can widen it (the theme drawer has no control for it since 2026-10-22)
 (`data-theme-container-width`: default 40rem, wide 64rem, full 90rem; it overrides `--spacing-container-readable`). It is the signature of the layout: one column, centered,
 scannable.
 
@@ -193,7 +193,7 @@ A theme is a combination of **style** × **appearance** × **accent color** × *
 | `default`   | "Intense accent UI": rounded, colored, animated. The reference experience.                                |
 | `wireframe` | "Sketch-based UI": black/white, handwritten type, square corners, no animation, no shadows. Same content. |
 
-Themes are listed once, in `feature/theme/theme-definitions.ts` (id, label, a one-phrase description and the defaults for accent, animations,
+Themes are listed once, in `feature/theme/theme-definitions.ts` (id, label and the defaults for accent, animations,
 radius and container width). The selector, the switch, persistence and the pre-paint script read that list; a new theme
 is a new entry plus its token block in `globals.css`. Selecting a theme applies its defaults (accent, animations, radius,
 container width); appearance and font size stay. The styles `crazy-color` and `notes` and the Cornell-notes background
@@ -201,9 +201,10 @@ were removed.
 
 Rules:
 
-- Wireframe media: every `img` and `svg` (photos, project previews, logos, interface icons, crop marks) is grayscale
-  through one filter rule in `globals.css`. The accent shows only on text, buttons and links. Never use `grayscale-0` or
-  another filter utility on an image: a utility beats the base rule.
+- Wireframe media: every `img` and `svg` (photos, project previews, logos, interface icons) is grayscale
+  through one filter rule in `globals.css`. The accent shows only on text, buttons, links and the page-frame crop marks
+  (they carry `filter-none`, so a picked accent color shows; the neutral accent keeps them black or white). Never use
+  `grayscale-0` or another filter utility on any other image: a utility beats the base rule.
 - Structure differs by tokens and `html[data-theme=…]` selectors, not by forking components.
 - Wireframe: `--border` is a faint hairline kept only where a control needs an edge (toggle outlines use `foreground`);
   groupings read as tone (`muted`), not lines. Drop shadows are off (`--tw-shadow` is zeroed); focus rings stay.
@@ -263,10 +264,7 @@ File naming: every file in a feature directory is prefixed with the directory na
 (`text/plain`) with no layout, theme, CSS or script. Its text comes from the same content modules as the pages
 (`home-content.ts`, `projects-content.ts`, `philosophy-data.ts`, the data files), so a copy edit shows in both.
 
-`AgentViewLink` (`link-muted`, `small`: a quiet text link, about 69 × 20 px at 100 % text size) is the entry point. It is `small` on purpose: a standalone link in a dense, non-primary context (rule 5); no other target sits within 24 px of it. In the header it sits
-absolute, `right-4`, vertically centered, from `lg`; it never covers another control. With the default column it fits
-from `lg`; with container width "wide" it shows from `83rem`, with "full" from `112rem` (measured, with room for the
-110 % text size, because media queries use the browser's base font size). Everywhere else it sits in the footer on its own line directly above the copyright line. The footer no longer shows the framework-version line (Next.js, React, Tailwind CSS) and uses `py-6` / `space-y-4` (was `py-12` / `space-y-6`). CSS shows exactly one of the two instances.
+`AgentViewLink` (`Button` `text-foreground`, `small`: a quiet text button, `hover:text-primary`) is the only entry point. It sits in the footer, centered on its own line directly above the copyright line, at every width and container-width setting; the header has no link. It is `small` on purpose: a standalone link in a dense, non-primary context (rule 5); no other target sits within 24 px of it. The footer no longer shows the framework-version line (Next.js, React, Tailwind CSS) and uses `py-6` / `space-y-4` (was `py-12` / `space-y-6`).
 
 ### Variants
 
@@ -406,11 +404,17 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | Theme settings open in the site's `Drawer` (bottom sheet below `xl`, side panel from `xl`, standard scrim); the custom `Sidebar` is removed | One panel pattern. Base UI supplies focus trap, focus return, `Esc` and inert background that the sidebar lacked. |
 | 3.0.6 | Appearance (light, dark, auto) lives in the theme drawer only; the header shows the settings trigger first, then the blue, violett and orange swatches (from `sm`); the neutral swatch is drawer-only | Quiet header; neutral is a theme default, not a quick pick. |
 | 3.0.6 | `Select` is rebuilt on the Base UI select with the same look; values are option keys, options can carry an icon | Listbox roles, arrow keys, typeahead and `Esc` for free; one dropdown implementation. |
-| 3.0.6 | Drawer groups: Base, Typography, Animation, Border (radius), Layout (container width) | Settings are named by what they change. |
-| 3.0.6 | Wireframe is a "Sketch-based UI": Patrick Hand for headings and body, every image and SVG grayscale (one CSS filter rule), Default described as "Intense accent UI"; each theme carries a one-phrase description shown in the theme select | The theme reads as a sketch, not only as black and white; the accent stays on text, buttons and links. All CSS and registry data, no new client code. |
+| 3.0.6 | Drawer groups: Base, Typography, Animation, Border (radius); the "Layout" group (container width) is gone from the drawer, the stored setting still applies | Settings are named by what they change; the reading width is no longer a visitor control. |
+| 3.0.6 | Wireframe is a "Sketch-based UI": Patrick Hand for headings and body, every image and SVG grayscale (one CSS filter rule), Default described as "Intense accent UI" (the description line in the theme select was removed again on 2026-10-22) | The theme reads as a sketch, not only as black and white; the accent stays on text, buttons and links. All CSS and registry data, no new client code. |
 | 3.0.6 | Orange accent darkened to `oklch(0.58 0.237 31.3)` (hover 0.555, border 0.52) | White text on the old orange measured 3.85 : 1; the darker value reaches 4.8 : 1 and keeps the hue. |
-| 3.0.6 | Agent view: `/agent-view` is a route handler returning raw markdown (`text/plain`), not a styled page; entry link is a small text link in the header (absolute, right edge) or in the footer above the © line, chosen by CSS so it never overlaps a control; footer drops the framework-version line and gets `py-6` | No theme, CSS or script can reach it, so it stays plain by construction. Page copy lives in shared content modules, so pages and agent view cannot drift. |
+| 3.0.6 | Agent view: `/agent-view` is a route handler returning raw markdown (`text/plain`), not a styled page; entry link is a `text-foreground` small button, centered in the footer above the © line (the earlier header link and its width thresholds are gone); footer drops the framework-version line and gets `py-6` | No theme, CSS or script can reach it, so it stays plain by construction. Page copy lives in shared content modules, so pages and agent view cannot drift. |
 | 3.0.6 | Drawer swatches and the animation switch get a 44 px hit area (transparent `::after`, `min-h-11`) | Touch target without changing the look. |
+| 3.0.6 | Wireframe page frame gets a hand-drawn `foreground` border (`.sketch-frame`: uneven small rem radii, `lg`+, Wireframe only); the avatar photo gets a `foreground` border in Wireframe | The sketch look reaches the frame and the avatar; the faint Wireframe `--border` hid the avatar ring. CSS only. |
+| 3.0.6 | Select options can carry a "Default" tag (`isDefault`); the radius select marks the active theme's default; toggle knob is `background` colored when enabled in Wireframe; drawer group boxes use `rounded-xl` (the old class was invalid, so they were square) | The visitor sees what resetting would give; one prop, registry driven. |
+| 3.0.6 | Wireframe crop marks are drawn as one uneven 2.5 px pencil stroke that overshoots the corner, instead of the 7 px round-capped corner | Matches the hand-drawn `.sketch-frame`; the clean marker line looked digital next to it. SVG paths toggled by `in-data-[theme=wireframe]`, no JS. |
+| 3.0.6 | Wireframe crop marks keep the picked accent color (`filter-none` on the `CropMark` svg, exempt from the grayscale rule) | The corner marks are the one decorative graphic that carries the visitor's accent in Wireframe; with the neutral accent they stay black or white. |
+| 3.0.6 | Philosophy core: the petal bloom (JS) follows the animations switch like the "UI" pulse (CSS); off shows all circles at once | Wireframe starts with animations off; the bloom ignored the switch and still moved. |
+| 3.0.6 | The core pulse token is `--core-pulse-animation` (not `--animate-core-pulse`); in Wireframe an enabled `Toggle` shows the accent on the knob (`primary` fill and border) while the track stays `background` with a `foreground` outline | A `--animate-*` theme variable makes Tailwind emit an ungated `animate-core-pulse` utility that beat the gated one, so the pulse ran with animations off. The enabled toggle was indistinguishable from the idle one besides the knob side. |
 
 > When you make a lasting design decision, add a row: _version · decision · why_.
 

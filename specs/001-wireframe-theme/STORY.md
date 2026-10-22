@@ -9,7 +9,7 @@ whole site looks, and the site answers at once.
 
 - **Two themes.** _Default_ is the colorful, rounded, animated look you know. _Wireframe_ shows the same site as a
   sketch: handwritten type, black-and-white images and icons, square corners, no motion, structure first. Each theme
-  has a short description in the list ("Intense accent UI", "Sketch-based UI").
+  is a plain two-entry list.
 - **One button in the header.** It opens the theme drawer with every setting in one place, light and dark mode
   included. Three quick color swatches sit next to it. No menu hunt.
 - **Instant changes.** Every choice shows up immediately. No "Apply", no reload.

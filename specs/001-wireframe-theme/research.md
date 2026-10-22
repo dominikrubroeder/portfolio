@@ -243,3 +243,102 @@ D8 and D11 stay true in intent (header trigger, on-demand load) but their sideba
   description. The row stays one `option` with an accessible name of "Wireframe, Sketch-based UI" through the item text.
 - **Alternatives**: static helper text under the select (rejected: shows only the current theme, hides the other choice);
   tooltip (rejected: not reachable on touch).
+
+## Revision 2026-10-22 (spec "Manuel edits 2026-10-22")
+
+### D25. Sketch border on the page frame in Wireframe
+
+- **Decision**: `PageFrame` gets one more child, a `div` with `border-2 border-foreground`, shown only in Wireframe
+  (`hidden in-data-[theme=wireframe]:block`, `lg`+ like the crop marks). The hand-drawn look is one CSS rule with
+  uneven corner radii (for example `border-radius: 1.5rem 0.25rem 1.25rem 0.25rem / 0.25rem 1.25rem 0.25rem 1.5rem`; small values, because large px radii on a page-tall box stretch into one big arc), defined as a named
+  rule in `globals.css` under the Wireframe block, not inline. It keeps `pointer-events-none` and `aria-hidden`, and sits
+  inside the same positioned parent and inset as the crop marks, so the corner marks still read as the corners of the
+  sketched frame.
+- **Rationale**: Pure CSS (constitution VI), no filter or SVG turbulence (a displacement filter repaints on resize and
+  costs on every scroll), no JS, nothing for Default. The radius setting is irrelevant here: the sketch shape is the
+  point of the rule, so the rule does not read `--radius`.
+- **Grayscale**: borders are not images; `foreground` is already black or white.
+- **Alternatives**: SVG path with `feTurbulence` (rejected: paint cost, one more `svg` under the grayscale rule); a
+  rough.js style path (rejected: new dependency); border on the existing crop-mark SVGs (rejected: they are four
+  separate corners).
+
+### D26. Remove the theme description line
+
+- **Decision**: Remove the `description` display from the theme list: `ThemeSelect` options carry label only. The
+  `description` field leaves `ThemeDefinition` and `ThemeOption` (and the registry, tests, `DESIGN.md` §9 wording and
+  `STORY.md`). `SelectOption.description` stays in `ui/select` only if D28 reuses it; otherwise it is removed with its
+  rendering (T065 in revision 2), so no dead prop remains. Supersedes D23 and D24 and FR-030.
+- **Rationale**: The phrase was meant to tell the themes apart; the owner now wants a plain list. One source (registry)
+  gets smaller; nothing else reads the field.
+- **Alternatives**: keep the field and hide it in CSS (rejected: dead data).
+
+### D27. Avatar border in Wireframe
+
+- **Decision**: The avatar already has `rounded-full border-2`, but the Wireframe `--border` is a faint hairline, so the
+  ring is nearly invisible. Add `in-data-[theme=wireframe]:border-foreground` to the avatar image in `avatar.tsx`, in
+  both `img` instances and in `avatar-lightbox.tsx` (thumbnail and enlarged photo). The shape stays `rounded-full` (it
+  does not follow the radius setting, like before).
+- **Rationale**: Reads as a drawn outline around the photo, matches the toggle and select outlines that already use
+  `foreground` in Wireframe. No new token.
+- **Alternatives**: a new `--border-strong` token (rejected: one use); wrapping div with outline (rejected: extra DOM).
+
+### D28. "Default" marker in setting selects
+
+- **Interpretation (recorded, owner may correct)**: "Always provide a theme Default setting value to theme select
+  options" means: in every theme-drawer select whose setting has a per-theme default in the registry, the option that
+  equals the active theme's default is labeled "Default", also when another value is chosen. Today that is the radius
+  select (`THEME_RADIUS_OPTIONS`). Color is a swatch row and animations a switch, so they are not selects. Appearance and
+  font size have no per-theme default and show no marker.
+- **Decision**: `SelectOption` gets `isDefault?: boolean`; the open list shows a muted "Default" tag after the label of
+  that row, and the option's accessible name reads "Medium, Default". The trigger shows the label only, as before.
+  `ThemeRadiusSetting` marks the option where `key === getThemeDefinition(theme).defaults.radius`, reading the active
+  theme with `useThemeSetting('theme')`. If the container-width select returns, it uses the same prop.
+- **Rationale**: One prop, driven by the registry, so a new theme or select inherits the marker with no branch.
+- **Alternatives**: reuse `description` ("Default") for the row (rejected: removes the generic description meaning of
+  D26 and mixes data and marker); show the default in the trigger (rejected: trigger stays short).
+
+### D29. Remove the "Layout" group
+
+- **Decision**: Remove the `ThemeSettingSection title="Layout"` block (and the import of
+  `ThemeSpacingContainerWidthSetting`) from `theme-settings.tsx`. The setting itself stays: store, `data-theme-container-width`,
+  persistence, registry defaults and the CSS override remain, so a saved value still applies. Supersedes FR-026 (Layout part) and D-numbers that name the Layout group. `theme-spacing-container-width-setting.tsx`
+  was deleted on 2026-10-22 at the owner's request.
+- **Rationale**: The request names the group, not the feature. Removing only the control is reversible and does not
+  break saved settings or the init script (contract unchanged).
+- **Consequence**: Visitors can no longer change the reading width; the default 40rem column is the only reachable
+  state unless an old saved value exists. `DESIGN.md` §6.1 sentence "The visitor can widen it" and `UX_PRINCIPLES.md`
+  theme-switching bullet are reworded to "stored setting, no control".
+- **Alternatives**: delete the whole setting (rejected: larger than asked, touches persistence and contracts).
+
+### D30. Toggle enabled indicator
+
+- **Decision**: In Wireframe the enabled knob uses `bg-background` instead of `bg-primary`
+  (`isEnabled && 'in-data-[theme=wireframe]:bg-background'`). Default theme keeps `bg-primary-foreground`, which equals
+  `background` in light and is the readable choice on `bg-primary` in dark. The knob keeps its `foreground` border, so
+  it stays visible on the `bg-background` track. State is still shown by position (translate) and `aria-checked`, not
+  by color alone.
+- **Rationale**: "pure `background`" is only a change in Wireframe, where the knob was the accent; Default already
+  shows a light knob on an accent track.
+- **Open check**: on the Wireframe track (`bg-background`) an enabled knob with the same fill relies on its border and
+  position; verify non-text contrast (3 : 1) of the border in light and dark in the a11y task.
+- **Alternatives**: `bg-background` in all themes (rejected: on `bg-primary` in dark a dark knob loses contrast).
+
+### D31. Rounded drawer groups
+
+- **Decision**: Fix the typo class in `ThemeSettingSection`: `rounded-2xl-xl` is not a utility, so the group box has
+  square corners today. Use `rounded-xl` for the box (same family as the tools and technologies drawer lists, which use
+  `rounded border`, and the drawer panel `rounded-2xl`); it follows the radius setting and is square in Wireframe with
+  radius none.
+- **Rationale**: Matches the rest of the drawer content; the bug is the class, not the design.
+- **Alternatives**: copy `rounded` (4 px, rejected: too tight against a 1 rem padded box); hard-code a radius (rejected: breaks token rule).
+
+### D32. Crop marks keep the accent in Wireframe (FR-034)
+
+- **Decision**: The `CropMark` svg in `page-frame.tsx` gets `filter-none`. The Wireframe grayscale rule
+  (`html[data-theme='wireframe'] :is(img, svg)`, D21) sits in `@layer base`, so the utility wins for this one element. The
+  strokes already use `var(--color-primary)`, which is the picked accent (or `foreground` for the neutral accent), so no
+  other change is needed.
+- **Rationale**: One class, no new token, no JS. Supersedes the crop-mark part of D21; the accent in Wireframe now shows on
+  text, buttons, links and the crop marks. Every other `img` and `svg` stays grayscale.
+- **Alternatives**: a `.keep-color` marker rule in `globals.css` (rejected: one use); `:not(.crop-mark)` on the base rule
+  (rejected: couples the rule to a component).

@@ -58,16 +58,16 @@ description: 'Task list for Agent view'
 
 ---
 
-## Phase 4: User Story 2 — Enter agent view from the header (Priority: P2)
+## Phase 4: User Story 2 — Enter agent view from the footer (Priority: P2)
 
-**Goal**: "Agent view" link in the header from `lg` up, in the footer below `lg`; never overlapping, no prefetch.
+**Goal**: "Agent view" link only in the footer, centered above the copyright line; no header link, no prefetch. (Changed 2026-10-22: earlier header-from-`lg` placement removed, see Phase 12.)
 
 **Independent Test**: quickstart scenario 5 at 375 px, 1023 px, 1024 px and 1440 px.
 
 - [x] T011 [US2] Create `src/components/feature/agent-view/agent-view-link.tsx` (server component, no `'use client'`): `Button` `variant="text-muted"` `size="medium"` `href="/agent-view"` `prefetch={false}`, visible text "Agent view", `className` passthrough for layout only. Confirm `Button` (`src/components/ui/button/button.tsx`, spreads `...rest` onto `Link`) accepts and forwards `prefetch`; if its types reject it, add `prefetch?: boolean` to `src/components/ui/button/types.ts` minimally. Export from `src/components/feature/agent-view/index.ts`
-- [x] T012 [P] [US2] Edit `src/components/feature/header/header.tsx`: render `<AgentViewLink className="absolute top-1/2 right-4 hidden -translate-y-1/2 lg:inline-flex" />` as the last child of `<header>` (after the theme controls in DOM order; `header` is `sticky`/`lg:relative`, so it is the positioning context). Measure the link width and the viewport width at which it clears the theme controls for container width default, wide and full (`data-theme-container-width`); show the header link only at or above that width per setting using CSS variants on that attribute (and `lg`), and record the measured values in `research.md` R5. Check it overlaps no control and keeps the 44 px target
-- [x] T013 [P] [US2] Edit `src/components/feature/footer/footer.tsx`: render `<AgentViewLink />` with the exact inverse visibility of the header link (visible whenever the header link is hidden, including `lg` and up with wide or full below their thresholds) centered in the footer (inside a `Container as="div" className="text-center"`, consistent with neighboring rows), so exactly one instance is visible per width
-- [x] T014 [US2] Verify quickstart 5–6: test container width default, wide and full at 375, 1023, 1024, 1100, 1280 and 1440 px, and at 90 % and 110 % text size: exactly one link visible each time, header link never over another control; Tab order and visible focus ring; the hidden instance is not focusable; Network tab shows no prefetch for `/agent-view`; link opens in the same tab; "Back to the site" returns; check light, dark, Wireframe, 110 % font, reduced motion
+- [x] T012 (SUPERSEDED 2026-10-22: link is footer-only, no header placement or thresholds; see Phase 12) [P] [US2] Edit `src/components/feature/header/header.tsx`: render `<AgentViewLink className="absolute top-1/2 right-4 hidden -translate-y-1/2 lg:inline-flex" />` as the last child of `<header>` (after the theme controls in DOM order; `header` is `sticky`/`lg:relative`, so it is the positioning context). Measure the link width and the viewport width at which it clears the theme controls for container width default, wide and full (`data-theme-container-width`); show the header link only at or above that width per setting using CSS variants on that attribute (and `lg`), and record the measured values in `research.md` R5. Check it overlaps no control and keeps the 44 px target
+- [x] T013 (SUPERSEDED 2026-10-22: link is footer-only, no header placement or thresholds; see Phase 12) [P] [US2] Edit `src/components/feature/footer/footer.tsx`: render `<AgentViewLink />` with the exact inverse visibility of the header link (visible whenever the header link is hidden, including `lg` and up with wide or full below their thresholds) centered in the footer (inside a `Container as="div" className="text-center"`, consistent with neighboring rows), so exactly one instance is visible per width
+- [x] T014 (SUPERSEDED 2026-10-22: link is footer-only, no header placement or thresholds; see Phase 12) [US2] Verify quickstart 5–6: test container width default, wide and full at 375, 1023, 1024, 1100, 1280 and 1440 px, and at 90 % and 110 % text size: exactly one link visible each time, header link never over another control; Tab order and visible focus ring; the hidden instance is not focusable; Network tab shows no prefetch for `/agent-view`; link opens in the same tab; "Back to the site" returns; check light, dark, Wireframe, 110 % font, reduced motion
 
 **Checkpoint**: both stories work independently.
 
@@ -85,8 +85,8 @@ description: 'Task list for Agent view'
 
 ## Phase 6: Polish and cross-cutting
 
-- [x] T016 [P] Update `DESIGN.md`: add `AgentViewLink` and the unstyled `/agent-view` route to §10 (feature list), the header placement (absolute `right-4`, `lg` and up; footer below) to the layout/z-index notes if relevant, and a decision-log row (3.0.6 · Agent view is a route handler returning plain text, not a styled page · no theme, CSS or JS can reach it; content from the same modules as the pages)
-- [x] T017 [P] Update `UX_PRINCIPLES.md`: add `/agent-view` to §2 information architecture; header and footer link behavior (placement per breakpoint, same tab, no prefetch) to §2 and §6; document that content hidden in drawers and tabs appears inline in agent view
+- [x] T016 (SUPERSEDED 2026-10-22: link is footer-only, no header placement or thresholds; see Phase 12) [P] Update `DESIGN.md`: add `AgentViewLink` and the unstyled `/agent-view` route to §10 (feature list), the header placement (absolute `right-4`, `lg` and up; footer below) to the layout/z-index notes if relevant, and a decision-log row (3.0.6 · Agent view is a route handler returning plain text, not a styled page · no theme, CSS or JS can reach it; content from the same modules as the pages)
+- [x] T017 (SUPERSEDED 2026-10-22: link is footer-only, no header placement or thresholds; see Phase 12) [P] Update `UX_PRINCIPLES.md`: add `/agent-view` to §2 information architecture; header and footer link behavior (placement per breakpoint, same tab, no prefetch) to §2 and §6; document that content hidden in drawers and tabs appears inline in agent view
 - [x] T018 [P] Update `src/components/feature/README.md` (new `agent-view` and `home` features, content-module rule: page copy lives in `*-content.ts`/data files shared with agent view) and add the two features to the list in `DESIGN.md` §10
 - [x] T019 Finish `specs/002-agent-view/STORY.md` so it matches the shipped feature (no claim it does not deliver)
 - [x] T020 Accessibility pass for the link (constitution IV): accessible name = "Agent view", role link, focus-visible ring, 44 px target, contrast in every accent and theme, does not obscure another control (WCAG 2.2 focus not obscured, target size); if a violation remains, record it in `DESIGN.md` §16 with its measured value
@@ -142,7 +142,7 @@ description: 'Task list for Agent view'
 
 - [x] T034 Change `AgentViewLink` in `src/components/feature/agent-view/agent-view-link.tsx` from the ghost button (`ghost-muted`, `medium`) to a small-text link (`link-muted`, `small`) per FR-007
 - [x] T035 Edit `src/components/feature/footer/footer.tsx`: move the link to its own line directly above "© 2026 Dominik Rubröder" (visibility wrapper classes unchanged in logic), remove the "Next.js 16.4.2 | React 19.3 | Tailwind CSS 4.3.3" line, and reduce vertical padding (`py-12` → `py-6`, `space-y-6` → `space-y-4`) per FR-007 and FR-013
-- [x] T036 Re-measure the header link (now 69 × 20 px at 100 %, 76 × 22 px at 110 %) at 375–1900 px for container width default, wide and full at 100 % and 110 % text, and set the header thresholds in `src/components/feature/header/header.tsx` and the inverse in the footer to `83rem` (wide) and `112rem` (full) per FR-007
+- [x] T036 (SUPERSEDED 2026-10-22: link is footer-only, no header placement or thresholds; see Phase 12) Re-measure the header link (now 69 × 20 px at 100 %, 76 × 22 px at 110 %) at 375–1900 px for container width default, wide and full at 100 % and 110 % text, and set the header thresholds in `src/components/feature/header/header.tsx` and the inverse in the footer to `83rem` (wide) and `112rem` (full) per FR-007
 - [x] T037 Re-run the keyboard, focus-ring, prefetch and same-tab checks for the small link in light, dark, Wireframe, 110 % text, with and without reduced motion, and check the footer visually at 375 px and 1440 px per FR-011 and Constitution IV
 - [x] T038 Update `spec.md` (Clarifications, FR-007, new FR-013, Assumptions), `plan.md`, `research.md` (R5, R9), `contracts/agent-view-route-contract.md`, `data-model.md`, `quickstart.md`, `STORY.md`, `DESIGN.md` and `UX_PRINCIPLES.md` to match the small link, the footer change, the thresholds and the `prefetch` prop per Constitution VII
 
@@ -158,3 +158,19 @@ description: 'Task list for Agent view'
 - [x] T043 Verify hot reload in `next dev`: edit a statement in `src/components/feature/home/home-content.ts`, see it on `/` and `/agent-view`, revert it
 - [x] T044 Run `npm run build` and `next start`; confirm no warnings, `/agent-view` is static, no console errors, and re-run the layout, keyboard, focus, prefetch and no-JS checks against the production server
 - [x] T045 Record the finding, fix and evidence in `research.md` (R10), `plan.md` (Build and runtime verification) and `quickstart.md` (scenarios 9 and 10 and the verification log)
+
+## Phase 12: Change request (2026-10-22): footer-only `text-foreground` link
+
+- [x] T046 Edit `src/components/feature/agent-view/agent-view-link.tsx`: `variant="text-foreground"` (keep `size="small"`, `href`, `prefetch={false}`) per `spec.md` "Manual modifications 2026-10-22"
+- [x] T047 [P] Edit `src/components/feature/header/header.tsx`: remove the `AgentViewLink` import and element (and any header layout class added only for it, such as `lg:relative` if unused otherwise)
+- [x] T048 [P] Edit `src/components/feature/footer/footer.tsx`: render `<AgentViewLink />` always, centered, on its own line above the © line; remove the visibility wrapper classes (`lg:hidden`, `in-data-[theme-container-width=…]` variants)
+- [x] T049 Verify quickstart 5 at 375, 1023, 1440 px, container width default, wide, full, 110 % text, light, dark, Wireframe: one centered footer link, none in the header, focus ring, hover `primary`, no target within 24 px, no prefetch, same tab
+- [x] T050 Update `spec.md` (FR-007, FR-011, Assumptions, User Story 2 wording: footer only), `DESIGN.md` (§10 Agent view, §15 decision-log row) and `UX_PRINCIPLES.md` (§2, §4 Button, §6) and `STORY.md` to match; remove header-threshold text per Constitution VII
+- [x] T051 Run `npm run format`, `npm run lint`, `npm run build`; confirm `/agent-view` stays static
+
+## Phase 13: Convergence
+
+- [x] T052 Verify the footer link in a browser (375, 1023, 1440 px; container width default, wide, full; 110 % text; light, dark, Wireframe): one centered link, none in the header, visible focus ring, hover turns `primary`, no prefetch, same tab; log results in the verification log of `quickstart.md`, per FR-007, FR-011 and T049 (partial)
+- [x] T053 Measure the gap between the certification buttons and the `text-foreground` `small` link (`space-y-4` = 16 px, link about 20 px high); if another target lies within 24 px, increase the gap or the link size in `src/components/feature/footer/footer.tsx` so the WCAG 2.2 target-size spacing rule holds, per FR-011, Constitution IV and `DESIGN.md` rule 5 (partial)
+- [x] T054 Update stale header-link wording in `plan.md` (Testing line 26, Constraints line 34, Constitution Check row I line 55) to the footer-only link, per FR-007 and Constitution VII (partial)
+- [x] T055 Update `spec.md` Clarifications (2026-10-18 header-overlap Q&A, lines 22–23) and FR-011 ("existing header design") to state they are superseded by the footer-only link of 2026-10-22, per FR-007 (partial)

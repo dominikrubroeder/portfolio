@@ -29,7 +29,10 @@ export function AvatarLightbox({
           alt={AVATAR_ALT}
           width={width}
           height={height}
-          className={cn('shrink-0 rounded-full border-2', className)}
+          className={cn(
+            'shrink-0 rounded-full border-2 in-data-[theme=wireframe]:border-foreground',
+            className
+          )}
           draggable={false}
           loading="eager"
         />
@@ -50,7 +53,7 @@ export function AvatarLightbox({
               alt={AVATAR_ALT}
               width={500}
               height={500}
-              className="size-full max-w-none rounded-full border-2"
+              className="size-full max-w-none rounded-full border-2 in-data-[theme=wireframe]:border-foreground"
               draggable={false}
             />
           </Dialog.Close>

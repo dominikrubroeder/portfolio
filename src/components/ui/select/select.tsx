@@ -81,17 +81,15 @@ export function Select({
 
                   {option.icon}
 
-                  <div className="flex flex-col">
-                    <SelectPrimitive.ItemText>
-                      {option.value}
-                    </SelectPrimitive.ItemText>
+                  <SelectPrimitive.ItemText>
+                    {option.value}
+                  </SelectPrimitive.ItemText>
 
-                    {option.description && (
-                      <span className="text-sm text-muted-foreground">
-                        {option.description}
-                      </span>
-                    )}
-                  </div>
+                  {option.isDefault && (
+                    <span className="text-sm text-muted-foreground">
+                      <span className="sr-only">, </span>Default
+                    </span>
+                  )}
                 </SelectPrimitive.Item>
               ))}
             </SelectPrimitive.List>

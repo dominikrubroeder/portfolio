@@ -17,7 +17,6 @@ export const THEME_DEFINITIONS: ThemeDefinition[] = [
   {
     id: 'default',
     label: 'Default',
-    description: 'Intense accent UI',
     defaults: {
       color: 'blue',
       animationsEnabled: true,
@@ -28,7 +27,6 @@ export const THEME_DEFINITIONS: ThemeDefinition[] = [
   {
     id: 'wireframe',
     label: 'Wireframe',
-    description: 'Sketch-based UI',
     defaults: {
       color: 'foreground',
       animationsEnabled: false,
@@ -68,8 +66,8 @@ export function getThemeDefinition(id: string | null | undefined) {
 }
 
 export function getThemeOption(id: string | null | undefined): ThemeOption {
-  const { id: key, label, description } = getThemeDefinition(id);
-  return { key, value: label, description };
+  const { id: key, label } = getThemeDefinition(id);
+  return { key, value: label };
 }
 
 export function isTheme(id: string | null | undefined): id is Theme {

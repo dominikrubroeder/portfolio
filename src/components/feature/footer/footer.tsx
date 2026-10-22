@@ -40,11 +40,11 @@ export function Footer() {
           </div>
         </Container>
 
-        <Container as="div" className="text-center">
-          <div className="mb-1 lg:hidden in-data-[theme-container-width=full]:lg:max-[112rem]:block! in-data-[theme-container-width=wide]:lg:max-[83rem]:block!">
-            <AgentViewLink />
-          </div>
+        <Container as="div" className="flex items-center justify-center">
+          <AgentViewLink />
+        </Container>
 
+        <Container as="div" className="text-center">
           <p>
             &copy; 2026
             <span className="ml-1.5">Dominik Rubröder</span>

@@ -4,6 +4,6 @@ export type SelectOption = {
   key: string;
   value: string;
   icon?: ReactNode;
-  /** Short phrase under the label in the open list; the trigger shows the label only. */
-  description?: string;
+  /** Marks the option that equals the theme's default for this setting; the open list shows a "Default" tag. */
+  isDefault?: boolean;
 };

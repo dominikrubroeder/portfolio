@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 
 export type Theme = 'default' | 'wireframe';
-export type ThemeOption = { key: Theme; value: string; description?: string };
+export type ThemeOption = { key: Theme; value: string };
 export type ThemeColor = 'violett' | 'blue' | 'orange' | 'foreground';
 export type ThemeMode = 'design' | 'dev';
 export type ThemeFontSize = 'sm' | 'md' | 'lg';
@@ -25,8 +25,6 @@ export type ThemeAnimationSettings = {
 export type ThemeDefinition = {
   id: Theme;
   label: string;
-  /** One short phrase that says what the theme is. */
-  description: string;
   defaults: {
     color: ThemeColor;
     animationsEnabled: boolean;
