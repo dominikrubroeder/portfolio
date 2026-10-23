@@ -9,14 +9,14 @@ import type { Project } from '@/components/feature/projects/projects-types';
 import { getTechnologies } from '@/components/feature/technologies';
 import { getTools } from '@/components/feature/tools';
 
-import previewHdPlus from '../../../../public/projects/project-hd-plus-preview-wallpaper.png';
-import previewLocaboo from '../../../../public/projects/project-locaboo-preview-wallpaper.png';
-import previewSautershop from '../../../../public/projects/project-sautershop-preview-wallpaper.png';
-import previewSegmueller from '../../../../public/projects/project-segmueller-preview-wallpaper.png';
-import previewUvex from '../../../../public/projects/project-uvex-preview-wallpaper.png';
-import previewValueBooster from '../../../../public/projects/project-value-booster-preview-wallpaper.png';
-import previewVariasophia from '../../../../public/projects/project-variasophia-preview-wallpaper.png';
-import previewWelleat from '../../../../public/projects/project-welleat-preview-wallpaper.png';
+import previewHdPlus from '@/public/projects/project-hd-plus-preview-wallpaper.png';
+import previewLocaboo from '@/public/projects/project-locaboo-preview-wallpaper.png';
+import previewSautershop from '@/public/projects/project-sautershop-preview-wallpaper.png';
+import previewSegmueller from '@/public/projects/project-segmueller-preview-wallpaper.png';
+import previewUvex from '@/public/projects/project-uvex-preview-wallpaper.png';
+import previewValueBooster from '@/public/projects/project-value-booster-preview-wallpaper.png';
+import previewVariasophia from '@/public/projects/project-variasophia-preview-wallpaper.png';
+import previewWelleat from '@/public/projects/project-welleat-preview-wallpaper.png';
 
 export const projects: Project[] = [
   {
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
     role: ['Frontend Developer'],
     responsibilities: [
-      'Consult in designing a 3D configurator',
+      'Consult in designing a 3D configurator in Figma',
       'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and React Instant Search'
     ],
     tools: getTools({
@@ -119,13 +119,13 @@ export const projects: Project[] = [
     logo: <LogoMediawave id="projects-mediawave" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer', 'Design Consultant'],
     responsibilities: [
-      'Create and maintain a CMS component system in Storyblok',
-      'Create and maintain a design system in Figma',
-      'Create, provide and document feature concepts and UI prototypes for project pitches',
+      'Create and maintain the CMS component system in Storyblok',
+      'Create and maintain the design system in Figma',
+      'Make feature concepts and UI prototypes for project pitches',
       'Participate in project pitches and communicate design decisions',
       'Build the headless frontend in Next.js',
       'Create page templates: Home Page, Category Page, Product Page, Cart Page, Checkout Page, Account Page',
-      'Compose the frontend libraries and dependencies'
+      'Compose the frontend libraries and its dependencies'
     ],
     tools: getTools({
       names: [
@@ -171,7 +171,7 @@ export const projects: Project[] = [
     logo: <LogoHdPlus id="projects-hd-plus" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer'],
     responsibilities: [
-      'Design the UI in Figma',
+      'Build the UI in Figma',
       'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and React Instant Search'
     ],
     tools: getTools({
@@ -298,7 +298,7 @@ export const projects: Project[] = [
     logo: undefined,
     role: ['Frontend Developer'],
     responsibilities: [
-      'Create print media and resources for the Locaboo brand',
+      'Create print media and resources for the Locaboo brand in Adobe Illustrator, Adobe Photoshop and Adobe InDesign',
       'Work with the CMS Contenido'
     ],
     tools: [],
@@ -324,7 +324,7 @@ export const projects: Project[] = [
     logo: undefined,
     role: ['Frontend Developer'],
     responsibilities: [
-      'Design the UI in Adobe XD and Photoshop',
+      'Build the UI in Adobe XD and Photoshop',
       'Build the frontend in Twig and SCSS with Shopware 5'
     ],
     tools: [],

@@ -5,6 +5,12 @@ import importPlugin from 'eslint-plugin-import';
 
 import localPlugin from './eslint-rules/index.mjs';
 
+const relativeParentImports = {
+  group: ['../*', '..'],
+  message:
+    'Import with the @/ alias (for example @/components/ui/button), not a parent-relative path. Same-folder ./ imports are fine.'
+};
+
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
@@ -21,6 +27,7 @@ const eslintConfig = defineConfig([
     rules: {
       'local/component-layer-order': 'error',
       'local/component-structure': 'error',
+      'no-restricted-imports': ['error', { patterns: [relativeParentImports] }],
       '@typescript-eslint/consistent-type-imports': [
         'error',
         { prefer: 'type-imports' }
@@ -82,6 +89,7 @@ const eslintConfig = defineConfig([
         'error',
         {
           patterns: [
+            relativeParentImports,
             {
               group: ['@/components/feature', '@/components/feature/**'],
               message:

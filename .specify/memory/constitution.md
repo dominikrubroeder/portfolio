@@ -1,9 +1,9 @@
 <!--
 Sync Impact Report
-- Version change: 1.4.0 → 1.5.0
-- Modified principles: none renamed or removed
-- Added principles: VIII. Agent View Parity
-- Added rules: feature plans and task lists MUST include agent view tasks when page content changes
+- Version change: 1.5.0 → 1.6.0
+- Modified principles: II. Existing Architecture First (import rule made explicit and enforceable)
+- Added principles: none
+- Added rules: imports MUST use the `@/` alias; parent-relative paths (`../`) are forbidden
 - Removed sections: none
 - Follow-up TODOs: none
 -->
@@ -29,7 +29,9 @@ New code MUST follow the architecture of the app. Components live in `src/compon
 file in a feature folder MUST be prefixed with the folder name; only `index.ts` barrels are exempt. Reusable `ui`
 components MUST have a Storybook story. Pages in `src/app` compose `ui` and `feature` components, use
 `PageTemplate` or `Container`, and export `metadata` with the `… | Dominik Rubröder, UX Engineer` title pattern.
-Reuse an existing component, hook or pattern before creating a new one. Imports use the `@/` alias.
+Reuse an existing component, hook or pattern before creating a new one. Imports MUST use the `@/` alias (for
+example `@/components/ui/button`); parent-relative paths such as `../../../x` MUST NOT be used. A same-folder
+import (`./x`) is allowed.
 
 Rationale: a predictable place for every file keeps the system legible to humans and agents.
 
@@ -37,8 +39,9 @@ Rationale: a predictable place for every file keeps the system legible to humans
 
 Generated code MUST pass `npm run lint` and `npm run format` without errors. This includes the local rules
 `local/component-layer-order` and `local/component-structure`, `import/order` (react, next, external, `ui`,
-`feature`, relative, then types; alphabetized; blank lines between groups), `consistent-type-imports` and the ban
-on arbitrary color values in Tailwind classes. Prettier settings apply: semicolons, single quotes, no trailing
+`feature`, relative, then types; alphabetized; blank lines between groups), `consistent-type-imports`, the ban
+on arbitrary color values in Tailwind classes and the ban on parent-relative imports (`no-restricted-imports`; use
+`@/`, and `@/public/` for files in `public/`). Prettier settings apply: semicolons, single quotes, no trailing
 commas, 80 columns, Tailwind class sorting. Rules MUST NOT be disabled to make code pass, except where the
 configuration already allows it (brand logos).
 
@@ -176,4 +179,4 @@ message. Versioning follows semantic versioning: MAJOR for removed or redefined 
 or materially expanded guidance, PATCH for clarifications. Compliance is reviewed on every feature plan (the
 Constitution Check) and on every pull request.
 
-**Version**: 1.5.0 | **Ratified**: 2026-10-17 | **Last Amended**: 2026-10-18
+**Version**: 1.6.0 | **Ratified**: 2026-10-17 | **Last Amended**: 2026-10-23

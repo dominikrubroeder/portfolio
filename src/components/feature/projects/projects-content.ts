@@ -1,4 +1,8 @@
 export const HERO_PROJECT_TITLE = 'Value Booster';
 
-export const projectsHeroBlockquote =
-  'Roles are changing. During the last year, roles and job descriptions were more distinct and self-contained. Now the lines are blurring more and more. In my first years, I contributed as Frontend Designer or Frontend Engineer, then as Frontend Designer and Frontend Engineer. This merged into a unified role as UX Engineer, especially for headless frontends and UX concepts, now everything moves more onto holistic product UI thinking and execution – Product Design Engineer.';
+export const projectsHeroBlockquote = [
+  'Roles are changing.',
+  'When some years ago roles were more strict and self-contained, the lines blur more and more now.',
+  "I am primarily focusing on the UI, engineering design systems in design and code, planning, conceptualizing and building the frontend – connecting it to the business perspective and its users needs. The UI should cover these business cases and reflect its user needs in the UI, that's its purpose. Other departments have also impact on the UI, like input from Marketing, Sales and Data & Analytics teams, all influence what's to be shown, and why. Our job as UX/Product Design Engineers is to distill all this information in the proper UI, UX, principles and patterns and to propose our own suggestions to improve this workflow and strategy.",
+  'Communication is therefore key!'
+];

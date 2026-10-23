@@ -1,6 +1,6 @@
-import { ThemeProvider } from '../src/components/feature/theme';
+import { ThemeProvider } from '@/components/feature/theme';
 
-import '../src/app/globals.css';
+import '@/app/globals.css';
 
 import type { Preview } from '@storybook/nextjs-vite';
 

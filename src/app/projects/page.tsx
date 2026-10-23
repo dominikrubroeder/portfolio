@@ -78,7 +78,12 @@ export default function ProjectsPage() {
   const heroProject = getProject({ title: HERO_PROJECT_TITLE });
 
   return (
-    <PageTemplate h1="Projects" heroBlockquote={projectsHeroBlockquote}>
+    <PageTemplate
+      h1="Projects"
+      heroBlockquote={projectsHeroBlockquote.map((sentence, index) => (
+        <p key={`project-blockquote-sentence-${index}`}>{sentence}</p>
+      ))}
+    >
       <DotsDivider />
 
       {heroProject && (
@@ -108,7 +113,7 @@ export default function ProjectsPage() {
               </Link>
             )}
 
-            <div className="mx-auto max-w-(--container-readable) px-4 xl:px-0">
+            <Container as="div">
               <div>
                 <H2 className="sticky-none mb-0 text-primary-foreground">
                   {heroProject.title}
@@ -188,7 +193,7 @@ export default function ProjectsPage() {
               >
                 View {heroProject.title}
               </Button>
-            </div>
+            </Container>
           </Container>
         </Animate>
       )}

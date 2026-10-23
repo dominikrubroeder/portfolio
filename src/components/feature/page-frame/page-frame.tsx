@@ -15,14 +15,14 @@ export function CropMark({ className }: { className: string }) {
     >
       <path
         d="M0 0H64M0 0V64"
-        strokeWidth="5"
+        strokeWidth="4"
         strokeLinecap="round"
         vectorEffect="non-scaling-stroke"
         className="in-data-[theme=wireframe]:hidden"
         style={{ stroke: 'var(--color-primary)' }}
       />
       <g
-        strokeWidth="2.5"
+        strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
         vectorEffect="non-scaling-stroke"
@@ -46,10 +46,10 @@ export function PageFrame({ id, className }: BaseComponentProps) {
       aria-hidden="true"
     >
       <div className="sketch-frame absolute inset-x-4 top-19 bottom-11 hidden border-2 border-foreground xl:inset-x-12 xl:top-20 xl:bottom-24" />
-      <CropMark className="top-19 left-4 xl:top-20 xl:left-12" />
-      <CropMark className="top-19 right-4 rotate-90 xl:right-12" />
-      <CropMark className="bottom-11 left-4 -rotate-90 xl:bottom-24 xl:left-12" />
-      <CropMark className="right-4 bottom-11 rotate-180 xl:right-12 xl:bottom-24" />
+      <CropMark className="top-19.5 left-4 xl:top-20 xl:left-12" />
+      <CropMark className="top-19.5 right-4 rotate-90 xl:right-12" />
+      <CropMark className="bottom-11.5 left-4 -rotate-90 xl:bottom-24 xl:left-12" />
+      <CropMark className="right-4 bottom-11.5 rotate-180 xl:right-12 xl:bottom-24" />
     </div>
   );
 }

@@ -93,8 +93,6 @@ function Petal({
   }, [x, y]);
 
   useEffect(() => {
-    if (!isInView) return;
-
     if (reducedMotion || !animationsEnabled) {
       x.set(0);
       y.set(0);
@@ -102,6 +100,8 @@ function Petal({
       opacity.set(1);
       return;
     }
+
+    if (!isInView) return;
 
     const transition = {
       duration: 0.55,
@@ -122,7 +122,10 @@ function Petal({
     <motion.div
       ref={ref}
       style={{ x, y, scale, opacity }}
-      className={className}
+      className={cn(
+        'in-data-[theme-animations=off]:transform-none! in-data-[theme-animations=off]:opacity-100!',
+        className
+      )}
     >
       {children}
     </motion.div>
