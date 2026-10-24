@@ -33,7 +33,7 @@ const phrases = [
   ['Happy coding!'],
   ['Designing ...'],
   ['Setting up the environment ...'],
-  ['Applying color, typography and layout ...'],
+  ['Applying color, typography and grid system ...'],
   ['Design your way!']
 ];
 

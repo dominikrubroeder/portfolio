@@ -58,7 +58,7 @@ export function DrawerTechnologies({
                     </div>
 
                     <div className="space-y-2">
-                      <Ul className="mb-0 space-y-5 rounded border bg-background p-4">
+                      <Ul className="mb-0 space-y-5 rounded border bg-background p-4 in-data-[theme=wireframe]:rounded-(--sketch-button-radius)! in-data-[theme=wireframe]:border-[1.5px] in-data-[theme=wireframe]:border-foreground">
                         {item.children
                           .slice()
                           .sort((a, b) => a.name.localeCompare(b.name))

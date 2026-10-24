@@ -23,17 +23,17 @@ import {
   getResponsibilityText,
   HERO_PROJECT_TITLE,
   ProjectResponsibilityText,
+  projects,
   projectsHeroBlockquote,
   projectsHeroHighlight
 } from '@/components/feature/projects';
-import { projects } from '@/components/feature/projects';
 import { H2, Ul } from '@/components/feature/typography';
 
 export const instant = false;
 
 export const metadata: Metadata = {
   title: 'Projects | Dominik Rubröder, UX Engineer',
-  description: 'Project contributions from 2016 to 2026'
+  description: 'My project contributions from 2016 to 2026'
 };
 
 // Number of list images (after the hero) preloaded in the server HTML.

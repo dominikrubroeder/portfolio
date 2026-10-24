@@ -24,12 +24,12 @@ export function PageTemplate({
       <ScrollToTop />
 
       <Animate delay={0.16}>
-        <Container as="section" size="container-readable">
+        <Container as="section" size="container-readable" className="lg:-mt-6">
           <div className="flex items-center gap-3">
             {heroIcon && (
               <IconLucide name={heroIcon} className="text-primary" />
             )}
-            <h1>{h1}</h1>
+            <h1 className="leading-tight">{h1}</h1>
           </div>
 
           {heroBlockquote && (

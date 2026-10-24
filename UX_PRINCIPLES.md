@@ -225,7 +225,7 @@ defaults return on the next load. Settings are never sent to a server.
 
 - **Appearance**: light / dark / system, set in the theme drawer. `system` follows OS changes live.
 - **Accent**: neutral (black/white), blue, violett, orange. Applies instantly.
-- **Theme (style)**: Default ("Intense accent UI") / Wireframe ("Sketch-based UI"); the open list shows the two names only. Wireframe uses a handwritten font and grayscale images, icons and logos. Selecting a theme applies its defaults for accent, animations, radius and
+- **Theme (style)**: Default ("Intense accent UI") / Wireframe ("Sketch-based UI"); the open list shows the two names only. Wireframe uses a handwritten font and grayscale images, icons and logos while the accent is neutral; picking a color accent shows them in color. Selecting a theme applies its defaults for accent, animations, radius and
   container width (Wireframe: neutral accent, animations off, square corners; Default: blue, animations on, 6px). The
   visitor's own tweaks in the previous theme are replaced; appearance and font size stay.
 - **Radius**: none / small / medium / large. Applies instantly to every rounded element.

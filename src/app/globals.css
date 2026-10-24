@@ -522,9 +522,12 @@
     --tw-shadow-colored: 0 0 #0000;
   }
 
-  /* Sketch look: every image and SVG (photos, previews, logos, icons) loses its hue. The page-frame crop marks opt out (`filter-none`) so a picked accent shows.
+  /* Sketch look: every image and SVG (photos, previews, logos, icons) loses its hue while the accent is the neutral one; a picked color accent keeps their colors. The page-frame crop marks opt out (`filter-none`) so a picked accent shows.
        A filter keeps the artwork intact, so Default shows the colors again in the same frame. */
-  html[data-theme='wireframe'] :is(img, svg) {
+  html[data-theme='wireframe']:not(
+      [data-theme-color]:not([data-theme-color='foreground'])
+    )
+    :is(img, svg) {
     filter: grayscale(1);
   }
 

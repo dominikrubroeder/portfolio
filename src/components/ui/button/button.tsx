@@ -1,12 +1,12 @@
-import { cloneElement } from 'react';
 import type { ReactElement, ReactNode } from 'react';
+import { cloneElement } from 'react';
 
 import Link from 'next/link';
 
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid';
 
-import { extractEmail, extractPhoneNumber } from '@/components/ui/button';
 import type { ButtonProps } from '@/components/ui/button';
+import { extractEmail, extractPhoneNumber } from '@/components/ui/button';
 import { Tooltip } from '@/components/ui/tooltip';
 
 import { cn } from '@/lib/utils';
@@ -27,7 +27,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const classNames = cn(
-    'interactive select-none group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center motion-safe:transition-colors',
+    'interactive select-none group [&>svg]:shrink-0 [html[data-theme=wireframe][data-theme-color=foreground]_&>svg]:text-current decoration-none relative inline-flex shrink-0 items-center justify-center motion-safe:transition-colors',
     variant.includes('contained') &&
       "in-data-[theme=wireframe]:rounded-(--sketch-button-radius)! in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-0.5 in-data-[theme=wireframe]:before:-rotate-1 in-data-[theme=wireframe]:before:rounded-(--sketch-button-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-['']",
     variant === 'contained-primary' &&
@@ -42,13 +42,11 @@ export function Button({
     variant === 'ghost-primary' && 'text-primary',
     variant === 'ghost-foreground' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground hover:text-foreground',
-    variant.includes('text') && 'p-0! min-h-0!',
-    variant === 'text-primary' &&
-      'text-primary hover:text-primary-hover [&>svg]:hover:text-primary-hover',
-    variant === 'text-foreground' &&
-      'text-foreground hover:text-primary [&>svg]:hover:text-primary',
-    variant === 'text-muted' &&
-      'text-muted-foreground hover:text-foreground [&>svg]:hover:text-foreground',
+    variant.includes('text') &&
+      "p-0! min-h-0! in-data-[theme=wireframe]:after:pointer-events-none in-data-[theme=wireframe]:after:absolute in-data-[theme=wireframe]:after:inset-x-0 in-data-[theme=wireframe]:after:-bottom-1 in-data-[theme=wireframe]:after:h-2 in-data-[theme=wireframe]:after:bg-current in-data-[theme=wireframe]:after:opacity-0 in-data-[theme=wireframe]:after:[mask-image:var(--sketch-hr-line)] in-data-[theme=wireframe]:after:[mask-size:100%_100%] in-data-[theme=wireframe]:after:motion-safe:transition-opacity in-data-[theme=wireframe]:after:content-[''] in-data-[theme=wireframe]:hover:after:opacity-100",
+    variant === 'text-primary' && 'text-primary hover:text-primary-hover',
+    variant === 'text-foreground' && 'text-foreground hover:text-primary',
+    variant === 'text-muted' && 'text-muted-foreground hover:text-foreground',
     variant.includes('link') && 'underline p-0! min-h-0!',
     variant === 'link-muted' && 'text-muted-foreground hover:text-foreground',
     variant === 'link-foreground' && 'text-foreground hover:text-primary',

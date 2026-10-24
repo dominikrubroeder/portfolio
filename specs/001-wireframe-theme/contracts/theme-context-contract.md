@@ -43,4 +43,4 @@ Existing `useTheme()` members stay. Changes:
 - `SelectOption` (`ui/select`) gains optional `description?: string`, shown under the label in the option row.
 - No new `<html>` attribute: the Wireframe font and the monochrome images are keyed on `data-theme='wireframe'`.
 - CSS interface additions (`globals.css`): font role tokens `--font-role-heading`, `--font-role-body` (Outfit on `:root`,
-  Patrick Hand under Wireframe); one rule `html[data-theme='wireframe'] :is(img, svg) { filter: grayscale(1) }` (no marker class).
+  Patrick Hand under Wireframe); one rule `html[data-theme='wireframe']:not([data-theme-color]:not([data-theme-color='foreground'])) :is(img, svg) { filter: grayscale(1) }`, grayscale only with the neutral accent (no marker class).

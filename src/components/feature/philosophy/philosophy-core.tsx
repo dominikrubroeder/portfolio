@@ -119,21 +119,32 @@ function Petal({
     return () => controls.forEach((control) => control.stop());
   }, [isInView, reducedMotion, animationsEnabled, step, x, y, scale, opacity]);
 
+  const motionStyle = { x, y, scale, opacity };
+  const animationsOff =
+    'in-data-[theme-animations=off]:transform-none! in-data-[theme-animations=off]:opacity-100!';
+
   return (
-    <motion.div
-      ref={ref}
-      style={{ x, y, scale, opacity }}
-      className={cn(
-        'relative in-data-[theme-animations=off]:transform-none! in-data-[theme-animations=off]:opacity-100!',
-        'in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)!',
-        "in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-px in-data-[theme=wireframe]:before:-rotate-2 in-data-[theme=wireframe]:before:rounded-(--sketch-blob-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-['']",
-        className
-      )}
-    >
-      <span className="in-data-[theme=wireframe]:rounded-(--sketch-button-radius) in-data-[theme=wireframe]:bg-background in-data-[theme=wireframe]:px-1.5">
+    <div ref={ref} className={cn('relative', className)}>
+      <motion.div
+        aria-hidden
+        style={motionStyle}
+        className={cn(
+          'absolute inset-0 rounded-full bg-primary/10',
+          animationsOff,
+          'in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)!',
+          "in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-px in-data-[theme=wireframe]:before:-rotate-2 in-data-[theme=wireframe]:before:rounded-(--sketch-blob-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-['']"
+        )}
+      />
+      <motion.span
+        style={motionStyle}
+        className={cn(
+          'relative z-10 in-data-[theme=wireframe]:rounded-(--sketch-button-radius) in-data-[theme=wireframe]:bg-[color-mix(in_oklab,var(--primary)_10%,var(--background))] in-data-[theme=wireframe]:px-1.5',
+          animationsOff
+        )}
+      >
         {children}
-      </span>
-    </motion.div>
+      </motion.span>
+    </div>
   );
 }
 
@@ -161,20 +172,20 @@ export function PhilosophyCore() {
                 <div className="flex">
                   <Petal
                     step={0}
-                    className="flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
+                    className="flex size-44 cursor-pointer items-center justify-center text-foreground transition-colors"
                   >
                     {philosophyCoreTabLabels[0]}
                   </Petal>
                   <Petal
                     step={1}
-                    className="-ml-10 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
+                    className="-ml-10 flex size-44 cursor-pointer items-center justify-center text-foreground transition-colors"
                   >
                     {philosophyCoreTabLabels[1]}
                   </Petal>
                 </div>
                 <Petal
                   step={2}
-                  className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
+                  className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center text-foreground transition-colors"
                 >
                   {philosophyCoreTabLabels[2]}
                 </Petal>
@@ -198,7 +209,7 @@ export function PhilosophyCore() {
                         key={label}
                         step={step}
                         className={cn(
-                          'absolute flex size-44 -translate-1/2 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors',
+                          'absolute -m-22 flex size-44 cursor-pointer items-center justify-center text-foreground transition-colors',
                           position,
                           className
                         )}

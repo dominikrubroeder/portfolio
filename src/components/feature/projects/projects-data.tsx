@@ -75,7 +75,7 @@ export const projects: Project[] = [
     role: ['Frontend Developer'],
     responsibilities: [
       'Consult in designing a 3D configurator in Figma',
-      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and React Instant Search'
+      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and the React Instant Search'
     ],
     tools: getTools({
       names: [
@@ -173,7 +173,7 @@ export const projects: Project[] = [
     role: ['Frontend Designer', 'Frontend Developer'],
     responsibilities: [
       'Build the UI in Figma',
-      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and React Instant Search'
+      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and the React Instant Search'
     ],
     tools: getTools({
       names: [
@@ -212,7 +212,8 @@ export const projects: Project[] = [
     title: 'Segmüller',
     category: ['Ecommerce', 'B2C'],
     url: 'https://www.segmueller.de',
-    description: 'Well-known home furniture store in Augsburg (Germany)',
+    description:
+      'Well-known home and living furniture store in Augsburg (Germany)',
     isCurrent: false,
     isActive: false,
     timeframe: '2021 – 2023',

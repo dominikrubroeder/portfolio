@@ -26,7 +26,7 @@ export const homePrinciples = [
   'Design in context — of the environment, of the people, of the brand',
   'Design in system — streamline processes, principles, components as close as possible for one ecosystem',
   "Design problem-focused — know the problem you're solving, it is the root problem to be solved, not its symptoms",
-  'Design business-aware — cover business cases the company and its users are about, to root your design in a economically supported background',
+  'Design business-aware — cover business cases the company and its users are about, to root your design in an economically supported background',
   'Design sustainable — make maintainable systems that can be upgraded, updated, expanded and are documented',
   'Design the experience — make it enjoyable, with a satisfying, pleasurable ease of use, think about the product as a holistic whole'
 ];
