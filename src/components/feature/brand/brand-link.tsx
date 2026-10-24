@@ -1,0 +1,81 @@
+import { ArrowRightIcon } from '@heroicons/react/16/solid';
+
+import { Button } from '@/components/ui/button';
+
+import { BrandLogo } from '@/components/feature/brand';
+import type { Brand } from '@/components/feature/brand';
+
+import { cn } from '@/lib/utils';
+
+export function BrandLink({
+  brandLogoId,
+  brand,
+  size = 'medium',
+  showLabel,
+  labelPosition = 'top',
+  href,
+  label,
+  className
+}: {
+  brandLogoId: string;
+  brand: Brand;
+  size?: 'small' | 'medium';
+  showLabel?: boolean;
+  labelPosition?: 'top' | 'bottom' | 'left' | 'right';
+  href?: string;
+  /** Tooltip and accessible name when no visible label is shown. */
+  label?: string;
+  className?: string;
+}) {
+  return (
+    <Button
+      variant="ghost-foreground"
+      href={href || brand.href}
+      iconOnly={!showLabel}
+      label={label || `Open ${brand.name} website`}
+      className={cn(
+        'group relative [&>img]:block [&>img]:will-change-transform [&>svg]:block [&>svg]:will-change-transform',
+        size === 'small' && 'h-11 w-11 p-1 [&>img]:size-6 [&>svg]:size-6',
+        size === 'medium' && 'h-17 w-18 p-2 [&>img]:size-11 [&>svg]:size-11',
+        showLabel &&
+          (labelPosition === 'top' || labelPosition === 'bottom') &&
+          'grid items-center justify-center text-center [&>img]:mx-auto [&>svg]:mx-auto',
+        showLabel &&
+          (labelPosition === 'left' || labelPosition === 'right') &&
+          'flex items-center',
+        showLabel && 'gap-3',
+        className
+      )}
+      hideExternalIndicator
+    >
+      {!!brand.logo ? (
+        brand.logo
+      ) : (
+        <BrandLogo
+          id={brandLogoId}
+          brand={brand.name}
+          className="mx-auto flex"
+        />
+      )}
+
+      <div
+        className={cn(
+          'absolute flex -rotate-45 items-center justify-center rounded-full bg-primary text-primary-foreground opacity-0 group-hover:opacity-100',
+          size === 'small' && '-top-1 -right-1 size-4 [&>svg]:size-3',
+          size === 'medium' && '-top-1.5 -right-1.5 size-5 [&>svg]:size-3'
+        )}
+      >
+        <ArrowRightIcon />
+      </div>
+
+      <span
+        className={cn(
+          'absolute -bottom-5 left-1/2 w-max -translate-x-1/2 text-sm font-semibold text-foreground group-hover:text-foreground',
+          !showLabel && 'sr-only'
+        )}
+      >
+        {brand.name}
+      </span>
+    </Button>
+  );
+}

@@ -10,7 +10,7 @@ export const jsonLd = {
       url: ROUTING_PUBLIC_DOMAIN,
       name: 'Dominik Rubröder, UX Design Engineer',
       description:
-        'Portfolio of Dominik Rubröder, a design engineer specialized in interface and design systems.',
+        'Design and code speak the same language. Portfolio of Dominik Rubröder, a design engineer specialized in interfaces and design systems.',
       author: {
         '@id': `${ROUTING_PUBLIC_DOMAIN}/#person`
       }

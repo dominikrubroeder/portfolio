@@ -1,0 +1,376 @@
+import {
+  LogoAllesAuto,
+  LogoHdPlus,
+  LogoMediawave,
+  LogoSautershop,
+  LogoSegmueller
+} from '@/components/feature/logo';
+import { getTechnologies } from '@/components/feature/technologies';
+import { getTools } from '@/components/feature/tools';
+
+import previewHdPlus from '@/public/projects/project-hd-plus-preview-wallpaper.png';
+import previewLocaboo from '@/public/projects/project-locaboo-preview-wallpaper.png';
+import previewSautershop from '@/public/projects/project-sautershop-preview-wallpaper.png';
+import previewSegmueller from '@/public/projects/project-segmueller-preview-wallpaper.png';
+import previewUvex from '@/public/projects/project-uvex-preview-wallpaper.png';
+import previewValueBooster from '@/public/projects/project-value-booster-preview-wallpaper.png';
+import previewVariasophia from '@/public/projects/project-variasophia-preview-wallpaper.png';
+import previewWelleat from '@/public/projects/project-welleat-preview-wallpaper.png';
+
+import type { Project } from './projects-types';
+
+export const projects: Project[] = [
+  {
+    title: 'Uvex',
+    category: ['Headless', 'B2C', 'Ecommerce'],
+    url: 'https://www.uvex-group.com/de/',
+    isCurrent: false,
+    isActive: false,
+    description:
+      '"Protecting People" – The mission of the Uvex brand with its vision and products',
+    timeframe: '2025 – May 2026',
+    logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
+    role: ['Design Engineer'],
+    responsibilities: [
+      'Plan and implement a new CMS component system in Storyblok'
+    ],
+    tools: getTools({
+      names: [
+        'Figma',
+        'WebStorm',
+        'Adobe Commerce',
+        'Storyblok',
+        'Storybook',
+        'FactFinder',
+        'Jira',
+        'Slack',
+        'Teams',
+        'GitLab',
+        'GitLab'
+      ],
+      sortBy: 'A-Z'
+    }),
+    technologies: getTechnologies({
+      names: ['React', 'TypeScript']
+    }),
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+    demoUrls: undefined,
+    previewImage: previewUvex,
+    previewImageTimestamp: '2026-02-27'
+  },
+  {
+    title: 'sautershop',
+    category: ['Headless', 'B2C', 'Ecommerce'],
+    url: 'https://www.sautershop.de',
+    isCurrent: false,
+    isActive: false,
+    description: 'Quality woodworking tools and accessorizes for DIY projects',
+    timeframe: '2024 – Feb. 2026',
+    logo: <LogoSautershop id="projects-sautershop" className="h-12 w-auto" />,
+    role: ['Frontend Developer'],
+    responsibilities: [
+      'Consult in designing a 3D configurator in Figma',
+      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and the React Instant Search'
+    ],
+    tools: getTools({
+      names: [
+        'Figma',
+        'WebStorm',
+        'Shopware',
+        'Storyblok',
+        'Algolia',
+        'Auth.js',
+        'Jira',
+        'Slack',
+        'Teams',
+        'GitLab',
+        'Motion',
+        'GitLab'
+      ],
+      sortBy: 'A-Z'
+    }),
+    technologies: getTechnologies({
+      names: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
+    }),
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+
+    demoUrls: undefined,
+    previewImage: previewSautershop,
+    previewImageTimestamp: '2026-01-06'
+  },
+  {
+    title: 'Value Booster',
+    category: ['Headless', 'B2B', 'B2C', 'Ecommerce'],
+    url: 'https://www.mediawave.de/accelerators',
+    description:
+      'Kickstart in your headless ecommerce experience with the mediawave Value Booster',
+    isCurrent: true,
+    isActive: true,
+    timeframe: '2024',
+    logo: <LogoMediawave id="projects-mediawave" className="h-12 w-auto" />,
+    role: ['Frontend Designer', 'Frontend Developer', 'Design Consultant'],
+    responsibilities: [
+      'Create and maintain the CMS component system in Storyblok',
+      'Create and maintain the design system in Figma',
+      'Make feature concepts and UI prototypes for project pitches',
+      'Participate in project pitches and communicate design decisions',
+      'Build the headless frontend in Next.js',
+      'Create page templates: Home Page, Category Page, Product Page, Cart Page, Checkout Page, Account Page',
+      'Compose the frontend libraries and its dependencies'
+    ],
+    tools: getTools({
+      names: [
+        'Figma',
+        'WebStorm',
+        'Junie',
+        'Shopware',
+        'Storyblok',
+        'meilisearch',
+        'Auth.js',
+        'Jira',
+        'Slack',
+        'Teams',
+        'GitLab',
+        'Motion',
+        'GitLab'
+      ],
+      sortBy: 'A-Z'
+    }),
+    technologies: getTechnologies({
+      names: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
+    }),
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+
+    demoUrls: undefined,
+    previewImage: previewValueBooster,
+    previewImageTimestamp: '2026-09-16'
+  },
+  {
+    title: 'HD+',
+    category: ['Headless', 'B2C', 'Ecommerce'],
+    url: 'https://www.hd-plus.de',
+    description:
+      'Watch television in HD — via satellite or internet (IP), on your TV and smartphone',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2023 – 2024',
+    logo: <LogoHdPlus id="projects-hd-plus" className="h-12 w-auto" />,
+    role: ['Frontend Designer', 'Frontend Developer'],
+    responsibilities: [
+      'Build the UI in Figma',
+      'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and the React Instant Search'
+    ],
+    tools: getTools({
+      names: [
+        'Figma',
+        'WebStorm',
+        'Shopware',
+        'Storyblok',
+        'Algolia',
+        'Auth.js',
+        'Jira',
+        'Slack',
+        'Teams',
+        'GitLab',
+        'Motion',
+        'GitLab'
+      ],
+      sortBy: 'A-Z'
+    }),
+    technologies: getTechnologies({
+      names: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS']
+    }),
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+
+    demoUrls: [
+      { label: 'https://www.hd-plus.de', src: 'https://www.hd-plus.de' }
+    ],
+    previewImage: previewHdPlus,
+    previewImageTimestamp: '2026-01-06'
+  },
+  {
+    title: 'Segmüller',
+    category: ['Ecommerce', 'B2C'],
+    url: 'https://www.segmueller.de',
+    description:
+      'Well-known home and living furniture store in Augsburg (Germany)',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2021 – 2023',
+    logo: <LogoSegmueller id="projects-segmueller" className="h-12 w-auto" />,
+    role: ['Frontend Developer'],
+    responsibilities: ['Build frontend features in Twig and SCSS'],
+    tools: getTools({
+      names: [
+        'Storyblok',
+        'VS Code',
+        'Inkdrop',
+        'Jira',
+        'Teams',
+        'Slack',
+        'Figma',
+        'GitLab'
+      ],
+      sortBy: 'A-Z'
+    }),
+    technologies: getTechnologies({
+      names: ['Twig', 'HTML', 'CSS', 'JavaScript', 'Sass']
+    }),
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+    demoUrls: [
+      {
+        label: 'https://www.segmueller.de',
+        src: 'https://www.segmueller.de'
+      }
+    ],
+    previewImage: previewSegmueller,
+    previewImageTimestamp: '2026-01-06'
+  },
+  {
+    title: 'alles.auto Service Portal',
+    category: ['B2B'],
+    url: 'https://www.alles.auto',
+    description: 'Car service platform',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2021',
+    logo: (
+      <LogoAllesAuto id="projects-alles-auto" className="h-6 w-auto sm:h-12" />
+    ),
+    role: ['Frontend Developer'],
+    responsibilities: ['Build frontend features in React'],
+    tools: getTools({
+      names: [
+        'VS Code',
+        'Inkdrop',
+        'Jira',
+        'Teams',
+        'Slack',
+        'Figma',
+        'GitLab'
+      ],
+      sortBy: 'A-Z'
+    }),
+    technologies: getTechnologies({
+      names: ['React', 'CSS', 'Sass']
+    }),
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+    demoUrls: [
+      { label: 'https://www.alles.auto', src: 'https://www.alles.auto' }
+    ]
+  },
+  {
+    title: 'Locaboo',
+    category: ['App', 'B2C'],
+    url: 'https://www.locaboo.com',
+    description: 'Location booking platform for cities and municipalities',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2016 – 2021',
+    logo: undefined,
+    role: ['Frontend Developer'],
+    responsibilities: [
+      'Create print media and resources for the Locaboo brand in Adobe Illustrator, Adobe Photoshop and Adobe InDesign',
+      'Work with the CMS Contenido'
+    ],
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.loy.info',
+        label: 'Loy GmbH'
+      }
+    ],
+    demoUrls: [],
+    previewImage: previewLocaboo,
+    previewImageTimestamp: '2026-01-06'
+  },
+  {
+    title: 'Welleat',
+    category: ['Ecommerce', 'B2C'],
+    url: 'https://www.welleat.de',
+    description: 'Healthy food supplements',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2018 – 2019',
+    logo: undefined,
+    role: ['Frontend Developer'],
+    responsibilities: [
+      'Build the UI in Adobe XD and Photoshop',
+      'Build the frontend in Twig and SCSS with Shopware 5'
+    ],
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.loy.info',
+        label: 'Loy GmbH'
+      }
+    ],
+    demoUrls: [],
+    previewImage: previewWelleat,
+    previewImageTimestamp: '2026-04-11'
+  },
+  {
+    title: 'Variasophia',
+    category: ['Ecommerce', 'B2C'],
+    url: 'https://variasophia.de',
+    description: 'Traditional Bavarian folk costumes',
+    isCurrent: false,
+    isActive: false,
+    timeframe: '2017',
+    logo: undefined,
+    role: ['Frontend Developer'],
+    responsibilities: [
+      {
+        text: 'Design a "Dirndl" configurator',
+        link: {
+          label: 'Dirndl',
+          href: 'https://variasophia.de/dirndl-karussell'
+        }
+      },
+      'Build the UI in Twig and SCSS with Shopware 5'
+    ],
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.loy.info',
+        label: 'Loy GmbH'
+      }
+    ],
+    demoUrls: [],
+    previewImage: previewVariasophia,
+    previewImageTimestamp: '2026-04-11'
+  }
+];

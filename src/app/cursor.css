@@ -1,0 +1,80 @@
+/* ============================================
+   Cursor
+   The pointer is an accent-colored dot with a background-colored ring and an accent outer ring. Each state changes
+   the silhouette, not just the color. Images come from cursor-tokens.css
+   (generated: `npm run cursors`). Rules are unlayered on purpose: they must beat
+   Tailwind's `cursor-*` utilities. Specificity stays near zero, so order decides.
+   ============================================ */
+
+@import './cursor-tokens.css';
+
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+  /* Opt out with data-theme-cursor='system' on <html>. */
+  :where(:root:not([data-theme-cursor='system'])) {
+    cursor: var(--cursor-default);
+
+    /* Clickable: the dot grows. */
+    :where(
+      a[href],
+      button,
+      summary,
+      select,
+      label[for],
+      [role='button'],
+      [role='tab'],
+      [role='menuitem'],
+      [role='option'],
+      input:is(
+        [type='checkbox'],
+        [type='radio'],
+        [type='range'],
+        [type='submit'],
+        [type='button']
+      ),
+      .interactive,
+      .cursor-pointer
+    ) {
+      cursor: var(--cursor-pointer);
+    }
+
+    :where(input, textarea, [contenteditable='true'], .cursor-text) {
+      cursor: var(--cursor-text);
+    }
+
+    :where(.cursor-zoom-in) {
+      cursor: var(--cursor-zoom-in);
+    }
+
+    :where(.cursor-zoom-out) {
+      cursor: var(--cursor-zoom-out);
+    }
+
+    :where(.cursor-grab) {
+      cursor: var(--cursor-grab);
+    }
+
+    :where(.cursor-progress, .cursor-wait) {
+      cursor: var(--cursor-busy);
+    }
+
+    /* Pressed: the dot shrinks. */
+    :active {
+      cursor: var(--cursor-pressed);
+    }
+
+    /* Not available: the dot becomes a faded, barred rounded rectangle. */
+    :is(
+      :disabled,
+      [aria-disabled='true'],
+      [data-disabled],
+      .cursor-not-allowed
+    ) {
+      cursor: var(--cursor-disabled);
+    }
+
+    .cursor-grab:active,
+    .cursor-grabbing {
+      cursor: var(--cursor-grabbing);
+    }
+  }
+}

@@ -1,27 +1,26 @@
+import { Animate } from '@/components/ui/animate';
+import { Blockquote } from '@/components/ui/blockquote';
+import { Container } from '@/components/ui/container';
+import { DotsDivider } from '@/components/ui/dots-divider';
+import { ScrollToTop } from '@/components/ui/scroll-to-top';
+
+import { BrandList } from '@/components/feature/brand';
 import {
   EVENTS_WINTER_SCENE_ENABLED,
   Snowfall
-} from '@/components/organisms/events';
-import { ThemeNotesBackgroundCornellNotes } from '@/components/organisms/theme';
-import { Container } from '@/components/organisms/layout';
-import { ButtonGroup } from '@/components/molecules/button-group';
+} from '@/components/feature/events';
 import {
-  Button,
-  ButtonFigma,
-  ButtonGithub,
-  ButtonLinkedin
-} from '@/components/atoms/button';
-import { ArrowRightIcon } from '@heroicons/react/16/solid';
-import { Blockquote } from '@/components/atoms/blockquote';
-import { H2 } from '@/components/organisms/typography';
-import { BrandList } from '@/components/organisms/brand';
-import { mainTools } from '@/components/organisms/tools';
-import { mainTechnologies } from '@/components/organisms/technologies';
-import { DrawerTools } from '@/components/molecules/drawer/drawer-tools';
-import { Animate } from '@/components/molecules/animate';
-import { DrawerTechnologies } from '@/components/molecules/drawer/drawer-technologies';
-import { Divider } from '@/components/atoms/divider';
-import { ScrollToTop } from '@/components/atoms/scroll-to-top';
+  homeHeading,
+  homeIntro,
+  homePrinciples,
+  homeStatements
+} from '@/components/feature/home';
+import { PhilosophyCore } from '@/components/feature/philosophy';
+import { mainTechnologies } from '@/components/feature/technologies';
+import { DrawerTechnologies } from '@/components/feature/technologies';
+import { mainTools } from '@/components/feature/tools';
+import { DrawerTools } from '@/components/feature/tools';
+import { H2, Ol } from '@/components/feature/typography';
 
 export const instant = false;
 
@@ -32,68 +31,131 @@ export default async function HomePage() {
 
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
 
-      <ThemeNotesBackgroundCornellNotes />
+      <h1 className="sr-only">{homeHeading}</h1>
 
-      <Animate direction="up" delay={0.16}>
-        <Container className="space-y-3">
-          <h1>Hands-on: User Interfaces for the Web</h1>
+      <DotsDivider dots={1} delay={-250} className="mt-0 mb-6">
+        <div className="hidden text-muted-foreground peer-hover:block">
+          Hovering ...
+        </div>
+      </DotsDivider>
 
-          <div className="text-foreground">
-            <Blockquote className="mt-0 mb-3">
-              <p>
-                I'm a multi-discipline interface engineer, driven by design and
-                component systems and their user experience.
-              </p>
-            </Blockquote>
+      <Animate delay={0.16}>
+        <Container as="section">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {homeStatements[0]}
+          </div>
+        </Container>
+      </Animate>
 
-            <p>
-              Together with today's tools and technologies we build
-              user/business-need orientated and scalable user interfaces.
-            </p>
+      <DotsDivider />
 
-            <p>
-              The user experience is the leading factor how well a UI is
-              perceived and consumed by the user. It is the winning factor of
-              how satisfied users are interacting with (digital) products and
-              services.
-            </p>
+      <Animate delay={0.32}>
+        <Container as="section">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {homeStatements[1]}
+          </div>
+        </Container>
+      </Animate>
+
+      <DotsDivider />
+
+      <Animate delay={0.44}>
+        <Container as="section">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {homeStatements[2]}
+          </div>
+        </Container>
+      </Animate>
+
+      <DotsDivider />
+
+      <Animate>
+        <Container as="section">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {homeStatements[3]}
+          </div>
+        </Container>
+      </Animate>
+
+      <DotsDivider />
+
+      <Animate>
+        <Container as="section">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {homeStatements[4]}
+          </div>
+        </Container>
+      </Animate>
+
+      <DotsDivider />
+
+      <Animate>
+        <Container as="section">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {homeStatements[5]}
+          </div>
+        </Container>
+      </Animate>
+
+      <DotsDivider />
+
+      <Animate>
+        <Container as="section">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {homeStatements[6]}
+          </div>
+        </Container>
+      </Animate>
+
+      <DotsDivider />
+
+      <Animate className="bg-primary text-primary-foreground">
+        <Container as="section">
+          <div className="mb-0 py-8 text-statement leading-[1.1] font-semibold text-balance text-primary-foreground">
+            {homeStatements[7]}
+          </div>
+        </Container>
+      </Animate>
+
+      <DotsDivider />
+
+      <Animate>
+        <Container as="section">
+          <div className="mb-5 text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {homeStatements[8]}
           </div>
 
-          <ButtonGroup stretchButtons>
-            <Button
-              href="/projects"
-              className="bg-primary text-primary-foreground"
-            >
-              Projects
-              <ArrowRightIcon />
-            </Button>
-
-            <div className="flex">
-              <ButtonFigma id="hero-figma" className="hidden" />
-              <ButtonGithub id="header-github" />
-              <ButtonLinkedin id="header-linkedin" />
-            </div>
-          </ButtonGroup>
+          <PhilosophyCore />
         </Container>
       </Animate>
 
-      <Animate
-        direction="up"
-        className="mb-0"
-        viewport={{ once: true, margin: '-16px' }}
-      >
+      <DotsDivider animate={false} alignment="horizontal" />
+
+      <Animate>
+        <Container className="space-y-3">
+          <Blockquote className="mt-0 mb-3">{homeIntro.quote}</Blockquote>
+
+          {homeIntro.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+
+          <p>{homeIntro.signature}</p>
+        </Container>
+      </Animate>
+
+      <Animate>
         <Container as="section">
-          <Divider variant="three-dotted" />
-          <span className="block h-2" />
-          <h3 className="text-4xl leading-[1.1] text-balance xs:text-5xl sm:text-7xl">
-            I connect the worlds of design and code
-          </h3>
-          <span className="block h-2" />
-          <Divider variant="three-dotted" />
+          <h2>Principles</h2>
+
+          <Ol>
+            {homePrinciples.map((principle) => (
+              <li key={principle}>{principle}</li>
+            ))}
+          </Ol>
         </Container>
       </Animate>
 
-      <Animate direction="up">
+      <Animate>
         <Container as="section">
           <H2 className="flex items-center justify-between gap-4">
             Main tools <DrawerTools />
@@ -102,7 +164,7 @@ export default async function HomePage() {
         </Container>
       </Animate>
 
-      <Animate direction="up" delay={0.44}>
+      <Animate>
         <Container as="section">
           <H2 className="flex items-center justify-between gap-4">
             Main technologies <DrawerTechnologies />

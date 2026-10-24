@@ -1,33 +1,30 @@
 import './globals.css';
-import { ReactNode, Suspense } from 'react';
+import './cursor.css';
+import type { ReactNode } from 'react';
+import { Suspense } from 'react';
 
-import { Geist, JetBrains_Mono, Outfit } from 'next/font/google';
+import type { Metadata } from 'next';
+
+import { Outfit, Patrick_Hand } from 'next/font/google';
 
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import { Footer } from '@/components/organisms/footer';
-import { Header } from '@/components/organisms/header';
+import { ScrollToTop } from '@/components/ui/scroll-to-top';
+
+import { Footer } from '@/components/feature/footer';
+import { Header } from '@/components/feature/header';
+import { IntroProvider } from '@/components/feature/intro';
+import { PageFrame } from '@/components/feature/page-frame';
+import { PageNavigationBar } from '@/components/feature/page-navigation-bar';
 import {
   themeInitializationScript,
   ThemeProvider
-} from '@/components/organisms/theme';
+} from '@/components/feature/theme';
 
-import type { Metadata } from 'next';
-import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
-import { ScrollToTop } from '@/components/atoms/scroll-to-top';
+import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
 import { cn } from '@/lib/utils';
-import { SvgShapes } from '@/components/atoms/svg';
-import { IntroProvider } from '@/components/molecules/intro-context';
-
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-jetbrains-mono'
-});
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -35,15 +32,24 @@ const outfit = Outfit({
   variable: '--font-outfit'
 });
 
+const patrickHand = Patrick_Hand({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-patrick-hand'
+});
+
 export const metadata: Metadata = {
   title:
-    'Hands-on: User Interfaces for the Web | Dominik Rubröder, UX Engineer',
-  description: 'I connect the worlds of design and code',
+    'Design and code speak the same language | Dominik Rubröder, UX Engineer',
+  description:
+    'Design and code speak the same language. I connect the worlds of design and code as a UX Engineer.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
     title:
-      'Hands-on: User Interfaces for the Web | Dominik Rubröder, UX Engineer',
-    description: 'I connect the worlds of design and code',
+      'Design and code speak the same language | Dominik Rubröder, UX Engineer',
+    description:
+      'Design and code speak the same language. I connect the worlds of design and code as a UX Engineer.',
     url: ROUTING_PUBLIC_DOMAIN,
     siteName: ROUTING_PUBLIC_DOMAIN.replace('https://www.', ''),
     images: [
@@ -66,17 +72,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html
       lang="en"
       className={cn(
-        'scroll-smooth',
-        'bg-background',
-        jetbrainsMono.variable,
+        'scroll-smooth bg-background',
         outfit.variable,
-        'font-sans',
-        geist.variable
+        patrickHand.variable
       )}
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-background text-base leading-[1.6] font-normal text-muted-foreground selection:bg-primary selection:text-primary-foreground">
+      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-background font-body text-base leading-normal font-normal selection:bg-primary selection:text-primary-foreground">
         <ThemeProvider>
           <script
             id="theme-initializer"
@@ -88,17 +91,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           />
 
           <IntroProvider>
-            <SvgShapes className="pointer-events-none absolute top-0 right-0 left-0 z-10 hidden lg:block" />
-
             <Header />
 
-            <main className="flex-1 space-y-8 pt-4 sm:space-y-12">
+            <main className="relative flex-1 space-y-8 pt-8 sm:space-y-12">
+              <PageFrame className="fixed inset-0 z-50" />
+
               <Suspense>
                 <ScrollToTop />
               </Suspense>
 
               {children}
             </main>
+
+            <PageNavigationBar />
 
             <Footer />
           </IntroProvider>

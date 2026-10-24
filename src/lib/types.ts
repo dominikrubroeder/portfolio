@@ -29,8 +29,6 @@ export type SortAlphabeticallyProp = 'A-Z' | 'Z-A';
 
 export type SortByProgressProp = 'progress-100-0' | 'progress-100-0-A-Z';
 
-export type SortByType = 'type-A-Z';
-
 export type SortByStateProp =
   | 'is-active-first'
   | 'is-active-last'
@@ -55,4 +53,5 @@ export type ColorProp =
   | ColorReducedProp
   | ColorIntentionProp
   | 'primary-foreground'
+  | 'white'
   | 'current';

@@ -1,138 +1,222 @@
-import type { Metadata } from 'next';
-import { getProject } from '@/components/organisms/projects';
-import { projects } from '@/components/organisms/projects/data';
-import { PageTemplate } from '@/components/templates/page-template';
-import { Hr } from '@/components/atoms/hr';
-import { Container } from '@/components/organisms/layout';
-import { H2, Ul } from '@/components/organisms/typography';
 import { Fragment } from 'react';
+
+import type { Metadata } from 'next';
+
+import Image, { getImageProps } from 'next/image';
 import Link from 'next/link';
-import Image from 'next/image';
-import { ExternalLink } from '@/components/atoms/external-link';
-import { Badge } from '@/components/atoms/badge';
-import { Button } from '@/components/atoms/button';
-import { Divider } from '@/components/atoms/divider';
-import { Animate } from '@/components/molecules/animate';
-import { Avatar } from '@/components/atoms/avatar';
-import { ButtonBack } from '@/components/atoms/button/button-back';
+
+import { preload } from 'react-dom';
+
+import { Animate } from '@/components/ui/animate';
+import { Badge } from '@/components/ui/badge';
+import { Blockquote } from '@/components/ui/blockquote';
+import { Button } from '@/components/ui/button';
+import { Container } from '@/components/ui/container';
+import { Divider } from '@/components/ui/divider';
+import { DotsDivider } from '@/components/ui/dots-divider';
+import { ExternalLink } from '@/components/ui/external-link';
+import { Hr } from '@/components/ui/hr';
+import { PageTemplate } from '@/components/ui/page-template';
+
+import {
+  getProject,
+  getResponsibilityText,
+  HERO_PROJECT_TITLE,
+  ProjectResponsibilityText,
+  projects,
+  projectsHeroBlockquote,
+  projectsHeroHighlight
+} from '@/components/feature/projects';
+import { H2, Ul } from '@/components/feature/typography';
 
 export const instant = false;
 
 export const metadata: Metadata = {
   title: 'Projects | Dominik Rubröder, UX Engineer',
-  description: 'Project contributions from 2016 to 2026'
+  description: 'My project contributions from 2016 to 2026'
 };
 
+// Number of list images (after the hero) preloaded in the server HTML.
+// The rest load lazily, so the 3-6 MB wallpapers do not compete with the hero.
+const PRELOADED_LIST_IMAGES = 1;
+
+// The images render inside client reveal wrappers, so `preload` on <Image>
+// emits no <link> in the server HTML. Preload the above-the-fold ones here.
+function preloadProjectImages() {
+  const listProjects = projects.filter(
+    (project) => project.title !== HERO_PROJECT_TITLE && project.previewImage
+  );
+  const heroProject = getProject({ title: HERO_PROJECT_TITLE });
+
+  const targets = [
+    ...(heroProject?.previewImage
+      ? [{ project: heroProject, isHero: true }]
+      : []),
+    ...listProjects
+      .slice(0, PRELOADED_LIST_IMAGES)
+      .map((project) => ({ project, isHero: false }))
+  ];
+
+  for (const { project, isHero } of targets) {
+    if (!project.previewImage) continue;
+
+    const { props } = getImageProps({
+      src: project.previewImage,
+      alt: '',
+      width: isHero ? 1920 : 800,
+      height: isHero ? 630 : 600
+    });
+
+    preload(props.src, {
+      as: 'image',
+      imageSrcSet: props.srcSet,
+      imageSizes: props.sizes,
+      fetchPriority: isHero ? 'high' : 'auto'
+    });
+  }
+}
+
 export default function ProjectsPage() {
-  const heroProject = getProject({ title: 'Value Booster' });
+  preloadProjectImages();
+
+  const heroProject = getProject({ title: HERO_PROJECT_TITLE });
 
   return (
     <PageTemplate
       h1="Projects"
-      heroBlockquote="I contributed as Frontend Designer and Frontend Engineer to the following projects. In the later projects starting around 2021, my role merged into a unified role as UX Engineer for headless frontends."
-      heroDescription={
-        <p>Only projects with a longer period than 3 months are listed.</p>
-      }
+      heroDescription={projectsHeroBlockquote.map((sentence, index) =>
+        sentence === projectsHeroHighlight ? (
+          <Blockquote
+            key={`project-blockquote-sentence-${index}`}
+            className="my-3"
+          >
+            {sentence}
+          </Blockquote>
+        ) : (
+          <p key={`project-blockquote-sentence-${index}`}>{sentence}</p>
+        )
+      )}
     >
-      {heroProject && (
-        <Container
-          as="section"
-          size="container"
-          className="animate-in-to-left-160 space-y-5"
-        >
-          {heroProject.previewImage && (
-            <Link
-              href={heroProject.url}
-              title={`Open ${heroProject.title} in external tab`}
-              aria-label={`Click to open ${heroProject.title} in an external tab`}
-              target="_blank"
-              className="relative block space-y-2 sm:space-y-0"
-            >
-              <Image
-                src={heroProject.previewImage}
-                alt={`${heroProject.title} preview image`}
-                width={1920}
-                height={630}
-                className="max-w-panorama w-full scale-105 sm:scale-100"
-                draggable={false}
-                preload={true}
-              />
-            </Link>
-          )}
+      <DotsDivider />
 
-          <div className="mx-auto max-w-(--container-readable)">
-            <div>
-              <H2 className="sticky-none mb-0">{heroProject.title}</H2>
-              <small className="flex flex-wrap items-center gap-2">
-                <ul className="my-0 -mr-1">
-                  {heroProject.companies?.map((company) => (
-                    <li
-                      key={`Project ${heroProject.title} company ${company.label}`}
-                    >
-                      {company.href ? (
-                        <ExternalLink
-                          href={company.href}
-                          size="sm"
-                          className="mr-0 -ml-1"
-                          color="muted"
-                        >
-                          <span>{company.label}</span>
-                        </ExternalLink>
-                      ) : (
-                        <span>{company.label}</span>
-                      )}
+      {heroProject && (
+        <Animate>
+          <Container
+            as="section"
+            size="full-width"
+            className="z-100 animate-in-to-left-100 space-y-5 bg-primary py-12"
+          >
+            {heroProject.previewImage && (
+              <Link
+                href={heroProject.url}
+                title={`Open ${heroProject.title} in external tab`}
+                aria-label={`Click to open ${heroProject.title} in an external tab`}
+                target="_blank"
+                className="relative mx-auto block max-w-container-panorama space-y-2 sm:space-y-0"
+              >
+                <Image
+                  src={heroProject.previewImage}
+                  alt={`${heroProject.title} preview image`}
+                  width={1920}
+                  height={630}
+                  draggable={false}
+                  placeholder="blur"
+                  preload
+                />
+              </Link>
+            )}
+
+            <Container as="div">
+              <div>
+                <H2 className="sticky-none mb-0 text-primary-foreground">
+                  {heroProject.title}
+                </H2>
+
+                <small className="flex flex-wrap items-center gap-2">
+                  <ul className="my-0 -mr-1">
+                    {heroProject.companies?.map((company) => (
+                      <li
+                        key={`Project ${heroProject.title} company ${company.label}`}
+                      >
+                        {company.href ? (
+                          <ExternalLink
+                            href={company.href}
+                            size="sm"
+                            className="mr-0 -ml-1"
+                            color="primary-foreground"
+                          >
+                            <span>{company.label}</span>
+                          </ExternalLink>
+                        ) : (
+                          <span className="text-primary-foreground">
+                            {company.label}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Divider variant="dot" className="bg-white" />
+
+                  {heroProject.isActive ? (
+                    <span className="text-primary-foreground">
+                      <span className="text-primary-foreground">
+                        {heroProject.timeframe} –{' '}
+                      </span>
+                      <Badge size="sm" variant="white">
+                        Ongoing
+                      </Badge>
+                    </span>
+                  ) : (
+                    <span className="text-primary-foreground">
+                      {heroProject.timeframe}
+                    </span>
+                  )}
+                </small>
+              </div>
+
+              {heroProject.description && (
+                <p className="mt-2 text-primary-foreground">
+                  {heroProject.description}
+                </p>
+              )}
+
+              <p className="mt-2">{heroProject.subline}</p>
+
+              <Hr className="my-3 w-4 border-primary-foreground/16 text-primary-foreground" />
+
+              {heroProject.responsibilities?.length && (
+                <Ul
+                  headline="Fields"
+                  listStyle="disc"
+                  className="text-primary-foreground"
+                  headlineClassName="text-primary-foreground"
+                >
+                  {heroProject.responsibilities.map((aspect) => (
+                    <li key={getResponsibilityText(aspect)}>
+                      <ProjectResponsibilityText responsibility={aspect} />
                     </li>
                   ))}
-                </ul>
+                </Ul>
+              )}
 
-                <Divider variant="dot" />
-
-                {heroProject.isActive ? (
-                  <span>
-                    <span>{heroProject.timeframe} – </span>
-                    <Badge size="sm">Ongoing</Badge>
-                  </span>
-                ) : (
-                  <span>{heroProject.timeframe}</span>
-                )}
-              </small>
-            </div>
-
-            {heroProject.description && (
-              <p className="mt-2">{heroProject.description}</p>
-            )}
-
-            <p className="mt-2">{heroProject.subline}</p>
-
-            <Hr className="my-3 w-4" />
-
-            {heroProject.responsibilities?.length && (
-              <Ul
-                headline="Responsibilities"
-                listStyle="disc"
-                className="text-foreground"
+              <Button
+                variant="contained-white"
+                href={heroProject.url}
+                title={`View ${heroProject.title}`}
+                aria-label={`Click to view ${heroProject.title} in a new tab`}
               >
-                {heroProject.responsibilities.map((aspect) => (
-                  <li key={aspect}>{aspect}</li>
-                ))}
-              </Ul>
-            )}
-
-            <Button
-              href={heroProject.url}
-              title={`View ${heroProject.title}`}
-              aria-label={`Click to view ${heroProject.title} in a new tab`}
-            >
-              View {heroProject.title}
-            </Button>
-          </div>
-        </Container>
+                View {heroProject.title}
+              </Button>
+            </Container>
+          </Container>
+        </Animate>
       )}
 
-      <Hr variant="container-readable" />
+      <DotsDivider />
 
       <Container as="section">
-        <Ul className="space-y-5 sm:space-y-12">
+        <Ul className="space-y-10 sm:space-y-12">
           {projects
             .filter((project) => project.title !== heroProject?.title)
             .map((project, index, array) => (
@@ -155,7 +239,7 @@ export default function ProjectsPage() {
                             height={600}
                             className="block w-full scale-105"
                             draggable={false}
-                            preload={true}
+                            placeholder="blur"
                           />
                         ) : (
                           <div className="flex h-44 w-full items-center justify-center [&>svg]:max-h-32 [&>svg]:max-w-60">
@@ -205,25 +289,27 @@ export default function ProjectsPage() {
                             </small>
                           </div>
 
-                          <p className="text-muted-foreground">
+                          <p className="text-foreground">
                             {project.description}
                           </p>
 
-                          <p className="text-muted-foreground">
-                            {project.subline}
-                          </p>
+                          <p className="text-foreground">{project.subline}</p>
 
                           <Hr className="my-3 w-4" />
 
                           {project.responsibilities?.length && (
                             <Ul
-                              headline="Responsibilities"
+                              headline="Fields"
                               listStyle="disc"
                               className="text-foreground"
                             >
                               {project.responsibilities.map((aspect) => (
-                                <li key={`${project.title}-${aspect}`}>
-                                  {aspect}
+                                <li
+                                  key={`${project.title}-${getResponsibilityText(aspect)}`}
+                                >
+                                  <ProjectResponsibilityText
+                                    responsibility={aspect}
+                                  />
                                 </li>
                               ))}
                             </Ul>
@@ -244,29 +330,16 @@ export default function ProjectsPage() {
                 </li>
 
                 {index + 1 !== array.length && (
-                  <li key={`${project.title}-divider-${index + 1}`}>
-                    <Hr />
+                  <li
+                    key={`${project.title}-divider-${index + 1}`}
+                    role="separator"
+                  >
+                    <DotsDivider />
                   </li>
                 )}
               </Fragment>
             ))}
         </Ul>
-      </Container>
-
-      <Container className="mb-0">
-        <Hr />
-
-        <ButtonBack
-          buttonProps={{
-            variant: 'ghost-foreground',
-            className: 'xl:-ml-2 gap-4'
-          }}
-        >
-          <div className="flex items-center gap-2">
-            <Avatar width={24} height={24} as="Image" />
-            Home
-          </div>
-        </ButtonBack>
       </Container>
     </PageTemplate>
   );

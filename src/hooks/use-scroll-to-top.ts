@@ -1,10 +1,11 @@
 'use client';
 
 import { useCallback } from 'react';
-import { useTheme } from '@/components/organisms/theme';
+
+import { useThemeSetting } from '@/components/feature/theme';
 
 export const useScrollToTop = () => {
-  const { theme } = useTheme();
+  const { isEnabled } = useThemeSetting('themeAnimationSettings');
 
   const handleScrollToTop = useCallback(
     (options?: ScrollToOptions) => {
@@ -12,11 +13,11 @@ export const useScrollToTop = () => {
         options ?? {
           top: 0,
           left: 0,
-          behavior: theme.key === 'wireframe' ? 'instant' : 'smooth'
+          behavior: isEnabled ? 'smooth' : 'instant'
         }
       );
     },
-    [theme.key]
+    [isEnabled]
   );
 
   return { scrollToTop: handleScrollToTop };
