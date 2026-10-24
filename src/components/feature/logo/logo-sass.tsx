@@ -1,7 +1,8 @@
 import type { LogoProps } from '@/components/feature/logo';
-import { defaultLogoSquareSize } from '@/components/feature/logo/logo-config';
 
 import { cn } from '@/lib/utils';
+
+import { defaultLogoSquareSize } from './logo-config';
 
 export function LogoSass({ id, className }: LogoProps) {
   return (

@@ -46,10 +46,10 @@ export function PageFrame({ id, className }: BaseComponentProps) {
       aria-hidden="true"
     >
       <div className="sketch-frame absolute inset-x-4 top-19 bottom-11 hidden border-2 border-foreground xl:inset-x-12 xl:top-20 xl:bottom-24" />
-      <CropMark className="top-19.5 left-4 xl:top-20 xl:left-12" />
-      <CropMark className="top-19.5 right-4 rotate-90 xl:right-12" />
-      <CropMark className="bottom-11.5 left-4 -rotate-90 xl:bottom-24 xl:left-12" />
-      <CropMark className="right-4 bottom-11.5 rotate-180 xl:right-12 xl:bottom-24" />
+      <CropMark className="top-19.5 left-3 xs:left-4 xl:top-20 xl:left-12" />
+      <CropMark className="top-19.5 right-3 rotate-90 xs:right-4 xl:right-12" />
+      <CropMark className="bottom-11.5 left-3 -rotate-90 xs:left-4 xl:bottom-24 xl:left-12" />
+      <CropMark className="right-3 bottom-11.5 rotate-180 xs:right-4 xl:right-12 xl:bottom-24" />
     </div>
   );
 }

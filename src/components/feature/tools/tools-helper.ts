@@ -1,4 +1,4 @@
-import { tools } from '@/components/feature/tools/tools-data';
+import { tools } from './tools-data';
 
 export function getTools({
   names,

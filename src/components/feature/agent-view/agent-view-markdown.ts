@@ -8,12 +8,13 @@ import {
   homeStatements
 } from '@/components/feature/home';
 // Direct file import: the philosophy barrel exports a client component.
-import { philosophyTabs } from '@/components/feature/philosophy/philosophy-data';
+import { philosophyTabs } from '@/components/feature/philosophy';
 import {
+  getResponsibilityMarkdown,
   HERO_PROJECT_TITLE,
   projectsHeroBlockquote
 } from '@/components/feature/projects';
-import { projects } from '@/components/feature/projects/projects-data';
+import { projects } from '@/components/feature/projects';
 import { socials } from '@/components/feature/socials';
 import {
   mainTechnologies,
@@ -88,7 +89,7 @@ const projectSection = (project: (typeof projects)[number]): string => {
     project.description,
     project.subline,
     project.responsibilities?.length
-      ? `Fields:\n\n${list(project.responsibilities)}`
+      ? `Fields:\n\n${list(project.responsibilities.map(getResponsibilityMarkdown))}`
       : undefined,
     link(`View ${project.title}`, project.url)
   ]

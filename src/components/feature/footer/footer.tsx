@@ -7,8 +7,9 @@ import { ExternalLink } from '@/components/ui/external-link';
 import { IconAtomicDesign, IconAtomicDesignTokens } from '@/components/ui/icon';
 
 import { AgentViewLink } from '@/components/feature/agent-view';
-import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/feature/events/winter/events-constants';
-import { footerCertifications } from '@/components/feature/footer/footer-content';
+import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/feature/events';
+
+import { footerCertifications } from './footer-content';
 
 const CERTIFICATION_ICONS: Record<string, ReactNode> = {
   'Atomic Design': <IconAtomicDesign />,

@@ -1,6 +1,8 @@
 import type { Brand } from '@/components/feature/brand';
-import { getTools } from '@/components/feature/tools/tools-helper';
-import type { Tools } from '@/components/feature/tools/tools-types';
+
+import { getTools } from './tools-helper';
+
+import type { Tools } from './tools-types';
 
 export const tools: Tools = [
   {

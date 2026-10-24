@@ -1,6 +1,6 @@
-import { defaultLogoSquareSize } from '@/components/feature/logo/logo-config';
-
 import { cn } from '@/lib/utils';
+
+import { defaultLogoSquareSize } from './logo-config';
 
 import type { BaseComponentProps } from '@/lib/types';
 

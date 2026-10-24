@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
-import { defaultLogoImageClassName } from '@/components/feature/logo';
 import {
   defaultLogoHeight,
+  defaultLogoImageClassName,
   defaultLogoSquareSize,
   defaultLogoWidth
-} from '@/components/feature/logo/logo-config';
+} from '@/components/feature/logo';
 
 import { cn } from '@/lib/utils';
 

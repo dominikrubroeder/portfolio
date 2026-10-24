@@ -1,10 +1,12 @@
 'use client';
 
-import { defaultLogoSquareSize } from '@/components/feature/logo/logo-config';
-import type { LogoProps } from '@/components/feature/logo/logo-types';
 import { useThemeSetting } from '@/components/feature/theme';
 
 import { cn } from '@/lib/utils';
+
+import { defaultLogoSquareSize } from './logo-config';
+
+import type { LogoProps } from './logo-types';
 
 export function LogoCypress({ id, className }: LogoProps) {
   const themeAppearance = useThemeSetting('themeAppearance');

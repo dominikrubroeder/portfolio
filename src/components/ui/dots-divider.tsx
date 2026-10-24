@@ -3,7 +3,7 @@ import type { CSSProperties, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 const dotBaseClassName =
-  'size-2 shrink-0 rounded-full border-primary bg-primary';
+  'size-2 shrink-0 rounded-full border-primary bg-primary in-data-[theme=wireframe]:-rotate-12 in-data-[theme=wireframe]:rounded-(--sketch-blob-radius) in-data-[theme=wireframe]:border-[1.5px] in-data-[theme=wireframe]:border-foreground';
 
 const dotClassNames = [
   'animate-dot-bounce-0',

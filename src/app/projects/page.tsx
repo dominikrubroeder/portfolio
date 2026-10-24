@@ -9,6 +9,7 @@ import { preload } from 'react-dom';
 
 import { Animate } from '@/components/ui/animate';
 import { Badge } from '@/components/ui/badge';
+import { Blockquote } from '@/components/ui/blockquote';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 import { Divider } from '@/components/ui/divider';
@@ -19,10 +20,13 @@ import { PageTemplate } from '@/components/ui/page-template';
 
 import {
   getProject,
+  getResponsibilityText,
   HERO_PROJECT_TITLE,
-  projectsHeroBlockquote
+  ProjectResponsibilityText,
+  projectsHeroBlockquote,
+  projectsHeroHighlight
 } from '@/components/feature/projects';
-import { projects } from '@/components/feature/projects/projects-data';
+import { projects } from '@/components/feature/projects';
 import { H2, Ul } from '@/components/feature/typography';
 
 export const instant = false;
@@ -80,9 +84,18 @@ export default function ProjectsPage() {
   return (
     <PageTemplate
       h1="Projects"
-      heroBlockquote={projectsHeroBlockquote.map((sentence, index) => (
-        <p key={`project-blockquote-sentence-${index}`}>{sentence}</p>
-      ))}
+      heroDescription={projectsHeroBlockquote.map((sentence, index) =>
+        sentence === projectsHeroHighlight ? (
+          <Blockquote
+            key={`project-blockquote-sentence-${index}`}
+            className="my-3"
+          >
+            {sentence}
+          </Blockquote>
+        ) : (
+          <p key={`project-blockquote-sentence-${index}`}>{sentence}</p>
+        )
+      )}
     >
       <DotsDivider />
 
@@ -170,7 +183,7 @@ export default function ProjectsPage() {
 
               <p className="mt-2">{heroProject.subline}</p>
 
-              <Hr className="my-3 w-4 border-primary-foreground/16" />
+              <Hr className="my-3 w-4 border-primary-foreground/16 text-primary-foreground" />
 
               {heroProject.responsibilities?.length && (
                 <Ul
@@ -180,7 +193,9 @@ export default function ProjectsPage() {
                   headlineClassName="text-primary-foreground"
                 >
                   {heroProject.responsibilities.map((aspect) => (
-                    <li key={aspect}>{aspect}</li>
+                    <li key={getResponsibilityText(aspect)}>
+                      <ProjectResponsibilityText responsibility={aspect} />
+                    </li>
                   ))}
                 </Ul>
               )}
@@ -197,6 +212,8 @@ export default function ProjectsPage() {
           </Container>
         </Animate>
       )}
+
+      <DotsDivider />
 
       <Container as="section">
         <Ul className="space-y-10 sm:space-y-12">
@@ -287,8 +304,12 @@ export default function ProjectsPage() {
                               className="text-foreground"
                             >
                               {project.responsibilities.map((aspect) => (
-                                <li key={`${project.title}-${aspect}`}>
-                                  {aspect}
+                                <li
+                                  key={`${project.title}-${getResponsibilityText(aspect)}`}
+                                >
+                                  <ProjectResponsibilityText
+                                    responsibility={aspect}
+                                  />
                                 </li>
                               ))}
                             </Ul>

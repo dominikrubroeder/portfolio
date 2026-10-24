@@ -7,12 +7,13 @@ import type {
   ThemeContextType,
   ThemeState
 } from '@/components/feature/theme';
+
 import {
   getThemeServerState,
   getThemeState,
   subscribeToTheme,
   themeActions
-} from '@/components/feature/theme/theme-store';
+} from './theme-store';
 
 /** Read one setting. Re-renders only when that setting changes. */
 export function useThemeSetting<K extends keyof ThemeState>(

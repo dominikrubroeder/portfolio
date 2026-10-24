@@ -1,4 +1,4 @@
-import { technologies } from '@/components/feature/technologies/technologies-data';
+import { technologies } from './technologies-data';
 
 export function getTechnologies({ names }: { names: string[] }) {
   const allTechnologies = technologies.map((group) => group.children).flat();

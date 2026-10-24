@@ -17,9 +17,9 @@ import {
 } from '@/components/feature/home';
 import { PhilosophyCore } from '@/components/feature/philosophy';
 import { mainTechnologies } from '@/components/feature/technologies';
-import { DrawerTechnologies } from '@/components/feature/technologies/technologies-drawer';
+import { DrawerTechnologies } from '@/components/feature/technologies';
 import { mainTools } from '@/components/feature/tools';
-import { DrawerTools } from '@/components/feature/tools/tools-drawer';
+import { DrawerTools } from '@/components/feature/tools';
 import { H2, Ol } from '@/components/feature/typography';
 
 export const instant = false;
@@ -41,7 +41,7 @@ export default async function HomePage() {
 
       <Animate delay={0.16}>
         <Container as="section">
-          <div className="text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
             {homeStatements[0]}
           </div>
         </Container>
@@ -51,7 +51,7 @@ export default async function HomePage() {
 
       <Animate delay={0.32}>
         <Container as="section">
-          <div className="text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
             {homeStatements[1]}
           </div>
         </Container>
@@ -61,7 +61,7 @@ export default async function HomePage() {
 
       <Animate delay={0.44}>
         <Container as="section">
-          <div className="text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
             {homeStatements[2]}
           </div>
         </Container>
@@ -71,7 +71,7 @@ export default async function HomePage() {
 
       <Animate>
         <Container as="section">
-          <div className="text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
             {homeStatements[3]}
           </div>
         </Container>
@@ -81,7 +81,7 @@ export default async function HomePage() {
 
       <Animate>
         <Container as="section">
-          <div className="text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
             {homeStatements[4]}
           </div>
         </Container>
@@ -91,7 +91,7 @@ export default async function HomePage() {
 
       <Animate>
         <Container as="section">
-          <div className="text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
             {homeStatements[5]}
           </div>
         </Container>
@@ -101,7 +101,7 @@ export default async function HomePage() {
 
       <Animate>
         <Container as="section">
-          <div className="text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
             {homeStatements[6]}
           </div>
         </Container>
@@ -111,7 +111,7 @@ export default async function HomePage() {
 
       <Animate className="bg-primary text-primary-foreground">
         <Container as="section">
-          <div className="mb-0 py-8 text-5xl leading-[1.1] font-semibold text-balance text-primary-foreground xs:text-6xl sm:text-7xl">
+          <div className="mb-0 py-8 text-statement leading-[1.1] font-semibold text-balance text-primary-foreground">
             {homeStatements[7]}
           </div>
         </Container>
@@ -121,7 +121,7 @@ export default async function HomePage() {
 
       <Animate>
         <Container as="section">
-          <div className="mb-5 text-5xl leading-[1.1] font-semibold text-balance text-foreground xs:text-6xl sm:text-7xl">
+          <div className="mb-5 text-statement leading-[1.1] font-semibold text-balance text-foreground">
             {homeStatements[8]}
           </div>
 

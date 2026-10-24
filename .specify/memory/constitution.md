@@ -1,9 +1,11 @@
 <!--
 Sync Impact Report
-- Version change: 1.5.0 → 1.6.0
-- Modified principles: II. Existing Architecture First (import rule made explicit and enforceable)
+- Version change: 1.6.0 → 1.7.0
+- Modified principles: I. Design Source of Truth (cross-theme compatibility and the documented style patterns are now
+  explicit, testable rules for every new or changed component)
 - Added principles: none
-- Added rules: imports MUST use the `@/` alias; parent-relative paths (`../`) are forbidden
+- Added rules: a new component MUST match the style patterns of every theme; a pattern one component introduces MUST
+  be recorded in `DESIGN.md` and applied to the components it covers; Development Workflow gate to verify every theme
 - Removed sections: none
 - Follow-up TODOs: none
 -->
@@ -19,6 +21,17 @@ added or changed. Colors, radii, fonts, widths and motion MUST come from tokens 
 value needs a new token first. Every component MUST work in light, dark, all accents, the wireframe theme, reduced
 motion and 90–110 % font size. A lasting design or behavior decision MUST update both documents (including the
 `DESIGN.md` decision log) in the same change.
+
+Every new or changed component MUST be cross-theme compatible and MUST match the documented style patterns of every
+theme. It MUST look and behave as intended in each registered theme (today Default and Wireframe) without a forked
+component: differences MUST come from tokens and `html[data-theme=…]` selectors. A component MUST NOT ship with the
+style of one theme only. For Wireframe this means the sketch pattern recorded in `DESIGN.md` (hand-drawn corners and
+pencil outline, one `foreground` stroke, accent kept where documented) and the grayscale media rule; for Default it
+means the documented tokens, radii and accent behavior. Before building a component, the author MUST look for the
+pattern that already covers its kind of element (button, control, frame, divider, shape, text on a shape) and reuse its
+tokens. When no pattern covers it, the author MUST define one as a token, apply it to the components it covers, and
+record it in `DESIGN.md` (see §10 and the decision log) in the same change. A theme added later MUST be applied to
+every existing component, and the registry entry MUST NOT land before they all work in it.
 
 Rationale: the portfolio is itself the proof of the "design and code" claim. Documents and code must not drift.
 
@@ -151,8 +164,11 @@ skips it leaves a stale or incomplete document without anyone noticing.
 - Before UI work: read `DESIGN.md` and `UX_PRINCIPLES.md`, and inspect neighboring components.
 - Every feature plan and task list MUST include tasks for documentation updates and for `STORY.md`.
 - Before commit: `npm run format` and `npm run lint` MUST pass, and documentation and `STORY.md` MUST match the code.
-- UI changes MUST be checked in light, dark, wireframe, 375 px width and reduced motion, and by keyboard alone (tab order,
-  focus visible, `Esc` on overlays); new or changed components MUST also be checked for name, role and state.
+- UI changes MUST be checked in light, dark, every registered theme (Default and Wireframe), 375 px width and reduced
+  motion, and by keyboard alone (tab order, focus visible, `Esc` on overlays); new or changed components MUST also be
+  checked for name, role and state.
+- Every feature plan and task list that adds or changes a component MUST include a task to verify it against the style
+  patterns of each theme (principle I) and to update `DESIGN.md` when it introduces or extends a pattern.
 - Every feature plan and task list MUST include accessibility checks for the UI it adds.
 - Changes that add client components or JS-driven visuals MUST show why a server component or CSS could not do it.
 - Every feature plan and task list MUST state whether the feature changes content covered by agent view; if it does, the
@@ -179,4 +195,4 @@ message. Versioning follows semantic versioning: MAJOR for removed or redefined 
 or materially expanded guidance, PATCH for clarifications. Compliance is reviewed on every feature plan (the
 Constitution Check) and on every pull request.
 
-**Version**: 1.6.0 | **Ratified**: 2026-10-17 | **Last Amended**: 2026-10-23
+**Version**: 1.7.0 | **Ratified**: 2026-10-17 | **Last Amended**: 2026-10-23

@@ -28,7 +28,8 @@ export function Button({
 }: ButtonProps) {
   const classNames = cn(
     'interactive select-none group [&>svg]:shrink-0 decoration-none relative inline-flex shrink-0 items-center justify-center motion-safe:transition-colors',
-    variant.includes('contained') && '',
+    variant.includes('contained') &&
+      "in-data-[theme=wireframe]:rounded-(--sketch-button-radius)! in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-0.5 in-data-[theme=wireframe]:before:-rotate-1 in-data-[theme=wireframe]:before:rounded-(--sketch-button-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-['']",
     variant === 'contained-primary' &&
       'bg-primary text-primary-foreground hover:bg-primary-hover',
     variant === 'contained-foreground' &&
@@ -37,7 +38,7 @@ export function Button({
       'bg-muted text-muted-foreground hover:bg-muted-hover hover:text-foreground',
     variant === 'contained-white' && 'bg-white text-primary',
     variant?.includes('ghost') &&
-      "relative rounded-2xl z-10 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:will-change-transform after:motion-safe:scale-80 after:bg-primary/10 after:opacity-0 after:motion-safe:transition after:content-[''] active:text-foreground active:after:scale-100 hover:after:scale-100 active:after:opacity-100 hover:after:opacity-100 active:text-foreground",
+      "relative rounded-2xl z-10 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:will-change-transform after:motion-safe:scale-80 after:bg-primary/10 after:opacity-0 after:motion-safe:transition after:content-[''] in-data-[theme=wireframe]:after:rounded-(--sketch-button-outline-radius) in-data-[theme=wireframe]:after:border-2 in-data-[theme=wireframe]:after:border-foreground active:text-foreground active:after:scale-100 hover:after:scale-100 active:after:opacity-100 hover:after:opacity-100 active:text-foreground",
     variant === 'ghost-primary' && 'text-primary',
     variant === 'ghost-foreground' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground hover:text-foreground',

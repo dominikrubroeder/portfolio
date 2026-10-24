@@ -6,8 +6,7 @@ Examples: `button`, `badge`, `divider`, `tooltip`, `drawer`, `tabs`, `dialog`, `
 
 ## Rules
 
-- A `ui` component is generic and reusable. It knows nothing about a specific feature or domain (tools, projects,
-  playground, …).
+- A `ui` component is generic and reusable. It knows nothing about a specific feature or domain (tools, projects, …).
 - `ui` components never import from `@/components/feature`. Dependencies only point from `feature` to `ui`. ESLint
   enforces this.
 - A `ui` component may import other `ui` components.

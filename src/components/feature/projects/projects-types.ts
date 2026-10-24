@@ -4,6 +4,10 @@ import type { StaticImageData } from 'next/image';
 
 import type { Brand } from '@/components/feature/brand';
 
+export type ProjectResponsibility =
+  | string
+  | { text: string; link: { label: string; href: string } };
+
 export interface Project {
   title: string;
   subline?: string;
@@ -15,7 +19,7 @@ export interface Project {
   timeframe?: string;
   logo: ReactNode | undefined;
   role: string[] | undefined;
-  responsibilities: string[] | undefined;
+  responsibilities: ProjectResponsibility[] | undefined;
   tools: Brand[] | undefined;
   technologies: Brand[] | undefined;
   companies:

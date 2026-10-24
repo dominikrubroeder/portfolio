@@ -1,4 +1,4 @@
-import { buildAgentViewMarkdown } from '@/components/feature/agent-view/agent-view-markdown';
+import { buildAgentViewMarkdown } from '@/components/feature/agent-view';
 
 export function GET() {
   return new Response(buildAgentViewMarkdown(), {

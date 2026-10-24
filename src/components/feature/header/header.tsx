@@ -1,12 +1,13 @@
 import { Avatar } from '@/components/feature/avatar';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/feature/events';
-import { headerIdentity } from '@/components/feature/header/header-content';
 import {
   ThemeColorSetting,
   ThemeDrawerTrigger
 } from '@/components/feature/theme';
 
 import { cn } from '@/lib/utils';
+
+import { headerIdentity } from './header-content';
 
 export function Header() {
   return (

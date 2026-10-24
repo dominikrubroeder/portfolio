@@ -1,7 +1,8 @@
-import { defaultLogoSquareSize } from '@/components/feature/logo/logo-config';
-import type { LogoProps } from '@/components/feature/logo/logo-types';
-
 import { cn } from '@/lib/utils';
+
+import { defaultLogoSquareSize } from './logo-config';
+
+import type { LogoProps } from './logo-types';
 
 export function LogoFactFinder({ id, className }: LogoProps) {
   return (

@@ -1,6 +1,6 @@
-import type { IconProps } from '@/components/ui/icon/types';
-
 import { cn } from '@/lib/utils';
+
+import type { IconProps } from './types';
 
 export function IconAtomicDesignTokens({ id, className }: IconProps) {
   return (

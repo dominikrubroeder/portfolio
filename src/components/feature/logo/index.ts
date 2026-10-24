@@ -108,3 +108,4 @@ export * from './img';
 
 export * from './logo-config';
 export * from './logo-types';
+export * from './logo-phosphor-icons';

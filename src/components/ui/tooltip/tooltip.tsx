@@ -2,9 +2,9 @@
 
 import { Tooltip as TooltipPrimitive } from '@base-ui/react/tooltip';
 
-import type { TooltipProps } from '@/components/ui/tooltip/types';
-
 import { cn } from '@/lib/utils';
+
+import type { TooltipProps } from './types';
 
 export function Tooltip({
   content,

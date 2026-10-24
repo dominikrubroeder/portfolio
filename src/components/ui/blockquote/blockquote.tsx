@@ -40,7 +40,7 @@ export function Blockquote({
         horizontalOffset && 'my-8',
         indent && 'ml-4 md:ml-8',
         quoteBar &&
-          'relative pl-5 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-primary',
+          'relative pl-5 text-left before:absolute before:inset-y-0 before:left-0 before:mr-4 before:inline-block before:h-full before:w-1 before:rounded-2xl before:bg-primary in-data-[theme=wireframe]:before:-left-0.5 in-data-[theme=wireframe]:before:w-2 in-data-[theme=wireframe]:before:rounded-none in-data-[theme=wireframe]:before:[mask-image:var(--sketch-quote-bar)] in-data-[theme=wireframe]:before:[mask-size:100%_100%]',
         centered && 'mx-auto',
         withBackground && 'rounded bg-primary/10 px-2 py-3 pl-5',
         className

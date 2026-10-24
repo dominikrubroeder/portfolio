@@ -1,3 +1,4 @@
+import type { LogoProps } from '@/components/feature/logo';
 import {
   LogoAdobe,
   LogoAlgolia,
@@ -112,8 +113,7 @@ import {
   LogoZed,
   LogoZod
 } from '@/components/feature/logo';
-import type { LogoProps } from '@/components/feature/logo';
-import { LogoPhosphorIcons } from '@/components/feature/logo/logo-phosphor-icons';
+import { LogoPhosphorIcons } from '@/components/feature/logo';
 
 import { cn } from '@/lib/utils';
 

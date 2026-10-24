@@ -1,4 +1,4 @@
-import type { LogoProps } from '@/components/feature/logo/logo-types';
+import type { LogoProps } from './logo-types';
 
 export function LogoPhosphorIcons({ id, className }: LogoProps) {
   return (

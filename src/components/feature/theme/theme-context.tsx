@@ -3,12 +3,9 @@
 import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 
-import { ThemeAnimationsBridge } from '@/components/feature/theme/theme-animations-bridge';
-import { useThemeSetting } from '@/components/feature/theme/theme-hooks';
-import {
-  initThemeStore,
-  resolveSystemAppearance
-} from '@/components/feature/theme/theme-store';
+import { ThemeAnimationsBridge } from './theme-animations-bridge';
+import { useThemeSetting } from './theme-hooks';
+import { initThemeStore, resolveSystemAppearance } from './theme-store';
 
 /** Keeps `system` appearance in step with the OS while it is selected. */
 function ThemeSystemAppearanceSync() {

@@ -27,6 +27,7 @@ const eslintConfig = defineConfig([
     rules: {
       'local/component-layer-order': 'error',
       'local/component-structure': 'error',
+      'local/import-depth': 'error',
       'no-restricted-imports': ['error', { patterns: [relativeParentImports] }],
       '@typescript-eslint/consistent-type-imports': [
         'error',

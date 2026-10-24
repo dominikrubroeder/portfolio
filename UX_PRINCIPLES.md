@@ -15,8 +15,8 @@ see [DESIGN.md](./DESIGN.md).
    never forced. Respect OS preferences by default (`system`, reduced motion).
 4. **Instant feedback.** Every hover, press and toggle reacts visibly in ≤ 300 ms. State changes apply immediately —
    no "Save" step.
-5. **Progressive disclosure.** Show the summary; put depth in drawers (tools, technologies, philosophy, education, UX),
-   detail pages (playground) or external links (projects).
+5. **Progressive disclosure.** Show the summary; put depth in drawers (tools, technologies, philosophy, education, UX)
+   or external links (projects).
 6. **Predictable and consistent.** Same component = same behavior everywhere. Same words for same things.
 7. **No surprises.** No auto-opening overlays, no scroll hijacking, no unexpected new tabs for internal navigation, no
    sound.
@@ -34,9 +34,6 @@ see [DESIGN.md](./DESIGN.md).
 ```
 /                       Introduction (statements, philosophy, principles, tools, technologies)
 /projects               Selected work 2016–2026
-/tools-and-technologies Stack overview (also reachable via drawers on home)
-/playground             Experiments and concepts
-/playground/[slug]      One experiment in detail
 /agent-view             The home and projects content as plain markdown (no styling)
 ```
 
@@ -266,7 +263,6 @@ or animating values that CSS cannot interpolate.
 
 - Internal links: same tab, scroll to top.
 - External links: new tab, arrow indicator, descriptive label.
-- Back affordance: `ButtonBack` on detail pages (e.g. playground entries).
 - Sticky elements must never hide a focused element or anchor target.
 
 ### Hover, focus, active
@@ -344,3 +340,5 @@ primary action reachable with one thumb (bottom bar).
 5. Is it operable and understandable with keyboard and screen reader?
 6. What does it do when data is missing?
 7. Is the behavior documented here and in a story?
+8. Does it work in every theme (Default, Wireframe), appearance, accent, radius setting and font size, and does it match the documented style patterns in DESIGN.md?
+9. Did I run the accessibility checks (contrast, focus, keyboard, accessible names, landmarks, reduced motion) while building, and fix or report every violation?

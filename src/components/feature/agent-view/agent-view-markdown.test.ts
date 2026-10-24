@@ -1,15 +1,13 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildAgentViewMarkdown } from '@/components/feature/agent-view/agent-view-markdown';
-import { footerCertifications } from '@/components/feature/footer/footer-content';
-import {
-  homeHeading,
-  homeStatements
-} from '@/components/feature/home/home-content';
-import { projectsHeroBlockquote } from '@/components/feature/projects/projects-content';
-import { projects } from '@/components/feature/projects/projects-data';
-import { technologies } from '@/components/feature/technologies/technologies-data';
-import { tools } from '@/components/feature/tools/tools-data';
+import { footerCertifications } from '@/components/feature/footer';
+import { homeHeading, homeStatements } from '@/components/feature/home';
+import { projectsHeroBlockquote } from '@/components/feature/projects';
+import { projects } from '@/components/feature/projects';
+import { technologies } from '@/components/feature/technologies';
+import { tools } from '@/components/feature/tools';
+
+import { buildAgentViewMarkdown } from './agent-view-markdown';
 
 const markdown = buildAgentViewMarkdown();
 const lines = markdown.split('\n');

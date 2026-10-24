@@ -103,14 +103,14 @@ both appearances (pure white / pure black, gray tone steps).
 - Element defaults live in `globals.css` (`@layer base`). Use bare `h1`–`h6`, `p`, `ul`, `ol`, `small`, `b` when
   possible; use the typography components (`H1`–`H6`, `Ul`, `Ol`) when you need props.
 
-| Level           | Size (mobile → desktop)                                                     | Weight   |
-| --------------- | --------------------------------------------------------------------------- | -------- |
-| Statement       | `text-4xl` → `xs:text-5xl` → `sm:text-7xl`, `leading-[1.1]`, `text-balance` | semibold |
-| `h1`            | `text-4xl` → `xs:text-5xl` → `sm:text-6xl`                                  | semibold |
-| `h2`            | `text-3xl` → `xs:text-4xl`                                                  | semibold |
-| `h3` / `.title` | `text-2xl`                                                                  | semibold |
-| Body            | `text-base` (1.125 rem)                                                     | normal   |
-| `small`         | `text-sm`, muted                                                            | normal   |
+| Level           | Size (mobile → desktop)                                                                                                        | Weight   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| Statement       | `text-statement`: fluid `clamp(2rem, (100vw − 5rem) / 7.6, 4.5rem)`, fixed `4.5rem` from `sm`; `leading-[1.1]`, `text-balance` | semibold |
+| `h1`            | fluid `clamp(2rem, (100vw − 5rem) / 7.6, 3.75rem)`                                                                             | semibold |
+| `h2`            | `text-3xl` → `xs:text-4xl`                                                                                                     | semibold |
+| `h3` / `.title` | `text-2xl`                                                                                                                     | semibold |
+| Body            | `text-base` (1.125 rem)                                                                                                        | normal   |
+| `small`         | `text-sm`, muted                                                                                                               | normal   |
 
 Rules: sentence case everywhere; `text-balance` on large statements; headings are `font-heading`; no more than two
 weights on a screen (normal, semibold/bold).
@@ -207,7 +207,7 @@ Rules:
   `grayscale-0` or another filter utility on any other image: a utility beats the base rule.
 - Structure differs by tokens and `html[data-theme=…]` selectors, not by forking components.
 - Wireframe: `--border` is a faint hairline kept only where a control needs an edge (toggle outlines use `foreground`);
-  groupings read as tone (`muted`), not lines. Drop shadows are off (`--tw-shadow` is zeroed); focus rings stay.
+  groupings read as tone (`muted`), except the drawer panel and its setting groups, which have sketch strokes (see Sketch pattern in §10). Drop shadows are off (`--tw-shadow` is zeroed); focus rings stay.
 - Every setting is mirrored to a `data-theme-*` attribute on `<html>` before first paint and on every change; CSS reacts
   in the same frame. Tokens never transition on a theme or setting change.
 - Prefer CSS for theme differences (`in-data-[theme=wireframe]:…`, `html[data-theme=…]` selectors). A component may read
@@ -241,6 +241,10 @@ inner pages).
   page, such as `/agent-view`; the prop goes to `Link` and never to the DOM.
 - **Tooltip** — Base UI popup, `bg-popover` with a `ring-foreground/10` border, `text-sm`, `rounded-xl`, `z-max`, 150 ms
   opacity fade (`motion-safe:`). Used for `Button` with `iconOnly` + `label`.
+- **Blockquote** — accent bar on the left (`before:` element). In Wireframe the bar is a hand-drawn pencil stroke (CSS mask from `--sketch-quote-bar`) in the same accent color.
+- **Button in Wireframe** — `contained-*` buttons get uneven corners and a rotated `foreground` pencil outline (`before:` pseudo-element, tokens `--sketch-button-radius` and `--sketch-button-outline-radius`); ghost, text and link variants are unchanged.
+- **Toggle and color swatches in Wireframe** — swatches are wobbly blobs (`--sketch-blob-radius`) with a rotated `foreground` pencil outline (`before:` pseudo-element, `--sketch-blob-outline-radius`). The toggle track is a slightly uneven capsule with the same kind of outline (`--sketch-pill-radius`, `--sketch-pill-outline-radius`) and an uneven, slightly tilted knob with a 2 px outline (`--sketch-knob-radius`, percentages that never clamp); colors, check mark and the accent knob are unchanged.
+- **Sketch pattern in Wireframe (all controls)** — one pencil language: uneven corners plus a `foreground` outline. Applied to contained and ghost-hover buttons, the active tab, toggle track and knob, color swatches, the `DotsDivider` dots, the typewriter frame, the drawer panel (2 px), the theme setting groups (1.5 px) and the philosophy diagram circles (petals and the "UI" core; petal labels sit on a `background` chip), and the `Hr` rule (a masked pencil stroke in the parent's text color; `--sketch-hr-line`). Tokens: `--sketch-button-*`, `--sketch-blob-*`, `--sketch-pill-*`, `--sketch-knob-radius`, `--sketch-frame-radius`. Default is unchanged.
 - **Badge** — `primary | foreground | muted | white`; `sm | md | lg`; pill-shaped.
 - **Divider** — `hr`, `dot`, `three-dotted`.
 - **DotsDivider** — `alignment` = `vertical` (default, stacked dots) | `horizontal` (dots in a row); `dots` = `1 | 3`; `animate={false}` turns the bounce off.
@@ -352,6 +356,8 @@ do not apply to custom images.
 5. Interactive elements ≥ 44 px (`medium`+) on touch layouts; `tiny`/`small` only inside dense, non-primary contexts.
 6. Run `npm run format` (Prettier incl. Tailwind class sorting) and `npm run lint` before committing.
 7. Every visual decision of lasting effect gets a line in the decision log below.
+8. Every new or changed component is cross-theme compatible and follows the documented style patterns (tokens, typography, shape, motion, components in §4–§10). Verify it in Default and Wireframe, light and dark, every accent, radius setting and 90 / 110 % font size before calling the task done. Differences between themes come from tokens and `html[data-theme=…]` selectors, never from forked components. If a needed pattern is not documented, add it here in the same change.
+9. Accessibility checks are part of every UI task, not a final polish step: contrast in every theme and accent, visible focus, keyboard operation, accessible names, semantic landmarks and reduced motion (§12). Run the checks before calling a task done and report violations you find.
 
 ## 15. Decision log
 
@@ -406,6 +412,16 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | `Select` is rebuilt on the Base UI select with the same look; values are option keys, options can carry an icon | Listbox roles, arrow keys, typeahead and `Esc` for free; one dropdown implementation. |
 | 3.0.6 | Drawer groups: Base, Typography, Animation, Border (radius); the "Layout" group (container width) is gone from the drawer, the stored setting still applies | Settings are named by what they change; the reading width is no longer a visitor control. |
 | 3.0.6 | Wireframe is a "Sketch-based UI": Patrick Hand for headings and body, every image and SVG grayscale (one CSS filter rule), Default described as "Intense accent UI" (the description line in the theme select was removed again on 2026-10-22) | The theme reads as a sketch, not only as black and white; the accent stays on text, buttons and links. All CSS and registry data, no new client code. |
+| 3.0.6 | Statements and `h1` size fluidly to the viewport (7.6 em ≈ the longest word, "orchestration"); one gutter for all text (`Container` `px-9`) | Fixed steps overflowed at 320–375 px. Fluid size is as big as the longest word allows, never wider than the column. |
+| 3.0.6 | Philosophy diagram scales down to the column (`diagram-fit`: container query width, `tan(atan2())` scale, 24 rem max); its tab labels wrap below `sm` | The fixed 24 rem artwork and the nowrap tab list overflowed the 20–24 rem column at 320–390 px; `body` `overflow-x-hidden` hid it, but the page still scrolled sideways after a tab click. |
+| 3.0.6 | Wireframe `Blockquote` bar is an uneven double pencil stroke (mask `--sketch-quote-bar` on the existing `bg-primary` bar), Default keeps the straight bar | Matches the hand-drawn frame and crop marks; a mask keeps the accent color that an `svg` child would lose to the grayscale rule. CSS only. |
+| 3.0.6 | Wireframe contained `Button`: uneven fill corners plus a slightly rotated `foreground` outline as a second pencil pass (CSS pseudo-element, two radius tokens); other variants unchanged | Same hand-drawn language as the page frame and the quote bar, with no new element or script; the fill keeps its accent color. |
+| 3.0.6 | Wireframe `Toggle` (track and knob) and theme color swatches: wobbly blob radius plus a rotated pencil outline from two percentage radius tokens | Same hand-drawn language as the frame, quote bar and buttons; percent radii fit every size, so two tokens cover all round controls. CSS only. |
+| 3.0.6 | Wireframe `Toggle` uses capsule radius tokens (track, outline, knob) instead of the blob tokens | Percent blob radii made the track an ellipse; oversized rem radii clamp to a capsule and keep the hand-drawn wobble, and the knob stays inside it. |
+| 3.0.6 | Wireframe toggle knob: egg-shaped percentage radius, 2 px border, slight tilt | Rem radii clamped the small knob to a perfect circle; percentages that sum to 100 % keep the wobble at every size. |
+| 3.0.6 | Sketch pattern extended to dots dividers, typewriter frame, ghost-button hover, tabs, drawer border, theme setting groups and the toggle knob outline; groups and drawer now have `foreground` strokes in Wireframe | The theme reads as one hand-drawn UI; supersedes "groupings read as tone, not lines" for the drawer and its groups at the owner's request. CSS only, no new technique. |
+| 3.0.6 | Philosophy diagram: every petal and the "UI" core get the blob radius and a pencil outline in Wireframe (set once in the shared `Petal`) | The diagram reads as drawn, like the rest of the Wireframe controls; overlapping outlines make the Venn structure visible without tone alone. |
+| 3.0.6 | Wireframe `Hr` is a masked pencil stroke (mask `--sketch-hr-line` on the border), colored by `currentColor` | Matches the hand-drawn controls; the mask keeps `hr` semantics and a constant line thickness. The color follows the text, so the rule stays visible on the accent band. |
 | 3.0.6 | Orange accent darkened to `oklch(0.58 0.237 31.3)` (hover 0.555, border 0.52) | White text on the old orange measured 3.85 : 1; the darker value reaches 4.8 : 1 and keeps the hue. |
 | 3.0.6 | Agent view: `/agent-view` is a route handler returning raw markdown (`text/plain`), not a styled page; entry link is a `text-foreground` small button, centered in the footer above the © line (the earlier header link and its width thresholds are gone); footer drops the framework-version line and gets `py-6` | No theme, CSS or script can reach it, so it stays plain by construction. Page copy lives in shared content modules, so pages and agent view cannot drift. |
 | 3.0.6 | Drawer swatches and the animation switch get a 44 px hit area (transparent `::after`, `min-h-11`) | Touch target without changing the look. |

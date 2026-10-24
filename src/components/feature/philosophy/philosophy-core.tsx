@@ -15,14 +15,15 @@ import {
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
+import { useThemeSetting } from '@/components/feature/theme';
+
+import { InViewAction } from '@/hooks/in-view-action';
+
 import {
   philosophyCoreLabel,
   philosophyCoreTabLabels,
   philosophyHolisticLabels
-} from '@/components/feature/philosophy/philosophy-data';
-import { useThemeSetting } from '@/components/feature/theme';
-
-import { InViewAction } from '@/hooks/in-view-action';
+} from './philosophy-data';
 
 /**
  * Eight circles on a ring of 6.5rem around the core, every 45° clockwise from
@@ -123,11 +124,15 @@ function Petal({
       ref={ref}
       style={{ x, y, scale, opacity }}
       className={cn(
-        'in-data-[theme-animations=off]:transform-none! in-data-[theme-animations=off]:opacity-100!',
+        'relative in-data-[theme-animations=off]:transform-none! in-data-[theme-animations=off]:opacity-100!',
+        'in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)!',
+        "in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-px in-data-[theme=wireframe]:before:-rotate-2 in-data-[theme=wireframe]:before:rounded-(--sketch-blob-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-['']",
         className
       )}
     >
-      {children}
+      <span className="in-data-[theme=wireframe]:rounded-(--sketch-button-radius) in-data-[theme=wireframe]:bg-background in-data-[theme=wireframe]:px-1.5">
+        {children}
+      </span>
     </motion.div>
   );
 }
@@ -148,70 +153,84 @@ export function PhilosophyCore() {
             mounted for a frame, the layout height stays one panel high. */}
         <div className="grid">
           <TabsContent value="Core product UI" className={PANEL_CLASS}>
-            <div
-              data-petal-root
-              className="relative mx-auto grid size-96 items-center justify-center"
-            >
-              <div className="flex">
-                <Petal
-                  step={0}
-                  className="flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
-                >
-                  {philosophyCoreTabLabels[0]}
-                </Petal>
-                <Petal
-                  step={1}
-                  className="-ml-10 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
-                >
-                  {philosophyCoreTabLabels[1]}
-                </Petal>
-              </div>
-              <Petal
-                step={2}
-                className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
+            <div className="diagram-fit">
+              <div
+                data-petal-root
+                className="diagram-fit-body relative grid size-96 items-center justify-center"
               >
-                {philosophyCoreTabLabels[2]}
-              </Petal>
-              <div className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground">
-                {philosophyCoreLabel}
+                <div className="flex">
+                  <Petal
+                    step={0}
+                    className="flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
+                  >
+                    {philosophyCoreTabLabels[0]}
+                  </Petal>
+                  <Petal
+                    step={1}
+                    className="-ml-10 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
+                  >
+                    {philosophyCoreTabLabels[1]}
+                  </Petal>
+                </div>
+                <Petal
+                  step={2}
+                  className="mx-auto -mt-40 flex size-44 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors"
+                >
+                  {philosophyCoreTabLabels[2]}
+                </Petal>
+                <div className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)! in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-0.5 in-data-[theme=wireframe]:before:-rotate-2 in-data-[theme=wireframe]:before:rounded-(--sketch-blob-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-['']">
+                  {philosophyCoreLabel}
+                </div>
               </div>
             </div>
           </TabsContent>
           <TabsContent value="Holistic product UI" className={PANEL_CLASS}>
-            <div
-              data-petal-root
-              className="relative mx-auto grid size-96 items-center justify-center"
-            >
-              {/* Same -mt-6 lift as the core in the other tab, so "UI" stays put. */}
-              <div className="absolute inset-0 -translate-y-6">
-                {HOLISTIC_PETALS.map(({ label, position, className }, step) => (
-                  <Petal
-                    key={label}
-                    step={step}
-                    className={cn(
-                      'absolute flex size-44 -translate-1/2 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors',
-                      position,
-                      className
-                    )}
-                  >
-                    {label}
-                  </Petal>
-                ))}
-              </div>
-
-              <InViewAction
-                action={() => console.log('Log')}
-                className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground"
+            <div className="diagram-fit">
+              <div
+                data-petal-root
+                className="diagram-fit-body relative grid size-96 items-center justify-center"
               >
-                {philosophyCoreLabel}
-              </InViewAction>
+                {/* Same -mt-6 lift as the core in the other tab, so "UI" stays put. */}
+                <div className="absolute inset-0 -translate-y-6">
+                  {HOLISTIC_PETALS.map(
+                    ({ label, position, className }, step) => (
+                      <Petal
+                        key={label}
+                        step={step}
+                        className={cn(
+                          'absolute flex size-44 -translate-1/2 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-foreground transition-colors',
+                          position,
+                          className
+                        )}
+                      >
+                        {label}
+                      </Petal>
+                    )
+                  )}
+                </div>
+
+                <InViewAction
+                  action={() => console.log('Log')}
+                  className="absolute top-1/2 left-1/2 z-50 -mt-6 flex size-16 -translate-1/2 animate-core-pulse items-center justify-center rounded-full bg-primary text-primary-foreground in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)! in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-0.5 in-data-[theme=wireframe]:before:-rotate-2 in-data-[theme=wireframe]:before:rounded-(--sketch-blob-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-['']"
+                >
+                  {philosophyCoreLabel}
+                </InViewAction>
+              </div>
             </div>
           </TabsContent>
         </div>
 
-        <TabsList className="mx-auto">
-          <TabsTrigger value="Core product UI">Core product UI</TabsTrigger>
-          <TabsTrigger value="Holistic product UI">
+        <TabsList className="mx-auto max-w-full max-sm:h-auto!">
+          <TabsTrigger
+            value="Core product UI"
+            className="max-sm:h-auto max-sm:px-3 max-sm:whitespace-normal"
+          >
+            Core product UI
+          </TabsTrigger>
+          <TabsTrigger
+            value="Holistic product UI"
+            className="max-sm:h-auto max-sm:px-3 max-sm:whitespace-normal"
+          >
             Holistic product UI
           </TabsTrigger>
         </TabsList>

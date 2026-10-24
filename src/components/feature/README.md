@@ -1,6 +1,6 @@
 # Feature
 
-Dedicated feature and domain related components, for example `tools`, `technologies`, `projects`, `playground`,
+Dedicated feature and domain related components, for example `tools`, `technologies`, `projects`,
 `philosophy`, `theme`, `typography`, `logo` or `header`.
 
 ## Rules

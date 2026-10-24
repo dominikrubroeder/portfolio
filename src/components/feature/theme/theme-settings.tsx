@@ -1,11 +1,11 @@
-import { ThemeAnimationEnabledToggle } from '@/components/feature/theme/theme-animation-enabled-toggle';
-import { ThemeAppearanceSelect } from '@/components/feature/theme/theme-appearance-select';
-import { ThemeColorSetting } from '@/components/feature/theme/theme-color-setting';
-import { ThemeFontSizeSetting } from '@/components/feature/theme/theme-font-size-setting';
-import { ThemeRadiusSetting } from '@/components/feature/theme/theme-radius-setting';
-import { ThemeSelect } from '@/components/feature/theme/theme-select';
-import { ThemeSettingOption } from '@/components/feature/theme/theme-setting-option';
-import { ThemeSettingSection } from '@/components/feature/theme/theme-setting-section';
+import { ThemeAnimationEnabledToggle } from './theme-animation-enabled-toggle';
+import { ThemeAppearanceSelect } from './theme-appearance-select';
+import { ThemeColorSetting } from './theme-color-setting';
+import { ThemeFontSizeSetting } from './theme-font-size-setting';
+import { ThemeRadiusSetting } from './theme-radius-setting';
+import { ThemeSelect } from './theme-select';
+import { ThemeSettingOption } from './theme-setting-option';
+import { ThemeSettingSection } from './theme-setting-section';
 
 export function ThemeSettings() {
   return (

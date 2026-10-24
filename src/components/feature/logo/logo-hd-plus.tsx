@@ -1,6 +1,6 @@
-import type { LogoProps } from '@/components/feature/logo/logo-types';
-
 import { cn } from '@/lib/utils';
+
+import type { LogoProps } from './logo-types';
 
 export function LogoHdPlus({ className, ...restProps }: LogoProps) {
   return (

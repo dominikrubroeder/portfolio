@@ -1,5 +1,6 @@
 import type { Brand } from '@/components/feature/brand';
-import { getTechnologies } from '@/components/feature/technologies/technologies-helper';
+
+import { getTechnologies } from './technologies-helper';
 
 export const technologies: { group: string; children: Brand[] }[] = [
   {

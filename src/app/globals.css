@@ -188,8 +188,28 @@
   }
 
   /* Wireframe: black and white. Structure comes from surface tone and type, not from lines, so
-     --border is a faint hairline kept only where a control needs an edge. */
+       --border is a faint hairline kept only where a control needs an edge. */
   :root[data-theme='wireframe'] {
+    /* `Hr` as a pencil line: the border is masked to an uneven stroke plus a thin echo. Stretches horizontally only. */
+    --sketch-hr-line: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='black' stroke-linecap='round'%3E%3Cpath d='M1 3.6C20 2.8 36 4.8 60 3.7S100 4.7 130 3.6 175 4.5 199 3.9' stroke-width='2.2'/%3E%3Cpath d='M12 5.4C50 4.7 90 5.8 140 5.1S186 5.5 196 5.3' stroke-width='0.9'/%3E%3C/g%3E%3C/svg%3E");
+    /* Drawer panel, typewriter frame: the same uneven corners as the page frame (`.sketch-frame`). */
+    --sketch-frame-radius: 1.5rem 0.25rem 1.25rem 0.25rem / 0.25rem 1.25rem
+      0.25rem 1.5rem;
+    /* Round controls (toggle track and knob, color swatches): a wobbly blob for the fill, a second one for the outline. */
+    --sketch-blob-radius: 52% 48% 55% 45% / 48% 54% 46% 52%;
+    --sketch-blob-outline-radius: 46% 54% 47% 53% / 55% 45% 53% 47%;
+    /* Toggle: a capsule (track 2 rem high) and a hand-drawn knob (1.5 rem). The track radii are far larger than the box on purpose: the browser scales them down together, so the wobble ratio stays. The knob uses percentages that sum to 100 % per side, so nothing clamps and the egg shape stays visible. */
+    --sketch-pill-radius: 2.1rem 1.9rem 2rem 1.8rem / 2rem 2.1rem 1.8rem 2rem;
+    --sketch-pill-outline-radius: 1.8rem 2.1rem 1.9rem 2.1rem / 2.1rem 1.8rem
+      2.1rem 1.9rem;
+    --sketch-knob-radius: 60% 40% 56% 44% / 44% 58% 42% 56%;
+    /* Contained buttons: uneven corners for the fill, a second set for the pencil outline drawn over it. */
+    --sketch-button-radius: 0.9rem 0.25rem 0.8rem 0.3rem / 0.3rem 0.8rem 0.25rem
+      0.9rem;
+    --sketch-button-outline-radius: 0.3rem 0.85rem 0.25rem 0.9rem / 0.85rem
+      0.25rem 0.9rem 0.3rem;
+    /* Blockquote bar as a pencil stroke: a mask, so the bar keeps the accent color. Stretches vertically only. */
+    --sketch-quote-bar: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 100' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='black' stroke-linecap='round'%3E%3Cpath d='M4 1C3 14 5.2 26 3.6 40S4.6 66 3.4 80 4.4 94 4 99' stroke-width='2.4'/%3E%3Cpath d='M5.1 4C4.2 20 5.6 40 4.8 60S5.4 90 5 97' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
     --font-role-heading: var(--font-sketch);
     --font-role-body: var(--font-sketch);
 
@@ -403,7 +423,8 @@
   }
 
   h1:not(.h1) {
-    @apply text-4xl xs:text-5xl sm:text-6xl;
+    font-size: clamp(2rem, calc((100vw - 5rem) / 7.6), 3.75rem);
+    overflow-wrap: break-word;
   }
 
   h1 > svg {
@@ -495,20 +516,20 @@
 
 @layer base {
   /* No drop shadows. Focus rings use the ring variables and stay. Depth is tone and one faint
-     hairline, never a shadow. */
+       hairline, never a shadow. */
   html[data-theme='wireframe'] * {
     --tw-shadow: 0 0 #0000;
     --tw-shadow-colored: 0 0 #0000;
   }
 
   /* Sketch look: every image and SVG (photos, previews, logos, icons) loses its hue. The page-frame crop marks opt out (`filter-none`) so a picked accent shows.
-     A filter keeps the artwork intact, so Default shows the colors again in the same frame. */
+       A filter keeps the artwork intact, so Default shows the colors again in the same frame. */
   html[data-theme='wireframe'] :is(img, svg) {
     filter: grayscale(1);
   }
 
   /* Hand-drawn page frame: uneven corner radii make a plain border read as a pencil outline.
-     Independent of the radius setting on purpose. */
+       Independent of the radius setting on purpose. */
   html[data-theme='wireframe'] .sketch-frame {
     border-radius: 1.5rem 0.25rem 1.25rem 0.25rem / 0.25rem 1.25rem 0.25rem
       1.5rem;
@@ -531,6 +552,30 @@
 
 @utility scroll-mt-responsive {
   @apply scroll-mt-18 lg:scroll-mt-0;
+}
+
+/* Home statements: as big as the longest word allows. 7.6 em is about 13 characters of Outfit semibold ("orchestration"),
+   the gutter is the 2.25 rem container padding on both sides. */
+@utility text-statement {
+  font-size: clamp(2rem, calc((100vw - 5rem) / 7.6), 4.5rem);
+  overflow-wrap: break-word;
+  @media (min-width: 40rem) {
+    font-size: 4.5rem;
+  }
+}
+
+/* Philosophy diagram: fixed 24 rem artwork that scales down to fit narrow columns. Container query units give the
+   column width; tan(atan2()) turns the length ratio into a plain scale. The negative margin gives back the layout
+   space the shrunken box no longer fills, `ml-[50% - 12rem]` keeps it centered when the column is narrower. */
+.diagram-fit {
+  container-type: inline-size;
+}
+
+.diagram-fit-body {
+  --diagram-fit: tan(atan2(min(24rem, 100cqw), 24rem));
+  margin-left: calc(50% - 12rem);
+  margin-block: calc(12rem * (var(--diagram-fit) - 1));
+  scale: var(--diagram-fit);
 }
 
 @utility break-words {

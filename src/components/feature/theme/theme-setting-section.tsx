@@ -18,7 +18,9 @@ export function ThemeSettingSection({
         )}
       </div>
 
-      <div className="space-y-6 rounded-xl border p-6">{children}</div>
+      <div className="space-y-6 rounded-xl border p-6 in-data-[theme=wireframe]:rounded-(--sketch-button-radius)! in-data-[theme=wireframe]:border-[1.5px] in-data-[theme=wireframe]:border-foreground">
+        {children}
+      </div>
     </div>
   );
 }

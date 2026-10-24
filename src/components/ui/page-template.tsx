@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { Animate } from '@/components/ui/animate';
 import { Blockquote } from '@/components/ui/blockquote';
 import { Container } from '@/components/ui/container';
-import { IconLucide } from '@/components/ui/icon/icon-lucide';
+import { IconLucide } from '@/components/ui/icon';
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
 
 export function PageTemplate({
@@ -37,7 +37,7 @@ export function PageTemplate({
           )}
 
           {heroDescription && (
-            <div className="mt-4 animate-in-to-left-160">{heroDescription}</div>
+            <div className="mt-4 animate-in-to-top-160">{heroDescription}</div>
           )}
         </Container>
       </Animate>

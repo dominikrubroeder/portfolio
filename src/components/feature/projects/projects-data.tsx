@@ -5,7 +5,6 @@ import {
   LogoSautershop,
   LogoSegmueller
 } from '@/components/feature/logo';
-import type { Project } from '@/components/feature/projects/projects-types';
 import { getTechnologies } from '@/components/feature/technologies';
 import { getTools } from '@/components/feature/tools';
 
@@ -17,6 +16,8 @@ import previewUvex from '@/public/projects/project-uvex-preview-wallpaper.png';
 import previewValueBooster from '@/public/projects/project-value-booster-preview-wallpaper.png';
 import previewVariasophia from '@/public/projects/project-variasophia-preview-wallpaper.png';
 import previewWelleat from '@/public/projects/project-welleat-preview-wallpaper.png';
+
+import type { Project } from './projects-types';
 
 export const projects: Project[] = [
   {
@@ -349,7 +350,16 @@ export const projects: Project[] = [
     timeframe: '2017',
     logo: undefined,
     role: ['Frontend Developer'],
-    responsibilities: ['Build the UI in Twig and SCSS with Shopware 5'],
+    responsibilities: [
+      {
+        text: 'Design a "Dirndl" configurator',
+        link: {
+          label: 'Dirndl',
+          href: 'https://variasophia.de/dirndl-karussell'
+        }
+      },
+      'Build the UI in Twig and SCSS with Shopware 5'
+    ],
     tools: [],
     technologies: [],
     companies: [

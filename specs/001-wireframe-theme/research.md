@@ -342,3 +342,57 @@ D8 and D11 stay true in intent (header trigger, on-demand load) but their sideba
   text, buttons, links and the crop marks. Every other `img` and `svg` stays grayscale.
 - **Alternatives**: a `.keep-color` marker rule in `globals.css` (rejected: one use); `:not(.crop-mark)` on the base rule
   (rejected: couples the rule to a component).
+
+### D33. Blockquote bar as a pencil stroke in Wireframe
+
+- **Decision**: The `Blockquote` bar (`before:` pseudo-element, `bg-primary`) stays the same element. In Wireframe it gets a mask: the token `--sketch-quote-bar` in the Wireframe block of `globals.css` is an inline SVG (viewBox `0 0 8 100`, `preserveAspectRatio="none"`) with two uneven round-capped strokes, a 2.4 wide main line and a thin 1 wide echo. The bar is 0.5 rem wide with no radius and `mask-size: 100% 100%`, so only the height stretches and the stroke width stays constant. Default is untouched.
+- **Rationale**: Matches the pencil frame (D25) with CSS only: no JS, no extra element, the accent color is kept because the mask only cuts the shape out of the `bg-primary` fill (an `img`/`svg` would fall under the grayscale rule, D21).
+- **Alternatives**: an inline `svg` child (rejected: grayscale rule and a second DOM node in every blockquote); `border-left` with uneven radii (rejected: reads as a rounded bar, not a stroke); `clip-path: polygon` (rejected: no round caps, no second stroke).
+
+### D34. Contained buttons get a pencil outline in Wireframe
+
+- **Decision**: In Wireframe every `contained-*` `Button` gets (1) an uneven corner radius for the fill (`--sketch-button-radius`, important, so the size classes `rounded-2xl hover:rounded-xl` and the radius setting do not override it) and (2) a `before:` outline: `border-2 border-foreground`, offset `-inset-0.5`, rotated `-1deg`, with a second uneven radius (`--sketch-button-outline-radius`). The fill and the outline disagree slightly on purpose, so the outline reads as a second pencil pass. Ghost, text and link variants have no box and are unchanged; Default is untouched.
+- **Rationale**: Same language as the sketch frame (D25) and quote bar (D33): CSS only, tokens in the Wireframe block, no new element. The outline is a pseudo-element with a border, so it is not an `img`/`svg` (grayscale rule, D21) and never blocks clicks (`pointer-events-none`).
+- **Alternatives**: SVG mask outline as for the quote bar (rejected: needs a stretchable 9-slice for any button size); one `border` on the button (rejected: no uneven second pass, and the layout grows by the border); changing the radius token for all buttons (rejected: radius is a visitor setting, and ghost/text buttons need no box).
+
+### D35. Toggle and color swatches as pencil shapes in Wireframe
+
+- **Decision**: Two percentage-based radius tokens in the Wireframe block of `globals.css`: `--sketch-blob-radius` (a slightly uneven ellipse for fills) and `--sketch-blob-outline-radius` (a second, different one for the outline). The `Toggle` track and knob and every color swatch use the first for the shape. The track and the swatches get a `before:` outline (`border-2 border-foreground`, `-inset-0.5`, `-rotate-2`, second radius, `pointer-events-none`), the same recipe as the `Button` (D34). The track's old Wireframe `border` is removed (the outline replaces it); the knob keeps its thin `border`. The enabled knob still shows the accent (D30), a swatch still shows the check mark and its own color.
+- **Rationale**: Percent radii fit any size, so the pill track (56 x 32 px), the knob (24 px) and the swatches (26 and 32 px) share two tokens. CSS only, nothing for Default. The pseudo-element is not an `img`/`svg`, so the grayscale rule (D21) does not touch the swatch colors.
+- **Alternatives**: one token per shape (rejected: more tokens for no gain); SVG masks as for the quote bar (rejected: shapes are boxes, radii are enough).
+
+### D35 (revised). Toggle uses capsule tokens, swatches keep the blobs
+
+- **Decision**: The percentage blob radii made the 56 x 32 px track read as an ellipse, not a switch. The `Toggle` now has its own tokens in the Wireframe block of `globals.css`: `--sketch-pill-radius` (track), `--sketch-pill-outline-radius` (pencil outline) and `--sketch-knob-radius` (knob). Each is a set of eight rem values far above half the box height (2.1 rem for a 2 rem track), so the browser clamps them down together and the capsule keeps a hair of unevenness: track and outline differ, the knob is a near-circle. Color swatches keep `--sketch-blob-*`.
+- **Rationale**: A capsule track with a round knob is what a switch looks like; the knob radius follows the track so the knob stays inside it at both positions.
+- **Alternatives**: smaller rem radii (rejected: they stop short of a capsule and leave flat ends); `rounded-full` plus rotation only (rejected: no uneven second pass).
+
+### D35 (revised again). Knob is a wobbly egg, not a clamped circle
+
+- **Decision**: `--sketch-knob-radius` is `60% 40% 56% 44% / 44% 58% 42% 56%`, and the Wireframe knob gets `border-2` and `-rotate-12`. The oversized rem radii used for the track (previous revision) clamp a 1.5 rem box to a near-perfect circle, so the knob looked round and digital.
+- **Rationale**: Percentages that sum to 100 % per side never clamp, so the unevenness is kept at any size. The thicker border matches the 2 px pencil outlines of the track, buttons and swatches; the rotation is the same trick as the outlines. The rotation is the separate `rotate` property, so it does not interfere with the knob's `translate` slide.
+- **Alternatives**: a stronger rem wobble (rejected: it clamps again whenever the font-size setting changes the box); an SVG knob (rejected: needs a fill color per state).
+
+### D36. One pencil pattern for the rest of the controls
+
+- **Decision**: Reuse the recipes of D25, D33, D34 and D35 instead of new ones. (1) `DotsDivider` dots: blob radius, `border-[1.5px] border-foreground`, `-rotate-12`. (2) Typewriter frame: the existing `.sketch-frame` radius, `border-2 border-foreground`, blob corner squares. (3) Ghost buttons: the hover pill (`after:`) takes `--sketch-button-outline-radius` and `border-2 border-foreground`, so a hover shows a pencil box. (4) `Tabs` trigger: `--sketch-button-radius`, and the active trigger gets the `before:` pencil outline of the button; the underline `after:` of the `line` variant is untouched. (5) Drawer panel: `--sketch-frame-radius` (new token, same values as `.sketch-frame`) and `border-2 border-foreground`, important so `rounded-theme-2xl` does not win. (6) Theme setting groups: `--sketch-button-radius` and `border-[1.5px] border-foreground`. (7) Toggle knob: its own border is gone; a `before:` outline in `--sketch-knob-radius`, `-inset-px`, `-rotate-6` draws it in both states, like the swatches.
+- **Rationale**: Every control now reads as drawn with the same pencil; no new technique, tokens only where a shape was missing. This revises the earlier Wireframe rule "groupings read as tone, not lines" (DESIGN.md §9): the owner asked for sketched borders on groups and the drawer, so those edges are now `foreground` strokes (2 px drawer, 1.5 px groups).
+- **Alternatives**: a shared `.sketch-outline` class (rejected: several targets already use `before:` or `after:` for other jobs and differ in radius and width); SVG strokes (rejected: sizes vary).
+
+### D37. Philosophy diagram circles as pencil circles in Wireframe
+
+- **Decision**: The shared `Petal` wrapper in `philosophy-core.tsx` (used by both tabs) gets `relative`, the Wireframe `--sketch-blob-radius` (important, over `rounded-full`) and a `before:` outline (`border-2 border-foreground`, `-inset-px`, `-rotate-2`, `--sketch-blob-outline-radius`). The two "UI" core circles (core tab and holistic tab) get the same shape and a `-inset-0.5` outline. `relative` comes before the caller's `className`, so the holistic petals keep their `absolute`. The motion transforms (`x`, `y`, `scale`, `opacity`) and the core pulse act on the whole element, so the outline moves and scales with the circle; the animations-off rules are untouched.
+- **Rationale**: Same recipe as D34/D35, put once in the shared component instead of per circle. The overlapping outlines turn the tone-only Venn diagram into a drawn one.
+- **Alternatives**: SVG circles (rejected: the petals animate as DOM boxes and carry text); outlines only on the core tab (rejected: both tabs are one diagram).
+
+### D37 (revised). Petal labels sit on a paper chip in Wireframe
+
+- **Decision**: `Petal` wraps its children in a `span`. In Wireframe the span is `bg-background` with `--sketch-button-radius` and `px-1.5`; in Default it has no classes and renders as before.
+- **Rationale**: The overlapping pencil outlines and gray tints cut through the labels. A chip in the page background keeps the text readable with one wrapper and no JS.
+- **Limit**: Each petal moves with a transform, so it is its own stacking context: the chip covers the lines of its own petal and of petals drawn before it, but a petal drawn later can still draw an outline across it (visible on "Design" and "Code" in the holistic tab). Fixing that needs the labels in a separate layer above all petals, which would split text from its circle; not done.
+
+### D38. `Hr` as a pencil line in Wireframe
+
+- **Decision**: In Wireframe the `Hr` keeps its element and its border, but the border becomes the drawing surface: `h-0`, `border-t-[0.5rem]`, `border-color: currentColor`, and a mask (`--sketch-hr-line`, SVG `0 0 200 8`, `preserveAspectRatio="none"`: an uneven 2.2 wide stroke and a thin echo) cuts the stroke out of it. The mask stretches horizontally only, so the line thickness is constant at any width. The color follows the text color of the parent instead of the faint Wireframe `--border`, so a caller sets it with `text-*`; the `Hr` on the accent band on `/projects` gets `text-primary-foreground`. Default is untouched.
+- **Rationale**: Same mask technique as the quote bar (D33); no extra element, `hr` semantics kept. `border-current` replaces a caller's `border-*` color in Wireframe (variant utilities sort after plain ones), which is why the band needed the text color: with the neutral accent its band is black and the line would vanish.
+- **Alternatives**: `border-foreground` (rejected: invisible on the black band); an inline SVG child (rejected: a non-void child in an `hr`, and the grayscale rule).

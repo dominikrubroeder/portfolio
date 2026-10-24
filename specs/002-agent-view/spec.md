@@ -155,8 +155,7 @@ When the content of the home page or projects page changes, agent view shows the
 
 - "Without styling" means no site design applied; default browser rendering of plain text is acceptable.
 - Markdown is shown as raw markdown text, not rendered into formatted HTML, since the goal is an agent-readable source.
-- Only the home and projects pages are included for now; other pages (`/tools-and-technologies`, `/playground`) are out
-  of scope.
+- Only the home and projects pages are included; there are no other pages.
 - The link label is exactly "Agent view" (sentence case, per the copy rules). Its text size is small (`text-sm`); as a
   standalone link in a dense, non-primary context it follows the `small` size rule (not the 44 px target of `medium`).
 - The document has no browser title (plain text); it starts with a top-level heading instead.

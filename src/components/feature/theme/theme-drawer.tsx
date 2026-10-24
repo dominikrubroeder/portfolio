@@ -15,8 +15,8 @@ import {
   DrawerTitle
 } from '@/components/ui/drawer';
 
-import { ThemeSettings } from '@/components/feature/theme/theme-settings';
-import { ThemeSettingsAnnouncer } from '@/components/feature/theme/theme-settings-announcer';
+import { ThemeSettings } from './theme-settings';
+import { ThemeSettingsAnnouncer } from './theme-settings-announcer';
 
 export function ThemeDrawer({
   open,

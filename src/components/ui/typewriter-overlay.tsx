@@ -34,27 +34,27 @@ export function TypewriterOverlay({
           <motion.div
             animate={{ scale: [0.2, 1], opacity: [0.8, 1] }}
             exit={{ scale: [1, 0.8], opacity: [1, 0] }}
-            className="relative border p-4"
+            className="sketch-frame relative border p-4 in-data-[theme=wireframe]:border-2 in-data-[theme=wireframe]:border-foreground"
           >
             <motion.span
               animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
-              className="absolute -top-1 -left-1 size-2 border border-primary bg-primary"
+              className="absolute -top-1 -left-1 size-2 border border-primary bg-primary in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
             />
             <motion.span
               animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
-              className="absolute -top-1 -right-1 size-2 border border-primary bg-background"
+              className="absolute -top-1 -right-1 size-2 border border-primary bg-background in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
             />
             <motion.span
               animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
-              className="absolute -bottom-1 -left-1 size-2 border border-primary bg-background"
+              className="absolute -bottom-1 -left-1 size-2 border border-primary bg-background in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
             />
             <motion.span
               animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
-              className="absolute -right-1 -bottom-1 size-2 border border-primary bg-primary"
+              className="absolute -right-1 -bottom-1 size-2 border border-primary bg-primary in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
             />
 
             <Typewriter

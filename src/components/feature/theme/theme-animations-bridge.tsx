@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 
 import { AnimationsProvider } from '@/components/ui/animate';
 
-import { useThemeSetting } from '@/components/feature/theme/theme-hooks';
+import { useThemeSetting } from './theme-hooks';
 
 /**
  * Hands the animation setting to `ui` components, which must not import `feature`. It is the only
