@@ -19,7 +19,7 @@ const CERTIFICATION_ICONS: Record<string, ReactNode> = {
 export function Footer() {
   return (
     <>
-      <footer className="relative z-200 space-y-4 border-t bg-background px-4 py-6 text-xs">
+      <footer className="relative z-200 space-y-4 border-t bg-background py-6 text-xs">
         <Container as="div">
           <div className="mx-auto max-w-container space-y-1 text-center">
             <span className="block">Certified in:</span>
@@ -53,16 +53,18 @@ export function Footer() {
         </Container>
 
         {EVENTS_WINTER_SCENE_ENABLED && (
-          <p>
-            Santa Clause cap:
-            <ExternalLink
-              color="muted"
-              href="https://www.svgrepo.com/svg/206754/winter-hat-santa-claus"
-              className="ml-1"
-            >
-              https://www.svgrepo.com/svg/206754/winter-hat-santa-claus
-            </ExternalLink>
-          </p>
+          <Container as="div">
+            <p>
+              Santa Clause cap:
+              <ExternalLink
+                color="muted"
+                href="https://www.svgrepo.com/svg/206754/winter-hat-santa-claus"
+                className="ml-1"
+              >
+                https://www.svgrepo.com/svg/206754/winter-hat-santa-claus
+              </ExternalLink>
+            </p>
+          </Container>
         )}
       </footer>
     </>

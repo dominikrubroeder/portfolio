@@ -65,7 +65,7 @@ export const jsonLd = {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Selected Work',
+      name: 'Selected Works',
       description:
         'Featured web design engineering projects by Dominik Rubröder.',
       url: ROUTING_PUBLIC_DOMAIN,

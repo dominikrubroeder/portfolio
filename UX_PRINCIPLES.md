@@ -9,7 +9,7 @@ see [DESIGN.md](./DESIGN.md).
 
 1. **Content first, chrome second.** The reading column, statements and project work lead. Controls stay small and
    peripheral.
-2. **One clear next step.** Each view has one dominant action. Home: "Selected work"; `/projects`: "Home" (sticky bottom bar). Project cards:
+2. **One clear next step.** Each view has one dominant action. Home: "Selected works"; `/selected-works`: "Home" (sticky bottom bar). Project cards:
    "View <project>".
 3. **The visitor is in control.** Appearance, accent color, font size and animation are user settings, remembered and
    never forced. Respect OS preferences by default (`system`, reduced motion).
@@ -33,8 +33,8 @@ see [DESIGN.md](./DESIGN.md).
 
 ```
 /                       Introduction (statements, philosophy, principles, tools, technologies)
-/projects               Selected work 2016–2026
-/agent-view             The home and projects content as plain markdown (no styling)
+/selected-works          Selected works 2016–2026
+/agent-view             The home and selected works content as plain markdown (no styling)
 ```
 
 - Navigation is **content-led**: `HeroNavigation` ("More" list at the end of a page) links to the other top-level pages
@@ -42,7 +42,7 @@ see [DESIGN.md](./DESIGN.md).
 - The header carries identity (avatar, name, role), the theme settings
   trigger (a palette icon, labelled "Theme settings", visible at every width) and, from `sm` up, three accent swatches
   (blue, violett, orange). Appearance lives in the theme drawer.
-- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the home content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the projects, then the certifications. It is not part of `HeroNavigation`; the only link lives in the footer, centered on its own line above the copyright line, at every width. It is a small `text-foreground` button (renders as an anchor). Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
+- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the home content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the selected works, then the certifications. It is not part of `HeroNavigation`; the only link lives in the footer, centered on its own line above the copyright line, at every width. It is a small `text-foreground` button (renders as an anchor). Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
 - Deep links to sections use `scroll-mt-responsive` so sticky bars never cover the target.
 - `ScrollToTop` resets the scroll position on route change; `ButtonScrollToTop` is available for long pages.
 
@@ -65,7 +65,7 @@ This keeps context on long pages. Opt out with the `sticky-none` class where the
 
 ### Sticky call to action
 
-`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and the social links. The link is "Selected work"; on `/projects` it swaps to "Home" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
+`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and the social links. The link is "Selected works"; on `/selected-works` it swaps to "Home" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
 
 ### Intro
 
@@ -181,7 +181,7 @@ a `Select` in the theme drawer with sun, moon and sparkles icons (Light, Dark, A
 
 ### Divider
 
-Visual rhythm only — `hr`, `dot` (meta separators like "Company · 2021–2024"), `three-dotted` (section break, rendered by `DotsDivider`, also separating projects on `/projects`). Hidden
+Visual rhythm only — `hr`, `dot` (meta separators like "Company · 2021–2024"), `three-dotted` (section break, rendered by `DotsDivider`, also separating projects on `/selected-works`). Hidden
 from assistive tech or semantically plain; never carries meaning alone. `DotsDivider` stacks vertically by default; `alignment="horizontal"` lays the dots in a row; `animate={false}` keeps them still.
 
 ### Typewriter
@@ -223,7 +223,7 @@ defaults return on the next load. Settings are never sent to a server.
 
 ### Theme switching
 
-- **Appearance**: light / dark / system, set in the theme drawer. `system` follows OS changes live.
+- **Appearance**: light / dark / system, set in the theme drawer. `system` is the default and follows OS changes live.
 - **Accent**: neutral (black/white), blue, violett, orange. Applies instantly.
 - **Theme (style)**: Default ("Intense accent UI") / Wireframe ("Sketch-based UI"); the open list shows the two names only. Wireframe uses a handwritten font and grayscale images, icons and logos while the accent is neutral; picking a color accent shows them in color. Selecting a theme applies its defaults for accent, animations, radius and
   container width (Wireframe: neutral accent, animations off, square corners; Default: blue, animations on, 6px). The
@@ -282,7 +282,7 @@ image : logo`). Missing context never renders placeholder text.
 
 ### Copy
 
-Short, concrete, first person. Sentence case. Labels name the outcome ("Selected work", "View Value Booster", "Done"),
+Short, concrete, first person. Sentence case. Labels name the outcome ("Selected works", "View Value Booster", "Done"),
 not the mechanism ("Click here", "Submit").
 
 ## 6. Responsive behavior

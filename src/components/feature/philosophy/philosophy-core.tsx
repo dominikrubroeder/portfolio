@@ -231,16 +231,16 @@ export function PhilosophyCore() {
           </TabsContent>
         </div>
 
-        <TabsList className="mx-auto max-w-full max-sm:h-auto!">
+        <TabsList className="mx-auto max-w-full max-xs:h-auto! max-xs:w-full max-xs:flex-col">
           <TabsTrigger
             value="Core product UI"
-            className="max-sm:h-auto max-sm:px-3 max-sm:whitespace-normal"
+            className="max-xs:h-11 max-xs:w-full max-xs:flex-none max-sm:px-3 max-sm:text-[1rem]"
           >
             Core product UI
           </TabsTrigger>
           <TabsTrigger
             value="Holistic product UI"
-            className="max-sm:h-auto max-sm:px-3 max-sm:whitespace-normal"
+            className="max-xs:h-11 max-xs:w-full max-xs:flex-none max-sm:px-3 max-sm:text-[1rem]"
           >
             Holistic product UI
           </TabsTrigger>

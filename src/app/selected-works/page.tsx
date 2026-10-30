@@ -26,13 +26,13 @@ import {
   projects,
   projectsHeroBlockquote,
   projectsHeroHighlight
-} from '@/components/feature/projects';
+} from '@/components/feature/selected-works';
 import { H2, Ul } from '@/components/feature/typography';
 
 export const instant = false;
 
 export const metadata: Metadata = {
-  title: 'Projects | Dominik Rubröder, UX Engineer',
+  title: 'Selected works | Dominik Rubröder, UX Engineer',
   description: 'My project contributions from 2016 to 2026'
 };
 
@@ -76,14 +76,14 @@ function preloadProjectImages() {
   }
 }
 
-export default function ProjectsPage() {
+export default function SelectedWorksPage() {
   preloadProjectImages();
 
   const heroProject = getProject({ title: HERO_PROJECT_TITLE });
 
   return (
     <PageTemplate
-      h1="Projects"
+      h1="Selected works"
       heroDescription={projectsHeroBlockquote.map((sentence, index) =>
         sentence === projectsHeroHighlight ? (
           <Blockquote

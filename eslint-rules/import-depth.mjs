@@ -1,6 +1,6 @@
 const MAX_DEPTH = 3;
 
-/** Limits `@/` import and re-export paths to three segments, e.g. `@/components/feature/theme`. */
+/** Limits `@/` import, dynamic import and re-export paths to three segments, e.g. `@/components/feature/theme`. */
 const rule = {
   meta: {
     type: 'problem',
@@ -29,7 +29,8 @@ const rule = {
     return {
       ImportDeclaration: check,
       ExportNamedDeclaration: check,
-      ExportAllDeclaration: check
+      ExportAllDeclaration: check,
+      ImportExpression: check
     };
   }
 };

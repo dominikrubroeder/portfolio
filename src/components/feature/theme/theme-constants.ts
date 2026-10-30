@@ -25,7 +25,7 @@ export const THEME_KEY_PERSONA = 'dr-theme-persona';
 
 export const THEME_DEFAULT: Theme = 'default';
 export const THEME_OPTION_DEFAULT: ThemeOption = THEME_OPTIONS[0];
-export const THEME_APPEARANCE_DEFAULT: ThemeAppearance = 'light';
+export const THEME_APPEARANCE_DEFAULT: ThemeAppearance = 'system';
 export const THEME_COLOR_DEFAULT: ThemeColor = 'blue';
 export const THEME_FONT_SIZE_DEFAULT: ThemeFontSize = 'md';
 export const THEME_ANIMATION_SETTINGS_DEFAULT: ThemeAnimationSettings = {

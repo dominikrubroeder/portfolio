@@ -13,8 +13,8 @@ import {
   getResponsibilityMarkdown,
   HERO_PROJECT_TITLE,
   projectsHeroBlockquote
-} from '@/components/feature/projects';
-import { projects } from '@/components/feature/projects';
+} from '@/components/feature/selected-works';
+import { projects } from '@/components/feature/selected-works';
 import { socials } from '@/components/feature/socials';
 import {
   mainTechnologies,
@@ -97,14 +97,14 @@ const projectSection = (project: (typeof projects)[number]): string => {
     .join('\n\n');
 };
 
-const projectsSection = (): string[] => {
+const selectedWorksSection = (): string[] => {
   const hero = projects.find((project) => project.title === HERO_PROJECT_TITLE);
   const others = projects.filter(
     (project) => project.title !== HERO_PROJECT_TITLE
   );
 
   return [
-    '## Projects',
+    '## Selected works',
     `> ${projectsHeroBlockquote}`,
     ...[...(hero ? [hero] : []), ...others].map(projectSection)
   ];
@@ -120,7 +120,7 @@ export function buildAgentViewMarkdown(): string {
     link('Back to the site', '/'),
     brandList(profileLinks),
     ...homeSection(),
-    ...projectsSection(),
+    ...selectedWorksSection(),
     '## Certifications',
     brandList(
       footerCertifications.map(({ name, href }) => ({ name, href }) as Brand)

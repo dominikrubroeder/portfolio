@@ -1,3 +1,5 @@
+import { Container } from '@/components/ui/container';
+
 import { Avatar } from '@/components/feature/avatar';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/feature/events';
 import {
@@ -12,7 +14,10 @@ import { headerIdentity } from './header-content';
 export function Header() {
   return (
     <header className="sticky top-0 z-200 bg-background lg:relative lg:z-0 lg:h-24">
-      <div className="mx-auto flex max-w-container-readable items-center justify-between gap-2 px-4 py-4 xs:gap-0">
+      <Container
+        as="div"
+        className="flex items-center justify-between gap-2 px-4 py-4 xs:gap-0 xl:px-0"
+      >
         <div className="flex items-center gap-2 xs:gap-3">
           <Avatar
             className={cn(
@@ -41,7 +46,7 @@ export function Header() {
             className="hidden gap-1.5 sm:flex sm:gap-2"
           />
         </div>
-      </div>
+      </Container>
     </header>
   );
 }

@@ -19,7 +19,7 @@ documented decisions. It should feel:
 - Personal — handwritten accents (`Patrick Hand`), playful intro phrases, a seasonal winter scene
 - Systematic — composed from `ui` building blocks and `feature` modules
 
-Hierarchy of what a visitor must grasp, in order: **identity → expertise → selected work → technical depth → contact**.
+Hierarchy of what a visitor must grasp, in order: **identity → expertise → selected works → technical depth → contact**.
 
 ## 2. Principles
 
@@ -73,7 +73,7 @@ measures 4.8 : 1; every accent passes AA with its foreground text.
 
 ### 4.3 Appearance
 
-`light`, `dark` and `system`. Dark mode is applied by the `.theme-appearance-dark` class / `data-theme-appearance`
+`light`, `dark` and `system` (the default, so first-time visitors get their OS preference). Dark mode is applied by the `.theme-appearance-dark` class / `data-theme-appearance`
 attribute on `<html>` (custom Tailwind `dark:` variant), not by the media query alone. Dark mode only overrides neutral
 tokens (`background`, `foreground`, `muted*`, `border`); accents are shared. Wireframe has its own neutral set for
 both appearances (pure white / pure black, gray tone steps).
@@ -83,7 +83,7 @@ both appearances (pure white / pure black, gray tone steps).
 - **60 %** `background` — calm foundation.
 - **30 %** `muted`, `border` — structure, grouping, hover surfaces.
 - **10 %** `primary` — energy. One full-bleed `bg-primary` band per page is the ceiling (see the home statement
-  "We compose, direct and oversee", and the hero project on `/projects`).
+  "We compose, direct and oversee", and the hero project on `/selected-works`).
 
 ## 5. Typography
 
@@ -121,12 +121,12 @@ weights on a screen (normal, semibold/bold).
 
 Use `<Container>` (`ui/container`). Never hand-roll `max-w-*` on page sections.
 
-| `size`               | Width              | Use                                  |
-| -------------------- | ------------------ | ------------------------------------ |
-| `container-readable` | `40rem` (default)  | Text, lists, most sections           |
-| `container`          | `90rem` (+ `px-4`) | Wide grids and galleries             |
-| `full-width`         | 100 %              | Full-bleed bands (e.g. primary hero) |
-| (panorama token)     | `120rem`           | Large preview imagery on `/projects` |
+| `size`               | Width              | Use                                        |
+| -------------------- | ------------------ | ------------------------------------------ |
+| `container-readable` | `40rem` (default)  | Text, lists, most sections                 |
+| `container`          | `90rem` (+ `px-4`) | Wide grids and galleries                   |
+| `full-width`         | 100 %              | Full-bleed bands (e.g. primary hero)       |
+| (panorama token)     | `120rem`           | Large preview imagery on `/selected-works` |
 
 The reading column is intentionally narrow (40rem by default). A saved setting can widen it (the theme drawer has no control for it since 2026-10-22)
 (`data-theme-container-width`: default 40rem, wide 64rem, full 90rem; it overrides `--spacing-container-readable`). It is the signature of the layout: one column, centered,
@@ -225,7 +225,7 @@ where applicable. Imports use the `@/` alias and are grouped ui → feature → 
 ui components.
 
 Dependency rule: `feature` consumes `ui`; `ui` never imports from `feature`. ESLint enforces the dependency rule, the
-layer order of imports and the feature file prefix (`npm run lint`, `npm run format`).
+layer order of imports, the import depth (`local/import-depth`: at most three segments after `@/` in imports, dynamic imports and re-exports, e.g. `@/components/feature/theme`; go through the folder's `index.ts` barrel) and the feature file prefix (`npm run lint`, `npm run format`).
 
 ### UI (`src/components/ui`)
 
@@ -252,7 +252,7 @@ inner pages).
 ### Feature (`src/components/feature`)
 
 Domain and feature components, one folder per feature: `header`, `footer`, `page-navigation-bar`, `page-frame`, `avatar`, `profile-links` (`ButtonGithub`,
-`ButtonLinkedin`), `brand`, `tools`, `technologies`, `projects`, `philosophy`, `socials`, `intro`, `theme`
+`ButtonLinkedin`), `brand`, `tools`, `technologies`, `selected-works`, `philosophy`, `socials`, `intro`, `theme`
 (registry, store, hooks, tokens and settings UI), `typography` (`H2`, `Ul`, `Ol`), `logo` (`Logo*`), `events` (winter
 scene), `home` (home page copy), `agent-view` (`AgentViewLink`, markdown builder for `/agent-view`).
 
@@ -264,7 +264,7 @@ File naming: every file in a feature directory is prefixed with the directory na
 
 ### Agent view
 
-`/agent-view` is a route handler, not a styled page: it returns the home and projects content as raw markdown
+`/agent-view` is a route handler, not a styled page: it returns the home and selected works content as raw markdown
 (`text/plain`) with no layout, theme, CSS or script. Its text comes from the same content modules as the pages
 (`home-content.ts`, `projects-content.ts`, `philosophy-data.ts`, the data files), so a copy edit shows in both.
 
@@ -277,7 +277,7 @@ passthrough is for layout (margin, width), not for restyling.
 
 ## 11. Imagery and iconography
 
-- Project previews are wide wallpapers (`public/projects/*`), shown unframed; `width`/`height` always set; alt text
+- Project previews are wide wallpapers (`public/selected-works/*`), shown unframed; `width`/`height` always set; alt text
   `"<Title> preview image"`. Hero imagery uses `preload`.
 - In Wireframe all images and SVGs render grayscale while the neutral accent is active, and in color once the visitor picks a color accent (see §9). Do not rely on hue alone to tell logos apart.
 - Logos are SVG components in `feature/logo`; raster fallbacks sit in `feature/logo/img`. Logos must work in dark mode
@@ -388,8 +388,8 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | Philosophy core "UI" center pulses (`animate-core-pulse`, scale 1 → 1.12 → 0.96, 2.1 s loop) | Same rhythm as the three-dot divider; the shared center of the diagram reads as the living part. |
 | 3.0.6 | Icon-only buttons use `iconOnly` + `label`: accessible name and `Tooltip` text, no native `title` | Native `title` is unreachable by keyboard and touch; one source for name and explanation. |
 | 3.0.6 | Components split into `ui` (baseline, domain-free) and `feature` (domain-specific); `feature` consumes `ui`, never the reverse | Replaces the four Atomic Design layers. Clear ownership: a feature keeps all its parts in one folder; `ui` stays reusable. |
-| 3.0.6 | `PageNavigationBar` feature: the sticky bottom bar on every page; on `/projects` the "Selected work" button cross-fades to "Home" (300 ms, `cubic-bezier(0.22, 1, 0.36, 1)`, 0.75rem horizontal slide, no vertical movement) | One bar, one primary action that always points to the other half of the site; the leaving button leaves the flow, so the bar fits the visible button and reserves no space for the other. |
-| 3.0.6 | `DotsDivider` (`ui`) extracted from `Divider variant="three-dotted"`; used on home and between projects on `/projects` instead of `hr`; `dots={1}` renders the single dot with a hover target; three dots always use the same fixed wave, only the single dot takes a `delay` | Identical to the home dividers (vertical stack, sequential bounce): one punctuation mark across the site. |
+| 3.0.6 | `PageNavigationBar` feature: the sticky bottom bar on every page; on `/selected-works` the "Selected works" button cross-fades to "Home" (300 ms, `cubic-bezier(0.22, 1, 0.36, 1)`, 0.75rem horizontal slide, no vertical movement) | One bar, one primary action that always points to the other half of the site; the leaving button leaves the flow, so the bar fits the visible button and reserves no space for the other. |
+| 3.0.6 | `DotsDivider` (`ui`) extracted from `Divider variant="three-dotted"`; used on home and between projects on `/selected-works` instead of `hr`; `dots={1}` renders the single dot with a hover target; three dots always use the same fixed wave, only the single dot takes a `delay` | Identical to the home dividers (vertical stack, sequential bounce): one punctuation mark across the site. |
 | 3.0.6 | `DotsDivider` gets an `alignment` prop (`vertical` default, `horizontal`); `animate={false}` opts out of the bounce | Same punctuation fits inline contexts (rows, meta lines) without a second component; static variant for places where motion would distract. |
 | 3.0.6 | `Animate` reveals use a 1.8 s expo-out glide with 20 px travel instead of a bouncy spring; opacity runs shorter than travel | Spring overshoot and a hard-stopping 24 px slide felt jittery; a long soft tail and less distance read as smooth. |
 | 3.0.6 | `Drawer` enters like the `Sidebar`: 300 ms `ease-in-out`, slide + scale 0.95 → 1 + opacity 0.75 → 1 | Two side panels, one entrance. Replaces the 450 ms custom curve on the drawer. |
@@ -413,7 +413,7 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | Drawer groups: Base, Typography, Animation, Border (radius); the "Layout" group (container width) is gone from the drawer, the stored setting still applies | Settings are named by what they change; the reading width is no longer a visitor control. |
 | 3.0.6 | Wireframe is a "Sketch-based UI": Patrick Hand for headings and body, every image and SVG grayscale (one CSS filter rule), Default described as "Intense accent UI" (the description line in the theme select was removed again on 2026-10-22) | The theme reads as a sketch, not only as black and white; the accent stays on text, buttons and links. All CSS and registry data, no new client code. |
 | 3.0.6 | Statements and `h1` size fluidly to the viewport (7.6 em ≈ the longest word, "orchestration"); one gutter for all text (`Container` `px-9`) | Fixed steps overflowed at 320–375 px. Fluid size is as big as the longest word allows, never wider than the column. |
-| 3.0.6 | Philosophy diagram scales down to the column (`diagram-fit`: container query width, `tan(atan2())` scale, 24 rem max); its tab labels wrap below `sm` | The fixed 24 rem artwork and the nowrap tab list overflowed the 20–24 rem column at 320–390 px; `body` `overflow-x-hidden` hid it, but the page still scrolled sideways after a tab click. |
+| 3.0.6 | Philosophy diagram scales down to the column (`diagram-fit`: container query width, `tan(atan2())` scale, 24 rem max); its two tab triggers sit side by side from `xs` (16 px text below `sm`) and stack full width below `xs` | The fixed 24 rem artwork and the nowrap tab list overflowed the 20–24 rem column at 320–390 px; `body` `overflow-x-hidden` hid it, but the page still scrolled sideways after a tab click. |
 | 3.0.6 | Wireframe `Blockquote` bar is an uneven double pencil stroke (mask `--sketch-quote-bar` on the existing `bg-primary` bar), Default keeps the straight bar | Matches the hand-drawn frame and crop marks; a mask keeps the accent color that an `svg` child would lose to the grayscale rule. CSS only. |
 | 3.0.6 | Wireframe contained `Button`: uneven fill corners plus a slightly rotated `foreground` outline as a second pencil pass (CSS pseudo-element, two radius tokens); other variants unchanged | Same hand-drawn language as the page frame and the quote bar, with no new element or script; the fill keeps its accent color. |
 | 3.0.6 | Wireframe `Toggle` (track and knob) and theme color swatches: wobbly blob radius plus a rotated pencil outline from two percentage radius tokens | Same hand-drawn language as the frame, quote bar and buttons; percent radii fit every size, so two tokens cover all round controls. CSS only. |
@@ -438,6 +438,11 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | Wireframe media follow the accent: grayscale with the neutral accent (the start state), full color once a color accent is picked (the filter rule is scoped with `:not([data-theme-color]:not([data-theme-color='foreground']))`) | A color accent signals that the visitor wants color; neutral keeps the pure sketch look. CSS only, same frame as the accent switch. |
 | 3.0.6 | `PageTemplate` pulls its title block up on `lg`+ (`lg:-mt-6`) and sets the `h1` to `leading-tight` | The non-sticky desktop header is `h-24` for 72 px of content, and `main` adds `pt-8`: the inner-page title sat about 80 px below the header. About 30 px tighter; mobile is unchanged. |
 | 3.0.6 | `LogoLinkedin` glyph is `fill-white` in every theme and `fill-background` in Wireframe with the neutral accent | With the neutral accent the square takes the label color (`foreground`, white in dark mode) while the glyph stayed white: the whole logo read as a white square. The glyph is a knockout, so it follows the page background. |
+| 3.1 | Appearance defaults to `system` instead of `light` (`THEME_APPEARANCE_DEFAULT`, also the pre-paint script fallback) | Respect the OS preference until the visitor chooses; saved choices still win. |
+| 3.1 | Route `/projects` renamed to `/selected-works` (permanent redirect from the old path); the `projects` feature folder and `public/projects` assets are renamed to `selected-works` too | The URL, page title and bottom-bar button now use the same words ("Selected works"). Folder names follow the route, so URL, feature folder and assets share one name (identifiers like `projects` stay). |
+| 3.1 | `Header` wraps its row in `Container` for the reading width, with `px-4 xl:px-0` instead of the text gutter (`px-9`) | Below `xl` the avatar and theme controls sit on the page frame's crop-mark edges (16 px at 390 px), not on the text column; at `xl` they share the text edge. |
+| 3.1 | Philosophy tab labels never wrap: `TabsTrigger` keeps `whitespace-nowrap`. From `xs` (375 px) the two triggers sit side by side (`px-3`, 16 px text below `sm`, 18 px from `sm`); below `xs` they stack full width at 18 px and 44 px height (`max-xs:flex-col`, `max-xs:h-11`) | Wrapped labels made the tab bar tall and uneven. At 18 px both labels need about 335 px; the column is 303 px at 375 px and 248 px below. 16 px fits at 375 px, anything narrower stacks instead of shrinking the targets. |
+| 3.1 | `Footer` drops its own `px-4`; every row is a `Container` (the Santa credit too) | The footer's `px-4` stacked on `Container`'s `px-9`, so its column was 16 px narrower per side than the page text below `xl`. |
 
 > When you make a lasting design decision, add a row: _version · decision · why_.
 
@@ -447,9 +452,9 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 - Persona/`ThemeMode` is stored but has no visible effect.
 - Theme drawer: swatches have a 44 px high hit area but are only about 34 px wide (the 8 px gap limits it). Changes are announced
   through a polite live region, not by moving focus.
-- Switching to Wireframe changes the font, so text reflows once (about 0.14 layout-shift score on `/`, 0.05 on `/projects`
+- Switching to Wireframe changes the font, so text reflows once (about 0.14 layout-shift score on `/`, 0.05 on `/selected-works`
   measured with synthetic clicks). The browser metric excludes it after a real click.
 - axe (best practice): `region` on the portaled select list and the bottom bar, `list` (separator inside the projects `ul`)
-  and accent text on dark (`color-contrast`, 3.5–3.8 : 1 for blue and orange on `/projects` links). All predate this feature.
+  and accent text on dark (`color-contrast`, 3.5–3.8 : 1 for blue and orange on `/selected-works` links). All predate this feature.
 - Wireframe cursor stays black or white even when the
   visitor picks a color accent.

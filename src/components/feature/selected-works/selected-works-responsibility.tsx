@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 
-import type { ProjectResponsibility } from './projects-types';
+import type { ProjectResponsibility } from './selected-works-types';
 
 // Plain text, or text with the first occurrence of `link.label` turned into an external link.
 export function ProjectResponsibilityText({

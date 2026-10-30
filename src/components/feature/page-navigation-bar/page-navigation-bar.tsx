@@ -12,7 +12,7 @@ import {
   ButtonLinkedin
 } from '@/components/feature/profile-links';
 
-const NAVIGATION_BAR_HOME_BACK_PATHNAME = '/projects';
+const NAVIGATION_BAR_HOME_BACK_PATHNAME = '/selected-works';
 
 export function PageNavigationBar() {
   const pathname = usePathname();
@@ -28,8 +28,8 @@ export function PageNavigationBar() {
               Home
             </Button>
           ) : (
-            <Button href="/projects" className="w-full sm:w-auto">
-              Selected work
+            <Button href="/selected-works" className="w-full sm:w-auto">
+              Selected works
               <ArrowRightIcon />
             </Button>
           )}

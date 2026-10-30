@@ -9,5 +9,5 @@ export const projectsHeroBlockquote = [
   'Communication is therefore key!'
 ];
 
-// The sentence of `projectsHeroBlockquote` shown as a blockquote on /projects.
+// The sentence of `projectsHeroBlockquote` shown as a blockquote on /selected-works.
 export const projectsHeroHighlight = projectsHeroBlockquote[2];

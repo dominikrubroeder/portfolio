@@ -8,16 +8,16 @@ import {
 import { getTechnologies } from '@/components/feature/technologies';
 import { getTools } from '@/components/feature/tools';
 
-import previewHdPlus from '@/public/projects/project-hd-plus-preview-wallpaper.png';
-import previewLocaboo from '@/public/projects/project-locaboo-preview-wallpaper.png';
-import previewSautershop from '@/public/projects/project-sautershop-preview-wallpaper.png';
-import previewSegmueller from '@/public/projects/project-segmueller-preview-wallpaper.png';
-import previewUvex from '@/public/projects/project-uvex-preview-wallpaper.png';
-import previewValueBooster from '@/public/projects/project-value-booster-preview-wallpaper.png';
-import previewVariasophia from '@/public/projects/project-variasophia-preview-wallpaper.png';
-import previewWelleat from '@/public/projects/project-welleat-preview-wallpaper.png';
+import previewHdPlus from '@/public/selected-works/project-hd-plus-preview-wallpaper.png';
+import previewLocaboo from '@/public/selected-works/project-locaboo-preview-wallpaper.png';
+import previewSautershop from '@/public/selected-works/project-sautershop-preview-wallpaper.png';
+import previewSegmueller from '@/public/selected-works/project-segmueller-preview-wallpaper.png';
+import previewUvex from '@/public/selected-works/project-uvex-preview-wallpaper.png';
+import previewValueBooster from '@/public/selected-works/project-value-booster-preview-wallpaper.png';
+import previewVariasophia from '@/public/selected-works/project-variasophia-preview-wallpaper.png';
+import previewWelleat from '@/public/selected-works/project-welleat-preview-wallpaper.png';
 
-import type { Project } from './projects-types';
+import type { Project } from './selected-works-types';
 
 export const projects: Project[] = [
   {

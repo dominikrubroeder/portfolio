@@ -1,6 +1,6 @@
-import { projects } from './projects-data';
+import { projects } from './selected-works-data';
 
-import type { ProjectResponsibility } from './projects-types';
+import type { ProjectResponsibility } from './selected-works-types';
 
 export function getProject({ title }: { title: string }) {
   return projects.find((project) => project.title === title);
