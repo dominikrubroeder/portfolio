@@ -162,6 +162,14 @@ enlarged and centered (max `min(80vmin, 31.25rem)`, the source size). Close via 
 `Esc`; focus returns to the thumbnail. Zoom-in/out animation is skipped with reduced motion. Default variant is
 unchanged (link to home or plain image).
 
+### Philosophy blossom (levels)
+
+Petals with detail (currently Design, Code and UX; add an entry to `philosophyTopics` to open another) are buttons that fill with the accent on hover and focus; click or Enter opens one level deeper.
+
+- The topic becomes the center (same look and pulse as the root core); its characteristics, purpose and fields are the petals. Order: diagram, then the `UI / Design` trail, then a text list; they replace the tab list.
+- Back three ways: the `UI` button in the trail, the center circle ("Design, back to UI") and `Esc` while focus is in the level. Focus moves to the center on opening and returns to the petal on going back.
+- Animations off or reduced motion: the swap is instant, the petals show at once.
+
 ### Tooltip
 
 Short text on hover and keyboard focus that explains an icon-only action. Opens after a short delay, closes on `Esc`

@@ -8,7 +8,11 @@ import {
   homeStatements
 } from '@/components/feature/home';
 // Direct file import: the philosophy barrel exports a client component.
-import { philosophyTabs } from '@/components/feature/philosophy';
+import {
+  philosophyTabs,
+  philosophyTopicGroups,
+  philosophyTopics
+} from '@/components/feature/philosophy';
 import {
   getResponsibilityMarkdown,
   HERO_PROJECT_TITLE,
@@ -56,6 +60,12 @@ const homeSection = (): string[] => [
   ...philosophyTabs.map(
     ({ title, labels, core }) =>
       `### ${title}\n\nCore: ${core}\n\n${list(labels)}`
+  ),
+  ...Object.entries(philosophyTopics).map(
+    ([topic, details]) =>
+      `### ${topic}\n\n${philosophyTopicGroups
+        .map(({ key, title }) => `${title}:\n\n${list(details[key])}`)
+        .join('\n\n')}`
   ),
   `> ${homeIntro.quote}`,
   ...homeIntro.paragraphs,
