@@ -14,10 +14,24 @@ export function getResponsibilityText(responsibility: ProjectResponsibility) {
 
 export function getResponsibilityMarkdown(
   responsibility: ProjectResponsibility
-) {
+): string {
   if (typeof responsibility === 'string') return responsibility;
 
-  const { label, href } = responsibility.link;
+  const { link, items } = responsibility;
+  const text = link
+    ? responsibility.text.replace(link.label, `[${link.label}](${link.href})`)
+    : responsibility.text;
 
-  return responsibility.text.replace(label, `[${label}](${href})`);
+  if (!items?.length) return text;
+
+  const sublist = items
+    .map((item) =>
+      `- ${getResponsibilityMarkdown(item)}`
+        .split('\n')
+        .map((line) => `  ${line}`)
+        .join('\n')
+    )
+    .join('\n');
+
+  return `${text}\n${sublist}`;
 }

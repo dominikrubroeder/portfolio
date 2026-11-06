@@ -22,7 +22,7 @@ import {
   getProject,
   getResponsibilityText,
   HERO_PROJECT_TITLE,
-  ProjectResponsibilityText,
+  ProjectResponsibilityItem,
   projects,
   projectsHeroBlockquote,
   projectsHeroHighlight
@@ -187,15 +187,17 @@ export default function SelectedWorksPage() {
 
               {heroProject.responsibilities?.length && (
                 <Ul
-                  headline="Fields"
+                  headline="Responsible fields"
                   listStyle="disc"
                   className="text-primary-foreground"
                   headlineClassName="text-primary-foreground"
                 >
                   {heroProject.responsibilities.map((aspect) => (
-                    <li key={getResponsibilityText(aspect)}>
-                      <ProjectResponsibilityText responsibility={aspect} />
-                    </li>
+                    <ProjectResponsibilityItem
+                      key={getResponsibilityText(aspect)}
+                      responsibility={aspect}
+                      keyPrefix={heroProject.title}
+                    />
                   ))}
                 </Ul>
               )}
@@ -208,6 +210,12 @@ export default function SelectedWorksPage() {
               >
                 View {heroProject.title}
               </Button>
+
+              {heroProject.notes && (
+                <small className="mt-3 block text-primary-foreground">
+                  {heroProject.notes}
+                </small>
+              )}
             </Container>
           </Container>
         </Animate>
@@ -277,14 +285,15 @@ export default function SelectedWorksPage() {
                                 ))}
                               </ul>
                               <span className="size-1 rounded-full bg-muted-foreground" />
-                              <span>{project.timeframe}</span>
-                              {project.isActive && (
-                                <>
-                                  <span className="size-1 rounded-full bg-muted-foreground" />
+                              {project.isActive ? (
+                                <span>
+                                  <span>{project.timeframe} – </span>
                                   <Badge variant="muted" size="sm">
                                     Ongoing
                                   </Badge>
-                                </>
+                                </span>
+                              ) : (
+                                <span>{project.timeframe}</span>
                               )}
                             </small>
                           </div>
@@ -299,18 +308,16 @@ export default function SelectedWorksPage() {
 
                           {project.responsibilities?.length && (
                             <Ul
-                              headline="Fields"
+                              headline="Responsible fields"
                               listStyle="disc"
                               className="text-foreground"
                             >
                               {project.responsibilities.map((aspect) => (
-                                <li
+                                <ProjectResponsibilityItem
                                   key={`${project.title}-${getResponsibilityText(aspect)}`}
-                                >
-                                  <ProjectResponsibilityText
-                                    responsibility={aspect}
-                                  />
-                                </li>
+                                  responsibility={aspect}
+                                  keyPrefix={project.title}
+                                />
                               ))}
                             </Ul>
                           )}
@@ -324,6 +331,10 @@ export default function SelectedWorksPage() {
                         >
                           View {project.title}
                         </Button>
+
+                        {project.notes && (
+                          <small className="mt-3 block">{project.notes}</small>
+                        )}
                       </div>
                     </div>
                   </Animate>

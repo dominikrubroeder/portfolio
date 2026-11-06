@@ -32,7 +32,8 @@ export function Ul({
         className={cn(
           '[&>li]:text-current [&>li::marker]:text-current',
           offsetLeft && 'pl-4',
-          listStyle === 'disc' && 'list-disc pl-5 leading-7',
+          listStyle === 'disc' &&
+            'list-disc pl-5 leading-7 [ul:not(.list-none)>li_&]:list-[circle]',
           listStyle === 'none' && 'list-none',
           className
         )}

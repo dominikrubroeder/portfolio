@@ -21,6 +21,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useThemeSetting } from '@/components/feature/theme';
 
 import {
+  NAVIGATION_LEVELS_ENABLED,
   philosophyCoreLabel,
   philosophyCoreTabLabels,
   philosophyHolisticLabels,
@@ -268,7 +269,7 @@ export function PhilosophyCore() {
   const transition = { duration: animationsEnabled ? 0.22 : 0 };
 
   const topicProps = (label: string) =>
-    label in philosophyTopics
+    NAVIGATION_LEVELS_ENABLED && label in philosophyTopics
       ? {
           onSelect: () => {
             setReturnedFrom(null);

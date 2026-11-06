@@ -4,9 +4,14 @@ import type { StaticImageData } from 'next/image';
 
 import type { Brand } from '@/components/feature/brand';
 
+// Plain text, or an object with an optional link and optional nested `items` (sublist, any depth).
 export type ProjectResponsibility =
   | string
-  | { text: string; link: { label: string; href: string } };
+  | {
+      text: string;
+      link?: { label: string; href: string };
+      items?: ProjectResponsibility[];
+    };
 
 export interface Project {
   title: string;
@@ -31,4 +36,5 @@ export interface Project {
   demoUrls: { label: string; src: string }[] | undefined;
   previewImage?: StaticImageData;
   previewImageTimestamp?: string;
+  notes?: string;
 }

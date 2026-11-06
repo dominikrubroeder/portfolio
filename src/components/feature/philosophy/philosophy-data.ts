@@ -26,6 +26,13 @@ export const philosophyTabs = [
   }
 ];
 
+/**
+ * Switch for the navigation levels. While off, no petal opens a level in the
+ * blossom and `/agent-view` leaves the topics out. The level view and the topic
+ * data stay in place, so turning it on again is this one line.
+ */
+export const NAVIGATION_LEVELS_ENABLED = false;
+
 export type PhilosophyTopic = {
   characteristics: string[];
   purpose: string[];

@@ -136,8 +136,8 @@ The theme settings open in a `Drawer`: floating bottom sheet below `xl`, side pa
 
 - Open via the header trigger (first control in the header). Close via **Done**, scrim click, `Esc` or swipe. Focus moves
   in, stays inside, and returns to the trigger on close; the page behind is inert.
-- Loads on first open: pages whose visitor never opens it do not load its controls. The first open slides in like later
-  opens.
+- Loads lazily, off the critical path: the chunk is fetched on browser idle and on hover or focus of the trigger, never
+  with the page bundle. The first click then finds it ready, and the first open slides in like later opens.
 - Standard scrim (dim below `xl`, transparent from `xl`, where the live change is visible behind the drawer).
 - Changes apply live; the drawer only groups them: Base (theme, appearance, color with the neutral swatch), Typography
   (font size), Animation (one "Enable animations" switch), Border (radius). Each control shows
@@ -164,6 +164,8 @@ unchanged (link to home or plain image).
 
 ### Philosophy blossom (levels)
 
+Temporarily off (`NAVIGATION_LEVELS_ENABLED` in `philosophy-data.ts`): no petal opens a level and agent view omits the topics for now. The behavior below applies once the switch is on again.
+
 Petals with detail (currently Design, Code and UX; add an entry to `philosophyTopics` to open another) are buttons that fill with the accent on hover and focus; click or Enter opens one level deeper.
 
 - The topic becomes the center (same look and pulse as the root core); its characteristics, purpose and fields are the petals. Order: diagram, then the `UI / Design` trail, then a text list; they replace the tab list.
@@ -176,6 +178,10 @@ Short text on hover and keyboard focus that explains an icon-only action. Opens 
 or blur, never holds interactive content. Fades in with `motion-safe:`. Touch has no hover, so the `aria-label` carries
 the same text.
 
+### Code
+
+Inline literal text (file names, commands) in a muted chip with the code font. Non-interactive, never wraps, keeps the text selectable and copyable. In project data, wrap the term in backticks; agent view shows the same backticks as Markdown.
+
 ### Badge
 
 Non-interactive status label ("Ongoing"). Never a button.
@@ -186,6 +192,10 @@ Binary options use `Toggle` with a visible label. It renders a `button` with `ro
 controlled (`value`, an option `key`) so it follows a setting that changed elsewhere, and its name includes the setting
 ("Radius: Medium"). Multi-option settings use `Select` or segmented controls with the current value visible. Appearance is
 a `Select` in the theme drawer with sun, moon and sparkles icons (Light, Dark, Auto).
+
+### Nested lists
+
+An unordered list inside a list item shows outlined circles. A nested ordered list continues the parent number (1.1, 1.2, 2.1). Markers are native, so screen readers still announce a list. Use `Ul` / `Ol` or bare `ul` / `ol` inside an `li`; no extra class.
 
 ### Divider
 
@@ -285,7 +295,7 @@ hero images use `preload`. No spinners for content that renders statically.
 
 ### Empty / error states
 
-Optional data (company link, preview image, description) is simply omitted — layout adapts (`project.previewImage ?
+Optional data (company link, preview image, description, notes) is simply omitted — layout adapts (`project.previewImage ?
 image : logo`). Missing context never renders placeholder text.
 
 ### Copy

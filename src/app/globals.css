@@ -76,7 +76,7 @@
     --font-headline: 'Outfit';
     --font-body: 'Outfit';
     --font-sketch: var(--font-patrick-hand), 'Patrick Hand', cursive;
-    --font-code: 'JetBrains Mono';
+    --font-code: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
 
     /* Text font roles. A theme remaps them (Wireframe: sketch); `font-heading` and `font-body` read them. */
     --font-role-heading: var(--font-outfit);
@@ -302,7 +302,7 @@
   --font-heading: var(--font-role-heading);
   --font-body: var(--font-role-body);
   --font-sketch: var(--font-sketch);
-  --font-code: var(--font-jetbrains-mono);
+  --font-code: var(--font-jetbrains-mono), 'JetBrains Mono', monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -468,12 +468,35 @@
     @apply my-0 space-y-0 pl-4;
   }
 
-  ol ul li {
-    @apply list-disc;
+  /* Unordered lists nested in a marked list mark items with an outlined circle.
+     Lists inside a marker-less list (`list-none`, e.g. the project list) are first level. */
+  ul:not(.list-none) > li > ul:not(.list-none) {
+    list-style-type: circle;
   }
 
   li > ul {
     @apply pl-4;
+  }
+
+  /* Nested ordered lists continue the parent number: 1., 1.1, 1.2, 2., 2.1. */
+  ol {
+    counter-reset: list-item-number;
+  }
+
+  ol > li {
+    counter-increment: list-item-number;
+  }
+
+  ol > li::marker {
+    content: counters(list-item-number, '.') '. ';
+  }
+
+  ol ol > li::marker {
+    content: counters(list-item-number, '.') ' ';
+  }
+
+  li > ol {
+    @apply pl-9;
   }
 
   b,

@@ -337,6 +337,6 @@ export const tools: Tools = [
 ];
 
 export const mainTools: Brand[] = getTools({
-  names: ['Figma', 'WebStorm', 'Junie', 'Craft', 'Claude', 'Codex'],
+  names: ['Figma', 'WebStorm', 'Craft', 'Claude', 'Codex'],
   sortBy: 'A-Z'
 });

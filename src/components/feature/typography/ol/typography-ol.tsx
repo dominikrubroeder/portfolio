@@ -24,7 +24,8 @@ export function Ol({
         className={cn(
           'space-y-2 text-foreground',
           offsetLeft && 'pl-4',
-          listStyle === 'decimal' && 'list-decimal pl-5 leading-7',
+          listStyle === 'decimal' &&
+            'list-decimal pl-5 leading-7 [ol:not(.list-none)>li_&]:pl-9',
           listStyle === 'none' && 'list-none',
           className
         )}

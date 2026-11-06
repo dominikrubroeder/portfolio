@@ -6,7 +6,7 @@ export const homeStatements = [
   'Building things is about composing things',
   'Design is about care, intention and purpose',
   'Code is about functionality, efficiency and performance',
-  'UX is about feel, satisfaction and delight',
+  'UX is about feeling, satisfaction and delight',
   'Agents are about orchestration and execution',
   'We compose, direct and oversee',
   'So we shape the core product UI'

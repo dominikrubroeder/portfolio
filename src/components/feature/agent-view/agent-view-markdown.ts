@@ -9,6 +9,7 @@ import {
 } from '@/components/feature/home';
 // Direct file import: the philosophy barrel exports a client component.
 import {
+  NAVIGATION_LEVELS_ENABLED,
   philosophyTabs,
   philosophyTopicGroups,
   philosophyTopics
@@ -61,7 +62,7 @@ const homeSection = (): string[] => [
     ({ title, labels, core }) =>
       `### ${title}\n\nCore: ${core}\n\n${list(labels)}`
   ),
-  ...Object.entries(philosophyTopics).map(
+  ...(NAVIGATION_LEVELS_ENABLED ? Object.entries(philosophyTopics) : []).map(
     ([topic, details]) =>
       `### ${topic}\n\n${philosophyTopicGroups
         .map(({ key, title }) => `${title}:\n\n${list(details[key])}`)
@@ -101,7 +102,8 @@ const projectSection = (project: (typeof projects)[number]): string => {
     project.responsibilities?.length
       ? `Fields:\n\n${list(project.responsibilities.map(getResponsibilityMarkdown))}`
       : undefined,
-    link(`View ${project.title}`, project.url)
+    link(`View ${project.title}`, project.url),
+    project.notes
   ]
     .filter(Boolean)
     .join('\n\n');
