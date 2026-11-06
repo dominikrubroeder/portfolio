@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 
 import { footerCertifications } from '@/components/feature/footer';
 import { homeHeading, homeStatements } from '@/components/feature/home';
-import { projectsHeroBlockquote } from '@/components/feature/projects';
-import { projects } from '@/components/feature/projects';
+import { projectsHeroBlockquote } from '@/components/feature/selected-works';
+import { projects } from '@/components/feature/selected-works';
 import { technologies } from '@/components/feature/technologies';
 import { tools } from '@/components/feature/tools';
 
@@ -24,7 +24,7 @@ describe('buildAgentViewMarkdown', () => {
     expect(headings.filter(({ level }) => level === 1)).toHaveLength(1);
     expect(
       headings.filter(({ level }) => level === 2).map(({ text }) => text)
-    ).toEqual(['Home', 'Projects', 'Certifications']);
+    ).toEqual(['Home', 'Selected works', 'Certifications']);
   });
 
   it('never skips a heading level', () => {
@@ -58,9 +58,9 @@ describe('buildAgentViewMarkdown', () => {
   });
 
   it('lists home before projects, hero project first', () => {
-    const projectsAt = markdown.indexOf('## Projects');
+    const selectedWorksAt = markdown.indexOf('## Selected works');
 
-    expect(markdown.indexOf('## Home')).toBeLessThan(projectsAt);
+    expect(markdown.indexOf('## Home')).toBeLessThan(selectedWorksAt);
     expect(markdown).toContain(`> ${projectsHeroBlockquote}`);
     expect(markdown.indexOf('### Value Booster')).toBeLessThan(
       markdown.indexOf(
@@ -70,7 +70,7 @@ describe('buildAgentViewMarkdown', () => {
 
     projects.forEach((project) => {
       expect(markdown.indexOf(`### ${project.title}`)).toBeGreaterThan(
-        projectsAt
+        selectedWorksAt
       );
       expect(markdown).toContain(`(${project.url})`);
     });

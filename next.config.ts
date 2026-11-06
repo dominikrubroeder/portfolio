@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
       }
     ]
   },
+  redirects: async () => [
+    { source: '/projects', destination: '/selected-works', permanent: true }
+  ],
   logging: {
     fetches: {
       fullUrl: true

@@ -22,17 +22,17 @@ import {
   getProject,
   getResponsibilityText,
   HERO_PROJECT_TITLE,
-  ProjectResponsibilityText,
+  ProjectResponsibilityItem,
   projects,
   projectsHeroBlockquote,
   projectsHeroHighlight
-} from '@/components/feature/projects';
+} from '@/components/feature/selected-works';
 import { H2, Ul } from '@/components/feature/typography';
 
 export const instant = false;
 
 export const metadata: Metadata = {
-  title: 'Projects | Dominik Rubröder, UX Engineer',
+  title: 'Selected works | Dominik Rubröder, UX Engineer',
   description: 'My project contributions from 2016 to 2026'
 };
 
@@ -76,14 +76,14 @@ function preloadProjectImages() {
   }
 }
 
-export default function ProjectsPage() {
+export default function SelectedWorksPage() {
   preloadProjectImages();
 
   const heroProject = getProject({ title: HERO_PROJECT_TITLE });
 
   return (
     <PageTemplate
-      h1="Projects"
+      h1="Selected works"
       heroDescription={projectsHeroBlockquote.map((sentence, index) =>
         sentence === projectsHeroHighlight ? (
           <Blockquote
@@ -187,15 +187,17 @@ export default function ProjectsPage() {
 
               {heroProject.responsibilities?.length && (
                 <Ul
-                  headline="Fields"
+                  headline="Responsible fields"
                   listStyle="disc"
                   className="text-primary-foreground"
                   headlineClassName="text-primary-foreground"
                 >
                   {heroProject.responsibilities.map((aspect) => (
-                    <li key={getResponsibilityText(aspect)}>
-                      <ProjectResponsibilityText responsibility={aspect} />
-                    </li>
+                    <ProjectResponsibilityItem
+                      key={getResponsibilityText(aspect)}
+                      responsibility={aspect}
+                      keyPrefix={heroProject.title}
+                    />
                   ))}
                 </Ul>
               )}
@@ -208,6 +210,12 @@ export default function ProjectsPage() {
               >
                 View {heroProject.title}
               </Button>
+
+              {heroProject.notes && (
+                <small className="mt-3 block text-primary-foreground">
+                  {heroProject.notes}
+                </small>
+              )}
             </Container>
           </Container>
         </Animate>
@@ -277,14 +285,15 @@ export default function ProjectsPage() {
                                 ))}
                               </ul>
                               <span className="size-1 rounded-full bg-muted-foreground" />
-                              <span>{project.timeframe}</span>
-                              {project.isActive && (
-                                <>
-                                  <span className="size-1 rounded-full bg-muted-foreground" />
+                              {project.isActive ? (
+                                <span>
+                                  <span>{project.timeframe} – </span>
                                   <Badge variant="muted" size="sm">
                                     Ongoing
                                   </Badge>
-                                </>
+                                </span>
+                              ) : (
+                                <span>{project.timeframe}</span>
                               )}
                             </small>
                           </div>
@@ -299,18 +308,16 @@ export default function ProjectsPage() {
 
                           {project.responsibilities?.length && (
                             <Ul
-                              headline="Fields"
+                              headline="Responsible fields"
                               listStyle="disc"
                               className="text-foreground"
                             >
                               {project.responsibilities.map((aspect) => (
-                                <li
+                                <ProjectResponsibilityItem
                                   key={`${project.title}-${getResponsibilityText(aspect)}`}
-                                >
-                                  <ProjectResponsibilityText
-                                    responsibility={aspect}
-                                  />
-                                </li>
+                                  responsibility={aspect}
+                                  keyPrefix={project.title}
+                                />
                               ))}
                             </Ul>
                           )}
@@ -324,6 +331,10 @@ export default function ProjectsPage() {
                         >
                           View {project.title}
                         </Button>
+
+                        {project.notes && (
+                          <small className="mt-3 block">{project.notes}</small>
+                        )}
                       </div>
                     </div>
                   </Animate>

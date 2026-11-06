@@ -21,7 +21,7 @@ export const jsonLd = {
       url: ROUTING_PUBLIC_DOMAIN,
       name: 'Dominik Rubröder, UX Design Engineer',
       dateCreated: '2024-01-15',
-      dateModified: '2026-05-05',
+      dateModified: '2026-11-02',
       isPartOf: {
         '@id': `${ROUTING_PUBLIC_DOMAIN}/#website`
       },
@@ -65,63 +65,75 @@ export const jsonLd = {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Selected Work',
+      name: 'Selected Works',
       description:
         'Featured web design engineering projects by Dominik Rubröder.',
       url: ROUTING_PUBLIC_DOMAIN,
-      numberOfItems: 9,
+      numberOfItems: 11,
       itemListElement: [
         {
           '@type': 'ListItem',
           position: 1,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Uvex'
+          name: 'Trachten Angermaier'
         },
         {
           '@type': 'ListItem',
           position: 2,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Sautershop'
+          name: 'Trodat'
         },
         {
           '@type': 'ListItem',
           position: 3,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Value Booster'
+          name: 'Uvex'
         },
         {
           '@type': 'ListItem',
           position: 4,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'HD+'
+          name: 'Sautershop'
         },
         {
           '@type': 'ListItem',
           position: 5,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Segmüller'
+          name: 'Value Booster'
         },
         {
           '@type': 'ListItem',
           position: 6,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'alles.auto Service Portal'
+          name: 'HD+'
         },
         {
           '@type': 'ListItem',
           position: 7,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Locaboo'
+          name: 'Segmüller'
         },
         {
           '@type': 'ListItem',
           position: 8,
           url: ROUTING_PUBLIC_DOMAIN,
-          name: 'Welleat'
+          name: 'alles.auto Service Portal'
         },
         {
           '@type': 'ListItem',
           position: 9,
+          url: ROUTING_PUBLIC_DOMAIN,
+          name: 'Locaboo'
+        },
+        {
+          '@type': 'ListItem',
+          position: 10,
+          url: ROUTING_PUBLIC_DOMAIN,
+          name: 'Welleat'
+        },
+        {
+          '@type': 'ListItem',
+          position: 11,
           url: ROUTING_PUBLIC_DOMAIN,
           name: 'Variasophia'
         }

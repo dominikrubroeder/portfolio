@@ -81,6 +81,7 @@ export { LogoTeams } from './logo-teams';
 export { LogoTheVerge } from './logo-the-verge';
 export { LogoToolfolio } from './logo-toolfolio';
 export { LogoTrello } from './logo-trello';
+export { LogoTrodat } from './logo-trodat';
 export { LogoTypescript } from './logo-typescript';
 export { LogoUnsplash } from './logo-unsplash';
 export { LogoUsercentrics } from './logo-usercentrics';

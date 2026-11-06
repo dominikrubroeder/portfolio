@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 
 import type { Metadata } from 'next';
 
-import { Outfit, Patrick_Hand } from 'next/font/google';
+import { JetBrains_Mono, Outfit, Patrick_Hand } from 'next/font/google';
 
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -30,6 +30,14 @@ const outfit = Outfit({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-outfit'
+});
+
+// Only inline code uses it: no preload, the browser fetches it when a `Code` renders.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: false,
+  variable: '--font-jetbrains-mono'
 });
 
 const patrickHand = Patrick_Hand({
@@ -74,7 +82,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={cn(
         'scroll-smooth bg-background',
         outfit.variable,
-        patrickHand.variable
+        patrickHand.variable,
+        jetbrainsMono.variable
       )}
       suppressHydrationWarning
       data-scroll-behavior="smooth"

@@ -25,7 +25,6 @@ const phrases = [
   ['8 5 12 12 15  23 15 18 12 4'],
   ['1 + 1 = 3'],
   ['Design and code speak the same language'],
-  ['\:)'],
   ['Connecting to the world ...'],
   ['For the user!'],
   ['What you do today matters most'],
@@ -33,7 +32,7 @@ const phrases = [
   ['Happy coding!'],
   ['Designing ...'],
   ['Setting up the environment ...'],
-  ['Applying color, typography and grid system ...'],
+  ['Applying color, typography and grids ...'],
   ['Design your way!']
 ];
 

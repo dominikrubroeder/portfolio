@@ -8,13 +8,18 @@ import {
   homeStatements
 } from '@/components/feature/home';
 // Direct file import: the philosophy barrel exports a client component.
-import { philosophyTabs } from '@/components/feature/philosophy';
+import {
+  NAVIGATION_LEVELS_ENABLED,
+  philosophyTabs,
+  philosophyTopicGroups,
+  philosophyTopics
+} from '@/components/feature/philosophy';
 import {
   getResponsibilityMarkdown,
   HERO_PROJECT_TITLE,
   projectsHeroBlockquote
-} from '@/components/feature/projects';
-import { projects } from '@/components/feature/projects';
+} from '@/components/feature/selected-works';
+import { projects } from '@/components/feature/selected-works';
 import { socials } from '@/components/feature/socials';
 import {
   mainTechnologies,
@@ -57,6 +62,12 @@ const homeSection = (): string[] => [
     ({ title, labels, core }) =>
       `### ${title}\n\nCore: ${core}\n\n${list(labels)}`
   ),
+  ...(NAVIGATION_LEVELS_ENABLED ? Object.entries(philosophyTopics) : []).map(
+    ([topic, details]) =>
+      `### ${topic}\n\n${philosophyTopicGroups
+        .map(({ key, title }) => `${title}:\n\n${list(details[key])}`)
+        .join('\n\n')}`
+  ),
   `> ${homeIntro.quote}`,
   ...homeIntro.paragraphs,
   homeIntro.signature,
@@ -91,20 +102,21 @@ const projectSection = (project: (typeof projects)[number]): string => {
     project.responsibilities?.length
       ? `Fields:\n\n${list(project.responsibilities.map(getResponsibilityMarkdown))}`
       : undefined,
-    link(`View ${project.title}`, project.url)
+    link(`View ${project.title}`, project.url),
+    project.notes
   ]
     .filter(Boolean)
     .join('\n\n');
 };
 
-const projectsSection = (): string[] => {
+const selectedWorksSection = (): string[] => {
   const hero = projects.find((project) => project.title === HERO_PROJECT_TITLE);
   const others = projects.filter(
     (project) => project.title !== HERO_PROJECT_TITLE
   );
 
   return [
-    '## Projects',
+    '## Selected works',
     `> ${projectsHeroBlockquote}`,
     ...[...(hero ? [hero] : []), ...others].map(projectSection)
   ];
@@ -120,7 +132,7 @@ export function buildAgentViewMarkdown(): string {
     link('Back to the site', '/'),
     brandList(profileLinks),
     ...homeSection(),
-    ...projectsSection(),
+    ...selectedWorksSection(),
     '## Certifications',
     brandList(
       footerCertifications.map(({ name, href }) => ({ name, href }) as Brand)

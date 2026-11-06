@@ -3,23 +3,112 @@ import {
   LogoHdPlus,
   LogoMediawave,
   LogoSautershop,
-  LogoSegmueller
+  LogoSegmueller,
+  LogoTrodat
 } from '@/components/feature/logo';
 import { getTechnologies } from '@/components/feature/technologies';
 import { getTools } from '@/components/feature/tools';
 
-import previewHdPlus from '@/public/projects/project-hd-plus-preview-wallpaper.png';
-import previewLocaboo from '@/public/projects/project-locaboo-preview-wallpaper.png';
-import previewSautershop from '@/public/projects/project-sautershop-preview-wallpaper.png';
-import previewSegmueller from '@/public/projects/project-segmueller-preview-wallpaper.png';
-import previewUvex from '@/public/projects/project-uvex-preview-wallpaper.png';
-import previewValueBooster from '@/public/projects/project-value-booster-preview-wallpaper.png';
-import previewVariasophia from '@/public/projects/project-variasophia-preview-wallpaper.png';
-import previewWelleat from '@/public/projects/project-welleat-preview-wallpaper.png';
+import previewAngermaier from '@/public/selected-works/project-angermaier-preview-wallpaper-compressed.png';
+import previewHdPlus from '@/public/selected-works/project-hd-plus-preview-wallpaper-compressed.png';
+import previewLocaboo from '@/public/selected-works/project-locaboo-preview-wallpaper-compressed.png';
+import previewSautershop from '@/public/selected-works/project-sautershop-preview-wallpaper-compressed.png';
+import previewSegmueller from '@/public/selected-works/project-segmueller-preview-wallpaper-compressed.png';
+import previewUvex from '@/public/selected-works/project-uvex-preview-wallpaper-compressed.png';
+import previewValueBooster from '@/public/selected-works/project-value-booster-preview-wallpaper-compressed.png';
+import previewVariasophia from '@/public/selected-works/project-variasophia-preview-wallpaper-compressed.png';
+import previewWeinmannSchanz from '@/public/selected-works/project-weinmann-schanz-preview-wallpaper 1.png';
+import previewWelleat from '@/public/selected-works/project-welleat-preview-wallpaper-compressed.png';
 
-import type { Project } from './projects-types';
+import type { Project } from './selected-works-types';
 
 export const projects: Project[] = [
+  {
+    title: 'Weinmann & Schanz',
+    category: ['Ecommerce', 'B2C'],
+    url: 'https://www.weinmann-schanz.de',
+    isCurrent: true,
+    isActive: true,
+    description:
+      'Leading German wholesale distributor for the trades in the fields of plumbing, heating, and air conditioning (SHK), as well as tools and installation technology',
+    timeframe: 'Oct. 2026',
+    logo: undefined,
+    role: undefined,
+    responsibilities: [
+      'Plan an AI-native design system creation and prototyping workflow: Enable the customer to ideate and prototype with his own UI in Figma using Claude Code, Codex or the native Figma AI assistant',
+      {
+        text: 'Review this process from two perspectives:',
+        items: [
+          'Establish the design system from scratch',
+          'Establish the design system from an existing codebase – reverse engineering it from code into Figma'
+        ]
+      }
+    ],
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+    demoUrls: undefined,
+    previewImage: previewWeinmannSchanz,
+    previewImageTimestamp: '2026-11-02'
+  },
+  {
+    title: 'Trachten Angermaier',
+    category: ['Ecommerce', 'B2C'],
+    url: 'https://www.trachten-angermaier.de',
+    isCurrent: true,
+    isActive: true,
+    description: 'Traditional Bavarian costumes since 1948',
+    timeframe: 'Oct. 2026',
+    logo: undefined,
+    role: undefined,
+    responsibilities: [
+      'Optimize the UX of the checkout',
+      'Implement frontend features'
+    ],
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+    demoUrls: undefined,
+    previewImage: previewAngermaier,
+    previewImageTimestamp: '2026-11-02'
+  },
+  {
+    title: 'Trodat',
+    category: ['B2B'],
+    url: 'https://www.trodat.net',
+    isCurrent: true,
+    isActive: true,
+    description: 'Stamps and marking solutions',
+    timeframe: 'Sept. 2026',
+    logo: <LogoTrodat id="projects-trodat" className="h-12 w-auto" />,
+    role: undefined,
+    responsibilities: [
+      'Build an admin UI for the PunchOut integration layer process using spec-driven engineering method',
+      'Establish a `DESIGN.md` file concept: Guide AI agents in generative UI on the design system usage and the design language across the app. Auto-document design decisions for humans and agents as well, plus a decisions log what happened in history to keep up implementation traceability',
+      'Establish a `UX_PRINCIPLES.md` file concept: Guide AI agents in generative UI on streamlining the design behavior across the app. Auto-document these principles for global app availability'
+    ],
+    tools: [],
+    technologies: [],
+    companies: [
+      {
+        href: 'https://www.mediawave.de',
+        label: 'mediawave commerce GmbH'
+      }
+    ],
+    demoUrls: undefined,
+    notes:
+      "Note: the admin UI for the PunchOut process is a Trodat-internal system and not available for public access – therefore I can't share any screenshots of it"
+  },
   {
     title: 'Uvex',
     category: ['Headless', 'B2C', 'Ecommerce'],
@@ -112,21 +201,18 @@ export const projects: Project[] = [
     title: 'Value Booster',
     category: ['Headless', 'B2B', 'B2C', 'Ecommerce'],
     url: 'https://www.mediawave.de/accelerators',
-    description:
-      'Kickstart in your headless ecommerce experience with the mediawave Value Booster',
+    description: 'The Commerce OS – Ready for the Future with AI Agents',
     isCurrent: true,
     isActive: true,
     timeframe: '2024',
     logo: <LogoMediawave id="projects-mediawave" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer', 'Design Consultant'],
     responsibilities: [
-      'Create and maintain the CMS component system in Storyblok',
-      'Create and maintain the design system in Figma',
-      'Make feature concepts and UI prototypes for project pitches',
-      'Participate in project pitches and communicate design decisions',
-      'Build the headless frontend in Next.js',
-      'Create page templates: Home Page, Category Page, Product Page, Cart Page, Checkout Page, Account Page',
-      'Compose the frontend libraries and its dependencies'
+      'Establish and maintain the CMS component system in Storyblok',
+      'Establish and maintain the design system in Figma',
+      'Build and compose the headless frontend in Next.js',
+      'Design and present feature concepts and UI prototypes for project pitches',
+      'AI-native focus: Establish a design and engineering vision for an agentic UI delivery process'
     ],
     tools: getTools({
       names: [
@@ -172,7 +258,7 @@ export const projects: Project[] = [
     logo: <LogoHdPlus id="projects-hd-plus" className="h-12 w-auto" />,
     role: ['Frontend Designer', 'Frontend Developer'],
     responsibilities: [
-      'Build the UI in Figma',
+      'Design and build the user interface in Figma',
       'Build the headless frontend in Next.js with Shopware, Storyblok, Meilisearch and the React Instant Search'
     ],
     tools: getTools({
@@ -263,7 +349,7 @@ export const projects: Project[] = [
       <LogoAllesAuto id="projects-alles-auto" className="h-6 w-auto sm:h-12" />
     ),
     role: ['Frontend Developer'],
-    responsibilities: ['Build frontend features in React'],
+    responsibilities: ['Build frontend features with React'],
     tools: getTools({
       names: [
         'VS Code',
@@ -326,7 +412,7 @@ export const projects: Project[] = [
     logo: undefined,
     role: ['Frontend Developer'],
     responsibilities: [
-      'Build the UI in Adobe XD and Photoshop',
+      'Build the user interface in Adobe XD and Photoshop',
       'Build the frontend in Twig and SCSS with Shopware 5'
     ],
     tools: [],
@@ -359,7 +445,7 @@ export const projects: Project[] = [
           href: 'https://variasophia.de/dirndl-karussell'
         }
       },
-      'Build the UI in Twig and SCSS with Shopware 5'
+      'Build the user interface in Twig and SCSS with Shopware 5'
     ],
     tools: [],
     technologies: [],

@@ -129,7 +129,7 @@ exists keep humans and coding agents aligned, and make the value of every featur
 ### VIII. Agent View Parity
 
 `/agent-view` (see `specs/002-agent-view/`) is the plain-markdown twin of the site content. Whenever a feature adds,
-changes or removes content on a page that agent view covers (today `/` and `/projects`, including content shown only
+changes or removes content on a page that agent view covers (today `/` and `/selected-works`, including content shown only
 through drawers and tabs), it MUST update agent view in the same change:
 
 - The copy MUST live in a shared content or data module (for example `home-content.ts`, `projects-data.tsx`,

@@ -5,7 +5,8 @@ import {
   THEME_KEY_COLOR,
   THEME_KEY_CONTAINER_WIDTH,
   THEME_KEY_FONT_SIZE,
-  THEME_KEY_RADIUS
+  THEME_KEY_RADIUS,
+  THEME_APPEARANCE_DEFAULT
 } from './theme-constants';
 import {
   THEME_DEFINITIONS,
@@ -51,7 +52,7 @@ export const themeInitializationScript = `
     var def = defs[0];
     for (var i = 0; i < defs.length; i++) if (defs[i].id === themeId) def = defs[i];
 
-    var appearance = pick(values.appearance, read('${THEME_KEY_APPEARANCE}'), 'light');
+    var appearance = pick(values.appearance, read('${THEME_KEY_APPEARANCE}'), '${THEME_APPEARANCE_DEFAULT}');
     var storedColor = read('${THEME_KEY_COLOR}');
     if (storedColor === 'primary') storedColor = 'violett';
     var color = pick(values.color, storedColor, def.defaults.color);
