@@ -12,7 +12,7 @@ export function ButtonGithub({ id, className }: BaseComponentProps) {
       brand={github}
       size="small"
       href="https://github.com/dominikrubroeder"
-      label="Go to GitHub profile of Dominik Rubröder"
+      label="Open my GitHub profile"
       className={className}
     />
   );

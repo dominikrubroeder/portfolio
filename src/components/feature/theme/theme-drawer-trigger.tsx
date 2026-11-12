@@ -45,7 +45,7 @@ export function ThemeDrawerTrigger() {
         id={THEME_DRAWER_TRIGGER_ID}
         variant="ghost-foreground"
         iconOnly
-        label="Theme settings"
+        label="Open theme settings"
         aria-haspopup="dialog"
         aria-expanded={open}
         onPointerEnter={() => void loadThemeDrawer()}

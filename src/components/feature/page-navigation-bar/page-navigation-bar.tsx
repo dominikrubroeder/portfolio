@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
 
 import {
+  ButtonFigma,
   ButtonGithub,
   ButtonLinkedin
 } from '@/components/feature/profile-links';
@@ -36,6 +37,7 @@ export function PageNavigationBar() {
         </div>
 
         <div className="ml-auto flex">
+          <ButtonFigma id="header-figma" className="max-xs:hidden" />
           <ButtonGithub id="header-github" />
           <ButtonLinkedin id="header-linkedin" />
         </div>

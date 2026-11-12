@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-background font-body text-base leading-normal font-normal selection:bg-primary selection:text-primary-foreground">
+      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-background font-body text-base leading-normal font-normal text-foreground selection:bg-primary selection:text-primary-foreground">
         <ThemeProvider>
           <script
             id="theme-initializer"

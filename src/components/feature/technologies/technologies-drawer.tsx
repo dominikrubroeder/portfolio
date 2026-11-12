@@ -81,7 +81,7 @@ export function DrawerTechnologies({
         <DrawerFooter>
           <DrawerClose
             render={
-              <Button variant="text-muted" aria-label="Close" title="close">
+              <Button variant="text-muted" iconOnly label="Close technologies">
                 <MinusIcon />
               </Button>
             }

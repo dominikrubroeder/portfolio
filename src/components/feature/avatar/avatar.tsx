@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Tooltip } from '@/components/ui/tooltip';
+
 import {
   EVENTS_WINTER_SCENE_ENABLED,
   SantasCap
@@ -36,11 +38,16 @@ export function Avatar({
     );
 
   return (
-    <Link
-      href="/"
-      className="relative shrink-0 interactive hover:scale-[1.06] active:scale-[0.98] motion-safe:transition"
-      title="Go to Introduction"
-      aria-label="Go to Introduction"
+    <Tooltip
+      content="Go to Introduction"
+      side="bottom"
+      render={
+        <Link
+          href="/"
+          className="relative shrink-0 interactive hover:scale-[1.06] active:scale-[0.98] motion-safe:transition"
+          aria-label="Go to Introduction"
+        />
+      }
     >
       {EVENTS_WINTER_SCENE_ENABLED && (
         <SantasCap className="absolute -top-5 left-1/2 z-10 -translate-x-1/2 -rotate-12" />
@@ -58,6 +65,6 @@ export function Avatar({
         draggable={false}
         loading="eager"
       />
-    </Link>
+    </Tooltip>
   );
 }

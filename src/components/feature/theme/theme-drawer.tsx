@@ -55,7 +55,11 @@ export function ThemeDrawer({
           <DrawerClose
             className="w-full"
             render={
-              <Button variant="text-muted" aria-label="Close" title="close">
+              <Button
+                variant="text-muted"
+                iconOnly
+                label="Close theme settings"
+              >
                 <MinusIcon />
               </Button>
             }

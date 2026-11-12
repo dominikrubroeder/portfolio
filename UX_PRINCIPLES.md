@@ -28,6 +28,7 @@ see [DESIGN.md](./DESIGN.md).
     button groups, full-width CTAs.
 11. **Show button state in the button itself.** Loading, saving and progress live inside the button that triggered the
     action, never in a separate spinner, banner or page overlay. See [Button state](#button-state).
+12. **Name every icon-only action.** Any actionable element that shows only an icon or image, or visible text of 3 characters or fewer ("Aa", "UI"), gets a tooltip that describes the action ("Set small font size"). The same text is its accessible name. See [Tooltip](#tooltip).
 
 ## 2. Information architecture
 
@@ -41,7 +42,7 @@ see [DESIGN.md](./DESIGN.md).
 - Navigation is **content-led**: `HeroNavigation` ("More" list at the end of a page) links to the other top-level pages
   and hides the current page. There is no persistent main menu.
 - The header carries identity (avatar, name, role), the theme settings
-  trigger (a palette icon, labelled "Theme settings", visible at every width) and, from `sm` up, three accent swatches
+  trigger (a palette icon, labelled "Open theme settings", visible at every width) and, from `sm` up, three accent swatches
   (blue, violett, orange). Appearance lives in the theme drawer.
 - **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the introduction content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the selected works, then the certifications. It is not part of `HeroNavigation`; the only link lives in the footer, centered on its own line above the copyright line, at every width. It is a small `text-foreground` button (renders as an anchor). Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
 - Deep links to sections use `scroll-mt-responsive` so sticky bars never cover the target.
@@ -66,7 +67,7 @@ This keeps context on long pages. Opt out with the `sticky-none` class where the
 
 ### Sticky call to action
 
-`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and the social links. The link is "Selected works"; on `/selected-works` it swaps to "Introduction" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
+`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and three icon links: the Figma design system, GitHub and LinkedIn (each opens in a new tab, labelled by its tooltip). The Figma link hides below `xs` (375 px): the primary link needs 171 px, which the row can no longer spare at 320 px with three icons. The link is "Selected works"; on `/selected-works` it swaps to "Introduction" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
 
 ### Intro
 
@@ -172,7 +173,9 @@ Petals with detail (currently Design, Code and UX; add an entry to `philosophyTo
 
 ### Tooltip
 
-Short text on hover and keyboard focus that explains an icon-only action. Opens after a short delay, closes on `Esc`
+**Global rule:** every actionable element (button, link, swatch, trigger) that is icon-only, image-only or shows 3 characters or fewer has a tooltip. Longer visible text already names the action and needs none. Use `Button` with `iconOnly` + `label`; for a non-`Button` element (swatch, avatar link, custom button) wrap it in `Tooltip` with `render`. Never rely on a native `title`: it is unreachable by keyboard and touch.
+
+Short text on hover and keyboard focus that explains an icon-only action. The text names the action, not the object: a verb plus what it acts on, in sentence case ("Open theme settings", "Set blue accent color", "Close dialog", "Open my GitHub profile"). "Open" for panels and external pages, "Go to" for internal navigation, "Set" for choices, "Close" for dismissing, "Enable"/"Disable" for switches. No "Click to", no bare nouns. It is also the accessible name, so it must make sense read alone. Opens after a short delay, closes on `Esc`
 or blur, never holds interactive content. Fades in with `motion-safe:`. Touch has no hover, so the `aria-label` carries
 the same text.
 
@@ -252,7 +255,7 @@ defaults return on the next load. Settings are never sent to a server.
 - **Container width**: default / wide / full. No control in the theme drawer (removed 2026-10-22); a saved value still applies to the reading column.
 - **Animations**: one switch, in every theme. Off: content appears at once (no reveal, intro typing, bounce, pulse or
   snowfall). Turning it on later never replays the intro.
-- **Font size**: small / medium / large scales the whole page from the root.
+- **Font size**: small / medium / large scales the whole page from the root. Three "Aa" buttons in the theme drawer, each at its own size. They are icon-only: the tooltip and accessible name are "Set small font size", "Set medium font size", "Set large font size", and `aria-pressed` marks the active one (the underline is the visual cue).
 
 ### Motion
 
@@ -303,7 +306,7 @@ image : logo`). Missing context never renders placeholder text.
 ### Copy
 
 Short, concrete, first person. Sentence case. Labels name the outcome ("Selected works", "View Value Booster", "Done"),
-not the mechanism ("Click here", "Submit").
+not the mechanism ("Click here", "Submit"). Tooltips and icon-only labels are actions ("Open theme settings"), see [Tooltip](#tooltip).
 
 ## 6. Responsive behavior
 
@@ -363,3 +366,4 @@ primary action reachable with one thumb (bottom bar).
 8. Does it work in every theme (Default, Wireframe), appearance, accent, radius setting and font size, and does it match the documented style patterns in DESIGN.md?
 9. Did I run the accessibility checks (contrast, focus, keyboard, accessible names, landmarks, reduced motion) while building, and fix or report every violation?
 10. Is the matching Figma component created or updated (variants, states, tokens as variables)?
+11. Is every icon-only, image-only or 3-characters-or-fewer action named by a tooltip (verb + object)?

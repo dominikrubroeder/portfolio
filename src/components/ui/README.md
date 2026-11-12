@@ -1,6 +1,8 @@
 # UI
 
-Baseline components of the design system. This is the generic component folder.
+> Baseline components of the design system. This is the generic component folder.
+
+Key style values: **modern, vibrant, themeable**. A `ui` component shows them through tokens (type, color, radius, motion), so it looks right in every theme, appearance and accent. See [DESIGN.md](../../../DESIGN.md).
 
 Examples: `button`, `badge`, `divider`, `tooltip`, `drawer`, `tabs`, `dialog`, `toggle`, `layout`, `icon`.
 
@@ -14,7 +16,8 @@ Examples: `button`, `badge`, `divider`, `tooltip`, `drawer`, `tabs`, `dialog`, `
   `[html[data-theme-animations=on]_&]:…`), not with `useTheme`, which lives in `feature/theme`.
 - The one exception is animation: `ui/animate` exports `AnimationsProvider` and `useAnimationsEnabled`. `feature/theme`
   renders the provider; `Animate` and `Typewriter` read it to stop JS motion. CSS stays the source of truth.
-- `ui/select` wraps the Base UI select (same look as before); an option can carry an `icon` and a `description` (shown under its label in the open list); `ui/drawer` is the panel pattern, also for the theme settings.
+- `ui/select` wraps the Base UI select (same look as before); an option can carry an `icon` and a `description` (shown
+  under its label in the open list); `ui/drawer` is the panel pattern, also for the theme settings.
 - Default to server components. Add `'use client'` only for state, effects, event handlers or browser APIs.
 
 > Tip: When a `ui` component needs feature data or feature components, pass them in via props or `children` instead.
