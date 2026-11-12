@@ -9,7 +9,7 @@ see [DESIGN.md](./DESIGN.md).
 
 1. **Content first, chrome second.** The reading column, statements and project work lead. Controls stay small and
    peripheral.
-2. **One clear next step.** Each view has one dominant action. Home: "Selected works"; `/selected-works`: "Home" (sticky bottom bar). Project cards:
+2. **One clear next step.** Each view has one dominant action. Home: "Selected works"; `/selected-works`: "Introduction" (sticky bottom bar). Project cards:
    "View <project>".
 3. **The visitor is in control.** Appearance, accent color, font size and animation are user settings, remembered and
    never forced. Respect OS preferences by default (`system`, reduced motion).
@@ -35,6 +35,7 @@ see [DESIGN.md](./DESIGN.md).
 /                       Introduction (statements, philosophy, principles, tools, technologies)
 /selected-works          Selected works 2016–2026
 /agent-view             The home and selected works content as plain markdown (no styling)
+/api/resume            The résumé as JSON (static route handler; "Résumé" menu in the footer next to Agent view, options PDF with a document icon and JSON with a code brackets icon)
 ```
 
 - Navigation is **content-led**: `HeroNavigation` ("More" list at the end of a page) links to the other top-level pages
@@ -42,7 +43,7 @@ see [DESIGN.md](./DESIGN.md).
 - The header carries identity (avatar, name, role), the theme settings
   trigger (a palette icon, labelled "Theme settings", visible at every width) and, from `sm` up, three accent swatches
   (blue, violett, orange). Appearance lives in the theme drawer.
-- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the home content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the selected works, then the certifications. It is not part of `HeroNavigation`; the only link lives in the footer, centered on its own line above the copyright line, at every width. It is a small `text-foreground` button (renders as an anchor). Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
+- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the introduction content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the selected works, then the certifications. It is not part of `HeroNavigation`; the only link lives in the footer, centered on its own line above the copyright line, at every width. It is a small `text-foreground` button (renders as an anchor). Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
 - Deep links to sections use `scroll-mt-responsive` so sticky bars never cover the target.
 - `ScrollToTop` resets the scroll position on route change; `ButtonScrollToTop` is available for long pages.
 
@@ -65,7 +66,7 @@ This keeps context on long pages. Opt out with the `sticky-none` class where the
 
 ### Sticky call to action
 
-`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and the social links. The link is "Selected works"; on `/selected-works` it swaps to "Home" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
+`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and the social links. The link is "Selected works"; on `/selected-works` it swaps to "Introduction" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
 
 ### Intro
 
@@ -157,10 +158,7 @@ Modal confirmation or focused content. Same close rules as drawers. Never used f
 
 ### Avatar
 
-`variant="lightbox"`: the photo becomes a button (zoom-in cursor, `aria-label`). Click opens a modal with the photo
-enlarged and centered (max `min(80vmin, 31.25rem)`, the source size). Close via click on photo, click on scrim or
-`Esc`; focus returns to the thumbnail. Zoom-in/out animation is skipped with reduced motion. Default variant is
-unchanged (link to home or plain image).
+Round photo. `as="Link"` (header) links to the introduction; `as="Image"` is a plain image.
 
 ### Philosophy blossom (levels)
 
@@ -185,6 +183,10 @@ Inline literal text (file names, commands) in a muted chip with the code font. N
 ### Badge
 
 Non-interactive status label ("Ongoing"). Never a button.
+
+### Menu
+
+A button that opens a short list of links (footer "Résumé": PDF in a new tab, JSON in the same tab; each row has an icon before its label). Base UI menu: arrow keys move, `Enter` follows, `Esc` closes and returns focus to the trigger; the trigger announces `aria-haspopup="menu"`. Opens above the trigger. Rows are 44 px high. Fades with `motion-safe:` only while animations are on.
 
 ### Toggle / Select
 
@@ -246,7 +248,7 @@ defaults return on the next load. Settings are never sent to a server.
 - **Theme (style)**: Default ("Intense accent UI") / Wireframe ("Sketch-based UI"); the open list shows the two names only. Wireframe uses a handwritten font and grayscale images, icons and logos while the accent is neutral; picking a color accent shows them in color. Selecting a theme applies its defaults for accent, animations, radius and
   container width (Wireframe: neutral accent, animations off, square corners; Default: blue, animations on, 6px). The
   visitor's own tweaks in the previous theme are replaced; appearance and font size stay.
-- **Radius**: none / small / medium / large. Applies instantly to every rounded element.
+- **Radius**: none / small / medium / large. Applies instantly to every rounded element. In Wireframe it scales the hand-drawn corners (none keeps the drawn look, large rounds them most).
 - **Container width**: default / wide / full. No control in the theme drawer (removed 2026-10-22); a saved value still applies to the reading column.
 - **Animations**: one switch, in every theme. Off: content appears at once (no reveal, intro typing, bounce, pulse or
   snowfall). Turning it on later never replays the intro.
@@ -357,6 +359,7 @@ primary action reachable with one thumb (bottom bar).
 4. How does it look/behave with reduced motion, dark mode, wireframe, 110 % text?
 5. Is it operable and understandable with keyboard and screen reader?
 6. What does it do when data is missing?
-7. Is the behavior documented here and in a story?
+7. Is the behavior documented here?
 8. Does it work in every theme (Default, Wireframe), appearance, accent, radius setting and font size, and does it match the documented style patterns in DESIGN.md?
 9. Did I run the accessibility checks (contrast, focus, keyboard, accessible names, landmarks, reduced motion) while building, and fix or report every violation?
+10. Is the matching Figma component created or updated (variants, states, tokens as variables)?

@@ -25,7 +25,7 @@ export function PageNavigationBar() {
           {showHome ? (
             <Button href="/" className="w-full sm:w-auto">
               <ArrowLeftIcon />
-              Home
+              Introduction
             </Button>
           ) : (
             <Button href="/selected-works" className="w-full sm:w-auto">

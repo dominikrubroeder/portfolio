@@ -24,7 +24,7 @@ describe('buildAgentViewMarkdown', () => {
     expect(headings.filter(({ level }) => level === 1)).toHaveLength(1);
     expect(
       headings.filter(({ level }) => level === 2).map(({ text }) => text)
-    ).toEqual(['Home', 'Selected works', 'Certifications']);
+    ).toEqual(['Introduction', 'Selected works', 'Certifications']);
   });
 
   it('never skips a heading level', () => {
@@ -34,8 +34,8 @@ describe('buildAgentViewMarkdown', () => {
     });
   });
 
-  it('puts the identity and profile links before Home', () => {
-    const home = markdown.indexOf('## Home');
+  it('puts the identity and profile links before Introduction', () => {
+    const home = markdown.indexOf('## Introduction');
 
     expect(markdown.indexOf('# Dominik Rubröder, UX Engineer')).toBe(0);
     expect(markdown.indexOf('[GitHub]')).toBeLessThan(home);
@@ -49,7 +49,7 @@ describe('buildAgentViewMarkdown', () => {
     );
 
     expect(markdown.indexOf(homeHeading)).toBeGreaterThan(
-      markdown.indexOf('## Home')
+      markdown.indexOf('## Introduction')
     );
     positions.forEach((position, index) => {
       expect(position).toBeGreaterThan(-1);
@@ -60,7 +60,7 @@ describe('buildAgentViewMarkdown', () => {
   it('lists home before projects, hero project first', () => {
     const selectedWorksAt = markdown.indexOf('## Selected works');
 
-    expect(markdown.indexOf('## Home')).toBeLessThan(selectedWorksAt);
+    expect(markdown.indexOf('## Introduction')).toBeLessThan(selectedWorksAt);
     expect(markdown).toContain(`> ${projectsHeroBlockquote}`);
     expect(markdown.indexOf('### Value Booster')).toBeLessThan(
       markdown.indexOf(

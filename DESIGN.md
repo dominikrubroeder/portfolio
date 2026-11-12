@@ -37,7 +37,7 @@ Hierarchy of what a visitor must grasp, in order: **identity → expertise → s
 
 Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 (CSS-first config in `globals.css`) · shadcn/ui
 patterns on top of Base UI (`@base-ui/react`) and Radix · `motion` for animation · `class-variance-authority` +
-`cn()` for variants · Lucide and Heroicons for icons · Storybook for `ui` components · Vercel Analytics + Speed Insights.
+`cn()` for variants · Lucide and Heroicons for icons · Vercel Analytics + Speed Insights.
 
 > Next.js in this repo has breaking changes against common knowledge. Read `node_modules/next/dist/docs/` before
 > writing framework code (see `AGENTS.md`).
@@ -143,16 +143,16 @@ scannable.
 
 ### 6.3 Z-index
 
-`z-20` content containers · `z-50` header and sticky bars · `z-100` (`z-index-100`) avatar lightbox scrim · `z-max` (250)
-drawer panels, popups and lightbox photo. Do not invent other layers.
+`z-20` content containers · `z-50` header and sticky bars · `z-100` (`z-index-100`) typewriter overlay and selected works hero band · `z-max` (250)
+drawer panels and popups. Do not invent other layers.
 
 ## 7. Shape
 
-- Base radius token: `--radius` (6px at the default `md` setting); derived `sm`, `md` (clamped at 0), `lg`, `xl` (×1.4), `2xl` (×1.8), `3xl`, `4xl`.
+- Base radius token: `--radius` (6px at the default `md` setting); derived `sm`, `md` (clamped at 0), `lg`, `xl` (×1.4), `2xl` (×1.8), `3xl` (×2.2), `4xl` (×2.6), `5xl` (×4.4).
 - The visitor sets the radius (`data-theme-radius`: none 0, sm 4px, md 6px, lg 10px). One variable drives every `rounded-*`
-  utility, so the whole UI follows live. Default starts at `md`, Wireframe at `none`.
+  utility, so the whole UI follows live. Default starts at `md`, Wireframe at `none`. In Wireframe the setting scales the uneven sketch corners (`--sketch-scale`: none 1, small 1.4, medium 1.8, large 2.4) instead of a plain radius, so the hand-drawn shape stays at every step.
 - Interactive controls (buttons, tabs) use `rounded-2xl` and tighten to `rounded-xl` on hover.
-- Panels (drawers) use `rounded-2xl`; badges are `rounded-full` (in Wireframe they follow the radius token, `rounded-md`).
+- Panels (drawers) use `rounded-5xl` (the largest radius token, 4.4 × `--radius`); badges are `rounded-full` (in Wireframe they follow the radius token, `rounded-md`).
 - `rounded-theme-*` utilities are plain aliases of `rounded-*` and follow the radius setting in every theme.
 - Borders are 1 px, `border` token, solid. Depth comes from borders and surface tone, not shadows.
 
@@ -172,6 +172,8 @@ Motion principles and behavior rules (including "Native CSS first") live in
 - Drawer (floating bottom sheet and `xl`+ floating side panel): pure slide from its edge, 700 ms `cubic-bezier(0.32, 0.72, 0, 1)`; the backdrop fades with it. No scale or fade on the panel itself: scaling a panel that holds small controls (the close icon) makes them shimmer and jump while it settles. Swipe-to-dismiss keeps its own velocity-based timing.
 - Hover/press: `interactive` utility (`transition`, `active:scale-95`); ghost buttons grow a tinted `primary/10` pill
   from `scale-80`.
+  `Button` fades color and background, tightens its radius and scales on press in one 300 ms `--ease-interactive`
+  (`cubic-bezier(0.22, 1, 0.36, 1)`) transition, so none of them snaps; the ghost pill uses the same duration and curve.
 - Default animation setting: enabled (Default theme), spring, 0.24 s delay, 0.4 s duration. Users can switch animations
   off or on in every theme; the Wireframe theme starts with them off. Off means no reveal, no typewriter intro, no
   bounce or pulse, no snowfall and no hover transitions. CSS (`html[data-theme-animations='off'] [data-animate]`) shows
@@ -220,7 +222,7 @@ Rules:
 ## 10. Components
 
 Architecture: `src/components/{ui,feature}`. See the READMEs in [`ui`](./src/components/ui/README.md) and
-[`feature`](./src/components/feature/README.md). One folder per component with `index.ts`, `types.ts` and `stories/`
+[`feature`](./src/components/feature/README.md). One folder per component with `index.ts` and `types.ts`
 where applicable. Imports use the `@/` alias and are grouped ui → feature → lib. Pages in `src/app` compose feature and
 ui components.
 
@@ -230,7 +232,7 @@ layer order of imports, the import depth (`local/import-depth`: at most three se
 ### UI (`src/components/ui`)
 
 Baseline, domain-free components: `Button`, `Badge`, `Code`, `Divider`, `Hr`, `Blockquote`, `ExternalLink`,
-`Icon*`, `Select` (Base UI listbox: `Button` trigger with chevron, `bg-background` popup with a 1 px border, check mark on the chosen row; options may carry an icon), `Toggle`, `Tooltip`, `DotsDivider`, `Typewriter`, `TypewriterOverlay`, `Animate`, `ButtonGroup`, `Drawer`,
+`Icon*`, `Menu` (Base UI menu: `Button` trigger, `bg-background` popup with a 1 px border like `Select`, rows are links with an optional icon, `newTab` adds `rel` and a hidden "(opens in a new tab)"), `Select` (Base UI listbox: `Button` trigger with chevron, `bg-background` popup with a 1 px border, check mark on the chosen row; options may carry an icon), `Toggle`, `Tooltip`, `DotsDivider`, `Typewriter`, `TypewriterOverlay`, `Animate`, `ButtonGroup`, `Drawer`,
 `Dialog`, `Tabs`, `Container` and `PageTemplate` (h1, hero blockquote and content slot used by
 inner pages).
 
@@ -244,7 +246,7 @@ inner pages).
 - **Blockquote** — accent bar on the left (`before:` element). In Wireframe the bar is a hand-drawn pencil stroke (CSS mask from `--sketch-quote-bar`) in the same accent color.
 - **Button in Wireframe** — `contained-*` buttons get uneven corners and a rotated `foreground` pencil outline (`before:` pseudo-element, tokens `--sketch-button-radius` and `--sketch-button-outline-radius`); ghost, text and link variants are unchanged.
 - **Toggle and color swatches in Wireframe** — swatches are wobbly blobs (`--sketch-blob-radius`) with a rotated `foreground` pencil outline (`before:` pseudo-element, `--sketch-blob-outline-radius`). The toggle track is a slightly uneven capsule with the same kind of outline (`--sketch-pill-radius`, `--sketch-pill-outline-radius`) and an uneven, slightly tilted knob with a 2 px outline (`--sketch-knob-radius`, percentages that never clamp); colors, check mark and the accent knob are unchanged.
-- **Sketch pattern in Wireframe (all controls)** — one pencil language: uneven corners plus a `foreground` outline. Applied to contained and ghost-hover buttons, the active tab, toggle track and knob, color swatches, the `DotsDivider` dots, the typewriter frame, the drawer panel (2 px), the theme setting groups and the tools and technologies drawer groups (1.5 px), the `text-*` button hover underline (the `Hr` pencil stroke) and the philosophy diagram circles (petals and the "UI" core; petal labels sit on an opaque chip of `primary` at 10 % over `background`), and the `Hr` rule (a masked pencil stroke in the parent's text color; `--sketch-hr-line`). Tokens: `--sketch-button-*`, `--sketch-blob-*`, `--sketch-pill-*`, `--sketch-knob-radius`, `--sketch-frame-radius`. Default is unchanged.
+- **Sketch pattern in Wireframe (all controls)** — one pencil language: uneven corners plus a `foreground` outline. Applied to contained and ghost-hover buttons, the active tab, toggle track and knob, color swatches, the `DotsDivider` dots, the typewriter frame, the drawer panel (2 px), the theme setting groups and the tools and technologies drawer groups (1.5 px), the `Select` and `Menu` popups (1.5 px, rows with uneven corners), the `text-*` button hover underline (the `Hr` pencil stroke) and the philosophy diagram circles (petals and the "UI" core; petal labels sit on an opaque chip of `primary` at 10 % over `background`), and the `Hr` rule (a masked pencil stroke in the parent's text color; `--sketch-hr-line`). Tokens: `--sketch-button-*`, `--sketch-blob-*`, `--sketch-pill-*`, `--sketch-knob-radius`, `--sketch-frame-radius`; the rem-based ones (button, frame) scale with `--sketch-scale`, the percentage and capsule ones already fill their box. Default is unchanged.
 - **Badge** — `primary | foreground | muted | white`; `sm | md | lg`; pill-shaped.
 - **Code** — inline code chip, like text in backticks in Slack or Claude: `font-code` at `0.85em`, `bg-muted`, 1 px `border`, `text-foreground`, `rounded-md` (follows the radius setting), `px-1.5 py-0.5`, never wraps. Tone and a hairline carry it, no color accent, so it works in every theme and accent. Project responsibilities write it as `` `text` `` in the data.
 - **Divider** — `hr`, `dot`, `three-dotted`.
@@ -260,8 +262,7 @@ scene), `home` (home page copy), `agent-view` (`AgentViewLink`, markdown builder
 File naming: every file in a feature directory is prefixed with the directory name (`tools/tools-data.ts`). Only
 `index.ts` is exempt.
 
-- **Avatar** — round photo; `variant` = `default | lightbox`. `lightbox` opens the photo centered on a
-  `background/90` scrim (`z-100`, photo at `z-max`) with a 250 ms scale-and-fade, no shadow.
+- **Avatar** — round photo with a 2 px border (`foreground` in Wireframe); `as` = `Link` (header, links to the introduction) | `Image`.
 
 ### Agent view
 
@@ -269,7 +270,7 @@ File naming: every file in a feature directory is prefixed with the directory na
 (`text/plain`) with no layout, theme, CSS or script. Its text comes from the same content modules as the pages
 (`home-content.ts`, `projects-content.ts`, `philosophy-data.ts`, the data files), so a copy edit shows in both.
 
-`AgentViewLink` (`Button` `text-foreground`, `small`: a quiet text button, `hover:text-primary`) is the only entry point. It sits in the footer, centered on its own line directly above the copyright line, at every width and container-width setting; the header has no link. It is `small` on purpose: a standalone link in a dense, non-primary context (rule 5); no other target sits within 24 px of it. The footer no longer shows the framework-version line (Next.js, React, Tailwind CSS) and uses `py-6` / `space-y-4` (was `py-12` / `space-y-6`).
+`AgentViewLink` (`Button` `text-foreground`, `small`: a quiet text button, `hover:text-primary`) is the only entry point. It sits in the footer, centered on its own line directly above the copyright line, at every width and container-width setting; the header has no link. It is `small` on purpose: a standalone link in a dense, non-primary context (rule 5); no other target sits within 24 px of it. A "Résumé" menu sits beside it in the same row (`Menu` trigger: same `text-foreground` `small` button with a three-dots icon instead of an arrow, `gap-x-4`, wraps when narrow); its two options, PDF and JSON, link to the CV file and `/api/resume`. The footer no longer shows the framework-version line (Next.js, React, Tailwind CSS) and uses `py-6` / `space-y-4` (was `py-12` / `space-y-6`).
 
 ### Variants
 
@@ -283,7 +284,7 @@ passthrough is for layout (margin, width), not for restyling.
 - In Wireframe all images and SVGs render grayscale while the neutral accent is active, and in color once the visitor picks a color accent (see §9). Do not rely on hue alone to tell logos apart.
 - Logos are SVG components in `feature/logo`; raster fallbacks sit in `feature/logo/img`. Logos must work in dark mode
   (use `currentColor` or provide a dark variant).
-- Icons: Lucide for UI icons (`IconLucide`), Heroicons 16/solid for inline arrows. Size via the button (`size-5` at
+- Icons: Lucide for UI icons (`IconLucide`), Heroicons 16/solid for existing inline arrows. **New icons use the outline style** (`@heroicons/react/24/outline`, sized `size-4` or `size-5`, `aria-hidden` when a label is present); do not add new solid icons. Outline icons draw a 1.5 stroke in a 24 px box, about 1 px at `size-4`, which reads thin next to text: add `stroke-2` (1.33 px at `size-4`). Size via the button (`size-5` at
   medium). Custom conceptual icons (Atomic Design, Flower of Product Engineering, …) are bespoke SVG `ui` components.
 - Decorative SVG shapes (`SvgShapes`) are four corner crop marks of the page, desktop-only (`lg:block`), `pointer-events-none`, `z-10`.
 
@@ -319,7 +320,6 @@ do not apply to custom images.
 - Icon-only controls get `aria-label`; links that open a new tab say so in `aria-label`/`title`.
 - Theme setting changes are announced to screen readers through a polite live region (`ThemeSettingsAnnouncer`) inside the drawer.
 - Reduced motion honored via `motion-safe:`, `prefers-reduced-motion` and `MotionConfig`.
-- Storybook runs `addon-a11y` (`test: 'todo'`); treat reported violations as bugs.
 
 ## 13. Dos and don'ts
 
@@ -327,7 +327,7 @@ do not apply to custom images.
 
 - Use semantic tokens and Tailwind utilities that resolve to them.
 - Wrap page sections in `Container`; reveal them with `Animate`.
-- Start new UI as a `ui` component with a story when it is reusable.
+- Start new UI as a `ui` component when it is reusable.
 - Test in light, dark, all three accents, wireframe, and 90 / 110 % font size.
 - Keep one primary action per view visually dominant (`contained-primary`).
 - Write short, declarative copy in sentence case.
@@ -349,7 +349,7 @@ do not apply to custom images.
 
 1. New color, radius, font, duration or width ⇒ add a token in `globals.css` first.
 2. New accent ⇒ full `-foreground/-hover/-border` set, mapped in all three places, contrast verified.
-3. New component ⇒ correct layer (`ui` or `feature`), `index.ts` barrel, typed props, a story for `ui` components, works in wireframe.
+3. New component ⇒ correct layer (`ui` or `feature`), `index.ts` barrel, typed props, works in wireframe.
 4. New page ⇒ `PageTemplate` (or `Container` sections), `metadata` with the `… | Dominik Rubröder, UX Engineer` title
    pattern, `HeroNavigation` entry if it is top-level. Exception: `/agent-view` is a route handler returning plain
    markdown, so it has no `PageTemplate`, `metadata` or `HeroNavigation` entry (no layout, no `<head>`); its link lives in
@@ -359,6 +359,7 @@ do not apply to custom images.
 7. Every visual decision of lasting effect gets a line in the decision log below.
 8. Every new or changed component is cross-theme compatible and follows the documented style patterns (tokens, typography, shape, motion, components in §4–§10). Verify it in Default and Wireframe, light and dark, every accent, radius setting and 90 / 110 % font size before calling the task done. Differences between themes come from tokens and `html[data-theme=…]` selectors, never from forked components. If a needed pattern is not documented, add it here in the same change.
 9. Accessibility checks are part of every UI task, not a final polish step: contrast in every theme and accent, visible focus, keyboard operation, accessible names, semantic landmarks and reduced motion (§12). Run the checks before calling a task done and report violations you find.
+10. Every created or updated component is synced to its Figma component in the same task (Portfolio file `yGICVbl9clikVNXP2Lkkue`: pages `↪ ui`, `↪ features`, `↪ tokens`, mirroring `src/components/{ui,feature}`). New tokens get a Figma variable. Code and Figma never differ in look, variants, props or states. Pure refactors with no visual or API change are exempt. If Figma is unreachable, report which component is out of sync.
 
 ## 15. Decision log
 
@@ -389,7 +390,7 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.0.6 | Philosophy core "UI" center pulses (`animate-core-pulse`, scale 1 → 1.12 → 0.96, 2.1 s loop) | Same rhythm as the three-dot divider; the shared center of the diagram reads as the living part. |
 | 3.0.6 | Icon-only buttons use `iconOnly` + `label`: accessible name and `Tooltip` text, no native `title` | Native `title` is unreachable by keyboard and touch; one source for name and explanation. |
 | 3.0.6 | Components split into `ui` (baseline, domain-free) and `feature` (domain-specific); `feature` consumes `ui`, never the reverse | Replaces the four Atomic Design layers. Clear ownership: a feature keeps all its parts in one folder; `ui` stays reusable. |
-| 3.0.6 | `PageNavigationBar` feature: the sticky bottom bar on every page; on `/selected-works` the "Selected works" button cross-fades to "Home" (300 ms, `cubic-bezier(0.22, 1, 0.36, 1)`, 0.75rem horizontal slide, no vertical movement) | One bar, one primary action that always points to the other half of the site; the leaving button leaves the flow, so the bar fits the visible button and reserves no space for the other. |
+| 3.0.6 | `PageNavigationBar` feature: the sticky bottom bar on every page; on `/selected-works` the "Selected works" button cross-fades to "Introduction" (300 ms, `cubic-bezier(0.22, 1, 0.36, 1)`, 0.75rem horizontal slide, no vertical movement) | One bar, one primary action that always points to the other half of the site; the leaving button leaves the flow, so the bar fits the visible button and reserves no space for the other. |
 | 3.0.6 | `DotsDivider` (`ui`) extracted from `Divider variant="three-dotted"`; used on home and between projects on `/selected-works` instead of `hr`; `dots={1}` renders the single dot with a hover target; three dots always use the same fixed wave, only the single dot takes a `delay` | Identical to the home dividers (vertical stack, sequential bounce): one punctuation mark across the site. |
 | 3.0.6 | `DotsDivider` gets an `alignment` prop (`vertical` default, `horizontal`); `animate={false}` opts out of the bounce | Same punctuation fits inline contexts (rows, meta lines) without a second component; static variant for places where motion would distract. |
 | 3.0.6 | `Animate` reveals use a 1.8 s expo-out glide with 20 px travel instead of a bouncy spring; opacity runs shorter than travel | Spring overshoot and a hard-stopping 24 px slide felt jittery; a long soft tail and less distance read as smooth. |
@@ -452,6 +453,15 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 | 3.1 | Project `notes` (optional): a `small` muted line under the "View …" button (`text-primary-foreground` on the hero band); agent view prints it after the link | Context that does not belong in the fields list, such as why a private project has no screenshots. Quiet by design: the call to action stays the only emphasis. |
 | 3.1 | Project responsibilities can nest: an object entry takes optional `items` (any depth), rendered as a `disc` sublist (`my-2`) inside the parent `li`; `link` became optional; agent view prints the sublist as indented Markdown | Some fields need sub-points without becoming separate fields. Same list look, one level deeper; text color inherits, so the hero band and list cards need no variant. |
 | 3.1 | Nested lists are global (`globals.css`, `Ul`, `Ol`): a `ul` inside an `li` marks items with an outlined circle (`list-style-type: circle`); a nested `ol` continues the parent number (1., 1.1, 1.2, 2., 2.1) with CSS counters on `::marker`, indented to `pl-9` | Depth reads from the marker shape and the number path, with no extra markup and no JS; native markers keep list semantics and follow the text color in every theme. |
+| 3.2 | `Drawer` panel is `rounded-5xl` (was `rounded-theme-2xl`); new token `--radius-5xl` (4.4 × `--radius`); Wireframe keeps its sketch frame radius | A much softer sheet matches the rounded controls. The token follows the radius setting (none stays square); `4xl` was too close to the old look. |
+| 3.2 | `Select` and `Menu` popups use `z-max` (was `z-1100`); in Wireframe the popup gets the sketch box (`--sketch-button-radius`, 1.5 px `foreground` border) and rows uneven corners; `Select` popup is capped to `--available-height` and scrolls | `z-1100` was not in the layer scale. Same sketch language as the drawer groups. A long list must stay reachable on a short viewport. CSS only. |
+| 3.2 | Wireframe honors the radius setting: the rem-based sketch radii (frame, button and outline, groups, popups, drawer) are multiplied by `--sketch-scale` (none 1, small 1.4, medium 1.8, large 2.4); `.sketch-frame` reads `--sketch-frame-radius` | The Border setting did nothing in Wireframe because every sketch corner was a fixed value. Scaling keeps the uneven drawn shape and gives the visitor control; `none` stays the unchanged start look. CSS only. |
+| 3.2 | Visible labels that link to `/` say "Introduction" (bottom bar button on `/selected-works`, avatar link title and accessible name) and the `/agent-view` section heading, not "Home" | The page opens with the introduction; one word names the destination everywhere. |
+| 3.2 | `Button` hover and press transition `color`, `background-color`, `border-radius` and `scale` over 300 ms with the new `--ease-interactive` curve (`cubic-bezier(0.22, 1, 0.36, 1)`, the page-load entrance curve); the ghost pill's scale and opacity use the same values | The button only transitioned color at Tailwind's 150 ms default, so the radius tightening and the press scale snapped. One long expo-out curve reads smooth; `motion-safe:` keeps it off with reduced motion. |
+| 3.2 | Component changes sync to Figma in the same task (rule 10), not as a later reminder | The Figma file mirrors the code architecture; a component that exists or differs in only one place breaks the design-and-code story. |
+| 3.2 | The Figma file carries the full component set: every `ui` component on `↪ ui` (one `button` set with `variant`, `color`, `size`, `state`, a leading icon, swappable icons and `showLabel`; `divider` with `hr`, `dot` and `three-dotted`) and the `feature` components on `↪ features` (header, footer, avatar, brand and brand list, profile links, agent view link, theme settings with the theme, appearance and radius selects and the animation switch, drawers, winter toggle and Santa's cap, philosophy core, project responsibility). They are built from the `theme` and `color` variables and the text styles. The older duplicates of the 3.0.5 design are removed; the `ui-3.2` page uses the new `header` and `footer` | The new sets follow the code names and props one to one, so there is one source in Figma as in code. Old nodes without a new counterpart (typography, `assets`, `resources`, `projects`, `hero-link`, `section`, `brand-logo`) stay. |
+| 3.2 | Avatar `lightbox` variant and `avatar-lightbox.tsx` removed | Unused: the header avatar only links to the introduction. Drops a client component, a Dialog and the avatar's use of `z-100`. |
+| 3.2 | Storybook tooling removed (config, all stories, dependencies, scripts); components are verified in the running app. The Storybook logo, tool entry and project references stay | Not needed as a workshop. Fewer dependencies and one source of truth less to keep in sync with the app and Figma. Storybook remains a tool listed in the work history. |
 
 > When you make a lasting design decision, add a row: _version · decision · why_.
 
@@ -467,3 +477,4 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
   and accent text on dark (`color-contrast`, 3.5–3.8 : 1 for blue and orange on `/selected-works` links). All predate this feature.
 - Wireframe cursor stays black or white even when the
   visitor picks a color accent.
+- Figma does not model the Wireframe sketch shapes, motion (including `--ease-interactive`, a 300 ms curve that has no variable type), the avatar hover scale (drawn as a 106 % size), the canvas snowfall, and the non-visual modules (`Animate`, `ScrollToTop`, intro and home copy). The theme, tools and technologies drawers are copies of the `drawer` variants, because instances cannot take new children. Some gaps are unbound (no 12 px and no 40 px spacing token). The theme and appearance selects use Lucide icons, the code uses Heroicons solid. Project cards still live only as the older `Project Item` and `Project Hero` on `↪ features`.

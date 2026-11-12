@@ -16,10 +16,11 @@ import {
   homeStatements
 } from '@/components/feature/home';
 import { PhilosophyCore } from '@/components/feature/philosophy';
-import { mainTechnologies } from '@/components/feature/technologies';
-import { DrawerTechnologies } from '@/components/feature/technologies';
-import { mainTools } from '@/components/feature/tools';
-import { DrawerTools } from '@/components/feature/tools';
+import {
+  DrawerTechnologies,
+  mainTechnologies
+} from '@/components/feature/technologies';
+import { DrawerTools, mainTools } from '@/components/feature/tools';
 import { H2, Ol } from '@/components/feature/typography';
 
 export const instant = false;
@@ -33,11 +34,7 @@ export default async function HomePage() {
 
       <h1 className="sr-only">{homeHeading}</h1>
 
-      <DotsDivider dots={1} delay={-250} className="mt-0 mb-6">
-        <div className="hidden text-muted-foreground peer-hover:block">
-          Hovering ...
-        </div>
-      </DotsDivider>
+      <DotsDivider dots={1} delay={-250} className="mt-0 mb-6" />
 
       <Animate delay={0.16}>
         <Container as="section">

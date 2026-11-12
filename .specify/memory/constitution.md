@@ -39,8 +39,7 @@ Rationale: the portfolio is itself the proof of the "design and code" claim. Doc
 
 New code MUST follow the architecture of the app. Components live in `src/components/ui` (generic, domain-free) or
 `src/components/feature/<name>` (domain-specific). `feature` consumes `ui`; `ui` MUST NOT import `feature`. Every
-file in a feature folder MUST be prefixed with the folder name; only `index.ts` barrels are exempt. Reusable `ui`
-components MUST have a Storybook story. Pages in `src/app` compose `ui` and `feature` components, use
+file in a feature folder MUST be prefixed with the folder name; only `index.ts` barrels are exempt. Pages in `src/app` compose `ui` and `feature` components, use
 `PageTemplate` or `Container`, and export `metadata` with the `… | Dominik Rubröder, UX Engineer` title pattern.
 Reuse an existing component, hook or pattern before creating a new one. Imports MUST use the `@/` alias (for
 example `@/components/ui/button`); parent-relative paths such as `../../../x` MUST NOT be used. A same-folder
@@ -80,7 +79,6 @@ Accessibility MUST be considered in every UI change, from the first line, not ad
 - **Feedback**: async state MUST show inside the triggering button; changes the visitor cannot see MUST be announced
   when they matter (for example through a live region).
 - **Verification**: a known violation MUST be fixed or recorded in `DESIGN.md` known gaps with its measured value.
-  Storybook `addon-a11y` violations are bugs.
 
 Rationale: the product is for every visitor. Accessibility and restraint are requirements, not polish, and problems are
 cheapest to prevent while the component is being written.

@@ -55,7 +55,7 @@ const groupedBrands = (
     );
 
 const homeSection = (): string[] => [
-  '## Home',
+  '## Introduction',
   homeHeading,
   ...homeStatements.map((statement) => `### ${statement}`),
   ...philosophyTabs.map(
