@@ -789,6 +789,7 @@ Figma `readme` root) | One short phrase every contributor and the docs can repea
 here: bold minimalism and rounded shapes (modern), one strong accent at 10 % (vibrant), token-first themes
 (themeable). |
 | 3.2 | Home opens with the statement "Design and code speak the same language" as the page `h1` (the `sr-only` `h1` and `homeHeading` are gone); document titles follow `<page> \| Portfolio, Dominik Rubröder` through one root `title.template` (home default: "Introduction \| Portfolio, Dominik Rubröder"), `seoTitle()` builds the same string for `openGraph.title` | The claim that names the site was hidden; now it is the first thing read, and one heading serves sight and screen readers without a duplicate. One template keeps every page title in one pattern, so a new page only sets its own name. |
+| 3.2 | Theme drawer loads with a plain `import()` (idle, at the latest 2 s after load, and on hover, focus or press of the trigger) instead of `next/dynamic`, mounts closed and stays mounted (`DrawerContent` `keepMounted`, opt-in) | `next/dynamic` with `ssr: false` wraps the drawer in `Suspense`; React holds back the reveal for 300 ms after the fallback, so the first open waited about 320 ms with the chunk already loaded. Keeping the closed drawer in the DOM also removes the mount of the whole settings tree from the first frames of the slide. |
 
 > When you make a lasting design decision, add a row: _version · decision · why_.
 

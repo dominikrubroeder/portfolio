@@ -37,7 +37,7 @@ export function ThemeDrawer({
 
   return (
     <Drawer open={open} onOpenChange={onOpenChange} showSwipeHandle>
-      <DrawerContent finalFocus={finalFocus}>
+      <DrawerContent finalFocus={finalFocus} keepMounted>
         <DrawerHeader>
           <DrawerTitle>Theme settings</DrawerTitle>
           <DrawerDescription className="sr-only">

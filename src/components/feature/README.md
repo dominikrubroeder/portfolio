@@ -34,7 +34,7 @@ animations, radius, container width). The selector, the switch, persistence and 
 Adding a theme means one registry entry plus its token block in `src/app/globals.css`.
 
 The settings open in `theme/theme-drawer.tsx` (a `ui/drawer`). `theme-drawer-trigger.tsx` is the header button; it loads
-the drawer with `next/dynamic` on the first click, so pages that never open it ship none of its controls. Keep the
+the drawer with a plain `import()` on idle and on hover, focus or press (not `next/dynamic`: its `Suspense` boundary delays the first open by 300 ms), so pages that never open it ship none of its controls. The drawer stays mounted (`keepMounted`) once loaded. Keep the
 barrel (`theme/index.ts`) to what other features use: a barrel export of a settings control pulls its code into every
 page.
 

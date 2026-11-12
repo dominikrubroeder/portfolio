@@ -115,14 +115,18 @@ function DrawerSwipeHandle({
 function DrawerContent({
   className,
   children,
+  keepMounted = false,
   ...props
-}: DrawerPrimitive.Popup.Props) {
+}: DrawerPrimitive.Popup.Props & {
+  /** Keep the closed popup in the DOM (hidden), so opening only flips attributes instead of mounting the content. */
+  keepMounted?: boolean;
+}) {
   const { hasSnapPoints, modal, showSwipeHandle, swipeDirection } = useDrawer();
   const swipeAxis =
     swipeDirection === 'down' || swipeDirection === 'up' ? 'y' : 'x';
 
   return (
-    <DrawerPortal data-slot="drawer-portal">
+    <DrawerPortal data-slot="drawer-portal" keepMounted={keepMounted}>
       {modal === true && (
         <DrawerOverlay data-snap-points={hasSnapPoints ? '' : undefined} />
       )}

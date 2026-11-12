@@ -140,8 +140,10 @@ The theme settings open in a `Drawer`: floating bottom sheet below `xl`, side pa
 
 - Open via the header trigger (first control in the header). Close via **Done**, scrim click, `Esc` or swipe. Focus moves
   in, stays inside, and returns to the trigger on close; the page behind is inert.
-- Loads lazily, off the critical path: the chunk is fetched on browser idle and on hover or focus of the trigger, never
-  with the page bundle. The first click then finds it ready, and the first open slides in like later opens.
+- Loads lazily, off the critical path: the chunk is fetched on browser idle (at the latest 2 s after load) and on hover,
+  focus or press of the trigger, never with the page bundle. The drawer then mounts closed and stays mounted (hidden),
+  so every open, the first included, only flips its state and slides in at once. A click before the chunk is ready
+  opens it as soon as it is mounted.
 - Standard scrim (dim below `xl`, transparent from `xl`, where the live change is visible behind the drawer).
 - Changes apply live; the drawer only groups them: Base (theme, appearance, color with the neutral swatch), Typography
   (font size), Animation (one "Enable animations" switch), Border (radius). Each control shows
