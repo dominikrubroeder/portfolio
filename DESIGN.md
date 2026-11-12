@@ -54,7 +54,7 @@ Colors are OKLCH tokens defined as CSS variables in `:root`, remapped into Tailw
 ### 4.1 Semantic tokens
 
 | Token                             | Role                                                  |
-|-----------------------------------|-------------------------------------------------------|
+| --------------------------------- | ----------------------------------------------------- |
 | `background` / `foreground`       | Page surface and primary text                         |
 | `primary` / `primary-foreground`  | Accent: CTAs, links on hover, active states, dividers |
 | `primary-hover`, `primary-border` | Interaction states of the accent                      |
@@ -96,7 +96,7 @@ both appearances (pure white / pure black, gray tone steps).
 ## 5. Typography
 
 | Role     | Font           | Token / utility |
-|----------|----------------|-----------------|
+| -------- | -------------- | --------------- |
 | Headline | Outfit         | `font-heading`  |
 | Body     | Outfit         | `font-body`     |
 | Sketch   | Patrick Hand   | `font-sketch`   |
@@ -113,7 +113,7 @@ both appearances (pure white / pure black, gray tone steps).
   possible; use the typography components (`H1`–`H6`, `Ul`, `Ol`) when you need props.
 
 | Level           | Size (mobile → desktop)                                                                                                        | Weight   |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------|----------|
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------- |
 | Statement       | `text-statement`: fluid `clamp(2rem, (100vw − 5rem) / 7.6, 4.5rem)`, fixed `4.5rem` from `sm`; `leading-[1.1]`, `text-balance` | semibold |
 | `h1`            | fluid `clamp(2rem, (100vw − 5rem) / 7.6, 3.75rem)`                                                                             | semibold |
 | `h2`            | `text-3xl` → `xs:text-4xl`                                                                                                     | semibold |
@@ -131,7 +131,7 @@ weights on a screen (normal, semibold/bold).
 Use `<Container>` (`ui/container`). Never hand-roll `max-w-*` on page sections.
 
 | `size`               | Width              | Use                                        |
-|----------------------|--------------------|--------------------------------------------|
+| -------------------- | ------------------ | ------------------------------------------ |
 | `container-readable` | `40rem` (default)  | Text, lists, most sections                 |
 | `container`          | `90rem` (+ `px-4`) | Wide grids and galleries                   |
 | `full-width`         | 100 %              | Full-bleed bands (e.g. primary hero)       |
@@ -212,7 +212,7 @@ A theme is a combination of **style** × **appearance** × **accent color** × *
 (`themeInitializationScript`).
 
 | Style       | Character                                                                                                 |
-|-------------|-----------------------------------------------------------------------------------------------------------|
+| ----------- | --------------------------------------------------------------------------------------------------------- |
 | `default`   | "Intense accent UI": rounded, colored, animated. The reference experience.                                |
 | `wireframe` | "Sketch-based UI": black/white, handwritten type, square corners, no animation, no shadows. Same content. |
 
@@ -363,7 +363,7 @@ background color (`background`) inside a
 never only the color.
 
 | State                                     | Shape                                      |
-|-------------------------------------------|--------------------------------------------|
+| ----------------------------------------- | ------------------------------------------ |
 | Default                                   | Dot, 18 px                                 |
 | Clickable (`a`, `button`, `.interactive`) | Dot, 24 px (×1.33)                         |
 | Pressed (`:active`)                       | Dot, 13 px                                 |
@@ -450,7 +450,7 @@ do not apply to custom images.
 Newest last. Derived from release history (`Release UI x.y.z`) and the current code.
 
 | When / version   | Decision                                                                                               | Why                                                                                      |
-|------------------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| ---------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
 | Early (≤ 2.0)    | Move to Atomic Design architecture (`atoms → templates`)                                               | Make the portfolio demonstrate system thinking; predictable place for every component.   |
 | Early            | Next.js 15 → 16, `framer-motion` → `motion`                                                            | Stay current; smaller, maintained animation package.                                     |
 | UI2              | Single narrow reading column (44rem) as default layout                                                 | Readability and a distinctive, calm rhythm; wide layouts only where imagery needs it.    |
