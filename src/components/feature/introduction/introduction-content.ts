@@ -1,6 +1,5 @@
-export const homeHeading = 'Design and code speak the same language';
-
-export const homeStatements = [
+export const introductionStatements = [
+  'Design and code speak the same language',
   'I connect the worlds of design and code',
   "It's a craft about UI components and design systems",
   'Building things is about composing things',
@@ -9,10 +8,10 @@ export const homeStatements = [
   'UX is about feeling, satisfaction and delight',
   'Agents are about orchestration and execution',
   'We compose, direct and oversee',
-  'So we shape the core product UI'
+  'To shape the core product UI'
 ];
 
-export const homeIntro = {
+export const introductionIntro = {
   quote: 'I love crafting UIs, their patterns, principles and systems.',
   paragraphs: [
     'I also enjoy concepts and prototyping a lot. Quickly testing new ideas or approaches in between brings creativity more into play and keeps it alive.',
@@ -22,7 +21,7 @@ export const homeIntro = {
   signature: '– Dominik'
 };
 
-export const homePrinciples = [
+export const introductionPrinciples = [
   'Design in context — of the environment, of the people, of the brand',
   'Design in system — streamline processes, principles, components as close as possible for one ecosystem',
   "Design problem-focused — know the problem you're solving, it is the root problem to be solved, not its symptoms",

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
 import { footerCertifications } from '@/components/feature/footer';
-import { homeHeading, homeStatements } from '@/components/feature/home';
+import { introductionStatements } from '@/components/feature/introduction';
 import { projectsHeroBlockquote } from '@/components/feature/selected-works';
 import { projects } from '@/components/feature/selected-works';
 import { technologies } from '@/components/feature/technologies';
@@ -35,29 +35,27 @@ describe('buildAgentViewMarkdown', () => {
   });
 
   it('puts the identity and profile links before Introduction', () => {
-    const home = markdown.indexOf('## Introduction');
+    const introduction = markdown.indexOf('## Introduction');
 
     expect(markdown.indexOf('# Dominik Rubröder, UX Engineer')).toBe(0);
-    expect(markdown.indexOf('[GitHub]')).toBeLessThan(home);
-    expect(markdown.indexOf('[LinkedIn]')).toBeLessThan(home);
-    expect(markdown.slice(0, home).split('[GitHub]')).toHaveLength(2);
+    expect(markdown.indexOf('[GitHub]')).toBeLessThan(introduction);
+    expect(markdown.indexOf('[LinkedIn]')).toBeLessThan(introduction);
+    expect(markdown.slice(0, introduction).split('[GitHub]')).toHaveLength(2);
   });
 
-  it('shows the hidden home heading and the statements in order', () => {
-    const positions = homeStatements.map((statement) =>
+  it('shows the statements in order, the first one being the page heading', () => {
+    const positions = introductionStatements.map((statement) =>
       markdown.indexOf(`### ${statement}`)
     );
 
-    expect(markdown.indexOf(homeHeading)).toBeGreaterThan(
-      markdown.indexOf('## Introduction')
-    );
+    expect(positions[0]).toBeGreaterThan(markdown.indexOf('## Introduction'));
     positions.forEach((position, index) => {
       expect(position).toBeGreaterThan(-1);
       if (index > 0) expect(position).toBeGreaterThan(positions[index - 1]);
     });
   });
 
-  it('lists home before projects, hero project first', () => {
+  it('lists the introduction before projects, hero project first', () => {
     const selectedWorksAt = markdown.indexOf('## Selected works');
 
     expect(markdown.indexOf('## Introduction')).toBeLessThan(selectedWorksAt);

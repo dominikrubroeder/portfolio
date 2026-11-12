@@ -13,17 +13,18 @@ import {
   ButtonLinkedin
 } from '@/components/feature/profile-links';
 
-const NAVIGATION_BAR_HOME_BACK_PATHNAME = '/selected-works';
+const NAVIGATION_BAR_INTRODUCTION_BACK_PATHNAME = '/selected-works';
 
 export function PageNavigationBar() {
   const pathname = usePathname();
-  const showHome = pathname === NAVIGATION_BAR_HOME_BACK_PATHNAME;
+  const showIntroduction =
+    pathname === NAVIGATION_BAR_INTRODUCTION_BACK_PATHNAME;
 
   return (
     <div className="sticky bottom-0 z-200 mt-4 bg-background py-4">
       <Container className="flex items-center gap-3 px-4">
         <div className="relative grid flex-1 justify-items-start sm:flex-none">
-          {showHome ? (
+          {showIntroduction ? (
             <Button href="/" className="w-full sm:w-auto">
               <ArrowLeftIcon />
               Introduction

@@ -30,20 +30,21 @@ import {
 import { H2, Ul } from '@/components/feature/typography';
 
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
+import { seoTitle } from '@/lib/seo';
 
 export const instant = false;
 
-const SEO_TITLE = 'Selected works | Dominik Rubröder, UX Engineer';
+const SEO_TITLE = 'Selected works';
 const SEO_DESCRIPTION =
   'My project contribution and responsible fields from 2016 – 2026';
 
 // `openGraph` replaces the root layout's object as a whole, so the shared
-// fields repeat here; otherwise shares of this page show the home description.
+// fields repeat here; otherwise shares of this page show the introduction description.
 export const metadata: Metadata = {
   title: SEO_TITLE,
   description: SEO_DESCRIPTION,
   openGraph: {
-    title: SEO_TITLE,
+    title: seoTitle(SEO_TITLE),
     description: SEO_DESCRIPTION,
     url: `${ROUTING_PUBLIC_DOMAIN}/selected-works`,
     siteName: ROUTING_PUBLIC_DOMAIN.replace('https://www.', ''),

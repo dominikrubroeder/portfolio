@@ -20,7 +20,7 @@ Key style values: **modern, vibrant, themeable**. A feature inherits them from `
 
 ## Content modules and agent view
 
-Copy that appears on a page lives in a data or content file of its feature (`home/home-content.ts`,
+Copy that appears on a page lives in a data or content file of its feature (`introduction/introduction-content.ts`,
 `selected-works/selected-works-content.ts`, `philosophy/philosophy-data.ts`, `footer/footer-content.ts`,
 `header/header-content.ts`, plus the existing `*-data` files). Pages and `agent-view/agent-view-markdown.ts` both read
 them, so the `/agent-view` markdown cannot drift from the pages. Inline copy in a page that agent view should show moves

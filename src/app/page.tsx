@@ -10,11 +10,10 @@ import {
   Snowfall
 } from '@/components/feature/events';
 import {
-  homeHeading,
-  homeIntro,
-  homePrinciples,
-  homeStatements
-} from '@/components/feature/home';
+  introductionIntro,
+  introductionPrinciples,
+  introductionStatements
+} from '@/components/feature/introduction';
 import { PhilosophyCore } from '@/components/feature/philosophy';
 import {
   DrawerTechnologies,
@@ -25,22 +24,20 @@ import { H2, Ol } from '@/components/feature/typography';
 
 export const instant = false;
 
-export default async function HomePage() {
+export default async function IntroductionPage() {
   return (
     <>
       <ScrollToTop />
 
       {EVENTS_WINTER_SCENE_ENABLED && <Snowfall />}
 
-      <h1 className="sr-only">{homeHeading}</h1>
-
       <DotsDivider dots={1} delay={-250} className="mt-0 mb-6" />
 
       <Animate delay={0.16}>
         <Container as="section">
-          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
-            {homeStatements[0]}
-          </div>
+          <h1 className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {introductionStatements[0]}
+          </h1>
         </Container>
       </Animate>
 
@@ -49,7 +46,7 @@ export default async function HomePage() {
       <Animate delay={0.32}>
         <Container as="section">
           <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
-            {homeStatements[1]}
+            {introductionStatements[1]}
           </div>
         </Container>
       </Animate>
@@ -59,7 +56,7 @@ export default async function HomePage() {
       <Animate delay={0.44}>
         <Container as="section">
           <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
-            {homeStatements[2]}
+            {introductionStatements[2]}
           </div>
         </Container>
       </Animate>
@@ -69,7 +66,7 @@ export default async function HomePage() {
       <Animate>
         <Container as="section">
           <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
-            {homeStatements[3]}
+            {introductionStatements[3]}
           </div>
         </Container>
       </Animate>
@@ -79,7 +76,7 @@ export default async function HomePage() {
       <Animate>
         <Container as="section">
           <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
-            {homeStatements[4]}
+            {introductionStatements[4]}
           </div>
         </Container>
       </Animate>
@@ -89,7 +86,7 @@ export default async function HomePage() {
       <Animate>
         <Container as="section">
           <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
-            {homeStatements[5]}
+            {introductionStatements[5]}
           </div>
         </Container>
       </Animate>
@@ -99,7 +96,17 @@ export default async function HomePage() {
       <Animate>
         <Container as="section">
           <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
-            {homeStatements[6]}
+            {introductionStatements[6]}
+          </div>
+        </Container>
+      </Animate>
+
+      <DotsDivider />
+
+      <Animate>
+        <Container as="section">
+          <div className="text-statement leading-[1.1] font-semibold text-balance text-foreground">
+            {introductionStatements[7]}
           </div>
         </Container>
       </Animate>
@@ -109,7 +116,7 @@ export default async function HomePage() {
       <Animate className="bg-primary text-primary-foreground">
         <Container as="section">
           <div className="mb-0 py-8 text-statement leading-[1.1] font-semibold text-balance text-primary-foreground">
-            {homeStatements[7]}
+            {introductionStatements[8]}
           </div>
         </Container>
       </Animate>
@@ -119,7 +126,7 @@ export default async function HomePage() {
       <Animate>
         <Container as="section">
           <div className="mb-5 text-statement leading-[1.1] font-semibold text-balance text-foreground">
-            {homeStatements[8]}
+            {introductionStatements[9]}
           </div>
 
           <PhilosophyCore />
@@ -130,13 +137,15 @@ export default async function HomePage() {
 
       <Animate>
         <Container className="space-y-3">
-          <Blockquote className="mt-0 mb-3">{homeIntro.quote}</Blockquote>
+          <Blockquote className="mt-0 mb-3">
+            {introductionIntro.quote}
+          </Blockquote>
 
-          {homeIntro.paragraphs.map((paragraph) => (
+          {introductionIntro.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
 
-          <p>{homeIntro.signature}</p>
+          <p>{introductionIntro.signature}</p>
         </Container>
       </Animate>
 
@@ -145,7 +154,7 @@ export default async function HomePage() {
           <h2>Principles</h2>
 
           <Ol>
-            {homePrinciples.map((principle) => (
+            {introductionPrinciples.map((principle) => (
               <li key={principle}>{principle}</li>
             ))}
           </Ol>

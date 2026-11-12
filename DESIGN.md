@@ -309,7 +309,7 @@ Domain and feature components, one folder per feature: `header`, `footer`, `page
 `avatar`, `profile-links` (`ButtonFigma`, `ButtonGithub`,
 `ButtonLinkedin`), `brand`, `tools`, `technologies`, `selected-works`, `philosophy`, `socials`, `intro`, `theme`
 (registry, store, hooks, tokens and settings UI), `typography` (`H2`, `Ul`, `Ol`), `logo` (`Logo*`), `events` (winter
-scene), `home` (home page copy), `agent-view` (`AgentViewLink`, markdown builder for `/agent-view`).
+scene), `introduction` (introduction page copy and the `/api/introduction` JSON builder), `agent-view` (`AgentViewLink`, markdown builder for `/agent-view`).
 
 File naming: every file in a feature directory is prefixed with the directory name (`tools/tools-data.ts`). Only
 `index.ts` is exempt.
@@ -319,9 +319,9 @@ File naming: every file in a feature directory is prefixed with the directory na
 
 ### Agent view
 
-`/agent-view` is a route handler, not a styled page: it returns the home and selected works content as raw markdown
+`/agent-view` is a route handler, not a styled page: it returns the introduction and selected works content as raw markdown
 (`text/plain`) with no layout, theme, CSS or script. Its text comes from the same content modules as the pages
-(`home-content.ts`, `projects-content.ts`, `philosophy-data.ts`, the data files), so a copy edit shows in both.
+(`introduction-content.ts`, `projects-content.ts`, `philosophy-data.ts`, the data files), so a copy edit shows in both.
 
 `AgentViewLink` (`Button` `text-foreground`, `small`: a quiet text button, `hover:text-primary`) is the only entry
 point. It sits in the footer, centered on its own line directly above the copyright line, at every width and
@@ -330,6 +330,10 @@ context (rule 5); no other target sits within 24 px of it. A "Résumé" menu sit
 trigger: same `text-foreground` `small` button with a three-dots icon instead of an arrow, `gap-x-4`, wraps when
 narrow); its two options, PDF and JSON, link to the CV file and `/api/resume`. The footer no longer shows the
 framework-version line (Next.js, React, Tailwind CSS) and uses `py-6` / `space-y-4` (was `py-12` / `space-y-6`).
+
+### Content API
+
+`/api/introduction` and `/api/selected-works` are route handlers that return the page content as JSON, named like the pages. They have no layout, theme or script. `buildIntroductionApi` (`feature/introduction`) and `buildSelectedWorksApi` (`feature/selected-works`) read the same content modules as the pages and `/agent-view`, so a copy edit shows everywhere. React nodes (logos) stay out; preview images become absolute URLs.
 
 ### Variants
 
@@ -421,8 +425,8 @@ do not apply to custom images.
 1. New color, radius, font, duration or width ⇒ add a token in `globals.css` first.
 2. New accent ⇒ full `-foreground/-hover/-border` set, mapped in all three places, contrast verified.
 3. New component ⇒ correct layer (`ui` or `feature`), `index.ts` barrel, typed props, works in wireframe.
-4. New page ⇒ `PageTemplate` (or `Container` sections), `metadata` with the `… | Dominik Rubröder, UX Engineer` title
-   pattern, `HeroNavigation` entry if it is top-level. Exception: `/agent-view` is a route handler returning plain
+4. New page ⇒ `PageTemplate` (or `Container` sections), `metadata` with a plain page `title` (the root layout template adds `… | Portfolio, Dominik Rubröder`; `openGraph.title` uses `seoTitle()`),
+   `HeroNavigation` entry if it is top-level. Exception: `/agent-view` is a route handler returning plain
    markdown, so it has no `PageTemplate`, `metadata` or `HeroNavigation` entry (no layout, no `<head>`); its link lives
    in
    the header and footer.
@@ -507,7 +511,7 @@ as a layer above the page, matching the rounded controls; the offset keeps the p
 | 3.0.6 | Decorative `SvgShapes` become crop marks in the four corners of `main` (accent color, static, `lg`+; wireframe
 background uses `xl`+) | Quiet drafting frame that fits the design-and-code story; replaces the scattered shapes and
 keeps the reading column clear. |
-| 3.0.6 | Home page gets a visually hidden `h1` ("Design and code speak the same language", `sr-only`); the big
+| 3.0.6 | Home page gets a visually hidden `h1` (since 3.2 the first statement is the `h1`) ("Design and code speak the same language", `sr-only`); the big
 statements stay `div`s | The page needs one `h1` for SEO and screen readers; the statement sequence keeps its look
 without becoming a heading outline. |
 | 3.0.6 | Custom cursor: accent dot with paper ring and accent outer ring, native CSS images, shape morphs per state
@@ -784,6 +788,7 @@ touch. Longer visible text already names the action. |
 Figma `readme` root) | One short phrase every contributor and the docs can repeat. Each value maps to rules already
 here: bold minimalism and rounded shapes (modern), one strong accent at 10 % (vibrant), token-first themes
 (themeable). |
+| 3.2 | Home opens with the statement "Design and code speak the same language" as the page `h1` (the `sr-only` `h1` and `homeHeading` are gone); document titles follow `<page> \| Portfolio, Dominik Rubröder` through one root `title.template` (home default: "Introduction \| Portfolio, Dominik Rubröder"), `seoTitle()` builds the same string for `openGraph.title` | The claim that names the site was hidden; now it is the first thing read, and one heading serves sight and screen readers without a duplicate. One template keeps every page title in one pattern, so a new page only sets its own name. |
 
 > When you make a lasting design decision, add a row: _version · decision · why_.
 

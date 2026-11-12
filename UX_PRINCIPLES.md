@@ -35,7 +35,9 @@ see [DESIGN.md](./DESIGN.md).
 ```
 /                       Introduction (statements, philosophy, principles, tools, technologies)
 /selected-works          Selected works 2016–2026
-/agent-view             The home and selected works content as plain markdown (no styling)
+/agent-view             The introduction and selected works content as plain markdown (no styling)
+/api/introduction      The introduction content as JSON (same copy, tools and technologies as the page)
+/api/selected-works    The selected works as JSON (projects, featured one first; same data as the page)
 /api/resume            The résumé as JSON (static route handler; "Résumé" menu in the footer next to Agent view, options PDF with a document icon and JSON with a code brackets icon)
 ```
 
