@@ -17,6 +17,7 @@ import {
 
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tooltip } from '@/components/ui/tooltip';
 
 import { useThemeSetting } from '@/components/feature/theme';
 
@@ -210,18 +211,23 @@ function PhilosophyDetail({
             ))}
           </div>
 
-          <button
-            type="button"
-            autoFocus
-            onClick={onBack}
-            aria-label={`${topic}, back to ${philosophyCoreLabel}`}
-            className={cn(
-              CORE_CLASS,
-              'size-20 cursor-pointer outline-none hover:bg-primary-hover focus-visible:bg-primary-hover'
-            )}
+          <Tooltip
+            content={`Go back to ${philosophyCoreLabel}`}
+            render={
+              <button
+                type="button"
+                autoFocus
+                onClick={onBack}
+                aria-label={`${topic}, back to ${philosophyCoreLabel}`}
+                className={cn(
+                  CORE_CLASS,
+                  'size-20 cursor-pointer outline-none hover:bg-primary-hover focus-visible:bg-primary-hover'
+                )}
+              />
+            }
           >
             {topic}
-          </button>
+          </Tooltip>
         </div>
       </div>
 
@@ -229,7 +235,12 @@ function PhilosophyDetail({
         aria-label="Blossom level"
         className="flex items-center justify-center"
       >
-        <Button variant="ghost-muted" onClick={onBack}>
+        <Button
+          variant="ghost-muted"
+          iconOnly
+          label={`Go back to ${philosophyCoreLabel}`}
+          onClick={onBack}
+        >
           <ChevronLeftIcon aria-hidden />
           {philosophyCoreLabel}
         </Button>

@@ -12,25 +12,25 @@ import type { BaseComponentProps } from '@/lib/types';
 const colors = [
   {
     value: 'foreground',
-    label: 'Neutral accent color',
+    label: 'Set neutral accent color',
     className: 'border border-foreground bg-foreground hover:border-foreground',
     checkClassName: 'text-background'
   },
   {
     value: 'blue',
-    label: 'Blue accent color',
+    label: 'Set blue accent color',
     className: 'border border-blue bg-blue hover:border-blue',
     checkClassName: 'text-blue-foreground'
   },
   {
     value: 'violett',
-    label: 'Violet accent color',
+    label: 'Set violet accent color',
     className: 'border border-violett bg-violett hover:border-violett',
     checkClassName: 'text-violett-foreground'
   },
   {
     value: 'orange',
-    label: 'Orange accent color',
+    label: 'Set orange accent color',
     className: 'border border-orange bg-orange hover:border-orange',
     checkClassName: 'text-orange-foreground'
   }

@@ -4,3 +4,4 @@ export { BrandRow } from './brand-row';
 export { BrandLogo } from './brand-logo';
 
 export * from './brand-types';
+export * from './brand-api';

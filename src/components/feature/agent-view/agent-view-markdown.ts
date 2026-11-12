@@ -2,11 +2,10 @@ import type { Brand } from '@/components/feature/brand';
 import { footerCertifications } from '@/components/feature/footer';
 import { headerIdentity } from '@/components/feature/header';
 import {
-  homeHeading,
-  homeIntro,
-  homePrinciples,
-  homeStatements
-} from '@/components/feature/home';
+  introductionIntro,
+  introductionPrinciples,
+  introductionStatements
+} from '@/components/feature/introduction';
 // Direct file import: the philosophy barrel exports a client component.
 import {
   NAVIGATION_LEVELS_ENABLED,
@@ -54,10 +53,9 @@ const groupedBrands = (
         )}`
     );
 
-const homeSection = (): string[] => [
-  '## Home',
-  homeHeading,
-  ...homeStatements.map((statement) => `### ${statement}`),
+const introductionSection = (): string[] => [
+  '## Introduction',
+  ...introductionStatements.map((statement) => `### ${statement}`),
   ...philosophyTabs.map(
     ({ title, labels, core }) =>
       `### ${title}\n\nCore: ${core}\n\n${list(labels)}`
@@ -68,10 +66,10 @@ const homeSection = (): string[] => [
         .map(({ key, title }) => `${title}:\n\n${list(details[key])}`)
         .join('\n\n')}`
   ),
-  `> ${homeIntro.quote}`,
-  ...homeIntro.paragraphs,
-  homeIntro.signature,
-  `### Principles\n\n${homePrinciples
+  `> ${introductionIntro.quote}`,
+  ...introductionIntro.paragraphs,
+  introductionIntro.signature,
+  `### Principles\n\n${introductionPrinciples
     .map((principle, index) => `${index + 1}. ${principle}`)
     .join('\n')}`,
   `### Main tools\n\n${brandList(mainTools)}`,
@@ -131,7 +129,7 @@ export function buildAgentViewMarkdown(): string {
     `# ${headerIdentity.name}, ${headerIdentity.role}`,
     link('Back to the site', '/'),
     brandList(profileLinks),
-    ...homeSection(),
+    ...introductionSection(),
     ...selectedWorksSection(),
     '## Certifications',
     brandList(

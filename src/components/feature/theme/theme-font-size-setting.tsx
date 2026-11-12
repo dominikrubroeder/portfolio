@@ -15,6 +15,9 @@ export function ThemeFontSizeSetting({ className }: { className?: string }) {
     <ButtonGroup className={cn('gap-0', className)} minimizeSpacing>
       <Button
         variant="ghost-foreground"
+        iconOnly
+        label="Set small font size"
+        aria-pressed={themeFontSize === 'sm'}
         className={cn('text-sm', themeFontSize === 'sm' && 'underline')}
         onClick={() => setThemeFontSize('sm')}
       >
@@ -23,6 +26,9 @@ export function ThemeFontSizeSetting({ className }: { className?: string }) {
 
       <Button
         variant="ghost-foreground"
+        iconOnly
+        label="Set medium font size"
+        aria-pressed={themeFontSize === 'md'}
         className={cn('text-base', themeFontSize === 'md' && 'underline')}
         onClick={() => setThemeFontSize('md')}
       >
@@ -31,6 +37,9 @@ export function ThemeFontSizeSetting({ className }: { className?: string }) {
 
       <Button
         variant="ghost-foreground"
+        iconOnly
+        label="Set large font size"
+        aria-pressed={themeFontSize === 'lg'}
         className={cn('text-xl', themeFontSize === 'lg' && 'underline')}
         onClick={() => setThemeFontSize('lg')}
       >

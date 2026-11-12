@@ -9,7 +9,7 @@ see [DESIGN.md](./DESIGN.md).
 
 1. **Content first, chrome second.** The reading column, statements and project work lead. Controls stay small and
    peripheral.
-2. **One clear next step.** Each view has one dominant action. Home: "Selected works"; `/selected-works`: "Home" (sticky bottom bar). Project cards:
+2. **One clear next step.** Each view has one dominant action. Home: "Selected works"; `/selected-works`: "Introduction" (sticky bottom bar). Project cards:
    "View <project>".
 3. **The visitor is in control.** Appearance, accent color, font size and animation are user settings, remembered and
    never forced. Respect OS preferences by default (`system`, reduced motion).
@@ -28,21 +28,25 @@ see [DESIGN.md](./DESIGN.md).
     button groups, full-width CTAs.
 11. **Show button state in the button itself.** Loading, saving and progress live inside the button that triggered the
     action, never in a separate spinner, banner or page overlay. See [Button state](#button-state).
+12. **Name every icon-only action.** Any actionable element that shows only an icon or image, or visible text of 3 characters or fewer ("Aa", "UI"), gets a tooltip that describes the action ("Set small font size"). The same text is its accessible name. See [Tooltip](#tooltip).
 
 ## 2. Information architecture
 
 ```
 /                       Introduction (statements, philosophy, principles, tools, technologies)
 /selected-works          Selected works 2016–2026
-/agent-view             The home and selected works content as plain markdown (no styling)
+/agent-view             The introduction and selected works content as plain markdown (no styling)
+/api/introduction      The introduction content as JSON (same copy, tools and technologies as the page)
+/api/selected-works    The selected works as JSON (projects, featured one first; same data as the page)
+/api/resume            The résumé as JSON (static route handler; "Résumé" menu in the footer next to Agent view, options PDF with a document icon and JSON with a code brackets icon)
 ```
 
 - Navigation is **content-led**: `HeroNavigation` ("More" list at the end of a page) links to the other top-level pages
   and hides the current page. There is no persistent main menu.
 - The header carries identity (avatar, name, role), the theme settings
-  trigger (a palette icon, labelled "Theme settings", visible at every width) and, from `sm` up, three accent swatches
+  trigger (a palette icon, labelled "Open theme settings", visible at every width) and, from `sm` up, three accent swatches
   (blue, violett, orange). Appearance lives in the theme drawer.
-- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the home content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the selected works, then the certifications. It is not part of `HeroNavigation`; the only link lives in the footer, centered on its own line above the copyright line, at every width. It is a small `text-foreground` button (renders as an anchor). Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
+- **Agent view** (`/agent-view`) is a text document for AI agents and readers who want the content without design. It lists identity and profile links, then the introduction content (statements, philosophy tabs, intro, principles, all tools and technologies, including drawer content), then the selected works, then the certifications. It is not part of `HeroNavigation`; the only link lives in the footer, centered on its own line above the copyright line, at every width. It is a small `text-foreground` button (renders as an anchor). Same tab, no prefetch (`Button` accepts `prefetch={false}`, passed to the Next.js `Link`). The page has a "Back to the site" link and ignores all theme settings.
 - Deep links to sections use `scroll-mt-responsive` so sticky bars never cover the target.
 - `ScrollToTop` resets the scroll position on route change; `ButtonScrollToTop` is available for long pages.
 
@@ -65,7 +69,7 @@ This keeps context on long pages. Opt out with the `sticky-none` class where the
 
 ### Sticky call to action
 
-`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and the social links. The link is "Selected works"; on `/selected-works` it swaps to "Home" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
+`PageNavigationBar` is a bottom bar (`sticky bottom-0`) on every page. It holds one primary link and three icon links: the Figma design system, GitHub and LinkedIn (each opens in a new tab, labelled by its tooltip). The Figma link hides below `xs` (375 px): the primary link needs 171 px, which the row can no longer spare at 320 px with three icons. The link is "Selected works"; on `/selected-works` it swaps to "Introduction" with a 300 ms cross-fade and slide (CSS only, `motion-safe:`; instant with reduced motion). The hidden button is `inert`, so keyboard and screen readers only reach the visible one. One bar per page, max.
 
 ### Intro
 
@@ -136,8 +140,10 @@ The theme settings open in a `Drawer`: floating bottom sheet below `xl`, side pa
 
 - Open via the header trigger (first control in the header). Close via **Done**, scrim click, `Esc` or swipe. Focus moves
   in, stays inside, and returns to the trigger on close; the page behind is inert.
-- Loads lazily, off the critical path: the chunk is fetched on browser idle and on hover or focus of the trigger, never
-  with the page bundle. The first click then finds it ready, and the first open slides in like later opens.
+- Loads lazily, off the critical path: the chunk is fetched on browser idle (at the latest 2 s after load) and on hover,
+  focus or press of the trigger, never with the page bundle. The drawer then mounts closed and stays mounted (hidden),
+  so every open, the first included, only flips its state and slides in at once. A click before the chunk is ready
+  opens it as soon as it is mounted.
 - Standard scrim (dim below `xl`, transparent from `xl`, where the live change is visible behind the drawer).
 - Changes apply live; the drawer only groups them: Base (theme, appearance, color with the neutral swatch), Typography
   (font size), Animation (one "Enable animations" switch), Border (radius). Each control shows
@@ -157,10 +163,7 @@ Modal confirmation or focused content. Same close rules as drawers. Never used f
 
 ### Avatar
 
-`variant="lightbox"`: the photo becomes a button (zoom-in cursor, `aria-label`). Click opens a modal with the photo
-enlarged and centered (max `min(80vmin, 31.25rem)`, the source size). Close via click on photo, click on scrim or
-`Esc`; focus returns to the thumbnail. Zoom-in/out animation is skipped with reduced motion. Default variant is
-unchanged (link to home or plain image).
+Round photo. `as="Link"` (header) links to the introduction; `as="Image"` is a plain image.
 
 ### Philosophy blossom (levels)
 
@@ -174,7 +177,9 @@ Petals with detail (currently Design, Code and UX; add an entry to `philosophyTo
 
 ### Tooltip
 
-Short text on hover and keyboard focus that explains an icon-only action. Opens after a short delay, closes on `Esc`
+**Global rule:** every actionable element (button, link, swatch, trigger) that is icon-only, image-only or shows 3 characters or fewer has a tooltip. Longer visible text already names the action and needs none. Use `Button` with `iconOnly` + `label`; for a non-`Button` element (swatch, avatar link, custom button) wrap it in `Tooltip` with `render`. Never rely on a native `title`: it is unreachable by keyboard and touch.
+
+Short text on hover and keyboard focus that explains an icon-only action. The text names the action, not the object: a verb plus what it acts on, in sentence case ("Open theme settings", "Set blue accent color", "Close dialog", "Open my GitHub profile"). "Open" for panels and external pages, "Go to" for internal navigation, "Set" for choices, "Close" for dismissing, "Enable"/"Disable" for switches. No "Click to", no bare nouns. It is also the accessible name, so it must make sense read alone. Opens after a short delay, closes on `Esc`
 or blur, never holds interactive content. Fades in with `motion-safe:`. Touch has no hover, so the `aria-label` carries
 the same text.
 
@@ -185,6 +190,10 @@ Inline literal text (file names, commands) in a muted chip with the code font. N
 ### Badge
 
 Non-interactive status label ("Ongoing"). Never a button.
+
+### Menu
+
+A button that opens a short list of links (footer "Résumé": PDF in a new tab, JSON in the same tab; each row has an icon before its label). Base UI menu: arrow keys move, `Enter` follows, `Esc` closes and returns focus to the trigger; the trigger announces `aria-haspopup="menu"`. Opens above the trigger. Rows are 44 px high. Fades with `motion-safe:` only while animations are on.
 
 ### Toggle / Select
 
@@ -246,11 +255,11 @@ defaults return on the next load. Settings are never sent to a server.
 - **Theme (style)**: Default ("Intense accent UI") / Wireframe ("Sketch-based UI"); the open list shows the two names only. Wireframe uses a handwritten font and grayscale images, icons and logos while the accent is neutral; picking a color accent shows them in color. Selecting a theme applies its defaults for accent, animations, radius and
   container width (Wireframe: neutral accent, animations off, square corners; Default: blue, animations on, 6px). The
   visitor's own tweaks in the previous theme are replaced; appearance and font size stay.
-- **Radius**: none / small / medium / large. Applies instantly to every rounded element.
+- **Radius**: none / small / medium / large. Applies instantly to every rounded element. In Wireframe it scales the hand-drawn corners (none keeps the drawn look, large rounds them most).
 - **Container width**: default / wide / full. No control in the theme drawer (removed 2026-10-22); a saved value still applies to the reading column.
 - **Animations**: one switch, in every theme. Off: content appears at once (no reveal, intro typing, bounce, pulse or
   snowfall). Turning it on later never replays the intro.
-- **Font size**: small / medium / large scales the whole page from the root.
+- **Font size**: small / medium / large scales the whole page from the root. Three "Aa" buttons in the theme drawer, each at its own size. They are icon-only: the tooltip and accessible name are "Set small font size", "Set medium font size", "Set large font size", and `aria-pressed` marks the active one (the underline is the visual cue).
 
 ### Motion
 
@@ -301,7 +310,7 @@ image : logo`). Missing context never renders placeholder text.
 ### Copy
 
 Short, concrete, first person. Sentence case. Labels name the outcome ("Selected works", "View Value Booster", "Done"),
-not the mechanism ("Click here", "Submit").
+not the mechanism ("Click here", "Submit"). Tooltips and icon-only labels are actions ("Open theme settings"), see [Tooltip](#tooltip).
 
 ## 6. Responsive behavior
 
@@ -357,6 +366,8 @@ primary action reachable with one thumb (bottom bar).
 4. How does it look/behave with reduced motion, dark mode, wireframe, 110 % text?
 5. Is it operable and understandable with keyboard and screen reader?
 6. What does it do when data is missing?
-7. Is the behavior documented here and in a story?
+7. Is the behavior documented here?
 8. Does it work in every theme (Default, Wireframe), appearance, accent, radius setting and font size, and does it match the documented style patterns in DESIGN.md?
 9. Did I run the accessibility checks (contrast, focus, keyboard, accessible names, landmarks, reduced motion) while building, and fix or report every violation?
+10. Is the matching Figma component created or updated (variants, states, tokens as variables)?
+11. Is every icon-only, image-only or 3-characters-or-fewer action named by a tooltip (verb + object)?

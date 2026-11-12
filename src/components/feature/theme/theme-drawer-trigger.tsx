@@ -1,43 +1,67 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
-
-import dynamic from 'next/dynamic';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Palette } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 
-// `ssr: false` is not allowed in Server Components, so this wrapper is a client component.
-// The drawer and its controls load the first time a visitor opens it, not with every page.
+import type { ThemeDrawer } from './theme-drawer';
+
+// The drawer and its controls load after the first paint, not with the page bundle.
 const loadThemeDrawer = () => import('./theme-drawer');
 
-const ThemeDrawer = dynamic(
-  () => loadThemeDrawer().then((module) => module.ThemeDrawer),
-  { ssr: false }
-);
+type ThemeDrawerComponent = typeof ThemeDrawer;
 
 const THEME_DRAWER_TRIGGER_ID = 'theme-drawer-trigger';
 
-export function ThemeDrawerTrigger() {
-  const [hasOpened, setHasOpened] = useState(false);
-  const [open, setOpen] = useState(false);
+// The intro keeps the main thread busy for seconds, so an idle callback alone fires late.
+const THEME_DRAWER_PRELOAD_TIMEOUT_MS = 2000;
 
-  // Fetch the chunk before the click (idle, hover, focus), so the first open does not wait for the network.
+export function ThemeDrawerTrigger() {
+  // Not `next/dynamic`: it wraps the component in `Suspense`, and React holds back revealing
+  // that boundary for 300 ms after its fallback, even when the chunk is already loaded.
+  const [Drawer, setDrawer] = useState<ThemeDrawerComponent | null>(null);
+  const [open, setOpen] = useState(false);
+  const openWhenMounted = useRef(false);
+
+  const load = useCallback(() => {
+    void loadThemeDrawer().then((module) =>
+      setDrawer(() => module.ThemeDrawer)
+    );
+  }, []);
+
+  // Load the chunk and mount the drawer closed (kept mounted) before the click, so every open,
+  // the first included, only flips `open` and the content is already rendered.
   useEffect(() => {
     if (typeof requestIdleCallback === 'function') {
-      const id = requestIdleCallback(() => void loadThemeDrawer());
+      const id = requestIdleCallback(load, {
+        timeout: THEME_DRAWER_PRELOAD_TIMEOUT_MS
+      });
       return () => cancelIdleCallback(id);
     }
-    const id = setTimeout(() => void loadThemeDrawer(), 2000);
+    const id = setTimeout(load, THEME_DRAWER_PRELOAD_TIMEOUT_MS);
     return () => clearTimeout(id);
-  }, []);
+  }, [load]);
 
-  // The drawer mounts closed and opens on the next frame once it is on screen, so the first open
-  // slides in like the later ones (opening before the lazy chunk has mounted would skip the slide).
-  const openOnNextFrame = useCallback(() => {
+  // A click before the drawer is ready opens it once it is on screen, closed first, so it
+  // still slides in (opening in the commit that mounts it would skip the slide).
+  const openIfRequested = useCallback(() => {
+    if (!openWhenMounted.current) return;
+
+    openWhenMounted.current = false;
     requestAnimationFrame(() => setOpen(true));
   }, []);
+
+  const handleClick = () => {
+    if (Drawer) {
+      setOpen(true);
+      return;
+    }
+
+    openWhenMounted.current = true;
+    load();
+  };
 
   return (
     <>
@@ -45,20 +69,21 @@ export function ThemeDrawerTrigger() {
         id={THEME_DRAWER_TRIGGER_ID}
         variant="ghost-foreground"
         iconOnly
-        label="Theme settings"
+        label="Open theme settings"
         aria-haspopup="dialog"
         aria-expanded={open}
-        onPointerEnter={() => void loadThemeDrawer()}
-        onFocus={() => void loadThemeDrawer()}
-        onClick={() => (hasOpened ? setOpen(true) : setHasOpened(true))}
+        onPointerEnter={load}
+        onPointerDown={load}
+        onFocus={load}
+        onClick={handleClick}
       >
         <Palette />
       </Button>
 
-      {hasOpened && (
-        <ThemeDrawer
+      {Drawer && (
+        <Drawer
           open={open}
-          onMounted={openOnNextFrame}
+          onMounted={openIfRequested}
           onOpenChange={setOpen}
           finalFocus={() => document.getElementById(THEME_DRAWER_TRIGGER_ID)}
         />

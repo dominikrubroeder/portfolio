@@ -1,7 +1,7 @@
 'use client';
 
 import { Select as SelectPrimitive } from '@base-ui/react/select';
-import { CheckIcon, ChevronDownIcon } from '@heroicons/react/16/solid';
+import { CheckIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 
 import type { ButtonProps } from '@/components/ui/button';
 import { Button } from '@/components/ui/button';
@@ -52,7 +52,7 @@ export function Select({
           >
             {selected?.icon}
             <span>{selected?.value ?? placeholder}</span>
-            <ChevronDownIcon />
+            <ChevronDownIcon aria-hidden className="size-4 stroke-2" />
           </Button>
         )}
       />
@@ -63,19 +63,19 @@ export function Select({
           align="end"
           sideOffset={8}
           alignItemWithTrigger={false}
-          className="z-1100"
+          className="z-max"
         >
-          <SelectPrimitive.Popup className="min-w-(--anchor-width) rounded-theme-md border bg-background px-3 py-2 outline-none data-ending-style:opacity-0 data-starting-style:opacity-0 [html[data-theme-animations=on]_&]:motion-safe:transition-opacity [html[data-theme-animations=on]_&]:motion-safe:duration-150">
+          <SelectPrimitive.Popup className="max-h-(--available-height) min-w-(--anchor-width) overflow-y-auto overscroll-contain rounded-theme-md border bg-background px-3 py-2 outline-none in-data-[theme=wireframe]:rounded-(--sketch-button-radius)! in-data-[theme=wireframe]:border-[1.5px] in-data-[theme=wireframe]:border-foreground data-ending-style:opacity-0 data-starting-style:opacity-0 [html[data-theme-animations=on]_&]:motion-safe:transition-opacity [html[data-theme-animations=on]_&]:motion-safe:duration-150">
             <SelectPrimitive.List>
               {options.map((option) => (
                 <SelectPrimitive.Item
                   key={option.key}
                   value={option.key}
-                  className="interactive-none flex min-h-11 w-full cursor-default items-center gap-2 rounded-xl px-2 py-2 text-foreground outline-none select-none data-highlighted:bg-muted"
+                  className="interactive-none flex min-h-11 w-full cursor-default items-center gap-2 rounded-xl px-2 py-2 text-foreground outline-none select-none in-data-[theme=wireframe]:rounded-(--sketch-button-radius)! data-highlighted:bg-muted"
                 >
                   <span className="size-4 shrink-0">
                     <SelectPrimitive.ItemIndicator>
-                      <CheckIcon className="size-4" />
+                      <CheckIcon aria-hidden className="size-4 stroke-2" />
                     </SelectPrimitive.ItemIndicator>
                   </span>
 

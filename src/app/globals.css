@@ -176,9 +176,14 @@
   :root[data-theme='wireframe'] {
     /* `Hr` as a pencil line: the border is masked to an uneven stroke plus a thin echo. Stretches horizontally only. */
     --sketch-hr-line: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 8' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='black' stroke-linecap='round'%3E%3Cpath d='M1 3.6C20 2.8 36 4.8 60 3.7S100 4.7 130 3.6 175 4.5 199 3.9' stroke-width='2.2'/%3E%3Cpath d='M12 5.4C50 4.7 90 5.8 140 5.1S186 5.5 196 5.3' stroke-width='0.9'/%3E%3C/g%3E%3C/svg%3E");
+    /* Radius setting for the sketch corners: scales the uneven rem radii below (frame, buttons, groups, popups). None keeps the drawn look, the rest rounds it up. The percentage and capsule tokens (blobs, knob, pill) already fill their box and stay. */
+    --sketch-scale: 1;
     /* Drawer panel, typewriter frame: the same uneven corners as the page frame (`.sketch-frame`). */
-    --sketch-frame-radius: 1.5rem 0.25rem 1.25rem 0.25rem / 0.25rem 1.25rem
-      0.25rem 1.5rem;
+    --sketch-frame-radius: calc(1.5rem * var(--sketch-scale))
+      calc(0.25rem * var(--sketch-scale)) calc(1.25rem * var(--sketch-scale))
+      calc(0.25rem * var(--sketch-scale)) / calc(0.25rem * var(--sketch-scale))
+      calc(1.25rem * var(--sketch-scale)) calc(0.25rem * var(--sketch-scale))
+      calc(1.5rem * var(--sketch-scale));
     /* Round controls (toggle track and knob, color swatches): a wobbly blob for the fill, a second one for the outline. */
     --sketch-blob-radius: 52% 48% 55% 45% / 48% 54% 46% 52%;
     --sketch-blob-outline-radius: 46% 54% 47% 53% / 55% 45% 53% 47%;
@@ -188,10 +193,16 @@
       2.1rem 1.9rem;
     --sketch-knob-radius: 60% 40% 56% 44% / 44% 58% 42% 56%;
     /* Contained buttons: uneven corners for the fill, a second set for the pencil outline drawn over it. */
-    --sketch-button-radius: 0.9rem 0.25rem 0.8rem 0.3rem / 0.3rem 0.8rem 0.25rem
-      0.9rem;
-    --sketch-button-outline-radius: 0.3rem 0.85rem 0.25rem 0.9rem / 0.85rem
-      0.25rem 0.9rem 0.3rem;
+    --sketch-button-radius: calc(0.9rem * var(--sketch-scale))
+      calc(0.25rem * var(--sketch-scale)) calc(0.8rem * var(--sketch-scale))
+      calc(0.3rem * var(--sketch-scale)) / calc(0.3rem * var(--sketch-scale))
+      calc(0.8rem * var(--sketch-scale)) calc(0.25rem * var(--sketch-scale))
+      calc(0.9rem * var(--sketch-scale));
+    --sketch-button-outline-radius: calc(0.3rem * var(--sketch-scale))
+      calc(0.85rem * var(--sketch-scale)) calc(0.25rem * var(--sketch-scale))
+      calc(0.9rem * var(--sketch-scale)) / calc(0.85rem * var(--sketch-scale))
+      calc(0.25rem * var(--sketch-scale)) calc(0.9rem * var(--sketch-scale))
+      calc(0.3rem * var(--sketch-scale));
     /* Blockquote bar as a pencil stroke: a mask, so the bar keeps the accent color. Stretches vertically only. */
     --sketch-quote-bar: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 100' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='black' stroke-linecap='round'%3E%3Cpath d='M4 1C3 14 5.2 26 3.6 40S4.6 66 3.4 80 4.4 94 4 99' stroke-width='2.4'/%3E%3Cpath d='M5.1 4C4.2 20 5.6 40 4.8 60S5.4 90 5 97' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
     --font-role-heading: var(--font-sketch);
@@ -238,6 +249,18 @@
 
   :root[data-theme-radius='lg'] {
     --radius: 10px;
+  }
+
+  :root[data-theme='wireframe'][data-theme-radius='sm'] {
+    --sketch-scale: 1.4;
+  }
+
+  :root[data-theme='wireframe'][data-theme-radius='md'] {
+    --sketch-scale: 1.8;
+  }
+
+  :root[data-theme='wireframe'][data-theme-radius='lg'] {
+    --sketch-scale: 2.4;
   }
 
   /* Container width setting (data-theme-container-width). 'default' keeps the theme value. */
@@ -345,6 +368,7 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-5xl: calc(var(--radius) * 4.4);
 
   --z-index-100: 100;
   --z-index-max: 1000;
@@ -352,6 +376,7 @@
   --breakpoint-xs: 375px;
 
   --transition-duration: 300ms;
+  --ease-interactive: cubic-bezier(0.22, 1, 0.36, 1);
 
   --text-base: 1.125rem;
 }
@@ -539,10 +564,9 @@
   }
 
   /* Hand-drawn page frame: uneven corner radii make a plain border read as a pencil outline.
-       Independent of the radius setting on purpose. */
+       Follows the radius setting through `--sketch-scale`. */
   html[data-theme='wireframe'] .sketch-frame {
-    border-radius: 1.5rem 0.25rem 1.25rem 0.25rem / 0.25rem 1.25rem 0.25rem
-      1.5rem;
+    border-radius: var(--sketch-frame-radius);
   }
 
   /* A theme or setting change renders in one frame: tokens never transition. */
