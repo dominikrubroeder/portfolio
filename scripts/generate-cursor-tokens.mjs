@@ -38,8 +38,14 @@ const SELECTORS = {
   blue: ":root[data-theme-color='blue']",
   violett: ":root[data-theme-color='violett']",
   orange: ":root[data-theme-color='orange']",
-  wireframe: ":root[data-theme='wireframe']"
+  // Neutral accent only: a picked color accent keeps its own cursor (see WIREFRAME_COLOR_ACCENTS).
+  wireframe:
+    ":root[data-theme='wireframe']:not([data-theme-color='blue']):not([data-theme-color='violett']):not([data-theme-color='orange'])"
 };
+
+// Wireframe with a picked color accent: the accent color on Wireframe's own (pure black) dark
+// background. Light needs no block, its background equals the Default one.
+const WIREFRAME_COLOR_ACCENTS = ['blue', 'violett', 'orange'];
 
 // Set per block before drawing: ring = page background, glyph = color on the core.
 let ring = WHITE;
@@ -145,10 +151,12 @@ function toUrl(body) {
   return `url("data:image/svg+xml,${encoded}")`;
 }
 
-function block(name, appearance) {
+function block(name, appearance, onWireframe = false) {
   const isWireframe = name === 'wireframe';
   const background = oklchToHex(
-    (isWireframe ? WIREFRAME_BACKGROUNDS : BACKGROUNDS)[appearance]
+    (isWireframe || onWireframe ? WIREFRAME_BACKGROUNDS : BACKGROUNDS)[
+      appearance
+    ]
   );
   // Wireframe accent is the foreground: black on light, white on dark.
   const accent = isWireframe
@@ -158,10 +166,13 @@ function block(name, appearance) {
     : oklchToHex(ACCENTS[name]);
   ring = background;
   glyph = isWireframe && appearance === 'dark' ? BLACK : WHITE;
-  const selector =
+  let selector =
     appearance === 'dark'
       ? SELECTORS[name].replace(/^:root/, ':root.theme-appearance-dark')
       : SELECTORS[name];
+  if (onWireframe) {
+    selector = selector.replace(']', "][data-theme='wireframe']");
+  }
   const declarations = Object.entries(states(accent))
     .map(
       ([state, [body, fallback]]) =>
@@ -171,10 +182,14 @@ function block(name, appearance) {
   return `${selector} {\n${declarations}\n}`;
 }
 
-// Order matters: later blocks win ties in specificity (wireframe last per appearance).
-const blocks = ['light', 'dark'].flatMap((appearance) =>
-  Object.keys(SELECTORS).map((name) => block(name, appearance))
-);
+// Wireframe's neutral block excludes the color accents, so order no longer decides. The
+// wireframe + color dark blocks are more specific than the plain color dark blocks.
+const blocks = ['light', 'dark'].flatMap((appearance) => [
+  ...Object.keys(SELECTORS).map((name) => block(name, appearance)),
+  ...(appearance === 'dark'
+    ? WIREFRAME_COLOR_ACCENTS.map((name) => block(name, appearance, true))
+    : [])
+]);
 
 writeFileSync(
   OUTPUT,

@@ -1,5 +1,11 @@
 export const philosophyCoreLabel = 'UI';
 
+export const philosophyCoreInfluencedByLabel =
+  'The core product UI is influenced by:';
+
+export const philosophyHolisticInfluencedByLabel =
+  'The holistic product UI is influenced by:';
+
 export const philosophyCoreTabLabels = ['Design', 'Code', 'UX'];
 
 export const philosophyHolisticLabels = [
@@ -8,7 +14,7 @@ export const philosophyHolisticLabels = [
   'Marketing',
   'Sales',
   'Business',
-  'Analytics',
+  'Data',
   'Consulting',
   'UX'
 ];

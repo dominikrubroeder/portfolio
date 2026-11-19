@@ -1,0 +1,108 @@
+{
+  "basics": {
+    "name": "Dominik Rubröder",
+    "label": "UX Engineer",
+    "tagline": "I connect the worlds of design and code",
+    "email": "dominik.rubroeder@icloud.com",
+    "phone": "+49 151 207 80 269",
+    "website": "dominikrubroeder.dev",
+    "dateOfBirth": "1997-04-11",
+    "location": {
+      "address": "Kiefernweg 5",
+      "postalCode": "82538",
+      "city": "Geretsried",
+      "country": "DE"
+    }
+  },
+  "work": [
+    {
+      "company": "mediawave commerce GmbH",
+      "startDate": "2021-08",
+      "endDate": null,
+      "positions": [
+        {
+          "title": "UX Engineer",
+          "type": "Vollzeit",
+          "startDate": "2023-04",
+          "endDate": null
+        },
+        {
+          "title": "Dualer Student Mediendesign",
+          "startDate": "2021-08",
+          "endDate": "2023-03"
+        }
+      ]
+    },
+    {
+      "company": "LOY GmbH",
+      "startDate": "2016-09",
+      "endDate": "2021-08",
+      "positions": [
+        {
+          "title": "Dualer Student Mediendesign",
+          "startDate": "2019-10",
+          "endDate": "2021-08"
+        },
+        {
+          "title": "Frontend-Entwickler",
+          "type": "Vollzeit",
+          "startDate": "2019-02",
+          "endDate": "2019-10"
+        },
+        {
+          "title": "Ausbildung Mediengestalter Digital und Print",
+          "focus": "Gestaltung und Technik",
+          "startDate": "2016-09",
+          "endDate": "2019-02"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "IU International University, München",
+      "degree": "Duales Studium, B.A. Mediendesign",
+      "focus": "UX-Design und Digitale Medienproduktion",
+      "department": "Interaktionsdesign",
+      "startDate": "2019-10",
+      "endDate": "2023-03",
+      "grade": "1,5",
+      "thesisGrade": "1,3"
+    },
+    {
+      "institution": "Berufliches Schulzentrum Alois Senefelder, München",
+      "degree": "Ausbildung Mediengestalter Digital und Print",
+      "focus": "Gestaltung und Technik",
+      "startDate": "2016-09",
+      "endDate": "2019-02",
+      "grade": "1,29"
+    },
+    {
+      "institution": "Staatl. Fachoberschule Bad Tölz",
+      "degree": "Klasse 13",
+      "focus": "Wirtschaft",
+      "startDate": "2015-09",
+      "endDate": "2016-01",
+      "note": "Auf eigenen Wunsch vorzeitig beendet"
+    },
+    {
+      "institution": "Staatl. Fachoberschule Bad Tölz",
+      "degree": "Fachabitur",
+      "focus": "Wirtschaft",
+      "startDate": "2013-09",
+      "endDate": "2015-07",
+      "grade": "2,4"
+    },
+    {
+      "institution": "Staatl. Realschule Wolfratshausen",
+      "startDate": "2007-09",
+      "endDate": "2013-07",
+      "grade": "1,66"
+    }
+  ],
+  "interests": ["Laufen", "Bergtouren", "Lesen"],
+  "meta": {
+    "language": "de",
+    "lastUpdated": "2026-11"
+  }
+}

@@ -15,15 +15,13 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top';
 import { Footer } from '@/components/feature/footer';
 import { Header } from '@/components/feature/header';
 import { IntroProvider } from '@/components/feature/intro';
-import { PageFrame } from '@/components/feature/page-frame';
-import { PageNavigationBar } from '@/components/feature/page-navigation-bar';
 import {
   themeInitializationScript,
   ThemeProvider
 } from '@/components/feature/theme';
 
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
-import { jsonLd, SEO_KEYWORDS } from '@/lib/seo';
+import { jsonLd, SEO_KEYWORDS, SEO_TITLE_SUFFIX, seoTitle } from '@/lib/seo';
 import { cn } from '@/lib/utils';
 
 const outfit = Outfit({
@@ -48,14 +46,16 @@ const patrickHand = Patrick_Hand({
 });
 
 export const metadata: Metadata = {
-  title:
-    'Design and code speak the same language | Dominik Rubröder, UX Engineer',
+  // Pages set `title: 'Page'` and the template adds the suffix; the default is the introduction.
+  title: {
+    default: seoTitle('Introduction'),
+    template: `%s | ${SEO_TITLE_SUFFIX}`
+  },
   description:
     'Design and code speak the same language. I connect the worlds of design and code as a UX Engineer.',
   metadataBase: new URL(ROUTING_PUBLIC_DOMAIN),
   openGraph: {
-    title:
-      'Design and code speak the same language | Dominik Rubröder, UX Engineer',
+    title: seoTitle('Introduction'),
     description:
       'Design and code speak the same language. I connect the worlds of design and code as a UX Engineer.',
     url: ROUTING_PUBLIC_DOMAIN,
@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-background font-body text-base leading-normal font-normal selection:bg-primary selection:text-primary-foreground">
+      <body className="relative flex min-h-screen flex-col overflow-x-hidden bg-background font-body text-base leading-normal font-normal text-foreground selection:bg-primary selection:text-primary-foreground">
         <ThemeProvider>
           <script
             id="theme-initializer"
@@ -102,17 +102,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <IntroProvider>
             <Header />
 
-            <main className="relative flex-1 space-y-8 pt-8 sm:space-y-12">
-              <PageFrame className="fixed inset-0 z-50" />
-
+            <main className="relative flex-1 space-y-8 pt-3 pb-8 sm:space-y-12 sm:pt-8 sm:pb-12">
               <Suspense>
                 <ScrollToTop />
               </Suspense>
 
               {children}
             </main>
-
-            <PageNavigationBar />
 
             <Footer />
           </IntroProvider>

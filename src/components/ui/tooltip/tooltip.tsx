@@ -11,11 +11,17 @@ export function Tooltip({
   render,
   children,
   side = 'top',
+  open,
+  onOpenChange,
+  closeOnClick,
   className
 }: TooltipProps) {
   return (
-    <TooltipPrimitive.Root>
-      <TooltipPrimitive.Trigger render={render}>
+    <TooltipPrimitive.Root
+      open={open}
+      onOpenChange={onOpenChange ? (next) => onOpenChange(next) : undefined}
+    >
+      <TooltipPrimitive.Trigger render={render} closeOnClick={closeOnClick}>
         {children}
       </TooltipPrimitive.Trigger>
       <TooltipPrimitive.Portal>
@@ -26,7 +32,7 @@ export function Tooltip({
         >
           <TooltipPrimitive.Popup
             className={cn(
-              'max-w-64 rounded-xl bg-popover px-2.5 py-1.5 text-sm text-popover-foreground ring-1 ring-foreground/10 data-ending-style:opacity-0 data-starting-style:opacity-0 motion-safe:transition-opacity motion-safe:duration-150',
+              'max-w-64 rounded-xl bg-popover px-2.5 py-1.5 text-sm text-popover-foreground ring-1 ring-foreground/10 in-data-[theme=wireframe]:rounded-(--sketch-button-radius)! in-data-[theme=wireframe]:border-[1.5px] in-data-[theme=wireframe]:border-foreground in-data-[theme=wireframe]:ring-0 data-ending-style:opacity-0 data-starting-style:opacity-0 motion-safe:transition-opacity motion-safe:duration-150',
               className
             )}
           >

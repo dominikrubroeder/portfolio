@@ -29,11 +29,36 @@ import {
 } from '@/components/feature/selected-works';
 import { H2, Ul } from '@/components/feature/typography';
 
+import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
+import { seoTitle } from '@/lib/seo';
+
 export const instant = false;
 
+const SEO_TITLE = 'Selected works';
+const SEO_DESCRIPTION =
+  'My project contribution and responsible fields from 2016 – 2026';
+
+// `openGraph` replaces the root layout's object as a whole, so the shared
+// fields repeat here; otherwise shares of this page show the introduction description.
 export const metadata: Metadata = {
-  title: 'Selected works | Dominik Rubröder, UX Engineer',
-  description: 'My project contributions from 2016 to 2026'
+  title: SEO_TITLE,
+  description: SEO_DESCRIPTION,
+  openGraph: {
+    title: seoTitle(SEO_TITLE),
+    description: SEO_DESCRIPTION,
+    url: `${ROUTING_PUBLIC_DOMAIN}/selected-works`,
+    siteName: ROUTING_PUBLIC_DOMAIN.replace('https://www.', ''),
+    images: [
+      {
+        url: `${ROUTING_PUBLIC_DOMAIN}/avatar.jpg`,
+        width: 500,
+        height: 500,
+        alt: 'Profile image Dominik Rubröder'
+      }
+    ],
+    locale: 'en_US',
+    type: 'website'
+  }
 };
 
 // Number of list images (after the hero) preloaded in the server HTML.

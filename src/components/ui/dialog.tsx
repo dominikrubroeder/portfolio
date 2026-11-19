@@ -64,7 +64,11 @@ function DialogContent({
           <DialogPrimitive.Close
             data-slot="dialog-close"
             render={
-              <Button iconOnly label="Close" className="absolute top-2 right-2">
+              <Button
+                iconOnly
+                label="Close dialog"
+                className="absolute top-2 right-2"
+              >
                 {''}
               </Button>
             }

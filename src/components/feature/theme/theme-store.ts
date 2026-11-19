@@ -9,7 +9,6 @@ import {
   THEME_KEY_CONTAINER_WIDTH,
   THEME_KEY_EVENT_WINTER,
   THEME_KEY_FONT_SIZE,
-  THEME_KEY_PERSONA,
   THEME_KEY_RADIUS
 } from './theme-constants';
 import {
@@ -31,7 +30,6 @@ import type {
   ThemeColor,
   ThemeContainerWidth,
   ThemeFontSize,
-  ThemeMode,
   ThemeOption,
   ThemeRadius,
   ThemeState
@@ -55,7 +53,6 @@ const INITIAL_STATE: ThemeState = {
   },
   themeRadius: THEME_DEFINITION_DEFAULT.defaults.radius,
   themeContainerWidth: THEME_DEFINITION_DEFAULT.defaults.containerWidth,
-  themeMode: undefined,
   isEventWinterEnabled: true,
   isInitialized: false
 };
@@ -232,14 +229,6 @@ function setTheme(option: ThemeOption) {
   });
 }
 
-const setThemeMode: ThemeActions['setThemeMode'] = (action) => {
-  const themeMode: ThemeMode | undefined =
-    typeof action === 'function' ? action(state.themeMode) : action;
-
-  writeStorage(THEME_KEY_PERSONA, themeMode ?? null);
-  update({ themeMode });
-};
-
 function setIsEventWinterEnabled(isEventWinterEnabled: boolean) {
   writeStorage(THEME_KEY_EVENT_WINTER, JSON.stringify(isEventWinterEnabled));
   update({ isEventWinterEnabled });
@@ -255,7 +244,6 @@ export const themeActions: ThemeActions = {
   setThemeAnimationSettings,
   setThemeRadius,
   setThemeContainerWidth,
-  setThemeMode,
   setIsEventWinterEnabled
 };
 
@@ -291,9 +279,6 @@ export function initThemeStore() {
       defaults.animationsEnabled
     )
   };
-  const storedMode = readStorage(THEME_KEY_PERSONA);
-  const themeMode =
-    storedMode === 'design' || storedMode === 'dev' ? storedMode : undefined;
   const storedWinter = readStorage(THEME_KEY_EVENT_WINTER);
   const isEventWinterEnabled =
     storedWinter === null ? true : storedWinter !== 'false';
@@ -314,7 +299,6 @@ export function initThemeStore() {
     themeAnimationSettings,
     themeRadius,
     themeContainerWidth,
-    themeMode,
     isEventWinterEnabled,
     isInitialized: true
   });

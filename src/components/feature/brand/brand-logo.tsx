@@ -44,7 +44,6 @@ import {
   LogoJest,
   LogoJira,
   LogoJitter,
-  LogoJunie,
   LogoLighthouse,
   LogoLinkedin,
   LogoLottieFiles,
@@ -495,9 +494,6 @@ export function BrandLogo({
 
     case 'pnpm':
       return <LogoPnpm id={id} className={className} />;
-
-    case 'Junie':
-      return <LogoJunie id={id} className={className} />;
 
     case 'prettier':
       return <LogoPrettier id={id} className={className} />;

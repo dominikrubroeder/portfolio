@@ -39,22 +39,22 @@ export function TypewriterOverlay({
             <motion.span
               animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
-              className="absolute -top-1 -left-1 size-2 border border-primary bg-primary in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
+              className="absolute -top-1 -left-1 size-2 border border-primary bg-primary in-data-[theme=wireframe]:top-[calc(var(--sketch-scale)*0.073rem_-_5px)] in-data-[theme=wireframe]:left-[calc(var(--sketch-scale)*0.44rem_-_5px)] in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
             />
             <motion.span
               animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
-              className="absolute -top-1 -right-1 size-2 border border-primary bg-background in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
+              className="absolute -top-1 -right-1 size-2 border border-primary bg-background in-data-[theme=wireframe]:top-[calc(var(--sketch-scale)*0.366rem_-_5px)] in-data-[theme=wireframe]:right-[calc(var(--sketch-scale)*0.073rem_-_5px)] in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
             />
             <motion.span
               animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
-              className="absolute -bottom-1 -left-1 size-2 border border-primary bg-background in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
+              className="absolute -bottom-1 -left-1 size-2 border border-primary bg-background in-data-[theme=wireframe]:bottom-[calc(var(--sketch-scale)*0.44rem_-_5px)] in-data-[theme=wireframe]:left-[calc(var(--sketch-scale)*0.073rem_-_5px)] in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
             />
             <motion.span
               animate={{ scale: [0.8, 1], opacity: [0.8, 1] }}
               exit={{ scale: [1, 0.6], opacity: [1, 0], rotate: 32 }}
-              className="absolute -right-1 -bottom-1 size-2 border border-primary bg-primary in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
+              className="absolute -right-1 -bottom-1 size-2 border border-primary bg-primary in-data-[theme=wireframe]:right-[calc(var(--sketch-scale)*0.366rem_-_5px)] in-data-[theme=wireframe]:bottom-[calc(var(--sketch-scale)*0.073rem_-_5px)] in-data-[theme=wireframe]:rounded-(--sketch-blob-radius)"
             />
 
             <Typewriter

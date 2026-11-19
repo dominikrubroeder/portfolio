@@ -30,8 +30,9 @@ export interface ButtonProps extends HTMLAttributes<
   children: ReactNode;
   customIcon?: boolean;
   /**
-   * The button shows an icon without a visible text label. Requires `label`,
-   * which becomes the accessible name and the tooltip text.
+   * The button shows an icon without a visible text label, or text of 3
+   * characters or fewer. Requires `label`, which becomes the accessible name
+   * and the tooltip text.
    */
   iconOnly?: boolean;
   /** Short description of what the action does. Used when `iconOnly`. */

@@ -1,47 +1,17 @@
-import type { ReactNode } from 'react';
-
-import { Button } from '@/components/ui/button';
-import { ButtonGroup } from '@/components/ui/button-group';
 import { Container } from '@/components/ui/container';
 import { ExternalLink } from '@/components/ui/external-link';
-import { IconAtomicDesign, IconAtomicDesignTokens } from '@/components/ui/icon';
 
 import { AgentViewLink } from '@/components/feature/agent-view';
 import { EVENTS_WINTER_SCENE_ENABLED } from '@/components/feature/events';
 
-import { footerCertifications } from './footer-content';
-
-const CERTIFICATION_ICONS: Record<string, ReactNode> = {
-  'Atomic Design': <IconAtomicDesign />,
-  Subatomic: <IconAtomicDesignTokens id="footer-icon-atomic-design-tokens" />
-};
-
 export function Footer() {
   return (
     <>
-      <footer className="relative z-200 space-y-4 border-t bg-background py-6 text-xs">
-        <Container as="div">
-          <div className="mx-auto max-w-container space-y-1 text-center">
-            <span className="block">Certified in:</span>
-
-            <ButtonGroup className="mx-auto inline-flex">
-              {footerCertifications.map(({ name, href }) => (
-                <Button
-                  key={name}
-                  variant="ghost-foreground"
-                  href={href}
-                  size="small"
-                  className="gap-1.5"
-                >
-                  {CERTIFICATION_ICONS[name]}
-                  <span>{name}</span>
-                </Button>
-              ))}
-            </ButtonGroup>
-          </div>
-        </Container>
-
-        <Container as="div" className="flex items-center justify-center">
+      <footer className="relative z-200 space-y-4 bg-background pb-6 text-xs">
+        <Container
+          as="div"
+          className="flex flex-wrap items-center justify-center gap-x-4"
+        >
           <AgentViewLink />
         </Container>
 

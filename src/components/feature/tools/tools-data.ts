@@ -17,10 +17,6 @@ export const tools: Tools = [
         href: 'https://claude.ai'
       },
       {
-        name: 'Junie',
-        href: 'https://www.jetbrains.com/junie/'
-      },
-      {
         name: 'v0',
         href: 'https://v0.dev'
       }

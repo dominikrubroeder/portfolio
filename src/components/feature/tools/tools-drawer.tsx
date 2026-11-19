@@ -81,7 +81,7 @@ export function DrawerTools({
         <DrawerFooter>
           <DrawerClose
             render={
-              <Button variant="text-muted" aria-label="Close" title="Close">
+              <Button variant="text-muted" iconOnly label="Close tools">
                 <MinusIcon />
               </Button>
             }

@@ -8,5 +8,10 @@ export interface TooltipProps {
   /** Content of the interactive element. */
   children?: ReactNode;
   side?: 'top' | 'bottom' | 'left' | 'right';
+  /** Controlled open state. Leave out for the default hover and focus behavior. */
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  /** Close when the trigger is pressed (default `true`). `false` keeps a clicked tooltip open. */
+  closeOnClick?: boolean;
   className?: string;
 }

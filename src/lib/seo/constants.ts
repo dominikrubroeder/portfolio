@@ -1,3 +1,8 @@
+export const SEO_TITLE_SUFFIX = 'Portfolio, Dominik Rubröder';
+
+// Full document title of a page: "<page> | Portfolio, Dominik Rubröder".
+export const seoTitle = (page: string) => `${page} | ${SEO_TITLE_SUFFIX}`;
+
 export const SEO_KEYWORDS = [
   'Frontend',
   'Design',

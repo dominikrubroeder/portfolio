@@ -15,7 +15,7 @@ export function ButtonLinkedin({ id, className }: BaseComponentProps) {
       brandLogoId={id || 'button-linkedin'}
       brand={linkedin}
       href="https://www.linkedin.com/in/dominik-rubröder-49a63817b"
-      label="Go to LinkedIn profile of Dominik Rubröder"
+      label="Open my LinkedIn profile"
       size="small"
       className={cn(className)}
     />

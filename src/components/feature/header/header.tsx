@@ -16,7 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-200 bg-background lg:relative lg:z-0 lg:h-24">
       <Container
         as="div"
-        className="flex items-center justify-between gap-2 px-4 py-4 xs:gap-0 xl:px-0"
+        className="flex items-center justify-between gap-2 py-4 xs:gap-0"
       >
         <div className="flex items-center gap-2 xs:gap-3">
           <Avatar
@@ -43,7 +43,7 @@ export function Header() {
 
           <ThemeColorSetting
             includeNeutral={false}
-            className="hidden gap-1.5 sm:flex sm:gap-2"
+            className="hidden sm:flex"
           />
         </div>
       </Container>

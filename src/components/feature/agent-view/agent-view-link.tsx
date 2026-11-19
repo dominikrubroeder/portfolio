@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 export function AgentViewLink({ className }: { className?: string }) {
   return (
     <Button
-      variant="text-foreground"
+      variant="ghost-foreground"
       size="small"
       href="/agent-view"
       prefetch={false}

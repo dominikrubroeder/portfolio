@@ -29,7 +29,7 @@ export function Typewriter({
   phrases,
   className,
   cursorClassName,
-  typeSpeed = 64,
+  typeSpeed = 56,
   deleteSpeed = 40,
   deleteLastPhrase = true,
   pauseDuration = 2000,

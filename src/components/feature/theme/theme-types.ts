@@ -3,7 +3,6 @@ import type { Dispatch, SetStateAction } from 'react';
 export type Theme = 'default' | 'wireframe';
 export type ThemeOption = { key: Theme; value: string };
 export type ThemeColor = 'violett' | 'blue' | 'orange' | 'foreground';
-export type ThemeMode = 'design' | 'dev';
 export type ThemeFontSize = 'sm' | 'md' | 'lg';
 export type ThemeAppearance = 'light' | 'dark' | 'system';
 export type ThemeRadius = 'none' | 'sm' | 'md' | 'lg';
@@ -42,7 +41,6 @@ export type ThemeState = {
   themeAnimationSettings: ThemeAnimationSettings;
   themeRadius: ThemeRadius;
   themeContainerWidth: ThemeContainerWidth;
-  themeMode: ThemeMode | undefined;
   isInitialized: boolean;
 } & ThemeEvents;
 
@@ -56,7 +54,6 @@ export type ThemeActions = {
   setThemeAnimationSettings: Dispatch<SetStateAction<ThemeAnimationSettings>>;
   setThemeRadius: (themeRadius: ThemeRadius) => void;
   setThemeContainerWidth: (themeContainerWidth: ThemeContainerWidth) => void;
-  setThemeMode: Dispatch<SetStateAction<ThemeMode | undefined>>;
   setIsEventWinterEnabled: (isEventWinterEnabled: boolean) => void;
 };
 
