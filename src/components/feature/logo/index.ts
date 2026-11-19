@@ -37,7 +37,6 @@ export { LogoJavascript } from './logo-javascript';
 export { LogoJest } from './logo-jest';
 export { LogoJira } from './logo-jira';
 export { LogoJitter } from './logo-jitter';
-export { LogoJunie } from './logo-junie';
 export { LogoLighthouse } from './logo-lighthouse';
 export { LogoLinkedin } from './logo-linkedin';
 export { LogoLottieFiles } from './logo-lottie-files';

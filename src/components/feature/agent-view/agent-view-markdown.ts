@@ -2,10 +2,10 @@ import type { Brand } from '@/components/feature/brand';
 import { footerCertifications } from '@/components/feature/footer';
 import { headerIdentity } from '@/components/feature/header';
 import {
-  introductionIntro,
   introductionPrinciples,
   introductionStatements
 } from '@/components/feature/introduction';
+import type { IntroductionParagraph } from '@/components/feature/introduction';
 // Direct file import: the philosophy barrel exports a client component.
 import {
   NAVIGATION_LEVELS_ENABLED,
@@ -53,9 +53,40 @@ const groupedBrands = (
         )}`
     );
 
+// A marked term keeps its tooltip text in the markdown: "term (hint)".
+const termMarkdown = (text: string, terms: Record<string, string> = {}) =>
+  Object.entries(terms).reduce(
+    (result, [term, hint]) => result.replace(term, `${term} (${hint})`),
+    text
+  );
+
+const paragraphMarkdown = (
+  paragraph: IntroductionParagraph,
+  terms?: Record<string, string>
+): string =>
+  typeof paragraph === 'string'
+    ? termMarkdown(paragraph, terms)
+    : [
+        `> ${paragraph.quote}`,
+        ...(paragraph.author ? [`>`, `> – ${paragraph.author}`] : [])
+      ].join('\n');
+
+const principlesMarkdown = `### Principles\n\n${introductionPrinciples
+  .map((principle, index) => `${index + 1}. ${principle}`)
+  .join('\n')}`;
+
 const introductionSection = (): string[] => [
   '## Introduction',
-  ...introductionStatements.map((statement) => `### ${statement}`),
+  ...introductionStatements.flatMap(({ text, paragraphs, terms }, index) => [
+    [
+      `### ${text}`,
+      ...(paragraphs ?? []).map((paragraph) =>
+        paragraphMarkdown(paragraph, terms)
+      )
+    ].join('\n\n'),
+    // Same order as the page: principles follow the first statement.
+    ...(index === 0 ? [principlesMarkdown] : [])
+  ]),
   ...philosophyTabs.map(
     ({ title, labels, core }) =>
       `### ${title}\n\nCore: ${core}\n\n${list(labels)}`
@@ -66,12 +97,6 @@ const introductionSection = (): string[] => [
         .map(({ key, title }) => `${title}:\n\n${list(details[key])}`)
         .join('\n\n')}`
   ),
-  `> ${introductionIntro.quote}`,
-  ...introductionIntro.paragraphs,
-  introductionIntro.signature,
-  `### Principles\n\n${introductionPrinciples
-    .map((principle, index) => `${index + 1}. ${principle}`)
-    .join('\n')}`,
   `### Main tools\n\n${brandList(mainTools)}`,
   `### Main technologies\n\n${brandList(mainTechnologies)}`,
   '### More tools',

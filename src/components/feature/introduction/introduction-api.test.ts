@@ -2,7 +2,6 @@ import { describe, expect, it } from 'vitest';
 
 import { buildIntroductionApi } from './introduction-api';
 import {
-  introductionIntro,
   introductionPrinciples,
   introductionStatements
 } from './introduction-content';
@@ -12,7 +11,6 @@ const api = buildIntroductionApi();
 describe('buildIntroductionApi', () => {
   it('carries the page copy unchanged', () => {
     expect(api.statements).toEqual(introductionStatements);
-    expect(api.intro).toEqual(introductionIntro);
     expect(api.principles).toEqual(introductionPrinciples);
   });
 

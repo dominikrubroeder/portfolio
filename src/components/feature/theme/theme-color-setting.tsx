@@ -63,14 +63,14 @@ export function ThemeColorSetting({
                   type="button"
                   aria-label={color.label}
                   aria-pressed={selected}
-                  className={`relative flex size-6.5 shrink-0 items-center justify-center rounded-full after:absolute after:-inset-x-1 after:-inset-y-[9px] after:content-[''] hover:scale-110 active:scale-100 in-data-[theme=wireframe]:rounded-(--sketch-blob-radius) in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-0.5 in-data-[theme=wireframe]:before:-rotate-2 in-data-[theme=wireframe]:before:rounded-(--sketch-blob-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-[''] sm:size-8 sm:after:-inset-y-1.5 [html[data-theme-animations=on]_&]:motion-safe:interactive ${color.className}`}
+                  className={`relative flex size-8 shrink-0 items-center justify-center rounded-full after:absolute after:-inset-[7px] after:content-[''] hover:scale-110 active:scale-100 in-data-[theme=wireframe]:rounded-(--sketch-blob-radius) in-data-[theme=wireframe]:before:pointer-events-none in-data-[theme=wireframe]:before:absolute in-data-[theme=wireframe]:before:-inset-0.5 in-data-[theme=wireframe]:before:-rotate-2 in-data-[theme=wireframe]:before:rounded-(--sketch-blob-outline-radius) in-data-[theme=wireframe]:before:border-2 in-data-[theme=wireframe]:before:border-foreground in-data-[theme=wireframe]:before:content-[''] [html[data-theme-animations=on]_&]:motion-safe:interactive ${color.className}`}
                   onClick={() => setThemeColor(color.value)}
                 />
               }
             >
               {selected && (
                 <CheckIcon
-                  className={`size-3.5 shrink-0 sm:size-4 ${color.checkClassName}`}
+                  className={`size-4 shrink-0 ${color.checkClassName}`}
                 />
               )}
             </Tooltip>

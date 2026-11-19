@@ -11,7 +11,6 @@ import {
 import { mainTools, tools } from '@/components/feature/tools';
 
 import {
-  introductionIntro,
   introductionPrinciples,
   introductionStatements
 } from './introduction-content';
@@ -23,7 +22,6 @@ export function buildIntroductionApi() {
       tabs: philosophyTabs,
       ...(NAVIGATION_LEVELS_ENABLED ? { topics: philosophyTopics } : {})
     },
-    intro: introductionIntro,
     principles: introductionPrinciples,
     tools: {
       main: mainTools.map(toBrandApi),

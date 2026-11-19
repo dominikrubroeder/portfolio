@@ -33,7 +33,8 @@ const phrases = [
   ['Designing ...'],
   ['Setting up the environment ...'],
   ['Applying color, typography and grids ...'],
-  ['Design your way!']
+  ['Design your way!'],
+  ['Organizing ...']
 ];
 
 export function IntroProvider({ children }: { children: ReactNode }) {

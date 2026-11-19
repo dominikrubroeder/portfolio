@@ -45,7 +45,7 @@ describe('buildAgentViewMarkdown', () => {
 
   it('shows the statements in order, the first one being the page heading', () => {
     const positions = introductionStatements.map((statement) =>
-      markdown.indexOf(`### ${statement}`)
+      markdown.indexOf(`### ${statement.text}`)
     );
 
     expect(positions[0]).toBeGreaterThan(markdown.indexOf('## Introduction'));

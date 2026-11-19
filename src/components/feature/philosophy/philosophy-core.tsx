@@ -26,6 +26,8 @@ import {
   philosophyCoreLabel,
   philosophyCoreTabLabels,
   philosophyHolisticLabels,
+  philosophyCoreInfluencedByLabel,
+  philosophyHolisticInfluencedByLabel,
   philosophyTopicGroups,
   philosophyTopics
 } from './philosophy-data';
@@ -43,6 +45,11 @@ function ringPosition(index: number, count: number) {
     top: `calc(50% + ${y}rem)`,
     left: `calc(50% + ${x}rem)`
   };
+}
+
+/** Quiet caption centered below the blossom, shown in every tab. */
+function InfluencedBy({ children }: { children: ReactNode }) {
+  return <small className="block text-center">{children}</small>;
 }
 
 const PANEL_CLASS = 'col-start-1 row-start-1 data-hidden:invisible';
@@ -363,6 +370,7 @@ export function PhilosophyCore() {
                       </div>
                     </div>
                   </div>
+                  <InfluencedBy>{philosophyCoreInfluencedByLabel}</InfluencedBy>
                 </TabsContent>
                 <TabsContent
                   value="Holistic product UI"
@@ -396,6 +404,9 @@ export function PhilosophyCore() {
                       </div>
                     </div>
                   </div>
+                  <InfluencedBy>
+                    {philosophyHolisticInfluencedByLabel}
+                  </InfluencedBy>
                 </TabsContent>
               </div>
 

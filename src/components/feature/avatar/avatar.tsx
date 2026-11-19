@@ -10,6 +10,11 @@ import {
 
 import { cn } from '@/lib/utils';
 
+// Wireframe draws the photo as a hand-cut blob (`--sketch-blob-radius`, like the
+// color swatches) instead of a perfect circle.
+const AVATAR_IMAGE_CLASS =
+  'shrink-0 rounded-full border-2 in-data-[theme=wireframe]:rounded-(--sketch-blob-radius) in-data-[theme=wireframe]:border-foreground';
+
 export function Avatar({
   width,
   height,
@@ -28,10 +33,7 @@ export function Avatar({
         alt="Image of Dominik Rubröder"
         width={width}
         height={height}
-        className={cn(
-          'shrink-0 rounded-full border-2 in-data-[theme=wireframe]:border-foreground',
-          className
-        )}
+        className={cn(AVATAR_IMAGE_CLASS, className)}
         draggable={false}
         loading="eager"
       />
@@ -58,10 +60,7 @@ export function Avatar({
         alt="Image of Dominik Rubröder"
         width={width}
         height={height}
-        className={cn(
-          'shrink-0 rounded-full border-2 in-data-[theme=wireframe]:border-foreground',
-          className
-        )}
+        className={cn(AVATAR_IMAGE_CLASS, className)}
         draggable={false}
         loading="eager"
       />

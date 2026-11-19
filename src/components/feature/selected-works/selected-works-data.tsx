@@ -212,13 +212,12 @@ export const projects: Project[] = [
       'Establish and maintain the design system in Figma',
       'Build and compose the headless frontend in Next.js',
       'Design and present feature concepts and UI prototypes for project pitches',
-      'AI-native focus: Establish a design and engineering vision for an agentic UI delivery process'
+      'AI-native focus: Establish the design and engineering vision for the agentic UI delivery'
     ],
     tools: getTools({
       names: [
         'Figma',
         'WebStorm',
-        'Junie',
         'Shopware',
         'Storyblok',
         'meilisearch',

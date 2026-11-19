@@ -7,6 +7,8 @@ import type { ButtonProps } from '@/components/ui/button';
 import { Button } from '@/components/ui/button';
 import type { SelectOption } from '@/components/ui/select';
 
+import { cn } from '@/lib/utils';
+
 export function Select({
   trigger,
   placeholder,
@@ -46,6 +48,12 @@ export function Select({
           <Button
             {...trigger}
             {...props}
+            // The list anchors to the trigger's box on pointer down. A press scale there makes it measure the
+            // shrunken trigger, and with transitions off (animations off) nothing corrects it afterwards.
+            className={cn(
+              trigger.className,
+              'active:scale-100! aria-expanded:scale-100!'
+            )}
             aria-label={
               label ? `${label}: ${selected?.value ?? placeholder}` : undefined
             }

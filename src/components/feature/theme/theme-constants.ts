@@ -21,7 +21,6 @@ export const THEME_KEY_ANIMATION = 'dr-theme-animation';
 export const THEME_KEY_RADIUS = 'dr-theme-radius';
 export const THEME_KEY_CONTAINER_WIDTH = 'dr-theme-container-width';
 export const THEME_KEY_EVENT_WINTER = 'dr-theme-event-winter';
-export const THEME_KEY_PERSONA = 'dr-theme-persona';
 
 export const THEME_DEFAULT: Theme = 'default';
 export const THEME_OPTION_DEFAULT: ThemeOption = THEME_OPTIONS[0];

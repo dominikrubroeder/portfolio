@@ -15,8 +15,6 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top';
 import { Footer } from '@/components/feature/footer';
 import { Header } from '@/components/feature/header';
 import { IntroProvider } from '@/components/feature/intro';
-import { PageFrame } from '@/components/feature/page-frame';
-import { PageNavigationBar } from '@/components/feature/page-navigation-bar';
 import {
   themeInitializationScript,
   ThemeProvider
@@ -104,17 +102,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <IntroProvider>
             <Header />
 
-            <main className="relative flex-1 space-y-8 pt-8 sm:space-y-12">
-              <PageFrame className="fixed inset-0 z-50" />
-
+            <main className="relative flex-1 space-y-8 pt-3 pb-8 sm:space-y-12 sm:pt-8 sm:pb-12">
               <Suspense>
                 <ScrollToTop />
               </Suspense>
 
               {children}
             </main>
-
-            <PageNavigationBar />
 
             <Footer />
           </IntroProvider>
