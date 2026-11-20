@@ -92,21 +92,27 @@
     --primary-foreground: oklch(1 0 0);
     --primary-hover: oklch(0.526 0.261 284.4);
     --primary-border: oklch(0.472 0.285 277);
+    /* Accent as text on `background` (buttons, links, badges). Equals the accent in light; dark lifts it to AA (4.5 : 1). */
+    --primary-text: var(--primary);
+    --primary-text-hover: var(--primary-hover);
 
     --blue: oklch(0.546 0.245 262.9);
     --blue-foreground: oklch(1 0 0);
     --blue-hover: oklch(0.546 0.245 262.9);
     --blue-border: oklch(0.496 0.245 263);
+    --blue-text: var(--blue);
 
     --violett: oklch(0.543 0.252 285.9);
     --violett-foreground: oklch(1 0 0);
     --violett-hover: oklch(0.51 0.269 282.7);
     --violett-border: oklch(0.483 0.281 279);
+    --violett-text: var(--violett);
 
     --orange: oklch(0.58 0.237 31.3);
     --orange-foreground: oklch(1 0 0);
     --orange-hover: oklch(0.555 0.234 31);
     --orange-border: oklch(0.52 0.219 31.1);
+    --orange-text: var(--orange);
 
     --muted: oklch(0.963 0.007 286.3);
     --muted-foreground: oklch(0.539 0.008 286.1);
@@ -140,24 +146,38 @@
     --muted-hover: oklch(0.341 0 0);
 
     --border: oklch(0.259 0 0);
+
+    /* Accent text on the dark surface: same hue, lighter. 6.2 : 1 or more on `background`, 4.9 : 1 or more on `muted`. */
+    --blue-text: oklch(0.7 0.196 262.9);
+    --violett-text: oklch(0.7 0.202 285.9);
+    --orange-text: oklch(0.7 0.19 31.3);
+    --primary-text: var(--violett-text);
+    --primary-text-hover: color-mix(
+      in oklch,
+      var(--primary-text) 80%,
+      var(--white)
+    );
   }
 
   :root[data-theme-color='violett'] {
     --primary: var(--violett);
     --primary-foreground: var(--violett-foreground);
     --primary-hover: var(--violett-hover);
+    --primary-text: var(--violett-text);
   }
 
   :root[data-theme-color='blue'] {
     --primary: var(--blue);
     --primary-foreground: var(--blue-foreground);
     --primary-hover: var(--blue-hover);
+    --primary-text: var(--blue-text);
   }
 
   :root[data-theme-color='orange'] {
     --primary: var(--orange);
     --primary-foreground: var(--orange-foreground);
     --primary-hover: var(--orange-hover);
+    --primary-text: var(--orange-text);
   }
 
   :root[data-theme-color='foreground'] {
@@ -169,6 +189,8 @@
       var(--background)
     );
     --primary-border: var(--foreground);
+    --primary-text: var(--foreground);
+    --primary-text-hover: var(--primary-hover);
   }
 
   /* Wireframe: black and white. Structure comes from surface tone and type, not from lines, so
@@ -278,18 +300,21 @@
     --primary: var(--violett);
     --primary-foreground: var(--violett-foreground);
     --primary-hover: var(--violett-hover);
+    --primary-text: var(--violett-text);
   }
 
   :root[data-theme-color='blue'] {
     --primary: var(--blue);
     --primary-foreground: var(--blue-foreground);
     --primary-hover: var(--blue-hover);
+    --primary-text: var(--blue-text);
   }
 
   :root[data-theme-color='orange'] {
     --primary: var(--orange);
     --primary-foreground: var(--orange-foreground);
     --primary-hover: var(--orange-hover);
+    --primary-text: var(--orange-text);
   }
 
   :root[data-theme-color='foreground'] {
@@ -301,6 +326,8 @@
       var(--background)
     );
     --primary-border: var(--foreground);
+    --primary-text: var(--foreground);
+    --primary-text-hover: var(--primary-hover);
   }
 
   :root[data-theme='default'][data-theme-appearance='dark'] {
@@ -333,6 +360,8 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-hover: var(--primary-hover);
+  --color-primary-text: var(--primary-text);
+  --color-primary-text-hover: var(--primary-text-hover);
 
   --color-blue: var(--blue);
   --color-blue-foreground: var(--blue-foreground);

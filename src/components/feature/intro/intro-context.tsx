@@ -14,6 +14,8 @@ import { TypewriterOverlay } from '@/components/ui/typewriter-overlay';
 
 import { useThemeSetting } from '@/components/feature/theme';
 
+import { AGENT_MODE } from '@/lib/agent-mode';
+
 type IntroContextType = {
   isPlaying: boolean;
   setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
@@ -39,7 +41,8 @@ const phrases = [
 ];
 
 export function IntroProvider({ children }: { children: ReactNode }) {
-  const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  // Agent mode starts without the intro: no cover, no overlay, no held reveals.
+  const [isPlaying, setIsPlaying] = useState<boolean>(!AGENT_MODE);
   const [currentPhrase, setCurrentPhrase] = useState<string[] | null>(null);
   const { isEnabled } = useThemeSetting('themeAnimationSettings');
   const isInitialized = useThemeSetting('isInitialized');

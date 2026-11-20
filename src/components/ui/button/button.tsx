@@ -39,18 +39,20 @@ export function Button({
     variant === 'contained-white' && 'bg-white text-primary',
     variant?.includes('ghost') &&
       "relative rounded-2xl z-10 after:absolute after:inset-0 after:-z-10 after:rounded-2xl after:will-change-transform after:motion-safe:scale-80 after:bg-primary/10 after:opacity-0 after:motion-safe:transition-[scale,opacity] after:motion-safe:duration-300 after:motion-safe:ease-interactive after:content-[''] in-data-[theme=wireframe]:after:rounded-(--sketch-button-outline-radius) in-data-[theme=wireframe]:after:border-2 in-data-[theme=wireframe]:after:border-foreground active:text-foreground active:after:scale-100 hover:after:scale-100 active:after:opacity-100 hover:after:opacity-100 active:text-foreground",
-    variant === 'ghost-primary' && 'text-primary',
+    variant === 'ghost-primary' && 'text-primary-text',
     variant === 'ghost-foreground' && 'text-foreground',
     variant === 'ghost-muted' && 'text-muted-foreground hover:text-foreground',
     variant.includes('text') &&
       "p-0! min-h-0! in-data-[theme=wireframe]:after:pointer-events-none in-data-[theme=wireframe]:after:absolute in-data-[theme=wireframe]:after:inset-x-0 in-data-[theme=wireframe]:after:-bottom-1 in-data-[theme=wireframe]:after:h-2 in-data-[theme=wireframe]:after:bg-current in-data-[theme=wireframe]:after:opacity-0 in-data-[theme=wireframe]:after:[mask-image:var(--sketch-hr-line)] in-data-[theme=wireframe]:after:[mask-size:100%_100%] in-data-[theme=wireframe]:after:motion-safe:transition-opacity in-data-[theme=wireframe]:after:content-[''] in-data-[theme=wireframe]:hover:after:opacity-100",
-    variant === 'text-primary' && 'text-primary hover:text-primary-hover',
-    variant === 'text-foreground' && 'text-foreground hover:text-primary',
+    variant === 'text-primary' &&
+      'text-primary-text hover:text-primary-text-hover',
+    variant === 'text-foreground' && 'text-foreground hover:text-primary-text',
     variant === 'text-muted' && 'text-muted-foreground hover:text-foreground',
     variant.includes('link') && 'underline p-0! min-h-0!',
     variant === 'link-muted' && 'text-muted-foreground hover:text-foreground',
-    variant === 'link-foreground' && 'text-foreground hover:text-primary',
-    variant === 'link-primary' && 'text-primary hover:text-primary-hover',
+    variant === 'link-foreground' && 'text-foreground hover:text-primary-text',
+    variant === 'link-primary' &&
+      'text-primary-text hover:text-primary-text-hover',
     size === 'tiny' &&
       'min-h-6 min-w-6 rounded-2xl hover:rounded-xl text-xs py-1 px-1 gap-1 [&>svg]:size-3.5',
     size === 'small' &&

@@ -5,11 +5,14 @@ import { ScrollToTop } from '@/components/ui/scroll-to-top';
 
 import { BrandList } from '@/components/feature/brand';
 import {
+  designPrinciples,
+  getDesignPrincipleText
+} from '@/components/feature/design-principles';
+import {
   EVENTS_WINTER_SCENE_ENABLED,
   Snowfall
 } from '@/components/feature/events';
 import {
-  introductionPrinciples,
   IntroductionStatementParagraphs,
   introductionStatements
 } from '@/components/feature/introduction';
@@ -56,8 +59,8 @@ export default async function IntroductionPage() {
           <h2>Principles</h2>
 
           <Ol>
-            {introductionPrinciples.map((principle) => (
-              <li key={principle}>{principle}</li>
+            {designPrinciples.map((principle) => (
+              <li key={principle.id}>{getDesignPrincipleText(principle)}</li>
             ))}
           </Ol>
         </Container>

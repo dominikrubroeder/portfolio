@@ -38,3 +38,5 @@ export interface Project {
   previewImageTimestamp?: string;
   notes?: string;
 }
+
+export type ProjectCardVariant = 'hero' | 'list';

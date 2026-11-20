@@ -1,17 +1,19 @@
 import { describe, expect, it } from 'vitest';
 
-import { buildIntroductionApi } from './introduction-api';
 import {
-  introductionPrinciples,
-  introductionStatements
-} from './introduction-content';
+  designPrinciples,
+  toDesignPrincipleApi
+} from '@/components/feature/design-principles';
+
+import { buildIntroductionApi } from './introduction-api';
+import { introductionStatements } from './introduction-content';
 
 const api = buildIntroductionApi();
 
 describe('buildIntroductionApi', () => {
   it('carries the page copy unchanged', () => {
     expect(api.statements).toEqual(introductionStatements);
-    expect(api.principles).toEqual(introductionPrinciples);
+    expect(api.principles).toEqual(designPrinciples.map(toDesignPrincipleApi));
   });
 
   it('lists main and grouped tools and technologies', () => {

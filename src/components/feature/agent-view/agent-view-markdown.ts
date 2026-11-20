@@ -1,10 +1,8 @@
 import type { Brand } from '@/components/feature/brand';
+import { designPrinciples } from '@/components/feature/design-principles';
 import { footerCertifications } from '@/components/feature/footer';
 import { headerIdentity } from '@/components/feature/header';
-import {
-  introductionPrinciples,
-  introductionStatements
-} from '@/components/feature/introduction';
+import { introductionStatements } from '@/components/feature/introduction';
 import type { IntroductionParagraph } from '@/components/feature/introduction';
 // Direct file import: the philosophy barrel exports a client component.
 import {
@@ -71,8 +69,11 @@ const paragraphMarkdown = (
         ...(paragraph.author ? [`>`, `> – ${paragraph.author}`] : [])
       ].join('\n');
 
-const principlesMarkdown = `### Principles\n\n${introductionPrinciples
-  .map((principle, index) => `${index + 1}. ${principle}`)
+const principlesMarkdown = `### Principles\n\n${designPrinciples
+  .map(
+    ({ title, description }, index) =>
+      `${index + 1}. **${title}** — ${description}`
+  )
   .join('\n')}`;
 
 const introductionSection = (): string[] => [

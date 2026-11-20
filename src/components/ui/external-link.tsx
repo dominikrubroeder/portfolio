@@ -30,7 +30,8 @@ export function ExternalLink({
       className={cn(
         'group relative items-center rounded px-1 hover:bg-muted active:bg-muted [&_img]:inline-block [&_img]:align-middle [&_svg]:inline-block [&_svg]:align-text-top [&_svg:first-child]:mb-1 [&_svg:first-child]:align-middle',
         variant === 'underline',
-        color === 'primary' && 'text-primary hover:text-primary-hover',
+        color === 'primary' &&
+          'text-primary-text hover:text-primary-text-hover',
         color === 'primary-foreground' &&
           'text-primary-foreground hover:text-primary-hover',
         color === 'foreground' && 'text-foreground',

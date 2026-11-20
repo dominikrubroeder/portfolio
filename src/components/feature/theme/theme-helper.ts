@@ -1,3 +1,5 @@
+import { AGENT_MODE } from '@/lib/agent-mode';
+
 import {
   THEME_KEY,
   THEME_KEY_ANIMATION,
@@ -60,7 +62,7 @@ export const themeInitializationScript = `
     var radius = pick(values.radius, read('${THEME_KEY_RADIUS}'), def.defaults.radius);
     var containerWidth = pick(values.containerWidth, read('${THEME_KEY_CONTAINER_WIDTH}'), def.defaults.containerWidth);
     var storedAnimation = read('${THEME_KEY_ANIMATION}');
-    var animations = storedAnimation === 'true' ? true : storedAnimation === 'false' ? false : def.defaults.animationsEnabled;
+    var animations = ${AGENT_MODE} ? false : storedAnimation === 'true' ? true : storedAnimation === 'false' ? false : def.defaults.animationsEnabled;
 
     var resolvedAppearance = appearance;
     if (appearance === 'system') {

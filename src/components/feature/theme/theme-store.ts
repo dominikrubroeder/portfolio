@@ -1,3 +1,5 @@
+import { AGENT_MODE } from '@/lib/agent-mode';
+
 import {
   THEME_ANIMATION_SETTINGS_DEFAULT,
   THEME_APPEARANCE_DEFAULT,
@@ -49,7 +51,8 @@ const INITIAL_STATE: ThemeState = {
   themeAppearance: THEME_APPEARANCE_DEFAULT,
   themeAnimationSettings: {
     ...THEME_ANIMATION_SETTINGS_DEFAULT,
-    isEnabled: THEME_DEFINITION_DEFAULT.defaults.animationsEnabled
+    isEnabled:
+      !AGENT_MODE && THEME_DEFINITION_DEFAULT.defaults.animationsEnabled
   },
   themeRadius: THEME_DEFINITION_DEFAULT.defaults.radius,
   themeContainerWidth: THEME_DEFINITION_DEFAULT.defaults.containerWidth,
@@ -189,6 +192,9 @@ function setThemeContainerWidth(themeContainerWidth: ThemeContainerWidth) {
 const setThemeAnimationSettings: ThemeActions['setThemeAnimationSettings'] = (
   action
 ) => {
+  // Agent mode keeps animations off; the switch does nothing and nothing is saved.
+  if (AGENT_MODE) return;
+
   const themeAnimationSettings: ThemeAnimationSettings =
     typeof action === 'function'
       ? action(state.themeAnimationSettings)
@@ -203,20 +209,22 @@ const setThemeAnimationSettings: ThemeActions['setThemeAnimationSettings'] = (
 function setTheme(option: ThemeOption) {
   const { defaults } = getThemeDefinition(option.key);
   const theme = getThemeOption(option.key);
+  const animationsEnabled = !AGENT_MODE && defaults.animationsEnabled;
   const themeAnimationSettings: ThemeAnimationSettings = {
     ...THEME_ANIMATION_SETTINGS_DEFAULT,
-    isEnabled: defaults.animationsEnabled
+    isEnabled: animationsEnabled
   };
 
   applyTheme(theme);
   applyColor(defaults.color);
-  applyAnimations(defaults.animationsEnabled);
+  applyAnimations(animationsEnabled);
   applyRadius(defaults.radius);
   applyContainerWidth(defaults.containerWidth);
 
   writeStorage(THEME_KEY, theme.key);
   writeStorage(THEME_KEY_COLOR, defaults.color);
-  writeStorage(THEME_KEY_ANIMATION, String(defaults.animationsEnabled));
+  if (!AGENT_MODE)
+    writeStorage(THEME_KEY_ANIMATION, String(defaults.animationsEnabled));
   writeStorage(THEME_KEY_RADIUS, defaults.radius);
   writeStorage(THEME_KEY_CONTAINER_WIDTH, defaults.containerWidth);
 
@@ -274,10 +282,12 @@ export function initThemeStore() {
   );
   const themeAnimationSettings: ThemeAnimationSettings = {
     ...THEME_ANIMATION_SETTINGS_DEFAULT,
-    isEnabled: parseThemeAnimationsEnabled(
-      readStorage(THEME_KEY_ANIMATION),
-      defaults.animationsEnabled
-    )
+    isEnabled:
+      !AGENT_MODE &&
+      parseThemeAnimationsEnabled(
+        readStorage(THEME_KEY_ANIMATION),
+        defaults.animationsEnabled
+      )
   };
   const storedWinter = readStorage(THEME_KEY_EVENT_WINTER);
   const isEventWinterEnabled =

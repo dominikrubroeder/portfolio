@@ -1,33 +1,24 @@
-import { Fragment } from 'react';
-
 import type { Metadata } from 'next';
 
-import Image, { getImageProps } from 'next/image';
-import Link from 'next/link';
+import { getImageProps } from 'next/image';
 
 import { preload } from 'react-dom';
 
-import { Animate } from '@/components/ui/animate';
-import { Badge } from '@/components/ui/badge';
 import { Blockquote } from '@/components/ui/blockquote';
-import { Button } from '@/components/ui/button';
 import { Container } from '@/components/ui/container';
-import { Divider } from '@/components/ui/divider';
 import { DotsDivider } from '@/components/ui/dots-divider';
-import { ExternalLink } from '@/components/ui/external-link';
-import { Hr } from '@/components/ui/hr';
 import { PageTemplate } from '@/components/ui/page-template';
 
 import {
   getProject,
-  getResponsibilityText,
+  getProjectImageSize,
   HERO_PROJECT_TITLE,
-  ProjectResponsibilityItem,
+  ProjectCard,
   projects,
   projectsHeroBlockquote,
   projectsHeroHighlight
 } from '@/components/feature/selected-works';
-import { H2, Ul } from '@/components/feature/typography';
+import { Ul } from '@/components/feature/typography';
 
 import { ROUTING_PUBLIC_DOMAIN } from '@/lib/routing';
 import { seoTitle } from '@/lib/seo';
@@ -88,8 +79,7 @@ function preloadProjectImages() {
     const { props } = getImageProps({
       src: project.previewImage,
       alt: '',
-      width: isHero ? 1920 : 800,
-      height: isHero ? 630 : 600
+      ...getProjectImageSize(project.previewImage, isHero ? 'hero' : 'list')
     });
 
     preload(props.src, {
@@ -105,6 +95,9 @@ export default function SelectedWorksPage() {
   preloadProjectImages();
 
   const heroProject = getProject({ title: HERO_PROJECT_TITLE });
+  const listProjects = projects.filter(
+    (project) => project.title !== heroProject?.title
+  );
 
   return (
     <PageTemplate
@@ -124,257 +117,20 @@ export default function SelectedWorksPage() {
     >
       <DotsDivider />
 
-      {heroProject && (
-        <Animate>
-          <Container
-            as="section"
-            size="full-width"
-            className="z-100 animate-in-to-left-100 space-y-5 bg-primary py-12"
-          >
-            {heroProject.previewImage && (
-              <Link
-                href={heroProject.url}
-                title={`Open ${heroProject.title} in external tab`}
-                aria-label={`Click to open ${heroProject.title} in an external tab`}
-                target="_blank"
-                className="relative mx-auto block max-w-container-panorama space-y-2 sm:space-y-0"
-              >
-                <Image
-                  src={heroProject.previewImage}
-                  alt={`${heroProject.title} preview image`}
-                  width={1920}
-                  height={630}
-                  draggable={false}
-                  placeholder="blur"
-                  preload
-                />
-              </Link>
-            )}
-
-            <Container as="div">
-              <div>
-                <H2 className="sticky-none mb-0 text-primary-foreground">
-                  {heroProject.title}
-                </H2>
-
-                <small className="flex flex-wrap items-center gap-2">
-                  <ul className="my-0 -mr-1">
-                    {heroProject.companies?.map((company) => (
-                      <li
-                        key={`Project ${heroProject.title} company ${company.label}`}
-                      >
-                        {company.href ? (
-                          <ExternalLink
-                            href={company.href}
-                            size="sm"
-                            className="mr-0 -ml-1"
-                            color="primary-foreground"
-                          >
-                            <span>{company.label}</span>
-                          </ExternalLink>
-                        ) : (
-                          <span className="text-primary-foreground">
-                            {company.label}
-                          </span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Divider variant="dot" className="bg-white" />
-
-                  {heroProject.isActive ? (
-                    <span className="text-primary-foreground">
-                      <span className="text-primary-foreground">
-                        {heroProject.timeframe} –{' '}
-                      </span>
-                      <Badge size="sm" variant="white">
-                        Ongoing
-                      </Badge>
-                    </span>
-                  ) : (
-                    <span className="text-primary-foreground">
-                      {heroProject.timeframe}
-                    </span>
-                  )}
-                </small>
-              </div>
-
-              {heroProject.description && (
-                <p className="mt-2 text-primary-foreground">
-                  {heroProject.description}
-                </p>
-              )}
-
-              <p className="mt-2">{heroProject.subline}</p>
-
-              <Hr className="my-3 w-4 border-primary-foreground/16 text-primary-foreground" />
-
-              {heroProject.responsibilities?.length && (
-                <Ul
-                  headline="Responsible fields"
-                  listStyle="disc"
-                  className="text-primary-foreground"
-                  headlineClassName="text-primary-foreground"
-                >
-                  {heroProject.responsibilities.map((aspect) => (
-                    <ProjectResponsibilityItem
-                      key={getResponsibilityText(aspect)}
-                      responsibility={aspect}
-                      keyPrefix={heroProject.title}
-                    />
-                  ))}
-                </Ul>
-              )}
-
-              <Button
-                variant="contained-white"
-                href={heroProject.url}
-                title={`View ${heroProject.title}`}
-                aria-label={`Click to view ${heroProject.title} in a new tab`}
-              >
-                View {heroProject.title}
-              </Button>
-
-              {heroProject.notes && (
-                <small className="mt-3 block text-primary-foreground">
-                  {heroProject.notes}
-                </small>
-              )}
-            </Container>
-          </Container>
-        </Animate>
-      )}
+      {heroProject && <ProjectCard project={heroProject} variant="hero" />}
 
       <DotsDivider />
 
       <Container as="section">
         <Ul className="space-y-10 sm:space-y-12">
-          {projects
-            .filter((project) => project.title !== heroProject?.title)
-            .map((project, index, array) => (
-              <Fragment key={project.title}>
-                <li key={`project-${index}`}>
-                  <Animate>
-                    <div className="grid gap-4">
-                      <Link
-                        href={project.url}
-                        title={`Open ${project.title} in external tab`}
-                        aria-label={`Click to open ${project.title} in an external tab`}
-                        className="space-y-2"
-                        target="_blank"
-                      >
-                        {project.previewImage ? (
-                          <Image
-                            src={project.previewImage}
-                            alt={`${project.title} preview image`}
-                            width={800}
-                            height={600}
-                            className="block w-full scale-105"
-                            draggable={false}
-                            placeholder="blur"
-                          />
-                        ) : (
-                          <div className="flex h-44 w-full items-center justify-center [&>svg]:max-h-32 [&>svg]:max-w-60">
-                            {project.logo}
-                          </div>
-                        )}
-                      </Link>
+          {listProjects.map((project, index) => (
+            // The dots divider sits inside the item, so the list holds items only.
+            <li key={project.title} className="space-y-10 sm:space-y-12">
+              <ProjectCard project={project} />
 
-                      <div className="flex-1">
-                        <div className="space-y-2">
-                          <div>
-                            <H2 className="sticky-none mb-2">
-                              {project.title}
-                            </H2>
-                            <small className="flex flex-wrap items-center gap-2">
-                              <ul className="my-0 -mr-1">
-                                {project.companies?.map((company, index) => (
-                                  <li
-                                    key={`Project ${project.title} company ${company.label} ${index}`}
-                                  >
-                                    {company.href ? (
-                                      <ExternalLink
-                                        variant="text"
-                                        href={company.href}
-                                        size="sm"
-                                        color="muted"
-                                        className="mr-0 -ml-1"
-                                      >
-                                        <span>{company.label}</span>
-                                      </ExternalLink>
-                                    ) : (
-                                      <span>{company.label}</span>
-                                    )}
-                                  </li>
-                                ))}
-                              </ul>
-                              <span className="size-1 rounded-full bg-muted-foreground" />
-                              {project.isActive ? (
-                                <span>
-                                  <span>{project.timeframe} – </span>
-                                  <Badge variant="muted" size="sm">
-                                    Ongoing
-                                  </Badge>
-                                </span>
-                              ) : (
-                                <span>{project.timeframe}</span>
-                              )}
-                            </small>
-                          </div>
-
-                          <p className="text-foreground">
-                            {project.description}
-                          </p>
-
-                          <p className="text-foreground">{project.subline}</p>
-
-                          <Hr className="my-3 w-4" />
-
-                          {project.responsibilities?.length && (
-                            <Ul
-                              headline="Responsible fields"
-                              listStyle="disc"
-                              className="text-foreground"
-                            >
-                              {project.responsibilities.map((aspect) => (
-                                <ProjectResponsibilityItem
-                                  key={`${project.title}-${getResponsibilityText(aspect)}`}
-                                  responsibility={aspect}
-                                  keyPrefix={project.title}
-                                />
-                              ))}
-                            </Ul>
-                          )}
-                        </div>
-
-                        <Button
-                          variant="text-primary"
-                          href={project.url}
-                          title={`View ${project.title}`}
-                          aria-label={`Click to view ${project.title} in an external tab`}
-                        >
-                          View {project.title}
-                        </Button>
-
-                        {project.notes && (
-                          <small className="mt-3 block">{project.notes}</small>
-                        )}
-                      </div>
-                    </div>
-                  </Animate>
-                </li>
-
-                {index + 1 !== array.length && (
-                  <li
-                    key={`${project.title}-divider-${index + 1}`}
-                    role="separator"
-                  >
-                    <DotsDivider />
-                  </li>
-                )}
-              </Fragment>
-            ))}
+              {index + 1 !== listProjects.length && <DotsDivider />}
+            </li>
+          ))}
         </Ul>
       </Container>
     </PageTemplate>

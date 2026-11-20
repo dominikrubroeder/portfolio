@@ -7,6 +7,8 @@ see [DESIGN.md](./DESIGN.md).
 
 ## 1. Principles
 
+The six core design principles (context, system, problem, business, sustainable, experience) come first; see [DESIGN.md §1.1](./DESIGN.md#11-core-design-principles). The principles below apply them to behavior.
+
 1. **Content first, chrome second.** The reading column, statements and project work lead. Controls stay small and
    peripheral.
 2. **One clear next step.** Each view has one dominant action. Home: "Selected works" (the navigation bar below the first statement). Project cards:
@@ -77,7 +79,12 @@ On first load a typewriter overlay shows a random short phrase (`IntroProvider`,
 
 - Skippable: any key press (a lone `Shift`, `Control`, `Alt` or `Meta` does not count) or a pointer press closes it early, so a keyboard user's first `Tab` or `Esc` dismisses it too. The overlay is `aria-hidden` (decoration); screen readers read the page behind it.
 - No intro with the OS setting `prefers-reduced-motion: reduce`, with the in-app animations switch off, and without scripting. CSS hides the cover before first paint in all three cases (`[data-intro-cover]`), so nothing flashes.
+- Agents and inspections skip it with `NEXT_PUBLIC_AGENT_MODE="true"` in the untracked `.env.local` (restart `next dev`; default `false` in `.env`). Agent mode forces animations off, like the in-app switch: no cover, no held reveals, scroll reveals show their final state at once. It is a build-time switch for tooling, not a visitor setting: the animations switch in the theme drawer does nothing and no animation value is saved.
 - It must never trap focus or delay content by more than a few seconds; without JavaScript the content is simply there.
+
+### Principles section
+
+The home page lists the six core design principles as a numbered list directly under the first statement and the navigation bar. Each entry reads "Design … — …" and comes from `feature/design-principles`, as do the copy in `/agent-view` (bold title, then the description), the `/api/introduction` `principles` array (`id`, `title`, `description`) and the tooltips of the marked terms "context-based" and "sustainable". Change the words in that module only.
 
 ### Statement sequence
 
@@ -181,7 +188,7 @@ Petals with detail (currently Design, Code and UX; add an entry to `philosophyTo
 
 ### Tooltip
 
-**Global rule:** every actionable element (button, link, swatch, trigger) that is icon-only, image-only or shows 3 characters or fewer has a tooltip. Longer visible text already names the action and needs none. Use `Button` with `iconOnly` + `label`; for a non-`Button` element (swatch, avatar link, custom button) wrap it in `Tooltip` with `render`. Never rely on a native `title`: it is unreachable by keyboard and touch.
+**Global rule:** every actionable element (button, link, swatch, trigger) that is icon-only, image-only or shows 3 characters or fewer has a tooltip. Longer visible text already names the action and needs none. Use `Button` with `iconOnly` + `label`; for a non-`Button` element (swatch, avatar link, project preview link, custom button) wrap it in `Tooltip` with `render`. A preview link reads "Open <project> in a new tab". Never rely on a native `title`: it is unreachable by keyboard and touch.
 
 Short text on hover and keyboard focus that explains an icon-only action. The text names the action, not the object: a verb plus what it acts on, in sentence case ("Open theme settings", "Set blue accent color", "Close dialog", "Open my GitHub profile"). "Open" for panels and external pages, "Go to" for internal navigation, "Set" for choices, "Close" for dismissing, "Enable"/"Disable" for switches. No "Click to", no bare nouns. It is also the accessible name, so it must make sense read alone. Opens after a short delay, closes on `Esc`
 or blur, never holds interactive content. Fades in with `motion-safe:`. Touch has no hover, so the `aria-label` carries
@@ -379,3 +386,4 @@ primary action sits in the first screen, below the opening statement.
 9. Did I run the accessibility checks (contrast, focus, keyboard, accessible names, landmarks, reduced motion) while building, and fix or report every violation?
 10. Is the matching Figma component created or updated (variants, states, tokens as variables)?
 11. Is every icon-only, image-only or 3-characters-or-fewer action named by a tooltip (verb + object)?
+12. Do the six core design principles hold ([DESIGN.md §1.1](./DESIGN.md#11-core-design-principles)): context of environment, people and brand; reuse of the system; the root problem; the business case; maintainability; the experience as a whole?

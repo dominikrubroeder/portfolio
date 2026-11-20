@@ -15,7 +15,7 @@ export function Badge({
     <div
       className={cn(
         'inline-flex w-max shrink-0 self-start rounded-full',
-        variant === 'primary' && 'bg-primary/10 text-primary',
+        variant === 'primary' && 'bg-primary/10 text-primary-text',
         variant === 'foreground' && 'bg-muted text-foreground',
         variant === 'muted' && 'bg-muted text-muted-foreground',
         variant === 'white' && 'bg-white text-primary',

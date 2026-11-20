@@ -1,3 +1,5 @@
+import { getDesignPrincipleHint } from '@/components/feature/design-principles';
+
 /** A body paragraph (plain string) or a blockquote with an optional author. */
 export type IntroductionParagraph = string | { quote: string; author?: string };
 
@@ -19,10 +21,8 @@ export const introductionStatements: IntroductionStatement[] = [
       'The user experience is the leading factor how well a UI is perceived, consumed and remembered by the user. It is the winning factor of how satisfied people are using (digital) products and services.'
     ],
     terms: {
-      'context-based':
-        'Designed in context of the user, the environment, the brand',
-      sustainable:
-        'The system is documented, upgradable, durable and efficient',
+      'context-based': getDesignPrincipleHint('context'),
+      sustainable: getDesignPrincipleHint('sustainable'),
       purposive: 'Serving a specific goal or purpose'
     }
   },
@@ -39,13 +39,4 @@ export const introductionStatements: IntroductionStatement[] = [
   { text: 'Agents are about orchestration and execution' },
   { text: 'We compose, direct and oversee' },
   { text: 'So we shape the core product UI' }
-];
-
-export const introductionPrinciples = [
-  'Design in context — of the environment, of the people, of the brand',
-  'Design in system — streamline processes, principles, components as close as possible for one ecosystem',
-  "Design problem-focused — know the problem you're solving, it is the root problem to be solved, not its symptoms",
-  'Design business-aware — cover business cases the company and its users are about, to root your design in an economically supported background',
-  'Design sustainable — make maintainable systems that are documented, upgradeable, durable and efficient',
-  'Design the experience — make it enjoyable, with a satisfying, pleasurable ease of use, think about the product as a holistic whole'
 ];
