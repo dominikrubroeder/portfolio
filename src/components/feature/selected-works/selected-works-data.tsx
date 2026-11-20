@@ -35,7 +35,7 @@ export const projects: Project[] = [
     logo: undefined,
     role: undefined,
     responsibilities: [
-      'Plan an AI-native design system creation and prototyping workflow: Enable the customer to ideate and prototype with his own UI in Figma using Claude Code, Codex or the native Figma AI assistant',
+      'Plan an agent-based design system creation and prototyping workflow: Enable the customer to ideate and prototype with his own UI in Figma using Claude Code, Codex or the native Figma AI assistant',
       {
         text: 'Review this process from two perspectives:',
         items: [
@@ -67,8 +67,8 @@ export const projects: Project[] = [
     logo: undefined,
     role: undefined,
     responsibilities: [
-      'Optimize the UX of the checkout',
-      'Implement frontend features'
+      'Restructure the checkout flow for three clear checkout options: guest checkout option, new account creation checkout option and account login checkout option',
+      'Make guest checkout the most prominent option to lower checkout abandonment'
     ],
     tools: [],
     technologies: [],
@@ -212,7 +212,7 @@ export const projects: Project[] = [
       'Establish and maintain the design system in Figma',
       'Build and compose the headless frontend in Next.js',
       'Design and present feature concepts and UI prototypes for project pitches',
-      'AI-native focus: Establish the design and engineering vision for the agentic UI delivery'
+      'Agent focus: Establish the design and engineering processes for generative UI delivery'
     ],
     tools: getTools({
       names: [

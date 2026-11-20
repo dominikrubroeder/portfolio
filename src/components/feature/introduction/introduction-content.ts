@@ -34,7 +34,7 @@ export const introductionStatements: IntroductionStatement[] = [
   },
   { text: 'Code is about functionality, efficiency and performance' },
   {
-    text: 'The user experience is about positive feeling, user satisfaction and simple, playful delight'
+    text: 'The user experience is about positive feeling, user satisfaction and simple delight'
   },
   { text: 'Agents are about orchestration and execution' },
   { text: 'We compose, direct and oversee' },
