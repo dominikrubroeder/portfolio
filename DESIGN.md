@@ -33,14 +33,14 @@ agent. They come from one data module (`feature/design-principles`) that the hom
 `/api/introduction` and the inline term hints read, so the words never differ. The visual principles in §2 and the
 behavior principles in [UX_PRINCIPLES.md](./UX_PRINCIPLES.md) follow from them.
 
-| # | Principle                  | What it asks                                                                                   | In this portfolio                                                                                                                         |
-|---|----------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| 1 | **Design in context**      | Of the environment, of the people, of the brand                                                | Environment: OS color scheme, reduced motion, font size, viewport, touch. People: keyboard, screen reader, agents. Brand: tokens, themes. |
-| 2 | **Design in system**       | Streamline processes, principles, components as close as possible for one ecosystem            | `ui` + `feature` split, tokens first, one source per copy, code, docs and Figma kept in step. Same pattern, same behavior.                |
-| 3 | **Design problem-focused** | Know the problem you are solving: the root problem, not its symptoms                           | State the problem before the UI. Fix a cause once (a token, a component) instead of overriding each symptom.                              |
-| 4 | **Design business-aware**  | Cover the business cases of the company and its users, so design rests on an economic ground   | The page serves a goal: show the value of a UX engineer and give access to my resume.                                                     |
-| 5 | **Design sustainable**     | Make maintainable systems that are documented, upgradeable, durable and efficient              | DESIGN.md and the decision log, registries, semantic HTML, native CSS first, lazy chunks, no dead code.                                   |
-| 6 | **Design the experience**  | Make it enjoyable, with a satisfying, pleasurable ease of use; think of the product as a whole | One next step per view, instant feedback, short playful moments that never block, one journey from first load to contact.                 |
+| #   | Principle                  | What it asks                                                                                   | In this portfolio                                                                                                                         |
+| --- | -------------------------- | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Design in context**      | Of the environment, of the people, of the brand                                                | Environment: OS color scheme, reduced motion, font size, viewport, touch. People: keyboard, screen reader, agents. Brand: tokens, themes. |
+| 2   | **Design in system**       | Streamline processes, principles, components as close as possible for one ecosystem            | `ui` + `feature` split, tokens first, one source per copy, code, docs and Figma kept in step. Same pattern, same behavior.                |
+| 3   | **Design problem-focused** | Know the problem you are solving: the root problem, not its symptoms                           | State the problem before the UI. Fix a cause once (a token, a component) instead of overriding each symptom.                              |
+| 4   | **Design business-aware**  | Cover the business cases of the company and its users, so design rests on an economic ground   | The page serves a goal: show the value of a UX engineer and give access to my resume.                                                     |
+| 5   | **Design sustainable**     | Make maintainable systems that are documented, upgradeable, durable and efficient              | DESIGN.md and the decision log, registries, semantic HTML, native CSS first, lazy chunks, no dead code.                                   |
+| 6   | **Design the experience**  | Make it enjoyable, with a satisfying, pleasurable ease of use; think of the product as a whole | One next step per view, instant feedback, short playful moments that never block, one journey from first load to contact.                 |
 
 Check before you call a UI done: which problem does it solve (3), for whom and where (1), does it reuse the system (2),
 does it serve the goal (4), will it stay maintainable (5), and does the whole journey feel good (6)?
@@ -75,7 +75,7 @@ Colors are OKLCH tokens defined as CSS variables in `:root`, remapped into Tailw
 ### 4.1 Semantic tokens
 
 | Token                                | Role                                                                                     |
-|--------------------------------------|------------------------------------------------------------------------------------------|
+| ------------------------------------ | ---------------------------------------------------------------------------------------- |
 | `background` / `foreground`          | Page surface and primary text                                                            |
 | `primary` / `primary-foreground`     | Accent: CTAs, links on hover, active states, dividers                                    |
 | `primary-hover`, `primary-border`    | Interaction states of the accent                                                         |
@@ -90,7 +90,7 @@ Neutral token values (`globals.css`). Dark overrides only the tokens that change
 mode. Wireframe has its own set for both appearances.
 
 | Token                              | Light                      | Dark                       | Wireframe light   | Wireframe dark    |
-|------------------------------------|----------------------------|----------------------------|-------------------|-------------------|
+| ---------------------------------- | -------------------------- | -------------------------- | ----------------- | ----------------- |
 | `--black`                          | `oklch(0 0 0)`             | same                       | same              | same              |
 | `--white`                          | `oklch(1 0 0)`             | same                       | same              | same              |
 | `--background`                     | `oklch(1 0 0)`             | `oklch(0.193 0 0)`         | `oklch(1 0 0)`    | `oklch(0 0 0)`    |
@@ -128,7 +128,7 @@ mixed in for dark, so a hover brightens on dark and darkens on light. Use `text-
 for accent text on `background`; `text-primary` stays for text on white fills such as `contained-white`.
 
 | Accent                               | `--{name}`                 | `-foreground`       | `-hover`                                                        | `-border`                |
-|--------------------------------------|----------------------------|---------------------|-----------------------------------------------------------------|--------------------------|
+| ------------------------------------ | -------------------------- | ------------------- | --------------------------------------------------------------- | ------------------------ |
 | `primary` (`:root` fallback, legacy) | `oklch(0.582 0.231 288.6)` | `oklch(1 0 0)`      | `oklch(0.526 0.261 284.4)`                                      | `oklch(0.472 0.285 277)` |
 | `blue`                               | `oklch(0.546 0.245 262.9)` | `oklch(1 0 0)`      | `oklch(0.546 0.245 262.9)`                                      | `oklch(0.496 0.245 263)` |
 | `violett`                            | `oklch(0.543 0.252 285.9)` | `oklch(1 0 0)`      | `oklch(0.51 0.269 282.7)`                                       | `oklch(0.483 0.281 279)` |
@@ -158,14 +158,14 @@ both appearances (pure white / pure black, gray tone steps).
 ## 5. Typography
 
 | Role     | Font           | Token / utility |
-|----------|----------------|-----------------|
+| -------- | -------------- | --------------- |
 | Headline | Outfit         | `font-heading`  |
 | Body     | Outfit         | `font-body`     |
 | Sketch   | Patrick Hand   | `font-sketch`   |
 | Code     | JetBrains Mono | `font-code`     |
 
 | Token                   | Value                                                     |
-|-------------------------|-----------------------------------------------------------|
+| ----------------------- | --------------------------------------------------------- |
 | `--font-outfit`         | `'Outfit'`                                                |
 | `--font-patrick-hand`   | `'Patrick Hand'`                                          |
 | `--font-jetbrains-mono` | `'JetBrains Mono'`                                        |
@@ -188,7 +188,7 @@ both appearances (pure white / pure black, gray tone steps).
   possible; use the typography components (`H1`–`H6`, `Ul`, `Ol`) when you need props.
 
 | Level           | Size (mobile → desktop)                                                                                                        | Weight   |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------|----------|
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------- |
 | Statement       | `text-statement`: fluid `clamp(2rem, (100vw − 2.5rem) / 7.6, 4.5rem)`, fixed `4.5rem` from `sm`; `leading-[1]`, `text-balance` | semibold |
 | `h1`            | fluid `clamp(2rem, (100vw − 2.5rem) / 7.6, 3.75rem)`                                                                           | semibold |
 | `h2`            | `text-3xl` → `xs:text-4xl`                                                                                                     | semibold |
@@ -206,14 +206,14 @@ weights on a screen (normal, semibold/bold).
 Use `<Container>` (`ui/container`). Never hand-roll `max-w-*` on page sections.
 
 | `size`               | Width              | Use                                        |
-|----------------------|--------------------|--------------------------------------------|
+| -------------------- | ------------------ | ------------------------------------------ |
 | `container-readable` | `40rem` (default)  | Text, lists, most sections (+ `px-4`)      |
 | `container`          | `90rem` (+ `px-4`) | Wide grids and galleries                   |
 | `full-width`         | 100 %              | Full-bleed bands (e.g. primary hero)       |
 | (panorama token)     | `82rem`            | Large preview imagery on `/selected-works` |
 
 | Token                          | Value    | Note                                                 |
-|--------------------------------|----------|------------------------------------------------------|
+| ------------------------------ | -------- | ---------------------------------------------------- |
 | `--spacing-container`          | `90rem`  | `@theme`: `container` size                           |
 | `--spacing-container-readable` | `40rem`  | `@theme`: reading column; `wide` 64rem, `full` 90rem |
 | `--spacing-container-panorama` | `82rem`  | `@theme`: panorama imagery                           |
@@ -246,7 +246,7 @@ works hero band · `z-max` (1000)
 drawer panels and popups. Do not invent other layers.
 
 | Token           | Value  |
-|-----------------|--------|
+| --------------- | ------ |
 | `--z-index-100` | `100`  |
 | `--z-index-max` | `1000` |
 
@@ -259,17 +259,17 @@ drawer panels and popups. Do not invent other layers.
   utility, so the whole UI follows live. Default starts at `md`, Wireframe at `none`. In Wireframe the setting scales
   the uneven sketch corners (`--sketch-scale`: none 1, small 1.4, medium 1.8, large 2.4) instead of a plain radius, so
   the hand-drawn shape stays at every step.
-  | Token          | Formula                         | At `md` (6px) | `none` | `sm` (4px) | `lg` (10px) |
+  | Token | Formula | At `md` (6px) | `none` | `sm` (4px) | `lg` (10px) |
   |----------------|---------------------------------|---------------|--------|------------|-------------|
-  | `--radius`     | setting value                   | 6px           | 0px    | 4px        | 10px        |
-  | `--radius-sm`  | `max(0px, var(--radius) - 4px)` | 2px           | 0px    | 0px        | 6px         |
-  | `--radius-md`  | `max(0px, var(--radius) - 2px)` | 4px           | 0px    | 2px        | 8px         |
-  | `--radius-lg`  | `var(--radius)`                 | 6px           | 0px    | 4px        | 10px        |
-  | `--radius-xl`  | `var(--radius) * 1.4`           | 8.4px         | 0px    | 5.6px      | 14px        |
-  | `--radius-2xl` | `var(--radius) * 1.8`           | 10.8px        | 0px    | 7.2px      | 18px        |
-  | `--radius-3xl` | `var(--radius) * 2.2`           | 13.2px        | 0px    | 8.8px      | 22px        |
-  | `--radius-4xl` | `var(--radius) * 2.6`           | 15.6px        | 0px    | 10.4px     | 26px        |
-  | `--radius-5xl` | `var(--radius) * 4.4`           | 26.4px        | 0px    | 17.6px     | 44px        |
+  | `--radius` | setting value | 6px | 0px | 4px | 10px |
+  | `--radius-sm` | `max(0px, var(--radius) - 4px)` | 2px | 0px | 0px | 6px |
+  | `--radius-md` | `max(0px, var(--radius) - 2px)` | 4px | 0px | 2px | 8px |
+  | `--radius-lg` | `var(--radius)` | 6px | 0px | 4px | 10px |
+  | `--radius-xl` | `var(--radius) * 1.4` | 8.4px | 0px | 5.6px | 14px |
+  | `--radius-2xl` | `var(--radius) * 1.8` | 10.8px | 0px | 7.2px | 18px |
+  | `--radius-3xl` | `var(--radius) * 2.2` | 13.2px | 0px | 8.8px | 22px |
+  | `--radius-4xl` | `var(--radius) * 2.6` | 15.6px | 0px | 10.4px | 26px |
+  | `--radius-5xl` | `var(--radius) * 4.4` | 26.4px | 0px | 17.6px | 44px |
 
 - Interactive controls (buttons, tabs) use `rounded-2xl` and tighten to `rounded-xl` on hover.
 - Panels (drawers) use `rounded-5xl` (the largest radius token, 4.4 × `--radius`); badges are `rounded-full` (in
@@ -285,7 +285,7 @@ Motion principles and behavior rules (including "Native CSS first") live in
 [UX_PRINCIPLES.md](./UX_PRINCIPLES.md#motion). This section lists the visual specs only.
 
 | Token                    | Value                                              | Use                                  |
-|--------------------------|----------------------------------------------------|--------------------------------------|
+| ------------------------ | -------------------------------------------------- | ------------------------------------ |
 | `--animate-to-left`      | `to-left 1.1s cubic-bezier(0.22, 1, 0.36, 1) both` | Entrance, `translateX(1.6rem)` → 0   |
 | `--animate-to-top`       | `to-top 1.1s cubic-bezier(0.22, 1, 0.36, 1) both`  | Entrance, `translateY(1.6rem)` → 0   |
 | `--animate-dot-bounce`   | `dot-bounce 2.1s ease-in-out infinite`             | Three-dot divider                    |
@@ -337,7 +337,7 @@ A theme is a combination of **style** × **appearance** × **accent color** × *
 (`themeInitializationScript`).
 
 | Style       | Character                                                                                                 |
-|-------------|-----------------------------------------------------------------------------------------------------------|
+| ----------- | --------------------------------------------------------------------------------------------------------- |
 | `default`   | "Intense accent UI": rounded, colored, animated. The reference experience.                                |
 | `wireframe` | "Sketch-based UI": black/white, handwritten type, square corners, no animation, no shadows. Same content. |
 
@@ -352,7 +352,7 @@ Wireframe sketch tokens (`:root[data-theme='wireframe']`). The rem-based ones sc
 1.4, medium 1.8, large 2.4.
 
 | Token                            | Value                                                                           |
-|----------------------------------|---------------------------------------------------------------------------------|
+| -------------------------------- | ------------------------------------------------------------------------------- |
 | `--sketch-scale`                 | `1`                                                                             |
 | `--sketch-frame-radius`          | `1.5rem 0.25rem 1.25rem 0.25rem / 0.25rem 1.25rem 0.25rem 1.5rem`, each × scale |
 | `--sketch-button-radius`         | `0.9rem 0.25rem 0.8rem 0.3rem / 0.3rem 0.8rem 0.25rem 0.9rem`, each × scale     |
@@ -530,7 +530,7 @@ background color (`background`) inside a
 never only the color.
 
 | State                                     | Shape                                      |
-|-------------------------------------------|--------------------------------------------|
+| ----------------------------------------- | ------------------------------------------ |
 | Default                                   | Dot, 18 px                                 |
 | Clickable (`a`, `button`, `.interactive`) | Dot, 24 px (×1.33)                         |
 | Pressed (`:active`)                       | Dot, 13 px                                 |
@@ -621,7 +621,7 @@ Newest last. Derived from release history (`Release UI x.y.z`) and the current c
 within 3 lines; detail belongs in the sections above.
 
 | When / version   | Decision                                                                                                                                                                                                                                                      | Why                                                                                                                           |
-|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | Early            | Atomic Design architecture; replaced in 3.0.6 by the `ui` / `feature` split (`feature` consumes `ui`, never the reverse)                                                                                                                                      | Make the portfolio show system thinking. One folder holds all parts of a feature; `ui` stays reusable.                        |
 | Early            | Next.js 15 → 16, `framer-motion` → `motion`                                                                                                                                                                                                                   | Stay current; smaller, maintained animation package.                                                                          |
 | UI2              | Single narrow reading column as default layout (now 40rem)                                                                                                                                                                                                    | Readability and a calm rhythm; wide layouts only where imagery needs it.                                                      |
