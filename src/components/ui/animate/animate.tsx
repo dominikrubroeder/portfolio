@@ -4,7 +4,11 @@ import type { ReactNode } from 'react';
 
 import { motion, MotionConfig } from 'motion/react';
 
-import { useAnimate, useAnimationsEnabled } from '@/components/ui/animate';
+import {
+  useAnimate,
+  useAnimateHold,
+  useAnimationsEnabled
+} from '@/components/ui/animate';
 
 import { cn } from '@/lib/utils';
 
@@ -29,7 +33,8 @@ export function Animate({
   /**
    * Controlled reveal instead of the default viewport-triggered one — pass
    * `false` to hold, `true` to play. Leave unset to reveal on scroll into
-   * view (the default for content below the fold).
+   * view (the default for content below the fold). Without `active`, an enclosing `AnimateHold`
+   * keeps the reveal back until it releases.
    */
   active?: boolean;
   className?: string;
@@ -37,13 +42,14 @@ export function Animate({
   ref?: React.Ref<HTMLDivElement>;
 }) {
   const enabled = useAnimationsEnabled();
+  const hold = useAnimateHold();
   const { variants } = useAnimate({ delay, duration, type });
 
   // Animations off: render the final state at once. CSS (`[data-animate]` under
   // `html[data-theme-animations='off']`) guarantees the same before hydration.
   const trigger = !enabled
     ? { animate: 'visible' as const }
-    : active === undefined
+    : active === undefined && !hold
       ? { whileInView: 'visible' as const, viewport }
       : { animate: active ? ('visible' as const) : 'hidden' };
 

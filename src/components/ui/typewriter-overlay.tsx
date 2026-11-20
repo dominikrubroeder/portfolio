@@ -10,10 +10,15 @@ import type { TypewriterProps } from '@/components/ui/typewriter';
 export interface TypewriterOverlayProps extends TypewriterProps {
   /** Called once the overlay has fully finished its exit animation. */
   onExitComplete?: () => void;
+  /** Any key press (except a lone modifier) or pointer press closes the overlay early. */
+  dismissible?: boolean;
 }
+
+const MODIFIER_KEYS = ['Shift', 'Control', 'Alt', 'Meta'];
 
 export function TypewriterOverlay({
   onExitComplete,
+  dismissible = false,
   ...props
 }: TypewriterOverlayProps) {
   const [isVisible, setIsVisible] = useState(true);
@@ -24,11 +29,29 @@ export function TypewriterOverlay({
     return () => document.body.classList.remove('overflow-hidden');
   }, [isVisible]);
 
+  useEffect(() => {
+    if (!dismissible || !isVisible) return;
+
+    const dismiss = (event: KeyboardEvent | PointerEvent) => {
+      if (event instanceof KeyboardEvent && MODIFIER_KEYS.includes(event.key))
+        return;
+      setIsVisible(false);
+    };
+
+    window.addEventListener('keydown', dismiss);
+    window.addEventListener('pointerdown', dismiss);
+    return () => {
+      window.removeEventListener('keydown', dismiss);
+      window.removeEventListener('pointerdown', dismiss);
+    };
+  }, [dismissible, isVisible]);
+
   return (
     <AnimatePresence onExitComplete={onExitComplete}>
       {isVisible && (
         <motion.div
           key="typewriter-overlay"
+          aria-hidden="true"
           className="fixed inset-0 top-0 right-0 bottom-0 left-0 z-100 flex size-full items-center justify-center bg-background"
         >
           <motion.div

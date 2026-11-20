@@ -53,7 +53,7 @@ export function ThemeDrawer({
 
         <DrawerFooter>
           <DrawerClose
-            className="w-full"
+            className="h-11 w-full"
             render={
               <Button
                 variant="text-muted"

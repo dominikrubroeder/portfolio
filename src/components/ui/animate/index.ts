@@ -1,4 +1,9 @@
 export { Animate } from './animate';
-export { AnimationsProvider, useAnimationsEnabled } from './animate-context';
+export {
+  AnimateHold,
+  AnimationsProvider,
+  useAnimateHold,
+  useAnimationsEnabled
+} from './animate-context';
 
 export { useAnimate } from './use-animate';

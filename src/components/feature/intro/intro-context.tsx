@@ -9,6 +9,7 @@ import React, {
   useState
 } from 'react';
 
+import { AnimateHold } from '@/components/ui/animate';
 import { TypewriterOverlay } from '@/components/ui/typewriter-overlay';
 
 import { useThemeSetting } from '@/components/feature/theme';
@@ -47,9 +48,15 @@ export function IntroProvider({ children }: { children: ReactNode }) {
   // once. Decided once: turning animations on later never brings the intro back.
   if (isPlaying && isInitialized && !isEnabled) setIsPlaying(false);
 
-  // Random phrase is picked after mount: Math.random() must not run during prerender
+  // Reduced motion (OS setting): no intro, like animations off. Otherwise the random phrase is
+  // picked after mount: Math.random() must not run during prerender.
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- pick random phrase after hydration
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- OS preference is only known after hydration
+      setIsPlaying(false);
+      return;
+    }
+
     setCurrentPhrase(phrases[Math.floor(Math.random() * phrases.length)]);
   }, []);
 
@@ -58,26 +65,45 @@ export function IntroProvider({ children }: { children: ReactNode }) {
     setIsPlaying
   };
 
+  // The page is always rendered, so the server HTML holds the full content. While the intro plays,
+  // an opaque layer covers it (`IntroCover` until the phrase is picked, then the typewriter) and
+  // `AnimateHold` keeps the reveals back, so they still play once the layer is gone.
   return (
     <IntroContext.Provider value={value}>
-      {isPlaying ? (
-        <Suspense>
-          {currentPhrase && (
+      <AnimateHold hold={isPlaying}>{children}</AnimateHold>
+      {isPlaying &&
+        (currentPhrase ? (
+          <Suspense fallback={<IntroCover />}>
             <TypewriterOverlay
               phrases={currentPhrase}
               loop={false}
               deleteLastPhrase={false}
+              dismissible
               onExitComplete={() => {
                 setIsPlaying(false);
               }}
               endHoldDuration={1200}
             />
-          )}
-        </Suspense>
-      ) : (
-        children
-      )}
+          </Suspense>
+        ) : (
+          <IntroCover />
+        ))}
     </IntroContext.Provider>
+  );
+}
+
+/**
+ * Server-rendered stand-in for the typewriter: a page-colored layer in the same place, so the first
+ * paint is the background, not the content, and the swap to the typewriter does not flicker.
+ * `globals.css` hides it with animations off, with reduced motion and without scripting.
+ */
+function IntroCover() {
+  return (
+    <div
+      data-intro-cover=""
+      aria-hidden="true"
+      className="fixed inset-0 z-100 bg-background"
+    />
   );
 }
 

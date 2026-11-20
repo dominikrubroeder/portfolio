@@ -73,9 +73,11 @@ This keeps context on long pages. Opt out with the `sticky-none` class where the
 
 ### Intro
 
-On first load a typewriter overlay shows a random short phrase (`IntroProvider`, `TypewriterOverlay`). Content
-reveals after it finishes via `Animate active`. The overlay must never trap focus or delay content by more than a few
-seconds.
+On first load a typewriter overlay shows a random short phrase (`IntroProvider`, `TypewriterOverlay`). The page itself is always rendered underneath: the server HTML holds the full content, and the overlay (and, before hydration, an opaque `IntroCover` in the same place) only covers it. Reveals are held back (`AnimateHold`) and play once the overlay is gone. The intro keeps its full length (typing plus a 1.2 s hold, about 4 s); it is not shortened.
+
+- Skippable: any key press (a lone `Shift`, `Control`, `Alt` or `Meta` does not count) or a pointer press closes it early, so a keyboard user's first `Tab` or `Esc` dismisses it too. The overlay is `aria-hidden` (decoration); screen readers read the page behind it.
+- No intro with the OS setting `prefers-reduced-motion: reduce`, with the in-app animations switch off, and without scripting. CSS hides the cover before first paint in all three cases (`[data-intro-cover]`), so nothing flashes.
+- It must never trap focus or delay content by more than a few seconds; without JavaScript the content is simply there.
 
 ### Statement sequence
 
@@ -191,7 +193,7 @@ Inline literal text (file names, commands) in a muted chip with the code font. N
 
 ### Term
 
-Inline word with a round dotted `primary` underline (a pencil stroke in Wireframe) that explains itself in a `Tooltip` on hover, keyboard focus and click or tap (`tabIndex=0`, so Tab reaches it). A click keeps the hint open until `Esc`, a click elsewhere or blur; hover alone closes it on leave. Not a link: it never navigates. The hint is a short phrase, no interactive content. In data, list terms on the statement (`terms`: word → hint); the first match in the paragraphs is marked, several terms per paragraph work. Agent view prints it as "term (hint)", so the explanation is not lost without styling.
+Inline word with a round dotted `primary` underline (a pencil stroke in Wireframe) that explains itself in a `Tooltip` on hover, keyboard focus and click or tap (`tabIndex=0`, so Tab reaches it). A click keeps the hint open until `Esc`, a click elsewhere or blur; hover alone closes it on leave. Not a link: it never navigates. The hint is a short phrase, no interactive content. The hint is also kept in a `hidden` span that `aria-describedby` on the term points to, because the tooltip popup only exists while open: screen readers get the explanation on focus, and it stays out of the visible text and the copied text. In data, list terms on the statement (`terms`: word → hint); the first match in the paragraphs is marked, several terms per paragraph work. Agent view prints it as "term (hint)", so the explanation is not lost without styling.
 
 ### Badge
 

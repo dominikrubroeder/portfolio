@@ -616,6 +616,33 @@
   word-break: break-word;
 }
 
+/* Intro cover (`IntroCover`): the server HTML holds the whole page plus this opaque layer, so the
+   first paint is the background and crawlers, no-JS visitors and assistive technology still get the
+   content. The layer is hidden where no intro plays: animations off (set before first paint),
+   reduced motion, and no scripting (reveals then show their final state). */
+@layer base {
+  html[data-theme-animations='off'] [data-intro-cover] {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-intro-cover] {
+      display: none;
+    }
+  }
+
+  @media (scripting: none) {
+    [data-intro-cover] {
+      display: none;
+    }
+
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
+
 /* Animation switch (data-theme-animations). 'off' shows reveal content in its final state, also
    before hydration, so nothing flickers in. The keyframe utilities below run only when 'on'. */
 @layer base {

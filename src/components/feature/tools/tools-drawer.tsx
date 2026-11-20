@@ -80,6 +80,7 @@ export function DrawerTools({
         </div>
         <DrawerFooter>
           <DrawerClose
+            className="h-11 w-full"
             render={
               <Button variant="text-muted" iconOnly label="Close tools">
                 <MinusIcon />

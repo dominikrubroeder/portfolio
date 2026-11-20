@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
 import { Tooltip } from '@/components/ui/tooltip';
 
@@ -16,6 +16,7 @@ import type { TermProps } from './types';
 // `text-*` button hover); the label never wraps, so the one stroke always sits under the whole word.
 export function Term({ hint, children, className }: TermProps) {
   const [open, setOpen] = useState(false);
+  const hintId = useId();
 
   return (
     <Tooltip
@@ -26,6 +27,7 @@ export function Term({ hint, children, className }: TermProps) {
       render={
         <span
           tabIndex={0}
+          aria-describedby={hintId}
           onClick={() => setOpen(true)}
           className={cn(
             'relative cursor-pointer rounded-sm bg-[radial-gradient(circle_at_center,var(--primary)_0.0725rem,transparent_0.0875rem)] bg-size-[0.34rem_0.17rem] bg-position-[0_100%] [background-repeat:round_no-repeat] pb-[0.05em] whitespace-nowrap',
@@ -36,6 +38,9 @@ export function Term({ hint, children, className }: TermProps) {
       }
     >
       {children}
+      <span id={hintId} hidden>
+        {hint}
+      </span>
     </Tooltip>
   );
 }
